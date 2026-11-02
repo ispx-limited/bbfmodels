@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/ispx-limited/bbfmodels/compare/v0.3.0...v0.4.0) (2026-11-02)
+
+
+### Added
+
+* **models:** USP commands and events as classes and paths, and the xsi:type a CWMP stack needs ([#20](https://github.com/ispx-limited/bbfmodels/issues/20)) ([eca0c46](https://github.com/ispx-limited/bbfmodels/commit/eca0c46a10c6fc205dbc198d051dbb860f321003))
+
 ## [0.3.0](https://github.com/ispx-limited/bbfmodels/compare/v0.2.1...v0.3.0) (2026-11-02)
 
 
