@@ -79,7 +79,10 @@ _HEADER = (
 def generate(doc: Document, package: str, out: Path) -> list[Path]:
     """Write the package for a document's root model into ``out``; returns the files written."""
     model = _root_model(doc)
-    root = model.root
+    # The root class is named after the root object, not the model: a vendor
+    # document may call its model ``InternetGatewayDevice_9.5.0:2.0`` while
+    # its root object is still ``InternetGatewayDevice.``.
+    root = next(iter(model.objects.values())).name
     source = doc.file or doc.spec
     out.mkdir(parents=True, exist_ok=True)
     written: list[Path] = []
@@ -156,7 +159,7 @@ def _module_names(groups: dict[str, list[Object]]) -> dict[str, str]:
     names: dict[str, str] = {}
     taken: set[str] = set()
     for group in sorted(groups, key=lambda g: (g != "", g)):
-        base = re.sub(r"[^a-z0-9_]", "_", group.lower()) or "root"
+        base = identifier(group).lower() if group else "root"
         if group == "":
             root = groups[""][0] if groups[""] else None
             base = class_name(root, root.name).lower() if root else "root"
@@ -173,9 +176,23 @@ def _postorder(objects: list[Object]) -> list[Object]:
     return sorted(objects, key=lambda o: -o.path.count("."))
 
 
+def identifier(name: str) -> str:
+    """A Forum name as a Python identifier.
+
+    Forum names are identifiers already except in vendor documents, where a
+    name may start with a digit (``11kRSSIHighThresholdOffset``) or carry a
+    hyphen. A leading digit gets an ``N`` in front, because a leading
+    underscore would make pydantic treat the field as private, and any other
+    character Python rejects becomes an underscore. The wire name is kept
+    as the field's alias, so conversion is unaffected.
+    """
+    out = re.sub(r"\W", "_", name)
+    return "N" + out if out[:1].isdigit() else out
+
+
 def class_name(obj: Object, root: str) -> str:
     segments = [s for s in obj.path.rstrip(".").split(".") if s != "{i}"]
-    return root if len(segments) == 1 else "_".join(segments[1:])
+    return identifier(root) if len(segments) == 1 else identifier("_".join(segments[1:]))
 
 
 def _imports(objects: list[Object]) -> str:
@@ -224,7 +241,8 @@ def _children(obj: Object, model: Model) -> list[Object]:
 
 
 def _field_name(name: str) -> str:
-    return name + "_" if name in _RESERVED or name.startswith("model_") else name
+    field = identifier(name)
+    return field + "_" if field in _RESERVED or field.startswith("model_") else field
 
 
 def _emit_parameter(param: Parameter) -> str:

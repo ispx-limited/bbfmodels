@@ -55,7 +55,7 @@ def test_named_data_types_resolve_through_their_base(cwmp: Document) -> None:
 
 def test_objects_and_tables(cwmp: Document) -> None:
     model = cwmp.models[0]
-    assert model.root == "Device" and model.version == "2.0"
+    assert model.root == "Device_vendor-1.2" and model.version == "2.0"
     assert list(model.objects) == ["Device.", "Device.Radio.{i}.", "Device.Config.{i}."]
     root = model.objects["Device."]
     assert not root.multi_instance and root.parent_path == "" and root.name == "Device"
@@ -212,3 +212,12 @@ def test_other_document_faults_are_parse_errors() -> None:
     )
     with pytest.raises(ParseError, match="not an integer"):
         parse(text)
+
+
+def test_whitespace_around_a_name_is_dropped() -> None:
+    text = (
+        '<dm:document xmlns:dm="x" spec="s"><model name="D:1"><object name="D." '
+        'minEntries="1" maxEntries="1"><parameter name="Queueing " access="readOnly">'
+        "<syntax><string/></syntax></parameter></object></model></dm:document>"
+    )
+    assert list(parse(text).models[0].objects["D."].parameters) == ["Queueing"]

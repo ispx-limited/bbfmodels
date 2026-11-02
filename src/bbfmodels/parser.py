@@ -172,6 +172,12 @@ def _attr(el: ET.Element, name: str) -> str | None:
     return el.get(name)
 
 
+def _name(el: ET.Element) -> str:
+    # TR-098 publishes one parameter as ``name="Queueing "``. No device
+    # reports a name with whitespace around it, so none is kept.
+    return (el.get("name") or "").strip()
+
+
 def _flag(el: ET.Element, name: str) -> bool:
     return _attr(el, name) == "true"
 
@@ -435,7 +441,7 @@ class _Parser:
     # -- objects -----------------------------------------------------------
 
     def parameter(self, el: ET.Element, owner: str) -> Parameter:
-        name = _attr(el, "name") or ""
+        name = _name(el)
         syntax_el = _child(el, "syntax")
         if syntax_el is None:
             raise ParseError(f"parameter {owner}{name} has no syntax")
@@ -456,7 +462,7 @@ class _Parser:
         )
 
     def object(self, el: ET.Element, prefix: str = "") -> Object:
-        path = _attr(el, "name") or ""
+        path = _name(el)
         full = prefix + path
         max_raw = _attr(el, "maxEntries")
         min_raw = _int(el, "minEntries")
@@ -498,7 +504,7 @@ class _Parser:
         )
 
     def command(self, el: ET.Element, owner: str) -> Command:
-        name = _attr(el, "name") or ""
+        name = _name(el)
         return Command(
             name=name,
             is_async=_flag(el, "async"),
@@ -510,7 +516,7 @@ class _Parser:
         )
 
     def event(self, el: ET.Element, owner: str) -> Event:
-        name = _attr(el, "name") or ""
+        name = _name(el)
         return Event(
             name=name,
             description=_text(_child(el, "description")),

@@ -35,7 +35,7 @@
     </string>
   </dataType>
 
-  <model name="Device:2.0">
+  <model name="Device_vendor-1.2:2.0">
     <object name="Device." access="readOnly" minEntries="1" maxEntries="1">
       <description>The root.</description>
       <parameter name="RadioNumberOfEntries" access="readOnly">
@@ -141,6 +141,9 @@
             <pathRef refType="weak" targetParent="Device.Radio." targetType="row"/>
           </string>
         </syntax>
+      </parameter>
+      <parameter name="11kEnable" access="readWrite">
+        <syntax><boolean/></syntax>
       </parameter>
       <parameter name="Mode" access="readWrite">
         <syntax>
