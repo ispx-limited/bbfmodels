@@ -70,3 +70,10 @@ class USBHosts(_Model):
     Host: dict[int, USBHosts_Host] = _Field(default_factory=dict)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

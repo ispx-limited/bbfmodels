@@ -3,6 +3,7 @@
 # ruff: noqa
 
 from typing import Annotated as _Annotated, Literal as _Literal
+from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
@@ -138,4 +139,115 @@ class Ghn(_Model):
     Interface: dict[int, Ghn_Interface] = _Field(default_factory=dict)
     Diagnostics: Ghn_Diagnostics | None = _Field(default=None)
 
+
+class Ghn_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Ghn.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ghn_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Ghn.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ghn_Diagnostics_PHYThroughput_Input(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PHYThroughput().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DiagnoseMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Ghn_Diagnostics_PHYThroughput_Output_Result(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PHYThroughput().Output.Result.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DestinationMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    LinkState: _Annotated[_Literal['Direct', 'NonDirect'] | str | None, _Param(_BaseType.STRING)] = None
+    TxPhyRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RxPhyRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Ghn_Diagnostics_PHYThroughput_Output(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PHYThroughput().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
+    Result: dict[int, Ghn_Diagnostics_PHYThroughput_Output_Result] = _Field(default_factory=dict)
+
+
+class Ghn_Diagnostics_PerformanceMonitoring_Input(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DiagnoseMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SampleInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SNRGroupLength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Ghn_Diagnostics_PerformanceMonitoring_Output_Nodes_Node(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring().Output.Nodes.Node.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DestinationMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ErrorsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UnicastPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    UnicastPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    DiscardPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DiscardPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MulticastPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MulticastPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BroadcastPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BroadcastPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    UnknownProtoPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MgmtBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MgmtBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MgmtPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MgmtPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BlocksSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BlocksReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BlocksResent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BlocksErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Ghn_Diagnostics_PerformanceMonitoring_Output_Channels_Channel(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring().Output.Channels.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DestinationMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SNR: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class Ghn_Diagnostics_PerformanceMonitoring_Output_Nodes(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring().Output.Nodes."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CurrentStart: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    CurrentEnd: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    Node: dict[int, Ghn_Diagnostics_PerformanceMonitoring_Output_Nodes_Node] = _Field(default_factory=dict)
+
+
+class Ghn_Diagnostics_PerformanceMonitoring_Output_Channels(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring().Output.Channels."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    Channel: dict[int, Ghn_Diagnostics_PerformanceMonitoring_Output_Channels_Channel] = _Field(default_factory=dict)
+
+
+class Ghn_Diagnostics_PerformanceMonitoring_Output(_Model):
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
+    Nodes: Ghn_Diagnostics_PerformanceMonitoring_Output_Nodes | None = _Field(default=None)
+    Channels: Ghn_Diagnostics_PerformanceMonitoring_Output_Channels | None = _Field(default=None)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.Ghn.Interface.{i}.Stats.Reset()": (Ghn_Interface_Stats_Reset_Input, Ghn_Interface_Stats_Reset_Output),
+    "Device.Ghn.Diagnostics.PHYThroughput()": (Ghn_Diagnostics_PHYThroughput_Input, Ghn_Diagnostics_PHYThroughput_Output),
+    "Device.Ghn.Diagnostics.PerformanceMonitoring()": (Ghn_Diagnostics_PerformanceMonitoring_Input, Ghn_Diagnostics_PerformanceMonitoring_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

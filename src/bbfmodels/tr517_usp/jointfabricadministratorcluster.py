@@ -15,3 +15,89 @@ class JointFabricAdministratorCluster(_Model):
     AdministratorFabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
+class JointFabricAdministratorCluster_ICACCSRRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.ICACCSRRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class JointFabricAdministratorCluster_ICACCSRRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.ICACCSRRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ICACCSR: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricAdministratorCluster_AddICAC_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.AddICAC().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ICACValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricAdministratorCluster_AddICAC_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.AddICAC().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StatusCode: _Annotated[_Literal['OK', 'InvalidPublicKey', 'InvalidICAC'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricAdministratorCluster_OpenJointCommissioningWindow_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.OpenJointCommissioningWindow().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommissioningTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PAKEPasscodeVerifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Discriminator: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Iterations: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Salt: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricAdministratorCluster_OpenJointCommissioningWindow_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.OpenJointCommissioningWindow().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricAdministratorCluster_TransferAnchorRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.TransferAnchorRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class JointFabricAdministratorCluster_TransferAnchorRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.TransferAnchorRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StatusCode: _Annotated[_Literal['OK', 'TransferAnchorStatusDatastoreBusy', 'TransferAnchorStatusNoUserConsent'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricAdministratorCluster_TransferAnchorComplete_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.TransferAnchorComplete().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class JointFabricAdministratorCluster_TransferAnchorComplete_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.TransferAnchorComplete().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricAdministratorCluster_AnnounceJointFabricAdministrator_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.AnnounceJointFabricAdministrator().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class JointFabricAdministratorCluster_AnnounceJointFabricAdministrator_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricAdministratorCluster.{i}.AnnounceJointFabricAdministrator().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.JointFabricAdministratorCluster.{i}.ICACCSRRequest()": (JointFabricAdministratorCluster_ICACCSRRequest_Input, JointFabricAdministratorCluster_ICACCSRRequest_Output),
+    "MatterService.{i}.JointFabricAdministratorCluster.{i}.AddICAC()": (JointFabricAdministratorCluster_AddICAC_Input, JointFabricAdministratorCluster_AddICAC_Output),
+    "MatterService.{i}.JointFabricAdministratorCluster.{i}.OpenJointCommissioningWindow()": (JointFabricAdministratorCluster_OpenJointCommissioningWindow_Input, JointFabricAdministratorCluster_OpenJointCommissioningWindow_Output),
+    "MatterService.{i}.JointFabricAdministratorCluster.{i}.TransferAnchorRequest()": (JointFabricAdministratorCluster_TransferAnchorRequest_Input, JointFabricAdministratorCluster_TransferAnchorRequest_Output),
+    "MatterService.{i}.JointFabricAdministratorCluster.{i}.TransferAnchorComplete()": (JointFabricAdministratorCluster_TransferAnchorComplete_Input, JointFabricAdministratorCluster_TransferAnchorComplete_Output),
+    "MatterService.{i}.JointFabricAdministratorCluster.{i}.AnnounceJointFabricAdministrator()": (JointFabricAdministratorCluster_AnnounceJointFabricAdministrator_Input, JointFabricAdministratorCluster_AnnounceJointFabricAdministrator_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

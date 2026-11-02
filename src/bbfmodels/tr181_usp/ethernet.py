@@ -222,3 +222,79 @@ class Ethernet(_Model):
     WoL: Ethernet_WoL | None = _Field(default=None)
 
 
+class Ethernet_Interface_ChangePowerMode_Input(_Model):
+    __bbf_path__ = "Device.Ethernet.Interface.{i}.ChangePowerMode().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PowerState: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Ethernet_Interface_ChangePowerMode_Output(_Model):
+    __bbf_path__ = "Device.Ethernet.Interface.{i}.ChangePowerMode().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Ethernet.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Ethernet.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_Link_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Ethernet.Link.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_Link_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Ethernet.Link.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_VLANTermination_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Ethernet.VLANTermination.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_VLANTermination_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Ethernet.VLANTermination.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_LAG_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Ethernet.LAG.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_LAG_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Ethernet.LAG.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Ethernet_WoL_SendMagicPacket_Input(_Model):
+    __bbf_path__ = "Device.Ethernet.WoL.SendMagicPacket().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Ethernet_WoL_SendMagicPacket_Output(_Model):
+    __bbf_path__ = "Device.Ethernet.WoL.SendMagicPacket().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.Ethernet.Interface.{i}.ChangePowerMode()": (Ethernet_Interface_ChangePowerMode_Input, Ethernet_Interface_ChangePowerMode_Output),
+    "Device.Ethernet.Interface.{i}.Stats.Reset()": (Ethernet_Interface_Stats_Reset_Input, Ethernet_Interface_Stats_Reset_Output),
+    "Device.Ethernet.Link.{i}.Stats.Reset()": (Ethernet_Link_Stats_Reset_Input, Ethernet_Link_Stats_Reset_Output),
+    "Device.Ethernet.VLANTermination.{i}.Stats.Reset()": (Ethernet_VLANTermination_Stats_Reset_Input, Ethernet_VLANTermination_Stats_Reset_Output),
+    "Device.Ethernet.LAG.{i}.Stats.Reset()": (Ethernet_LAG_Stats_Reset_Input, Ethernet_LAG_Stats_Reset_Output),
+    "Device.Ethernet.WoL.SendMagicPacket()": (Ethernet_WoL_SendMagicPacket_Input, Ethernet_WoL_SendMagicPacket_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

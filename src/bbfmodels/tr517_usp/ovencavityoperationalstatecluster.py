@@ -37,3 +37,50 @@ class OvenCavityOperationalStateCluster(_Model):
     OperationalError: OvenCavityOperationalStateCluster_OperationalError | None = _Field(default=None)
 
 
+class OvenCavityOperationalStateCluster_Stop_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Stop().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OvenCavityOperationalStateCluster_Stop_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Stop().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OvenCavityOperationalStateCluster_Stop_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Stop().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: OvenCavityOperationalStateCluster_Stop_Output_CommandResponseState | None = _Field(default=None)
+
+
+class OvenCavityOperationalStateCluster_Start_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Start().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OvenCavityOperationalStateCluster_Start_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Start().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OvenCavityOperationalStateCluster_Start_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Start().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: OvenCavityOperationalStateCluster_Start_Output_CommandResponseState | None = _Field(default=None)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Stop()": (OvenCavityOperationalStateCluster_Stop_Input, OvenCavityOperationalStateCluster_Stop_Output),
+    "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Start()": (OvenCavityOperationalStateCluster_Start_Input, OvenCavityOperationalStateCluster_Start_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

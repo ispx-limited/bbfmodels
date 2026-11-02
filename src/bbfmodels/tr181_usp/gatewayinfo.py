@@ -19,3 +19,33 @@ class GatewayInfo(_Model):
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+class GatewayInfo_UnknownGatewayDiscovered_Event(_Model):
+    __bbf_path__ = "Device.GatewayInfo.UnknownGatewayDiscovered!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GatewayInfo_USPGatewayDiscovered_Event(_Model):
+    __bbf_path__ = "Device.GatewayInfo.USPGatewayDiscovered!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GatewayInfo_CWMPGatewayDiscovered_Event(_Model):
+    __bbf_path__ = "Device.GatewayInfo.CWMPGatewayDiscovered!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ProductClass: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.GatewayInfo.UnknownGatewayDiscovered!": GatewayInfo_UnknownGatewayDiscovered_Event,
+    "Device.GatewayInfo.USPGatewayDiscovered!": GatewayInfo_USPGatewayDiscovered_Event,
+    "Device.GatewayInfo.CWMPGatewayDiscovered!": GatewayInfo_CWMPGatewayDiscovered_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

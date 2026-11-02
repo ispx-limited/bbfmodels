@@ -100,3 +100,21 @@ class VXLAN(_Model):
     Filter: dict[int, VXLAN_Filter] = _Field(default_factory=dict)
 
 
+class VXLAN_Tunnel_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.VXLAN.Tunnel.{i}.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class VXLAN_Tunnel_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.VXLAN.Tunnel.{i}.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.VXLAN.Tunnel.{i}.Interface.{i}.Stats.Reset()": (VXLAN_Tunnel_Interface_Stats_Reset_Input, VXLAN_Tunnel_Interface_Stats_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

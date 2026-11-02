@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class OTASoftwareUpdateProviderCluster(_Model):
@@ -13,4 +13,67 @@ class OTASoftwareUpdateProviderCluster(_Model):
     __bbf_package__ = "bbfmodels.tr517_usp"
     EndpointRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
+
+class OTASoftwareUpdateProviderCluster_QueryImage_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.QueryImage().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    VendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProductID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProtocolsSupported: _Annotated[_CommaList[_Literal['BDXSynchronous', 'BDXAsynchronous', 'HTTPS', 'VendorSpecific'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    HardwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Location: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    RequestorCanConsent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MetadataForProvider: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OTASoftwareUpdateProviderCluster_QueryImage_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.QueryImage().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['UpdateAvailable', 'Busy', 'NotAvailable', 'DownloadProtocolNotSupported'] | str | None, _Param(_BaseType.STRING)] = None
+    DelayedActionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ImageURI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SoftwareVersionString: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UpdateToken: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UserConsentNeeded: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MetadataForRequestor: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OTASoftwareUpdateProviderCluster_ApplyUpdateRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.ApplyUpdateRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UpdateToken: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NewVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OTASoftwareUpdateProviderCluster_ApplyUpdateRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.ApplyUpdateRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Action: _Annotated[_Literal['Proceed', 'AwaitNextAction', 'Discontinue'] | str | None, _Param(_BaseType.STRING)] = None
+    DelayedActionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OTASoftwareUpdateProviderCluster_NotifyUpdateApplied_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.NotifyUpdateApplied().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UpdateToken: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OTASoftwareUpdateProviderCluster_NotifyUpdateApplied_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.NotifyUpdateApplied().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.QueryImage()": (OTASoftwareUpdateProviderCluster_QueryImage_Input, OTASoftwareUpdateProviderCluster_QueryImage_Output),
+    "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.ApplyUpdateRequest()": (OTASoftwareUpdateProviderCluster_ApplyUpdateRequest_Input, OTASoftwareUpdateProviderCluster_ApplyUpdateRequest_Output),
+    "MatterService.{i}.OTASoftwareUpdateProviderCluster.{i}.NotifyUpdateApplied()": (OTASoftwareUpdateProviderCluster_NotifyUpdateApplied_Input, OTASoftwareUpdateProviderCluster_NotifyUpdateApplied_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

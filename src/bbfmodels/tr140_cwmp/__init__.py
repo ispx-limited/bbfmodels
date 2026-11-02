@@ -6,7 +6,7 @@ generated from, for validation and descriptions.
 """
 
 from bbfmodels.model import load_schema
-from bbfmodels.tr140_cwmp.storageservice import StorageService
+from bbfmodels.tr140_cwmp.storageservice import COMMANDS, EVENTS, StorageService
 
 SOURCE = "tr-140-1-3-1-cwmp.xml"
 SPEC = "urn:broadband-forum-org:tr-140-1-3-1"
@@ -17,4 +17,4 @@ def schema():  # type: ignore[no-untyped-def]
     return load_schema(__name__)
 
 
-__all__ = ["StorageService", "MODEL", "SOURCE", "SPEC", "schema"]
+__all__ = ["StorageService", "COMMANDS", "EVENTS", "MODEL", "SOURCE", "SPEC", "schema"]

@@ -130,6 +130,38 @@ voice.problems("Device.Services.VoiceService.1.")
 Without a prefix, `from_flat` takes paths relative to the instance
 (`Capabilities.MaxLineCount`) and `problems` reports against instance 1.
 
+## Commands and events
+
+The USP packages carry a class for every command's input and output and
+every event's payload. `COMMANDS` maps a command path to its two classes
+and `EVENTS` an event path to its class, which is how a controller picks
+the class for the response to the Operate it sent:
+
+```python
+from bbfmodels.tr181_usp import COMMANDS, EVENTS
+
+request_cls, response_cls = COMMANDS["Device.IP.Diagnostics.TraceRoute()"]
+request = request_cls(Host="example.net", NumberOfTries=3)
+request.flatten("")           # {'Host': 'example.net', 'NumberOfTries': '3'}, the input_args of an Operate
+
+response = response_cls.from_flat({
+    "Status": "Complete",
+    "ResponseTime": "12",
+    "RouteHops.1.Host": "gw",
+    "RouteHops.1.RTTimes": "1,2,3",
+})
+response.RouteHops[1].RTTimes   # [1, 2, 3]
+response.problems()             # checked like any parameter
+
+boot = EVENTS["Device.Boot!"].from_flat({"Cause": "LocalReboot"})
+```
+
+The classes are importable by name too, `IP_Diagnostics_TraceRoute_Input`
+from `bbfmodels.tr181_usp.ip`, named by the owning object, the command
+and the side. In the schema the arguments live under
+`Device.IP.Diagnostics.TraceRoute().Input.` and `.Output.`, and an event's
+under `Device.Boot!.`, which is where `problems()` reports them.
+
 ## Names that had to change
 
 Three kinds of Forum name cannot be a Python field as written. The field

@@ -37,3 +37,77 @@ class GroupKeyManagementCluster(_Model):
     GroupTable: dict[int, GroupKeyManagementCluster_GroupTable] = _Field(default_factory=dict)
 
 
+class GroupKeyManagementCluster_KeySetWrite_Input_GroupKeySet(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetWrite().Input.GroupKeySet."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupKeySecurityPolicy: _Annotated[_Literal['TrustFirst', 'CacheAndSync'] | str | None, _Param(_BaseType.STRING)] = None
+    EpochKey0: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime0: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey1: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime1: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey2: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime2: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    GroupKeyMulticastPolicy: _Annotated[_Literal['PerGroupID', 'AllNodes'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class GroupKeyManagementCluster_KeySetWrite_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetWrite().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySet: GroupKeyManagementCluster_KeySetWrite_Input_GroupKeySet | None = _Field(default=None)
+
+
+class GroupKeyManagementCluster_KeySetWrite_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetWrite().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class GroupKeyManagementCluster_KeySetRead_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRead().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GroupKeyManagementCluster_KeySetRead_Output_GroupKeySet(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRead().Output.GroupKeySet."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupKeySecurityPolicy: _Annotated[_Literal['TrustFirst', 'CacheAndSync'] | str | None, _Param(_BaseType.STRING)] = None
+    EpochKey0: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime0: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey1: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime1: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey2: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime2: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    GroupKeyMulticastPolicy: _Annotated[_Literal['PerGroupID', 'AllNodes'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class GroupKeyManagementCluster_KeySetRead_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRead().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySet: GroupKeyManagementCluster_KeySetRead_Output_GroupKeySet | None = _Field(default=None)
+
+
+class GroupKeyManagementCluster_KeySetRemove_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRemove().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GroupKeyManagementCluster_KeySetRemove_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRemove().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetWrite()": (GroupKeyManagementCluster_KeySetWrite_Input, GroupKeyManagementCluster_KeySetWrite_Output),
+    "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRead()": (GroupKeyManagementCluster_KeySetRead_Input, GroupKeyManagementCluster_KeySetRead_Output),
+    "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRemove()": (GroupKeyManagementCluster_KeySetRemove_Input, GroupKeyManagementCluster_KeySetRemove_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -75,3 +75,41 @@ class ATM(_Model):
     Diagnostics: ATM_Diagnostics | None = _Field(default=None)
 
 
+class ATM_Link_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.ATM.Link.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class ATM_Link_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.ATM.Link.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class ATM_Diagnostics_F5Loopback_Input(_Model):
+    __bbf_path__ = "Device.ATM.Diagnostics.F5Loopback().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NumberOfRepetitions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ATM_Diagnostics_F5Loopback_Output(_Model):
+    __bbf_path__ = "Device.ATM.Diagnostics.F5Loopback().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    SuccessCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FailureCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AverageResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinimumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.ATM.Link.{i}.Stats.Reset()": (ATM_Link_Stats_Reset_Input, ATM_Link_Stats_Reset_Output),
+    "Device.ATM.Diagnostics.F5Loopback()": (ATM_Diagnostics_F5Loopback_Input, ATM_Diagnostics_F5Loopback_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

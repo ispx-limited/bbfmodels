@@ -72,3 +72,38 @@ class ServiceAreaCluster(_Model):
     Progress: dict[int, ServiceAreaCluster_Progress] = _Field(default_factory=dict)
 
 
+class ServiceAreaCluster_SelectAreas_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ServiceAreaCluster.{i}.SelectAreas().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewAreas: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class ServiceAreaCluster_SelectAreas_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ServiceAreaCluster.{i}.SelectAreas().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'UnsupportedArea', 'InvalidInMode', 'InvalidSet'] | str | None, _Param(_BaseType.STRING)] = None
+    StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ServiceAreaCluster_SkipArea_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ServiceAreaCluster.{i}.SkipArea().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SkippedArea: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ServiceAreaCluster_SkipArea_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ServiceAreaCluster.{i}.SkipArea().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidAreaList', 'InvalidInMode', 'InvalidSkippedArea'] | str | None, _Param(_BaseType.STRING)] = None
+    StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.ServiceAreaCluster.{i}.SelectAreas()": (ServiceAreaCluster_SelectAreas_Input, ServiceAreaCluster_SelectAreas_Output),
+    "MatterService.{i}.ServiceAreaCluster.{i}.SkipArea()": (ServiceAreaCluster_SkipArea_Input, ServiceAreaCluster_SkipArea_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -58,6 +58,24 @@ A typo is caught twice: the type checker rejects `Device.WiFi.Radioo`, and
 at runtime it raises `AttributeError` naming the object that has no such
 member.
 
+## Commands and events
+
+In the USP packages a command or event is a member like any other, named
+without its suffix and rendered with it:
+
+```python
+from bbfmodels.tr181_usp.paths import Device
+
+str(Device.IP.Diagnostics.TraceRoute)             # 'Device.IP.Diagnostics.TraceRoute()'
+Device.IP.Diagnostics.TraceRoute.definition.is_async   # True
+str(Device.Boot)                                  # 'Device.Boot!'
+str(Device.child("Reboot()"))                     # the same by its full name
+```
+
+When a parameter or object already has the bare name, the command or event
+takes a trailing underscore: Matter's `ValveFault` parameter sits beside
+its `ValveFault!` event, reached as `ValveFault_`.
+
 ## Names the schema does not know
 
 A vendor parameter whose document was not generated is reached

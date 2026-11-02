@@ -97,3 +97,56 @@ class Hardware(_Model):
     Buttons: Hardware_Buttons | None = _Field(default=None)
 
 
+class Hardware_PowerManagement_Standby_EnterStandbyMode_Input(_Model):
+    __bbf_path__ = "Device.Hardware.PowerManagement.Standby.EnterStandbyMode().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Mode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Hardware_PowerManagement_Standby_EnterStandbyMode_Output(_Model):
+    __bbf_path__ = "Device.Hardware.PowerManagement.Standby.EnterStandbyMode().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Hardware_Buttons_Button_Push_Input(_Model):
+    __bbf_path__ = "Device.Hardware.Buttons.Button.{i}.Push().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Hardware_Buttons_Button_Push_Output(_Model):
+    __bbf_path__ = "Device.Hardware.Buttons.Button.{i}.Push().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Hardware_Buttons_Button_Release_Input(_Model):
+    __bbf_path__ = "Device.Hardware.Buttons.Button.{i}.Release().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Hardware_Buttons_Button_Release_Output(_Model):
+    __bbf_path__ = "Device.Hardware.Buttons.Button.{i}.Release().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Hardware_Buttons_Button_TriggerCondition_Triggered_Event(_Model):
+    __bbf_path__ = "Device.Hardware.Buttons.Button.{i}.TriggerCondition.{i}.Triggered!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ButtonName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Type: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Interval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.Hardware.PowerManagement.Standby.EnterStandbyMode()": (Hardware_PowerManagement_Standby_EnterStandbyMode_Input, Hardware_PowerManagement_Standby_EnterStandbyMode_Output),
+    "Device.Hardware.Buttons.Button.{i}.Push()": (Hardware_Buttons_Button_Push_Input, Hardware_Buttons_Button_Push_Output),
+    "Device.Hardware.Buttons.Button.{i}.Release()": (Hardware_Buttons_Button_Release_Input, Hardware_Buttons_Button_Release_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.Hardware.Buttons.Button.{i}.TriggerCondition.{i}.Triggered!": Hardware_Buttons_Button_TriggerCondition_Triggered_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

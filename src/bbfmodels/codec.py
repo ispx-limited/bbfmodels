@@ -36,6 +36,29 @@ class CodecError(ValueError):
     """The text is not a value of the parameter's type."""
 
 
+_XSD = {
+    BaseType.STRING: "xsd:string",
+    BaseType.INT: "xsd:int",
+    BaseType.UNSIGNED_INT: "xsd:unsignedInt",
+    BaseType.LONG: "xsd:long",
+    BaseType.UNSIGNED_LONG: "xsd:unsignedLong",
+    BaseType.BOOLEAN: "xsd:boolean",
+    BaseType.DATE_TIME: "xsd:dateTime",
+    BaseType.HEX_BINARY: "xsd:hexBinary",
+    BaseType.BASE64: "xsd:base64Binary",
+    BaseType.DECIMAL: "xsd:decimal",
+}
+
+
+def xsd_type(syntax: Syntax) -> str:
+    """The ``xsi:type`` a CWMP SetParameterValues carries for a parameter.
+
+    TR-069 types every value on the wire with the XML Schema name of its
+    base type; a list is a string whatever its items are.
+    """
+    return "xsd:string" if syntax.list is not None else _XSD[syntax.base_type]
+
+
 # -- scalars ----------------------------------------------------------------
 
 

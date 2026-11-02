@@ -4,6 +4,7 @@
 
 from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
+from decimal import Decimal as _Decimal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
@@ -198,4 +199,424 @@ class IP(_Model):
     ActivePort: dict[int, IP_ActivePort] = _Field(default_factory=dict)
     Diagnostics: IP_Diagnostics | None = _Field(default=None)
 
+
+class IP_Interface_Reset_Input(_Model):
+    __bbf_path__ = "Device.IP.Interface.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IP_Interface_Reset_Output(_Model):
+    __bbf_path__ = "Device.IP.Interface.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IP_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.IP.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IP_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.IP.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IP_Diagnostics_IPPing_Input(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.IPPing().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
+    Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NumberOfRepetitions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DataBlockSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DSCP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IP_Diagnostics_IPPing_Output(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.IPPing().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    IPAddressUsed: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SuccessCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FailureCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AverageResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinimumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AverageResponseTimeDetailed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinimumResponseTimeDetailed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumResponseTimeDetailed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IP_Diagnostics_TraceRoute_Input(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.TraceRoute().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
+    Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NumberOfTries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DataBlockSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DSCP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxHopCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IP_Diagnostics_TraceRoute_Output_RouteHops(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.TraceRoute().Output.RouteHops.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    HostAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RTTimes: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class IP_Diagnostics_TraceRoute_Output(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.TraceRoute().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_MaxHopCountExceeded', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    IPAddressUsed: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RouteHops: dict[int, IP_Diagnostics_TraceRoute_Output_RouteHops] = _Field(default_factory=dict)
+
+
+class IP_Diagnostics_DownloadDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.DownloadDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DownloadURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DSCP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EthernetPriority: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeBasedTestDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeBasedTestMeasurementInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeBasedTestMeasurementOffset: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
+    NumberOfConnections: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EnablePerConnectionResults: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class IP_Diagnostics_DownloadDiagnostics_Output_PerConnectionResult(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.DownloadDiagnostics().Output.PerConnectionResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ROMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    BOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TestBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TCPOpenRequestTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TCPOpenResponseTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+
+
+class IP_Diagnostics_DownloadDiagnostics_Output_IncrementalResult(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.DownloadDiagnostics().Output.IncrementalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TestBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EndTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+
+
+class IP_Diagnostics_DownloadDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.DownloadDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Complete', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_InitConnectionFailed', 'Error_NoResponse', 'Error_TransferFailed', 'Error_PasswordRequestFailed', 'Error_LoginFailed', 'Error_NoTransferMode', 'Error_NoPASV', 'Error_IncorrectSize', 'Error_Timeout', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    IPAddressUsed: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ROMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    BOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TestBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TestBytesReceivedUnderFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceivedUnderFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSentUnderFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PeriodOfFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TCPOpenRequestTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TCPOpenResponseTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    PerConnectionResult: dict[int, IP_Diagnostics_DownloadDiagnostics_Output_PerConnectionResult] = _Field(default_factory=dict)
+    IncrementalResult: dict[int, IP_Diagnostics_DownloadDiagnostics_Output_IncrementalResult] = _Field(default_factory=dict)
+
+
+class IP_Diagnostics_UploadDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.UploadDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UploadURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DSCP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EthernetPriority: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestFileLength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TimeBasedTestDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeBasedTestMeasurementInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeBasedTestMeasurementOffset: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
+    NumberOfConnections: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EnablePerConnectionResults: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class IP_Diagnostics_UploadDiagnostics_Output_PerConnectionResult(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.UploadDiagnostics().Output.PerConnectionResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ROMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    BOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TestBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TCPOpenRequestTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TCPOpenResponseTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+
+
+class IP_Diagnostics_UploadDiagnostics_Output_IncrementalResult(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.UploadDiagnostics().Output.IncrementalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TestBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EndTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+
+
+class IP_Diagnostics_UploadDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.UploadDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Complete', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_InitConnectionFailed', 'Error_NoResponse', 'Error_PasswordRequestFailed', 'Error_LoginFailed', 'Error_NoTransferMode', 'Error_NoPASV', 'Error_NoCWD', 'Error_NoSTOR', 'Error_NoTransferComplete', 'Error_Timeout', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    IPAddressUsed: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ROMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    BOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TestBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TestBytesSentUnderFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesReceivedUnderFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TotalBytesSentUnderFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PeriodOfFullLoading: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TCPOpenRequestTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TCPOpenResponseTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    PerConnectionResult: dict[int, IP_Diagnostics_UploadDiagnostics_Output_PerConnectionResult] = _Field(default_factory=dict)
+    IncrementalResult: dict[int, IP_Diagnostics_UploadDiagnostics_Output_IncrementalResult] = _Field(default_factory=dict)
+
+
+class IP_Diagnostics_UDPEchoDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.UDPEchoDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NumberOfRepetitions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DataBlockSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DSCP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InterTransmissionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
+    EnableIndividualPacketResults: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class IP_Diagnostics_UDPEchoDiagnostics_Output_IndividualPacketResult(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.UDPEchoDiagnostics().Output.IndividualPacketResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PacketSuccess: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    PacketSendTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    PacketReceiveTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TestGenSN: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestRespSN: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestRespRcvTimeStamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestRespReplyTimeStamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestRespReplyFailureCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IP_Diagnostics_UDPEchoDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.UDPEchoDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Complete', 'Error_CannotResolveHostName', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    IPAddressUsed: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SuccessCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FailureCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AverageResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinimumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    IndividualPacketResult: dict[int, IP_Diagnostics_UDPEchoDiagnostics_Output_IndividualPacketResult] = _Field(default_factory=dict)
+
+
+class IP_Diagnostics_IPLayerCapacity_Input(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacity().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Role: _Annotated[_Literal['Receiver', 'Sender'] | str | None, _Param(_BaseType.STRING)] = None
+    Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ServerList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    JumboFramesPermitted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MTU: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalInterfaceRateIncluded: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AuthenticationEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AuthenticationCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AuthenticationKeyID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AuthenticationAlias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AuthenticationKeyFileLocation: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NumberOfConnections: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FlowCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumFlows: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EthernetPriority: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DSCP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
+    UDPPayloadMin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UDPPayloadMax: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UDPPayloadContent: _Annotated[_Literal['zeroes', 'ones', 'alternates0and1', 'random'] | str | None, _Param(_BaseType.STRING)] = None
+    PortMin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PortMax: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PortOptionalMin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PortOptionalMax: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestType: _Annotated[_Literal['Search', 'Fixed'] | str | None, _Param(_BaseType.STRING)] = None
+    IPDVEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    IPRREnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    RIPREnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    PreambleDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumTestBandwidth: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartSendingRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartSendingRateIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NumberTestSubIntervals: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NumberFirstModeTestSubIntervals: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestSubInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StatusFeedbackInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeoutNoTraffic: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeoutNoTestTraffic: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeoutNoStatusMessage: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Tmax: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TmaxRTT: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimestampResolution: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SeqErrThresh: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ReordDupIgnoreEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    LowerThresh: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UpperThresh: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RetryThresh: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HighSpeedDelta: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RateAdjAlgorithm: _Annotated[_Literal['B', 'C'] | str | None, _Param(_BaseType.STRING)] = None
+    SlowAdjThresh: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HSpeedThresh: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IP_Diagnostics_IPLayerCapacity_Output_ModalResult(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacity().Output.ModalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MaxIPLayerCapacity: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    TimeOfMax: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    MaxETHCapacityNoFCS: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MaxETHCapacityWithFCS: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MaxETHCapacityWithFCSVLAN: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    LossRatioAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    RTTRangeAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    PDVRangeAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MinOnewayDelayAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReorderedRatioAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReplicatedRatioAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    InterfaceEthMbpsAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+
+
+class IP_Diagnostics_IPLayerCapacity_Output_IncrementalResult(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacity().Output.IncrementalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    IPLayerCapacity: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    TimeOfSubInterval: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    LossRatio: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    RTTRange: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    PDVRange: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MinOnewayDelay: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReorderedRatio: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReplicatedRatio: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    InterfaceEthMbps: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+
+
+class IP_Diagnostics_IPLayerCapacity_Output(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacity().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Complete', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_InitConnectionFailed', 'Error_NoResponse', 'Error_PasswordRequestFailed', 'Error_LoginFailed', 'Error_RejectedByRemote', 'Error_IncorrectSize', 'Error_Timeout', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    StatusCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StatusMessage: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    TmaxUsed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxIPLayerCapacity: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    TimeOfMax: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    MaxETHCapacityNoFCS: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MaxETHCapacityWithFCS: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MaxETHCapacityWithFCSVLAN: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    LossRatioAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    RTTRangeAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    PDVRangeAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MinOnewayDelayAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReorderedRatioAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReplicatedRatioAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    RTTMinAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    RTTMaxAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    InterfaceEthMbpsAtMax: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    IPLayerCapacitySummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    LossRatioSummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    RTTRangeSummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    PDVRangeSummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MinOnewayDelaySummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MinRTTSummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReorderedRatioSummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReplicatedRatioSummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    InterfaceEthMbpsSummary: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    TmaxRTTUsed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimestampResolutionUsed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ActiveFlows: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ModalResult: dict[int, IP_Diagnostics_IPLayerCapacity_Output_ModalResult] = _Field(default_factory=dict)
+    IncrementalResult: dict[int, IP_Diagnostics_IPLayerCapacity_Output_IncrementalResult] = _Field(default_factory=dict)
+
+
+class IP_Diagnostics_ServerSelectionDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.ServerSelectionDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
+    Protocol: _Annotated[_Literal['ICMP', 'UDP Echo'] | str | None, _Param(_BaseType.STRING)] = None
+    HostList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    NumberOfRepetitions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IP_Diagnostics_ServerSelectionDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.ServerSelectionDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Complete', 'Error_CannotResolveHostName', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    FastestHost: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MinimumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AverageResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    IPAddressUsed: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class IP_Diagnostics_IPLayerCapacityIncrementalResult_Event(_Model):
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacityIncrementalResult!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    IPLayerCapacity: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    TimeOfSubInterval: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    LossRatio: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    RTTRange: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    PDVRange: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    MinOnewayDelay: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReorderedRatio: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    ReplicatedRatio: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    InterfaceEthMbps: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.IP.Interface.{i}.Reset()": (IP_Interface_Reset_Input, IP_Interface_Reset_Output),
+    "Device.IP.Interface.{i}.Stats.Reset()": (IP_Interface_Stats_Reset_Input, IP_Interface_Stats_Reset_Output),
+    "Device.IP.Diagnostics.IPPing()": (IP_Diagnostics_IPPing_Input, IP_Diagnostics_IPPing_Output),
+    "Device.IP.Diagnostics.TraceRoute()": (IP_Diagnostics_TraceRoute_Input, IP_Diagnostics_TraceRoute_Output),
+    "Device.IP.Diagnostics.DownloadDiagnostics()": (IP_Diagnostics_DownloadDiagnostics_Input, IP_Diagnostics_DownloadDiagnostics_Output),
+    "Device.IP.Diagnostics.UploadDiagnostics()": (IP_Diagnostics_UploadDiagnostics_Input, IP_Diagnostics_UploadDiagnostics_Output),
+    "Device.IP.Diagnostics.UDPEchoDiagnostics()": (IP_Diagnostics_UDPEchoDiagnostics_Input, IP_Diagnostics_UDPEchoDiagnostics_Output),
+    "Device.IP.Diagnostics.IPLayerCapacity()": (IP_Diagnostics_IPLayerCapacity_Input, IP_Diagnostics_IPLayerCapacity_Output),
+    "Device.IP.Diagnostics.ServerSelectionDiagnostics()": (IP_Diagnostics_ServerSelectionDiagnostics_Input, IP_Diagnostics_ServerSelectionDiagnostics_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.IP.Diagnostics.IPLayerCapacityIncrementalResult!": IP_Diagnostics_IPLayerCapacityIncrementalResult_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

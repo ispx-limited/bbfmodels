@@ -119,3 +119,10 @@ class UPA(_Model):
     Diagnostics: UPA_Diagnostics | None = _Field(default=None)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

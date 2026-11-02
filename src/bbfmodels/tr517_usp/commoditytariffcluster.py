@@ -273,3 +273,92 @@ class CommodityTariffCluster(_Model):
     NextTariffComponents: dict[int, CommodityTariffCluster_NextTariffComponents] = _Field(default_factory=dict)
 
 
+class CommodityTariffCluster_GetTariffComponent_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TariffComponentID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_Price(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent().Output.TariffComponent.Price."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PriceType: _Annotated[_Literal['Standard', 'Critical', 'Virtual', 'Incentive', 'IncentiveSignal'] | str | None, _Param(_BaseType.STRING)] = None
+    Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    PriceLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_AuxiliaryLoad(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent().Output.TariffComponent.AuxiliaryLoad."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Number: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RequiredState: _Annotated[_Literal['Off', 'On', 'None'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_PeakPeriod(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent().Output.TariffComponent.PeakPeriod."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Severity: _Annotated[_Literal['Unused', 'Low', 'Medium', 'High'] | str | None, _Param(_BaseType.STRING)] = None
+    PeakPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_PowerThreshold(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent().Output.TariffComponent.PowerThreshold."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PowerThreshold: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    ApparentPowerThreshold: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    PowerThresholdSource: _Annotated[_Literal['Contract', 'Regulator', 'Equipment'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CommodityTariffCluster_GetTariffComponent_Output_TariffComponent(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent().Output.TariffComponent."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TariffComponentID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FriendlyCredit: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Threshold: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Label: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Predicted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Price: CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_Price | None = _Field(default=None)
+    AuxiliaryLoad: CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_AuxiliaryLoad | None = _Field(default=None)
+    PeakPeriod: CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_PeakPeriod | None = _Field(default=None)
+    PowerThreshold: CommodityTariffCluster_GetTariffComponent_Output_TariffComponent_PowerThreshold | None = _Field(default=None)
+
+
+class CommodityTariffCluster_GetTariffComponent_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Label: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DayEntryIDs: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    TariffComponent: CommodityTariffCluster_GetTariffComponent_Output_TariffComponent | None = _Field(default=None)
+
+
+class CommodityTariffCluster_GetDayEntry_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetDayEntry().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DayEntryID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CommodityTariffCluster_GetDayEntry_Output_DayEntry(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetDayEntry().Output.DayEntry."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DayEntryID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RandomizationOffset: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    RandomizationType: _Annotated[_Literal['None', 'Fixed', 'Random', 'RandomPositive', 'RandomNegative'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CommodityTariffCluster_GetDayEntry_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityTariffCluster.{i}.GetDayEntry().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DayEntry: CommodityTariffCluster_GetDayEntry_Output_DayEntry | None = _Field(default=None)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent()": (CommodityTariffCluster_GetTariffComponent_Input, CommodityTariffCluster_GetTariffComponent_Output),
+    "MatterService.{i}.CommodityTariffCluster.{i}.GetDayEntry()": (CommodityTariffCluster_GetDayEntry_Input, CommodityTariffCluster_GetDayEntry_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

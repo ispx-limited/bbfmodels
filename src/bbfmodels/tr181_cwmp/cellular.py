@@ -145,3 +145,10 @@ class Cellular(_Model):
     AccessPoint: dict[int, Cellular_AccessPoint] = _Field(default_factory=dict)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

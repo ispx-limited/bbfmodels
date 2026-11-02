@@ -90,3 +90,164 @@ class DeviceEnergyManagementCluster(_Model):
     Forecast: DeviceEnergyManagementCluster_Forecast | None = _Field(default=None)
 
 
+class DeviceEnergyManagementCluster_PowerAdjustRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Power: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Cause: _Annotated[_Literal['LocalOptimization', 'GridOptimization'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_PowerAdjustRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_CancelPowerAdjustRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.CancelPowerAdjustRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DeviceEnergyManagementCluster_CancelPowerAdjustRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.CancelPowerAdjustRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_StartTimeAdjustRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.StartTimeAdjustRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    RequestedStartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Cause: _Annotated[_Literal['LocalOptimization', 'GridOptimization'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_StartTimeAdjustRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.StartTimeAdjustRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_PauseRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PauseRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Cause: _Annotated[_Literal['LocalOptimization', 'GridOptimization'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_PauseRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PauseRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_ResumeRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.ResumeRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DeviceEnergyManagementCluster_ResumeRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.ResumeRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_ModifyForecastRequest_Input_SlotAdjustments(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.ModifyForecastRequest().Input.SlotAdjustments.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SlotIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NominalPower: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DeviceEnergyManagementCluster_ModifyForecastRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.ModifyForecastRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ForecastID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Cause: _Annotated[_Literal['LocalOptimization', 'GridOptimization'] | str | None, _Param(_BaseType.STRING)] = None
+    SlotAdjustments: dict[int, DeviceEnergyManagementCluster_ModifyForecastRequest_Input_SlotAdjustments] = _Field(default_factory=dict)
+
+
+class DeviceEnergyManagementCluster_ModifyForecastRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.ModifyForecastRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_RequestConstraintBasedForecast_Input_Constraints(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.RequestConstraintBasedForecast().Input.Constraints.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NominalPower: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    MaximumEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    LoadControl: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class DeviceEnergyManagementCluster_RequestConstraintBasedForecast_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.RequestConstraintBasedForecast().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Cause: _Annotated[_Literal['LocalOptimization', 'GridOptimization'] | str | None, _Param(_BaseType.STRING)] = None
+    Constraints: dict[int, DeviceEnergyManagementCluster_RequestConstraintBasedForecast_Input_Constraints] = _Field(default_factory=dict)
+
+
+class DeviceEnergyManagementCluster_RequestConstraintBasedForecast_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.RequestConstraintBasedForecast().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_CancelRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.CancelRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DeviceEnergyManagementCluster_CancelRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.CancelRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceEnergyManagementCluster_PowerAdjustStart_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustStart!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DeviceEnergyManagementCluster_PowerAdjustEnd_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustEnd!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Cause: _Annotated[_Literal['NormalCompletion', 'Offline', 'Fault', 'UserOptOut', 'Cancelled'] | str | None, _Param(_BaseType.STRING)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EnergyUse: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class DeviceEnergyManagementCluster_Paused_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.Paused!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DeviceEnergyManagementCluster_Resumed_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DeviceEnergyManagementCluster.{i}.Resumed!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Cause: _Annotated[_Literal['NormalCompletion', 'Offline', 'Fault', 'UserOptOut', 'Cancelled'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustRequest()": (DeviceEnergyManagementCluster_PowerAdjustRequest_Input, DeviceEnergyManagementCluster_PowerAdjustRequest_Output),
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.CancelPowerAdjustRequest()": (DeviceEnergyManagementCluster_CancelPowerAdjustRequest_Input, DeviceEnergyManagementCluster_CancelPowerAdjustRequest_Output),
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.StartTimeAdjustRequest()": (DeviceEnergyManagementCluster_StartTimeAdjustRequest_Input, DeviceEnergyManagementCluster_StartTimeAdjustRequest_Output),
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PauseRequest()": (DeviceEnergyManagementCluster_PauseRequest_Input, DeviceEnergyManagementCluster_PauseRequest_Output),
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.ResumeRequest()": (DeviceEnergyManagementCluster_ResumeRequest_Input, DeviceEnergyManagementCluster_ResumeRequest_Output),
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.ModifyForecastRequest()": (DeviceEnergyManagementCluster_ModifyForecastRequest_Input, DeviceEnergyManagementCluster_ModifyForecastRequest_Output),
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.RequestConstraintBasedForecast()": (DeviceEnergyManagementCluster_RequestConstraintBasedForecast_Input, DeviceEnergyManagementCluster_RequestConstraintBasedForecast_Output),
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.CancelRequest()": (DeviceEnergyManagementCluster_CancelRequest_Input, DeviceEnergyManagementCluster_CancelRequest_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustStart!": DeviceEnergyManagementCluster_PowerAdjustStart_Event,
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustEnd!": DeviceEnergyManagementCluster_PowerAdjustEnd_Event,
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.Paused!": DeviceEnergyManagementCluster_Paused_Event,
+    "MatterService.{i}.DeviceEnergyManagementCluster.{i}.Resumed!": DeviceEnergyManagementCluster_Resumed_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

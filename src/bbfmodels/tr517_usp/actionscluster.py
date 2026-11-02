@@ -41,3 +41,202 @@ class ActionsCluster(_Model):
     EndpointLists: dict[int, ActionsCluster_EndpointLists] = _Field(default_factory=dict)
 
 
+class ActionsCluster_InstantAction_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.InstantAction().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_InstantAction_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.InstantAction().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_InstantActionWithTransition_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.InstantActionWithTransition().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_InstantActionWithTransition_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.InstantActionWithTransition().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_StartAction_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StartAction().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_StartAction_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StartAction().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_StartActionWithDuration_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StartActionWithDuration().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_StartActionWithDuration_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StartActionWithDuration().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_StopAction_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StopAction().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_StopAction_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StopAction().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_PauseAction_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.PauseAction().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_PauseAction_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.PauseAction().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_PauseActionWithDuration_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.PauseActionWithDuration().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_PauseActionWithDuration_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.PauseActionWithDuration().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_ResumeAction_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.ResumeAction().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_ResumeAction_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.ResumeAction().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_EnableAction_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.EnableAction().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_EnableAction_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.EnableAction().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_EnableActionWithDuration_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.EnableActionWithDuration().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_EnableActionWithDuration_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.EnableActionWithDuration().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_DisableAction_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.DisableAction().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_DisableAction_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.DisableAction().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_DisableActionWithDuration_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.DisableActionWithDuration().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ActionsCluster_DisableActionWithDuration_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.DisableActionWithDuration().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_StateChanged_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StateChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NewState: _Annotated[_Literal['Inactive', 'Active', 'Paused', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ActionsCluster_ActionFailed_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.ActionFailed!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InvokeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NewState: _Annotated[_Literal['Inactive', 'Active', 'Paused', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
+    Error: _Annotated[_Literal['Unknown', 'Interrupted'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.ActionsCluster.{i}.InstantAction()": (ActionsCluster_InstantAction_Input, ActionsCluster_InstantAction_Output),
+    "MatterService.{i}.ActionsCluster.{i}.InstantActionWithTransition()": (ActionsCluster_InstantActionWithTransition_Input, ActionsCluster_InstantActionWithTransition_Output),
+    "MatterService.{i}.ActionsCluster.{i}.StartAction()": (ActionsCluster_StartAction_Input, ActionsCluster_StartAction_Output),
+    "MatterService.{i}.ActionsCluster.{i}.StartActionWithDuration()": (ActionsCluster_StartActionWithDuration_Input, ActionsCluster_StartActionWithDuration_Output),
+    "MatterService.{i}.ActionsCluster.{i}.StopAction()": (ActionsCluster_StopAction_Input, ActionsCluster_StopAction_Output),
+    "MatterService.{i}.ActionsCluster.{i}.PauseAction()": (ActionsCluster_PauseAction_Input, ActionsCluster_PauseAction_Output),
+    "MatterService.{i}.ActionsCluster.{i}.PauseActionWithDuration()": (ActionsCluster_PauseActionWithDuration_Input, ActionsCluster_PauseActionWithDuration_Output),
+    "MatterService.{i}.ActionsCluster.{i}.ResumeAction()": (ActionsCluster_ResumeAction_Input, ActionsCluster_ResumeAction_Output),
+    "MatterService.{i}.ActionsCluster.{i}.EnableAction()": (ActionsCluster_EnableAction_Input, ActionsCluster_EnableAction_Output),
+    "MatterService.{i}.ActionsCluster.{i}.EnableActionWithDuration()": (ActionsCluster_EnableActionWithDuration_Input, ActionsCluster_EnableActionWithDuration_Output),
+    "MatterService.{i}.ActionsCluster.{i}.DisableAction()": (ActionsCluster_DisableAction_Input, ActionsCluster_DisableAction_Output),
+    "MatterService.{i}.ActionsCluster.{i}.DisableActionWithDuration()": (ActionsCluster_DisableActionWithDuration_Input, ActionsCluster_DisableActionWithDuration_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ActionsCluster.{i}.StateChanged!": ActionsCluster_StateChanged_Event,
+    "MatterService.{i}.ActionsCluster.{i}.ActionFailed!": ActionsCluster_ActionFailed_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

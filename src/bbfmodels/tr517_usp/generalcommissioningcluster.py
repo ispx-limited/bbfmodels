@@ -33,3 +33,68 @@ class GeneralCommissioningCluster(_Model):
     BasicCommissioningInfo: GeneralCommissioningCluster_BasicCommissioningInfo | None = _Field(default=None)
 
 
+class GeneralCommissioningCluster_ArmFailSafe_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.ArmFailSafe().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ExpiryLengthSeconds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class GeneralCommissioningCluster_ArmFailSafe_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.ArmFailSafe().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorCode: _Annotated[_Literal['OK', 'ValueOutsideRange', 'InvalidAuthentication', 'NoFailSafe', 'BusyWithOtherAdmin', 'RequiredTCNotAccepted', 'TCAcknowledgementsNotReceived', 'TCMinVersionNotMet'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GeneralCommissioningCluster_SetRegulatoryConfig_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.SetRegulatoryConfig().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewRegulatoryConfig: _Annotated[_Literal['Indoor', 'Outdoor', 'IndoorOutdoor'] | str | None, _Param(_BaseType.STRING)] = None
+    CountryCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class GeneralCommissioningCluster_SetRegulatoryConfig_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.SetRegulatoryConfig().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorCode: _Annotated[_Literal['OK', 'ValueOutsideRange', 'InvalidAuthentication', 'NoFailSafe', 'BusyWithOtherAdmin', 'RequiredTCNotAccepted', 'TCAcknowledgementsNotReceived', 'TCMinVersionNotMet'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GeneralCommissioningCluster_CommissioningComplete_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.CommissioningComplete().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class GeneralCommissioningCluster_CommissioningComplete_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.CommissioningComplete().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorCode: _Annotated[_Literal['OK', 'ValueOutsideRange', 'InvalidAuthentication', 'NoFailSafe', 'BusyWithOtherAdmin', 'RequiredTCNotAccepted', 'TCAcknowledgementsNotReceived', 'TCMinVersionNotMet'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GeneralCommissioningCluster_SetTCAcknowledgements_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.SetTCAcknowledgements().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TCVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TCUserResponse: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GeneralCommissioningCluster_SetTCAcknowledgements_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralCommissioningCluster.{i}.SetTCAcknowledgements().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorCode: _Annotated[_Literal['OK', 'ValueOutsideRange', 'InvalidAuthentication', 'NoFailSafe', 'BusyWithOtherAdmin', 'RequiredTCNotAccepted', 'TCAcknowledgementsNotReceived', 'TCMinVersionNotMet'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.GeneralCommissioningCluster.{i}.ArmFailSafe()": (GeneralCommissioningCluster_ArmFailSafe_Input, GeneralCommissioningCluster_ArmFailSafe_Output),
+    "MatterService.{i}.GeneralCommissioningCluster.{i}.SetRegulatoryConfig()": (GeneralCommissioningCluster_SetRegulatoryConfig_Input, GeneralCommissioningCluster_SetRegulatoryConfig_Output),
+    "MatterService.{i}.GeneralCommissioningCluster.{i}.CommissioningComplete()": (GeneralCommissioningCluster_CommissioningComplete_Input, GeneralCommissioningCluster_CommissioningComplete_Output),
+    "MatterService.{i}.GeneralCommissioningCluster.{i}.SetTCAcknowledgements()": (GeneralCommissioningCluster_SetTCAcknowledgements_Input, GeneralCommissioningCluster_SetTCAcknowledgements_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -130,3 +130,91 @@ class Logical(_Model):
     TAP: Logical_TAP | None = _Field(default=None)
 
 
+class Logical_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Logical.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Logical.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TUN_CreateInterface_Input(_Model):
+    __bbf_path__ = "Device.Logical.TUN.CreateInterface().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TUN_CreateInterface_Output(_Model):
+    __bbf_path__ = "Device.Logical.TUN.CreateInterface().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    FileDescriptor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Logical_TUN_Interface_Delete_Input(_Model):
+    __bbf_path__ = "Device.Logical.TUN.Interface.{i}.Delete().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TUN_Interface_Delete_Output(_Model):
+    __bbf_path__ = "Device.Logical.TUN.Interface.{i}.Delete().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TUN_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Logical.TUN.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TUN_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Logical.TUN.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TAP_CreateInterface_Input(_Model):
+    __bbf_path__ = "Device.Logical.TAP.CreateInterface().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TAP_CreateInterface_Output(_Model):
+    __bbf_path__ = "Device.Logical.TAP.CreateInterface().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    FileDescriptor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Logical_TAP_Interface_Delete_Input(_Model):
+    __bbf_path__ = "Device.Logical.TAP.Interface.{i}.Delete().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TAP_Interface_Delete_Output(_Model):
+    __bbf_path__ = "Device.Logical.TAP.Interface.{i}.Delete().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TAP_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Logical.TAP.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Logical_TAP_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Logical.TAP.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.Logical.Interface.{i}.Stats.Reset()": (Logical_Interface_Stats_Reset_Input, Logical_Interface_Stats_Reset_Output),
+    "Device.Logical.TUN.CreateInterface()": (Logical_TUN_CreateInterface_Input, Logical_TUN_CreateInterface_Output),
+    "Device.Logical.TUN.Interface.{i}.Delete()": (Logical_TUN_Interface_Delete_Input, Logical_TUN_Interface_Delete_Output),
+    "Device.Logical.TUN.Interface.{i}.Stats.Reset()": (Logical_TUN_Interface_Stats_Reset_Input, Logical_TUN_Interface_Stats_Reset_Output),
+    "Device.Logical.TAP.CreateInterface()": (Logical_TAP_CreateInterface_Input, Logical_TAP_CreateInterface_Output),
+    "Device.Logical.TAP.Interface.{i}.Delete()": (Logical_TAP_Interface_Delete_Input, Logical_TAP_Interface_Delete_Output),
+    "Device.Logical.TAP.Interface.{i}.Stats.Reset()": (Logical_TAP_Interface_Stats_Reset_Input, Logical_TAP_Interface_Stats_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

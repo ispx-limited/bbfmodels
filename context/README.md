@@ -22,3 +22,4 @@ changes, a new record is written and the old one is marked superseded.
 | [0009](decisions/0009-the-tree-keeps-wire-text.md) | The data tree keeps wire text and decodes on demand | Accepted |
 | [0010](decisions/0010-generated-python-packages.md) | One generated package per document, lenient on input, strict in `problems` | Accepted |
 | [0011](decisions/0011-typed-paths-are-a-stub-over-the-schema.md) | Typed paths are a generic runtime plus a stub, not generated classes | Accepted |
+| [0012](decisions/0012-commands-and-events-have-argument-paths.md) | Commands and events get argument paths, and classes named by owner | Accepted |

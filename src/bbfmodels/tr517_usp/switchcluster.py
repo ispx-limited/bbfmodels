@@ -17,3 +17,61 @@ class SwitchCluster(_Model):
     MultiPressMax: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+class SwitchCluster_SwitchLatched_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.SwitchLatched!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_InitialPress_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.InitialPress!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_LongPress_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.LongPress!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_ShortRelease_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.ShortRelease!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_LongRelease_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.LongRelease!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_MultiPressOngoing_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.MultiPressOngoing!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CurrentNumberOfPressesCounted: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_MultiPressComplete_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.MultiPressComplete!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TotalNumberOfPressesCounted: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.SwitchCluster.{i}.SwitchLatched!": SwitchCluster_SwitchLatched_Event,
+    "MatterService.{i}.SwitchCluster.{i}.InitialPress!": SwitchCluster_InitialPress_Event,
+    "MatterService.{i}.SwitchCluster.{i}.LongPress!": SwitchCluster_LongPress_Event,
+    "MatterService.{i}.SwitchCluster.{i}.ShortRelease!": SwitchCluster_ShortRelease_Event,
+    "MatterService.{i}.SwitchCluster.{i}.LongRelease!": SwitchCluster_LongRelease_Event,
+    "MatterService.{i}.SwitchCluster.{i}.MultiPressOngoing!": SwitchCluster_MultiPressOngoing_Event,
+    "MatterService.{i}.SwitchCluster.{i}.MultiPressComplete!": SwitchCluster_MultiPressComplete_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

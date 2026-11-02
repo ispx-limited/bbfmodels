@@ -14,3 +14,22 @@ class LowPowerCluster(_Model):
     EndpointRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+class LowPowerCluster_Sleep_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LowPowerCluster.{i}.Sleep().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class LowPowerCluster_Sleep_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LowPowerCluster.{i}.Sleep().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.LowPowerCluster.{i}.Sleep()": (LowPowerCluster_Sleep_Input, LowPowerCluster_Sleep_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -27,3 +27,55 @@ class OTASoftwareUpdateRequestorCluster(_Model):
     DefaultOTAProviders: dict[int, OTASoftwareUpdateRequestorCluster_DefaultOTAProviders] = _Field(default_factory=dict)
 
 
+class OTASoftwareUpdateRequestorCluster_AnnounceOTAProvider_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.AnnounceOTAProvider().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ProviderNodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    VendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AnnouncementReason: _Annotated[_Literal['SimpleAnnouncement', 'UpdateAvailable', 'UrgentUpdateAvailable'] | str | None, _Param(_BaseType.STRING)] = None
+    MetadataForNode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Endpoint: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OTASoftwareUpdateRequestorCluster_AnnounceOTAProvider_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.AnnounceOTAProvider().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OTASoftwareUpdateRequestorCluster_StateTransition_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.StateTransition!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousState: _Annotated[_Literal['Unknown', 'Idle', 'Querying', 'DelayedOnQuery', 'Downloading', 'Applying', 'DelayedOnApply', 'RollingBack', 'DelayedOnUserConsent'] | str | None, _Param(_BaseType.STRING)] = None
+    NewState: _Annotated[_Literal['Unknown', 'Idle', 'Querying', 'DelayedOnQuery', 'Downloading', 'Applying', 'DelayedOnApply', 'RollingBack', 'DelayedOnUserConsent'] | str | None, _Param(_BaseType.STRING)] = None
+    Reason: _Annotated[_Literal['Unknown', 'Success', 'Failure', 'TimeOut', 'DelayByProvider'] | str | None, _Param(_BaseType.STRING)] = None
+    TargetSoftwareVersion: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class OTASoftwareUpdateRequestorCluster_VersionApplied_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.VersionApplied!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProductID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OTASoftwareUpdateRequestorCluster_DownloadError_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.DownloadError!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BytesDownloaded: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ProgressPercent: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    PlatformCode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.AnnounceOTAProvider()": (OTASoftwareUpdateRequestorCluster_AnnounceOTAProvider_Input, OTASoftwareUpdateRequestorCluster_AnnounceOTAProvider_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.StateTransition!": OTASoftwareUpdateRequestorCluster_StateTransition_Event,
+    "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.VersionApplied!": OTASoftwareUpdateRequestorCluster_VersionApplied_Event,
+    "MatterService.{i}.OTASoftwareUpdateRequestorCluster.{i}.DownloadError!": OTASoftwareUpdateRequestorCluster_DownloadError_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -41,3 +41,28 @@ class ElectricalGridConditionsCluster(_Model):
     ForecastConditions: dict[int, ElectricalGridConditionsCluster_ForecastConditions] = _Field(default_factory=dict)
 
 
+class ElectricalGridConditionsCluster_CurrentConditionsChanged_Event_CurrentConditions(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalGridConditionsCluster.{i}.CurrentConditionsChanged!.CurrentConditions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PeriodStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PeriodEnd: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GridCarbonIntensity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GridCarbonLevel: _Annotated[_Literal['Low', 'Medium', 'High'] | str | None, _Param(_BaseType.STRING)] = None
+    LocalCarbonIntensity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    LocalCarbonLevel: _Annotated[_Literal['Low', 'Medium', 'High'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ElectricalGridConditionsCluster_CurrentConditionsChanged_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalGridConditionsCluster.{i}.CurrentConditionsChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CurrentConditions: ElectricalGridConditionsCluster_CurrentConditionsChanged_Event_CurrentConditions | None = _Field(default=None)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ElectricalGridConditionsCluster.{i}.CurrentConditionsChanged!": ElectricalGridConditionsCluster_CurrentConditionsChanged_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

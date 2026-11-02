@@ -28,3 +28,72 @@ class WindowCoveringCluster(_Model):
     SafetyStatus: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
+class WindowCoveringCluster_UpOrOpen_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.UpOrOpen().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class WindowCoveringCluster_UpOrOpen_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.UpOrOpen().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WindowCoveringCluster_DownOrClose_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.DownOrClose().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class WindowCoveringCluster_DownOrClose_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.DownOrClose().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WindowCoveringCluster_StopMotion_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.StopMotion().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class WindowCoveringCluster_StopMotion_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.StopMotion().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WindowCoveringCluster_GoToLiftPercentage_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.GoToLiftPercentage().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LiftPercent100thsValue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WindowCoveringCluster_GoToLiftPercentage_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.GoToLiftPercentage().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WindowCoveringCluster_GoToTiltPercentage_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.GoToTiltPercentage().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TiltPercent100thsValue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WindowCoveringCluster_GoToTiltPercentage_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WindowCoveringCluster.{i}.GoToTiltPercentage().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.WindowCoveringCluster.{i}.UpOrOpen()": (WindowCoveringCluster_UpOrOpen_Input, WindowCoveringCluster_UpOrOpen_Output),
+    "MatterService.{i}.WindowCoveringCluster.{i}.DownOrClose()": (WindowCoveringCluster_DownOrClose_Input, WindowCoveringCluster_DownOrClose_Output),
+    "MatterService.{i}.WindowCoveringCluster.{i}.StopMotion()": (WindowCoveringCluster_StopMotion_Input, WindowCoveringCluster_StopMotion_Output),
+    "MatterService.{i}.WindowCoveringCluster.{i}.GoToLiftPercentage()": (WindowCoveringCluster_GoToLiftPercentage_Input, WindowCoveringCluster_GoToLiftPercentage_Output),
+    "MatterService.{i}.WindowCoveringCluster.{i}.GoToTiltPercentage()": (WindowCoveringCluster_GoToTiltPercentage_Input, WindowCoveringCluster_GoToTiltPercentage_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

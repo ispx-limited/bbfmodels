@@ -69,3 +69,135 @@ class ZoneManagementCluster(_Model):
     TwoDCartesianMax: ZoneManagementCluster_TwoDCartesianMax | None = _Field(default=None)
 
 
+class ZoneManagementCluster_CreateTwoDCartesianZone_Input_Zone_Vertices(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.CreateTwoDCartesianZone().Input.Zone.Vertices.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    X: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Y: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ZoneManagementCluster_CreateTwoDCartesianZone_Input_Zone(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.CreateTwoDCartesianZone().Input.Zone."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Use: _Annotated[_Literal['Motion', 'Privacy', 'Focus'] | str | None, _Param(_BaseType.STRING)] = None
+    Color: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Vertices: dict[int, ZoneManagementCluster_CreateTwoDCartesianZone_Input_Zone_Vertices] = _Field(default_factory=dict)
+
+
+class ZoneManagementCluster_CreateTwoDCartesianZone_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.CreateTwoDCartesianZone().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Zone: ZoneManagementCluster_CreateTwoDCartesianZone_Input_Zone | None = _Field(default=None)
+
+
+class ZoneManagementCluster_CreateTwoDCartesianZone_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.CreateTwoDCartesianZone().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ZoneID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ZoneManagementCluster_UpdateTwoDCartesianZone_Input_Zone_Vertices(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.UpdateTwoDCartesianZone().Input.Zone.Vertices.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    X: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Y: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ZoneManagementCluster_UpdateTwoDCartesianZone_Input_Zone(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.UpdateTwoDCartesianZone().Input.Zone."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Use: _Annotated[_Literal['Motion', 'Privacy', 'Focus'] | str | None, _Param(_BaseType.STRING)] = None
+    Color: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Vertices: dict[int, ZoneManagementCluster_UpdateTwoDCartesianZone_Input_Zone_Vertices] = _Field(default_factory=dict)
+
+
+class ZoneManagementCluster_UpdateTwoDCartesianZone_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.UpdateTwoDCartesianZone().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ZoneID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Zone: ZoneManagementCluster_UpdateTwoDCartesianZone_Input_Zone | None = _Field(default=None)
+
+
+class ZoneManagementCluster_UpdateTwoDCartesianZone_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.UpdateTwoDCartesianZone().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ZoneManagementCluster_RemoveZone_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.RemoveZone().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ZoneID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ZoneManagementCluster_RemoveZone_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.RemoveZone().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ZoneManagementCluster_CreateOrUpdateTrigger_Input_Trigger(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.CreateOrUpdateTrigger().Input.Trigger."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ZoneID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    InitialDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AugmentationDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BlindDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Sensitivity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ZoneManagementCluster_CreateOrUpdateTrigger_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.CreateOrUpdateTrigger().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Trigger: ZoneManagementCluster_CreateOrUpdateTrigger_Input_Trigger | None = _Field(default=None)
+
+
+class ZoneManagementCluster_CreateOrUpdateTrigger_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.CreateOrUpdateTrigger().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ZoneManagementCluster_RemoveTrigger_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.RemoveTrigger().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ZoneID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ZoneManagementCluster_RemoveTrigger_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.RemoveTrigger().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ZoneManagementCluster_ZoneTriggered_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.ZoneTriggered!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Reason: _Annotated[_Literal['Motion'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ZoneManagementCluster_ZoneStopped_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.ZoneStopped!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Reason: _Annotated[_Literal['ActionStopped', 'Timeout'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.ZoneManagementCluster.{i}.CreateTwoDCartesianZone()": (ZoneManagementCluster_CreateTwoDCartesianZone_Input, ZoneManagementCluster_CreateTwoDCartesianZone_Output),
+    "MatterService.{i}.ZoneManagementCluster.{i}.UpdateTwoDCartesianZone()": (ZoneManagementCluster_UpdateTwoDCartesianZone_Input, ZoneManagementCluster_UpdateTwoDCartesianZone_Output),
+    "MatterService.{i}.ZoneManagementCluster.{i}.RemoveZone()": (ZoneManagementCluster_RemoveZone_Input, ZoneManagementCluster_RemoveZone_Output),
+    "MatterService.{i}.ZoneManagementCluster.{i}.CreateOrUpdateTrigger()": (ZoneManagementCluster_CreateOrUpdateTrigger_Input, ZoneManagementCluster_CreateOrUpdateTrigger_Output),
+    "MatterService.{i}.ZoneManagementCluster.{i}.RemoveTrigger()": (ZoneManagementCluster_RemoveTrigger_Input, ZoneManagementCluster_RemoveTrigger_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ZoneManagementCluster.{i}.ZoneTriggered!": ZoneManagementCluster_ZoneTriggered_Event,
+    "MatterService.{i}.ZoneManagementCluster.{i}.ZoneStopped!": ZoneManagementCluster_ZoneStopped_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

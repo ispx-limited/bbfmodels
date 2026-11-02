@@ -48,4 +48,4 @@ pydantic models for TR-181, TR-098 and every service model, typed paths with aut
 
 ## Status
 
-Early. `pip install bbfmodels` gives the parser, the intermediate representation, the runtime and typed models for every document the Forum publishes. Commands and events in the generated models, JSON Schema and TypeScript come next.
+Early. `pip install bbfmodels` gives the parser, the intermediate representation, the runtime and typed models for every document the Forum publishes. JSON Schema and TypeScript come next.

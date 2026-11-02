@@ -16,3 +16,10 @@ class WakeOnLANCluster(_Model):
     LinkLocalAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

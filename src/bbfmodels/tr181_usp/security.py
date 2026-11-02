@@ -6,7 +6,7 @@ from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class Security_Certificate(_Model):
@@ -42,4 +42,114 @@ class Security(_Model):
     Certificate: dict[int, Security_Certificate] = _Field(default_factory=dict)
     CABundle: dict[int, Security_CABundle] = _Field(default_factory=dict)
 
+
+class Security_AddCertificateBundle_Input(_Model):
+    __bbf_path__ = "Device.Security.AddCertificateBundle().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BundleFormat: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Bundle: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Security_AddCertificateBundle_Output(_Model):
+    __bbf_path__ = "Device.Security.AddCertificateBundle().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Security_AddCABundle_Input(_Model):
+    __bbf_path__ = "Device.Security.AddCABundle().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Bundle: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Security_AddCABundle_Output(_Model):
+    __bbf_path__ = "Device.Security.AddCABundle().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NumberOfCertificates: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Security_Certificate_GetCertificateURI_Input(_Model):
+    __bbf_path__ = "Device.Security.Certificate.{i}.GetCertificateURI().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Security_Certificate_GetCertificateURI_Output(_Model):
+    __bbf_path__ = "Device.Security.Certificate.{i}.GetCertificateURI().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CertificateURI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    PrivateKeyURI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Security_Certificate_Delete_Input(_Model):
+    __bbf_path__ = "Device.Security.Certificate.{i}.Delete().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Security_Certificate_Delete_Output(_Model):
+    __bbf_path__ = "Device.Security.Certificate.{i}.Delete().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Security_CABundle_CADir_Input(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.CADir().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Security_CABundle_CADir_Output(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.CADir().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CADir: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Security_CABundle_CAFile_Input(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.CAFile().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Security_CABundle_CAFile_Output(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.CAFile().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CAFile: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Security_CABundle_Update_Input(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.Update().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Bundle: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Security_CABundle_Update_Output(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.Update().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    NumberOfCertificates: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Security_CABundle_Delete_Input(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.Delete().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Security_CABundle_Delete_Output(_Model):
+    __bbf_path__ = "Device.Security.CABundle.{i}.Delete().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.Security.AddCertificateBundle()": (Security_AddCertificateBundle_Input, Security_AddCertificateBundle_Output),
+    "Device.Security.AddCABundle()": (Security_AddCABundle_Input, Security_AddCABundle_Output),
+    "Device.Security.Certificate.{i}.GetCertificateURI()": (Security_Certificate_GetCertificateURI_Input, Security_Certificate_GetCertificateURI_Output),
+    "Device.Security.Certificate.{i}.Delete()": (Security_Certificate_Delete_Input, Security_Certificate_Delete_Output),
+    "Device.Security.CABundle.{i}.CADir()": (Security_CABundle_CADir_Input, Security_CABundle_CADir_Output),
+    "Device.Security.CABundle.{i}.CAFile()": (Security_CABundle_CAFile_Input, Security_CABundle_CAFile_Output),
+    "Device.Security.CABundle.{i}.Update()": (Security_CABundle_Update_Input, Security_CABundle_Update_Output),
+    "Device.Security.CABundle.{i}.Delete()": (Security_CABundle_Delete_Input, Security_CABundle_Delete_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

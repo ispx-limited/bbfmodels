@@ -24,3 +24,10 @@ class FixedLabelCluster(_Model):
     LabelList: dict[int, FixedLabelCluster_LabelList] = _Field(default_factory=dict)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

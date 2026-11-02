@@ -27,3 +27,61 @@ class MediaInputCluster(_Model):
     InputList: dict[int, MediaInputCluster_InputList] = _Field(default_factory=dict)
 
 
+class MediaInputCluster_SelectInput_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.SelectInput().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Index: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class MediaInputCluster_SelectInput_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.SelectInput().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaInputCluster_ShowInputStatus_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.ShowInputStatus().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaInputCluster_ShowInputStatus_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.ShowInputStatus().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaInputCluster_HideInputStatus_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.HideInputStatus().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaInputCluster_HideInputStatus_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.HideInputStatus().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaInputCluster_RenameInput_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.RenameInput().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Index: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaInputCluster_RenameInput_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaInputCluster.{i}.RenameInput().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.MediaInputCluster.{i}.SelectInput()": (MediaInputCluster_SelectInput_Input, MediaInputCluster_SelectInput_Output),
+    "MatterService.{i}.MediaInputCluster.{i}.ShowInputStatus()": (MediaInputCluster_ShowInputStatus_Input, MediaInputCluster_ShowInputStatus_Output),
+    "MatterService.{i}.MediaInputCluster.{i}.HideInputStatus()": (MediaInputCluster_HideInputStatus_Input, MediaInputCluster_HideInputStatus_Output),
+    "MatterService.{i}.MediaInputCluster.{i}.RenameInput()": (MediaInputCluster_RenameInput_Input, MediaInputCluster_RenameInput_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

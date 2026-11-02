@@ -16,3 +16,10 @@ class RelativeHumidityMeasurementCluster(_Model):
     Tolerance: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

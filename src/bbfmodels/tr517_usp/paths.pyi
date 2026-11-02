@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class Network_Device_PushAVStreamTransportCluster_CurrentConnections_TransportOptions_TriggerOptions_MotionZonesPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -1621,6 +1621,25 @@ class Network_Device_ColorControlClusterPath(ObjectPathBase):
     ColorTempPhysicalMaxMireds: ParamPath[int]
     CoupleColorTempToLevelMinMireds: ParamPath[int]
     StartUpColorTemperatureMireds: ParamPath[int]
+    MoveToHue: CommandPath
+    MoveHue: CommandPath
+    StepHue: CommandPath
+    MoveToSaturation: CommandPath
+    MoveSaturation: CommandPath
+    StepSaturation: CommandPath
+    MoveToHueAndSaturation: CommandPath
+    MoveToColor: CommandPath
+    MoveColor: CommandPath
+    StepColor: CommandPath
+    MoveToColorTemperature: CommandPath
+    EnhancedMoveToHue: CommandPath
+    EnhancedMoveHue: CommandPath
+    EnhancedStepHue: CommandPath
+    EnhancedMoveToHueAndSaturation: CommandPath
+    ColorLoopSet: CommandPath
+    StopMoveStep: CommandPath
+    MoveColorTemperature: CommandPath
+    StepColorTemperature: CommandPath
 
 class Network_Device_CommodityMeteringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1637,14 +1656,22 @@ class Network_Device_GroupKeyManagementClusterPath(ObjectPathBase):
     MaxGroupKeysPerFabric: ParamPath[int]
     GroupKeyMap: TablePath[Network_Device_GroupKeyManagementCluster_GroupKeyMapPath]
     GroupTable: TablePath[Network_Device_GroupKeyManagementCluster_GroupTablePath]
+    KeySetWrite: CommandPath
+    KeySetRead: CommandPath
+    KeySetRemove: CommandPath
 
 class Network_Device_ContentAppObserverClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ContentAppMessage: CommandPath
 
 class Network_Device_WebRTCTransportRequestorClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     CurrentSessionsNumberOfEntries: ParamPath[int]
     CurrentSessions: TablePath[Network_Device_WebRTCTransportRequestorCluster_CurrentSessionsPath]
+    Offer: CommandPath
+    Answer: CommandPath
+    ICECandidates: CommandPath
+    End: CommandPath
 
 class Network_Device_ElectricalPowerMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1671,9 +1698,13 @@ class Network_Device_ElectricalPowerMeasurementClusterPath(ObjectPathBase):
     Ranges: TablePath[Network_Device_ElectricalPowerMeasurementCluster_RangesPath]
     HarmonicCurrents: TablePath[Network_Device_ElectricalPowerMeasurementCluster_HarmonicCurrentsPath]
     HarmonicPhases: TablePath[Network_Device_ElectricalPowerMeasurementCluster_HarmonicPhasesPath]
+    MeasurementPeriodRanges: EventPath
 
 class Network_Device_OTASoftwareUpdateProviderClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    QueryImage: CommandPath
+    ApplyUpdateRequest: CommandPath
+    NotifyUpdateApplied: CommandPath
 
 class Network_Device_CameraAVSettingsUserLevelManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1683,6 +1714,13 @@ class Network_Device_CameraAVSettingsUserLevelManagementClusterPath(ObjectPathBa
     MPTZPosition: Network_Device_CameraAVSettingsUserLevelManagementCluster_MPTZPositionPath
     MPTZPresets: TablePath[Network_Device_CameraAVSettingsUserLevelManagementCluster_MPTZPresetsPath]
     DPTZStreams: TablePath[Network_Device_CameraAVSettingsUserLevelManagementCluster_DPTZStreamsPath]
+    MPTZSetPosition: CommandPath
+    MPTZRelativeMove: CommandPath
+    MPTZMoveToPreset: CommandPath
+    MPTZSavePreset: CommandPath
+    MPTZRemovePreset: CommandPath
+    DPTZSetViewport: CommandPath
+    DPTZRelativeMove: CommandPath
 
 class Network_Device_RefrigeratorAlarmClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1690,6 +1728,7 @@ class Network_Device_RefrigeratorAlarmClusterPath(ObjectPathBase):
     Latch: ParamPath[bytes]
     State: ParamPath[bytes]
     Supported: ParamPath[bytes]
+    Reset: CommandPath
 
 class Network_Device_FlowMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1701,6 +1740,9 @@ class Network_Device_AdministratorCommissioningClusterPath(ObjectPathBase):
     WindowStatus: ParamPath[str]
     AdminFabricIndex: ParamPath[int]
     AdminVendorId: ParamPath[int]
+    OpenCommissioningWindow: CommandPath
+    OpenBasicCommissioningWindow: CommandPath
+    RevokeCommissioning: CommandPath
 
 class Network_Device_ServiceAreaClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1713,6 +1755,8 @@ class Network_Device_ServiceAreaClusterPath(ObjectPathBase):
     SupportedAreas: TablePath[Network_Device_ServiceAreaCluster_SupportedAreasPath]
     SupportedMaps: TablePath[Network_Device_ServiceAreaCluster_SupportedMapsPath]
     Progress: TablePath[Network_Device_ServiceAreaCluster_ProgressPath]
+    SelectAreas: CommandPath
+    SkipArea: CommandPath
 
 class Network_Device_ThermostatUserInterfaceConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1735,6 +1779,10 @@ class Network_Device_WiFiNetworkDiagnosticsClusterPath(ObjectPathBase):
     PacketUnicastTxCount: ParamPath[int]
     CurrentMaxRate: ParamPath[int]
     OverrunCount: ParamPath[int]
+    ResetCounts: CommandPath
+    Disconnection: EventPath
+    AssociationFailure: EventPath
+    ConnectionStatus: EventPath
 
 class Network_Device_EnergyEVSEClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1761,6 +1809,19 @@ class Network_Device_EnergyEVSEClusterPath(ObjectPathBase):
     SessionDuration: ParamPath[int]
     SessionEnergyCharged: ParamPath[int]
     SessionEnergyDischarged: ParamPath[int]
+    Disable: CommandPath
+    EnableCharging: CommandPath
+    EnableDischarging: CommandPath
+    StartDiagnostics: CommandPath
+    SetTargets: CommandPath
+    GetTargets: CommandPath
+    ClearTargets: CommandPath
+    EVConnected: EventPath
+    EVNotDetected: EventPath
+    EnergyTransferStarted: EventPath
+    EnergyTransferStopped: EventPath
+    Fault: EventPath
+    RFID: EventPath
 
 class Network_Device_UserLabelClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1771,9 +1832,11 @@ class Network_Device_WiFiNetworkManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SSID: ParamPath[str]
     PassphraseSurrogate: ParamPath[int]
+    NetworkPassphraseRequest: CommandPath
 
 class Network_Device_RVCCleanModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class Network_Device_DescriptorClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1791,10 +1854,17 @@ class Network_Device_RefrigeratorAndTemperatureControlledCabinetModeClusterPath(
     SupportedModesNumberOfEntries: ParamPath[int]
     CurrentMode: ParamPath[int]
     SupportedModes: TablePath[Network_Device_RefrigeratorAndTemperatureControlledCabinetModeCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class Network_Device_JointFabricAdministratorClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     AdministratorFabricIndex: ParamPath[int]
+    ICACCSRRequest: CommandPath
+    AddICAC: CommandPath
+    OpenJointCommissioningWindow: CommandPath
+    TransferAnchorRequest: CommandPath
+    TransferAnchorComplete: CommandPath
+    AnnounceJointFabricAdministrator: CommandPath
 
 class Network_Device_MediaPlaybackClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1811,6 +1881,21 @@ class Network_Device_MediaPlaybackClusterPath(ObjectPathBase):
     AvailableAudioTracks: TablePath[Network_Device_MediaPlaybackCluster_AvailableAudioTracksPath]
     ActiveTextTrack: Network_Device_MediaPlaybackCluster_ActiveTextTrackPath
     AvailableTextTracks: TablePath[Network_Device_MediaPlaybackCluster_AvailableTextTracksPath]
+    Play: CommandPath
+    Pause: CommandPath
+    Stop: CommandPath
+    StartOver: CommandPath
+    Previous: CommandPath
+    Next: CommandPath
+    Rewind: CommandPath
+    FastForward: CommandPath
+    SkipForward: CommandPath
+    SkipBackward: CommandPath
+    Seek: CommandPath
+    ActivateAudioTrack: CommandPath
+    ActivateTextTrack: CommandPath
+    DeactivateTextTrack: CommandPath
+    StateChanged: EventPath
 
 class Network_Device_OperationalCredentialsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1821,6 +1906,16 @@ class Network_Device_OperationalCredentialsClusterPath(ObjectPathBase):
     CurrentFabricIndex: ParamPath[int]
     NOCs: TablePath[Network_Device_OperationalCredentialsCluster_NOCsPath]
     Fabrics: TablePath[Network_Device_OperationalCredentialsCluster_FabricsPath]
+    AttestationRequest: CommandPath
+    CertificateChainRequest: CommandPath
+    CSRRequest: CommandPath
+    AddNOC: CommandPath
+    UpdateNOC: CommandPath
+    UpdateFabricLabel: CommandPath
+    RemoveFabric: CommandPath
+    AddTrustedRootCertificate: CommandPath
+    SetVIDVerificationStatement: CommandPath
+    SignVIDVerificationRequest: CommandPath
 
 class Network_Device_WindowCoveringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1838,6 +1933,11 @@ class Network_Device_WindowCoveringClusterPath(ObjectPathBase):
     CurrentPositionTiltPercent100ths: ParamPath[int]
     Mode: ParamPath[bytes]
     SafetyStatus: ParamPath[bytes]
+    UpOrOpen: CommandPath
+    DownOrClose: CommandPath
+    StopMotion: CommandPath
+    GoToLiftPercentage: CommandPath
+    GoToTiltPercentage: CommandPath
 
 class Network_Device_CommodityPriceClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1846,6 +1946,9 @@ class Network_Device_CommodityPriceClusterPath(ObjectPathBase):
     Currency: Network_Device_CommodityPriceCluster_CurrencyPath
     CurrentPrice: Network_Device_CommodityPriceCluster_CurrentPricePath
     PriceForecast: TablePath[Network_Device_CommodityPriceCluster_PriceForecastPath]
+    GetDetailedPriceRequest: CommandPath
+    GetDetailedForecastRequest: CommandPath
+    PriceChange: EventPath
 
 class Network_Device_LaundryDryerControlsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1861,6 +1964,7 @@ class Network_Device_ModeSelectClusterPath(ObjectPathBase):
     StartUpMode: ParamPath[int]
     OnMode: ParamPath[int]
     SupportedModes: TablePath[Network_Device_ModeSelectCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class Network_Device_SoftwareDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1869,6 +1973,8 @@ class Network_Device_SoftwareDiagnosticsClusterPath(ObjectPathBase):
     CurrentHeapUsed: ParamPath[int]
     CurrentHeapHighWatermark: ParamPath[int]
     ThreadMetrics: TablePath[Network_Device_SoftwareDiagnosticsCluster_ThreadMetricsPath]
+    ResetWatermarks: CommandPath
+    SoftwareFault: EventPath
 
 class Network_Device_ThermostatClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1928,12 +2034,22 @@ class Network_Device_ThermostatClusterPath(ObjectPathBase):
     ScheduleTypes: TablePath[Network_Device_ThermostatCluster_ScheduleTypesPath]
     Presets: TablePath[Network_Device_ThermostatCluster_PresetsPath]
     Schedules: TablePath[Network_Device_ThermostatCluster_SchedulesPath]
+    SetpointRaiseLower: CommandPath
+    SetWeeklySchedule: CommandPath
+    GetWeeklySchedule: CommandPath
+    ClearWeeklySchedule: CommandPath
+    SetActiveScheduleRequest: CommandPath
+    SetActivePresetRequest: CommandPath
 
 class Network_Device_MediaInputClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     InputListNumberOfEntries: ParamPath[int]
     CurrentInput: ParamPath[int]
     InputList: TablePath[Network_Device_MediaInputCluster_InputListPath]
+    SelectInput: CommandPath
+    ShowInputStatus: CommandPath
+    HideInputStatus: CommandPath
+    RenameInput: CommandPath
 
 class Network_Device_JointFabricDatastoreClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1960,6 +2076,26 @@ class Network_Device_JointFabricDatastoreClusterPath(ObjectPathBase):
     NodeKeySetList: TablePath[Network_Device_JointFabricDatastoreCluster_NodeKeySetListPath]
     NodeACLList: TablePath[Network_Device_JointFabricDatastoreCluster_NodeACLListPath]
     NodeEndpointList: TablePath[Network_Device_JointFabricDatastoreCluster_NodeEndpointListPath]
+    AddKeySet: CommandPath
+    UpdateKeySet: CommandPath
+    RemoveKeySet: CommandPath
+    AddGroup: CommandPath
+    UpdateGroup: CommandPath
+    RemoveGroup: CommandPath
+    AddAdmin: CommandPath
+    UpdateAdmin: CommandPath
+    RemoveAdmin: CommandPath
+    AddPendingNode: CommandPath
+    RefreshNode: CommandPath
+    UpdateNode: CommandPath
+    RemoveNode: CommandPath
+    UpdateEndpointForNode: CommandPath
+    AddGroupIDToEndpointForNode: CommandPath
+    RemoveGroupIDFromEndpointForNode: CommandPath
+    AddBindingToEndpointForNode: CommandPath
+    RemoveBindingFromEndpointForNode: CommandPath
+    AddACLToNode: CommandPath
+    RemoveACLFromNode: CommandPath
 
 class Network_Device_CommodityTariffClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1989,6 +2125,8 @@ class Network_Device_CommodityTariffClusterPath(ObjectPathBase):
     TariffPeriods: TablePath[Network_Device_CommodityTariffCluster_TariffPeriodsPath]
     CurrentTariffComponents: TablePath[Network_Device_CommodityTariffCluster_CurrentTariffComponentsPath]
     NextTariffComponents: TablePath[Network_Device_CommodityTariffCluster_NextTariffComponentsPath]
+    GetTariffComponent: CommandPath
+    GetDayEntry: CommandPath
 
 class Network_Device_ThreadBorderRouterManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -1998,11 +2136,18 @@ class Network_Device_ThreadBorderRouterManagementClusterPath(ObjectPathBase):
     InterfaceEnabled: ParamPath[bool]
     ActiveDatasetTimestamp: ParamPath[int]
     PendingDatasetTimestamp: ParamPath[int]
+    GetActiveDatasetRequest: CommandPath
+    GetPendingDatasetRequest: CommandPath
+    SetActiveDatasetRequest: CommandPath
+    SetPendingDatasetRequest: CommandPath
 
 class Network_Device_ApplicationLauncherClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     CatalogList: ParamPath[list[int]]
     CurrentApp: Network_Device_ApplicationLauncherCluster_CurrentAppPath
+    LaunchApp: CommandPath
+    StopApp: CommandPath
+    HideApp: CommandPath
 
 class Network_Device_MicrowaveOvenControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2014,6 +2159,8 @@ class Network_Device_MicrowaveOvenControlClusterPath(ObjectPathBase):
     SupportedWatts: ParamPath[list[int]]
     SelectedWattIndex: ParamPath[int]
     WattRating: ParamPath[int]
+    SetCookingParameters: CommandPath
+    AddMoreTime: CommandPath
 
 class Network_Device_LocalizationConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2030,6 +2177,11 @@ class Network_Device_MessagesClusterPath(ObjectPathBase):
     MessagesNumberOfEntries: ParamPath[int]
     ActiveMessageIDs: ParamPath[list[str]]
     Messages: TablePath[Network_Device_MessagesCluster_MessagesPath]
+    PresentMessagesRequest: CommandPath
+    CancelMessagesRequest: CommandPath
+    MessageQueued: EventPath
+    MessagePresented: EventPath
+    MessageComplete: EventPath
 
 class Network_Device_AirQualityClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2040,6 +2192,8 @@ class Network_Device_TargetNavigatorClusterPath(ObjectPathBase):
     TargetListNumberOfEntries: ParamPath[int]
     CurrentTarget: ParamPath[int]
     TargetList: TablePath[Network_Device_TargetNavigatorCluster_TargetListPath]
+    NavigateTarget: CommandPath
+    TargetUpdated: EventPath
 
 class Network_Device_RVCOperationalStateClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2050,6 +2204,9 @@ class Network_Device_RVCOperationalStateClusterPath(ObjectPathBase):
     OperationalState: ParamPath[str]
     OperationalStateList: TablePath[Network_Device_RVCOperationalStateCluster_OperationalStateListPath]
     OperationalError: Network_Device_RVCOperationalStateCluster_OperationalErrorPath
+    GoHome: CommandPath
+    Pause: CommandPath
+    Resume: CommandPath
 
 class Network_Device_ZoneManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2061,12 +2218,20 @@ class Network_Device_ZoneManagementClusterPath(ObjectPathBase):
     Zones: TablePath[Network_Device_ZoneManagementCluster_ZonesPath]
     Triggers: TablePath[Network_Device_ZoneManagementCluster_TriggersPath]
     TwoDCartesianMax: Network_Device_ZoneManagementCluster_TwoDCartesianMaxPath
+    CreateTwoDCartesianZone: CommandPath
+    UpdateTwoDCartesianZone: CommandPath
+    RemoveZone: CommandPath
+    CreateOrUpdateTrigger: CommandPath
+    RemoveTrigger: CommandPath
+    ZoneTriggered: EventPath
+    ZoneStopped: EventPath
 
 class Network_Device_LaundryWasherModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SupportedModesNumberOfEntries: ParamPath[int]
     CurrentMode: ParamPath[int]
     SupportedModes: TablePath[Network_Device_LaundryWasherModeCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class Network_Device_TimeSynchronizationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2085,6 +2250,16 @@ class Network_Device_TimeSynchronizationClusterPath(ObjectPathBase):
     TrustedTimeSource: Network_Device_TimeSynchronizationCluster_TrustedTimeSourcePath
     TimeZone: TablePath[Network_Device_TimeSynchronizationCluster_TimeZonePath]
     DSTOffset: TablePath[Network_Device_TimeSynchronizationCluster_DSTOffsetPath]
+    SetUTCTime: CommandPath
+    SetTrustedTimeSource: CommandPath
+    SetTimeZone: CommandPath
+    SetDSTOffset: CommandPath
+    SetDefaultNTP: CommandPath
+    DSTTableEmpty: EventPath
+    DSTStatus: EventPath
+    TimeZoneStatus: EventPath
+    TimeFailure: EventPath
+    MissingTrustedTimeSource: EventPath
 
 class Network_Device_GeneralCommissioningClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2100,6 +2275,10 @@ class Network_Device_GeneralCommissioningClusterPath(ObjectPathBase):
     NetworkRecoveryReason: ParamPath[str]
     IsCommissioningWithoutPower: ParamPath[bool]
     BasicCommissioningInfo: Network_Device_GeneralCommissioningCluster_BasicCommissioningInfoPath
+    ArmFailSafe: CommandPath
+    SetRegulatoryConfig: CommandPath
+    CommissioningComplete: CommandPath
+    SetTCAcknowledgements: CommandPath
 
 class Network_Device_TemperatureControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2107,9 +2286,11 @@ class Network_Device_TemperatureControlClusterPath(ObjectPathBase):
     Step: ParamPath[int]
     SelectedTemperatureLevel: ParamPath[int]
     SupportedTemperatureLevels: ParamPath[list[str]]
+    SetTemperature: CommandPath
 
 class Network_Device_DiagnosticLogsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    RetrieveLogsRequest: CommandPath
 
 class Network_Device_PressureMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2122,6 +2303,12 @@ class Network_Device_PressureMeasurementClusterPath(ObjectPathBase):
 class Network_Device_GroupsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     NameSupport: ParamPath[bytes]
+    AddGroup: CommandPath
+    ViewGroup: CommandPath
+    GetGroupMembership: CommandPath
+    RemoveGroup: CommandPath
+    RemoveAllGroups: CommandPath
+    AddGroupIfIdentifying: CommandPath
 
 class Network_Device_PowerSourceConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2138,12 +2325,16 @@ class Network_Device_MicrowaveOvenModeClusterPath(ObjectPathBase):
 
 class Network_Device_LowPowerClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    Sleep: CommandPath
 
 class Network_Device_ThreadNetworkDirectoryClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     PreferredExtendedPanID: ParamPath[str]
     ThreadNetworksNumberOfEntries: ParamPath[int]
     ThreadNetworks: TablePath[Network_Device_ThreadNetworkDirectoryCluster_ThreadNetworksPath]
+    AddNetwork: CommandPath
+    RemoveNetwork: CommandPath
+    GetOperationalDataset: CommandPath
 
 class Network_Device_IlluminanceMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2155,6 +2346,11 @@ class Network_Device_WebRTCTransportProviderClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     CurrentSessionsNumberOfEntries: ParamPath[int]
     CurrentSessions: TablePath[Network_Device_WebRTCTransportProviderCluster_CurrentSessionsPath]
+    SolicitOffer: CommandPath
+    ProvideOffer: CommandPath
+    ProvideAnswer: CommandPath
+    ProvideICECandidates: CommandPath
+    EndSession: CommandPath
 
 class Network_Device_ChannelClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2162,6 +2358,12 @@ class Network_Device_ChannelClusterPath(ObjectPathBase):
     ChannelList: TablePath[Network_Device_ChannelCluster_ChannelListPath]
     Lineup: Network_Device_ChannelCluster_LineupPath
     CurrentChannel: Network_Device_ChannelCluster_CurrentChannelPath
+    ChangeChannel: CommandPath
+    ChangeChannelByNumber: CommandPath
+    SkipChannel: CommandPath
+    GetProgramGuide: CommandPath
+    RecordProgram: CommandPath
+    CancelRecordProgram: CommandPath
 
 class Network_Device_EthernetNetworkDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2174,6 +2376,7 @@ class Network_Device_EthernetNetworkDiagnosticsClusterPath(ObjectPathBase):
     OverrunCount: ParamPath[int]
     CarrierDetect: ParamPath[bool]
     TimeSinceReset: ParamPath[int]
+    ResetCounts: CommandPath
 
 class Network_Device_ActionsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2182,6 +2385,20 @@ class Network_Device_ActionsClusterPath(ObjectPathBase):
     SetupURL: ParamPath[str]
     ActionList: TablePath[Network_Device_ActionsCluster_ActionListPath]
     EndpointLists: TablePath[Network_Device_ActionsCluster_EndpointListsPath]
+    InstantAction: CommandPath
+    InstantActionWithTransition: CommandPath
+    StartAction: CommandPath
+    StartActionWithDuration: CommandPath
+    StopAction: CommandPath
+    PauseAction: CommandPath
+    PauseActionWithDuration: CommandPath
+    ResumeAction: CommandPath
+    EnableAction: CommandPath
+    EnableActionWithDuration: CommandPath
+    DisableAction: CommandPath
+    DisableActionWithDuration: CommandPath
+    StateChanged: EventPath
+    ActionFailed: EventPath
 
 class Network_Device_MeterIdentificationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2200,9 +2417,16 @@ class Network_Device_OperationalStateClusterPath(ObjectPathBase):
     OperationalState: ParamPath[str]
     OperationalStateList: TablePath[Network_Device_OperationalStateCluster_OperationalStateListPath]
     OperationalError: Network_Device_OperationalStateCluster_OperationalErrorPath
+    Pause: CommandPath
+    Stop: CommandPath
+    Start: CommandPath
+    Resume: CommandPath
+    OperationalError_: EventPath
+    OperationCompletion: EventPath
 
 class Network_Device_RVCRunModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class Network_Device_PushAVStreamTransportClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2210,6 +2434,14 @@ class Network_Device_PushAVStreamTransportClusterPath(ObjectPathBase):
     CurrentConnectionsNumberOfEntries: ParamPath[int]
     SupportedFormats: TablePath[Network_Device_PushAVStreamTransportCluster_SupportedFormatsPath]
     CurrentConnections: TablePath[Network_Device_PushAVStreamTransportCluster_CurrentConnectionsPath]
+    AllocatePushTransport: CommandPath
+    DeallocatePushTransport: CommandPath
+    ModifyPushTransport: CommandPath
+    SetTransportStatus: CommandPath
+    ManuallyTriggerTransport: CommandPath
+    FindTransport: CommandPath
+    PushTransportBegin: EventPath
+    PushTransportEnd: EventPath
 
 class Network_Device_TemperatureMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2221,6 +2453,13 @@ class Network_Device_SwitchClusterPath(ObjectPathBase):
     NumberOfPositions: ParamPath[int]
     CurrentPosition: ParamPath[int]
     MultiPressMax: ParamPath[int]
+    SwitchLatched: EventPath
+    InitialPress: EventPath
+    LongPress: EventPath
+    ShortRelease: EventPath
+    LongRelease: EventPath
+    MultiPressOngoing: EventPath
+    MultiPressComplete: EventPath
 
 class Network_Device_BasicInformationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2248,6 +2487,10 @@ class Network_Device_BasicInformationClusterPath(ObjectPathBase):
     ConfigurationVersion: ParamPath[int]
     CapabilityMinima: Network_Device_BasicInformationCluster_CapabilityMinimaPath
     ProductAppearance: Network_Device_BasicInformationCluster_ProductAppearancePath
+    StartUp: EventPath
+    ShutDown: EventPath
+    Leave: EventPath
+    ReachableChanged: EventPath
 
 class Network_Device_ValveConfigurationandControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2262,11 +2505,17 @@ class Network_Device_ValveConfigurationandControlClusterPath(ObjectPathBase):
     DefaultOpenLevel: ParamPath[int]
     ValveFault: ParamPath[bytes]
     LevelStep: ParamPath[int]
+    Open: CommandPath
+    Close: CommandPath
+    ValveStateChanged: EventPath
+    ValveFault_: EventPath
 
 class Network_Device_ContentLauncherClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     AcceptHeader: ParamPath[list[str]]
     SupportedStreamingProtocols: ParamPath[bytes]
+    LaunchContent: CommandPath
+    LaunchURL: CommandPath
 
 class Network_Device_BooleanStateConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2277,6 +2526,10 @@ class Network_Device_BooleanStateConfigurationClusterPath(ObjectPathBase):
     AlarmsEnabled: ParamPath[bytes]
     AlarmsSupported: ParamPath[bytes]
     SensorFault: ParamPath[bytes]
+    SuppressAlarm: CommandPath
+    EnableDisableAlarm: CommandPath
+    AlarmsStateChanged: EventPath
+    SensorFault_: EventPath
 
 class Network_Device_BindingClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2285,6 +2538,7 @@ class Network_Device_BindingClusterPath(ObjectPathBase):
 
 class Network_Device_WaterHeaterModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class Network_Device_ChimeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2292,6 +2546,7 @@ class Network_Device_ChimeClusterPath(ObjectPathBase):
     SelectedChime: ParamPath[int]
     Enabled: ParamPath[bool]
     InstalledChimeSounds: TablePath[Network_Device_ChimeCluster_InstalledChimeSoundsPath]
+    PlayChimeSound: CommandPath
 
 class Network_Device_BridgedDeviceBasicInformationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2313,11 +2568,18 @@ class Network_Device_BridgedDeviceBasicInformationClusterPath(ObjectPathBase):
     UniqueID: ParamPath[str]
     ConfigurationVersion: ParamPath[int]
     ProductAppearance: Network_Device_BridgedDeviceBasicInformationCluster_ProductAppearancePath
+    KeepActive: CommandPath
+    StartUp: EventPath
+    ShutDown: EventPath
+    ReachableChanged: EventPath
+    ActiveChanged: EventPath
 
 class Network_Device_IdentifyClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     IdentifyTime: ParamPath[int]
     IdentifyType: ParamPath[str]
+    Identify: CommandPath
+    TriggerEffect: CommandPath
 
 class Network_Device_RelativeHumidityMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2331,9 +2593,14 @@ class Network_Device_OTASoftwareUpdateRequestorClusterPath(ObjectPathBase):
     UpdateState: ParamPath[str]
     UpdateStateProgress: ParamPath[int]
     DefaultOTAProviders: TablePath[Network_Device_OTASoftwareUpdateRequestorCluster_DefaultOTAProvidersPath]
+    AnnounceOTAProvider: CommandPath
+    StateTransition: EventPath
+    VersionApplied: EventPath
+    DownloadError: EventPath
 
 class Network_Device_EnergyEVSEModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class Network_Device_CameraAVStreamManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2379,13 +2646,30 @@ class Network_Device_CameraAVStreamManagementClusterPath(ObjectPathBase):
     AllocatedAudioStreams: TablePath[Network_Device_CameraAVStreamManagementCluster_AllocatedAudioStreamsPath]
     AllocatedSnapshotStreams: TablePath[Network_Device_CameraAVStreamManagementCluster_AllocatedSnapshotStreamsPath]
     Viewport: Network_Device_CameraAVStreamManagementCluster_ViewportPath
+    AudioStreamAllocate: CommandPath
+    AudioStreamDeallocate: CommandPath
+    VideoStreamAllocate: CommandPath
+    VideoStreamModify: CommandPath
+    VideoStreamDeallocate: CommandPath
+    SnapshotStreamAllocate: CommandPath
+    SnapshotStreamModify: CommandPath
+    SnapshotStreamDeallocate: CommandPath
+    SetStreamPriorities: CommandPath
+    CaptureSnapshot: CommandPath
 
 class Network_Device_CommissionerControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SupportedDeviceCategories: ParamPath[bytes]
+    RequestCommissioningApproval: CommandPath
+    CommissionNode: CommandPath
+    CommissioningRequestResult: EventPath
 
 class Network_Device_AccountLoginClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    GetSetupPIN: CommandPath
+    Login: CommandPath
+    Logout: CommandPath
+    LoggedOut: EventPath
 
 class Network_Device_DoorLockClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2434,6 +2718,44 @@ class Network_Device_DoorLockClusterPath(ObjectPathBase):
     AliroBLEAdvertisingVersion: ParamPath[int]
     NumberOfAliroCredentialIssuerKeysSupported: ParamPath[int]
     NumberOfAliroEndpointKeysSupported: ParamPath[int]
+    LockDoor: CommandPath
+    UnlockDoor: CommandPath
+    UnlockWithTimeout: CommandPath
+    SetPINCode: CommandPath
+    GetPINCode: CommandPath
+    ClearPINCode: CommandPath
+    ClearAllPINCodes: CommandPath
+    SetUserStatus: CommandPath
+    GetUserStatus: CommandPath
+    SetWeekDaySchedule: CommandPath
+    GetWeekDaySchedule: CommandPath
+    ClearWeekDaySchedule: CommandPath
+    SetYearDaySchedule: CommandPath
+    GetYearDaySchedule: CommandPath
+    ClearYearDaySchedule: CommandPath
+    SetHolidaySchedule: CommandPath
+    GetHolidaySchedule: CommandPath
+    ClearHolidaySchedule: CommandPath
+    SetUserType: CommandPath
+    GetUserType: CommandPath
+    SetRFIDCode: CommandPath
+    GetRFIDCode: CommandPath
+    ClearRFIDCode: CommandPath
+    ClearAllRFIDCodes: CommandPath
+    SetUser: CommandPath
+    GetUser: CommandPath
+    ClearUser: CommandPath
+    SetCredential: CommandPath
+    GetCredentialStatus: CommandPath
+    ClearCredential: CommandPath
+    UnboltDoor: CommandPath
+    SetAliroReaderConfig: CommandPath
+    ClearAliroReaderConfig: CommandPath
+    DoorLockAlarm: EventPath
+    DoorStateChange: EventPath
+    LockOperation: EventPath
+    LockOperationError: EventPath
+    LockUserChange: EventPath
 
 class Network_Device_UnitLocalizationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2448,6 +2770,13 @@ class Network_Device_ClosureControlClusterPath(ObjectPathBase):
     LatchControlModes: ParamPath[bytes]
     OverallCurrentState: Network_Device_ClosureControlCluster_OverallCurrentStatePath
     OverallTargetState: Network_Device_ClosureControlCluster_OverallTargetStatePath
+    Stop: CommandPath
+    MoveTo: CommandPath
+    Calibrate: CommandPath
+    OperationalError: EventPath
+    MovementCompleted: EventPath
+    EngageStateChanged: EventPath
+    SecureStateChanged: EventPath
 
 class Network_Device_HEPAFilterMonitoringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2458,6 +2787,7 @@ class Network_Device_HEPAFilterMonitoringClusterPath(ObjectPathBase):
     LastChangedTime: ParamPath[int]
     ReplacementProductListNumberOfEntries: ParamPath[int]
     ReplacementProductList: TablePath[Network_Device_HEPAFilterMonitoringCluster_ReplacementProductListPath]
+    ResetCondition: CommandPath
 
 class Network_Device_ActivatedCarbonFilterMonitoringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2468,6 +2798,7 @@ class Network_Device_ActivatedCarbonFilterMonitoringClusterPath(ObjectPathBase):
     LastChangedTime: ParamPath[int]
     ReplacementProductListNumberOfEntries: ParamPath[int]
     ReplacementProductList: TablePath[Network_Device_ActivatedCarbonFilterMonitoringCluster_ReplacementProductListPath]
+    ResetCondition: CommandPath
 
 class Network_Device_WaterTankLevelMonitoringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2478,6 +2809,7 @@ class Network_Device_WaterTankLevelMonitoringClusterPath(ObjectPathBase):
     LastChangedTime: ParamPath[int]
     ReplacementProductListNumberOfEntries: ParamPath[int]
     ReplacementProductList: TablePath[Network_Device_WaterTankLevelMonitoringCluster_ReplacementProductListPath]
+    ResetCondition: CommandPath
 
 class Network_Device_OvenCavityOperationalStateClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2488,6 +2820,8 @@ class Network_Device_OvenCavityOperationalStateClusterPath(ObjectPathBase):
     OperationalState: ParamPath[str]
     OperationalStateList: TablePath[Network_Device_OvenCavityOperationalStateCluster_OperationalStateListPath]
     OperationalError: Network_Device_OvenCavityOperationalStateCluster_OperationalErrorPath
+    Stop: CommandPath
+    Start: CommandPath
 
 class Network_Device_ThreadNetworkDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2558,6 +2892,9 @@ class Network_Device_ThreadNetworkDiagnosticsClusterPath(ObjectPathBase):
     RouteTable: TablePath[Network_Device_ThreadNetworkDiagnosticsCluster_RouteTablePath]
     SecurityPolicy: Network_Device_ThreadNetworkDiagnosticsCluster_SecurityPolicyPath
     OperationalDatasetComponents: Network_Device_ThreadNetworkDiagnosticsCluster_OperationalDatasetComponentsPath
+    ResetCounts: CommandPath
+    ConnectionStatus: EventPath
+    NetworkFaultChange: EventPath
 
 class Network_Device_ContentControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2577,6 +2914,24 @@ class Network_Device_ContentControlClusterPath(ObjectPathBase):
     BlockChannelList: TablePath[Network_Device_ContentControlCluster_BlockChannelListPath]
     BlockApplicationList: TablePath[Network_Device_ContentControlCluster_BlockApplicationListPath]
     BlockContentTimeWindow: TablePath[Network_Device_ContentControlCluster_BlockContentTimeWindowPath]
+    UpdatePIN: CommandPath
+    ResetPIN: CommandPath
+    Enable: CommandPath
+    Disable: CommandPath
+    AddBonusTime: CommandPath
+    SetScreenDailyTime: CommandPath
+    BlockUnratedContent: CommandPath
+    UnblockUnratedContent: CommandPath
+    SetOnDemandRatingThreshold: CommandPath
+    SetScheduledContentRatingThreshold: CommandPath
+    AddBlockChannels: CommandPath
+    RemoveBlockChannels: CommandPath
+    AddBlockApplications: CommandPath
+    RemoveBlockApplications: CommandPath
+    SetBlockContentTimeWindow: CommandPath
+    RemoveBlockContentTimeWindow: CommandPath
+    RemainingScreenTimeExpired: EventPath
+    EnteringBlockContentTimeWindow: EventPath
 
 class Network_Device_ElectricalGridConditionsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2584,9 +2939,11 @@ class Network_Device_ElectricalGridConditionsClusterPath(ObjectPathBase):
     ForecastConditionsNumberOfEntries: ParamPath[int]
     CurrentConditions: Network_Device_ElectricalGridConditionsCluster_CurrentConditionsPath
     ForecastConditions: TablePath[Network_Device_ElectricalGridConditionsCluster_ForecastConditionsPath]
+    CurrentConditionsChanged: EventPath
 
 class Network_Device_KeypadInputClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    SendKey: CommandPath
 
 class Network_Device_EcosystemInformationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2600,6 +2957,14 @@ class Network_Device_ScenesManagementClusterPath(ObjectPathBase):
     SceneTableSize: ParamPath[int]
     FabricSceneInfoNumberOfEntries: ParamPath[int]
     FabricSceneInfo: TablePath[Network_Device_ScenesManagementCluster_FabricSceneInfoPath]
+    AddScene: CommandPath
+    ViewScene: CommandPath
+    RemoveScene: CommandPath
+    RemoveAllScenes: CommandPath
+    StoreScene: CommandPath
+    RecallScene: CommandPath
+    GetSceneMembership: CommandPath
+    CopyScene: CommandPath
 
 class Network_Device_ClosureDimensionClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2615,6 +2980,8 @@ class Network_Device_ClosureDimensionClusterPath(ObjectPathBase):
     TargetState: Network_Device_ClosureDimensionCluster_TargetStatePath
     UnitRange: Network_Device_ClosureDimensionCluster_UnitRangePath
     LimitRange: Network_Device_ClosureDimensionCluster_LimitRangePath
+    SetTarget: CommandPath
+    Step: CommandPath
 
 class Network_Device_PumpConfigurationandControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2641,6 +3008,23 @@ class Network_Device_PumpConfigurationandControlClusterPath(ObjectPathBase):
     LifetimeEnergyConsumed: ParamPath[int]
     OperationMode: ParamPath[str]
     ControlMode: ParamPath[str]
+    SupplyVoltageLow: EventPath
+    SupplyVoltageHigh: EventPath
+    PowerMissingPhase: EventPath
+    SystemPressureLow: EventPath
+    SystemPressureHigh: EventPath
+    DryRunning: EventPath
+    MotorTemperatureHigh: EventPath
+    PumpMotorFatalFailure: EventPath
+    ElectronicTemperatureHigh: EventPath
+    PumpBlocked: EventPath
+    SensorFailure: EventPath
+    ElectronicNonFatalFailure: EventPath
+    ElectronicFatalFailure: EventPath
+    GeneralFault: EventPath
+    Leakage: EventPath
+    AirDetection: EventPath
+    TurbineOperation: EventPath
 
 class Network_Device_AccessControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2653,6 +3037,10 @@ class Network_Device_AccessControlClusterPath(ObjectPathBase):
     Extension: TablePath[Network_Device_AccessControlCluster_ExtensionPath]
     CommissioningARL: TablePath[Network_Device_AccessControlCluster_CommissioningARLPath]
     ARL: TablePath[Network_Device_AccessControlCluster_ARLPath]
+    ReviewFabricRestrictions: CommandPath
+    AccessControlEntryChanged: EventPath
+    AccessControlExtensionChanged: EventPath
+    FabricRestrictionReviewUpdate: EventPath
 
 class Network_Device_SoilMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2673,16 +3061,21 @@ class Network_Device_FanControlClusterPath(ObjectPathBase):
     WindSupport: ParamPath[bytes]
     WindSetting: ParamPath[bytes]
     AirflowDirection: ParamPath[str]
+    Step: CommandPath
 
 class Network_Device_TLSClientManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     MaxProvisioned: ParamPath[int]
     ProvisionedEndpointsNumberOfEntries: ParamPath[int]
     ProvisionedEndpoints: TablePath[Network_Device_TLSClientManagementCluster_ProvisionedEndpointsPath]
+    ProvisionEndpoint: CommandPath
+    FindEndpoint: CommandPath
+    RemoveEndpoint: CommandPath
 
 class Network_Device_BooleanStateClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     StateValue: ParamPath[bool]
+    StateChange: EventPath
 
 class Network_Device_GeneralDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2696,6 +3089,13 @@ class Network_Device_GeneralDiagnosticsClusterPath(ObjectPathBase):
     ActiveNetworkFaults: ParamPath[list[str]]
     TestEventTriggersEnabled: ParamPath[bool]
     NetworkInterfaces: TablePath[Network_Device_GeneralDiagnosticsCluster_NetworkInterfacesPath]
+    TestEventTrigger: CommandPath
+    TimeSnapshot: CommandPath
+    PayloadTestRequest: CommandPath
+    HardwareFaultChange: EventPath
+    RadioFaultChange: EventPath
+    NetworkFaultChange: EventPath
+    BootReason_: EventPath
 
 class Network_Device_DeviceEnergyManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2707,6 +3107,18 @@ class Network_Device_DeviceEnergyManagementClusterPath(ObjectPathBase):
     OptOutState: ParamPath[str]
     PowerAdjustmentCapability: Network_Device_DeviceEnergyManagementCluster_PowerAdjustmentCapabilityPath
     Forecast: Network_Device_DeviceEnergyManagementCluster_ForecastPath
+    PowerAdjustRequest: CommandPath
+    CancelPowerAdjustRequest: CommandPath
+    StartTimeAdjustRequest: CommandPath
+    PauseRequest: CommandPath
+    ResumeRequest: CommandPath
+    ModifyForecastRequest: CommandPath
+    RequestConstraintBasedForecast: CommandPath
+    CancelRequest: CommandPath
+    PowerAdjustStart: EventPath
+    PowerAdjustEnd: EventPath
+    Paused: EventPath
+    Resumed: EventPath
 
 class Network_Device_WaterHeaterManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2716,6 +3128,10 @@ class Network_Device_WaterHeaterManagementClusterPath(ObjectPathBase):
     EstimatedHeatRequired: ParamPath[int]
     TankPercentage: ParamPath[int]
     BoostState: ParamPath[str]
+    Boost: CommandPath
+    CancelBoost: CommandPath
+    BoostStarted: EventPath
+    BoostEnded: EventPath
 
 class Network_Device_ElectricalEnergyMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2725,6 +3141,8 @@ class Network_Device_ElectricalEnergyMeasurementClusterPath(ObjectPathBase):
     PeriodicEnergyImported: Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyImportedPath
     PeriodicEnergyExported: Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyExportedPath
     CumulativeEnergyReset: Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyResetPath
+    CumulativeEnergyMeasured: EventPath
+    PeriodicEnergyMeasured: EventPath
 
 class Network_Device_OnOffClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2733,6 +3151,12 @@ class Network_Device_OnOffClusterPath(ObjectPathBase):
     OnTime: ParamPath[int]
     OffWaitTime: ParamPath[int]
     StartUpOnOff: ParamPath[str]
+    Off: CommandPath
+    On: CommandPath
+    Toggle: CommandPath
+    OffWithEffect: CommandPath
+    OnWithRecallGlobalScene: CommandPath
+    OnWithTimedOff: CommandPath
 
 class Network_Device_ICDManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2747,6 +3171,9 @@ class Network_Device_ICDManagementClusterPath(ObjectPathBase):
     OperatingMode: ParamPath[str]
     MaximumCheckInBackoff: ParamPath[int]
     RegisteredClients: TablePath[Network_Device_ICDManagementCluster_RegisteredClientsPath]
+    RegisterClient: CommandPath
+    UnregisterClient: CommandPath
+    StayActiveRequest: CommandPath
 
 class Network_Device_ApplicationBasicClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2765,6 +3192,8 @@ class Network_Device_DishwasherAlarmClusterPath(ObjectPathBase):
     Latch: ParamPath[bytes]
     State: ParamPath[bytes]
     Supported: ParamPath[bytes]
+    Reset: CommandPath
+    ModifyEnabledAlarms: CommandPath
 
 class Network_Device_LaundryWasherControlsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2780,6 +3209,7 @@ class Network_Device_WakeOnLANClusterPath(ObjectPathBase):
 
 class Network_Device_OvenModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class Network_Device_TLSCertificateManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2789,6 +3219,15 @@ class Network_Device_TLSCertificateManagementClusterPath(ObjectPathBase):
     ProvisionedClientCertificatesNumberOfEntries: ParamPath[int]
     ProvisionedRootCertificates: TablePath[Network_Device_TLSCertificateManagementCluster_ProvisionedRootCertificatesPath]
     ProvisionedClientCertificates: TablePath[Network_Device_TLSCertificateManagementCluster_ProvisionedClientCertificatesPath]
+    ProvisionRootCertificate: CommandPath
+    FindRootCertificate: CommandPath
+    LookupRootCertificate: CommandPath
+    RemoveRootCertificate: CommandPath
+    ClientCSR: CommandPath
+    ProvisionClientCertificate: CommandPath
+    FindClientCertificate: CommandPath
+    LookupClientCertificate: CommandPath
+    RemoveClientCertificate: CommandPath
 
 class Network_Device_NetworkCommissioningClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2804,12 +3243,20 @@ class Network_Device_NetworkCommissioningClusterPath(ObjectPathBase):
     SupportedThreadFeatures: ParamPath[bytes]
     ThreadVersion: ParamPath[int]
     Networks: TablePath[Network_Device_NetworkCommissioningCluster_NetworksPath]
+    ScanNetworks: CommandPath
+    AddOrUpdateWiFiNetwork: CommandPath
+    AddOrUpdateThreadNetwork: CommandPath
+    RemoveNetwork: CommandPath
+    ConnectNetwork: CommandPath
+    ReorderNetwork: CommandPath
 
 class Network_Device_AudioOutputClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     OutputListNumberOfEntries: ParamPath[int]
     CurrentOutput: ParamPath[int]
     OutputList: TablePath[Network_Device_AudioOutputCluster_OutputListPath]
+    SelectOutput: CommandPath
+    RenameOutput: CommandPath
 
 class Network_Device_SmokeCOAlarmClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2826,9 +3273,22 @@ class Network_Device_SmokeCOAlarmClusterPath(ObjectPathBase):
     ContaminationState: ParamPath[str]
     SmokeSensitivityLevel: ParamPath[str]
     ExpiryDate: ParamPath[int]
+    SelfTestRequest: CommandPath
+    SmokeAlarm: EventPath
+    COAlarm: EventPath
+    LowBattery: EventPath
+    HardwareFault: EventPath
+    EndOfService: EventPath
+    SelfTestComplete: EventPath
+    AlarmMuted: EventPath
+    MuteEnded: EventPath
+    InterconnectSmokeAlarm_: EventPath
+    InterconnectCOAlarm_: EventPath
+    AllClear: EventPath
 
 class Network_Device_DeviceEnergyManagementModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class Network_Device_PowerSourceClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2864,12 +3324,16 @@ class Network_Device_PowerSourceClusterPath(ObjectPathBase):
     BatChargingCurrent: ParamPath[int]
     ActiveBatChargeFaults: ParamPath[list[str]]
     EndpointList: ParamPath[list[int]]
+    WiredFaultChange: EventPath
+    BatFaultChange: EventPath
+    BatChargeFaultChange: EventPath
 
 class Network_Device_DishwasherModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SupportedModesNumberOfEntries: ParamPath[int]
     CurrentMode: ParamPath[int]
     SupportedModes: TablePath[Network_Device_DishwasherModeCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class Network_Device_FixedLabelClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2888,11 +3352,21 @@ class Network_Device_LevelControlClusterPath(ObjectPathBase):
     OffTransitionTime: ParamPath[int]
     DefaultMoveRate: ParamPath[int]
     StartUpCurrentLevel: ParamPath[int]
+    MoveToLevel: CommandPath
+    Move: CommandPath
+    Step: CommandPath
+    Stop: CommandPath
+    MoveToLevelWithOnOff: CommandPath
+    MoveWithOnOff: CommandPath
+    StepWithOnOff: CommandPath
+    StopWithOnOff: CommandPath
+    MoveToClosestFrequency: CommandPath
 
 class Network_Device_OccupancySensingClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     Occupancy: ParamPath[bytes]
     HoldTime: ParamPath[int]
+    OccupancyChanged: EventPath
 
 class Network_Device_EnergyPreferenceClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4630,6 +5104,25 @@ class ColorControlClusterPath(ObjectPathBase):
     ColorTempPhysicalMaxMireds: ParamPath[int]
     CoupleColorTempToLevelMinMireds: ParamPath[int]
     StartUpColorTemperatureMireds: ParamPath[int]
+    MoveToHue: CommandPath
+    MoveHue: CommandPath
+    StepHue: CommandPath
+    MoveToSaturation: CommandPath
+    MoveSaturation: CommandPath
+    StepSaturation: CommandPath
+    MoveToHueAndSaturation: CommandPath
+    MoveToColor: CommandPath
+    MoveColor: CommandPath
+    StepColor: CommandPath
+    MoveToColorTemperature: CommandPath
+    EnhancedMoveToHue: CommandPath
+    EnhancedMoveHue: CommandPath
+    EnhancedStepHue: CommandPath
+    EnhancedMoveToHueAndSaturation: CommandPath
+    ColorLoopSet: CommandPath
+    StopMoveStep: CommandPath
+    MoveColorTemperature: CommandPath
+    StepColorTemperature: CommandPath
 
 class CommodityMeteringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4646,14 +5139,22 @@ class GroupKeyManagementClusterPath(ObjectPathBase):
     MaxGroupKeysPerFabric: ParamPath[int]
     GroupKeyMap: TablePath[GroupKeyManagementCluster_GroupKeyMapPath]
     GroupTable: TablePath[GroupKeyManagementCluster_GroupTablePath]
+    KeySetWrite: CommandPath
+    KeySetRead: CommandPath
+    KeySetRemove: CommandPath
 
 class ContentAppObserverClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ContentAppMessage: CommandPath
 
 class WebRTCTransportRequestorClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     CurrentSessionsNumberOfEntries: ParamPath[int]
     CurrentSessions: TablePath[WebRTCTransportRequestorCluster_CurrentSessionsPath]
+    Offer: CommandPath
+    Answer: CommandPath
+    ICECandidates: CommandPath
+    End: CommandPath
 
 class ElectricalPowerMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4680,9 +5181,13 @@ class ElectricalPowerMeasurementClusterPath(ObjectPathBase):
     Ranges: TablePath[ElectricalPowerMeasurementCluster_RangesPath]
     HarmonicCurrents: TablePath[ElectricalPowerMeasurementCluster_HarmonicCurrentsPath]
     HarmonicPhases: TablePath[ElectricalPowerMeasurementCluster_HarmonicPhasesPath]
+    MeasurementPeriodRanges: EventPath
 
 class OTASoftwareUpdateProviderClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    QueryImage: CommandPath
+    ApplyUpdateRequest: CommandPath
+    NotifyUpdateApplied: CommandPath
 
 class CameraAVSettingsUserLevelManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4692,6 +5197,13 @@ class CameraAVSettingsUserLevelManagementClusterPath(ObjectPathBase):
     MPTZPosition: CameraAVSettingsUserLevelManagementCluster_MPTZPositionPath
     MPTZPresets: TablePath[CameraAVSettingsUserLevelManagementCluster_MPTZPresetsPath]
     DPTZStreams: TablePath[CameraAVSettingsUserLevelManagementCluster_DPTZStreamsPath]
+    MPTZSetPosition: CommandPath
+    MPTZRelativeMove: CommandPath
+    MPTZMoveToPreset: CommandPath
+    MPTZSavePreset: CommandPath
+    MPTZRemovePreset: CommandPath
+    DPTZSetViewport: CommandPath
+    DPTZRelativeMove: CommandPath
 
 class RefrigeratorAlarmClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4699,6 +5211,7 @@ class RefrigeratorAlarmClusterPath(ObjectPathBase):
     Latch: ParamPath[bytes]
     State: ParamPath[bytes]
     Supported: ParamPath[bytes]
+    Reset: CommandPath
 
 class FlowMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4710,6 +5223,9 @@ class AdministratorCommissioningClusterPath(ObjectPathBase):
     WindowStatus: ParamPath[str]
     AdminFabricIndex: ParamPath[int]
     AdminVendorId: ParamPath[int]
+    OpenCommissioningWindow: CommandPath
+    OpenBasicCommissioningWindow: CommandPath
+    RevokeCommissioning: CommandPath
 
 class ServiceAreaClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4722,6 +5238,8 @@ class ServiceAreaClusterPath(ObjectPathBase):
     SupportedAreas: TablePath[ServiceAreaCluster_SupportedAreasPath]
     SupportedMaps: TablePath[ServiceAreaCluster_SupportedMapsPath]
     Progress: TablePath[ServiceAreaCluster_ProgressPath]
+    SelectAreas: CommandPath
+    SkipArea: CommandPath
 
 class ThermostatUserInterfaceConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4744,6 +5262,10 @@ class WiFiNetworkDiagnosticsClusterPath(ObjectPathBase):
     PacketUnicastTxCount: ParamPath[int]
     CurrentMaxRate: ParamPath[int]
     OverrunCount: ParamPath[int]
+    ResetCounts: CommandPath
+    Disconnection: EventPath
+    AssociationFailure: EventPath
+    ConnectionStatus: EventPath
 
 class EnergyEVSEClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4770,6 +5292,19 @@ class EnergyEVSEClusterPath(ObjectPathBase):
     SessionDuration: ParamPath[int]
     SessionEnergyCharged: ParamPath[int]
     SessionEnergyDischarged: ParamPath[int]
+    Disable: CommandPath
+    EnableCharging: CommandPath
+    EnableDischarging: CommandPath
+    StartDiagnostics: CommandPath
+    SetTargets: CommandPath
+    GetTargets: CommandPath
+    ClearTargets: CommandPath
+    EVConnected: EventPath
+    EVNotDetected: EventPath
+    EnergyTransferStarted: EventPath
+    EnergyTransferStopped: EventPath
+    Fault: EventPath
+    RFID: EventPath
 
 class UserLabelClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4780,9 +5315,11 @@ class WiFiNetworkManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SSID: ParamPath[str]
     PassphraseSurrogate: ParamPath[int]
+    NetworkPassphraseRequest: CommandPath
 
 class RVCCleanModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class DescriptorClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4800,10 +5337,17 @@ class RefrigeratorAndTemperatureControlledCabinetModeClusterPath(ObjectPathBase)
     SupportedModesNumberOfEntries: ParamPath[int]
     CurrentMode: ParamPath[int]
     SupportedModes: TablePath[RefrigeratorAndTemperatureControlledCabinetModeCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class JointFabricAdministratorClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     AdministratorFabricIndex: ParamPath[int]
+    ICACCSRRequest: CommandPath
+    AddICAC: CommandPath
+    OpenJointCommissioningWindow: CommandPath
+    TransferAnchorRequest: CommandPath
+    TransferAnchorComplete: CommandPath
+    AnnounceJointFabricAdministrator: CommandPath
 
 class MediaPlaybackClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4820,6 +5364,21 @@ class MediaPlaybackClusterPath(ObjectPathBase):
     AvailableAudioTracks: TablePath[MediaPlaybackCluster_AvailableAudioTracksPath]
     ActiveTextTrack: MediaPlaybackCluster_ActiveTextTrackPath
     AvailableTextTracks: TablePath[MediaPlaybackCluster_AvailableTextTracksPath]
+    Play: CommandPath
+    Pause: CommandPath
+    Stop: CommandPath
+    StartOver: CommandPath
+    Previous: CommandPath
+    Next: CommandPath
+    Rewind: CommandPath
+    FastForward: CommandPath
+    SkipForward: CommandPath
+    SkipBackward: CommandPath
+    Seek: CommandPath
+    ActivateAudioTrack: CommandPath
+    ActivateTextTrack: CommandPath
+    DeactivateTextTrack: CommandPath
+    StateChanged: EventPath
 
 class OperationalCredentialsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4830,6 +5389,16 @@ class OperationalCredentialsClusterPath(ObjectPathBase):
     CurrentFabricIndex: ParamPath[int]
     NOCs: TablePath[OperationalCredentialsCluster_NOCsPath]
     Fabrics: TablePath[OperationalCredentialsCluster_FabricsPath]
+    AttestationRequest: CommandPath
+    CertificateChainRequest: CommandPath
+    CSRRequest: CommandPath
+    AddNOC: CommandPath
+    UpdateNOC: CommandPath
+    UpdateFabricLabel: CommandPath
+    RemoveFabric: CommandPath
+    AddTrustedRootCertificate: CommandPath
+    SetVIDVerificationStatement: CommandPath
+    SignVIDVerificationRequest: CommandPath
 
 class WindowCoveringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4847,6 +5416,11 @@ class WindowCoveringClusterPath(ObjectPathBase):
     CurrentPositionTiltPercent100ths: ParamPath[int]
     Mode: ParamPath[bytes]
     SafetyStatus: ParamPath[bytes]
+    UpOrOpen: CommandPath
+    DownOrClose: CommandPath
+    StopMotion: CommandPath
+    GoToLiftPercentage: CommandPath
+    GoToTiltPercentage: CommandPath
 
 class CommodityPriceClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4855,6 +5429,9 @@ class CommodityPriceClusterPath(ObjectPathBase):
     Currency: CommodityPriceCluster_CurrencyPath
     CurrentPrice: CommodityPriceCluster_CurrentPricePath
     PriceForecast: TablePath[CommodityPriceCluster_PriceForecastPath]
+    GetDetailedPriceRequest: CommandPath
+    GetDetailedForecastRequest: CommandPath
+    PriceChange: EventPath
 
 class LaundryDryerControlsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4870,6 +5447,7 @@ class ModeSelectClusterPath(ObjectPathBase):
     StartUpMode: ParamPath[int]
     OnMode: ParamPath[int]
     SupportedModes: TablePath[ModeSelectCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class SoftwareDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4878,6 +5456,8 @@ class SoftwareDiagnosticsClusterPath(ObjectPathBase):
     CurrentHeapUsed: ParamPath[int]
     CurrentHeapHighWatermark: ParamPath[int]
     ThreadMetrics: TablePath[SoftwareDiagnosticsCluster_ThreadMetricsPath]
+    ResetWatermarks: CommandPath
+    SoftwareFault: EventPath
 
 class ThermostatClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4937,12 +5517,22 @@ class ThermostatClusterPath(ObjectPathBase):
     ScheduleTypes: TablePath[ThermostatCluster_ScheduleTypesPath]
     Presets: TablePath[ThermostatCluster_PresetsPath]
     Schedules: TablePath[ThermostatCluster_SchedulesPath]
+    SetpointRaiseLower: CommandPath
+    SetWeeklySchedule: CommandPath
+    GetWeeklySchedule: CommandPath
+    ClearWeeklySchedule: CommandPath
+    SetActiveScheduleRequest: CommandPath
+    SetActivePresetRequest: CommandPath
 
 class MediaInputClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     InputListNumberOfEntries: ParamPath[int]
     CurrentInput: ParamPath[int]
     InputList: TablePath[MediaInputCluster_InputListPath]
+    SelectInput: CommandPath
+    ShowInputStatus: CommandPath
+    HideInputStatus: CommandPath
+    RenameInput: CommandPath
 
 class JointFabricDatastoreClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4969,6 +5559,26 @@ class JointFabricDatastoreClusterPath(ObjectPathBase):
     NodeKeySetList: TablePath[JointFabricDatastoreCluster_NodeKeySetListPath]
     NodeACLList: TablePath[JointFabricDatastoreCluster_NodeACLListPath]
     NodeEndpointList: TablePath[JointFabricDatastoreCluster_NodeEndpointListPath]
+    AddKeySet: CommandPath
+    UpdateKeySet: CommandPath
+    RemoveKeySet: CommandPath
+    AddGroup: CommandPath
+    UpdateGroup: CommandPath
+    RemoveGroup: CommandPath
+    AddAdmin: CommandPath
+    UpdateAdmin: CommandPath
+    RemoveAdmin: CommandPath
+    AddPendingNode: CommandPath
+    RefreshNode: CommandPath
+    UpdateNode: CommandPath
+    RemoveNode: CommandPath
+    UpdateEndpointForNode: CommandPath
+    AddGroupIDToEndpointForNode: CommandPath
+    RemoveGroupIDFromEndpointForNode: CommandPath
+    AddBindingToEndpointForNode: CommandPath
+    RemoveBindingFromEndpointForNode: CommandPath
+    AddACLToNode: CommandPath
+    RemoveACLFromNode: CommandPath
 
 class CommodityTariffClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -4998,6 +5608,8 @@ class CommodityTariffClusterPath(ObjectPathBase):
     TariffPeriods: TablePath[CommodityTariffCluster_TariffPeriodsPath]
     CurrentTariffComponents: TablePath[CommodityTariffCluster_CurrentTariffComponentsPath]
     NextTariffComponents: TablePath[CommodityTariffCluster_NextTariffComponentsPath]
+    GetTariffComponent: CommandPath
+    GetDayEntry: CommandPath
 
 class ThreadBorderRouterManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5007,11 +5619,18 @@ class ThreadBorderRouterManagementClusterPath(ObjectPathBase):
     InterfaceEnabled: ParamPath[bool]
     ActiveDatasetTimestamp: ParamPath[int]
     PendingDatasetTimestamp: ParamPath[int]
+    GetActiveDatasetRequest: CommandPath
+    GetPendingDatasetRequest: CommandPath
+    SetActiveDatasetRequest: CommandPath
+    SetPendingDatasetRequest: CommandPath
 
 class ApplicationLauncherClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     CatalogList: ParamPath[list[int]]
     CurrentApp: ApplicationLauncherCluster_CurrentAppPath
+    LaunchApp: CommandPath
+    StopApp: CommandPath
+    HideApp: CommandPath
 
 class MicrowaveOvenControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5023,6 +5642,8 @@ class MicrowaveOvenControlClusterPath(ObjectPathBase):
     SupportedWatts: ParamPath[list[int]]
     SelectedWattIndex: ParamPath[int]
     WattRating: ParamPath[int]
+    SetCookingParameters: CommandPath
+    AddMoreTime: CommandPath
 
 class LocalizationConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5039,6 +5660,11 @@ class MessagesClusterPath(ObjectPathBase):
     MessagesNumberOfEntries: ParamPath[int]
     ActiveMessageIDs: ParamPath[list[str]]
     Messages: TablePath[MessagesCluster_MessagesPath]
+    PresentMessagesRequest: CommandPath
+    CancelMessagesRequest: CommandPath
+    MessageQueued: EventPath
+    MessagePresented: EventPath
+    MessageComplete: EventPath
 
 class AirQualityClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5049,6 +5675,8 @@ class TargetNavigatorClusterPath(ObjectPathBase):
     TargetListNumberOfEntries: ParamPath[int]
     CurrentTarget: ParamPath[int]
     TargetList: TablePath[TargetNavigatorCluster_TargetListPath]
+    NavigateTarget: CommandPath
+    TargetUpdated: EventPath
 
 class RVCOperationalStateClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5059,6 +5687,9 @@ class RVCOperationalStateClusterPath(ObjectPathBase):
     OperationalState: ParamPath[str]
     OperationalStateList: TablePath[RVCOperationalStateCluster_OperationalStateListPath]
     OperationalError: RVCOperationalStateCluster_OperationalErrorPath
+    GoHome: CommandPath
+    Pause: CommandPath
+    Resume: CommandPath
 
 class ZoneManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5070,12 +5701,20 @@ class ZoneManagementClusterPath(ObjectPathBase):
     Zones: TablePath[ZoneManagementCluster_ZonesPath]
     Triggers: TablePath[ZoneManagementCluster_TriggersPath]
     TwoDCartesianMax: ZoneManagementCluster_TwoDCartesianMaxPath
+    CreateTwoDCartesianZone: CommandPath
+    UpdateTwoDCartesianZone: CommandPath
+    RemoveZone: CommandPath
+    CreateOrUpdateTrigger: CommandPath
+    RemoveTrigger: CommandPath
+    ZoneTriggered: EventPath
+    ZoneStopped: EventPath
 
 class LaundryWasherModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SupportedModesNumberOfEntries: ParamPath[int]
     CurrentMode: ParamPath[int]
     SupportedModes: TablePath[LaundryWasherModeCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class TimeSynchronizationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5094,6 +5733,16 @@ class TimeSynchronizationClusterPath(ObjectPathBase):
     TrustedTimeSource: TimeSynchronizationCluster_TrustedTimeSourcePath
     TimeZone: TablePath[TimeSynchronizationCluster_TimeZonePath]
     DSTOffset: TablePath[TimeSynchronizationCluster_DSTOffsetPath]
+    SetUTCTime: CommandPath
+    SetTrustedTimeSource: CommandPath
+    SetTimeZone: CommandPath
+    SetDSTOffset: CommandPath
+    SetDefaultNTP: CommandPath
+    DSTTableEmpty: EventPath
+    DSTStatus: EventPath
+    TimeZoneStatus: EventPath
+    TimeFailure: EventPath
+    MissingTrustedTimeSource: EventPath
 
 class GeneralCommissioningClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5109,6 +5758,10 @@ class GeneralCommissioningClusterPath(ObjectPathBase):
     NetworkRecoveryReason: ParamPath[str]
     IsCommissioningWithoutPower: ParamPath[bool]
     BasicCommissioningInfo: GeneralCommissioningCluster_BasicCommissioningInfoPath
+    ArmFailSafe: CommandPath
+    SetRegulatoryConfig: CommandPath
+    CommissioningComplete: CommandPath
+    SetTCAcknowledgements: CommandPath
 
 class TemperatureControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5116,9 +5769,11 @@ class TemperatureControlClusterPath(ObjectPathBase):
     Step: ParamPath[int]
     SelectedTemperatureLevel: ParamPath[int]
     SupportedTemperatureLevels: ParamPath[list[str]]
+    SetTemperature: CommandPath
 
 class DiagnosticLogsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    RetrieveLogsRequest: CommandPath
 
 class PressureMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5131,6 +5786,12 @@ class PressureMeasurementClusterPath(ObjectPathBase):
 class GroupsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     NameSupport: ParamPath[bytes]
+    AddGroup: CommandPath
+    ViewGroup: CommandPath
+    GetGroupMembership: CommandPath
+    RemoveGroup: CommandPath
+    RemoveAllGroups: CommandPath
+    AddGroupIfIdentifying: CommandPath
 
 class PowerSourceConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5147,12 +5808,16 @@ class MicrowaveOvenModeClusterPath(ObjectPathBase):
 
 class LowPowerClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    Sleep: CommandPath
 
 class ThreadNetworkDirectoryClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     PreferredExtendedPanID: ParamPath[str]
     ThreadNetworksNumberOfEntries: ParamPath[int]
     ThreadNetworks: TablePath[ThreadNetworkDirectoryCluster_ThreadNetworksPath]
+    AddNetwork: CommandPath
+    RemoveNetwork: CommandPath
+    GetOperationalDataset: CommandPath
 
 class IlluminanceMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5164,6 +5829,11 @@ class WebRTCTransportProviderClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     CurrentSessionsNumberOfEntries: ParamPath[int]
     CurrentSessions: TablePath[WebRTCTransportProviderCluster_CurrentSessionsPath]
+    SolicitOffer: CommandPath
+    ProvideOffer: CommandPath
+    ProvideAnswer: CommandPath
+    ProvideICECandidates: CommandPath
+    EndSession: CommandPath
 
 class ChannelClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5171,6 +5841,12 @@ class ChannelClusterPath(ObjectPathBase):
     ChannelList: TablePath[ChannelCluster_ChannelListPath]
     Lineup: ChannelCluster_LineupPath
     CurrentChannel: ChannelCluster_CurrentChannelPath
+    ChangeChannel: CommandPath
+    ChangeChannelByNumber: CommandPath
+    SkipChannel: CommandPath
+    GetProgramGuide: CommandPath
+    RecordProgram: CommandPath
+    CancelRecordProgram: CommandPath
 
 class EthernetNetworkDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5183,6 +5859,7 @@ class EthernetNetworkDiagnosticsClusterPath(ObjectPathBase):
     OverrunCount: ParamPath[int]
     CarrierDetect: ParamPath[bool]
     TimeSinceReset: ParamPath[int]
+    ResetCounts: CommandPath
 
 class ActionsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5191,6 +5868,20 @@ class ActionsClusterPath(ObjectPathBase):
     SetupURL: ParamPath[str]
     ActionList: TablePath[ActionsCluster_ActionListPath]
     EndpointLists: TablePath[ActionsCluster_EndpointListsPath]
+    InstantAction: CommandPath
+    InstantActionWithTransition: CommandPath
+    StartAction: CommandPath
+    StartActionWithDuration: CommandPath
+    StopAction: CommandPath
+    PauseAction: CommandPath
+    PauseActionWithDuration: CommandPath
+    ResumeAction: CommandPath
+    EnableAction: CommandPath
+    EnableActionWithDuration: CommandPath
+    DisableAction: CommandPath
+    DisableActionWithDuration: CommandPath
+    StateChanged: EventPath
+    ActionFailed: EventPath
 
 class MeterIdentificationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5209,9 +5900,16 @@ class OperationalStateClusterPath(ObjectPathBase):
     OperationalState: ParamPath[str]
     OperationalStateList: TablePath[OperationalStateCluster_OperationalStateListPath]
     OperationalError: OperationalStateCluster_OperationalErrorPath
+    Pause: CommandPath
+    Stop: CommandPath
+    Start: CommandPath
+    Resume: CommandPath
+    OperationalError_: EventPath
+    OperationCompletion: EventPath
 
 class RVCRunModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class PushAVStreamTransportClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5219,6 +5917,14 @@ class PushAVStreamTransportClusterPath(ObjectPathBase):
     CurrentConnectionsNumberOfEntries: ParamPath[int]
     SupportedFormats: TablePath[PushAVStreamTransportCluster_SupportedFormatsPath]
     CurrentConnections: TablePath[PushAVStreamTransportCluster_CurrentConnectionsPath]
+    AllocatePushTransport: CommandPath
+    DeallocatePushTransport: CommandPath
+    ModifyPushTransport: CommandPath
+    SetTransportStatus: CommandPath
+    ManuallyTriggerTransport: CommandPath
+    FindTransport: CommandPath
+    PushTransportBegin: EventPath
+    PushTransportEnd: EventPath
 
 class TemperatureMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5230,6 +5936,13 @@ class SwitchClusterPath(ObjectPathBase):
     NumberOfPositions: ParamPath[int]
     CurrentPosition: ParamPath[int]
     MultiPressMax: ParamPath[int]
+    SwitchLatched: EventPath
+    InitialPress: EventPath
+    LongPress: EventPath
+    ShortRelease: EventPath
+    LongRelease: EventPath
+    MultiPressOngoing: EventPath
+    MultiPressComplete: EventPath
 
 class BasicInformationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5257,6 +5970,10 @@ class BasicInformationClusterPath(ObjectPathBase):
     ConfigurationVersion: ParamPath[int]
     CapabilityMinima: BasicInformationCluster_CapabilityMinimaPath
     ProductAppearance: BasicInformationCluster_ProductAppearancePath
+    StartUp: EventPath
+    ShutDown: EventPath
+    Leave: EventPath
+    ReachableChanged: EventPath
 
 class ValveConfigurationandControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5271,11 +5988,17 @@ class ValveConfigurationandControlClusterPath(ObjectPathBase):
     DefaultOpenLevel: ParamPath[int]
     ValveFault: ParamPath[bytes]
     LevelStep: ParamPath[int]
+    Open: CommandPath
+    Close: CommandPath
+    ValveStateChanged: EventPath
+    ValveFault_: EventPath
 
 class ContentLauncherClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     AcceptHeader: ParamPath[list[str]]
     SupportedStreamingProtocols: ParamPath[bytes]
+    LaunchContent: CommandPath
+    LaunchURL: CommandPath
 
 class BooleanStateConfigurationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5286,6 +6009,10 @@ class BooleanStateConfigurationClusterPath(ObjectPathBase):
     AlarmsEnabled: ParamPath[bytes]
     AlarmsSupported: ParamPath[bytes]
     SensorFault: ParamPath[bytes]
+    SuppressAlarm: CommandPath
+    EnableDisableAlarm: CommandPath
+    AlarmsStateChanged: EventPath
+    SensorFault_: EventPath
 
 class BindingClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5294,6 +6021,7 @@ class BindingClusterPath(ObjectPathBase):
 
 class WaterHeaterModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class ChimeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5301,6 +6029,7 @@ class ChimeClusterPath(ObjectPathBase):
     SelectedChime: ParamPath[int]
     Enabled: ParamPath[bool]
     InstalledChimeSounds: TablePath[ChimeCluster_InstalledChimeSoundsPath]
+    PlayChimeSound: CommandPath
 
 class BridgedDeviceBasicInformationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5322,11 +6051,18 @@ class BridgedDeviceBasicInformationClusterPath(ObjectPathBase):
     UniqueID: ParamPath[str]
     ConfigurationVersion: ParamPath[int]
     ProductAppearance: BridgedDeviceBasicInformationCluster_ProductAppearancePath
+    KeepActive: CommandPath
+    StartUp: EventPath
+    ShutDown: EventPath
+    ReachableChanged: EventPath
+    ActiveChanged: EventPath
 
 class IdentifyClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     IdentifyTime: ParamPath[int]
     IdentifyType: ParamPath[str]
+    Identify: CommandPath
+    TriggerEffect: CommandPath
 
 class RelativeHumidityMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5340,9 +6076,14 @@ class OTASoftwareUpdateRequestorClusterPath(ObjectPathBase):
     UpdateState: ParamPath[str]
     UpdateStateProgress: ParamPath[int]
     DefaultOTAProviders: TablePath[OTASoftwareUpdateRequestorCluster_DefaultOTAProvidersPath]
+    AnnounceOTAProvider: CommandPath
+    StateTransition: EventPath
+    VersionApplied: EventPath
+    DownloadError: EventPath
 
 class EnergyEVSEModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class CameraAVStreamManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5388,13 +6129,30 @@ class CameraAVStreamManagementClusterPath(ObjectPathBase):
     AllocatedAudioStreams: TablePath[CameraAVStreamManagementCluster_AllocatedAudioStreamsPath]
     AllocatedSnapshotStreams: TablePath[CameraAVStreamManagementCluster_AllocatedSnapshotStreamsPath]
     Viewport: CameraAVStreamManagementCluster_ViewportPath
+    AudioStreamAllocate: CommandPath
+    AudioStreamDeallocate: CommandPath
+    VideoStreamAllocate: CommandPath
+    VideoStreamModify: CommandPath
+    VideoStreamDeallocate: CommandPath
+    SnapshotStreamAllocate: CommandPath
+    SnapshotStreamModify: CommandPath
+    SnapshotStreamDeallocate: CommandPath
+    SetStreamPriorities: CommandPath
+    CaptureSnapshot: CommandPath
 
 class CommissionerControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SupportedDeviceCategories: ParamPath[bytes]
+    RequestCommissioningApproval: CommandPath
+    CommissionNode: CommandPath
+    CommissioningRequestResult: EventPath
 
 class AccountLoginClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    GetSetupPIN: CommandPath
+    Login: CommandPath
+    Logout: CommandPath
+    LoggedOut: EventPath
 
 class DoorLockClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5443,6 +6201,44 @@ class DoorLockClusterPath(ObjectPathBase):
     AliroBLEAdvertisingVersion: ParamPath[int]
     NumberOfAliroCredentialIssuerKeysSupported: ParamPath[int]
     NumberOfAliroEndpointKeysSupported: ParamPath[int]
+    LockDoor: CommandPath
+    UnlockDoor: CommandPath
+    UnlockWithTimeout: CommandPath
+    SetPINCode: CommandPath
+    GetPINCode: CommandPath
+    ClearPINCode: CommandPath
+    ClearAllPINCodes: CommandPath
+    SetUserStatus: CommandPath
+    GetUserStatus: CommandPath
+    SetWeekDaySchedule: CommandPath
+    GetWeekDaySchedule: CommandPath
+    ClearWeekDaySchedule: CommandPath
+    SetYearDaySchedule: CommandPath
+    GetYearDaySchedule: CommandPath
+    ClearYearDaySchedule: CommandPath
+    SetHolidaySchedule: CommandPath
+    GetHolidaySchedule: CommandPath
+    ClearHolidaySchedule: CommandPath
+    SetUserType: CommandPath
+    GetUserType: CommandPath
+    SetRFIDCode: CommandPath
+    GetRFIDCode: CommandPath
+    ClearRFIDCode: CommandPath
+    ClearAllRFIDCodes: CommandPath
+    SetUser: CommandPath
+    GetUser: CommandPath
+    ClearUser: CommandPath
+    SetCredential: CommandPath
+    GetCredentialStatus: CommandPath
+    ClearCredential: CommandPath
+    UnboltDoor: CommandPath
+    SetAliroReaderConfig: CommandPath
+    ClearAliroReaderConfig: CommandPath
+    DoorLockAlarm: EventPath
+    DoorStateChange: EventPath
+    LockOperation: EventPath
+    LockOperationError: EventPath
+    LockUserChange: EventPath
 
 class UnitLocalizationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5457,6 +6253,13 @@ class ClosureControlClusterPath(ObjectPathBase):
     LatchControlModes: ParamPath[bytes]
     OverallCurrentState: ClosureControlCluster_OverallCurrentStatePath
     OverallTargetState: ClosureControlCluster_OverallTargetStatePath
+    Stop: CommandPath
+    MoveTo: CommandPath
+    Calibrate: CommandPath
+    OperationalError: EventPath
+    MovementCompleted: EventPath
+    EngageStateChanged: EventPath
+    SecureStateChanged: EventPath
 
 class HEPAFilterMonitoringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5467,6 +6270,7 @@ class HEPAFilterMonitoringClusterPath(ObjectPathBase):
     LastChangedTime: ParamPath[int]
     ReplacementProductListNumberOfEntries: ParamPath[int]
     ReplacementProductList: TablePath[HEPAFilterMonitoringCluster_ReplacementProductListPath]
+    ResetCondition: CommandPath
 
 class ActivatedCarbonFilterMonitoringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5477,6 +6281,7 @@ class ActivatedCarbonFilterMonitoringClusterPath(ObjectPathBase):
     LastChangedTime: ParamPath[int]
     ReplacementProductListNumberOfEntries: ParamPath[int]
     ReplacementProductList: TablePath[ActivatedCarbonFilterMonitoringCluster_ReplacementProductListPath]
+    ResetCondition: CommandPath
 
 class WaterTankLevelMonitoringClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5487,6 +6292,7 @@ class WaterTankLevelMonitoringClusterPath(ObjectPathBase):
     LastChangedTime: ParamPath[int]
     ReplacementProductListNumberOfEntries: ParamPath[int]
     ReplacementProductList: TablePath[WaterTankLevelMonitoringCluster_ReplacementProductListPath]
+    ResetCondition: CommandPath
 
 class OvenCavityOperationalStateClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5497,6 +6303,8 @@ class OvenCavityOperationalStateClusterPath(ObjectPathBase):
     OperationalState: ParamPath[str]
     OperationalStateList: TablePath[OvenCavityOperationalStateCluster_OperationalStateListPath]
     OperationalError: OvenCavityOperationalStateCluster_OperationalErrorPath
+    Stop: CommandPath
+    Start: CommandPath
 
 class ThreadNetworkDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5567,6 +6375,9 @@ class ThreadNetworkDiagnosticsClusterPath(ObjectPathBase):
     RouteTable: TablePath[ThreadNetworkDiagnosticsCluster_RouteTablePath]
     SecurityPolicy: ThreadNetworkDiagnosticsCluster_SecurityPolicyPath
     OperationalDatasetComponents: ThreadNetworkDiagnosticsCluster_OperationalDatasetComponentsPath
+    ResetCounts: CommandPath
+    ConnectionStatus: EventPath
+    NetworkFaultChange: EventPath
 
 class ContentControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5586,6 +6397,24 @@ class ContentControlClusterPath(ObjectPathBase):
     BlockChannelList: TablePath[ContentControlCluster_BlockChannelListPath]
     BlockApplicationList: TablePath[ContentControlCluster_BlockApplicationListPath]
     BlockContentTimeWindow: TablePath[ContentControlCluster_BlockContentTimeWindowPath]
+    UpdatePIN: CommandPath
+    ResetPIN: CommandPath
+    Enable: CommandPath
+    Disable: CommandPath
+    AddBonusTime: CommandPath
+    SetScreenDailyTime: CommandPath
+    BlockUnratedContent: CommandPath
+    UnblockUnratedContent: CommandPath
+    SetOnDemandRatingThreshold: CommandPath
+    SetScheduledContentRatingThreshold: CommandPath
+    AddBlockChannels: CommandPath
+    RemoveBlockChannels: CommandPath
+    AddBlockApplications: CommandPath
+    RemoveBlockApplications: CommandPath
+    SetBlockContentTimeWindow: CommandPath
+    RemoveBlockContentTimeWindow: CommandPath
+    RemainingScreenTimeExpired: EventPath
+    EnteringBlockContentTimeWindow: EventPath
 
 class ElectricalGridConditionsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5593,9 +6422,11 @@ class ElectricalGridConditionsClusterPath(ObjectPathBase):
     ForecastConditionsNumberOfEntries: ParamPath[int]
     CurrentConditions: ElectricalGridConditionsCluster_CurrentConditionsPath
     ForecastConditions: TablePath[ElectricalGridConditionsCluster_ForecastConditionsPath]
+    CurrentConditionsChanged: EventPath
 
 class KeypadInputClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    SendKey: CommandPath
 
 class EcosystemInformationClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5609,6 +6440,14 @@ class ScenesManagementClusterPath(ObjectPathBase):
     SceneTableSize: ParamPath[int]
     FabricSceneInfoNumberOfEntries: ParamPath[int]
     FabricSceneInfo: TablePath[ScenesManagementCluster_FabricSceneInfoPath]
+    AddScene: CommandPath
+    ViewScene: CommandPath
+    RemoveScene: CommandPath
+    RemoveAllScenes: CommandPath
+    StoreScene: CommandPath
+    RecallScene: CommandPath
+    GetSceneMembership: CommandPath
+    CopyScene: CommandPath
 
 class ClosureDimensionClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5624,6 +6463,8 @@ class ClosureDimensionClusterPath(ObjectPathBase):
     TargetState: ClosureDimensionCluster_TargetStatePath
     UnitRange: ClosureDimensionCluster_UnitRangePath
     LimitRange: ClosureDimensionCluster_LimitRangePath
+    SetTarget: CommandPath
+    Step: CommandPath
 
 class PumpConfigurationandControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5650,6 +6491,23 @@ class PumpConfigurationandControlClusterPath(ObjectPathBase):
     LifetimeEnergyConsumed: ParamPath[int]
     OperationMode: ParamPath[str]
     ControlMode: ParamPath[str]
+    SupplyVoltageLow: EventPath
+    SupplyVoltageHigh: EventPath
+    PowerMissingPhase: EventPath
+    SystemPressureLow: EventPath
+    SystemPressureHigh: EventPath
+    DryRunning: EventPath
+    MotorTemperatureHigh: EventPath
+    PumpMotorFatalFailure: EventPath
+    ElectronicTemperatureHigh: EventPath
+    PumpBlocked: EventPath
+    SensorFailure: EventPath
+    ElectronicNonFatalFailure: EventPath
+    ElectronicFatalFailure: EventPath
+    GeneralFault: EventPath
+    Leakage: EventPath
+    AirDetection: EventPath
+    TurbineOperation: EventPath
 
 class AccessControlClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5662,6 +6520,10 @@ class AccessControlClusterPath(ObjectPathBase):
     Extension: TablePath[AccessControlCluster_ExtensionPath]
     CommissioningARL: TablePath[AccessControlCluster_CommissioningARLPath]
     ARL: TablePath[AccessControlCluster_ARLPath]
+    ReviewFabricRestrictions: CommandPath
+    AccessControlEntryChanged: EventPath
+    AccessControlExtensionChanged: EventPath
+    FabricRestrictionReviewUpdate: EventPath
 
 class SoilMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5682,16 +6544,21 @@ class FanControlClusterPath(ObjectPathBase):
     WindSupport: ParamPath[bytes]
     WindSetting: ParamPath[bytes]
     AirflowDirection: ParamPath[str]
+    Step: CommandPath
 
 class TLSClientManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     MaxProvisioned: ParamPath[int]
     ProvisionedEndpointsNumberOfEntries: ParamPath[int]
     ProvisionedEndpoints: TablePath[TLSClientManagementCluster_ProvisionedEndpointsPath]
+    ProvisionEndpoint: CommandPath
+    FindEndpoint: CommandPath
+    RemoveEndpoint: CommandPath
 
 class BooleanStateClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     StateValue: ParamPath[bool]
+    StateChange: EventPath
 
 class GeneralDiagnosticsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5705,6 +6572,13 @@ class GeneralDiagnosticsClusterPath(ObjectPathBase):
     ActiveNetworkFaults: ParamPath[list[str]]
     TestEventTriggersEnabled: ParamPath[bool]
     NetworkInterfaces: TablePath[GeneralDiagnosticsCluster_NetworkInterfacesPath]
+    TestEventTrigger: CommandPath
+    TimeSnapshot: CommandPath
+    PayloadTestRequest: CommandPath
+    HardwareFaultChange: EventPath
+    RadioFaultChange: EventPath
+    NetworkFaultChange: EventPath
+    BootReason_: EventPath
 
 class DeviceEnergyManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5716,6 +6590,18 @@ class DeviceEnergyManagementClusterPath(ObjectPathBase):
     OptOutState: ParamPath[str]
     PowerAdjustmentCapability: DeviceEnergyManagementCluster_PowerAdjustmentCapabilityPath
     Forecast: DeviceEnergyManagementCluster_ForecastPath
+    PowerAdjustRequest: CommandPath
+    CancelPowerAdjustRequest: CommandPath
+    StartTimeAdjustRequest: CommandPath
+    PauseRequest: CommandPath
+    ResumeRequest: CommandPath
+    ModifyForecastRequest: CommandPath
+    RequestConstraintBasedForecast: CommandPath
+    CancelRequest: CommandPath
+    PowerAdjustStart: EventPath
+    PowerAdjustEnd: EventPath
+    Paused: EventPath
+    Resumed: EventPath
 
 class WaterHeaterManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5725,6 +6611,10 @@ class WaterHeaterManagementClusterPath(ObjectPathBase):
     EstimatedHeatRequired: ParamPath[int]
     TankPercentage: ParamPath[int]
     BoostState: ParamPath[str]
+    Boost: CommandPath
+    CancelBoost: CommandPath
+    BoostStarted: EventPath
+    BoostEnded: EventPath
 
 class ElectricalEnergyMeasurementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5734,6 +6624,8 @@ class ElectricalEnergyMeasurementClusterPath(ObjectPathBase):
     PeriodicEnergyImported: ElectricalEnergyMeasurementCluster_PeriodicEnergyImportedPath
     PeriodicEnergyExported: ElectricalEnergyMeasurementCluster_PeriodicEnergyExportedPath
     CumulativeEnergyReset: ElectricalEnergyMeasurementCluster_CumulativeEnergyResetPath
+    CumulativeEnergyMeasured: EventPath
+    PeriodicEnergyMeasured: EventPath
 
 class OnOffClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5742,6 +6634,12 @@ class OnOffClusterPath(ObjectPathBase):
     OnTime: ParamPath[int]
     OffWaitTime: ParamPath[int]
     StartUpOnOff: ParamPath[str]
+    Off: CommandPath
+    On: CommandPath
+    Toggle: CommandPath
+    OffWithEffect: CommandPath
+    OnWithRecallGlobalScene: CommandPath
+    OnWithTimedOff: CommandPath
 
 class ICDManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5756,6 +6654,9 @@ class ICDManagementClusterPath(ObjectPathBase):
     OperatingMode: ParamPath[str]
     MaximumCheckInBackoff: ParamPath[int]
     RegisteredClients: TablePath[ICDManagementCluster_RegisteredClientsPath]
+    RegisterClient: CommandPath
+    UnregisterClient: CommandPath
+    StayActiveRequest: CommandPath
 
 class ApplicationBasicClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5774,6 +6675,8 @@ class DishwasherAlarmClusterPath(ObjectPathBase):
     Latch: ParamPath[bytes]
     State: ParamPath[bytes]
     Supported: ParamPath[bytes]
+    Reset: CommandPath
+    ModifyEnabledAlarms: CommandPath
 
 class LaundryWasherControlsClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5789,6 +6692,7 @@ class WakeOnLANClusterPath(ObjectPathBase):
 
 class OvenModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class TLSCertificateManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5798,6 +6702,15 @@ class TLSCertificateManagementClusterPath(ObjectPathBase):
     ProvisionedClientCertificatesNumberOfEntries: ParamPath[int]
     ProvisionedRootCertificates: TablePath[TLSCertificateManagementCluster_ProvisionedRootCertificatesPath]
     ProvisionedClientCertificates: TablePath[TLSCertificateManagementCluster_ProvisionedClientCertificatesPath]
+    ProvisionRootCertificate: CommandPath
+    FindRootCertificate: CommandPath
+    LookupRootCertificate: CommandPath
+    RemoveRootCertificate: CommandPath
+    ClientCSR: CommandPath
+    ProvisionClientCertificate: CommandPath
+    FindClientCertificate: CommandPath
+    LookupClientCertificate: CommandPath
+    RemoveClientCertificate: CommandPath
 
 class NetworkCommissioningClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5813,12 +6726,20 @@ class NetworkCommissioningClusterPath(ObjectPathBase):
     SupportedThreadFeatures: ParamPath[bytes]
     ThreadVersion: ParamPath[int]
     Networks: TablePath[NetworkCommissioningCluster_NetworksPath]
+    ScanNetworks: CommandPath
+    AddOrUpdateWiFiNetwork: CommandPath
+    AddOrUpdateThreadNetwork: CommandPath
+    RemoveNetwork: CommandPath
+    ConnectNetwork: CommandPath
+    ReorderNetwork: CommandPath
 
 class AudioOutputClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     OutputListNumberOfEntries: ParamPath[int]
     CurrentOutput: ParamPath[int]
     OutputList: TablePath[AudioOutputCluster_OutputListPath]
+    SelectOutput: CommandPath
+    RenameOutput: CommandPath
 
 class SmokeCOAlarmClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5835,9 +6756,22 @@ class SmokeCOAlarmClusterPath(ObjectPathBase):
     ContaminationState: ParamPath[str]
     SmokeSensitivityLevel: ParamPath[str]
     ExpiryDate: ParamPath[int]
+    SelfTestRequest: CommandPath
+    SmokeAlarm: EventPath
+    COAlarm: EventPath
+    LowBattery: EventPath
+    HardwareFault: EventPath
+    EndOfService: EventPath
+    SelfTestComplete: EventPath
+    AlarmMuted: EventPath
+    MuteEnded: EventPath
+    InterconnectSmokeAlarm_: EventPath
+    InterconnectCOAlarm_: EventPath
+    AllClear: EventPath
 
 class DeviceEnergyManagementModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
+    ChangeToMode: CommandPath
 
 class PowerSourceClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5873,12 +6807,16 @@ class PowerSourceClusterPath(ObjectPathBase):
     BatChargingCurrent: ParamPath[int]
     ActiveBatChargeFaults: ParamPath[list[str]]
     EndpointList: ParamPath[list[int]]
+    WiredFaultChange: EventPath
+    BatFaultChange: EventPath
+    BatChargeFaultChange: EventPath
 
 class DishwasherModeClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     SupportedModesNumberOfEntries: ParamPath[int]
     CurrentMode: ParamPath[int]
     SupportedModes: TablePath[DishwasherModeCluster_SupportedModesPath]
+    ChangeToMode: CommandPath
 
 class FixedLabelClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -5897,11 +6835,21 @@ class LevelControlClusterPath(ObjectPathBase):
     OffTransitionTime: ParamPath[int]
     DefaultMoveRate: ParamPath[int]
     StartUpCurrentLevel: ParamPath[int]
+    MoveToLevel: CommandPath
+    Move: CommandPath
+    Step: CommandPath
+    Stop: CommandPath
+    MoveToLevelWithOnOff: CommandPath
+    MoveWithOnOff: CommandPath
+    StepWithOnOff: CommandPath
+    StopWithOnOff: CommandPath
+    MoveToClosestFrequency: CommandPath
 
 class OccupancySensingClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
     Occupancy: ParamPath[bytes]
     HoldTime: ParamPath[int]
+    OccupancyChanged: EventPath
 
 class EnergyPreferenceClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]

@@ -6,7 +6,7 @@ generated from, for validation and descriptions.
 """
 
 from bbfmodels.model import load_schema
-from bbfmodels.tr104_1.voiceservice import VoiceService
+from bbfmodels.tr104_1.voiceservice import COMMANDS, EVENTS, VoiceService
 
 SOURCE = "tr-104-1-1-0.xml"
 SPEC = "urn:broadband-forum-org:tr-104-1-1-0"
@@ -17,4 +17,4 @@ def schema():  # type: ignore[no-untyped-def]
     return load_schema(__name__)
 
 
-__all__ = ["VoiceService", "MODEL", "SOURCE", "SPEC", "schema"]
+__all__ = ["VoiceService", "COMMANDS", "EVENTS", "MODEL", "SOURCE", "SPEC", "schema"]

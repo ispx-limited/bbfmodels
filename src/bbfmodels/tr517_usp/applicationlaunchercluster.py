@@ -30,3 +30,74 @@ class ApplicationLauncherCluster(_Model):
     CurrentApp: ApplicationLauncherCluster_CurrentApp | None = _Field(default=None)
 
 
+class ApplicationLauncherCluster_LaunchApp_Input_Application(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.LaunchApp().Input.Application."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CatalogVendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ApplicationID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ApplicationLauncherCluster_LaunchApp_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.LaunchApp().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Application: ApplicationLauncherCluster_LaunchApp_Input_Application | None = _Field(default=None)
+
+
+class ApplicationLauncherCluster_LaunchApp_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.LaunchApp().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'AppNotAvailable', 'SystemBusy', 'PendingUserApproval', 'Downloading', 'Installing'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ApplicationLauncherCluster_StopApp_Input_Application(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.StopApp().Input.Application."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CatalogVendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ApplicationID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ApplicationLauncherCluster_StopApp_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.StopApp().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Application: ApplicationLauncherCluster_StopApp_Input_Application | None = _Field(default=None)
+
+
+class ApplicationLauncherCluster_StopApp_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.StopApp().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'AppNotAvailable', 'SystemBusy', 'PendingUserApproval', 'Downloading', 'Installing'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ApplicationLauncherCluster_HideApp_Input_Application(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.HideApp().Input.Application."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CatalogVendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ApplicationID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ApplicationLauncherCluster_HideApp_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.HideApp().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Application: ApplicationLauncherCluster_HideApp_Input_Application | None = _Field(default=None)
+
+
+class ApplicationLauncherCluster_HideApp_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ApplicationLauncherCluster.{i}.HideApp().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'AppNotAvailable', 'SystemBusy', 'PendingUserApproval', 'Downloading', 'Installing'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.ApplicationLauncherCluster.{i}.LaunchApp()": (ApplicationLauncherCluster_LaunchApp_Input, ApplicationLauncherCluster_LaunchApp_Output),
+    "MatterService.{i}.ApplicationLauncherCluster.{i}.StopApp()": (ApplicationLauncherCluster_StopApp_Input, ApplicationLauncherCluster_StopApp_Output),
+    "MatterService.{i}.ApplicationLauncherCluster.{i}.HideApp()": (ApplicationLauncherCluster_HideApp_Input, ApplicationLauncherCluster_HideApp_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

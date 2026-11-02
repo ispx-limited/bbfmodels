@@ -217,3 +217,62 @@ class DNS(_Model):
     RebindProtection: DNS_RebindProtection | None = _Field(default=None)
 
 
+class DNS_Relay_Config_FlushCache_Input(_Model):
+    __bbf_path__ = "Device.DNS.Relay.Config.{i}.FlushCache().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DNS_Relay_Config_FlushCache_Output(_Model):
+    __bbf_path__ = "Device.DNS.Relay.Config.{i}.FlushCache().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DNS_Relay_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DNS.Relay.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DNS_Relay_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DNS.Relay.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DNS_Diagnostics_NSLookupDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.DNS.Diagnostics.NSLookupDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    HostName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DNSServer: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NumberOfRepetitions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DNS_Diagnostics_NSLookupDiagnostics_Output_Result(_Model):
+    __bbf_path__ = "Device.DNS.Diagnostics.NSLookupDiagnostics().Output.Result.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_DNSServerNotAvailable', 'Error_HostNameNotResolved', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    AnswerType: _Annotated[_Literal['None', 'Authoritative', 'NonAuthoritative'] | str | None, _Param(_BaseType.STRING)] = None
+    HostNameReturned: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IPAddresses: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    DNSServerIP: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DNS_Diagnostics_NSLookupDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.DNS.Diagnostics.NSLookupDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Complete', 'Error_DNSServerNotResolved', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    SuccessCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Result: dict[int, DNS_Diagnostics_NSLookupDiagnostics_Output_Result] = _Field(default_factory=dict)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.DNS.Relay.Config.{i}.FlushCache()": (DNS_Relay_Config_FlushCache_Input, DNS_Relay_Config_FlushCache_Output),
+    "Device.DNS.Relay.Stats.Reset()": (DNS_Relay_Stats_Reset_Input, DNS_Relay_Stats_Reset_Output),
+    "Device.DNS.Diagnostics.NSLookupDiagnostics()": (DNS_Diagnostics_NSLookupDiagnostics_Input, DNS_Diagnostics_NSLookupDiagnostics_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -191,3 +191,184 @@ class Thread(_Model):
     Node: dict[int, Thread_Node] = _Field(default_factory=dict)
 
 
+class Thread_BorderRouter_Start_Input(_Model):
+    __bbf_path__ = "Device.Thread.BorderRouter.{i}.Start().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_BorderRouter_Start_Output(_Model):
+    __bbf_path__ = "Device.Thread.BorderRouter.{i}.Start().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_BorderRouter_Stop_Input(_Model):
+    __bbf_path__ = "Device.Thread.BorderRouter.{i}.Stop().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_BorderRouter_Stop_Output(_Model):
+    __bbf_path__ = "Device.Thread.BorderRouter.{i}.Stop().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_Radio_Scan_Input(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.Scan().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_Radio_Scan_Output_PanScan(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.Scan().Output.PanScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PanID: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RSSI: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    LQI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Thread_Radio_Scan_Output(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.Scan().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PanScan: dict[int, Thread_Radio_Scan_Output_PanScan] = _Field(default_factory=dict)
+
+
+class Thread_Radio_EnergyScan_Input(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.EnergyScan().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_Radio_EnergyScan_Output_ChannelScan(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.EnergyScan().Output.ChannelScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RSSI: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class Thread_Radio_EnergyScan_Output(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.EnergyScan().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ChannelScan: dict[int, Thread_Radio_EnergyScan_Output_ChannelScan] = _Field(default_factory=dict)
+
+
+class Thread_Radio_ChangePowerMode_Input(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.ChangePowerMode().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PowerState: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Thread_Radio_ChangePowerMode_Output(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.ChangePowerMode().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_Radio_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_Radio_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Thread.Radio.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_MLE_SetActiveDataset_Input(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.SetActiveDataset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TLVs: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Thread_MLE_SetActiveDataset_Output(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.SetActiveDataset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_MLE_SetPendingDataset_Input(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.SetPendingDataset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TLVs: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Thread_MLE_SetPendingDataset_Output(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.SetPendingDataset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_MLE_GetActiveDataset_Input(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.GetActiveDataset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_MLE_GetActiveDataset_Output(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.GetActiveDataset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TLVs: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Thread_MLE_GetPendingDataset_Input(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.GetPendingDataset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_MLE_GetPendingDataset_Output(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.GetPendingDataset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TLVs: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Thread_MLE_NetworkDiagnostic_Input(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.NetworkDiagnostic().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TargetIPv6Address: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    RequestedTLVTypes: _Annotated[_CommaList[_HexBinary] | None, _Param(_BaseType.HEX_BINARY, list=True)] = None
+    RequestTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Thread_MLE_NetworkDiagnostic_Output_Node_TLV(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.NetworkDiagnostic().Output.Node.{i}.TLV.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TLVType: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    RawValue: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Thread_MLE_NetworkDiagnostic_Output_Node(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.NetworkDiagnostic().Output.Node.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    SourceAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TLV: dict[int, Thread_MLE_NetworkDiagnostic_Output_Node_TLV] = _Field(default_factory=dict)
+
+
+class Thread_MLE_NetworkDiagnostic_Output(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.NetworkDiagnostic().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Node: dict[int, Thread_MLE_NetworkDiagnostic_Output_Node] = _Field(default_factory=dict)
+
+
+class Thread_MLE_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Thread_MLE_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Thread.MLE.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.Thread.BorderRouter.{i}.Start()": (Thread_BorderRouter_Start_Input, Thread_BorderRouter_Start_Output),
+    "Device.Thread.BorderRouter.{i}.Stop()": (Thread_BorderRouter_Stop_Input, Thread_BorderRouter_Stop_Output),
+    "Device.Thread.Radio.{i}.Scan()": (Thread_Radio_Scan_Input, Thread_Radio_Scan_Output),
+    "Device.Thread.Radio.{i}.EnergyScan()": (Thread_Radio_EnergyScan_Input, Thread_Radio_EnergyScan_Output),
+    "Device.Thread.Radio.{i}.ChangePowerMode()": (Thread_Radio_ChangePowerMode_Input, Thread_Radio_ChangePowerMode_Output),
+    "Device.Thread.Radio.{i}.Stats.Reset()": (Thread_Radio_Stats_Reset_Input, Thread_Radio_Stats_Reset_Output),
+    "Device.Thread.MLE.{i}.SetActiveDataset()": (Thread_MLE_SetActiveDataset_Input, Thread_MLE_SetActiveDataset_Output),
+    "Device.Thread.MLE.{i}.SetPendingDataset()": (Thread_MLE_SetPendingDataset_Input, Thread_MLE_SetPendingDataset_Output),
+    "Device.Thread.MLE.{i}.GetActiveDataset()": (Thread_MLE_GetActiveDataset_Input, Thread_MLE_GetActiveDataset_Output),
+    "Device.Thread.MLE.{i}.GetPendingDataset()": (Thread_MLE_GetPendingDataset_Input, Thread_MLE_GetPendingDataset_Output),
+    "Device.Thread.MLE.{i}.NetworkDiagnostic()": (Thread_MLE_NetworkDiagnostic_Input, Thread_MLE_NetworkDiagnostic_Output),
+    "Device.Thread.MLE.{i}.Stats.Reset()": (Thread_MLE_Stats_Reset_Input, Thread_MLE_Stats_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

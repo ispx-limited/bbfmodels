@@ -13,3 +13,10 @@ class Services(_Model):
     __bbf_package__ = "bbfmodels.tr181_cwmp"
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

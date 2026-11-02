@@ -22,3 +22,10 @@ class Capabilities(_Model):
     VolumeEncryptionCapable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

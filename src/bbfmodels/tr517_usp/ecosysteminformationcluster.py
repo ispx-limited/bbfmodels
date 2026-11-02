@@ -57,3 +57,10 @@ class EcosystemInformationCluster(_Model):
     LocationDirectory: dict[int, EcosystemInformationCluster_LocationDirectory] = _Field(default_factory=dict)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

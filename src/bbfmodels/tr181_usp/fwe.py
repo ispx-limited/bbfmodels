@@ -48,3 +48,21 @@ class FWE(_Model):
     Link: dict[int, FWE_Link] = _Field(default_factory=dict)
 
 
+class FWE_Link_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.FWE.Link.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class FWE_Link_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.FWE.Link.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.FWE.Link.{i}.Stats.Reset()": (FWE_Link_Stats_Reset_Input, FWE_Link_Stats_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

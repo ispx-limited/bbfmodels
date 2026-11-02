@@ -235,3 +235,10 @@ class DHCPv4(_Model):
     Relay: DHCPv4_Relay | None = _Field(default=None)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

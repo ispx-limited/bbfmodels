@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class OnOffCluster(_Model):
@@ -18,4 +18,88 @@ class OnOffCluster(_Model):
     OffWaitTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     StartUpOnOff: _Annotated[_Literal['Off', 'On', 'Toggle'] | str | None, _Param(_BaseType.STRING)] = None
 
+
+class OnOffCluster_Off_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.Off().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OnOffCluster_Off_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.Off().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OnOffCluster_On_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.On().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OnOffCluster_On_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.On().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OnOffCluster_Toggle_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.Toggle().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OnOffCluster_Toggle_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.Toggle().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OnOffCluster_OffWithEffect_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.OffWithEffect().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EffectIdentifier: _Annotated[_Literal['DelayedAllOff', 'DyingLight'] | str | None, _Param(_BaseType.STRING)] = None
+    EffectVariant: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OnOffCluster_OffWithEffect_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.OffWithEffect().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OnOffCluster_OnWithRecallGlobalScene_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.OnWithRecallGlobalScene().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OnOffCluster_OnWithRecallGlobalScene_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.OnWithRecallGlobalScene().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OnOffCluster_OnWithTimedOff_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.OnWithTimedOff().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OnOffControl: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OnTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OffWaitTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OnOffCluster_OnWithTimedOff_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OnOffCluster.{i}.OnWithTimedOff().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.OnOffCluster.{i}.Off()": (OnOffCluster_Off_Input, OnOffCluster_Off_Output),
+    "MatterService.{i}.OnOffCluster.{i}.On()": (OnOffCluster_On_Input, OnOffCluster_On_Output),
+    "MatterService.{i}.OnOffCluster.{i}.Toggle()": (OnOffCluster_Toggle_Input, OnOffCluster_Toggle_Output),
+    "MatterService.{i}.OnOffCluster.{i}.OffWithEffect()": (OnOffCluster_OffWithEffect_Input, OnOffCluster_OffWithEffect_Output),
+    "MatterService.{i}.OnOffCluster.{i}.OnWithRecallGlobalScene()": (OnOffCluster_OnWithRecallGlobalScene_Input, OnOffCluster_OnWithRecallGlobalScene_Output),
+    "MatterService.{i}.OnOffCluster.{i}.OnWithTimedOff()": (OnOffCluster_OnWithTimedOff_Input, OnOffCluster_OnWithTimedOff_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

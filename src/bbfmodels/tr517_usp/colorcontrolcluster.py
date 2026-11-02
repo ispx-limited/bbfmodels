@@ -66,3 +66,329 @@ class ColorControlCluster(_Model):
     StartUpColorTemperatureMireds: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
+class ColorControlCluster_MoveToHue_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToHue().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Hue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Direction: _Annotated[_Literal['Shortest', 'Longest', 'Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveToHue_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToHue().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveHue_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveHue().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MoveMode: _Annotated[_Literal['Stop', 'Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    Rate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveHue_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveHue().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_StepHue_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepHue().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StepMode: _Annotated[_Literal['Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    StepSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_StepHue_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepHue().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveToSaturation_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToSaturation().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Saturation: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveToSaturation_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToSaturation().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveSaturation_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveSaturation().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MoveMode: _Annotated[_Literal['Stop', 'Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    Rate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveSaturation_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveSaturation().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_StepSaturation_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepSaturation().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StepMode: _Annotated[_Literal['Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    StepSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_StepSaturation_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepSaturation().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveToHueAndSaturation_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToHueAndSaturation().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Hue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Saturation: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveToHueAndSaturation_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToHueAndSaturation().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveToColor_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToColor().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ColorX: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ColorY: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveToColor_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToColor().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveColor_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveColor().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    RateX: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    RateY: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveColor_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveColor().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_StepColor_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepColor().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StepX: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    StepY: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_StepColor_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepColor().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveToColorTemperature_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToColorTemperature().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ColorTemperatureMireds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveToColorTemperature_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveToColorTemperature().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_EnhancedMoveToHue_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveToHue().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EnhancedHue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Direction: _Annotated[_Literal['Shortest', 'Longest', 'Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_EnhancedMoveToHue_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveToHue().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_EnhancedMoveHue_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveHue().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MoveMode: _Annotated[_Literal['Stop', 'Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    Rate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_EnhancedMoveHue_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveHue().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_EnhancedStepHue_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedStepHue().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StepMode: _Annotated[_Literal['Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    StepSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_EnhancedStepHue_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedStepHue().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_EnhancedMoveToHueAndSaturation_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveToHueAndSaturation().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EnhancedHue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Saturation: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_EnhancedMoveToHueAndSaturation_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveToHueAndSaturation().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_ColorLoopSet_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.ColorLoopSet().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UpdateFlags: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    Action: _Annotated[_Literal['Deactivate', 'ActivateFromColorLoopStartEnhancedHue', 'ActivateFromEnhancedCurrentHue'] | str | None, _Param(_BaseType.STRING)] = None
+    Direction: _Annotated[_Literal['Decrement', 'Increment'] | str | None, _Param(_BaseType.STRING)] = None
+    Time: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartHue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_ColorLoopSet_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.ColorLoopSet().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_StopMoveStep_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StopMoveStep().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_StopMoveStep_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StopMoveStep().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_MoveColorTemperature_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveColorTemperature().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MoveMode: _Annotated[_Literal['Stop', 'Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    Rate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ColorTemperatureMinimumMireds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ColorTemperatureMaximumMireds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_MoveColorTemperature_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.MoveColorTemperature().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ColorControlCluster_StepColorTemperature_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepColorTemperature().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StepMode: _Annotated[_Literal['Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    StepSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ColorTemperatureMinimumMireds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ColorTemperatureMaximumMireds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ColorControlCluster_StepColorTemperature_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ColorControlCluster.{i}.StepColorTemperature().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.ColorControlCluster.{i}.MoveToHue()": (ColorControlCluster_MoveToHue_Input, ColorControlCluster_MoveToHue_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveHue()": (ColorControlCluster_MoveHue_Input, ColorControlCluster_MoveHue_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.StepHue()": (ColorControlCluster_StepHue_Input, ColorControlCluster_StepHue_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveToSaturation()": (ColorControlCluster_MoveToSaturation_Input, ColorControlCluster_MoveToSaturation_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveSaturation()": (ColorControlCluster_MoveSaturation_Input, ColorControlCluster_MoveSaturation_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.StepSaturation()": (ColorControlCluster_StepSaturation_Input, ColorControlCluster_StepSaturation_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveToHueAndSaturation()": (ColorControlCluster_MoveToHueAndSaturation_Input, ColorControlCluster_MoveToHueAndSaturation_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveToColor()": (ColorControlCluster_MoveToColor_Input, ColorControlCluster_MoveToColor_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveColor()": (ColorControlCluster_MoveColor_Input, ColorControlCluster_MoveColor_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.StepColor()": (ColorControlCluster_StepColor_Input, ColorControlCluster_StepColor_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveToColorTemperature()": (ColorControlCluster_MoveToColorTemperature_Input, ColorControlCluster_MoveToColorTemperature_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveToHue()": (ColorControlCluster_EnhancedMoveToHue_Input, ColorControlCluster_EnhancedMoveToHue_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveHue()": (ColorControlCluster_EnhancedMoveHue_Input, ColorControlCluster_EnhancedMoveHue_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.EnhancedStepHue()": (ColorControlCluster_EnhancedStepHue_Input, ColorControlCluster_EnhancedStepHue_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.EnhancedMoveToHueAndSaturation()": (ColorControlCluster_EnhancedMoveToHueAndSaturation_Input, ColorControlCluster_EnhancedMoveToHueAndSaturation_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.ColorLoopSet()": (ColorControlCluster_ColorLoopSet_Input, ColorControlCluster_ColorLoopSet_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.StopMoveStep()": (ColorControlCluster_StopMoveStep_Input, ColorControlCluster_StopMoveStep_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.MoveColorTemperature()": (ColorControlCluster_MoveColorTemperature_Input, ColorControlCluster_MoveColorTemperature_Output),
+    "MatterService.{i}.ColorControlCluster.{i}.StepColorTemperature()": (ColorControlCluster_StepColorTemperature_Input, ColorControlCluster_StepColorTemperature_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

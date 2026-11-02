@@ -16,3 +16,17 @@ class OccupancySensingCluster(_Model):
     HoldTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+class OccupancySensingCluster_OccupancyChanged_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.OccupancySensingCluster.{i}.OccupancyChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Occupancy: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.OccupancySensingCluster.{i}.OccupancyChanged!": OccupancySensingCluster_OccupancyChanged_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -25,3 +25,41 @@ class TargetNavigatorCluster(_Model):
     TargetList: dict[int, TargetNavigatorCluster_TargetList] = _Field(default_factory=dict)
 
 
+class TargetNavigatorCluster_NavigateTarget_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TargetNavigatorCluster.{i}.NavigateTarget().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Target: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TargetNavigatorCluster_NavigateTarget_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TargetNavigatorCluster.{i}.NavigateTarget().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'TargetNotFound', 'NotAllowed'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TargetNavigatorCluster_TargetUpdated_Event_TargetList(_Model):
+    __bbf_path__ = "MatterService.{i}.TargetNavigatorCluster.{i}.TargetUpdated!.TargetList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Identifier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TargetNavigatorCluster_TargetUpdated_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.TargetNavigatorCluster.{i}.TargetUpdated!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CurrentTarget: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TargetList: dict[int, TargetNavigatorCluster_TargetUpdated_Event_TargetList] = _Field(default_factory=dict)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.TargetNavigatorCluster.{i}.NavigateTarget()": (TargetNavigatorCluster_NavigateTarget_Input, TargetNavigatorCluster_NavigateTarget_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.TargetNavigatorCluster.{i}.TargetUpdated!": TargetNavigatorCluster_TargetUpdated_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

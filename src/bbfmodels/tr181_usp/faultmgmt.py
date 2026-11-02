@@ -95,3 +95,10 @@ class FaultMgmt(_Model):
     QueuedEvent: dict[int, FaultMgmt_QueuedEvent] = _Field(default_factory=dict)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

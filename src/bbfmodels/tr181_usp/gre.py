@@ -102,3 +102,21 @@ class GRE(_Model):
     Filter: dict[int, GRE_Filter] = _Field(default_factory=dict)
 
 
+class GRE_Tunnel_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.GRE.Tunnel.{i}.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class GRE_Tunnel_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.GRE.Tunnel.{i}.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.GRE.Tunnel.{i}.Interface.{i}.Stats.Reset()": (GRE_Tunnel_Interface_Stats_Reset_Input, GRE_Tunnel_Interface_Stats_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

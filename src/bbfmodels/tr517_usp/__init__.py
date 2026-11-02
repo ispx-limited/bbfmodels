@@ -6,7 +6,7 @@ generated from, for validation and descriptions.
 """
 
 from bbfmodels.model import load_schema
-from bbfmodels.tr517_usp.matterservice import MatterService
+from bbfmodels.tr517_usp.matterservice import COMMANDS, EVENTS, MatterService
 
 SOURCE = "tr-517-1-0-0-usp.xml"
 SPEC = "urn:broadband-forum-org:tr-517-1-0-0-usp"
@@ -17,4 +17,4 @@ def schema():  # type: ignore[no-untyped-def]
     return load_schema(__name__)
 
 
-__all__ = ["MatterService", "MODEL", "SOURCE", "SPEC", "schema"]
+__all__ = ["MatterService", "COMMANDS", "EVENTS", "MODEL", "SOURCE", "SPEC", "schema"]

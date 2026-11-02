@@ -96,3 +96,33 @@ class ElectricalPowerMeasurementCluster(_Model):
     HarmonicPhases: dict[int, ElectricalPowerMeasurementCluster_HarmonicPhases] = _Field(default_factory=dict)
 
 
+class ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event_Ranges(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!.Ranges.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MeasurementType: _Annotated[_Literal['Unspecified', 'Voltage', 'ActiveCurrent', 'ReactiveCurrent', 'ApparentCurrent', 'ActivePower', 'ReactivePower', 'ApparentPower', 'RMSVoltage', 'RMSCurrent', 'RMSPower', 'Frequency', 'PowerFactor', 'NeutralCurrent', 'ElectricalEnergy', 'ReactiveEnergy', 'ApparentEnergy'] | str | None, _Param(_BaseType.STRING)] = None
+    Min: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Max: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    StartTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MinSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MaxSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Ranges: dict[int, ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event_Ranges] = _Field(default_factory=dict)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!": ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -6,7 +6,7 @@ generated from, for validation and descriptions.
 """
 
 from bbfmodels.model import load_schema
-from bbfmodels.tr196_usp.fapservice import FAPService
+from bbfmodels.tr196_usp.fapservice import COMMANDS, EVENTS, FAPService
 
 SOURCE = "tr-196-2-1-2-usp.xml"
 SPEC = "urn:broadband-forum-org:tr-196-2-1-2-usp"
@@ -17,4 +17,4 @@ def schema():  # type: ignore[no-untyped-def]
     return load_schema(__name__)
 
 
-__all__ = ["FAPService", "MODEL", "SOURCE", "SPEC", "schema"]
+__all__ = ["FAPService", "COMMANDS", "EVENTS", "MODEL", "SOURCE", "SPEC", "schema"]

@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class ChannelCluster_ChannelList(_Model):
@@ -51,4 +51,224 @@ class ChannelCluster(_Model):
     Lineup: ChannelCluster_Lineup | None = _Field(default=None)
     CurrentChannel: ChannelCluster_CurrentChannel | None = _Field(default=None)
 
+
+class ChannelCluster_ChangeChannel_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.ChangeChannel().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Match: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_ChangeChannel_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.ChangeChannel().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'MultipleMatches', 'NoMatches'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_ChangeChannelByNumber_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.ChangeChannelByNumber().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MajorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ChannelCluster_ChangeChannelByNumber_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.ChangeChannelByNumber().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_SkipChannel_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.SkipChannel().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Count: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ChannelCluster_SkipChannel_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.SkipChannel().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Input_ChannelList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Input.ChannelList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MajorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CallSign: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AffiliateCallSign: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Identifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Type: _Annotated[_Literal['Satellite', 'Cable', 'Terrestrial', 'OTT'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Input_ExternalIDList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Input.ExternalIDList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ChannelCluster_GetProgramGuide_Input_PageToken(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Input.PageToken."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Limit: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    After: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Before: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RecordingFlag: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ChannelList: dict[int, ChannelCluster_GetProgramGuide_Input_ChannelList] = _Field(default_factory=dict)
+    PageToken: ChannelCluster_GetProgramGuide_Input_PageToken | None = _Field(default=None)
+    ExternalIDList: dict[int, ChannelCluster_GetProgramGuide_Input_ExternalIDList] = _Field(default_factory=dict)
+
+
+class ChannelCluster_GetProgramGuide_Output_ProgramList_CategoryList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.ProgramList.{i}.CategoryList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Category: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SubCategory: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Output_ProgramList_CastList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.ProgramList.{i}.CastList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Role: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Output_ProgramList_ExternalIDList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.ProgramList.{i}.ExternalIDList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ChannelCluster_GetProgramGuide_Output_ProgramList_Channel(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.ProgramList.{i}.Channel."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MajorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CallSign: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AffiliateCallSign: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Identifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Type: _Annotated[_Literal['Satellite', 'Cable', 'Terrestrial', 'OTT'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Output_ProgramList_SeriesInfo(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.ProgramList.{i}.SeriesInfo."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Season: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Episode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Output_Paging_PreviousToken(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.Paging.PreviousToken."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Limit: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    After: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Before: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Output_Paging_NextToken(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.Paging.NextToken."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Limit: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    After: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Before: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_GetProgramGuide_Output_ProgramList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.ProgramList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Identifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    StartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Title: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Subtitle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AudioLanguages: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Ratings: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    ThumbnailUrl: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    PosterArtUrl: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DvbiUrl: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ReleaseDate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ParentalGuidanceText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    RecordingFlag: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    Channel: ChannelCluster_GetProgramGuide_Output_ProgramList_Channel | None = _Field(default=None)
+    SeriesInfo: ChannelCluster_GetProgramGuide_Output_ProgramList_SeriesInfo | None = _Field(default=None)
+    CategoryList: dict[int, ChannelCluster_GetProgramGuide_Output_ProgramList_CategoryList] = _Field(default_factory=dict)
+    CastList: dict[int, ChannelCluster_GetProgramGuide_Output_ProgramList_CastList] = _Field(default_factory=dict)
+    ExternalIDList: dict[int, ChannelCluster_GetProgramGuide_Output_ProgramList_ExternalIDList] = _Field(default_factory=dict)
+
+
+class ChannelCluster_GetProgramGuide_Output_Paging(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output.Paging."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousToken: ChannelCluster_GetProgramGuide_Output_Paging_PreviousToken | None = _Field(default=None)
+    NextToken: ChannelCluster_GetProgramGuide_Output_Paging_NextToken | None = _Field(default=None)
+
+
+class ChannelCluster_GetProgramGuide_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Paging: ChannelCluster_GetProgramGuide_Output_Paging | None = _Field(default=None)
+    ProgramList: dict[int, ChannelCluster_GetProgramGuide_Output_ProgramList] = _Field(default_factory=dict)
+
+
+class ChannelCluster_RecordProgram_Input_ExternalIDList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.RecordProgram().Input.ExternalIDList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ChannelCluster_RecordProgram_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.RecordProgram().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ProgramIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ShouldRecordSeries: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExternalIDList: dict[int, ChannelCluster_RecordProgram_Input_ExternalIDList] = _Field(default_factory=dict)
+
+
+class ChannelCluster_RecordProgram_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.RecordProgram().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ChannelCluster_CancelRecordProgram_Input_ExternalIDList(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.CancelRecordProgram().Input.ExternalIDList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ChannelCluster_CancelRecordProgram_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.CancelRecordProgram().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ProgramIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ShouldRecordSeries: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExternalIDList: dict[int, ChannelCluster_CancelRecordProgram_Input_ExternalIDList] = _Field(default_factory=dict)
+
+
+class ChannelCluster_CancelRecordProgram_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ChannelCluster.{i}.CancelRecordProgram().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.ChannelCluster.{i}.ChangeChannel()": (ChannelCluster_ChangeChannel_Input, ChannelCluster_ChangeChannel_Output),
+    "MatterService.{i}.ChannelCluster.{i}.ChangeChannelByNumber()": (ChannelCluster_ChangeChannelByNumber_Input, ChannelCluster_ChangeChannelByNumber_Output),
+    "MatterService.{i}.ChannelCluster.{i}.SkipChannel()": (ChannelCluster_SkipChannel_Input, ChannelCluster_SkipChannel_Output),
+    "MatterService.{i}.ChannelCluster.{i}.GetProgramGuide()": (ChannelCluster_GetProgramGuide_Input, ChannelCluster_GetProgramGuide_Output),
+    "MatterService.{i}.ChannelCluster.{i}.RecordProgram()": (ChannelCluster_RecordProgram_Input, ChannelCluster_RecordProgram_Output),
+    "MatterService.{i}.ChannelCluster.{i}.CancelRecordProgram()": (ChannelCluster_CancelRecordProgram_Input, ChannelCluster_CancelRecordProgram_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

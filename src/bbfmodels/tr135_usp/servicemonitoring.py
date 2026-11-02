@@ -356,3 +356,43 @@ class ServiceMonitoring(_Model):
     GlobalOperation: ServiceMonitoring_GlobalOperation | None = _Field(default=None)
 
 
+class ServiceMonitoring_ForceSample_Input(_Model):
+    __bbf_path__ = "STBService.{i}.ServiceMonitoring.ForceSample().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class ServiceMonitoring_ForceSample_Output(_Model):
+    __bbf_path__ = "STBService.{i}.ServiceMonitoring.ForceSample().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class ServiceMonitoring_MainStream_Total_Reset_Input(_Model):
+    __bbf_path__ = "STBService.{i}.ServiceMonitoring.MainStream.{i}.Total.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class ServiceMonitoring_MainStream_Total_Reset_Output(_Model):
+    __bbf_path__ = "STBService.{i}.ServiceMonitoring.MainStream.{i}.Total.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class ServiceMonitoring_MainStream_EventLog_Reset_Input(_Model):
+    __bbf_path__ = "STBService.{i}.ServiceMonitoring.MainStream.{i}.EventLog.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class ServiceMonitoring_MainStream_EventLog_Reset_Output(_Model):
+    __bbf_path__ = "STBService.{i}.ServiceMonitoring.MainStream.{i}.EventLog.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "STBService.{i}.ServiceMonitoring.ForceSample()": (ServiceMonitoring_ForceSample_Input, ServiceMonitoring_ForceSample_Output),
+    "STBService.{i}.ServiceMonitoring.MainStream.{i}.Total.Reset()": (ServiceMonitoring_MainStream_Total_Reset_Input, ServiceMonitoring_MainStream_Total_Reset_Output),
+    "STBService.{i}.ServiceMonitoring.MainStream.{i}.EventLog.Reset()": (ServiceMonitoring_MainStream_EventLog_Reset_Input, ServiceMonitoring_MainStream_EventLog_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

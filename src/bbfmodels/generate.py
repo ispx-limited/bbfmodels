@@ -21,8 +21,8 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
-from bbfmodels.ir import BaseType, Document, Model, Object, Parameter
-from bbfmodels.paths import identifier
+from bbfmodels.ir import Arguments, BaseType, Document, Model, Object, Parameter
+from bbfmodels.paths import identifier, member_name
 
 # The documents the shipped packages are generated from. A package is named
 # after its document: the protocol suffix appears where the Forum publishes
@@ -97,6 +97,7 @@ def generate(doc: Document, package: str, out: Path) -> list[Path]:
             continue
         body = _HEADER.format(source=source) + _imports(objects)
         body += "".join(_emit_class(o, root, package, modules, model) for o in _postorder(objects))
+        body += _emit_arguments(objects, root, package)
         path = out / f"{modules[group]}.py"
         path.write_text(body)
         written.append(path)
@@ -106,6 +107,11 @@ def generate(doc: Document, package: str, out: Path) -> list[Path]:
     body += "".join(f"from {package} import {modules[g]}\n" for g in sorted(groups) if g != "")
     body += "\n"
     body += "".join(_emit_class(o, root, package, modules, model) for o in _postorder(root_objects))
+    body += _emit_arguments(root_objects, root, package)
+    others = [modules[g] for g in sorted(groups) if g != ""]
+    body += "# Every command's input and output class, and every event's class, by path.\n"
+    body += "COMMANDS = {" + "".join(f"**{m}.COMMANDS, " for m in others) + "**_COMMANDS}\n"
+    body += "EVENTS = {" + "".join(f"**{m}.EVENTS, " for m in others) + "**_EVENTS}\n"
     root_path = out / f"{modules['']}.py"
     root_path.write_text(body)
     written.append(root_path)
@@ -123,13 +129,14 @@ def generate(doc: Document, package: str, out: Path) -> list[Path]:
         f"document and regenerate. ``schema()`` loads the IR the models were\n"
         f'generated from, for validation and descriptions.\n"""\n\n'
         f"from bbfmodels.model import load_schema\n"
-        f"from {package}.{modules['']} import {identifier(root)}\n\n"
+        f"from {package}.{modules['']} import COMMANDS, EVENTS, {identifier(root)}\n\n"
         f'SOURCE = "{source}"\n'
         f'SPEC = "{doc.spec}"\n'
         f'MODEL = "{model.name}"\n\n\n'
         f"def schema():  # type: ignore[no-untyped-def]\n"
         f"    return load_schema(__name__)\n\n\n"
-        f'__all__ = ["{identifier(root)}", "MODEL", "SOURCE", "SPEC", "schema"]\n'
+        f'__all__ = ["{identifier(root)}", "COMMANDS", "EVENTS", "MODEL", "SOURCE", "SPEC", '
+        f'"schema"]\n'
     )
     init_path = out / "__init__.py"
     init_path.write_text(init)
@@ -188,8 +195,26 @@ def class_name(obj: Object, root: str) -> str:
     return identifier(root) if len(segments) == 1 else identifier("_".join(segments[1:]))
 
 
+def _all_parameters(objects: list[Object]) -> list[Parameter]:
+    out: list[Parameter] = []
+
+    def args(a: Arguments) -> None:
+        out.extend(a.parameters.values())
+        for nested in a.objects.values():
+            out.extend(nested.parameters.values())
+
+    for o in objects:
+        out.extend(o.parameters.values())
+        for c in o.commands.values():
+            args(c.input)
+            args(c.output)
+        for e in o.events.values():
+            args(e.arguments)
+    return out
+
+
 def _imports(objects: list[Object]) -> str:
-    types = {_PY_TYPE[p.syntax.base_type] for o in objects for p in o.parameters.values()}
+    types = {_PY_TYPE[p.syntax.base_type] for p in _all_parameters(objects)}
     lines = ["from typing import Annotated as _Annotated, Literal as _Literal\n"]
     if "_datetime" in types:
         lines.append("from datetime import datetime as _datetime\n")
@@ -299,7 +324,8 @@ def _emit_paths_stub(model: Model, root: str, source: str) -> str:
         _HEADER.format(source=source),
         "from datetime import datetime\n",
         "from decimal import Decimal\n",
-        "from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath\n\n",
+        "from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, "
+        "TablePath\n\n",
     ]
     for obj in _postorder(list(model.objects.values())):
         name = class_name(obj, root) + "Path"
@@ -317,7 +343,14 @@ def _emit_paths_stub(model: Model, root: str, source: str) -> str:
                 lines.append(f"    {field}: TablePath[{child_name}]\n")
             else:
                 lines.append(f"    {field}: {child_name}\n")
-        if not obj.parameters and not _children(obj, model):
+        taken = {identifier(n) for n in obj.parameters} | {
+            identifier(c.name) for c in _children(obj, model)
+        }
+        for cmd in obj.commands.values():
+            lines.append(f"    {_member_identifier(cmd.name, taken)}: CommandPath\n")
+        for ev in obj.events.values():
+            lines.append(f"    {_member_identifier(ev.name, taken)}: EventPath\n")
+        if not obj.parameters and not _children(obj, model) and not obj.commands and not obj.events:
             lines.append("    pass\n")
         lines.append("\n")
     root_obj = next(iter(model.objects.values()))
@@ -327,3 +360,98 @@ def _emit_paths_stub(model: Model, root: str, source: str) -> str:
     else:
         lines.append(f"{identifier(root)}: {root_name}\n")
     return "".join(lines)
+
+
+def _emit_arguments(objects: list[Object], root: str, package: str) -> str:
+    """Classes for every command's input and output and every event's payload.
+
+    A command ``Device.IP.Diagnostics.TraceRoute()`` becomes
+    ``IP_Diagnostics_TraceRoute_Input`` and ``IP_Diagnostics_TraceRoute_Output``;
+    an object inside the output, ``RouteHops.{i}.``, becomes
+    ``IP_Diagnostics_TraceRoute_Output_RouteHops`` held as a table. Their
+    schema paths are the ones the schema indexes arguments under. The module
+    ends with the registries the root module merges.
+    """
+    out: list[str] = []
+    commands: list[str] = []
+    events: list[str] = []
+    for obj in objects:
+        owner = class_name(obj, root)
+        for cmd in obj.commands.values():
+            base = f"{owner}_{identifier(member_name(cmd.name))}"
+            inp = _emit_argument_classes(
+                f"{base}_Input", f"{obj.path}{cmd.name}.Input.", cmd.input, package, out
+            )
+            outp = _emit_argument_classes(
+                f"{base}_Output", f"{obj.path}{cmd.name}.Output.", cmd.output, package, out
+            )
+            commands.append(f'    "{obj.path}{cmd.name}": ({inp}, {outp}),\n')
+        for ev in obj.events.values():
+            name = f"{owner}_{identifier(member_name(ev.name))}_Event"
+            cls = _emit_argument_classes(name, f"{obj.path}{ev.name}.", ev.arguments, package, out)
+            events.append(f'    "{obj.path}{ev.name}": {cls},\n')
+    out.append(
+        "_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {\n" + "".join(commands) + "}\n"
+    )
+    out.append("_EVENTS: dict[str, type[_Model]] = {\n" + "".join(events) + "}\n")
+    out.append("COMMANDS = _COMMANDS\nEVENTS = _EVENTS\n\n")
+    return "".join(out)
+
+
+def _emit_argument_classes(
+    name: str, path: str, args: Arguments, package: str, out: list[str]
+) -> str:
+    """Emit one argument set's class and the classes of the objects inside it, deepest first."""
+    nested = sorted(args.objects.items(), key=lambda kv: -kv[0].count("."))
+    for rel, obj in nested:
+        segments = [s for s in rel.rstrip(".").split(".") if s != "{i}"]
+        lines = [f"class {name}_{'_'.join(identifier(s) for s in segments)}(_Model):\n"]
+        lines.append(f'    __bbf_path__ = "{path}{rel}"\n')
+        lines.append(f'    __bbf_package__ = "{package}"\n')
+        for param in obj.parameters.values():
+            lines.append(_emit_parameter(param))
+        lines.extend(_emit_nested_children(name, rel, args))
+        out.append("".join(lines) + "\n\n")
+    lines = [f"class {name}(_Model):\n"]
+    lines.append(f'    __bbf_path__ = "{path}"\n')
+    lines.append(f'    __bbf_package__ = "{package}"\n')
+    for param in args.parameters.values():
+        lines.append(_emit_parameter(param))
+    lines.extend(_emit_nested_children(name, "", args))
+    out.append("".join(lines) + "\n\n")
+    return name
+
+
+def _emit_nested_children(name: str, rel: str, args: Arguments) -> list[str]:
+    """Fields for the argument objects directly under ``rel``; ``""`` is the argument set itself."""
+    lines: list[str] = []
+    for child_rel in args.objects:
+        parent = child_rel[:-4] if child_rel.endswith("{i}.") else child_rel
+        parent = parent.rstrip(".").rpartition(".")[0]
+        parent = parent + "." if parent else ""
+        if parent != rel:
+            continue
+        segments = [s for s in child_rel.rstrip(".").split(".") if s != "{i}"]
+        cls = f"{name}_{'_'.join(identifier(s) for s in segments)}"
+        field = _field_name(segments[-1])
+        alias = f', alias="{segments[-1]}"' if field != segments[-1] else ""
+        if child_rel.endswith("{i}."):
+            lines.append(f"    {field}: dict[int, {cls}] = _Field(default_factory=dict{alias})\n")
+        else:
+            lines.append(f"    {field}: {cls} | None = _Field(default=None{alias})\n")
+    return lines
+
+
+def _member_identifier(forum: str, taken: set[str]) -> str:
+    """The attribute a command or event is reached by in a path.
+
+    The bare name, ``Reboot`` for ``Reboot()``, unless a parameter or child
+    object already has it (Matter has ``ValveFault`` beside ``ValveFault!``),
+    in which case a trailing underscore tells them apart. The runtime
+    applies the same rule.
+    """
+    name = identifier(member_name(forum))
+    if name in taken:
+        name += "_"
+    taken.add(name)
+    return name

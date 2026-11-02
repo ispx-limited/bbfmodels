@@ -15,3 +15,10 @@ class ReservedPorts(_Model):
     LANPortRange: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

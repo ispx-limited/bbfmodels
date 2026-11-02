@@ -29,3 +29,63 @@ class TLSClientManagementCluster(_Model):
     ProvisionedEndpoints: dict[int, TLSClientManagementCluster_ProvisionedEndpoints] = _Field(default_factory=dict)
 
 
+class TLSClientManagementCluster_ProvisionEndpoint_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSClientManagementCluster.{i}.ProvisionEndpoint().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Hostname: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CAID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CCDID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    EndpointID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class TLSClientManagementCluster_ProvisionEndpoint_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSClientManagementCluster.{i}.ProvisionEndpoint().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSClientManagementCluster_FindEndpoint_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSClientManagementCluster.{i}.FindEndpoint().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSClientManagementCluster_FindEndpoint_Output_Endpoint(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSClientManagementCluster.{i}.FindEndpoint().Output.Endpoint."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Hostname: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CAID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CCDID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ReferenceCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSClientManagementCluster_FindEndpoint_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSClientManagementCluster.{i}.FindEndpoint().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Endpoint: TLSClientManagementCluster_FindEndpoint_Output_Endpoint | None = _Field(default=None)
+
+
+class TLSClientManagementCluster_RemoveEndpoint_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSClientManagementCluster.{i}.RemoveEndpoint().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSClientManagementCluster_RemoveEndpoint_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSClientManagementCluster.{i}.RemoveEndpoint().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.TLSClientManagementCluster.{i}.ProvisionEndpoint()": (TLSClientManagementCluster_ProvisionEndpoint_Input, TLSClientManagementCluster_ProvisionEndpoint_Output),
+    "MatterService.{i}.TLSClientManagementCluster.{i}.FindEndpoint()": (TLSClientManagementCluster_FindEndpoint_Input, TLSClientManagementCluster_FindEndpoint_Output),
+    "MatterService.{i}.TLSClientManagementCluster.{i}.RemoveEndpoint()": (TLSClientManagementCluster_RemoveEndpoint_Input, TLSClientManagementCluster_RemoveEndpoint_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

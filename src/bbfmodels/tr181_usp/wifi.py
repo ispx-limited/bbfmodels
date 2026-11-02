@@ -2248,3 +2248,1033 @@ class WiFi(_Model):
     EndPoint: dict[int, WiFi_EndPoint] = _Field(default_factory=dict)
 
 
+class WiFi_NeighboringWiFiDiagnostic_Input(_Model):
+    __bbf_path__ = "Device.WiFi.NeighboringWiFiDiagnostic().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_NeighboringWiFiDiagnostic_Output_Result(_Model):
+    __bbf_path__ = "Device.WiFi.NeighboringWiFiDiagnostic().Output.Result.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Radio: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Mode: _Annotated[_Literal['AdHoc', 'Infrastructure'] | str | None, _Param(_BaseType.STRING)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SignalStrength: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    SecurityModeEnabled: _Annotated[_Literal['None', 'WEP', 'WPA', 'WPA2', 'WPA-WPA2', 'WPA-Enterprise', 'WPA2-Enterprise', 'WPA-WPA2-Enterprise', 'WPA3-SAE', 'WPA2-PSK-WPA3-SAE', 'WPA3-Enterprise', 'OWE', 'WPA2-PSK-WPA3-SAE-RSNO'] | str | None, _Param(_BaseType.STRING)] = None
+    EncryptionMode: _Annotated[_CommaList[_Literal['TKIP', 'AES'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OperatingFrequencyBand: _Annotated[_Literal['2.4GHz', '5GHz', '6GHz'] | str | None, _Param(_BaseType.STRING)] = None
+    SupportedStandards: _Annotated[_CommaList[_Literal['a', 'b', 'g', 'n', 'ac', 'ax', 'be'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OperatingStandards: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OperatingChannelBandwidth: _Annotated[_Literal['20MHz', '40MHz', '80MHz', '160MHz', '320MHz-1', '320MHz-2', 'Auto'] | str | None, _Param(_BaseType.STRING)] = None
+    BeaconPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Noise: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    BasicDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    DTIMPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_NeighboringWiFiDiagnostic_Output(_Model):
+    __bbf_path__ = "Device.WiFi.NeighboringWiFiDiagnostic().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
+    Result: dict[int, WiFi_NeighboringWiFiDiagnostic_Output_Result] = _Field(default_factory=dict)
+
+
+class WiFi_Reset_Input(_Model):
+    __bbf_path__ = "Device.WiFi.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_Reset_Output(_Model):
+    __bbf_path__ = "Device.WiFi.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_DataElements_Network_SetTrafficSeparation_Input_SSIDtoVIDMapping(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetTrafficSeparation().Input.SSIDtoVIDMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    VID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_SetTrafficSeparation_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetTrafficSeparation().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SSIDtoVIDMapping: dict[int, WiFi_DataElements_Network_SetTrafficSeparation_Input_SSIDtoVIDMapping] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_SetTrafficSeparation_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetTrafficSeparation().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_SetServicePrioritization_Input_SPRule(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetServicePrioritization().Input.SPRule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Precedence: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Output: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AlwaysMatch: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class WiFi_DataElements_Network_SetServicePrioritization_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetServicePrioritization().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    DSCPMap: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    SPRule: dict[int, WiFi_DataElements_Network_SetServicePrioritization_Input_SPRule] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_SetServicePrioritization_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetServicePrioritization().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_SetPreferredBackhauls_Input_PreferredBackhauls(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetPreferredBackhauls().Input.PreferredBackhauls.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BackhaulMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    bSTAMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_SetPreferredBackhauls_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetPreferredBackhauls().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PreferredBackhauls: dict[int, WiFi_DataElements_Network_SetPreferredBackhauls_Input_PreferredBackhauls] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_SetPreferredBackhauls_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetPreferredBackhauls().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_SetSSID_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetSSID().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AddRemoveChange: _Annotated[_Literal['Add', 'Remove', 'Change'] | str | None, _Param(_BaseType.STRING)] = None
+    PassPhrase: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Band: _Annotated[_CommaList[_Literal['All', '2.4', '5', '6', '5_UNII_1', '5_UNII_2', '5_UNII_3', '5_UNII_4', '6_UNII_5', '6_UNII_6', '6_UNII_7', '6_UNII_8'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    AKMsAllowed: _Annotated[_CommaList[_Literal['psk', 'dpp', 'sae', 'psk+sae', 'dpp+sae', 'dpp+psk+sae', 'SuiteSelector'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SuiteSelector: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    AdvertisementEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MFPConfig: _Annotated[_Literal['Disabled', 'Optional', 'Required'] | str | None, _Param(_BaseType.STRING)] = None
+    MobilityDomain: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    HaulType: _Annotated[_CommaList[_Literal['Fronthaul', 'Backhaul'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Type: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_SetSSID_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetSSID().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_SetMSCSDisallowed_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetMSCSDisallowed().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MSCSDisallowedStaList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class WiFi_DataElements_Network_SetMSCSDisallowed_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetMSCSDisallowed().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_SetSCSDisallowed_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetSCSDisallowed().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    SCSDisallowedStaList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class WiFi_DataElements_Network_SetSCSDisallowed_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.SetSCSDisallowed().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_ControllerBTMSteer_Event(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.ControllerBTMSteer!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    STAMAC: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BTMStatusCode: _Annotated[_Literal['Accept', 'Reject_Unspecified', 'Reject_Insufficient_Response', 'Reject_Insufficient_Capacity', 'Reject_Undesired', 'Reject_Delay', 'Reject_STA_List', 'Reject_No_BSS', 'Reject_Leaving_ESS'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_AgentOnboard_Event(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.AgentOnboard!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DeviceID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BackhaulSta: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BackhaulMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BackhaulALID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_SetSTASteeringState_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.SetSTASteeringState().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Disallowed: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class WiFi_DataElements_Network_Device_SetSTASteeringState_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.SetSTASteeringState().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_SetDFSState_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.SetDFSState().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DFSEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class WiFi_DataElements_Network_Device_SetDFSState_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.SetDFSState().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_SetAnticipatedChannelPreference_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.SetAnticipatedChannelPreference().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OpClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelList: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class WiFi_DataElements_Network_Device_SetAnticipatedChannelPreference_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.SetAnticipatedChannelPreference().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_InitiateWPSPBC_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.InitiateWPSPBC().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_DataElements_Network_Device_InitiateWPSPBC_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.InitiateWPSPBC().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_RefreshAPMetrics_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.RefreshAPMetrics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    RUID: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+
+
+class WiFi_DataElements_Network_Device_RefreshAPMetrics_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.RefreshAPMetrics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_BackhaulChange_Event(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.BackhaulChange!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TargetBSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ResultCode: _Annotated[_Literal['Success', 'Failure'] | str | None, _Param(_BaseType.STRING)] = None
+    ReasonCode: _Annotated[_Literal['Associated', 'Not_Associated', 'Capability_Report_Failure', 'Reject_Channel', 'Reject_Weak', 'Reject_Association'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_MultiAPDevice_Backhaul_SteerWiFiBackhaul_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.MultiAPDevice.Backhaul.SteerWiFiBackhaul().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TargetBSS: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeOut: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_MultiAPDevice_Backhaul_SteerWiFiBackhaul_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.MultiAPDevice.Backhaul.SteerWiFiBackhaul().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Timeout', 'Error_Invalid_Input', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_ChannelScanRequest_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelScanRequest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OpClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelList: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    ScanType: _Annotated[_Literal['Interrupt_Radio', 'Time_Sliced', 'Spatial_Stream', 'Unused_Radio'] | str | None, _Param(_BaseType.STRING)] = None
+    DwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DFSDwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HomeTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_ChannelScanRequest_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelScanRequest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_RadioEnable_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.RadioEnable().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_RadioEnable_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.RadioEnable().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_SetTxPowerLimit_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.SetTxPowerLimit().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TransmitPowerLimit: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_SetTxPowerLimit_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.SetTxPowerLimit().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_SetSpatialReuse_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.SetSpatialReuse().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSColor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HESIGASpatialReuseValue15Allowed: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SRGInformationValid: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    NonSRGOffsetValid: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    PSRDisallowed: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    NonSRGOBSSPDMaxOffset: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SRGOBSSPDMinOffset: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SRGOBSSPDMaxOffset: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SRGBSSColorBitmap: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    SRGPartialBSSIDBitmap: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_SetSpatialReuse_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.SetSpatialReuse().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_WiFiRestart_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.WiFiRestart().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_DataElements_Network_Device_Radio_WiFiRestart_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.WiFiRestart().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Input_Class_Channel(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelSelectionRequest().Input.Class.{i}.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    Preference: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Input_Class(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelSelectionRequest().Input.Class.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OpClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Channel: dict[int, WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Input_Class_Channel] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelSelectionRequest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Class: dict[int, WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Input_Class] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelSelectionRequest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_SetQMDescriptors_Input_QMDescriptor(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetQMDescriptors().Input.QMDescriptor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ClientMAC: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DescriptorElement: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_SetQMDescriptors_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetQMDescriptors().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    QMDescriptor: dict[int, WiFi_DataElements_Network_Device_Radio_BSS_SetQMDescriptors_Input_QMDescriptor] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_SetQMDescriptors_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetQMDescriptors().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_ThroughputTest_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.ThroughputTest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    STAMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    VID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WMMUP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestDirection: _Annotated[_Literal['Downlink', 'Uplink', 'Roundtrip'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_ThroughputTest_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.ThroughputTest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_LatencyTest_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.LatencyTest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    STAMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    VID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WMMUP: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NumberOfRepetitions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DataBlockSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_LatencyTest_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.LatencyTest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_SetEHTOperations_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetEHTOperations().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    EHTDefaultPEDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupAddressedBUIndicationLimit: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupAddressedBUIndicationExponent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BasicEHTMCSAndNssSet: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    Control: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    CCFS0: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    CCFS1: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    DisabledSubchannelBitmap: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_SetEHTOperations_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetEHTOperations().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_SetQoSManagement_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetQoSManagement().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    QosMapEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MSCSEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SCSEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    DSCPPolicyEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SCSTrafficDescriptionEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_SetQoSManagement_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetQoSManagement().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_STA_ClientSteer_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.ClientSteer().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TargetBSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    RequestMode: _Annotated[_Literal['Steering_Opportunity', 'Steering_Mandate'] | str | None, _Param(_BaseType.STRING)] = None
+    BTMDisassociationImminent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BTMAbridged: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    LinkRemovalImminent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SteeringOpportunityWindow: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BTMDisassociationTimer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetBSSOperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetBSSChannel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_STA_ClientSteer_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.ClientSteer().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_Disassociate_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.MultiAPSTA.Disassociate().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DisassociationTimer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ReasonCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Silent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_Disassociate_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.MultiAPSTA.Disassociate().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Timeout', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_BTMRequest_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.MultiAPSTA.BTMRequest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DisassociationImminent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    DisassociationTimer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BSSTerminationDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValidityInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SteeringTimer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetBSS: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_BTMRequest_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.MultiAPSTA.BTMRequest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Invalid_Mac', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.FullScan().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DFSDwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HomeTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.FullScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}.NeighborBSS.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignalStrength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelBandwidth: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ChannelUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StationCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MLDMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ReportingBSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MultiBSSID: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSLoadElementPresent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSColor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SecurityModeEnabled: _Annotated[_Literal['None', 'WEP', 'WPA', 'WPA2', 'WPA-WPA2', 'WPA-Enterprise', 'WPA2-Enterprise', 'WPA-WPA2-Enterprise', 'WPA3-SAE', 'WPA2-PSK-WPA3-SAE', 'WPA3-Enterprise', 'OWE', 'WPA2-PSK-WPA3-SAE-RSNO'] | str | None, _Param(_BaseType.STRING)] = None
+    EncryptionMode: _Annotated[_CommaList[_Literal['TKIP', 'AES'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedStandards: _Annotated[_CommaList[_Literal['a', 'b', 'g', 'n', 'ac', 'ax', 'be'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OperatingStandards: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    BasicDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedNSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DTIMPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BeaconPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult_OpClassScan_ChannelScan(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.FullScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Utilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Noise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanStatus: _Annotated[_Literal['0', '1', '2', '3', '4', '5', '6', '7'] | str | None, _Param(_BaseType.STRING)] = None
+    NeighborBSS: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult_OpClassScan(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.FullScan().Output.ScanResult.{i}.OpClassScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelScan: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult_OpClassScan_ChannelScan] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.FullScan().Output.ScanResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OpClassScan: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult_OpClassScan] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.FullScan().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Timeout', 'Error_Invalid_Input', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    ScanResult: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output_ScanResult] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Input_OpClass_Channel(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Input.OpClass.{i}.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Input_OpClass(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Input.OpClass.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Channel: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Input_OpClass_Channel] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Input(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DFSDwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HomeTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    OpClass: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Input_OpClass] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}.NeighborBSS.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignalStrength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelBandwidth: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ChannelUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StationCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MLDMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ReportingBSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MultiBSSID: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSLoadElementPresent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSColor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SecurityModeEnabled: _Annotated[_Literal['None', 'WEP', 'WPA', 'WPA2', 'WPA-WPA2', 'WPA-Enterprise', 'WPA2-Enterprise', 'WPA-WPA2-Enterprise', 'WPA3-SAE', 'WPA2-PSK-WPA3-SAE', 'WPA3-Enterprise', 'OWE', 'WPA2-PSK-WPA3-SAE-RSNO'] | str | None, _Param(_BaseType.STRING)] = None
+    EncryptionMode: _Annotated[_CommaList[_Literal['TKIP', 'AES'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedStandards: _Annotated[_CommaList[_Literal['a', 'b', 'g', 'n', 'ac', 'ax', 'be'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OperatingStandards: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    BasicDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedNSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DTIMPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BeaconPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Utilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Noise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanStatus: _Annotated[_Literal['0', '1', '2', '3', '4', '5', '6', '7'] | str | None, _Param(_BaseType.STRING)] = None
+    NeighborBSS: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult_OpClassScan(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Output.ScanResult.{i}.OpClassScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelScan: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Output.ScanResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OpClassScan: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult_OpClassScan] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    ScanResult: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_AssociationEvent_Associated_Event_WiFi6Capabilities(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.AssociationEvent.Associated!.WiFi6Capabilities."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    HE160: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    HE8080: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MCSNSS: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+    SUBeamformer: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SUBeamformee: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MUBeamformer: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Beamformee80orLess: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BeamformeeAbove80: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    ULMUMIMO: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    ULOFDMA: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    DLOFDMA: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MaxDLMUMIMO: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxULMUMIMO: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxDLOFDMA: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxULOFDMA: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RTS: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MURTS: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MultiBSSID: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MUEDCA: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    TWTRequestor: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    TWTResponder: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SpatialReuse: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AnticipatedChannelUsage: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class WiFi_DataElements_AssociationEvent_Associated_Event(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.AssociationEvent.Associated!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    StatusCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HTCapabilities: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+    VHTCapabilities: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+    HECapabilities: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+    ClientCapabilities: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+    OpClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WiFi6Capabilities: WiFi_DataElements_AssociationEvent_Associated_Event_WiFi6Capabilities | None = _Field(default=None)
+
+
+class WiFi_DataElements_DisassociationEvent_Disassociated_Event_DisassociationLinkStats(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.DisassociationEvent.Disassociated!.DisassociationLinkStats.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ErrorsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class WiFi_DataElements_DisassociationEvent_Disassociated_Event(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.DisassociationEvent.Disassociated!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ReasonCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ErrorsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RetransCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    LastDataDownlinkRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LastDataUplinkRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UtilizationReceive: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    UtilizationTransmit: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EstMACDataRateDownlink: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EstMACDataRateUplink: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SignalStrength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LastConnectTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Noise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InitiatedBy: _Annotated[_Literal['STA', 'EasyMesh_Agent', 'EasyMesh_Controller', 'DE_Collector', 'Unknown'] | str | None, _Param(_BaseType.STRING)] = None
+    OpClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DisassociationLinkStats: dict[int, WiFi_DataElements_DisassociationEvent_Disassociated_Event_DisassociationLinkStats] = _Field(default_factory=dict)
+
+
+class WiFi_DataElements_FailedConnectionEvent_FailedConnection_Event(_Model):
+    __bbf_path__ = "Device.WiFi.DataElements.FailedConnectionEvent.FailedConnection!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    StatusCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ReasonCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+
+
+class WiFi_Radio_RemoteMeasurementRequest_Input(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.RemoteMeasurementRequest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TargetBSS: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_Radio_RemoteMeasurementRequest_Output(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.RemoteMeasurementRequest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    SignalStrength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Noise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Invalid_Mac', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_Radio_InitiateCCAMeasurement_Input(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.InitiateCCAMeasurement().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Frequency: _Annotated[_Literal['2.4GHz', '5GHz', '6GHz'] | str | None, _Param(_BaseType.STRING)] = None
+    DwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_Radio_InitiateCCAMeasurement_Output(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.InitiateCCAMeasurement().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CCAReport: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    Status: _Annotated[_Literal['Success', 'Error_Not_Implemented', 'Error_Not_Ready', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_Radio_FullScan_Input(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.FullScan().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DFSDwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HomeTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_Radio_FullScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.FullScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}.NeighborBSS.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignalStrength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelBandwidth: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ChannelUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StationCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MLDMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ReportingBSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MultiBSSID: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSLoadElementPresent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSColor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SecurityModeEnabled: _Annotated[_Literal['None', 'WEP', 'WPA', 'WPA2', 'WPA-WPA2', 'WPA-Enterprise', 'WPA2-Enterprise', 'WPA-WPA2-Enterprise', 'WPA3-SAE', 'WPA2-PSK-WPA3-SAE', 'WPA3-Enterprise', 'OWE', 'WPA2-PSK-WPA3-SAE-RSNO'] | str | None, _Param(_BaseType.STRING)] = None
+    EncryptionMode: _Annotated[_CommaList[_Literal['TKIP', 'AES'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedStandards: _Annotated[_CommaList[_Literal['a', 'b', 'g', 'n', 'ac', 'ax', 'be'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OperatingStandards: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    BasicDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedNSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DTIMPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BeaconPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_Radio_FullScan_Output_ScanResult_OpClassScan_ChannelScan(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.FullScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Utilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Noise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanStatus: _Annotated[_Literal['0', '1', '2', '3', '4', '5', '6', '7'] | str | None, _Param(_BaseType.STRING)] = None
+    NeighborBSS: dict[int, WiFi_Radio_FullScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_FullScan_Output_ScanResult_OpClassScan(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.FullScan().Output.ScanResult.{i}.OpClassScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelScan: dict[int, WiFi_Radio_FullScan_Output_ScanResult_OpClassScan_ChannelScan] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_FullScan_Output_ScanResult(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.FullScan().Output.ScanResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OpClassScan: dict[int, WiFi_Radio_FullScan_Output_ScanResult_OpClassScan] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_FullScan_Output(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.FullScan().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Timeout', 'Error_Invalid_Input', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    ScanResult: dict[int, WiFi_Radio_FullScan_Output_ScanResult] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_ChannelScan_Input_OpClass_Channel(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Input.OpClass.{i}.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_Radio_ChannelScan_Input_OpClass(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Input.OpClass.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Channel: dict[int, WiFi_Radio_ChannelScan_Input_OpClass_Channel] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_ChannelScan_Input(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DFSDwellTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HomeTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    OpClass: dict[int, WiFi_Radio_ChannelScan_Input_OpClass] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}.NeighborBSS.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignalStrength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelBandwidth: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ChannelUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StationCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MLDMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ReportingBSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MultiBSSID: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSLoadElementPresent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    BSSColor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SecurityModeEnabled: _Annotated[_Literal['None', 'WEP', 'WPA', 'WPA2', 'WPA-WPA2', 'WPA-Enterprise', 'WPA2-Enterprise', 'WPA-WPA2-Enterprise', 'WPA3-SAE', 'WPA2-PSK-WPA3-SAE', 'WPA3-Enterprise', 'OWE', 'WPA2-PSK-WPA3-SAE-RSNO'] | str | None, _Param(_BaseType.STRING)] = None
+    EncryptionMode: _Annotated[_CommaList[_Literal['TKIP', 'AES'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedStandards: _Annotated[_CommaList[_Literal['a', 'b', 'g', 'n', 'ac', 'ax', 'be'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OperatingStandards: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    BasicDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedDataTransferRates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SupportedNSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DTIMPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BeaconPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFi_Radio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Output.ScanResult.{i}.OpClassScan.{i}.ChannelScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Utilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Noise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanStatus: _Annotated[_Literal['0', '1', '2', '3', '4', '5', '6', '7'] | str | None, _Param(_BaseType.STRING)] = None
+    NeighborBSS: dict[int, WiFi_Radio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan_NeighborBSS] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_ChannelScan_Output_ScanResult_OpClassScan(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Output.ScanResult.{i}.OpClassScan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    OperatingClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChannelScan: dict[int, WiFi_Radio_ChannelScan_Output_ScanResult_OpClassScan_ChannelScan] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_ChannelScan_Output_ScanResult(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Output.ScanResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    AggregateScanDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ScanType: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OpClassScan: dict[int, WiFi_Radio_ChannelScan_Output_ScanResult_OpClassScan] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_ChannelScan_Output(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChannelScan().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Interface_Down', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    ScanResult: dict[int, WiFi_Radio_ChannelScan_Output_ScanResult] = _Field(default_factory=dict)
+
+
+class WiFi_Radio_ChangePowerMode_Input(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChangePowerMode().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PowerState: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFi_Radio_ChangePowerMode_Output(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.ChangePowerMode().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_Radio_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_Radio_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.WiFi.Radio.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_SSID_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.WiFi.SSID.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_SSID_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.WiFi.SSID.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_AccessPoint_Security_Reset_Input(_Model):
+    __bbf_path__ = "Device.WiFi.AccessPoint.{i}.Security.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_AccessPoint_Security_Reset_Output(_Model):
+    __bbf_path__ = "Device.WiFi.AccessPoint.{i}.Security.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_AccessPoint_WPS_InitiateWPSPBC_Input(_Model):
+    __bbf_path__ = "Device.WiFi.AccessPoint.{i}.WPS.InitiateWPSPBC().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WiFi_AccessPoint_WPS_InitiateWPSPBC_Output(_Model):
+    __bbf_path__ = "Device.WiFi.AccessPoint.{i}.WPS.InitiateWPSPBC().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.WiFi.NeighboringWiFiDiagnostic()": (WiFi_NeighboringWiFiDiagnostic_Input, WiFi_NeighboringWiFiDiagnostic_Output),
+    "Device.WiFi.Reset()": (WiFi_Reset_Input, WiFi_Reset_Output),
+    "Device.WiFi.DataElements.Network.SetTrafficSeparation()": (WiFi_DataElements_Network_SetTrafficSeparation_Input, WiFi_DataElements_Network_SetTrafficSeparation_Output),
+    "Device.WiFi.DataElements.Network.SetServicePrioritization()": (WiFi_DataElements_Network_SetServicePrioritization_Input, WiFi_DataElements_Network_SetServicePrioritization_Output),
+    "Device.WiFi.DataElements.Network.SetPreferredBackhauls()": (WiFi_DataElements_Network_SetPreferredBackhauls_Input, WiFi_DataElements_Network_SetPreferredBackhauls_Output),
+    "Device.WiFi.DataElements.Network.SetSSID()": (WiFi_DataElements_Network_SetSSID_Input, WiFi_DataElements_Network_SetSSID_Output),
+    "Device.WiFi.DataElements.Network.SetMSCSDisallowed()": (WiFi_DataElements_Network_SetMSCSDisallowed_Input, WiFi_DataElements_Network_SetMSCSDisallowed_Output),
+    "Device.WiFi.DataElements.Network.SetSCSDisallowed()": (WiFi_DataElements_Network_SetSCSDisallowed_Input, WiFi_DataElements_Network_SetSCSDisallowed_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.SetSTASteeringState()": (WiFi_DataElements_Network_Device_SetSTASteeringState_Input, WiFi_DataElements_Network_Device_SetSTASteeringState_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.SetDFSState()": (WiFi_DataElements_Network_Device_SetDFSState_Input, WiFi_DataElements_Network_Device_SetDFSState_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.SetAnticipatedChannelPreference()": (WiFi_DataElements_Network_Device_SetAnticipatedChannelPreference_Input, WiFi_DataElements_Network_Device_SetAnticipatedChannelPreference_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.InitiateWPSPBC()": (WiFi_DataElements_Network_Device_InitiateWPSPBC_Input, WiFi_DataElements_Network_Device_InitiateWPSPBC_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.RefreshAPMetrics()": (WiFi_DataElements_Network_Device_RefreshAPMetrics_Input, WiFi_DataElements_Network_Device_RefreshAPMetrics_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.MultiAPDevice.Backhaul.SteerWiFiBackhaul()": (WiFi_DataElements_Network_Device_MultiAPDevice_Backhaul_SteerWiFiBackhaul_Input, WiFi_DataElements_Network_Device_MultiAPDevice_Backhaul_SteerWiFiBackhaul_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelScanRequest()": (WiFi_DataElements_Network_Device_Radio_ChannelScanRequest_Input, WiFi_DataElements_Network_Device_Radio_ChannelScanRequest_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.RadioEnable()": (WiFi_DataElements_Network_Device_Radio_RadioEnable_Input, WiFi_DataElements_Network_Device_Radio_RadioEnable_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.SetTxPowerLimit()": (WiFi_DataElements_Network_Device_Radio_SetTxPowerLimit_Input, WiFi_DataElements_Network_Device_Radio_SetTxPowerLimit_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.SetSpatialReuse()": (WiFi_DataElements_Network_Device_Radio_SetSpatialReuse_Input, WiFi_DataElements_Network_Device_Radio_SetSpatialReuse_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.WiFiRestart()": (WiFi_DataElements_Network_Device_Radio_WiFiRestart_Input, WiFi_DataElements_Network_Device_Radio_WiFiRestart_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.ChannelSelectionRequest()": (WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Input, WiFi_DataElements_Network_Device_Radio_ChannelSelectionRequest_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetQMDescriptors()": (WiFi_DataElements_Network_Device_Radio_BSS_SetQMDescriptors_Input, WiFi_DataElements_Network_Device_Radio_BSS_SetQMDescriptors_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.ThroughputTest()": (WiFi_DataElements_Network_Device_Radio_BSS_ThroughputTest_Input, WiFi_DataElements_Network_Device_Radio_BSS_ThroughputTest_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.LatencyTest()": (WiFi_DataElements_Network_Device_Radio_BSS_LatencyTest_Input, WiFi_DataElements_Network_Device_Radio_BSS_LatencyTest_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetEHTOperations()": (WiFi_DataElements_Network_Device_Radio_BSS_SetEHTOperations_Input, WiFi_DataElements_Network_Device_Radio_BSS_SetEHTOperations_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.SetQoSManagement()": (WiFi_DataElements_Network_Device_Radio_BSS_SetQoSManagement_Input, WiFi_DataElements_Network_Device_Radio_BSS_SetQoSManagement_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.ClientSteer()": (WiFi_DataElements_Network_Device_Radio_BSS_STA_ClientSteer_Input, WiFi_DataElements_Network_Device_Radio_BSS_STA_ClientSteer_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.MultiAPSTA.Disassociate()": (WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_Disassociate_Input, WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_Disassociate_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.BSS.{i}.STA.{i}.MultiAPSTA.BTMRequest()": (WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_BTMRequest_Input, WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_BTMRequest_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.FullScan()": (WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Input, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_FullScan_Output),
+    "Device.WiFi.DataElements.Network.Device.{i}.Radio.{i}.MultiAPRadio.ChannelScan()": (WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Input, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output),
+    "Device.WiFi.Radio.{i}.RemoteMeasurementRequest()": (WiFi_Radio_RemoteMeasurementRequest_Input, WiFi_Radio_RemoteMeasurementRequest_Output),
+    "Device.WiFi.Radio.{i}.InitiateCCAMeasurement()": (WiFi_Radio_InitiateCCAMeasurement_Input, WiFi_Radio_InitiateCCAMeasurement_Output),
+    "Device.WiFi.Radio.{i}.FullScan()": (WiFi_Radio_FullScan_Input, WiFi_Radio_FullScan_Output),
+    "Device.WiFi.Radio.{i}.ChannelScan()": (WiFi_Radio_ChannelScan_Input, WiFi_Radio_ChannelScan_Output),
+    "Device.WiFi.Radio.{i}.ChangePowerMode()": (WiFi_Radio_ChangePowerMode_Input, WiFi_Radio_ChangePowerMode_Output),
+    "Device.WiFi.Radio.{i}.Stats.Reset()": (WiFi_Radio_Stats_Reset_Input, WiFi_Radio_Stats_Reset_Output),
+    "Device.WiFi.SSID.{i}.Stats.Reset()": (WiFi_SSID_Stats_Reset_Input, WiFi_SSID_Stats_Reset_Output),
+    "Device.WiFi.AccessPoint.{i}.Security.Reset()": (WiFi_AccessPoint_Security_Reset_Input, WiFi_AccessPoint_Security_Reset_Output),
+    "Device.WiFi.AccessPoint.{i}.WPS.InitiateWPSPBC()": (WiFi_AccessPoint_WPS_InitiateWPSPBC_Input, WiFi_AccessPoint_WPS_InitiateWPSPBC_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.WiFi.DataElements.Network.ControllerBTMSteer!": WiFi_DataElements_Network_ControllerBTMSteer_Event,
+    "Device.WiFi.DataElements.Network.AgentOnboard!": WiFi_DataElements_Network_AgentOnboard_Event,
+    "Device.WiFi.DataElements.Network.Device.{i}.BackhaulChange!": WiFi_DataElements_Network_Device_BackhaulChange_Event,
+    "Device.WiFi.DataElements.AssociationEvent.Associated!": WiFi_DataElements_AssociationEvent_Associated_Event,
+    "Device.WiFi.DataElements.DisassociationEvent.Disassociated!": WiFi_DataElements_DisassociationEvent_Disassociated_Event,
+    "Device.WiFi.DataElements.FailedConnectionEvent.FailedConnection!": WiFi_DataElements_FailedConnectionEvent_FailedConnection_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

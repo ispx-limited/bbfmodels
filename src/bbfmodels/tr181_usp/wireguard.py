@@ -90,3 +90,21 @@ class WireGuard(_Model):
     Peer: dict[int, WireGuard_Peer] = _Field(default_factory=dict)
 
 
+class WireGuard_Tunnel_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.WireGuard.Tunnel.{i}.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class WireGuard_Tunnel_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.WireGuard.Tunnel.{i}.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.WireGuard.Tunnel.{i}.Interface.{i}.Stats.Reset()": (WireGuard_Tunnel_Interface_Stats_Reset_Input, WireGuard_Tunnel_Interface_Stats_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

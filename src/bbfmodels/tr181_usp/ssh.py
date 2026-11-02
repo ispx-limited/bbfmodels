@@ -88,3 +88,21 @@ class SSH(_Model):
     AuthorizedKey: dict[int, SSH_AuthorizedKey] = _Field(default_factory=dict)
 
 
+class SSH_Server_Session_Delete_Input(_Model):
+    __bbf_path__ = "Device.SSH.Server.{i}.Session.{i}.Delete().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SSH_Server_Session_Delete_Output(_Model):
+    __bbf_path__ = "Device.SSH.Server.{i}.Session.{i}.Delete().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.SSH.Server.{i}.Session.{i}.Delete()": (SSH_Server_Session_Delete_Input, SSH_Server_Session_Delete_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

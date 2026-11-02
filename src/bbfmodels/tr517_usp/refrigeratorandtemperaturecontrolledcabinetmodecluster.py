@@ -35,3 +35,24 @@ class RefrigeratorAndTemperatureControlledCabinetModeCluster(_Model):
     SupportedModes: dict[int, RefrigeratorAndTemperatureControlledCabinetModeCluster_SupportedModes] = _Field(default_factory=dict)
 
 
+class RefrigeratorAndTemperatureControlledCabinetModeCluster_ChangeToMode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.RefrigeratorAndTemperatureControlledCabinetModeCluster.{i}.ChangeToMode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewMode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class RefrigeratorAndTemperatureControlledCabinetModeCluster_ChangeToMode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.RefrigeratorAndTemperatureControlledCabinetModeCluster.{i}.ChangeToMode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.RefrigeratorAndTemperatureControlledCabinetModeCluster.{i}.ChangeToMode()": (RefrigeratorAndTemperatureControlledCabinetModeCluster_ChangeToMode_Input, RefrigeratorAndTemperatureControlledCabinetModeCluster_ChangeToMode_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

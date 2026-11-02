@@ -39,3 +39,73 @@ class MessagesCluster(_Model):
     Messages: dict[int, MessagesCluster_Messages] = _Field(default_factory=dict)
 
 
+class MessagesCluster_PresentMessagesRequest_Input_Responses(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.PresentMessagesRequest().Input.Responses.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MessageResponseID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Label: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MessagesCluster_PresentMessagesRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.PresentMessagesRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Priority: _Annotated[_Literal['Low', 'Medium', 'High', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
+    MessageControl: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    StartTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    MessageText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Responses: dict[int, MessagesCluster_PresentMessagesRequest_Input_Responses] = _Field(default_factory=dict)
+
+
+class MessagesCluster_PresentMessagesRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.PresentMessagesRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MessagesCluster_CancelMessagesRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.CancelMessagesRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MessageIDs: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class MessagesCluster_CancelMessagesRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.CancelMessagesRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MessagesCluster_MessageQueued_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.MessageQueued!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MessagesCluster_MessagePresented_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.MessagePresented!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MessagesCluster_MessageComplete_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.MessageComplete!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ResponseID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Reply: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    FutureMessagesPreference: _Annotated[_Literal['Allowed', 'Increased', 'Reduced', 'Disallowed', 'Banned'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.MessagesCluster.{i}.PresentMessagesRequest()": (MessagesCluster_PresentMessagesRequest_Input, MessagesCluster_PresentMessagesRequest_Output),
+    "MatterService.{i}.MessagesCluster.{i}.CancelMessagesRequest()": (MessagesCluster_CancelMessagesRequest_Input, MessagesCluster_CancelMessagesRequest_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.MessagesCluster.{i}.MessageQueued!": MessagesCluster_MessageQueued_Event,
+    "MatterService.{i}.MessagesCluster.{i}.MessagePresented!": MessagesCluster_MessagePresented_Event,
+    "MatterService.{i}.MessagesCluster.{i}.MessageComplete!": MessagesCluster_MessageComplete_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class Components_FrontEnd_DVBT_ServiceListDatabase_LogicalChannel_ServicePath(ObjectPathBase):
     Alias: ParamPath[str]

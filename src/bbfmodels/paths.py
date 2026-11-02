@@ -25,10 +25,15 @@ import re
 from collections.abc import Callable
 from typing import Generic, TypeVar
 
-from bbfmodels.ir import Object, Parameter
+from bbfmodels.ir import Command, Event, Object, Parameter
 from bbfmodels.schema import Schema
 
 T = TypeVar("T")
+
+
+def member_name(forum: str) -> str:
+    """A member's bare name: ``TraceRoute`` for ``TraceRoute()``, ``Boot`` for ``Boot!``."""
+    return forum.removesuffix("()").removesuffix("!")
 
 
 def identifier(name: str) -> str:
@@ -86,6 +91,28 @@ class ParamPath(_Path, Generic[T]):
         return self._schema().parameter(self._schema_path)
 
 
+class CommandPath(_Path):
+    """A USP command; ``str()`` is its path with the ``()``, ``Device.Reboot()``."""
+
+    __slots__ = ()
+
+    @property
+    def definition(self) -> Command:
+        owner, _, name = self._schema_path.rpartition(".")
+        return self._schema().object(owner + ".").commands[name]
+
+
+class EventPath(_Path):
+    """A USP event; ``str()`` is its path with the ``!``, ``Device.Boot!``."""
+
+    __slots__ = ()
+
+    @property
+    def definition(self) -> Event:
+        owner, _, name = self._schema_path.rpartition(".")
+        return self._schema().object(owner + ".").events[name]
+
+
 class ObjectPathBase(_Path):
     """An object, or one instance of a table, without attribute access.
 
@@ -100,14 +127,19 @@ class ObjectPathBase(_Path):
     def definition(self) -> Object:
         return self._schema().object(self._schema_path)
 
-    def child(self, name: str) -> ObjectPath | TablePath[ObjectPath] | ParamPath[object]:
-        """The parameter or object called ``name`` under this object, schema-defined or not.
+    def child(self, name: str) -> Member:
+        """The member called ``name`` under this object, schema-defined or not.
 
-        A name the schema does not define is taken as a parameter, which is
-        how a vendor's ``X_`` parameter is reached when its document was not
-        generated.
+        A command is named with its ``()`` and an event with its ``!``, as the
+        specification writes them. A name the schema does not define is
+        taken as a parameter, which is how a vendor's ``X_`` parameter is
+        reached when its document was not generated.
         """
         schema = self._schema()
+        if name.endswith("()"):
+            return CommandPath(self._schema, self._data + name, self._schema_path + name)
+        if name.endswith("!"):
+            return EventPath(self._schema, self._data + name, self._schema_path + name)
         if self._schema_path + name + "." in schema.objects:
             return ObjectPath(self._schema, self._data + name + ".", self._schema_path + name + ".")
         if self._schema_path + name + ".{i}." in schema.objects:
@@ -122,13 +154,20 @@ class ObjectPath(ObjectPathBase):
 
     __slots__ = ()
 
-    def __getattr__(self, name: str) -> ObjectPath | TablePath[ObjectPath] | ParamPath[object]:
+    def __getattr__(self, name: str) -> Member:
         if name.startswith("_"):
             raise AttributeError(name)
         obj = self.definition
         schema = self._schema()
-        for forum in (*obj.parameters, *(c.name for c in schema.children(self._schema_path))):
+        plain = (*obj.parameters, *(c.name for c in schema.children(self._schema_path)))
+        for forum in plain:
             if forum == name or identifier(forum) == name:
+                return self.child(forum)
+        # A command or event is reached by its bare name, or by the name with a
+        # trailing underscore when a parameter or child object has the bare one.
+        wanted = name[:-1] if name.endswith("_") else name
+        for forum in (*obj.commands, *obj.events):
+            if identifier(member_name(forum)) == wanted:
                 return self.child(forum)
         raise AttributeError(f"{self._schema_path} has no parameter or object {name!r}")
 
@@ -152,3 +191,8 @@ class TablePath(_Path, Generic[T]):
     def search(self) -> str:
         """The USP search path for every instance, ``Device.WiFi.Radio.*.``."""
         return self._data + "*."
+
+
+# What an object's member can be. Objects are returned as ``ObjectPath``
+# so that attribute access continues down the tree.
+Member = ObjectPath | TablePath[ObjectPath] | ParamPath[object] | CommandPath | EventPath

@@ -250,3 +250,59 @@ class MQTT(_Model):
     Broker: dict[int, MQTT_Broker] = _Field(default_factory=dict)
 
 
+class MQTT_Client_ForceReconnect_Input(_Model):
+    __bbf_path__ = "Device.MQTT.Client.{i}.ForceReconnect().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class MQTT_Client_ForceReconnect_Output(_Model):
+    __bbf_path__ = "Device.MQTT.Client.{i}.ForceReconnect().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class MQTT_Client_Publish_Input(_Model):
+    __bbf_path__ = "Device.MQTT.Client.{i}.Publish().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Topic: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    QoS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Retain: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    PayloadEncoding: _Annotated[_Literal['HexBinary', 'String'] | str | None, _Param(_BaseType.STRING)] = None
+    Payload: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ContentType: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ResponseTopic: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MQTT_Client_Publish_Output(_Model):
+    __bbf_path__ = "Device.MQTT.Client.{i}.Publish().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class MQTT_Client_Subscription_OnMessage_Event(_Model):
+    __bbf_path__ = "Device.MQTT.Client.{i}.Subscription.{i}.OnMessage!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Topic: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    PayloadEncoding: _Annotated[_Literal['HexBinary', 'String'] | str | None, _Param(_BaseType.STRING)] = None
+    Payload: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MQTT_Broker_Bridge_ForceReconnect_Input(_Model):
+    __bbf_path__ = "Device.MQTT.Broker.{i}.Bridge.{i}.ForceReconnect().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class MQTT_Broker_Bridge_ForceReconnect_Output(_Model):
+    __bbf_path__ = "Device.MQTT.Broker.{i}.Bridge.{i}.ForceReconnect().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.MQTT.Client.{i}.ForceReconnect()": (MQTT_Client_ForceReconnect_Input, MQTT_Client_ForceReconnect_Output),
+    "Device.MQTT.Client.{i}.Publish()": (MQTT_Client_Publish_Input, MQTT_Client_Publish_Output),
+    "Device.MQTT.Broker.{i}.Bridge.{i}.ForceReconnect()": (MQTT_Broker_Bridge_ForceReconnect_Input, MQTT_Broker_Bridge_ForceReconnect_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.MQTT.Client.{i}.Subscription.{i}.OnMessage!": MQTT_Client_Subscription_OnMessage_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

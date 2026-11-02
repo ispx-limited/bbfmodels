@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, HexBinary as _HexBinary
 
 
 class EnergyEVSECluster(_Model):
@@ -36,4 +36,187 @@ class EnergyEVSECluster(_Model):
     SessionEnergyCharged: _Annotated[int | None, _Param(_BaseType.LONG)] = None
     SessionEnergyDischarged: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
+
+class EnergyEVSECluster_Disable_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.Disable().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class EnergyEVSECluster_Disable_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.Disable().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class EnergyEVSECluster_EnableCharging_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EnableCharging().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ChargingEnabledUntil: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    MinimumChargeCurrent: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    MaximumChargeCurrent: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class EnergyEVSECluster_EnableCharging_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EnableCharging().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class EnergyEVSECluster_EnableDischarging_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EnableDischarging().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DischargingEnabledUntil: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    MaximumDischargeCurrent: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class EnergyEVSECluster_EnableDischarging_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EnableDischarging().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class EnergyEVSECluster_StartDiagnostics_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.StartDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class EnergyEVSECluster_StartDiagnostics_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.StartDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class EnergyEVSECluster_SetTargets_Input_ChargingTargetSchedules_ChargingTargets(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.SetTargets().Input.ChargingTargetSchedules.{i}.ChargingTargets.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TargetTimeMinutesPastMidnight: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetSoC: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AddedEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class EnergyEVSECluster_SetTargets_Input_ChargingTargetSchedules(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.SetTargets().Input.ChargingTargetSchedules.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DayOfWeekForSequence: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    ChargingTargets: dict[int, EnergyEVSECluster_SetTargets_Input_ChargingTargetSchedules_ChargingTargets] = _Field(default_factory=dict)
+
+
+class EnergyEVSECluster_SetTargets_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.SetTargets().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ChargingTargetSchedules: dict[int, EnergyEVSECluster_SetTargets_Input_ChargingTargetSchedules] = _Field(default_factory=dict)
+
+
+class EnergyEVSECluster_SetTargets_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.SetTargets().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class EnergyEVSECluster_GetTargets_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.GetTargets().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class EnergyEVSECluster_GetTargets_Output_ChargingTargetSchedules_ChargingTargets(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.GetTargets().Output.ChargingTargetSchedules.{i}.ChargingTargets.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TargetTimeMinutesPastMidnight: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetSoC: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AddedEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class EnergyEVSECluster_GetTargets_Output_ChargingTargetSchedules(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.GetTargets().Output.ChargingTargetSchedules.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DayOfWeekForSequence: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    ChargingTargets: dict[int, EnergyEVSECluster_GetTargets_Output_ChargingTargetSchedules_ChargingTargets] = _Field(default_factory=dict)
+
+
+class EnergyEVSECluster_GetTargets_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.GetTargets().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ChargingTargetSchedules: dict[int, EnergyEVSECluster_GetTargets_Output_ChargingTargetSchedules] = _Field(default_factory=dict)
+
+
+class EnergyEVSECluster_ClearTargets_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.ClearTargets().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class EnergyEVSECluster_ClearTargets_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.ClearTargets().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class EnergyEVSECluster_EVConnected_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EVConnected!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class EnergyEVSECluster_EVNotDetected_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EVNotDetected!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    State: _Annotated[_Literal['NotPluggedIn', 'PluggedInNoDemand', 'PluggedInDemand', 'PluggedInCharging', 'PluggedInDischarging', 'SessionEnding', 'Fault'] | str | None, _Param(_BaseType.STRING)] = None
+    SessionDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SessionEnergyCharged: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    SessionEnergyDischarged: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class EnergyEVSECluster_EnergyTransferStarted_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EnergyTransferStarted!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    State: _Annotated[_Literal['NotPluggedIn', 'PluggedInNoDemand', 'PluggedInDemand', 'PluggedInCharging', 'PluggedInDischarging', 'SessionEnding', 'Fault'] | str | None, _Param(_BaseType.STRING)] = None
+    MaximumCurrent: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    MaximumDischargeCurrent: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class EnergyEVSECluster_EnergyTransferStopped_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.EnergyTransferStopped!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    State: _Annotated[_Literal['NotPluggedIn', 'PluggedInNoDemand', 'PluggedInDemand', 'PluggedInCharging', 'PluggedInDischarging', 'SessionEnding', 'Fault'] | str | None, _Param(_BaseType.STRING)] = None
+    Reason: _Annotated[_Literal['EVStopped', 'EVSEStopped', 'Other'] | str | None, _Param(_BaseType.STRING)] = None
+    EnergyTransferred: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EnergyDischarged: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class EnergyEVSECluster_Fault_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.Fault!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SessionID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    State: _Annotated[_Literal['NotPluggedIn', 'PluggedInNoDemand', 'PluggedInDemand', 'PluggedInCharging', 'PluggedInDischarging', 'SessionEnding', 'Fault'] | str | None, _Param(_BaseType.STRING)] = None
+    FaultStatePreviousState: _Annotated[_Literal['NoError', 'MeterFailure', 'OverVoltage', 'UnderVoltage', 'OverCurrent', 'ContactWetFailure', 'ContactDryFailure', 'GroundFault', 'PowerLoss', 'PowerQuality', 'PilotShortCircuit', 'EmergencyStop', 'EVDisconnected', 'WrongPowerSupply', 'LiveNeutralSwap', 'OverTemperature', 'Other'] | str | None, _Param(_BaseType.STRING)] = None
+    FaultStateCurrentState: _Annotated[_Literal['NoError', 'MeterFailure', 'OverVoltage', 'UnderVoltage', 'OverCurrent', 'ContactWetFailure', 'ContactDryFailure', 'GroundFault', 'PowerLoss', 'PowerQuality', 'PilotShortCircuit', 'EmergencyStop', 'EVDisconnected', 'WrongPowerSupply', 'LiveNeutralSwap', 'OverTemperature', 'Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class EnergyEVSECluster_RFID_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSECluster.{i}.RFID!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.EnergyEVSECluster.{i}.Disable()": (EnergyEVSECluster_Disable_Input, EnergyEVSECluster_Disable_Output),
+    "MatterService.{i}.EnergyEVSECluster.{i}.EnableCharging()": (EnergyEVSECluster_EnableCharging_Input, EnergyEVSECluster_EnableCharging_Output),
+    "MatterService.{i}.EnergyEVSECluster.{i}.EnableDischarging()": (EnergyEVSECluster_EnableDischarging_Input, EnergyEVSECluster_EnableDischarging_Output),
+    "MatterService.{i}.EnergyEVSECluster.{i}.StartDiagnostics()": (EnergyEVSECluster_StartDiagnostics_Input, EnergyEVSECluster_StartDiagnostics_Output),
+    "MatterService.{i}.EnergyEVSECluster.{i}.SetTargets()": (EnergyEVSECluster_SetTargets_Input, EnergyEVSECluster_SetTargets_Output),
+    "MatterService.{i}.EnergyEVSECluster.{i}.GetTargets()": (EnergyEVSECluster_GetTargets_Input, EnergyEVSECluster_GetTargets_Output),
+    "MatterService.{i}.EnergyEVSECluster.{i}.ClearTargets()": (EnergyEVSECluster_ClearTargets_Input, EnergyEVSECluster_ClearTargets_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.EnergyEVSECluster.{i}.EVConnected!": EnergyEVSECluster_EVConnected_Event,
+    "MatterService.{i}.EnergyEVSECluster.{i}.EVNotDetected!": EnergyEVSECluster_EVNotDetected_Event,
+    "MatterService.{i}.EnergyEVSECluster.{i}.EnergyTransferStarted!": EnergyEVSECluster_EnergyTransferStarted_Event,
+    "MatterService.{i}.EnergyEVSECluster.{i}.EnergyTransferStopped!": EnergyEVSECluster_EnergyTransferStopped_Event,
+    "MatterService.{i}.EnergyEVSECluster.{i}.Fault!": EnergyEVSECluster_Fault_Event,
+    "MatterService.{i}.EnergyEVSECluster.{i}.RFID!": EnergyEVSECluster_RFID_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

@@ -223,3 +223,10 @@ class IPsec(_Model):
     IKEv2SA: dict[int, IPsec_IKEv2SA] = _Field(default_factory=dict)
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

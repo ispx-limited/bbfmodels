@@ -14,3 +14,24 @@ class EnergyEVSEModeCluster(_Model):
     EndpointRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+class EnergyEVSEModeCluster_ChangeToMode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSEModeCluster.{i}.ChangeToMode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewMode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class EnergyEVSEModeCluster_ChangeToMode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.EnergyEVSEModeCluster.{i}.ChangeToMode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.EnergyEVSEModeCluster.{i}.ChangeToMode()": (EnergyEVSEModeCluster_ChangeToMode_Input, EnergyEVSEModeCluster_ChangeToMode_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

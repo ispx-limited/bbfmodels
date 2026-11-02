@@ -15,3 +15,94 @@ class GroupsCluster(_Model):
     NameSupport: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
+class GroupsCluster_AddGroup_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.AddGroup().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GroupsCluster_AddGroup_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.AddGroup().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GroupsCluster_ViewGroup_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.ViewGroup().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GroupsCluster_ViewGroup_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.ViewGroup().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GroupsCluster_GetGroupMembership_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.GetGroupMembership().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupList: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class GroupsCluster_GetGroupMembership_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.GetGroupMembership().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Capacity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupList: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class GroupsCluster_RemoveGroup_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.RemoveGroup().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GroupsCluster_RemoveGroup_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.RemoveGroup().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GroupsCluster_RemoveAllGroups_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.RemoveAllGroups().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class GroupsCluster_RemoveAllGroups_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.RemoveAllGroups().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class GroupsCluster_AddGroupIfIdentifying_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.AddGroupIfIdentifying().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GroupsCluster_AddGroupIfIdentifying_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GroupsCluster.{i}.AddGroupIfIdentifying().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.GroupsCluster.{i}.AddGroup()": (GroupsCluster_AddGroup_Input, GroupsCluster_AddGroup_Output),
+    "MatterService.{i}.GroupsCluster.{i}.ViewGroup()": (GroupsCluster_ViewGroup_Input, GroupsCluster_ViewGroup_Output),
+    "MatterService.{i}.GroupsCluster.{i}.GetGroupMembership()": (GroupsCluster_GetGroupMembership_Input, GroupsCluster_GetGroupMembership_Output),
+    "MatterService.{i}.GroupsCluster.{i}.RemoveGroup()": (GroupsCluster_RemoveGroup_Input, GroupsCluster_RemoveGroup_Output),
+    "MatterService.{i}.GroupsCluster.{i}.RemoveAllGroups()": (GroupsCluster_RemoveAllGroups_Input, GroupsCluster_RemoveAllGroups_Output),
+    "MatterService.{i}.GroupsCluster.{i}.AddGroupIfIdentifying()": (GroupsCluster_AddGroupIfIdentifying_Input, GroupsCluster_AddGroupIfIdentifying_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -14,3 +14,28 @@ class DiagnosticLogsCluster(_Model):
     EndpointRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+class DiagnosticLogsCluster_RetrieveLogsRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DiagnosticLogsCluster.{i}.RetrieveLogsRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Intent: _Annotated[_Literal['EndUserSupport', 'NetworkDiag', 'CrashLogs'] | str | None, _Param(_BaseType.STRING)] = None
+    RequestedProtocol: _Annotated[_Literal['ResponsePayload', 'BDX'] | str | None, _Param(_BaseType.STRING)] = None
+    TransferFileDesignator: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DiagnosticLogsCluster_RetrieveLogsRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DiagnosticLogsCluster.{i}.RetrieveLogsRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'Exhausted', 'NoLogs', 'Busy', 'Denied'] | str | None, _Param(_BaseType.STRING)] = None
+    LogContent: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UTCTimeStamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    TimeSinceBoot: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.DiagnosticLogsCluster.{i}.RetrieveLogsRequest()": (DiagnosticLogsCluster_RetrieveLogsRequest_Input, DiagnosticLogsCluster_RetrieveLogsRequest_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

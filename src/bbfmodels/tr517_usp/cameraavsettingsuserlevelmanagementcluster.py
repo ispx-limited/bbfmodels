@@ -62,3 +62,119 @@ class CameraAVSettingsUserLevelManagementCluster(_Model):
     DPTZStreams: dict[int, CameraAVSettingsUserLevelManagementCluster_DPTZStreams] = _Field(default_factory=dict)
 
 
+class CameraAVSettingsUserLevelManagementCluster_MPTZSetPosition_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZSetPosition().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Pan: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Tilt: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Zoom: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZSetPosition_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZSetPosition().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZRelativeMove_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZRelativeMove().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PanDelta: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TiltDelta: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ZoomDelta: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZRelativeMove_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZRelativeMove().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZMoveToPreset_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZMoveToPreset().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PresetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZMoveToPreset_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZMoveToPreset().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZSavePreset_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZSavePreset().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PresetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZSavePreset_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZSavePreset().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZRemovePreset_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZRemovePreset().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PresetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_MPTZRemovePreset_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZRemovePreset().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Input_Viewport(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZSetViewport().Input.Viewport."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    X1: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Y1: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    X2: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Y2: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZSetViewport().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Viewport: CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Input_Viewport | None = _Field(default=None)
+
+
+class CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZSetViewport().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_DPTZRelativeMove_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZRelativeMove().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DeltaX: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    DeltaY: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ZoomDelta: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class CameraAVSettingsUserLevelManagementCluster_DPTZRelativeMove_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZRelativeMove().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZSetPosition()": (CameraAVSettingsUserLevelManagementCluster_MPTZSetPosition_Input, CameraAVSettingsUserLevelManagementCluster_MPTZSetPosition_Output),
+    "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZRelativeMove()": (CameraAVSettingsUserLevelManagementCluster_MPTZRelativeMove_Input, CameraAVSettingsUserLevelManagementCluster_MPTZRelativeMove_Output),
+    "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZMoveToPreset()": (CameraAVSettingsUserLevelManagementCluster_MPTZMoveToPreset_Input, CameraAVSettingsUserLevelManagementCluster_MPTZMoveToPreset_Output),
+    "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZSavePreset()": (CameraAVSettingsUserLevelManagementCluster_MPTZSavePreset_Input, CameraAVSettingsUserLevelManagementCluster_MPTZSavePreset_Output),
+    "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZRemovePreset()": (CameraAVSettingsUserLevelManagementCluster_MPTZRemovePreset_Input, CameraAVSettingsUserLevelManagementCluster_MPTZRemovePreset_Output),
+    "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZSetViewport()": (CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Input, CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Output),
+    "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZRelativeMove()": (CameraAVSettingsUserLevelManagementCluster_DPTZRelativeMove_Input, CameraAVSettingsUserLevelManagementCluster_DPTZRelativeMove_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -6,7 +6,7 @@ from typing import Annotated as _Annotated, Literal as _Literal
 from decimal import Decimal as _Decimal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class MediaPlaybackCluster_AvailableAudioTracks_TrackAttributes(_Model):
@@ -96,4 +96,220 @@ class MediaPlaybackCluster(_Model):
     ActiveTextTrack: MediaPlaybackCluster_ActiveTextTrack | None = _Field(default=None)
     AvailableTextTracks: dict[int, MediaPlaybackCluster_AvailableTextTracks] = _Field(default_factory=dict)
 
+
+class MediaPlaybackCluster_Play_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Play().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaPlaybackCluster_Play_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Play().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_Pause_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Pause().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaPlaybackCluster_Pause_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Pause().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_Stop_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Stop().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaPlaybackCluster_Stop_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Stop().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_StartOver_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.StartOver().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaPlaybackCluster_StartOver_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.StartOver().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_Previous_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Previous().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaPlaybackCluster_Previous_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Previous().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_Next_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Next().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaPlaybackCluster_Next_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Next().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_Rewind_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Rewind().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AudioAdvanceUnmuted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class MediaPlaybackCluster_Rewind_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Rewind().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_FastForward_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.FastForward().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AudioAdvanceUnmuted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class MediaPlaybackCluster_FastForward_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.FastForward().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_SkipForward_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.SkipForward().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DeltaPositionMilliseconds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class MediaPlaybackCluster_SkipForward_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.SkipForward().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_SkipBackward_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.SkipBackward().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DeltaPositionMilliseconds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class MediaPlaybackCluster_SkipBackward_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.SkipBackward().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_Seek_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Seek().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Position: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class MediaPlaybackCluster_Seek_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.Seek().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'InvalidStateForCommand', 'NotAllowed', 'NotActive', 'SpeedOutOfRange', 'SeekOutOfRange'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_ActivateAudioTrack_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.ActivateAudioTrack().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TrackID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AudioOutputIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class MediaPlaybackCluster_ActivateAudioTrack_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.ActivateAudioTrack().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_ActivateTextTrack_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.ActivateTextTrack().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TrackID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_ActivateTextTrack_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.ActivateTextTrack().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_DeactivateTextTrack_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.DeactivateTextTrack().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class MediaPlaybackCluster_DeactivateTextTrack_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.DeactivateTextTrack().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MediaPlaybackCluster_StateChanged_Event_SampledPosition(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.StateChanged!.SampledPosition."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UpdatedAt: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Position: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class MediaPlaybackCluster_StateChanged_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.StateChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CurrentState: _Annotated[_Literal['Playing', 'Paused', 'NotPlaying', 'Buffering'] | str | None, _Param(_BaseType.STRING)] = None
+    StartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PlaybackSpeed: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    SeekRangeEnd: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    SeekRangeStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AudioAdvanceUnmuted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    SampledPosition: MediaPlaybackCluster_StateChanged_Event_SampledPosition | None = _Field(default=None)
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.MediaPlaybackCluster.{i}.Play()": (MediaPlaybackCluster_Play_Input, MediaPlaybackCluster_Play_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.Pause()": (MediaPlaybackCluster_Pause_Input, MediaPlaybackCluster_Pause_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.Stop()": (MediaPlaybackCluster_Stop_Input, MediaPlaybackCluster_Stop_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.StartOver()": (MediaPlaybackCluster_StartOver_Input, MediaPlaybackCluster_StartOver_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.Previous()": (MediaPlaybackCluster_Previous_Input, MediaPlaybackCluster_Previous_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.Next()": (MediaPlaybackCluster_Next_Input, MediaPlaybackCluster_Next_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.Rewind()": (MediaPlaybackCluster_Rewind_Input, MediaPlaybackCluster_Rewind_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.FastForward()": (MediaPlaybackCluster_FastForward_Input, MediaPlaybackCluster_FastForward_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.SkipForward()": (MediaPlaybackCluster_SkipForward_Input, MediaPlaybackCluster_SkipForward_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.SkipBackward()": (MediaPlaybackCluster_SkipBackward_Input, MediaPlaybackCluster_SkipBackward_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.Seek()": (MediaPlaybackCluster_Seek_Input, MediaPlaybackCluster_Seek_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.ActivateAudioTrack()": (MediaPlaybackCluster_ActivateAudioTrack_Input, MediaPlaybackCluster_ActivateAudioTrack_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.ActivateTextTrack()": (MediaPlaybackCluster_ActivateTextTrack_Input, MediaPlaybackCluster_ActivateTextTrack_Output),
+    "MatterService.{i}.MediaPlaybackCluster.{i}.DeactivateTextTrack()": (MediaPlaybackCluster_DeactivateTextTrack_Input, MediaPlaybackCluster_DeactivateTextTrack_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.MediaPlaybackCluster.{i}.StateChanged!": MediaPlaybackCluster_StateChanged_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

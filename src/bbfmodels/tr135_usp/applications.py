@@ -77,3 +77,43 @@ class Applications(_Model):
     ServiceProvider: dict[int, Applications_ServiceProvider] = _Field(default_factory=dict)
 
 
+class Applications_AudienceStats_Reset_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Applications.AudienceStats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Applications_AudienceStats_Reset_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Applications.AudienceStats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Applications_CDSPush_ContentItem_DeleteItem_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Applications.CDSPush.ContentItem.{i}.DeleteItem().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Applications_CDSPush_ContentItem_DeleteItem_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Applications.CDSPush.ContentItem.{i}.DeleteItem().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Applications_CDSPull_ContentItem_DeleteItem_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Applications.CDSPull.ContentItem.{i}.DeleteItem().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Applications_CDSPull_ContentItem_DeleteItem_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Applications.CDSPull.ContentItem.{i}.DeleteItem().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "STBService.{i}.Applications.AudienceStats.Reset()": (Applications_AudienceStats_Reset_Input, Applications_AudienceStats_Reset_Output),
+    "STBService.{i}.Applications.CDSPush.ContentItem.{i}.DeleteItem()": (Applications_CDSPush_ContentItem_DeleteItem_Input, Applications_CDSPush_ContentItem_DeleteItem_Output),
+    "STBService.{i}.Applications.CDSPull.ContentItem.{i}.DeleteItem()": (Applications_CDSPull_ContentItem_DeleteItem_Input, Applications_CDSPull_ContentItem_DeleteItem_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

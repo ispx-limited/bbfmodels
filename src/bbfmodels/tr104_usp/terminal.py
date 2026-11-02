@@ -88,3 +88,24 @@ class Terminal(_Model):
     Ringer: Terminal_Ringer | None = _Field(default=None)
 
 
+class Terminal_DiagTests_Input(_Model):
+    __bbf_path__ = "VoiceService.{i}.Terminal.{i}.DiagTests().Input."
+    __bbf_package__ = "bbfmodels.tr104_usp"
+    TestSelector: _Annotated[_Literal['RingingTest'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class Terminal_DiagTests_Output(_Model):
+    __bbf_path__ = "VoiceService.{i}.Terminal.{i}.DiagTests().Output."
+    __bbf_package__ = "bbfmodels.tr104_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    PhoneRinging: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "VoiceService.{i}.Terminal.{i}.DiagTests()": (Terminal_DiagTests_Input, Terminal_DiagTests_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

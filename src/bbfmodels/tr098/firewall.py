@@ -17,3 +17,10 @@ class Firewall(_Model):
     LastChange: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class OperationalCredentialsCluster_NOCs(_Model):
@@ -41,4 +41,162 @@ class OperationalCredentialsCluster(_Model):
     NOCs: dict[int, OperationalCredentialsCluster_NOCs] = _Field(default_factory=dict)
     Fabrics: dict[int, OperationalCredentialsCluster_Fabrics] = _Field(default_factory=dict)
 
+
+class OperationalCredentialsCluster_AttestationRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.AttestationRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AttestationNonce: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_AttestationRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.AttestationRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AttestationElements: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AttestationSignature: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_CertificateChainRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.CertificateChainRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CertificateType: _Annotated[_Literal['DACCertificate', 'PAICertificate'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_CertificateChainRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.CertificateChainRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_CSRRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.CSRRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CSRNonce: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IsForUpdateNOC: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class OperationalCredentialsCluster_CSRRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.CSRRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NOCSRElements: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AttestationSignature: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_AddNOC_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.AddNOC().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NOCValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ICACValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IPKValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CaseAdminSubject: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    AdminVendorId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OperationalCredentialsCluster_AddNOC_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.AddNOC().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StatusCode: _Annotated[_Literal['OK', 'InvalidPublicKey', 'InvalidNodeOpId', 'InvalidNOC', 'MissingCsr', 'TableFull', 'InvalidAdminSubject', 'ReservedForFutureUse', 'FabricConflict', 'LabelConflict', 'InvalidFabricIndex'] | str | None, _Param(_BaseType.STRING)] = None
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_UpdateNOC_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.UpdateNOC().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NOCValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ICACValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_UpdateNOC_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.UpdateNOC().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StatusCode: _Annotated[_Literal['OK', 'InvalidPublicKey', 'InvalidNodeOpId', 'InvalidNOC', 'MissingCsr', 'TableFull', 'InvalidAdminSubject', 'ReservedForFutureUse', 'FabricConflict', 'LabelConflict', 'InvalidFabricIndex'] | str | None, _Param(_BaseType.STRING)] = None
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_UpdateFabricLabel_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.UpdateFabricLabel().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Label: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_UpdateFabricLabel_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.UpdateFabricLabel().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StatusCode: _Annotated[_Literal['OK', 'InvalidPublicKey', 'InvalidNodeOpId', 'InvalidNOC', 'MissingCsr', 'TableFull', 'InvalidAdminSubject', 'ReservedForFutureUse', 'FabricConflict', 'LabelConflict', 'InvalidFabricIndex'] | str | None, _Param(_BaseType.STRING)] = None
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_RemoveFabric_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.RemoveFabric().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OperationalCredentialsCluster_RemoveFabric_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.RemoveFabric().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StatusCode: _Annotated[_Literal['OK', 'InvalidPublicKey', 'InvalidNodeOpId', 'InvalidNOC', 'MissingCsr', 'TableFull', 'InvalidAdminSubject', 'ReservedForFutureUse', 'FabricConflict', 'LabelConflict', 'InvalidFabricIndex'] | str | None, _Param(_BaseType.STRING)] = None
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_AddTrustedRootCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.AddTrustedRootCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    RootCACertificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_AddTrustedRootCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.AddTrustedRootCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_SetVIDVerificationStatement_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.SetVIDVerificationStatement().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    VendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    VIDVerificationStatement: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    VVSC: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_SetVIDVerificationStatement_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.SetVIDVerificationStatement().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_SignVIDVerificationRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.SignVIDVerificationRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ClientChallenge: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalCredentialsCluster_SignVIDVerificationRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalCredentialsCluster.{i}.SignVIDVerificationRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FabricBindingVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Signature: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.AttestationRequest()": (OperationalCredentialsCluster_AttestationRequest_Input, OperationalCredentialsCluster_AttestationRequest_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.CertificateChainRequest()": (OperationalCredentialsCluster_CertificateChainRequest_Input, OperationalCredentialsCluster_CertificateChainRequest_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.CSRRequest()": (OperationalCredentialsCluster_CSRRequest_Input, OperationalCredentialsCluster_CSRRequest_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.AddNOC()": (OperationalCredentialsCluster_AddNOC_Input, OperationalCredentialsCluster_AddNOC_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.UpdateNOC()": (OperationalCredentialsCluster_UpdateNOC_Input, OperationalCredentialsCluster_UpdateNOC_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.UpdateFabricLabel()": (OperationalCredentialsCluster_UpdateFabricLabel_Input, OperationalCredentialsCluster_UpdateFabricLabel_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.RemoveFabric()": (OperationalCredentialsCluster_RemoveFabric_Input, OperationalCredentialsCluster_RemoveFabric_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.AddTrustedRootCertificate()": (OperationalCredentialsCluster_AddTrustedRootCertificate_Input, OperationalCredentialsCluster_AddTrustedRootCertificate_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.SetVIDVerificationStatement()": (OperationalCredentialsCluster_SetVIDVerificationStatement_Input, OperationalCredentialsCluster_SetVIDVerificationStatement_Output),
+    "MatterService.{i}.OperationalCredentialsCluster.{i}.SignVIDVerificationRequest()": (OperationalCredentialsCluster_SignVIDVerificationRequest_Input, OperationalCredentialsCluster_SignVIDVerificationRequest_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

@@ -150,3 +150,44 @@ class USB(_Model):
     USBHosts: USB_USBHosts | None = _Field(default=None)
 
 
+class USB_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.USB.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class USB_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.USB.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class USB_Port_ChangePowerMode_Input(_Model):
+    __bbf_path__ = "Device.USB.Port.{i}.ChangePowerMode().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PowerState: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class USB_Port_ChangePowerMode_Output(_Model):
+    __bbf_path__ = "Device.USB.Port.{i}.ChangePowerMode().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class USB_USBHosts_Host_Reset_Input(_Model):
+    __bbf_path__ = "Device.USB.USBHosts.Host.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class USB_USBHosts_Host_Reset_Output(_Model):
+    __bbf_path__ = "Device.USB.USBHosts.Host.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.USB.Interface.{i}.Stats.Reset()": (USB_Interface_Stats_Reset_Input, USB_Interface_Stats_Reset_Output),
+    "Device.USB.Port.{i}.ChangePowerMode()": (USB_Port_ChangePowerMode_Input, USB_Port_ChangePowerMode_Output),
+    "Device.USB.USBHosts.Host.{i}.Reset()": (USB_USBHosts_Host_Reset_Input, USB_USBHosts_Host_Reset_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -55,3 +55,133 @@ class TimeSynchronizationCluster(_Model):
     DSTOffset: dict[int, TimeSynchronizationCluster_DSTOffset] = _Field(default_factory=dict)
 
 
+class TimeSynchronizationCluster_SetUTCTime_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetUTCTime().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UTCTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Granularity: _Annotated[_Literal['NoTimeGranularity', 'MinutesGranularity', 'SecondsGranularity', 'MillisecondsGranularity', 'MicrosecondsGranularity'] | str | None, _Param(_BaseType.STRING)] = None
+    TimeSource: _Annotated[_Literal['None', 'Unknown', 'Admin', 'NodeTimeCluster', 'NonMatterSNTP', 'NonMatterNTP', 'MatterSNTP', 'MatterNTP', 'MixedNTP', 'NonMatterSNTPNTS', 'NonMatterNTPNTS', 'MatterSNTPNTS', 'MatterNTPNTS', 'MixedNTPNTS', 'CloudSource', 'PTP', 'GNSS'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_SetUTCTime_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetUTCTime().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_SetTrustedTimeSource_Input_TrustedTimeSource(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTrustedTimeSource().Input.TrustedTimeSource."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Endpoint: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TimeSynchronizationCluster_SetTrustedTimeSource_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTrustedTimeSource().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TrustedTimeSource: TimeSynchronizationCluster_SetTrustedTimeSource_Input_TrustedTimeSource | None = _Field(default=None)
+
+
+class TimeSynchronizationCluster_SetTrustedTimeSource_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTrustedTimeSource().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_SetTimeZone_Input_TimeZone(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTimeZone().Input.TimeZone.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Offset: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValidAt: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_SetTimeZone_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTimeZone().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TimeZone: dict[int, TimeSynchronizationCluster_SetTimeZone_Input_TimeZone] = _Field(default_factory=dict)
+
+
+class TimeSynchronizationCluster_SetTimeZone_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTimeZone().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DSTOffsetRequired: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class TimeSynchronizationCluster_SetDSTOffset_Input_DSTOffset(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetDSTOffset().Input.DSTOffset.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Offset: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValidStarting: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ValidUntil: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class TimeSynchronizationCluster_SetDSTOffset_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetDSTOffset().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DSTOffset: dict[int, TimeSynchronizationCluster_SetDSTOffset_Input_DSTOffset] = _Field(default_factory=dict)
+
+
+class TimeSynchronizationCluster_SetDSTOffset_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetDSTOffset().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_SetDefaultNTP_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetDefaultNTP().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DefaultNTP: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_SetDefaultNTP_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.SetDefaultNTP().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_DSTTableEmpty_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.DSTTableEmpty!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class TimeSynchronizationCluster_DSTStatus_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.DSTStatus!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DSTOffsetActive: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class TimeSynchronizationCluster_TimeZoneStatus_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.TimeZoneStatus!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Offset: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TimeSynchronizationCluster_TimeFailure_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.TimeFailure!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class TimeSynchronizationCluster_MissingTrustedTimeSource_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.TimeSynchronizationCluster.{i}.MissingTrustedTimeSource!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.SetUTCTime()": (TimeSynchronizationCluster_SetUTCTime_Input, TimeSynchronizationCluster_SetUTCTime_Output),
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTrustedTimeSource()": (TimeSynchronizationCluster_SetTrustedTimeSource_Input, TimeSynchronizationCluster_SetTrustedTimeSource_Output),
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.SetTimeZone()": (TimeSynchronizationCluster_SetTimeZone_Input, TimeSynchronizationCluster_SetTimeZone_Output),
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.SetDSTOffset()": (TimeSynchronizationCluster_SetDSTOffset_Input, TimeSynchronizationCluster_SetDSTOffset_Output),
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.SetDefaultNTP()": (TimeSynchronizationCluster_SetDefaultNTP_Input, TimeSynchronizationCluster_SetDefaultNTP_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.DSTTableEmpty!": TimeSynchronizationCluster_DSTTableEmpty_Event,
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.DSTStatus!": TimeSynchronizationCluster_DSTStatus_Event,
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.TimeZoneStatus!": TimeSynchronizationCluster_TimeZoneStatus_Event,
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.TimeFailure!": TimeSynchronizationCluster_TimeFailure_Event,
+    "MatterService.{i}.TimeSynchronizationCluster.{i}.MissingTrustedTimeSource!": TimeSynchronizationCluster_MissingTrustedTimeSource_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

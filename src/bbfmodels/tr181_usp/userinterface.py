@@ -118,3 +118,47 @@ class UserInterface(_Model):
     Messages: UserInterface_Messages | None = _Field(default=None)
 
 
+class UserInterface_PasswordReset_Input(_Model):
+    __bbf_path__ = "Device.UserInterface.PasswordReset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class UserInterface_PasswordReset_Output(_Model):
+    __bbf_path__ = "Device.UserInterface.PasswordReset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class UserInterface_HTTPAccess_CreateWebSession_Input(_Model):
+    __bbf_path__ = "Device.UserInterface.HTTPAccess.{i}.CreateWebSession().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    AbsoluteTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    IdleTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class UserInterface_HTTPAccess_CreateWebSession_Output(_Model):
+    __bbf_path__ = "Device.UserInterface.HTTPAccess.{i}.CreateWebSession().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    SessionID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class UserInterface_HTTPAccess_Session_Delete_Input(_Model):
+    __bbf_path__ = "Device.UserInterface.HTTPAccess.{i}.Session.{i}.Delete().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class UserInterface_HTTPAccess_Session_Delete_Output(_Model):
+    __bbf_path__ = "Device.UserInterface.HTTPAccess.{i}.Session.{i}.Delete().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "Device.UserInterface.PasswordReset()": (UserInterface_PasswordReset_Input, UserInterface_PasswordReset_Output),
+    "Device.UserInterface.HTTPAccess.{i}.CreateWebSession()": (UserInterface_HTTPAccess_CreateWebSession_Input, UserInterface_HTTPAccess_CreateWebSession_Output),
+    "Device.UserInterface.HTTPAccess.{i}.Session.{i}.Delete()": (UserInterface_HTTPAccess_Session_Delete_Input, UserInterface_HTTPAccess_Session_Delete_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

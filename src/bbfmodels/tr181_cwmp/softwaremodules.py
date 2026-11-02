@@ -241,3 +241,10 @@ class SoftwareModules(_Model):
     Config_: SoftwareModules_Config | None = _Field(default=None, alias="Config")
 
 
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+}
+_EVENTS: dict[str, type[_Model]] = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class SIP_Registrar_Account_ContactPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -529,6 +529,7 @@ class POTS_FXOPath(ObjectPathBase):
     DTMFDialoutInterval: ParamPath[int]
     CallerIdDetectionEnable: ParamPath[bool]
     Active: ParamPath[bool]
+    DiagTests: CommandPath
 
 class POTS_FXSPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -544,6 +545,7 @@ class POTS_FXSPath(ObjectPathBase):
     Active: ParamPath[bool]
     TerminalType: ParamPath[str]
     VoiceProcessing: POTS_FXS_VoiceProcessingPath
+    DiagTests: CommandPath
 
 class DECT_BasePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -1044,6 +1046,7 @@ class TerminalPath(ObjectPathBase):
     Audio: TablePath[Terminal_AudioPath]
     ButtonMap: Terminal_ButtonMapPath
     Ringer: Terminal_RingerPath
+    DiagTests: CommandPath
 
 class CapabilitiesPath(ObjectPathBase):
     MaxLineCount: ParamPath[int]

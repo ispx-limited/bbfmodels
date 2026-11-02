@@ -59,3 +59,608 @@ class DoorLockCluster(_Model):
     NumberOfAliroEndpointKeysSupported: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+class DoorLockCluster_LockDoor_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockDoor().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PINCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_LockDoor_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockDoor().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_UnlockDoor_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.UnlockDoor().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PINCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_UnlockDoor_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.UnlockDoor().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_UnlockWithTimeout_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.UnlockWithTimeout().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PINCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_UnlockWithTimeout_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.UnlockWithTimeout().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetPINCode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetPINCode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+    PIN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetPINCode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetPINCode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetPINCode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetPINCode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetPINCode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetPINCode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+    PINCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_ClearPINCode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearPINCode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PINSlotIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearPINCode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearPINCode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_ClearAllPINCodes_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearAllPINCodes().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DoorLockCluster_ClearAllPINCodes_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearAllPINCodes().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetUserStatus_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetUserStatus().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetUserStatus_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetUserStatus().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetUserStatus_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetUserStatus().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetUserStatus_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetUserStatus().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetWeekDaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetWeekDaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WeekDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DaysMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    StartHour: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartMinute: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndHour: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndMinute: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_SetWeekDaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetWeekDaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetWeekDaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetWeekDaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WeekDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetWeekDaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetWeekDaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WeekDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DaysMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    StartHour: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartMinute: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndHour: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndMinute: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearWeekDaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearWeekDaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WeekDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearWeekDaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearWeekDaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetYearDaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetYearDaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    YearDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalStartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalEndTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_SetYearDaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetYearDaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetYearDaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetYearDaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    YearDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetYearDaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetYearDaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    YearDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalStartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalEndTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearYearDaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearYearDaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    YearDayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearYearDaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearYearDaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetHolidaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetHolidaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    HolidayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalStartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalEndTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OperatingMode: _Annotated[_Literal['Normal', 'Vacation', 'Privacy', 'NoRemoteLockUnlock', 'Passage'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetHolidaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetHolidaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetHolidaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetHolidaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    HolidayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetHolidaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetHolidaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    HolidayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LocalStartTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    LocalEndTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    OperatingMode: _Annotated[_Literal['Normal', 'Vacation', 'Privacy', 'NoRemoteLockUnlock', 'Passage'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_ClearHolidaySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearHolidaySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    HolidayIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearHolidaySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearHolidaySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetUserType_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetUserType().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetUserType_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetUserType().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetUserType_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetUserType().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetUserType_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetUserType().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetRFIDCode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetRFIDCode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+    RFIDCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetRFIDCode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetRFIDCode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetRFIDCode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetRFIDCode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetRFIDCode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetRFIDCode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+    RFIDCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_ClearRFIDCode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearRFIDCode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    RFIDSlotIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearRFIDCode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearRFIDCode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_ClearAllRFIDCodes_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearAllRFIDCodes().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DoorLockCluster_ClearAllRFIDCodes_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearAllRFIDCodes().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetUser_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetUser().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OperationType: _Annotated[_Literal['Add', 'Clear', 'Modify'] | str | None, _Param(_BaseType.STRING)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UserUniqueID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialRule: _Annotated[_Literal['Single', 'Dual', 'Tri'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetUser_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetUser().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_GetUser_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetUser().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetUser_Output_Credentials(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetUser().Output.Credentials.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetUser_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetUser().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UserName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UserUniqueID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialRule: _Annotated[_Literal['Single', 'Dual', 'Tri'] | str | None, _Param(_BaseType.STRING)] = None
+    CreatorFabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    LastModifiedFabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    NextUserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Credentials: dict[int, DoorLockCluster_GetUser_Output_Credentials] = _Field(default_factory=dict)
+
+
+class DoorLockCluster_ClearUser_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearUser().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    UserIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearUser_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearUser().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetCredential_Input_Credential(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetCredential().Input.Credential."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_SetCredential_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetCredential().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OperationType: _Annotated[_Literal['Add', 'Clear', 'Modify'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialData: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    UserStatus: _Annotated[_Literal['Available', 'OccupiedEnabled', 'OccupiedDisabled'] | str | None, _Param(_BaseType.STRING)] = None
+    UserType: _Annotated[_Literal['UnrestrictedUser', 'YearDayScheduleUser', 'WeekDayScheduleUser', 'ProgrammingUser', 'NonAccessUser', 'ForcedUser', 'DisposableUser', 'ExpiringUser', 'ScheduleRestrictedUser', 'RemoteOnlyUser'] | str | None, _Param(_BaseType.STRING)] = None
+    Credential: DoorLockCluster_SetCredential_Input_Credential | None = _Field(default=None)
+
+
+class DoorLockCluster_SetCredential_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetCredential().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    NextCredentialIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class DoorLockCluster_GetCredentialStatus_Input_Credential(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetCredentialStatus().Input.Credential."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_GetCredentialStatus_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetCredentialStatus().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Credential: DoorLockCluster_GetCredentialStatus_Input_Credential | None = _Field(default=None)
+
+
+class DoorLockCluster_GetCredentialStatus_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.GetCredentialStatus().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CredentialExists: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    CreatorFabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    LastModifiedFabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    NextCredentialIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    CredentialData: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_ClearCredential_Input_Credential(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearCredential().Input.Credential."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_ClearCredential_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearCredential().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Credential: DoorLockCluster_ClearCredential_Input_Credential | None = _Field(default=None)
+
+
+class DoorLockCluster_ClearCredential_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearCredential().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_UnboltDoor_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.UnboltDoor().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PINCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_UnboltDoor_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.UnboltDoor().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetAliroReaderConfig_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetAliroReaderConfig().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SigningKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    VerificationKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupResolvingKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_SetAliroReaderConfig_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.SetAliroReaderConfig().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_ClearAliroReaderConfig_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearAliroReaderConfig().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class DoorLockCluster_ClearAliroReaderConfig_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.ClearAliroReaderConfig().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_DoorLockAlarm_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.DoorLockAlarm!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmCode: _Annotated[_Literal['LockJammed', 'LockFactoryReset', 'LockRadioPowerCycled', 'WrongCodeEntryLimit', 'FrontEsceutcheonRemoved', 'DoorForcedOpen', 'DoorAjar', 'ForcedUser'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_DoorStateChange_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.DoorStateChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DoorState: _Annotated[_Literal['DoorOpen', 'DoorClosed', 'DoorJammed', 'DoorForcedOpen', 'DoorUnspecifiedError', 'DoorAjar'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DoorLockCluster_LockOperation_Event_Credentials(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperation!.Credentials.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_LockOperation_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperation!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LockOperationType: _Annotated[_Literal['Lock', 'Unlock', 'NonAccessUserEvent', 'ForcedUserEvent', 'Unlatch'] | str | None, _Param(_BaseType.STRING)] = None
+    OperationSource: _Annotated[_Literal['Unspecified', 'Manual', 'ProprietaryRemote', 'Keypad', 'Auto', 'Button', 'Schedule', 'Remote', 'RFID', 'Biometric', 'Aliro'] | str | None, _Param(_BaseType.STRING)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    SourceNode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Credentials: dict[int, DoorLockCluster_LockOperation_Event_Credentials] = _Field(default_factory=dict)
+
+
+class DoorLockCluster_LockOperationError_Event_Credentials(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperationError!.Credentials.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
+    CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DoorLockCluster_LockOperationError_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperationError!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LockOperationType: _Annotated[_Literal['Lock', 'Unlock', 'NonAccessUserEvent', 'ForcedUserEvent', 'Unlatch'] | str | None, _Param(_BaseType.STRING)] = None
+    OperationSource: _Annotated[_Literal['Unspecified', 'Manual', 'ProprietaryRemote', 'Keypad', 'Auto', 'Button', 'Schedule', 'Remote', 'RFID', 'Biometric', 'Aliro'] | str | None, _Param(_BaseType.STRING)] = None
+    OperationError: _Annotated[_Literal['Unspecified', 'InvalidCredential', 'DisabledUserDenied', 'Restricted', 'InsufficientBattery'] | str | None, _Param(_BaseType.STRING)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    SourceNode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Credentials: dict[int, DoorLockCluster_LockOperationError_Event_Credentials] = _Field(default_factory=dict)
+
+
+class DoorLockCluster_LockUserChange_Event(_Model):
+    __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockUserChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LockDataType: _Annotated[_Literal['Unspecified', 'ProgrammingCode', 'UserIndex', 'WeekDaySchedule', 'YearDaySchedule', 'HolidaySchedule', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
+    DataOperationType: _Annotated[_Literal['Add', 'Clear', 'Modify'] | str | None, _Param(_BaseType.STRING)] = None
+    OperationSource: _Annotated[_Literal['Unspecified', 'Manual', 'ProprietaryRemote', 'Keypad', 'Auto', 'Button', 'Schedule', 'Remote', 'RFID', 'Biometric', 'Aliro'] | str | None, _Param(_BaseType.STRING)] = None
+    UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    SourceNode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    DataIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
+    "MatterService.{i}.DoorLockCluster.{i}.LockDoor()": (DoorLockCluster_LockDoor_Input, DoorLockCluster_LockDoor_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.UnlockDoor()": (DoorLockCluster_UnlockDoor_Input, DoorLockCluster_UnlockDoor_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.UnlockWithTimeout()": (DoorLockCluster_UnlockWithTimeout_Input, DoorLockCluster_UnlockWithTimeout_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetPINCode()": (DoorLockCluster_SetPINCode_Input, DoorLockCluster_SetPINCode_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetPINCode()": (DoorLockCluster_GetPINCode_Input, DoorLockCluster_GetPINCode_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearPINCode()": (DoorLockCluster_ClearPINCode_Input, DoorLockCluster_ClearPINCode_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearAllPINCodes()": (DoorLockCluster_ClearAllPINCodes_Input, DoorLockCluster_ClearAllPINCodes_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetUserStatus()": (DoorLockCluster_SetUserStatus_Input, DoorLockCluster_SetUserStatus_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetUserStatus()": (DoorLockCluster_GetUserStatus_Input, DoorLockCluster_GetUserStatus_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetWeekDaySchedule()": (DoorLockCluster_SetWeekDaySchedule_Input, DoorLockCluster_SetWeekDaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetWeekDaySchedule()": (DoorLockCluster_GetWeekDaySchedule_Input, DoorLockCluster_GetWeekDaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearWeekDaySchedule()": (DoorLockCluster_ClearWeekDaySchedule_Input, DoorLockCluster_ClearWeekDaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetYearDaySchedule()": (DoorLockCluster_SetYearDaySchedule_Input, DoorLockCluster_SetYearDaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetYearDaySchedule()": (DoorLockCluster_GetYearDaySchedule_Input, DoorLockCluster_GetYearDaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearYearDaySchedule()": (DoorLockCluster_ClearYearDaySchedule_Input, DoorLockCluster_ClearYearDaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetHolidaySchedule()": (DoorLockCluster_SetHolidaySchedule_Input, DoorLockCluster_SetHolidaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetHolidaySchedule()": (DoorLockCluster_GetHolidaySchedule_Input, DoorLockCluster_GetHolidaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearHolidaySchedule()": (DoorLockCluster_ClearHolidaySchedule_Input, DoorLockCluster_ClearHolidaySchedule_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetUserType()": (DoorLockCluster_SetUserType_Input, DoorLockCluster_SetUserType_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetUserType()": (DoorLockCluster_GetUserType_Input, DoorLockCluster_GetUserType_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetRFIDCode()": (DoorLockCluster_SetRFIDCode_Input, DoorLockCluster_SetRFIDCode_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetRFIDCode()": (DoorLockCluster_GetRFIDCode_Input, DoorLockCluster_GetRFIDCode_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearRFIDCode()": (DoorLockCluster_ClearRFIDCode_Input, DoorLockCluster_ClearRFIDCode_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearAllRFIDCodes()": (DoorLockCluster_ClearAllRFIDCodes_Input, DoorLockCluster_ClearAllRFIDCodes_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetUser()": (DoorLockCluster_SetUser_Input, DoorLockCluster_SetUser_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetUser()": (DoorLockCluster_GetUser_Input, DoorLockCluster_GetUser_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearUser()": (DoorLockCluster_ClearUser_Input, DoorLockCluster_ClearUser_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetCredential()": (DoorLockCluster_SetCredential_Input, DoorLockCluster_SetCredential_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.GetCredentialStatus()": (DoorLockCluster_GetCredentialStatus_Input, DoorLockCluster_GetCredentialStatus_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearCredential()": (DoorLockCluster_ClearCredential_Input, DoorLockCluster_ClearCredential_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.UnboltDoor()": (DoorLockCluster_UnboltDoor_Input, DoorLockCluster_UnboltDoor_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.SetAliroReaderConfig()": (DoorLockCluster_SetAliroReaderConfig_Input, DoorLockCluster_SetAliroReaderConfig_Output),
+    "MatterService.{i}.DoorLockCluster.{i}.ClearAliroReaderConfig()": (DoorLockCluster_ClearAliroReaderConfig_Input, DoorLockCluster_ClearAliroReaderConfig_Output),
+}
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.DoorLockCluster.{i}.DoorLockAlarm!": DoorLockCluster_DoorLockAlarm_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.DoorStateChange!": DoorLockCluster_DoorStateChange_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.LockOperation!": DoorLockCluster_LockOperation_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.LockOperationError!": DoorLockCluster_LockOperationError_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.LockUserChange!": DoorLockCluster_LockUserChange_Event,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
