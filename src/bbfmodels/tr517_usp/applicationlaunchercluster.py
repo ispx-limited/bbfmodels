@@ -91,12 +91,12 @@ class ApplicationLauncherCluster_HideApp_Output(_Model):
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ApplicationLauncherCluster.{i}.LaunchApp()": (ApplicationLauncherCluster_LaunchApp_Input, ApplicationLauncherCluster_LaunchApp_Output),
     "MatterService.{i}.ApplicationLauncherCluster.{i}.StopApp()": (ApplicationLauncherCluster_StopApp_Input, ApplicationLauncherCluster_StopApp_Output),
     "MatterService.{i}.ApplicationLauncherCluster.{i}.HideApp()": (ApplicationLauncherCluster_HideApp_Input, ApplicationLauncherCluster_HideApp_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

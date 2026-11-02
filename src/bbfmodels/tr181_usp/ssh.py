@@ -98,10 +98,10 @@ class SSH_Server_Session_Delete_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.SSH.Server.{i}.Session.{i}.Delete()": (SSH_Server_Session_Delete_Input, SSH_Server_Session_Delete_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

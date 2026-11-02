@@ -49,26 +49,26 @@ class ValveConfigurationandControlCluster_Close_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ValveConfigurationandControlCluster_ValveStateChanged(_Model):
+class ValveConfigurationandControlCluster_ValveStateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ValveState: _Annotated[_Literal['Closed', 'Open', 'Transitioning'] | str | None, _Param(_BaseType.STRING)] = None
     ValveLevel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class ValveConfigurationandControlCluster_ValveFault(_Model):
+class ValveConfigurationandControlCluster_ValveFault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ValveFault: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Open()": (ValveConfigurationandControlCluster_Open_Input, ValveConfigurationandControlCluster_Open_Output),
     "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Close()": (ValveConfigurationandControlCluster_Close_Input, ValveConfigurationandControlCluster_Close_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!": ValveConfigurationandControlCluster_ValveStateChanged,
-    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!": ValveConfigurationandControlCluster_ValveFault,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!": ValveConfigurationandControlCluster_ValveStateChanged_Event,
+    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!": ValveConfigurationandControlCluster_ValveFault_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

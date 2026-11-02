@@ -138,7 +138,7 @@ class Security_CABundle_Delete_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Security.AddCertificateBundle()": (Security_AddCertificateBundle_Input, Security_AddCertificateBundle_Output),
     "Device.Security.AddCABundle()": (Security_AddCABundle_Input, Security_AddCABundle_Output),
     "Device.Security.Certificate.{i}.GetCertificateURI()": (Security_Certificate_GetCertificateURI_Input, Security_Certificate_GetCertificateURI_Output),
@@ -148,7 +148,7 @@ _COMMANDS = {
     "Device.Security.CABundle.{i}.Update()": (Security_CABundle_Update_Input, Security_CABundle_Update_Output),
     "Device.Security.CABundle.{i}.Delete()": (Security_CABundle_Delete_Input, Security_CABundle_Delete_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

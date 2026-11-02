@@ -600,7 +600,7 @@ class DSL_Diagnostics_SELTP_Output(_Model):
     CapacityEstimate: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.DSL.Line.{i}.Stats.Reset()": (DSL_Line_Stats_Reset_Input, DSL_Line_Stats_Reset_Output),
     "Device.DSL.Channel.{i}.Stats.Reset()": (DSL_Channel_Stats_Reset_Input, DSL_Channel_Stats_Reset_Output),
     "Device.DSL.BondingGroup.{i}.Stats.Reset()": (DSL_BondingGroup_Stats_Reset_Input, DSL_BondingGroup_Stats_Reset_Output),
@@ -609,7 +609,7 @@ _COMMANDS = {
     "Device.DSL.Diagnostics.SELTQLN()": (DSL_Diagnostics_SELTQLN_Input, DSL_Diagnostics_SELTQLN_Output),
     "Device.DSL.Diagnostics.SELTP()": (DSL_Diagnostics_SELTP_Input, DSL_Diagnostics_SELTP_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

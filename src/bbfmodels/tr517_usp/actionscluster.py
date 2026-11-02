@@ -202,7 +202,7 @@ class ActionsCluster_DisableActionWithDuration_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ActionsCluster_StateChanged(_Model):
+class ActionsCluster_StateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.StateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -210,7 +210,7 @@ class ActionsCluster_StateChanged(_Model):
     NewState: _Annotated[_Literal['Inactive', 'Active', 'Paused', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ActionsCluster_ActionFailed(_Model):
+class ActionsCluster_ActionFailed_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ActionsCluster.{i}.ActionFailed!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -219,7 +219,7 @@ class ActionsCluster_ActionFailed(_Model):
     Error: _Annotated[_Literal['Unknown', 'Interrupted'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ActionsCluster.{i}.InstantAction()": (ActionsCluster_InstantAction_Input, ActionsCluster_InstantAction_Output),
     "MatterService.{i}.ActionsCluster.{i}.InstantActionWithTransition()": (ActionsCluster_InstantActionWithTransition_Input, ActionsCluster_InstantActionWithTransition_Output),
     "MatterService.{i}.ActionsCluster.{i}.StartAction()": (ActionsCluster_StartAction_Input, ActionsCluster_StartAction_Output),
@@ -233,9 +233,9 @@ _COMMANDS = {
     "MatterService.{i}.ActionsCluster.{i}.DisableAction()": (ActionsCluster_DisableAction_Input, ActionsCluster_DisableAction_Output),
     "MatterService.{i}.ActionsCluster.{i}.DisableActionWithDuration()": (ActionsCluster_DisableActionWithDuration_Input, ActionsCluster_DisableActionWithDuration_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.ActionsCluster.{i}.StateChanged!": ActionsCluster_StateChanged,
-    "MatterService.{i}.ActionsCluster.{i}.ActionFailed!": ActionsCluster_ActionFailed,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ActionsCluster.{i}.StateChanged!": ActionsCluster_StateChanged_Event,
+    "MatterService.{i}.ActionsCluster.{i}.ActionFailed!": ActionsCluster_ActionFailed_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

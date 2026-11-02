@@ -285,7 +285,7 @@ class Ethernet_WoL_SendMagicPacket_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Ethernet.Interface.{i}.ChangePowerMode()": (Ethernet_Interface_ChangePowerMode_Input, Ethernet_Interface_ChangePowerMode_Output),
     "Device.Ethernet.Interface.{i}.Stats.Reset()": (Ethernet_Interface_Stats_Reset_Input, Ethernet_Interface_Stats_Reset_Output),
     "Device.Ethernet.Link.{i}.Stats.Reset()": (Ethernet_Link_Stats_Reset_Input, Ethernet_Link_Stats_Reset_Output),
@@ -293,7 +293,7 @@ _COMMANDS = {
     "Device.Ethernet.LAG.{i}.Stats.Reset()": (Ethernet_LAG_Stats_Reset_Input, Ethernet_LAG_Stats_Reset_Output),
     "Device.Ethernet.WoL.SendMagicPacket()": (Ethernet_WoL_SendMagicPacket_Input, Ethernet_WoL_SendMagicPacket_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

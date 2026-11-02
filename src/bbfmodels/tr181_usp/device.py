@@ -292,7 +292,7 @@ class Device_ScheduleTimer_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class Device_Boot(_Model):
+class Device_Boot_Event(_Model):
     __bbf_path__ = "Device.Boot!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     CommandKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -302,7 +302,7 @@ class Device_Boot(_Model):
     ParameterMap: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Reboot()": (Device_Reboot_Input, Device_Reboot_Output),
     "Device.Shutdown()": (Device_Shutdown_Input, Device_Shutdown_Output),
     "Device.FactoryReset()": (Device_FactoryReset_Input, Device_FactoryReset_Output),
@@ -310,8 +310,8 @@ _COMMANDS = {
     "Device.PacketCaptureDiagnostics()": (Device_PacketCaptureDiagnostics_Input, Device_PacketCaptureDiagnostics_Output),
     "Device.ScheduleTimer()": (Device_ScheduleTimer_Input, Device_ScheduleTimer_Output),
 }
-_EVENTS = {
-    "Device.Boot!": Device_Boot,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.Boot!": Device_Boot_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

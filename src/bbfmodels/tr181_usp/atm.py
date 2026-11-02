@@ -104,11 +104,11 @@ class ATM_Diagnostics_F5Loopback_Output(_Model):
     MaximumResponseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.ATM.Link.{i}.Stats.Reset()": (ATM_Link_Stats_Reset_Input, ATM_Link_Stats_Reset_Output),
     "Device.ATM.Diagnostics.F5Loopback()": (ATM_Diagnostics_F5Loopback_Input, ATM_Diagnostics_F5Loopback_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

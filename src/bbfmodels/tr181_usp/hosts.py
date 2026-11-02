@@ -106,10 +106,10 @@ class Hosts_RemoveInactiveHosts_Output(_Model):
     NumberOfRemovedHosts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Hosts.RemoveInactiveHosts()": (Hosts_RemoveInactiveHosts_Input, Hosts_RemoveInactiveHosts_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

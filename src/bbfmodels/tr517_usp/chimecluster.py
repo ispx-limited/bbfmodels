@@ -36,10 +36,10 @@ class ChimeCluster_PlayChimeSound_Output(_Model):
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ChimeCluster.{i}.PlayChimeSound()": (ChimeCluster_PlayChimeSound_Input, ChimeCluster_PlayChimeSound_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

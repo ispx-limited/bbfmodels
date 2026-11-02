@@ -422,13 +422,13 @@ class DeviceInfo_VendorConfigFile_Restore_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class DeviceInfo_MemoryStatus_MemoryMonitor_MemoryCriticalState(_Model):
+class DeviceInfo_MemoryStatus_MemoryMonitor_MemoryCriticalState_Event(_Model):
     __bbf_path__ = "Device.DeviceInfo.MemoryStatus.MemoryMonitor.MemoryCriticalState!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     MemUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class DeviceInfo_ProcessStatus_CPU_CPUCriticalState(_Model):
+class DeviceInfo_ProcessStatus_CPU_CPUCriticalState_Event(_Model):
     __bbf_path__ = "Device.DeviceInfo.ProcessStatus.CPU.{i}.CPUCriticalState!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     CPUUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -445,13 +445,13 @@ class DeviceInfo_TemperatureStatus_TemperatureSensor_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class DeviceInfo_TemperatureStatus_TemperatureSensor_HighTemperatureAlarm(_Model):
+class DeviceInfo_TemperatureStatus_TemperatureSensor_HighTemperatureAlarm_Event(_Model):
     __bbf_path__ = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.HighTemperatureAlarm!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Value: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
-class DeviceInfo_TemperatureStatus_TemperatureSensor_LowTemperatureAlarm(_Model):
+class DeviceInfo_TemperatureStatus_TemperatureSensor_LowTemperatureAlarm_Event(_Model):
     __bbf_path__ = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.LowTemperatureAlarm!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Value: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -600,7 +600,7 @@ class DeviceInfo_Reboots_Reboot_Remove_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.DeviceInfo.VendorConfigFile.{i}.Backup()": (DeviceInfo_VendorConfigFile_Backup_Input, DeviceInfo_VendorConfigFile_Backup_Output),
     "Device.DeviceInfo.VendorConfigFile.{i}.Restore()": (DeviceInfo_VendorConfigFile_Restore_Input, DeviceInfo_VendorConfigFile_Restore_Output),
     "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.Reset()": (DeviceInfo_TemperatureStatus_TemperatureSensor_Reset_Input, DeviceInfo_TemperatureStatus_TemperatureSensor_Reset_Output),
@@ -616,11 +616,11 @@ _COMMANDS = {
     "Device.DeviceInfo.Reboots.RemoveAllReboots()": (DeviceInfo_Reboots_RemoveAllReboots_Input, DeviceInfo_Reboots_RemoveAllReboots_Output),
     "Device.DeviceInfo.Reboots.Reboot.{i}.Remove()": (DeviceInfo_Reboots_Reboot_Remove_Input, DeviceInfo_Reboots_Reboot_Remove_Output),
 }
-_EVENTS = {
-    "Device.DeviceInfo.MemoryStatus.MemoryMonitor.MemoryCriticalState!": DeviceInfo_MemoryStatus_MemoryMonitor_MemoryCriticalState,
-    "Device.DeviceInfo.ProcessStatus.CPU.{i}.CPUCriticalState!": DeviceInfo_ProcessStatus_CPU_CPUCriticalState,
-    "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.HighTemperatureAlarm!": DeviceInfo_TemperatureStatus_TemperatureSensor_HighTemperatureAlarm,
-    "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.LowTemperatureAlarm!": DeviceInfo_TemperatureStatus_TemperatureSensor_LowTemperatureAlarm,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.DeviceInfo.MemoryStatus.MemoryMonitor.MemoryCriticalState!": DeviceInfo_MemoryStatus_MemoryMonitor_MemoryCriticalState_Event,
+    "Device.DeviceInfo.ProcessStatus.CPU.{i}.CPUCriticalState!": DeviceInfo_ProcessStatus_CPU_CPUCriticalState_Event,
+    "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.HighTemperatureAlarm!": DeviceInfo_TemperatureStatus_TemperatureSensor_HighTemperatureAlarm_Event,
+    "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.LowTemperatureAlarm!": DeviceInfo_TemperatureStatus_TemperatureSensor_LowTemperatureAlarm_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

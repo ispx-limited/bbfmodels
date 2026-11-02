@@ -306,11 +306,11 @@ class Routing_Babel_MACKeySet_MACKey_MACTest_Output(_Model):
     Match: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Routing.Babel.StatsReset()": (Routing_Babel_StatsReset_Input, Routing_Babel_StatsReset_Output),
     "Device.Routing.Babel.MACKeySet.{i}.MACKey.{i}.MACTest()": (Routing_Babel_MACKeySet_MACKey_MACTest_Input, Routing_Babel_MACKeySet_MACKey_MACTest_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

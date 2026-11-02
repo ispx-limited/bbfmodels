@@ -152,25 +152,25 @@ class ThreadNetworkDiagnosticsCluster_ResetCounts_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ThreadNetworkDiagnosticsCluster_ConnectionStatus(_Model):
+class ThreadNetworkDiagnosticsCluster_ConnectionStatus_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ThreadNetworkDiagnosticsCluster.{i}.ConnectionStatus!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ConnectionStatus: _Annotated[_Literal['Connected', 'NotConnected'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ThreadNetworkDiagnosticsCluster_NetworkFaultChange(_Model):
+class ThreadNetworkDiagnosticsCluster_NetworkFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ThreadNetworkDiagnosticsCluster.{i}.NetworkFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'LinkDown', 'HardwareFailure', 'NetworkJammed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'LinkDown', 'HardwareFailure', 'NetworkJammed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ThreadNetworkDiagnosticsCluster.{i}.ResetCounts()": (ThreadNetworkDiagnosticsCluster_ResetCounts_Input, ThreadNetworkDiagnosticsCluster_ResetCounts_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.ThreadNetworkDiagnosticsCluster.{i}.ConnectionStatus!": ThreadNetworkDiagnosticsCluster_ConnectionStatus,
-    "MatterService.{i}.ThreadNetworkDiagnosticsCluster.{i}.NetworkFaultChange!": ThreadNetworkDiagnosticsCluster_NetworkFaultChange,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ThreadNetworkDiagnosticsCluster.{i}.ConnectionStatus!": ThreadNetworkDiagnosticsCluster_ConnectionStatus_Event,
+    "MatterService.{i}.ThreadNetworkDiagnosticsCluster.{i}.NetworkFaultChange!": ThreadNetworkDiagnosticsCluster_NetworkFaultChange_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

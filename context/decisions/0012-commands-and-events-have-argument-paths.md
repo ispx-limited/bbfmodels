@@ -24,7 +24,7 @@ command alone.
   the owning object; they are reached through the command or event.
 - **Generated classes are named by owner, command and side**:
   `IP_Diagnostics_TraceRoute_Input`, `IP_Diagnostics_TraceRoute_Output`,
-  `IP_Diagnostics_TraceRoute_Output_RouteHops`; an event is `Device_Boot`.
+  `IP_Diagnostics_TraceRoute_Output_RouteHops`; an event is `Device_Boot_Event`, the suffix keeping it apart from an object class of the same name.
   Each package exposes `COMMANDS`, a map from command path to its input
   and output classes, and `EVENTS`, from event path to its class, so a
   controller can pick the class for a response by the path it sent.

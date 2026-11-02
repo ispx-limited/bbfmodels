@@ -47,7 +47,7 @@ class CommissionerControlCluster_CommissionNode_Output(_Model):
     Salt: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class CommissionerControlCluster_CommissioningRequestResult(_Model):
+class CommissionerControlCluster_CommissioningRequestResult_Event(_Model):
     __bbf_path__ = "MatterService.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     RequestID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -55,12 +55,12 @@ class CommissionerControlCluster_CommissioningRequestResult(_Model):
     StatusCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.CommissionerControlCluster.{i}.RequestCommissioningApproval()": (CommissionerControlCluster_RequestCommissioningApproval_Input, CommissionerControlCluster_RequestCommissioningApproval_Output),
     "MatterService.{i}.CommissionerControlCluster.{i}.CommissionNode()": (CommissionerControlCluster_CommissionNode_Input, CommissionerControlCluster_CommissionNode_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!": CommissionerControlCluster_CommissioningRequestResult,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!": CommissionerControlCluster_CommissioningRequestResult_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

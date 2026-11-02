@@ -106,16 +106,16 @@ class Syslog(_Model):
     Action: dict[int, Syslog_Action] = _Field(default_factory=dict)
 
 
-class Syslog_Action_LogEvent(_Model):
+class Syslog_Action_LogEvent_Event(_Model):
     __bbf_path__ = "Device.Syslog.Action.{i}.LogEvent!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     LogLine: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
-    "Device.Syslog.Action.{i}.LogEvent!": Syslog_Action_LogEvent,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.Syslog.Action.{i}.LogEvent!": Syslog_Action_LogEvent_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

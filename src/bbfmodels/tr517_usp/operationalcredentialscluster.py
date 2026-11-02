@@ -183,7 +183,7 @@ class OperationalCredentialsCluster_SignVIDVerificationRequest_Output(_Model):
     Signature: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.OperationalCredentialsCluster.{i}.AttestationRequest()": (OperationalCredentialsCluster_AttestationRequest_Input, OperationalCredentialsCluster_AttestationRequest_Output),
     "MatterService.{i}.OperationalCredentialsCluster.{i}.CertificateChainRequest()": (OperationalCredentialsCluster_CertificateChainRequest_Input, OperationalCredentialsCluster_CertificateChainRequest_Output),
     "MatterService.{i}.OperationalCredentialsCluster.{i}.CSRRequest()": (OperationalCredentialsCluster_CSRRequest_Input, OperationalCredentialsCluster_CSRRequest_Output),
@@ -195,7 +195,7 @@ _COMMANDS = {
     "MatterService.{i}.OperationalCredentialsCluster.{i}.SetVIDVerificationStatement()": (OperationalCredentialsCluster_SetVIDVerificationStatement_Input, OperationalCredentialsCluster_SetVIDVerificationStatement_Output),
     "MatterService.{i}.OperationalCredentialsCluster.{i}.SignVIDVerificationRequest()": (OperationalCredentialsCluster_SignVIDVerificationRequest_Input, OperationalCredentialsCluster_SignVIDVerificationRequest_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

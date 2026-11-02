@@ -72,9 +72,9 @@ class LLDP(_Model):
     Discovery: LLDP_Discovery | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

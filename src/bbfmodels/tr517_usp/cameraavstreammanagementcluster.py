@@ -401,7 +401,7 @@ class CameraAVStreamManagementCluster_CaptureSnapshot_Output(_Model):
     Resolution: CameraAVStreamManagementCluster_CaptureSnapshot_Output_Resolution | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamAllocate()": (CameraAVStreamManagementCluster_AudioStreamAllocate_Input, CameraAVStreamManagementCluster_AudioStreamAllocate_Output),
     "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamDeallocate()": (CameraAVStreamManagementCluster_AudioStreamDeallocate_Input, CameraAVStreamManagementCluster_AudioStreamDeallocate_Output),
     "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamAllocate()": (CameraAVStreamManagementCluster_VideoStreamAllocate_Input, CameraAVStreamManagementCluster_VideoStreamAllocate_Output),
@@ -413,7 +413,7 @@ _COMMANDS = {
     "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SetStreamPriorities()": (CameraAVStreamManagementCluster_SetStreamPriorities_Input, CameraAVStreamManagementCluster_SetStreamPriorities_Output),
     "MatterService.{i}.CameraAVStreamManagementCluster.{i}.CaptureSnapshot()": (CameraAVStreamManagementCluster_CaptureSnapshot_Input, CameraAVStreamManagementCluster_CaptureSnapshot_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

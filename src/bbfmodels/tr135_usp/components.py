@@ -463,7 +463,7 @@ class Components_AudioOutput_CancelMute_Output(_Model):
     __bbf_package__ = "bbfmodels.tr135_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "STBService.{i}.Components.FrontEnd.{i}.DVBT.Install()": (Components_FrontEnd_DVBT_Install_Input, Components_FrontEnd_DVBT_Install_Output),
     "STBService.{i}.Components.FrontEnd.{i}.DVBT.LogicalChannelConnect()": (Components_FrontEnd_DVBT_LogicalChannelConnect_Input, Components_FrontEnd_DVBT_LogicalChannelConnect_Output),
     "STBService.{i}.Components.FrontEnd.{i}.DVBT.ServiceConnect()": (Components_FrontEnd_DVBT_ServiceConnect_Input, Components_FrontEnd_DVBT_ServiceConnect_Output),
@@ -471,7 +471,7 @@ _COMMANDS = {
     "STBService.{i}.Components.FrontEnd.{i}.IP.ServiceConnect()": (Components_FrontEnd_IP_ServiceConnect_Input, Components_FrontEnd_IP_ServiceConnect_Output),
     "STBService.{i}.Components.AudioOutput.{i}.CancelMute()": (Components_AudioOutput_CancelMute_Input, Components_AudioOutput_CancelMute_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

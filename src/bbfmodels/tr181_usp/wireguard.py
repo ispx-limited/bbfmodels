@@ -100,10 +100,10 @@ class WireGuard_Tunnel_Interface_Stats_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.WireGuard.Tunnel.{i}.Interface.{i}.Stats.Reset()": (WireGuard_Tunnel_Interface_Stats_Reset_Input, WireGuard_Tunnel_Interface_Stats_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

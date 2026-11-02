@@ -48,10 +48,10 @@ class RefrigeratorAndTemperatureControlledCabinetModeCluster_ChangeToMode_Output
     StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.RefrigeratorAndTemperatureControlledCabinetModeCluster.{i}.ChangeToMode()": (RefrigeratorAndTemperatureControlledCabinetModeCluster_ChangeToMode_Input, RefrigeratorAndTemperatureControlledCabinetModeCluster_ChangeToMode_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

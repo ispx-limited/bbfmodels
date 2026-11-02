@@ -343,10 +343,13 @@ def _emit_paths_stub(model: Model, root: str, source: str) -> str:
                 lines.append(f"    {field}: TablePath[{child_name}]\n")
             else:
                 lines.append(f"    {field}: {child_name}\n")
+        taken = {identifier(n) for n in obj.parameters} | {
+            identifier(c.name) for c in _children(obj, model)
+        }
         for cmd in obj.commands.values():
-            lines.append(f"    {identifier(member_name(cmd.name))}: CommandPath\n")
+            lines.append(f"    {_member_identifier(cmd.name, taken)}: CommandPath\n")
         for ev in obj.events.values():
-            lines.append(f"    {identifier(member_name(ev.name))}: EventPath\n")
+            lines.append(f"    {_member_identifier(ev.name, taken)}: EventPath\n")
         if not obj.parameters and not _children(obj, model) and not obj.commands and not obj.events:
             lines.append("    pass\n")
         lines.append("\n")
@@ -384,11 +387,13 @@ def _emit_arguments(objects: list[Object], root: str, package: str) -> str:
             )
             commands.append(f'    "{obj.path}{cmd.name}": ({inp}, {outp}),\n')
         for ev in obj.events.values():
-            name = f"{owner}_{identifier(member_name(ev.name))}"
+            name = f"{owner}_{identifier(member_name(ev.name))}_Event"
             cls = _emit_argument_classes(name, f"{obj.path}{ev.name}.", ev.arguments, package, out)
             events.append(f'    "{obj.path}{ev.name}": {cls},\n')
-    out.append("_COMMANDS = {\n" + "".join(commands) + "}\n")
-    out.append("_EVENTS = {\n" + "".join(events) + "}\n")
+    out.append(
+        "_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {\n" + "".join(commands) + "}\n"
+    )
+    out.append("_EVENTS: dict[str, type[_Model]] = {\n" + "".join(events) + "}\n")
     out.append("COMMANDS = _COMMANDS\nEVENTS = _EVENTS\n\n")
     return "".join(out)
 
@@ -420,7 +425,7 @@ def _emit_argument_classes(
 def _emit_nested_children(name: str, rel: str, args: Arguments) -> list[str]:
     """Fields for the argument objects directly under ``rel``; ``""`` is the argument set itself."""
     lines: list[str] = []
-    for child_rel, child in args.objects.items():
+    for child_rel in args.objects:
         parent = child_rel[:-4] if child_rel.endswith("{i}.") else child_rel
         parent = parent.rstrip(".").rpartition(".")[0]
         parent = parent + "." if parent else ""
@@ -435,3 +440,18 @@ def _emit_nested_children(name: str, rel: str, args: Arguments) -> list[str]:
         else:
             lines.append(f"    {field}: {cls} | None = _Field(default=None{alias})\n")
     return lines
+
+
+def _member_identifier(forum: str, taken: set[str]) -> str:
+    """The attribute a command or event is reached by in a path.
+
+    The bare name, ``Reboot`` for ``Reboot()``, unless a parameter or child
+    object already has it (Matter has ``ValveFault`` beside ``ValveFault!``),
+    in which case a trailing underscore tells them apart. The runtime
+    applies the same rule.
+    """
+    name = identifier(member_name(forum))
+    if name in taken:
+        name += "_"
+    taken.add(name)
+    return name

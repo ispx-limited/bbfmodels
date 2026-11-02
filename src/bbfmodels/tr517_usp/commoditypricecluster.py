@@ -135,7 +135,7 @@ class CommodityPriceCluster_GetDetailedForecastRequest_Output(_Model):
     PriceForecast: dict[int, CommodityPriceCluster_GetDetailedForecastRequest_Output_PriceForecast] = _Field(default_factory=dict)
 
 
-class CommodityPriceCluster_PriceChange_CurrentPrice_Components(_Model):
+class CommodityPriceCluster_PriceChange_Event_CurrentPrice_Components(_Model):
     __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!.CurrentPrice.Components.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
@@ -144,7 +144,7 @@ class CommodityPriceCluster_PriceChange_CurrentPrice_Components(_Model):
     TariffComponentID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class CommodityPriceCluster_PriceChange_CurrentPrice(_Model):
+class CommodityPriceCluster_PriceChange_Event_CurrentPrice(_Model):
     __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!.CurrentPrice."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PeriodStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -152,21 +152,21 @@ class CommodityPriceCluster_PriceChange_CurrentPrice(_Model):
     Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
     PriceLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
-    Components: dict[int, CommodityPriceCluster_PriceChange_CurrentPrice_Components] = _Field(default_factory=dict)
+    Components: dict[int, CommodityPriceCluster_PriceChange_Event_CurrentPrice_Components] = _Field(default_factory=dict)
 
 
-class CommodityPriceCluster_PriceChange(_Model):
+class CommodityPriceCluster_PriceChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    CurrentPrice: CommodityPriceCluster_PriceChange_CurrentPrice | None = _Field(default=None)
+    CurrentPrice: CommodityPriceCluster_PriceChange_Event_CurrentPrice | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedPriceRequest()": (CommodityPriceCluster_GetDetailedPriceRequest_Input, CommodityPriceCluster_GetDetailedPriceRequest_Output),
     "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedForecastRequest()": (CommodityPriceCluster_GetDetailedForecastRequest_Input, CommodityPriceCluster_GetDetailedForecastRequest_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!": CommodityPriceCluster_PriceChange,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!": CommodityPriceCluster_PriceChange_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

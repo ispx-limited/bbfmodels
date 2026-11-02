@@ -63,12 +63,12 @@ class ThreadNetworkDirectoryCluster_GetOperationalDataset_Output(_Model):
     OperationalDataset: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.AddNetwork()": (ThreadNetworkDirectoryCluster_AddNetwork_Input, ThreadNetworkDirectoryCluster_AddNetwork_Output),
     "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.RemoveNetwork()": (ThreadNetworkDirectoryCluster_RemoveNetwork_Input, ThreadNetworkDirectoryCluster_RemoveNetwork_Output),
     "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.GetOperationalDataset()": (ThreadNetworkDirectoryCluster_GetOperationalDataset_Input, ThreadNetworkDirectoryCluster_GetOperationalDataset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

@@ -326,154 +326,154 @@ class MoCA(_Model):
     Interface: dict[int, MoCA_Interface] = _Field(default_factory=dict)
 
 
-class MoCA_Interface_BelowPhyThresholdTrap(_Model):
+class MoCA_Interface_BelowPhyThresholdTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.BelowPhyThresholdTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     LowestPhyRate: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-class MoCA_Interface_AbovePhyThresholdTrap(_Model):
+class MoCA_Interface_AbovePhyThresholdTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.AbovePhyThresholdTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_StatusChangeTrap(_Model):
+class MoCA_Interface_StatusChangeTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.StatusChangeTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class MoCA_Interface_NumNodesChangeTrap(_Model):
+class MoCA_Interface_NumNodesChangeTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.NumNodesChangeTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     NumNodes: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class MoCA_Interface_MrRstSuccessTrap(_Model):
+class MoCA_Interface_MrRstSuccessTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MrRstSuccessTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_MrRstFailTrap(_Model):
+class MoCA_Interface_MrRstFailTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MrRstFailTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_MrNetworkSuccessTrap(_Model):
+class MoCA_Interface_MrNetworkSuccessTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MrNetworkSuccessTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_MrNetworkFailTrap(_Model):
+class MoCA_Interface_MrNetworkFailTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MrNetworkFailTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateBcstRecTrap(_Model):
+class MoCA_Interface_PowerStateBcstRecTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateBcstRecTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateM0NcTrap(_Model):
+class MoCA_Interface_PowerStateM0NcTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateM0NcTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateNc1xTrap(_Model):
+class MoCA_Interface_PowerStateNc1xTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateNc1xTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateNetVerTrap(_Model):
+class MoCA_Interface_PowerStateNetVerTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateNetVerTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateRespTrap(_Model):
+class MoCA_Interface_PowerStateRespTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateRespTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateUcstPenTrap(_Model):
+class MoCA_Interface_PowerStateUcstPenTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateUcstPenTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateTrnsReqTrap(_Model):
+class MoCA_Interface_PowerStateTrnsReqTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateTrnsReqTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_PowerStateWupUrTrap(_Model):
+class MoCA_Interface_PowerStateWupUrTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.PowerStateWupUrTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_LmoStatusTrap(_Model):
+class MoCA_Interface_LmoStatusTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.LmoStatusTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_LinkFailureTrap(_Model):
+class MoCA_Interface_LinkFailureTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.LinkFailureTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_ConnectedNodesChangeTrap(_Model):
+class MoCA_Interface_ConnectedNodesChangeTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.ConnectedNodesChangeTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     ConnectedNodesInfo: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-class MoCA_Interface_MgntEntityNetwIePayloadRecTrap(_Model):
+class MoCA_Interface_MgntEntityNetwIePayloadRecTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MgntEntityNetwIePayloadRecTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_MpsInitScanRecTrap(_Model):
+class MoCA_Interface_MpsInitScanRecTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MpsInitScanRecTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     MpsInitScanPayload: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-class MoCA_Interface_MpsPairFailTrap(_Model):
+class MoCA_Interface_MpsPairFailTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MpsPairFailTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_MpsPrivacyChangedTrap(_Model):
+class MoCA_Interface_MpsPrivacyChangedTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.MpsPrivacyChangedTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_NcPrivacySupportedRecTrap(_Model):
+class MoCA_Interface_NcPrivacySupportedRecTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.NcPrivacySupportedRecTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     PrivacyNc: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class MoCA_Interface_NetworkNameRecTrap(_Model):
+class MoCA_Interface_NetworkNameRecTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.NetworkNameRecTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     NetworkNamePayload: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-class MoCA_Interface_NodeDropAdmFailureTrap(_Model):
+class MoCA_Interface_NodeDropAdmFailureTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.NodeDropAdmFailureTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_NodeDropNcTrap(_Model):
+class MoCA_Interface_NodeDropNcTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.NodeDropNcTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_NodeDropMpsTriggeredTrap(_Model):
+class MoCA_Interface_NodeDropMpsTriggeredTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.NodeDropMpsTriggeredTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MoCA_Interface_NodeDropNcChgTrap(_Model):
+class MoCA_Interface_NodeDropNcChgTrap_Event(_Model):
     __bbf_path__ = "Device.MoCA.Interface.{i}.NodeDropNcChgTrap!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
@@ -505,40 +505,40 @@ class MoCA_Interface_Aca_Aca_Output(_Model):
     PowerProfile: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.MoCA.Interface.{i}.Stats.Reset()": (MoCA_Interface_Stats_Reset_Input, MoCA_Interface_Stats_Reset_Output),
     "Device.MoCA.Interface.{i}.Aca.Aca()": (MoCA_Interface_Aca_Aca_Input, MoCA_Interface_Aca_Aca_Output),
 }
-_EVENTS = {
-    "Device.MoCA.Interface.{i}.BelowPhyThresholdTrap!": MoCA_Interface_BelowPhyThresholdTrap,
-    "Device.MoCA.Interface.{i}.AbovePhyThresholdTrap!": MoCA_Interface_AbovePhyThresholdTrap,
-    "Device.MoCA.Interface.{i}.StatusChangeTrap!": MoCA_Interface_StatusChangeTrap,
-    "Device.MoCA.Interface.{i}.NumNodesChangeTrap!": MoCA_Interface_NumNodesChangeTrap,
-    "Device.MoCA.Interface.{i}.MrRstSuccessTrap!": MoCA_Interface_MrRstSuccessTrap,
-    "Device.MoCA.Interface.{i}.MrRstFailTrap!": MoCA_Interface_MrRstFailTrap,
-    "Device.MoCA.Interface.{i}.MrNetworkSuccessTrap!": MoCA_Interface_MrNetworkSuccessTrap,
-    "Device.MoCA.Interface.{i}.MrNetworkFailTrap!": MoCA_Interface_MrNetworkFailTrap,
-    "Device.MoCA.Interface.{i}.PowerStateBcstRecTrap!": MoCA_Interface_PowerStateBcstRecTrap,
-    "Device.MoCA.Interface.{i}.PowerStateM0NcTrap!": MoCA_Interface_PowerStateM0NcTrap,
-    "Device.MoCA.Interface.{i}.PowerStateNc1xTrap!": MoCA_Interface_PowerStateNc1xTrap,
-    "Device.MoCA.Interface.{i}.PowerStateNetVerTrap!": MoCA_Interface_PowerStateNetVerTrap,
-    "Device.MoCA.Interface.{i}.PowerStateRespTrap!": MoCA_Interface_PowerStateRespTrap,
-    "Device.MoCA.Interface.{i}.PowerStateUcstPenTrap!": MoCA_Interface_PowerStateUcstPenTrap,
-    "Device.MoCA.Interface.{i}.PowerStateTrnsReqTrap!": MoCA_Interface_PowerStateTrnsReqTrap,
-    "Device.MoCA.Interface.{i}.PowerStateWupUrTrap!": MoCA_Interface_PowerStateWupUrTrap,
-    "Device.MoCA.Interface.{i}.LmoStatusTrap!": MoCA_Interface_LmoStatusTrap,
-    "Device.MoCA.Interface.{i}.LinkFailureTrap!": MoCA_Interface_LinkFailureTrap,
-    "Device.MoCA.Interface.{i}.ConnectedNodesChangeTrap!": MoCA_Interface_ConnectedNodesChangeTrap,
-    "Device.MoCA.Interface.{i}.MgntEntityNetwIePayloadRecTrap!": MoCA_Interface_MgntEntityNetwIePayloadRecTrap,
-    "Device.MoCA.Interface.{i}.MpsInitScanRecTrap!": MoCA_Interface_MpsInitScanRecTrap,
-    "Device.MoCA.Interface.{i}.MpsPairFailTrap!": MoCA_Interface_MpsPairFailTrap,
-    "Device.MoCA.Interface.{i}.MpsPrivacyChangedTrap!": MoCA_Interface_MpsPrivacyChangedTrap,
-    "Device.MoCA.Interface.{i}.NcPrivacySupportedRecTrap!": MoCA_Interface_NcPrivacySupportedRecTrap,
-    "Device.MoCA.Interface.{i}.NetworkNameRecTrap!": MoCA_Interface_NetworkNameRecTrap,
-    "Device.MoCA.Interface.{i}.NodeDropAdmFailureTrap!": MoCA_Interface_NodeDropAdmFailureTrap,
-    "Device.MoCA.Interface.{i}.NodeDropNcTrap!": MoCA_Interface_NodeDropNcTrap,
-    "Device.MoCA.Interface.{i}.NodeDropMpsTriggeredTrap!": MoCA_Interface_NodeDropMpsTriggeredTrap,
-    "Device.MoCA.Interface.{i}.NodeDropNcChgTrap!": MoCA_Interface_NodeDropNcChgTrap,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.MoCA.Interface.{i}.BelowPhyThresholdTrap!": MoCA_Interface_BelowPhyThresholdTrap_Event,
+    "Device.MoCA.Interface.{i}.AbovePhyThresholdTrap!": MoCA_Interface_AbovePhyThresholdTrap_Event,
+    "Device.MoCA.Interface.{i}.StatusChangeTrap!": MoCA_Interface_StatusChangeTrap_Event,
+    "Device.MoCA.Interface.{i}.NumNodesChangeTrap!": MoCA_Interface_NumNodesChangeTrap_Event,
+    "Device.MoCA.Interface.{i}.MrRstSuccessTrap!": MoCA_Interface_MrRstSuccessTrap_Event,
+    "Device.MoCA.Interface.{i}.MrRstFailTrap!": MoCA_Interface_MrRstFailTrap_Event,
+    "Device.MoCA.Interface.{i}.MrNetworkSuccessTrap!": MoCA_Interface_MrNetworkSuccessTrap_Event,
+    "Device.MoCA.Interface.{i}.MrNetworkFailTrap!": MoCA_Interface_MrNetworkFailTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateBcstRecTrap!": MoCA_Interface_PowerStateBcstRecTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateM0NcTrap!": MoCA_Interface_PowerStateM0NcTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateNc1xTrap!": MoCA_Interface_PowerStateNc1xTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateNetVerTrap!": MoCA_Interface_PowerStateNetVerTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateRespTrap!": MoCA_Interface_PowerStateRespTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateUcstPenTrap!": MoCA_Interface_PowerStateUcstPenTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateTrnsReqTrap!": MoCA_Interface_PowerStateTrnsReqTrap_Event,
+    "Device.MoCA.Interface.{i}.PowerStateWupUrTrap!": MoCA_Interface_PowerStateWupUrTrap_Event,
+    "Device.MoCA.Interface.{i}.LmoStatusTrap!": MoCA_Interface_LmoStatusTrap_Event,
+    "Device.MoCA.Interface.{i}.LinkFailureTrap!": MoCA_Interface_LinkFailureTrap_Event,
+    "Device.MoCA.Interface.{i}.ConnectedNodesChangeTrap!": MoCA_Interface_ConnectedNodesChangeTrap_Event,
+    "Device.MoCA.Interface.{i}.MgntEntityNetwIePayloadRecTrap!": MoCA_Interface_MgntEntityNetwIePayloadRecTrap_Event,
+    "Device.MoCA.Interface.{i}.MpsInitScanRecTrap!": MoCA_Interface_MpsInitScanRecTrap_Event,
+    "Device.MoCA.Interface.{i}.MpsPairFailTrap!": MoCA_Interface_MpsPairFailTrap_Event,
+    "Device.MoCA.Interface.{i}.MpsPrivacyChangedTrap!": MoCA_Interface_MpsPrivacyChangedTrap_Event,
+    "Device.MoCA.Interface.{i}.NcPrivacySupportedRecTrap!": MoCA_Interface_NcPrivacySupportedRecTrap_Event,
+    "Device.MoCA.Interface.{i}.NetworkNameRecTrap!": MoCA_Interface_NetworkNameRecTrap_Event,
+    "Device.MoCA.Interface.{i}.NodeDropAdmFailureTrap!": MoCA_Interface_NodeDropAdmFailureTrap_Event,
+    "Device.MoCA.Interface.{i}.NodeDropNcTrap!": MoCA_Interface_NodeDropNcTrap_Event,
+    "Device.MoCA.Interface.{i}.NodeDropMpsTriggeredTrap!": MoCA_Interface_NodeDropMpsTriggeredTrap_Event,
+    "Device.MoCA.Interface.{i}.NodeDropNcChgTrap!": MoCA_Interface_NodeDropNcChgTrap_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

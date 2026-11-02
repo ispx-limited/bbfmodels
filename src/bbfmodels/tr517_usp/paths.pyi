@@ -2421,7 +2421,7 @@ class Network_Device_OperationalStateClusterPath(ObjectPathBase):
     Stop: CommandPath
     Start: CommandPath
     Resume: CommandPath
-    OperationalError: EventPath
+    OperationalError_: EventPath
     OperationCompletion: EventPath
 
 class Network_Device_RVCRunModeClusterPath(ObjectPathBase):
@@ -2508,7 +2508,7 @@ class Network_Device_ValveConfigurationandControlClusterPath(ObjectPathBase):
     Open: CommandPath
     Close: CommandPath
     ValveStateChanged: EventPath
-    ValveFault: EventPath
+    ValveFault_: EventPath
 
 class Network_Device_ContentLauncherClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -2529,7 +2529,7 @@ class Network_Device_BooleanStateConfigurationClusterPath(ObjectPathBase):
     SuppressAlarm: CommandPath
     EnableDisableAlarm: CommandPath
     AlarmsStateChanged: EventPath
-    SensorFault: EventPath
+    SensorFault_: EventPath
 
 class Network_Device_BindingClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -3095,7 +3095,7 @@ class Network_Device_GeneralDiagnosticsClusterPath(ObjectPathBase):
     HardwareFaultChange: EventPath
     RadioFaultChange: EventPath
     NetworkFaultChange: EventPath
-    BootReason: EventPath
+    BootReason_: EventPath
 
 class Network_Device_DeviceEnergyManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -3282,8 +3282,8 @@ class Network_Device_SmokeCOAlarmClusterPath(ObjectPathBase):
     SelfTestComplete: EventPath
     AlarmMuted: EventPath
     MuteEnded: EventPath
-    InterconnectSmokeAlarm: EventPath
-    InterconnectCOAlarm: EventPath
+    InterconnectSmokeAlarm_: EventPath
+    InterconnectCOAlarm_: EventPath
     AllClear: EventPath
 
 class Network_Device_DeviceEnergyManagementModeClusterPath(ObjectPathBase):
@@ -5904,7 +5904,7 @@ class OperationalStateClusterPath(ObjectPathBase):
     Stop: CommandPath
     Start: CommandPath
     Resume: CommandPath
-    OperationalError: EventPath
+    OperationalError_: EventPath
     OperationCompletion: EventPath
 
 class RVCRunModeClusterPath(ObjectPathBase):
@@ -5991,7 +5991,7 @@ class ValveConfigurationandControlClusterPath(ObjectPathBase):
     Open: CommandPath
     Close: CommandPath
     ValveStateChanged: EventPath
-    ValveFault: EventPath
+    ValveFault_: EventPath
 
 class ContentLauncherClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -6012,7 +6012,7 @@ class BooleanStateConfigurationClusterPath(ObjectPathBase):
     SuppressAlarm: CommandPath
     EnableDisableAlarm: CommandPath
     AlarmsStateChanged: EventPath
-    SensorFault: EventPath
+    SensorFault_: EventPath
 
 class BindingClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -6578,7 +6578,7 @@ class GeneralDiagnosticsClusterPath(ObjectPathBase):
     HardwareFaultChange: EventPath
     RadioFaultChange: EventPath
     NetworkFaultChange: EventPath
-    BootReason: EventPath
+    BootReason_: EventPath
 
 class DeviceEnergyManagementClusterPath(ObjectPathBase):
     EndpointRef: ParamPath[str]
@@ -6765,8 +6765,8 @@ class SmokeCOAlarmClusterPath(ObjectPathBase):
     SelfTestComplete: EventPath
     AlarmMuted: EventPath
     MuteEnded: EventPath
-    InterconnectSmokeAlarm: EventPath
-    InterconnectCOAlarm: EventPath
+    InterconnectSmokeAlarm_: EventPath
+    InterconnectCOAlarm_: EventPath
     AllClear: EventPath
 
 class DeviceEnergyManagementModeClusterPath(ObjectPathBase):

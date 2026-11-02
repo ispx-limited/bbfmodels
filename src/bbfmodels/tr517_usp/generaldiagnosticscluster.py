@@ -77,43 +77,43 @@ class GeneralDiagnosticsCluster_PayloadTestRequest_Output(_Model):
     Payload: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class GeneralDiagnosticsCluster_HardwareFaultChange(_Model):
+class GeneralDiagnosticsCluster_HardwareFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'Radio', 'Sensor', 'ResettableOverTemp', 'NonResettableOverTemp', 'PowerSource', 'VisualDisplayFault', 'AudioOutputFault', 'UserInterfaceFault', 'NonVolatileMemoryError', 'TamperDetected'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'Radio', 'Sensor', 'ResettableOverTemp', 'NonResettableOverTemp', 'PowerSource', 'VisualDisplayFault', 'AudioOutputFault', 'UserInterfaceFault', 'NonVolatileMemoryError', 'TamperDetected'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class GeneralDiagnosticsCluster_RadioFaultChange(_Model):
+class GeneralDiagnosticsCluster_RadioFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'WiFiFault', 'CellularFault', 'ThreadFault', 'NFCFault', 'BLEFault', 'EthernetFault'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'WiFiFault', 'CellularFault', 'ThreadFault', 'NFCFault', 'BLEFault', 'EthernetFault'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class GeneralDiagnosticsCluster_NetworkFaultChange(_Model):
+class GeneralDiagnosticsCluster_NetworkFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'HardwareFailure', 'NetworkJammed', 'ConnectionFailed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'HardwareFailure', 'NetworkJammed', 'ConnectionFailed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class GeneralDiagnosticsCluster_BootReason(_Model):
+class GeneralDiagnosticsCluster_BootReason_Event(_Model):
     __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.BootReason!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     BootReason: _Annotated[_Literal['Unspecified', 'PowerOnReboot', 'BrownOutReset', 'SoftwareWatchdogReset', 'HardwareWatchdogReset', 'SoftwareUpdateCompleted', 'SoftwareReset'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TestEventTrigger()": (GeneralDiagnosticsCluster_TestEventTrigger_Input, GeneralDiagnosticsCluster_TestEventTrigger_Output),
     "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TimeSnapshot()": (GeneralDiagnosticsCluster_TimeSnapshot_Input, GeneralDiagnosticsCluster_TimeSnapshot_Output),
     "MatterService.{i}.GeneralDiagnosticsCluster.{i}.PayloadTestRequest()": (GeneralDiagnosticsCluster_PayloadTestRequest_Input, GeneralDiagnosticsCluster_PayloadTestRequest_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!": GeneralDiagnosticsCluster_HardwareFaultChange,
-    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!": GeneralDiagnosticsCluster_RadioFaultChange,
-    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!": GeneralDiagnosticsCluster_NetworkFaultChange,
-    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.BootReason!": GeneralDiagnosticsCluster_BootReason,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!": GeneralDiagnosticsCluster_HardwareFaultChange_Event,
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!": GeneralDiagnosticsCluster_RadioFaultChange_Event,
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!": GeneralDiagnosticsCluster_NetworkFaultChange_Event,
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.BootReason!": GeneralDiagnosticsCluster_BootReason_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

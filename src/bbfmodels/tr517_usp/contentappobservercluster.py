@@ -29,10 +29,10 @@ class ContentAppObserverCluster_ContentAppMessage_Output(_Model):
     EncodingHint: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ContentAppObserverCluster.{i}.ContentAppMessage()": (ContentAppObserverCluster_ContentAppMessage_Input, ContentAppObserverCluster_ContentAppMessage_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

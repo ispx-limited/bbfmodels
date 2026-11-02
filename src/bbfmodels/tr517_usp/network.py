@@ -4665,7 +4665,7 @@ class Network_Device_WebRTCTransportRequestorCluster_End_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Ranges(_Model):
+class Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event_Ranges(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!.Ranges.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MeasurementType: _Annotated[_Literal['Unspecified', 'Voltage', 'ActiveCurrent', 'ReactiveCurrent', 'ApparentCurrent', 'ActivePower', 'ReactivePower', 'ApparentPower', 'RMSVoltage', 'RMSCurrent', 'RMSPower', 'Frequency', 'PowerFactor', 'NeutralCurrent', 'ElectricalEnergy', 'ReactiveEnergy', 'ApparentEnergy'] | str | None, _Param(_BaseType.STRING)] = None
@@ -4681,10 +4681,10 @@ class Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_R
     MaxSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
-class Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges(_Model):
+class Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    Ranges: dict[int, Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Ranges] = _Field(default_factory=dict)
+    Ranges: dict[int, Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event_Ranges] = _Field(default_factory=dict)
 
 
 class Network_Device_OTASoftwareUpdateProviderCluster_QueryImage_Input(_Model):
@@ -4930,20 +4930,20 @@ class Network_Device_WiFiNetworkDiagnosticsCluster_ResetCounts_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_WiFiNetworkDiagnosticsCluster_Disconnection(_Model):
+class Network_Device_WiFiNetworkDiagnosticsCluster_Disconnection_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.Disconnection!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ReasonCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_WiFiNetworkDiagnosticsCluster_AssociationFailure(_Model):
+class Network_Device_WiFiNetworkDiagnosticsCluster_AssociationFailure_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.AssociationFailure!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AssociationFailureCause: _Annotated[_Literal['Unknown', 'AssociationFailed', 'AuthenticationFailed', 'SsidNotFound'] | str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_WiFiNetworkDiagnosticsCluster_ConnectionStatus(_Model):
+class Network_Device_WiFiNetworkDiagnosticsCluster_ConnectionStatus_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.ConnectionStatus!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ConnectionStatus: _Annotated[_Literal['Connected', 'NotConnected'] | str | None, _Param(_BaseType.STRING)] = None
@@ -5062,13 +5062,13 @@ class Network_Device_EnergyEVSECluster_ClearTargets_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_EnergyEVSECluster_EVConnected(_Model):
+class Network_Device_EnergyEVSECluster_EVConnected_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EVConnected!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_EnergyEVSECluster_EVNotDetected(_Model):
+class Network_Device_EnergyEVSECluster_EVNotDetected_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EVNotDetected!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -5078,7 +5078,7 @@ class Network_Device_EnergyEVSECluster_EVNotDetected(_Model):
     SessionEnergyDischarged: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_EnergyEVSECluster_EnergyTransferStarted(_Model):
+class Network_Device_EnergyEVSECluster_EnergyTransferStarted_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EnergyTransferStarted!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -5087,7 +5087,7 @@ class Network_Device_EnergyEVSECluster_EnergyTransferStarted(_Model):
     MaximumDischargeCurrent: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_EnergyEVSECluster_EnergyTransferStopped(_Model):
+class Network_Device_EnergyEVSECluster_EnergyTransferStopped_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EnergyTransferStopped!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -5097,7 +5097,7 @@ class Network_Device_EnergyEVSECluster_EnergyTransferStopped(_Model):
     EnergyDischarged: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_EnergyEVSECluster_Fault(_Model):
+class Network_Device_EnergyEVSECluster_Fault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.Fault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SessionID: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -5106,7 +5106,7 @@ class Network_Device_EnergyEVSECluster_Fault(_Model):
     FaultStateCurrentState: _Annotated[_Literal['NoError', 'MeterFailure', 'OverVoltage', 'UnderVoltage', 'OverCurrent', 'ContactWetFailure', 'ContactDryFailure', 'GroundFault', 'PowerLoss', 'PowerQuality', 'PilotShortCircuit', 'EmergencyStop', 'EVDisconnected', 'WrongPowerSupply', 'LiveNeutralSwap', 'OverTemperature', 'Other'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_EnergyEVSECluster_RFID(_Model):
+class Network_Device_EnergyEVSECluster_RFID_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.RFID!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     UID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -5395,14 +5395,14 @@ class Network_Device_MediaPlaybackCluster_DeactivateTextTrack_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_MediaPlaybackCluster_StateChanged_SampledPosition(_Model):
+class Network_Device_MediaPlaybackCluster_StateChanged_Event_SampledPosition(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.MediaPlaybackCluster.{i}.StateChanged!.SampledPosition."
     __bbf_package__ = "bbfmodels.tr517_usp"
     UpdatedAt: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Position: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_MediaPlaybackCluster_StateChanged(_Model):
+class Network_Device_MediaPlaybackCluster_StateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.MediaPlaybackCluster.{i}.StateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CurrentState: _Annotated[_Literal['Playing', 'Paused', 'NotPlaying', 'Buffering'] | str | None, _Param(_BaseType.STRING)] = None
@@ -5413,7 +5413,7 @@ class Network_Device_MediaPlaybackCluster_StateChanged(_Model):
     SeekRangeStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AudioAdvanceUnmuted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
-    SampledPosition: Network_Device_MediaPlaybackCluster_StateChanged_SampledPosition | None = _Field(default=None)
+    SampledPosition: Network_Device_MediaPlaybackCluster_StateChanged_Event_SampledPosition | None = _Field(default=None)
 
 
 class Network_Device_OperationalCredentialsCluster_AttestationRequest_Input(_Model):
@@ -5678,7 +5678,7 @@ class Network_Device_CommodityPriceCluster_GetDetailedForecastRequest_Output(_Mo
     PriceForecast: dict[int, Network_Device_CommodityPriceCluster_GetDetailedForecastRequest_Output_PriceForecast] = _Field(default_factory=dict)
 
 
-class Network_Device_CommodityPriceCluster_PriceChange_CurrentPrice_Components(_Model):
+class Network_Device_CommodityPriceCluster_PriceChange_Event_CurrentPrice_Components(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.CommodityPriceCluster.{i}.PriceChange!.CurrentPrice.Components.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
@@ -5687,7 +5687,7 @@ class Network_Device_CommodityPriceCluster_PriceChange_CurrentPrice_Components(_
     TariffComponentID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_CommodityPriceCluster_PriceChange_CurrentPrice(_Model):
+class Network_Device_CommodityPriceCluster_PriceChange_Event_CurrentPrice(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.CommodityPriceCluster.{i}.PriceChange!.CurrentPrice."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PeriodStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -5695,13 +5695,13 @@ class Network_Device_CommodityPriceCluster_PriceChange_CurrentPrice(_Model):
     Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
     PriceLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
-    Components: dict[int, Network_Device_CommodityPriceCluster_PriceChange_CurrentPrice_Components] = _Field(default_factory=dict)
+    Components: dict[int, Network_Device_CommodityPriceCluster_PriceChange_Event_CurrentPrice_Components] = _Field(default_factory=dict)
 
 
-class Network_Device_CommodityPriceCluster_PriceChange(_Model):
+class Network_Device_CommodityPriceCluster_PriceChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.CommodityPriceCluster.{i}.PriceChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    CurrentPrice: Network_Device_CommodityPriceCluster_PriceChange_CurrentPrice | None = _Field(default=None)
+    CurrentPrice: Network_Device_CommodityPriceCluster_PriceChange_Event_CurrentPrice | None = _Field(default=None)
 
 
 class Network_Device_ModeSelectCluster_ChangeToMode_Input(_Model):
@@ -5727,7 +5727,7 @@ class Network_Device_SoftwareDiagnosticsCluster_ResetWatermarks_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_SoftwareDiagnosticsCluster_SoftwareFault(_Model):
+class Network_Device_SoftwareDiagnosticsCluster_SoftwareFault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SoftwareDiagnosticsCluster.{i}.SoftwareFault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -6453,19 +6453,19 @@ class Network_Device_MessagesCluster_CancelMessagesRequest_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_MessagesCluster_MessageQueued(_Model):
+class Network_Device_MessagesCluster_MessageQueued_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessageQueued!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_MessagesCluster_MessagePresented(_Model):
+class Network_Device_MessagesCluster_MessagePresented_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessagePresented!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_MessagesCluster_MessageComplete(_Model):
+class Network_Device_MessagesCluster_MessageComplete_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessageComplete!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -6488,19 +6488,19 @@ class Network_Device_TargetNavigatorCluster_NavigateTarget_Output(_Model):
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_TargetNavigatorCluster_TargetUpdated_TargetList(_Model):
+class Network_Device_TargetNavigatorCluster_TargetUpdated_Event_TargetList(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.TargetNavigatorCluster.{i}.TargetUpdated!.TargetList.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Identifier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_TargetNavigatorCluster_TargetUpdated(_Model):
+class Network_Device_TargetNavigatorCluster_TargetUpdated_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.TargetNavigatorCluster.{i}.TargetUpdated!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CurrentTarget: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
-    TargetList: dict[int, Network_Device_TargetNavigatorCluster_TargetUpdated_TargetList] = _Field(default_factory=dict)
+    TargetList: dict[int, Network_Device_TargetNavigatorCluster_TargetUpdated_Event_TargetList] = _Field(default_factory=dict)
 
 
 class Network_Device_RVCOperationalStateCluster_GoHome_Input(_Model):
@@ -6664,14 +6664,14 @@ class Network_Device_ZoneManagementCluster_RemoveTrigger_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ZoneManagementCluster_ZoneTriggered(_Model):
+class Network_Device_ZoneManagementCluster_ZoneTriggered_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ZoneManagementCluster.{i}.ZoneTriggered!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Reason: _Annotated[_Literal['Motion'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ZoneManagementCluster_ZoneStopped(_Model):
+class Network_Device_ZoneManagementCluster_ZoneStopped_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ZoneManagementCluster.{i}.ZoneStopped!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -6776,30 +6776,30 @@ class Network_Device_TimeSynchronizationCluster_SetDefaultNTP_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_TimeSynchronizationCluster_DSTTableEmpty(_Model):
+class Network_Device_TimeSynchronizationCluster_DSTTableEmpty_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.DSTTableEmpty!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_TimeSynchronizationCluster_DSTStatus(_Model):
+class Network_Device_TimeSynchronizationCluster_DSTStatus_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.DSTStatus!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     DSTOffsetActive: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-class Network_Device_TimeSynchronizationCluster_TimeZoneStatus(_Model):
+class Network_Device_TimeSynchronizationCluster_TimeZoneStatus_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.TimeZoneStatus!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Offset: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_TimeSynchronizationCluster_TimeFailure(_Model):
+class Network_Device_TimeSynchronizationCluster_TimeFailure_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.TimeFailure!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_TimeSynchronizationCluster_MissingTrustedTimeSource(_Model):
+class Network_Device_TimeSynchronizationCluster_MissingTrustedTimeSource_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.MissingTrustedTimeSource!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
@@ -7518,7 +7518,7 @@ class Network_Device_ActionsCluster_DisableActionWithDuration_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ActionsCluster_StateChanged(_Model):
+class Network_Device_ActionsCluster_StateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ActionsCluster.{i}.StateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -7526,7 +7526,7 @@ class Network_Device_ActionsCluster_StateChanged(_Model):
     NewState: _Annotated[_Literal['Inactive', 'Active', 'Paused', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ActionsCluster_ActionFailed(_Model):
+class Network_Device_ActionsCluster_ActionFailed_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ActionsCluster.{i}.ActionFailed!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ActionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -7611,7 +7611,7 @@ class Network_Device_OperationalStateCluster_Resume_Output(_Model):
     CommandResponseState: Network_Device_OperationalStateCluster_Resume_Output_CommandResponseState | None = _Field(default=None)
 
 
-class Network_Device_OperationalStateCluster_OperationalError_ErrorState(_Model):
+class Network_Device_OperationalStateCluster_OperationalError_Event_ErrorState(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.OperationalStateCluster.{i}.OperationalError!.ErrorState."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
@@ -7619,13 +7619,13 @@ class Network_Device_OperationalStateCluster_OperationalError_ErrorState(_Model)
     ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_OperationalStateCluster_OperationalError(_Model):
+class Network_Device_OperationalStateCluster_OperationalError_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.OperationalStateCluster.{i}.OperationalError!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    ErrorState: Network_Device_OperationalStateCluster_OperationalError_ErrorState | None = _Field(default=None)
+    ErrorState: Network_Device_OperationalStateCluster_OperationalError_Event_ErrorState | None = _Field(default=None)
 
 
-class Network_Device_OperationalStateCluster_OperationCompletion(_Model):
+class Network_Device_OperationalStateCluster_OperationCompletion_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.OperationalStateCluster.{i}.OperationCompletion!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CompletionErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -7988,7 +7988,7 @@ class Network_Device_PushAVStreamTransportCluster_FindTransport_Output(_Model):
     TransportConfigurations: dict[int, Network_Device_PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations] = _Field(default_factory=dict)
 
 
-class Network_Device_PushAVStreamTransportCluster_PushTransportBegin(_Model):
+class Network_Device_PushAVStreamTransportCluster_PushTransportBegin_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -7996,74 +7996,74 @@ class Network_Device_PushAVStreamTransportCluster_PushTransportBegin(_Model):
     ActivationReason: _Annotated[_Literal['UserInitiated', 'Automation', 'Emergency'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_PushAVStreamTransportCluster_PushTransportEnd(_Model):
+class Network_Device_PushAVStreamTransportCluster_PushTransportEnd_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_SwitchCluster_SwitchLatched(_Model):
+class Network_Device_SwitchCluster_SwitchLatched_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.SwitchLatched!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_SwitchCluster_InitialPress(_Model):
+class Network_Device_SwitchCluster_InitialPress_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.InitialPress!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_SwitchCluster_LongPress(_Model):
+class Network_Device_SwitchCluster_LongPress_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.LongPress!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_SwitchCluster_ShortRelease(_Model):
+class Network_Device_SwitchCluster_ShortRelease_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.ShortRelease!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_SwitchCluster_LongRelease(_Model):
+class Network_Device_SwitchCluster_LongRelease_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.LongRelease!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_SwitchCluster_MultiPressOngoing(_Model):
+class Network_Device_SwitchCluster_MultiPressOngoing_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.MultiPressOngoing!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CurrentNumberOfPressesCounted: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_SwitchCluster_MultiPressComplete(_Model):
+class Network_Device_SwitchCluster_MultiPressComplete_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.MultiPressComplete!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TotalNumberOfPressesCounted: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_BasicInformationCluster_StartUp(_Model):
+class Network_Device_BasicInformationCluster_StartUp_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.StartUp!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_BasicInformationCluster_ShutDown(_Model):
+class Network_Device_BasicInformationCluster_ShutDown_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.ShutDown!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_BasicInformationCluster_Leave(_Model):
+class Network_Device_BasicInformationCluster_Leave_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.Leave!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_BasicInformationCluster_ReachableChanged(_Model):
+class Network_Device_BasicInformationCluster_ReachableChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.ReachableChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ReachableNewValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -8093,14 +8093,14 @@ class Network_Device_ValveConfigurationandControlCluster_Close_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ValveConfigurationandControlCluster_ValveStateChanged(_Model):
+class Network_Device_ValveConfigurationandControlCluster_ValveStateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ValveState: _Annotated[_Literal['Closed', 'Open', 'Transitioning'] | str | None, _Param(_BaseType.STRING)] = None
     ValveLevel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_ValveConfigurationandControlCluster_ValveFault(_Model):
+class Network_Device_ValveConfigurationandControlCluster_ValveFault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ValveFault: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -8343,14 +8343,14 @@ class Network_Device_BooleanStateConfigurationCluster_EnableDisableAlarm_Output(
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_BooleanStateConfigurationCluster_AlarmsStateChanged(_Model):
+class Network_Device_BooleanStateConfigurationCluster_AlarmsStateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmsActive: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     AlarmsSuppressed: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-class Network_Device_BooleanStateConfigurationCluster_SensorFault(_Model):
+class Network_Device_BooleanStateConfigurationCluster_SensorFault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SensorFault: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -8392,24 +8392,24 @@ class Network_Device_BridgedDeviceBasicInformationCluster_KeepActive_Output(_Mod
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_BridgedDeviceBasicInformationCluster_StartUp(_Model):
+class Network_Device_BridgedDeviceBasicInformationCluster_StartUp_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_BridgedDeviceBasicInformationCluster_ShutDown(_Model):
+class Network_Device_BridgedDeviceBasicInformationCluster_ShutDown_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_BridgedDeviceBasicInformationCluster_ReachableChanged(_Model):
+class Network_Device_BridgedDeviceBasicInformationCluster_ReachableChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ReachableNewValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-class Network_Device_BridgedDeviceBasicInformationCluster_ActiveChanged(_Model):
+class Network_Device_BridgedDeviceBasicInformationCluster_ActiveChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PromisedActiveDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -8456,7 +8456,7 @@ class Network_Device_OTASoftwareUpdateRequestorCluster_AnnounceOTAProvider_Outpu
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_OTASoftwareUpdateRequestorCluster_StateTransition(_Model):
+class Network_Device_OTASoftwareUpdateRequestorCluster_StateTransition_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.StateTransition!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PreviousState: _Annotated[_Literal['Unknown', 'Idle', 'Querying', 'DelayedOnQuery', 'Downloading', 'Applying', 'DelayedOnApply', 'RollingBack', 'DelayedOnUserConsent'] | str | None, _Param(_BaseType.STRING)] = None
@@ -8465,14 +8465,14 @@ class Network_Device_OTASoftwareUpdateRequestorCluster_StateTransition(_Model):
     TargetSoftwareVersion: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
-class Network_Device_OTASoftwareUpdateRequestorCluster_VersionApplied(_Model):
+class Network_Device_OTASoftwareUpdateRequestorCluster_VersionApplied_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.VersionApplied!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ProductID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_OTASoftwareUpdateRequestorCluster_DownloadError(_Model):
+class Network_Device_OTASoftwareUpdateRequestorCluster_DownloadError_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.DownloadError!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -8716,7 +8716,7 @@ class Network_Device_CommissionerControlCluster_CommissionNode_Output(_Model):
     Salt: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_CommissionerControlCluster_CommissioningRequestResult(_Model):
+class Network_Device_CommissionerControlCluster_CommissioningRequestResult_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     RequestID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -8762,7 +8762,7 @@ class Network_Device_AccountLoginCluster_Logout_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_AccountLoginCluster_LoggedOut(_Model):
+class Network_Device_AccountLoginCluster_LoggedOut_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.AccountLoginCluster.{i}.LoggedOut!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Node: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -9267,26 +9267,26 @@ class Network_Device_DoorLockCluster_ClearAliroReaderConfig_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_DoorLockCluster_DoorLockAlarm(_Model):
+class Network_Device_DoorLockCluster_DoorLockAlarm_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.DoorLockAlarm!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmCode: _Annotated[_Literal['LockJammed', 'LockFactoryReset', 'LockRadioPowerCycled', 'WrongCodeEntryLimit', 'FrontEsceutcheonRemoved', 'DoorForcedOpen', 'DoorAjar', 'ForcedUser'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_DoorLockCluster_DoorStateChange(_Model):
+class Network_Device_DoorLockCluster_DoorStateChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.DoorStateChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     DoorState: _Annotated[_Literal['DoorOpen', 'DoorClosed', 'DoorJammed', 'DoorForcedOpen', 'DoorUnspecifiedError', 'DoorAjar'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_DoorLockCluster_LockOperation_Credentials(_Model):
+class Network_Device_DoorLockCluster_LockOperation_Event_Credentials(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperation!.Credentials.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
     CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_DoorLockCluster_LockOperation(_Model):
+class Network_Device_DoorLockCluster_LockOperation_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperation!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     LockOperationType: _Annotated[_Literal['Lock', 'Unlock', 'NonAccessUserEvent', 'ForcedUserEvent', 'Unlatch'] | str | None, _Param(_BaseType.STRING)] = None
@@ -9294,17 +9294,17 @@ class Network_Device_DoorLockCluster_LockOperation(_Model):
     UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     FabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     SourceNode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
-    Credentials: dict[int, Network_Device_DoorLockCluster_LockOperation_Credentials] = _Field(default_factory=dict)
+    Credentials: dict[int, Network_Device_DoorLockCluster_LockOperation_Event_Credentials] = _Field(default_factory=dict)
 
 
-class Network_Device_DoorLockCluster_LockOperationError_Credentials(_Model):
+class Network_Device_DoorLockCluster_LockOperationError_Event_Credentials(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperationError!.Credentials.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
     CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_DoorLockCluster_LockOperationError(_Model):
+class Network_Device_DoorLockCluster_LockOperationError_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperationError!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     LockOperationType: _Annotated[_Literal['Lock', 'Unlock', 'NonAccessUserEvent', 'ForcedUserEvent', 'Unlatch'] | str | None, _Param(_BaseType.STRING)] = None
@@ -9313,10 +9313,10 @@ class Network_Device_DoorLockCluster_LockOperationError(_Model):
     UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     FabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     SourceNode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
-    Credentials: dict[int, Network_Device_DoorLockCluster_LockOperationError_Credentials] = _Field(default_factory=dict)
+    Credentials: dict[int, Network_Device_DoorLockCluster_LockOperationError_Event_Credentials] = _Field(default_factory=dict)
 
 
-class Network_Device_DoorLockCluster_LockUserChange(_Model):
+class Network_Device_DoorLockCluster_LockUserChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockUserChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     LockDataType: _Annotated[_Literal['Unspecified', 'ProgrammingCode', 'UserIndex', 'WeekDaySchedule', 'YearDaySchedule', 'HolidaySchedule', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
@@ -9364,24 +9364,24 @@ class Network_Device_ClosureControlCluster_Calibrate_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ClosureControlCluster_OperationalError(_Model):
+class Network_Device_ClosureControlCluster_OperationalError_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.OperationalError!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ErrorState: _Annotated[_CommaList[_Literal['PhysicallyBlocked', 'BlockedBySensor', 'TemperatureLimited', 'MaintenanceRequired', 'InternalInterference'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class Network_Device_ClosureControlCluster_MovementCompleted(_Model):
+class Network_Device_ClosureControlCluster_MovementCompleted_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.MovementCompleted!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_ClosureControlCluster_EngageStateChanged(_Model):
+class Network_Device_ClosureControlCluster_EngageStateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.EngageStateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     EngageValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-class Network_Device_ClosureControlCluster_SecureStateChanged(_Model):
+class Network_Device_ClosureControlCluster_SecureStateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.SecureStateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SecureValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -9469,13 +9469,13 @@ class Network_Device_ThreadNetworkDiagnosticsCluster_ResetCounts_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ThreadNetworkDiagnosticsCluster_ConnectionStatus(_Model):
+class Network_Device_ThreadNetworkDiagnosticsCluster_ConnectionStatus_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ThreadNetworkDiagnosticsCluster.{i}.ConnectionStatus!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ConnectionStatus: _Annotated[_Literal['Connected', 'NotConnected'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ThreadNetworkDiagnosticsCluster_NetworkFaultChange(_Model):
+class Network_Device_ThreadNetworkDiagnosticsCluster_NetworkFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ThreadNetworkDiagnosticsCluster.{i}.NetworkFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'LinkDown', 'HardwareFailure', 'NetworkJammed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -9711,17 +9711,17 @@ class Network_Device_ContentControlCluster_RemoveBlockContentTimeWindow_Output(_
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ContentControlCluster_RemainingScreenTimeExpired(_Model):
+class Network_Device_ContentControlCluster_RemainingScreenTimeExpired_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_ContentControlCluster_EnteringBlockContentTimeWindow(_Model):
+class Network_Device_ContentControlCluster_EnteringBlockContentTimeWindow_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged_CurrentConditions(_Model):
+class Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged_Event_CurrentConditions(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalGridConditionsCluster.{i}.CurrentConditionsChanged!.CurrentConditions."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PeriodStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -9732,10 +9732,10 @@ class Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged_Cu
     LocalCarbonLevel: _Annotated[_Literal['Low', 'Medium', 'High'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged(_Model):
+class Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalGridConditionsCluster.{i}.CurrentConditionsChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    CurrentConditions: Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged_CurrentConditions | None = _Field(default=None)
+    CurrentConditions: Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged_Event_CurrentConditions | None = _Field(default=None)
 
 
 class Network_Device_KeypadInputCluster_SendKey_Input(_Model):
@@ -9946,87 +9946,87 @@ class Network_Device_ClosureDimensionCluster_Step_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_PumpConfigurationandControlCluster_SupplyVoltageLow(_Model):
+class Network_Device_PumpConfigurationandControlCluster_SupplyVoltageLow_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageLow!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_SupplyVoltageHigh(_Model):
+class Network_Device_PumpConfigurationandControlCluster_SupplyVoltageHigh_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageHigh!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_PowerMissingPhase(_Model):
+class Network_Device_PumpConfigurationandControlCluster_PowerMissingPhase_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PowerMissingPhase!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_SystemPressureLow(_Model):
+class Network_Device_PumpConfigurationandControlCluster_SystemPressureLow_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureLow!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_SystemPressureHigh(_Model):
+class Network_Device_PumpConfigurationandControlCluster_SystemPressureHigh_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureHigh!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_DryRunning(_Model):
+class Network_Device_PumpConfigurationandControlCluster_DryRunning_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.DryRunning!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_MotorTemperatureHigh(_Model):
+class Network_Device_PumpConfigurationandControlCluster_MotorTemperatureHigh_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.MotorTemperatureHigh!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_PumpMotorFatalFailure(_Model):
+class Network_Device_PumpConfigurationandControlCluster_PumpMotorFatalFailure_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PumpMotorFatalFailure!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_ElectronicTemperatureHigh(_Model):
+class Network_Device_PumpConfigurationandControlCluster_ElectronicTemperatureHigh_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicTemperatureHigh!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_PumpBlocked(_Model):
+class Network_Device_PumpConfigurationandControlCluster_PumpBlocked_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PumpBlocked!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_SensorFailure(_Model):
+class Network_Device_PumpConfigurationandControlCluster_SensorFailure_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SensorFailure!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_ElectronicNonFatalFailure(_Model):
+class Network_Device_PumpConfigurationandControlCluster_ElectronicNonFatalFailure_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicNonFatalFailure!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_ElectronicFatalFailure(_Model):
+class Network_Device_PumpConfigurationandControlCluster_ElectronicFatalFailure_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicFatalFailure!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_GeneralFault(_Model):
+class Network_Device_PumpConfigurationandControlCluster_GeneralFault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.GeneralFault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_Leakage(_Model):
+class Network_Device_PumpConfigurationandControlCluster_Leakage_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.Leakage!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_AirDetection(_Model):
+class Network_Device_PumpConfigurationandControlCluster_AirDetection_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.AirDetection!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_PumpConfigurationandControlCluster_TurbineOperation(_Model):
+class Network_Device_PumpConfigurationandControlCluster_TurbineOperation_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.TurbineOperation!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
@@ -10058,7 +10058,7 @@ class Network_Device_AccessControlCluster_ReviewFabricRestrictions_Output(_Model
     Token: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
-class Network_Device_AccessControlCluster_AccessControlEntryChanged_LatestValue_Targets(_Model):
+class Network_Device_AccessControlCluster_AccessControlEntryChanged_Event_LatestValue_Targets(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!.LatestValue.Targets.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Cluster: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -10066,40 +10066,40 @@ class Network_Device_AccessControlCluster_AccessControlEntryChanged_LatestValue_
     DeviceType: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
-class Network_Device_AccessControlCluster_AccessControlEntryChanged_LatestValue(_Model):
+class Network_Device_AccessControlCluster_AccessControlEntryChanged_Event_LatestValue(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!.LatestValue."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Privilege: _Annotated[_Literal['View', 'ProxyView', 'Operate', 'Manage', 'Administer'] | str | None, _Param(_BaseType.STRING)] = None
     AuthMode: _Annotated[_Literal['PASE', 'CASE', 'Group'] | str | None, _Param(_BaseType.STRING)] = None
     Subjects: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_LONG, list=True)] = None
-    Targets: dict[int, Network_Device_AccessControlCluster_AccessControlEntryChanged_LatestValue_Targets] = _Field(default_factory=dict)
+    Targets: dict[int, Network_Device_AccessControlCluster_AccessControlEntryChanged_Event_LatestValue_Targets] = _Field(default_factory=dict)
 
 
-class Network_Device_AccessControlCluster_AccessControlEntryChanged(_Model):
+class Network_Device_AccessControlCluster_AccessControlEntryChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AdminNodeID: _Annotated[int | None, _Param(_BaseType.LONG)] = None
     AdminPasscodeID: _Annotated[int | None, _Param(_BaseType.INT)] = None
     ChangeType: _Annotated[_Literal['Changed', 'Added', 'Removed'] | str | None, _Param(_BaseType.STRING)] = None
-    LatestValue: Network_Device_AccessControlCluster_AccessControlEntryChanged_LatestValue | None = _Field(default=None)
+    LatestValue: Network_Device_AccessControlCluster_AccessControlEntryChanged_Event_LatestValue | None = _Field(default=None)
 
 
-class Network_Device_AccessControlCluster_AccessControlExtensionChanged_LatestValue(_Model):
+class Network_Device_AccessControlCluster_AccessControlExtensionChanged_Event_LatestValue(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!.LatestValue."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_AccessControlCluster_AccessControlExtensionChanged(_Model):
+class Network_Device_AccessControlCluster_AccessControlExtensionChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AdminNodeID: _Annotated[int | None, _Param(_BaseType.LONG)] = None
     AdminPasscodeID: _Annotated[int | None, _Param(_BaseType.INT)] = None
     ChangeType: _Annotated[_Literal['Changed', 'Added', 'Removed'] | str | None, _Param(_BaseType.STRING)] = None
-    LatestValue: Network_Device_AccessControlCluster_AccessControlExtensionChanged_LatestValue | None = _Field(default=None)
+    LatestValue: Network_Device_AccessControlCluster_AccessControlExtensionChanged_Event_LatestValue | None = _Field(default=None)
 
 
-class Network_Device_AccessControlCluster_FabricRestrictionReviewUpdate(_Model):
+class Network_Device_AccessControlCluster_FabricRestrictionReviewUpdate_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Token: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -10171,7 +10171,7 @@ class Network_Device_TLSClientManagementCluster_RemoveEndpoint_Output(_Model):
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_BooleanStateCluster_StateChange(_Model):
+class Network_Device_BooleanStateCluster_StateChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.BooleanStateCluster.{i}.StateChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     StateValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -10216,28 +10216,28 @@ class Network_Device_GeneralDiagnosticsCluster_PayloadTestRequest_Output(_Model)
     Payload: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_GeneralDiagnosticsCluster_HardwareFaultChange(_Model):
+class Network_Device_GeneralDiagnosticsCluster_HardwareFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'Radio', 'Sensor', 'ResettableOverTemp', 'NonResettableOverTemp', 'PowerSource', 'VisualDisplayFault', 'AudioOutputFault', 'UserInterfaceFault', 'NonVolatileMemoryError', 'TamperDetected'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'Radio', 'Sensor', 'ResettableOverTemp', 'NonResettableOverTemp', 'PowerSource', 'VisualDisplayFault', 'AudioOutputFault', 'UserInterfaceFault', 'NonVolatileMemoryError', 'TamperDetected'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class Network_Device_GeneralDiagnosticsCluster_RadioFaultChange(_Model):
+class Network_Device_GeneralDiagnosticsCluster_RadioFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'WiFiFault', 'CellularFault', 'ThreadFault', 'NFCFault', 'BLEFault', 'EthernetFault'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'WiFiFault', 'CellularFault', 'ThreadFault', 'NFCFault', 'BLEFault', 'EthernetFault'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class Network_Device_GeneralDiagnosticsCluster_NetworkFaultChange(_Model):
+class Network_Device_GeneralDiagnosticsCluster_NetworkFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'HardwareFailure', 'NetworkJammed', 'ConnectionFailed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'HardwareFailure', 'NetworkJammed', 'ConnectionFailed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class Network_Device_GeneralDiagnosticsCluster_BootReason(_Model):
+class Network_Device_GeneralDiagnosticsCluster_BootReason_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.BootReason!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     BootReason: _Annotated[_Literal['Unspecified', 'PowerOnReboot', 'BrownOutReset', 'SoftwareWatchdogReset', 'HardwareWatchdogReset', 'SoftwareUpdateCompleted', 'SoftwareReset'] | str | None, _Param(_BaseType.STRING)] = None
@@ -10361,12 +10361,12 @@ class Network_Device_DeviceEnergyManagementCluster_CancelRequest_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_DeviceEnergyManagementCluster_PowerAdjustStart(_Model):
+class Network_Device_DeviceEnergyManagementCluster_PowerAdjustStart_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustStart!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_DeviceEnergyManagementCluster_PowerAdjustEnd(_Model):
+class Network_Device_DeviceEnergyManagementCluster_PowerAdjustEnd_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustEnd!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Cause: _Annotated[_Literal['NormalCompletion', 'Offline', 'Fault', 'UserOptOut', 'Cancelled'] | str | None, _Param(_BaseType.STRING)] = None
@@ -10374,12 +10374,12 @@ class Network_Device_DeviceEnergyManagementCluster_PowerAdjustEnd(_Model):
     EnergyUse: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_DeviceEnergyManagementCluster_Paused(_Model):
+class Network_Device_DeviceEnergyManagementCluster_Paused_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.Paused!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_DeviceEnergyManagementCluster_Resumed(_Model):
+class Network_Device_DeviceEnergyManagementCluster_Resumed_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.Resumed!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Cause: _Annotated[_Literal['NormalCompletion', 'Offline', 'Fault', 'UserOptOut', 'Cancelled'] | str | None, _Param(_BaseType.STRING)] = None
@@ -10419,7 +10419,7 @@ class Network_Device_WaterHeaterManagementCluster_CancelBoost_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_WaterHeaterManagementCluster_BoostStarted_BoostInfo(_Model):
+class Network_Device_WaterHeaterManagementCluster_BoostStarted_Event_BoostInfo(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.WaterHeaterManagementCluster.{i}.BoostStarted!.BoostInfo."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -10430,18 +10430,18 @@ class Network_Device_WaterHeaterManagementCluster_BoostStarted_BoostInfo(_Model)
     TargetReheat: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class Network_Device_WaterHeaterManagementCluster_BoostStarted(_Model):
+class Network_Device_WaterHeaterManagementCluster_BoostStarted_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.WaterHeaterManagementCluster.{i}.BoostStarted!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    BoostInfo: Network_Device_WaterHeaterManagementCluster_BoostStarted_BoostInfo | None = _Field(default=None)
+    BoostInfo: Network_Device_WaterHeaterManagementCluster_BoostStarted_Event_BoostInfo | None = _Field(default=None)
 
 
-class Network_Device_WaterHeaterManagementCluster_BoostEnded(_Model):
+class Network_Device_WaterHeaterManagementCluster_BoostEnded_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.WaterHeaterManagementCluster.{i}.BoostEnded!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyImported(_Model):
+class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_Event_EnergyImported(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!.EnergyImported."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
@@ -10453,7 +10453,7 @@ class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured
     ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyExported(_Model):
+class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_Event_EnergyExported(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!.EnergyExported."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
@@ -10465,14 +10465,14 @@ class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured
     ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured(_Model):
+class Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    EnergyImported: Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyImported | None = _Field(default=None)
-    EnergyExported: Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyExported | None = _Field(default=None)
+    EnergyImported: Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_Event_EnergyImported | None = _Field(default=None)
+    EnergyExported: Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_Event_EnergyExported | None = _Field(default=None)
 
 
-class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyImported(_Model):
+class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_Event_EnergyImported(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!.EnergyImported."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
@@ -10484,7 +10484,7 @@ class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_E
     ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyExported(_Model):
+class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_Event_EnergyExported(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!.EnergyExported."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
@@ -10496,11 +10496,11 @@ class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_E
     ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured(_Model):
+class Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    EnergyImported: Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyImported | None = _Field(default=None)
-    EnergyExported: Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyExported | None = _Field(default=None)
+    EnergyImported: Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_Event_EnergyImported | None = _Field(default=None)
+    EnergyExported: Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_Event_EnergyExported | None = _Field(default=None)
 
 
 class Network_Device_OnOffCluster_Off_Input(_Model):
@@ -10934,62 +10934,62 @@ class Network_Device_SmokeCOAlarmCluster_SelfTestRequest_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_SmokeCOAlarmCluster_SmokeAlarm(_Model):
+class Network_Device_SmokeCOAlarmCluster_SmokeAlarm_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.SmokeAlarm!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_SmokeCOAlarmCluster_COAlarm(_Model):
+class Network_Device_SmokeCOAlarmCluster_COAlarm_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.COAlarm!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_SmokeCOAlarmCluster_LowBattery(_Model):
+class Network_Device_SmokeCOAlarmCluster_LowBattery_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.LowBattery!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_SmokeCOAlarmCluster_HardwareFault(_Model):
+class Network_Device_SmokeCOAlarmCluster_HardwareFault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.HardwareFault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_SmokeCOAlarmCluster_EndOfService(_Model):
+class Network_Device_SmokeCOAlarmCluster_EndOfService_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.EndOfService!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_SmokeCOAlarmCluster_SelfTestComplete(_Model):
+class Network_Device_SmokeCOAlarmCluster_SelfTestComplete_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.SelfTestComplete!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_SmokeCOAlarmCluster_AlarmMuted(_Model):
+class Network_Device_SmokeCOAlarmCluster_AlarmMuted_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.AlarmMuted!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_SmokeCOAlarmCluster_MuteEnded(_Model):
+class Network_Device_SmokeCOAlarmCluster_MuteEnded_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.MuteEnded!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class Network_Device_SmokeCOAlarmCluster_InterconnectSmokeAlarm(_Model):
+class Network_Device_SmokeCOAlarmCluster_InterconnectSmokeAlarm_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.InterconnectSmokeAlarm!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_SmokeCOAlarmCluster_InterconnectCOAlarm(_Model):
+class Network_Device_SmokeCOAlarmCluster_InterconnectCOAlarm_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.InterconnectCOAlarm!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_SmokeCOAlarmCluster_AllClear(_Model):
+class Network_Device_SmokeCOAlarmCluster_AllClear_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.AllClear!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
@@ -11007,21 +11007,21 @@ class Network_Device_DeviceEnergyManagementModeCluster_ChangeToMode_Output(_Mode
     StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_PowerSourceCluster_WiredFaultChange(_Model):
+class Network_Device_PowerSourceCluster_WiredFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.WiredFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'OverVoltage', 'UnderVoltage'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'OverVoltage', 'UnderVoltage'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class Network_Device_PowerSourceCluster_BatFaultChange(_Model):
+class Network_Device_PowerSourceCluster_BatFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.BatFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'OverTemp', 'UnderTemp'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Previous: _Annotated[_CommaList[_Literal['Unspecified', 'OverTemp', 'UnderTemp'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
-class Network_Device_PowerSourceCluster_BatChargeFaultChange(_Model):
+class Network_Device_PowerSourceCluster_BatChargeFaultChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.BatChargeFaultChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Current: _Annotated[_CommaList[_Literal['Unspecified', 'AmbientTooHot', 'AmbientTooCold', 'BatteryTooHot', 'BatteryTooCold', 'BatteryAbsent', 'BatteryOverVoltage', 'BatteryUnderVoltage', 'ChargerOverVoltage', 'ChargerUnderVoltage', 'SafetyTimeout'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -11156,13 +11156,13 @@ class Network_Device_LevelControlCluster_MoveToClosestFrequency_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class Network_Device_OccupancySensingCluster_OccupancyChanged(_Model):
+class Network_Device_OccupancySensingCluster_OccupancyChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.Network.Device.{i}.OccupancySensingCluster.{i}.OccupancyChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Occupancy: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.Network.Device.{i}.ColorControlCluster.{i}.MoveToHue()": (Network_Device_ColorControlCluster_MoveToHue_Input, Network_Device_ColorControlCluster_MoveToHue_Output),
     "MatterService.{i}.Network.Device.{i}.ColorControlCluster.{i}.MoveHue()": (Network_Device_ColorControlCluster_MoveHue_Input, Network_Device_ColorControlCluster_MoveHue_Output),
     "MatterService.{i}.Network.Device.{i}.ColorControlCluster.{i}.StepHue()": (Network_Device_ColorControlCluster_StepHue_Input, Network_Device_ColorControlCluster_StepHue_Output),
@@ -11522,123 +11522,123 @@ _COMMANDS = {
     "MatterService.{i}.Network.Device.{i}.LevelControlCluster.{i}.StopWithOnOff()": (Network_Device_LevelControlCluster_StopWithOnOff_Input, Network_Device_LevelControlCluster_StopWithOnOff_Output),
     "MatterService.{i}.Network.Device.{i}.LevelControlCluster.{i}.MoveToClosestFrequency()": (Network_Device_LevelControlCluster_MoveToClosestFrequency_Input, Network_Device_LevelControlCluster_MoveToClosestFrequency_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.Network.Device.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!": Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges,
-    "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.Disconnection!": Network_Device_WiFiNetworkDiagnosticsCluster_Disconnection,
-    "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.AssociationFailure!": Network_Device_WiFiNetworkDiagnosticsCluster_AssociationFailure,
-    "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.ConnectionStatus!": Network_Device_WiFiNetworkDiagnosticsCluster_ConnectionStatus,
-    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EVConnected!": Network_Device_EnergyEVSECluster_EVConnected,
-    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EVNotDetected!": Network_Device_EnergyEVSECluster_EVNotDetected,
-    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EnergyTransferStarted!": Network_Device_EnergyEVSECluster_EnergyTransferStarted,
-    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EnergyTransferStopped!": Network_Device_EnergyEVSECluster_EnergyTransferStopped,
-    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.Fault!": Network_Device_EnergyEVSECluster_Fault,
-    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.RFID!": Network_Device_EnergyEVSECluster_RFID,
-    "MatterService.{i}.Network.Device.{i}.MediaPlaybackCluster.{i}.StateChanged!": Network_Device_MediaPlaybackCluster_StateChanged,
-    "MatterService.{i}.Network.Device.{i}.CommodityPriceCluster.{i}.PriceChange!": Network_Device_CommodityPriceCluster_PriceChange,
-    "MatterService.{i}.Network.Device.{i}.SoftwareDiagnosticsCluster.{i}.SoftwareFault!": Network_Device_SoftwareDiagnosticsCluster_SoftwareFault,
-    "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessageQueued!": Network_Device_MessagesCluster_MessageQueued,
-    "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessagePresented!": Network_Device_MessagesCluster_MessagePresented,
-    "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessageComplete!": Network_Device_MessagesCluster_MessageComplete,
-    "MatterService.{i}.Network.Device.{i}.TargetNavigatorCluster.{i}.TargetUpdated!": Network_Device_TargetNavigatorCluster_TargetUpdated,
-    "MatterService.{i}.Network.Device.{i}.ZoneManagementCluster.{i}.ZoneTriggered!": Network_Device_ZoneManagementCluster_ZoneTriggered,
-    "MatterService.{i}.Network.Device.{i}.ZoneManagementCluster.{i}.ZoneStopped!": Network_Device_ZoneManagementCluster_ZoneStopped,
-    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.DSTTableEmpty!": Network_Device_TimeSynchronizationCluster_DSTTableEmpty,
-    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.DSTStatus!": Network_Device_TimeSynchronizationCluster_DSTStatus,
-    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.TimeZoneStatus!": Network_Device_TimeSynchronizationCluster_TimeZoneStatus,
-    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.TimeFailure!": Network_Device_TimeSynchronizationCluster_TimeFailure,
-    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.MissingTrustedTimeSource!": Network_Device_TimeSynchronizationCluster_MissingTrustedTimeSource,
-    "MatterService.{i}.Network.Device.{i}.ActionsCluster.{i}.StateChanged!": Network_Device_ActionsCluster_StateChanged,
-    "MatterService.{i}.Network.Device.{i}.ActionsCluster.{i}.ActionFailed!": Network_Device_ActionsCluster_ActionFailed,
-    "MatterService.{i}.Network.Device.{i}.OperationalStateCluster.{i}.OperationalError!": Network_Device_OperationalStateCluster_OperationalError,
-    "MatterService.{i}.Network.Device.{i}.OperationalStateCluster.{i}.OperationCompletion!": Network_Device_OperationalStateCluster_OperationCompletion,
-    "MatterService.{i}.Network.Device.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!": Network_Device_PushAVStreamTransportCluster_PushTransportBegin,
-    "MatterService.{i}.Network.Device.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!": Network_Device_PushAVStreamTransportCluster_PushTransportEnd,
-    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.SwitchLatched!": Network_Device_SwitchCluster_SwitchLatched,
-    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.InitialPress!": Network_Device_SwitchCluster_InitialPress,
-    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.LongPress!": Network_Device_SwitchCluster_LongPress,
-    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.ShortRelease!": Network_Device_SwitchCluster_ShortRelease,
-    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.LongRelease!": Network_Device_SwitchCluster_LongRelease,
-    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.MultiPressOngoing!": Network_Device_SwitchCluster_MultiPressOngoing,
-    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.MultiPressComplete!": Network_Device_SwitchCluster_MultiPressComplete,
-    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.StartUp!": Network_Device_BasicInformationCluster_StartUp,
-    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.ShutDown!": Network_Device_BasicInformationCluster_ShutDown,
-    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.Leave!": Network_Device_BasicInformationCluster_Leave,
-    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.ReachableChanged!": Network_Device_BasicInformationCluster_ReachableChanged,
-    "MatterService.{i}.Network.Device.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!": Network_Device_ValveConfigurationandControlCluster_ValveStateChanged,
-    "MatterService.{i}.Network.Device.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!": Network_Device_ValveConfigurationandControlCluster_ValveFault,
-    "MatterService.{i}.Network.Device.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!": Network_Device_BooleanStateConfigurationCluster_AlarmsStateChanged,
-    "MatterService.{i}.Network.Device.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!": Network_Device_BooleanStateConfigurationCluster_SensorFault,
-    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!": Network_Device_BridgedDeviceBasicInformationCluster_StartUp,
-    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!": Network_Device_BridgedDeviceBasicInformationCluster_ShutDown,
-    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!": Network_Device_BridgedDeviceBasicInformationCluster_ReachableChanged,
-    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!": Network_Device_BridgedDeviceBasicInformationCluster_ActiveChanged,
-    "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.StateTransition!": Network_Device_OTASoftwareUpdateRequestorCluster_StateTransition,
-    "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.VersionApplied!": Network_Device_OTASoftwareUpdateRequestorCluster_VersionApplied,
-    "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.DownloadError!": Network_Device_OTASoftwareUpdateRequestorCluster_DownloadError,
-    "MatterService.{i}.Network.Device.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!": Network_Device_CommissionerControlCluster_CommissioningRequestResult,
-    "MatterService.{i}.Network.Device.{i}.AccountLoginCluster.{i}.LoggedOut!": Network_Device_AccountLoginCluster_LoggedOut,
-    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.DoorLockAlarm!": Network_Device_DoorLockCluster_DoorLockAlarm,
-    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.DoorStateChange!": Network_Device_DoorLockCluster_DoorStateChange,
-    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperation!": Network_Device_DoorLockCluster_LockOperation,
-    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperationError!": Network_Device_DoorLockCluster_LockOperationError,
-    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockUserChange!": Network_Device_DoorLockCluster_LockUserChange,
-    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.OperationalError!": Network_Device_ClosureControlCluster_OperationalError,
-    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.MovementCompleted!": Network_Device_ClosureControlCluster_MovementCompleted,
-    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.EngageStateChanged!": Network_Device_ClosureControlCluster_EngageStateChanged,
-    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.SecureStateChanged!": Network_Device_ClosureControlCluster_SecureStateChanged,
-    "MatterService.{i}.Network.Device.{i}.ThreadNetworkDiagnosticsCluster.{i}.ConnectionStatus!": Network_Device_ThreadNetworkDiagnosticsCluster_ConnectionStatus,
-    "MatterService.{i}.Network.Device.{i}.ThreadNetworkDiagnosticsCluster.{i}.NetworkFaultChange!": Network_Device_ThreadNetworkDiagnosticsCluster_NetworkFaultChange,
-    "MatterService.{i}.Network.Device.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!": Network_Device_ContentControlCluster_RemainingScreenTimeExpired,
-    "MatterService.{i}.Network.Device.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!": Network_Device_ContentControlCluster_EnteringBlockContentTimeWindow,
-    "MatterService.{i}.Network.Device.{i}.ElectricalGridConditionsCluster.{i}.CurrentConditionsChanged!": Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageLow!": Network_Device_PumpConfigurationandControlCluster_SupplyVoltageLow,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageHigh!": Network_Device_PumpConfigurationandControlCluster_SupplyVoltageHigh,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PowerMissingPhase!": Network_Device_PumpConfigurationandControlCluster_PowerMissingPhase,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureLow!": Network_Device_PumpConfigurationandControlCluster_SystemPressureLow,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureHigh!": Network_Device_PumpConfigurationandControlCluster_SystemPressureHigh,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.DryRunning!": Network_Device_PumpConfigurationandControlCluster_DryRunning,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.MotorTemperatureHigh!": Network_Device_PumpConfigurationandControlCluster_MotorTemperatureHigh,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PumpMotorFatalFailure!": Network_Device_PumpConfigurationandControlCluster_PumpMotorFatalFailure,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicTemperatureHigh!": Network_Device_PumpConfigurationandControlCluster_ElectronicTemperatureHigh,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PumpBlocked!": Network_Device_PumpConfigurationandControlCluster_PumpBlocked,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SensorFailure!": Network_Device_PumpConfigurationandControlCluster_SensorFailure,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicNonFatalFailure!": Network_Device_PumpConfigurationandControlCluster_ElectronicNonFatalFailure,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicFatalFailure!": Network_Device_PumpConfigurationandControlCluster_ElectronicFatalFailure,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.GeneralFault!": Network_Device_PumpConfigurationandControlCluster_GeneralFault,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.Leakage!": Network_Device_PumpConfigurationandControlCluster_Leakage,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.AirDetection!": Network_Device_PumpConfigurationandControlCluster_AirDetection,
-    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.TurbineOperation!": Network_Device_PumpConfigurationandControlCluster_TurbineOperation,
-    "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!": Network_Device_AccessControlCluster_AccessControlEntryChanged,
-    "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!": Network_Device_AccessControlCluster_AccessControlExtensionChanged,
-    "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!": Network_Device_AccessControlCluster_FabricRestrictionReviewUpdate,
-    "MatterService.{i}.Network.Device.{i}.BooleanStateCluster.{i}.StateChange!": Network_Device_BooleanStateCluster_StateChange,
-    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!": Network_Device_GeneralDiagnosticsCluster_HardwareFaultChange,
-    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!": Network_Device_GeneralDiagnosticsCluster_RadioFaultChange,
-    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!": Network_Device_GeneralDiagnosticsCluster_NetworkFaultChange,
-    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.BootReason!": Network_Device_GeneralDiagnosticsCluster_BootReason,
-    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustStart!": Network_Device_DeviceEnergyManagementCluster_PowerAdjustStart,
-    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustEnd!": Network_Device_DeviceEnergyManagementCluster_PowerAdjustEnd,
-    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.Paused!": Network_Device_DeviceEnergyManagementCluster_Paused,
-    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.Resumed!": Network_Device_DeviceEnergyManagementCluster_Resumed,
-    "MatterService.{i}.Network.Device.{i}.WaterHeaterManagementCluster.{i}.BoostStarted!": Network_Device_WaterHeaterManagementCluster_BoostStarted,
-    "MatterService.{i}.Network.Device.{i}.WaterHeaterManagementCluster.{i}.BoostEnded!": Network_Device_WaterHeaterManagementCluster_BoostEnded,
-    "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!": Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured,
-    "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!": Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.SmokeAlarm!": Network_Device_SmokeCOAlarmCluster_SmokeAlarm,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.COAlarm!": Network_Device_SmokeCOAlarmCluster_COAlarm,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.LowBattery!": Network_Device_SmokeCOAlarmCluster_LowBattery,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.HardwareFault!": Network_Device_SmokeCOAlarmCluster_HardwareFault,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.EndOfService!": Network_Device_SmokeCOAlarmCluster_EndOfService,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.SelfTestComplete!": Network_Device_SmokeCOAlarmCluster_SelfTestComplete,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.AlarmMuted!": Network_Device_SmokeCOAlarmCluster_AlarmMuted,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.MuteEnded!": Network_Device_SmokeCOAlarmCluster_MuteEnded,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.InterconnectSmokeAlarm!": Network_Device_SmokeCOAlarmCluster_InterconnectSmokeAlarm,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.InterconnectCOAlarm!": Network_Device_SmokeCOAlarmCluster_InterconnectCOAlarm,
-    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.AllClear!": Network_Device_SmokeCOAlarmCluster_AllClear,
-    "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.WiredFaultChange!": Network_Device_PowerSourceCluster_WiredFaultChange,
-    "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.BatFaultChange!": Network_Device_PowerSourceCluster_BatFaultChange,
-    "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.BatChargeFaultChange!": Network_Device_PowerSourceCluster_BatChargeFaultChange,
-    "MatterService.{i}.Network.Device.{i}.OccupancySensingCluster.{i}.OccupancyChanged!": Network_Device_OccupancySensingCluster_OccupancyChanged,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.Network.Device.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!": Network_Device_ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event,
+    "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.Disconnection!": Network_Device_WiFiNetworkDiagnosticsCluster_Disconnection_Event,
+    "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.AssociationFailure!": Network_Device_WiFiNetworkDiagnosticsCluster_AssociationFailure_Event,
+    "MatterService.{i}.Network.Device.{i}.WiFiNetworkDiagnosticsCluster.{i}.ConnectionStatus!": Network_Device_WiFiNetworkDiagnosticsCluster_ConnectionStatus_Event,
+    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EVConnected!": Network_Device_EnergyEVSECluster_EVConnected_Event,
+    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EVNotDetected!": Network_Device_EnergyEVSECluster_EVNotDetected_Event,
+    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EnergyTransferStarted!": Network_Device_EnergyEVSECluster_EnergyTransferStarted_Event,
+    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.EnergyTransferStopped!": Network_Device_EnergyEVSECluster_EnergyTransferStopped_Event,
+    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.Fault!": Network_Device_EnergyEVSECluster_Fault_Event,
+    "MatterService.{i}.Network.Device.{i}.EnergyEVSECluster.{i}.RFID!": Network_Device_EnergyEVSECluster_RFID_Event,
+    "MatterService.{i}.Network.Device.{i}.MediaPlaybackCluster.{i}.StateChanged!": Network_Device_MediaPlaybackCluster_StateChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.CommodityPriceCluster.{i}.PriceChange!": Network_Device_CommodityPriceCluster_PriceChange_Event,
+    "MatterService.{i}.Network.Device.{i}.SoftwareDiagnosticsCluster.{i}.SoftwareFault!": Network_Device_SoftwareDiagnosticsCluster_SoftwareFault_Event,
+    "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessageQueued!": Network_Device_MessagesCluster_MessageQueued_Event,
+    "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessagePresented!": Network_Device_MessagesCluster_MessagePresented_Event,
+    "MatterService.{i}.Network.Device.{i}.MessagesCluster.{i}.MessageComplete!": Network_Device_MessagesCluster_MessageComplete_Event,
+    "MatterService.{i}.Network.Device.{i}.TargetNavigatorCluster.{i}.TargetUpdated!": Network_Device_TargetNavigatorCluster_TargetUpdated_Event,
+    "MatterService.{i}.Network.Device.{i}.ZoneManagementCluster.{i}.ZoneTriggered!": Network_Device_ZoneManagementCluster_ZoneTriggered_Event,
+    "MatterService.{i}.Network.Device.{i}.ZoneManagementCluster.{i}.ZoneStopped!": Network_Device_ZoneManagementCluster_ZoneStopped_Event,
+    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.DSTTableEmpty!": Network_Device_TimeSynchronizationCluster_DSTTableEmpty_Event,
+    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.DSTStatus!": Network_Device_TimeSynchronizationCluster_DSTStatus_Event,
+    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.TimeZoneStatus!": Network_Device_TimeSynchronizationCluster_TimeZoneStatus_Event,
+    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.TimeFailure!": Network_Device_TimeSynchronizationCluster_TimeFailure_Event,
+    "MatterService.{i}.Network.Device.{i}.TimeSynchronizationCluster.{i}.MissingTrustedTimeSource!": Network_Device_TimeSynchronizationCluster_MissingTrustedTimeSource_Event,
+    "MatterService.{i}.Network.Device.{i}.ActionsCluster.{i}.StateChanged!": Network_Device_ActionsCluster_StateChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.ActionsCluster.{i}.ActionFailed!": Network_Device_ActionsCluster_ActionFailed_Event,
+    "MatterService.{i}.Network.Device.{i}.OperationalStateCluster.{i}.OperationalError!": Network_Device_OperationalStateCluster_OperationalError_Event,
+    "MatterService.{i}.Network.Device.{i}.OperationalStateCluster.{i}.OperationCompletion!": Network_Device_OperationalStateCluster_OperationCompletion_Event,
+    "MatterService.{i}.Network.Device.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!": Network_Device_PushAVStreamTransportCluster_PushTransportBegin_Event,
+    "MatterService.{i}.Network.Device.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!": Network_Device_PushAVStreamTransportCluster_PushTransportEnd_Event,
+    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.SwitchLatched!": Network_Device_SwitchCluster_SwitchLatched_Event,
+    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.InitialPress!": Network_Device_SwitchCluster_InitialPress_Event,
+    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.LongPress!": Network_Device_SwitchCluster_LongPress_Event,
+    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.ShortRelease!": Network_Device_SwitchCluster_ShortRelease_Event,
+    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.LongRelease!": Network_Device_SwitchCluster_LongRelease_Event,
+    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.MultiPressOngoing!": Network_Device_SwitchCluster_MultiPressOngoing_Event,
+    "MatterService.{i}.Network.Device.{i}.SwitchCluster.{i}.MultiPressComplete!": Network_Device_SwitchCluster_MultiPressComplete_Event,
+    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.StartUp!": Network_Device_BasicInformationCluster_StartUp_Event,
+    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.ShutDown!": Network_Device_BasicInformationCluster_ShutDown_Event,
+    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.Leave!": Network_Device_BasicInformationCluster_Leave_Event,
+    "MatterService.{i}.Network.Device.{i}.BasicInformationCluster.{i}.ReachableChanged!": Network_Device_BasicInformationCluster_ReachableChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!": Network_Device_ValveConfigurationandControlCluster_ValveStateChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!": Network_Device_ValveConfigurationandControlCluster_ValveFault_Event,
+    "MatterService.{i}.Network.Device.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!": Network_Device_BooleanStateConfigurationCluster_AlarmsStateChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!": Network_Device_BooleanStateConfigurationCluster_SensorFault_Event,
+    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!": Network_Device_BridgedDeviceBasicInformationCluster_StartUp_Event,
+    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!": Network_Device_BridgedDeviceBasicInformationCluster_ShutDown_Event,
+    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!": Network_Device_BridgedDeviceBasicInformationCluster_ReachableChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!": Network_Device_BridgedDeviceBasicInformationCluster_ActiveChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.StateTransition!": Network_Device_OTASoftwareUpdateRequestorCluster_StateTransition_Event,
+    "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.VersionApplied!": Network_Device_OTASoftwareUpdateRequestorCluster_VersionApplied_Event,
+    "MatterService.{i}.Network.Device.{i}.OTASoftwareUpdateRequestorCluster.{i}.DownloadError!": Network_Device_OTASoftwareUpdateRequestorCluster_DownloadError_Event,
+    "MatterService.{i}.Network.Device.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!": Network_Device_CommissionerControlCluster_CommissioningRequestResult_Event,
+    "MatterService.{i}.Network.Device.{i}.AccountLoginCluster.{i}.LoggedOut!": Network_Device_AccountLoginCluster_LoggedOut_Event,
+    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.DoorLockAlarm!": Network_Device_DoorLockCluster_DoorLockAlarm_Event,
+    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.DoorStateChange!": Network_Device_DoorLockCluster_DoorStateChange_Event,
+    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperation!": Network_Device_DoorLockCluster_LockOperation_Event,
+    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockOperationError!": Network_Device_DoorLockCluster_LockOperationError_Event,
+    "MatterService.{i}.Network.Device.{i}.DoorLockCluster.{i}.LockUserChange!": Network_Device_DoorLockCluster_LockUserChange_Event,
+    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.OperationalError!": Network_Device_ClosureControlCluster_OperationalError_Event,
+    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.MovementCompleted!": Network_Device_ClosureControlCluster_MovementCompleted_Event,
+    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.EngageStateChanged!": Network_Device_ClosureControlCluster_EngageStateChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.ClosureControlCluster.{i}.SecureStateChanged!": Network_Device_ClosureControlCluster_SecureStateChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.ThreadNetworkDiagnosticsCluster.{i}.ConnectionStatus!": Network_Device_ThreadNetworkDiagnosticsCluster_ConnectionStatus_Event,
+    "MatterService.{i}.Network.Device.{i}.ThreadNetworkDiagnosticsCluster.{i}.NetworkFaultChange!": Network_Device_ThreadNetworkDiagnosticsCluster_NetworkFaultChange_Event,
+    "MatterService.{i}.Network.Device.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!": Network_Device_ContentControlCluster_RemainingScreenTimeExpired_Event,
+    "MatterService.{i}.Network.Device.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!": Network_Device_ContentControlCluster_EnteringBlockContentTimeWindow_Event,
+    "MatterService.{i}.Network.Device.{i}.ElectricalGridConditionsCluster.{i}.CurrentConditionsChanged!": Network_Device_ElectricalGridConditionsCluster_CurrentConditionsChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageLow!": Network_Device_PumpConfigurationandControlCluster_SupplyVoltageLow_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageHigh!": Network_Device_PumpConfigurationandControlCluster_SupplyVoltageHigh_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PowerMissingPhase!": Network_Device_PumpConfigurationandControlCluster_PowerMissingPhase_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureLow!": Network_Device_PumpConfigurationandControlCluster_SystemPressureLow_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureHigh!": Network_Device_PumpConfigurationandControlCluster_SystemPressureHigh_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.DryRunning!": Network_Device_PumpConfigurationandControlCluster_DryRunning_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.MotorTemperatureHigh!": Network_Device_PumpConfigurationandControlCluster_MotorTemperatureHigh_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PumpMotorFatalFailure!": Network_Device_PumpConfigurationandControlCluster_PumpMotorFatalFailure_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicTemperatureHigh!": Network_Device_PumpConfigurationandControlCluster_ElectronicTemperatureHigh_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.PumpBlocked!": Network_Device_PumpConfigurationandControlCluster_PumpBlocked_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.SensorFailure!": Network_Device_PumpConfigurationandControlCluster_SensorFailure_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicNonFatalFailure!": Network_Device_PumpConfigurationandControlCluster_ElectronicNonFatalFailure_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.ElectronicFatalFailure!": Network_Device_PumpConfigurationandControlCluster_ElectronicFatalFailure_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.GeneralFault!": Network_Device_PumpConfigurationandControlCluster_GeneralFault_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.Leakage!": Network_Device_PumpConfigurationandControlCluster_Leakage_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.AirDetection!": Network_Device_PumpConfigurationandControlCluster_AirDetection_Event,
+    "MatterService.{i}.Network.Device.{i}.PumpConfigurationandControlCluster.{i}.TurbineOperation!": Network_Device_PumpConfigurationandControlCluster_TurbineOperation_Event,
+    "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!": Network_Device_AccessControlCluster_AccessControlEntryChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!": Network_Device_AccessControlCluster_AccessControlExtensionChanged_Event,
+    "MatterService.{i}.Network.Device.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!": Network_Device_AccessControlCluster_FabricRestrictionReviewUpdate_Event,
+    "MatterService.{i}.Network.Device.{i}.BooleanStateCluster.{i}.StateChange!": Network_Device_BooleanStateCluster_StateChange_Event,
+    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!": Network_Device_GeneralDiagnosticsCluster_HardwareFaultChange_Event,
+    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!": Network_Device_GeneralDiagnosticsCluster_RadioFaultChange_Event,
+    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!": Network_Device_GeneralDiagnosticsCluster_NetworkFaultChange_Event,
+    "MatterService.{i}.Network.Device.{i}.GeneralDiagnosticsCluster.{i}.BootReason!": Network_Device_GeneralDiagnosticsCluster_BootReason_Event,
+    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustStart!": Network_Device_DeviceEnergyManagementCluster_PowerAdjustStart_Event,
+    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.PowerAdjustEnd!": Network_Device_DeviceEnergyManagementCluster_PowerAdjustEnd_Event,
+    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.Paused!": Network_Device_DeviceEnergyManagementCluster_Paused_Event,
+    "MatterService.{i}.Network.Device.{i}.DeviceEnergyManagementCluster.{i}.Resumed!": Network_Device_DeviceEnergyManagementCluster_Resumed_Event,
+    "MatterService.{i}.Network.Device.{i}.WaterHeaterManagementCluster.{i}.BoostStarted!": Network_Device_WaterHeaterManagementCluster_BoostStarted_Event,
+    "MatterService.{i}.Network.Device.{i}.WaterHeaterManagementCluster.{i}.BoostEnded!": Network_Device_WaterHeaterManagementCluster_BoostEnded_Event,
+    "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!": Network_Device_ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_Event,
+    "MatterService.{i}.Network.Device.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!": Network_Device_ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.SmokeAlarm!": Network_Device_SmokeCOAlarmCluster_SmokeAlarm_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.COAlarm!": Network_Device_SmokeCOAlarmCluster_COAlarm_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.LowBattery!": Network_Device_SmokeCOAlarmCluster_LowBattery_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.HardwareFault!": Network_Device_SmokeCOAlarmCluster_HardwareFault_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.EndOfService!": Network_Device_SmokeCOAlarmCluster_EndOfService_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.SelfTestComplete!": Network_Device_SmokeCOAlarmCluster_SelfTestComplete_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.AlarmMuted!": Network_Device_SmokeCOAlarmCluster_AlarmMuted_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.MuteEnded!": Network_Device_SmokeCOAlarmCluster_MuteEnded_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.InterconnectSmokeAlarm!": Network_Device_SmokeCOAlarmCluster_InterconnectSmokeAlarm_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.InterconnectCOAlarm!": Network_Device_SmokeCOAlarmCluster_InterconnectCOAlarm_Event,
+    "MatterService.{i}.Network.Device.{i}.SmokeCOAlarmCluster.{i}.AllClear!": Network_Device_SmokeCOAlarmCluster_AllClear_Event,
+    "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.WiredFaultChange!": Network_Device_PowerSourceCluster_WiredFaultChange_Event,
+    "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.BatFaultChange!": Network_Device_PowerSourceCluster_BatFaultChange_Event,
+    "MatterService.{i}.Network.Device.{i}.PowerSourceCluster.{i}.BatChargeFaultChange!": Network_Device_PowerSourceCluster_BatChargeFaultChange_Event,
+    "MatterService.{i}.Network.Device.{i}.OccupancySensingCluster.{i}.OccupancyChanged!": Network_Device_OccupancySensingCluster_OccupancyChanged_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

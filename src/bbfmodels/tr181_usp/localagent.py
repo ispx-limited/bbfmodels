@@ -367,17 +367,17 @@ class LocalAgent_AddCertificate_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class LocalAgent_Periodic(_Model):
+class LocalAgent_Periodic_Event(_Model):
     __bbf_path__ = "Device.LocalAgent.Periodic!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class LocalAgent_WakeUp(_Model):
+class LocalAgent_WakeUp_Event(_Model):
     __bbf_path__ = "Device.LocalAgent.WakeUp!."
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class LocalAgent_TransferComplete(_Model):
+class LocalAgent_TransferComplete_Event(_Model):
     __bbf_path__ = "Device.LocalAgent.TransferComplete!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Command: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -394,14 +394,14 @@ class LocalAgent_TransferComplete(_Model):
     CheckSum: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-class LocalAgent_Threshold_Triggered(_Model):
+class LocalAgent_Threshold_Triggered_Event(_Model):
     __bbf_path__ = "Device.LocalAgent.Threshold.{i}.Triggered!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     ParamPath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ParamValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class LocalAgent_Monitor_OnChange_ChangeSet_Parameter(_Model):
+class LocalAgent_Monitor_OnChange_Event_ChangeSet_Parameter(_Model):
     __bbf_path__ = "Device.LocalAgent.Monitor.{i}.OnChange!.ChangeSet.{i}.Parameter.{i}."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -410,17 +410,17 @@ class LocalAgent_Monitor_OnChange_ChangeSet_Parameter(_Model):
     ChangeTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
-class LocalAgent_Monitor_OnChange_ChangeSet(_Model):
+class LocalAgent_Monitor_OnChange_Event_ChangeSet(_Model):
     __bbf_path__ = "Device.LocalAgent.Monitor.{i}.OnChange!.ChangeSet.{i}."
     __bbf_package__ = "bbfmodels.tr181_usp"
     ObjectPath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
-    Parameter: dict[int, LocalAgent_Monitor_OnChange_ChangeSet_Parameter] = _Field(default_factory=dict)
+    Parameter: dict[int, LocalAgent_Monitor_OnChange_Event_ChangeSet_Parameter] = _Field(default_factory=dict)
 
 
-class LocalAgent_Monitor_OnChange(_Model):
+class LocalAgent_Monitor_OnChange_Event(_Model):
     __bbf_path__ = "Device.LocalAgent.Monitor.{i}.OnChange!."
     __bbf_package__ = "bbfmodels.tr181_usp"
-    ChangeSet: dict[int, LocalAgent_Monitor_OnChange_ChangeSet] = _Field(default_factory=dict)
+    ChangeSet: dict[int, LocalAgent_Monitor_OnChange_Event_ChangeSet] = _Field(default_factory=dict)
 
 
 class LocalAgent_Watchdog_Reset_Input(_Model):
@@ -433,7 +433,7 @@ class LocalAgent_Watchdog_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class LocalAgent_Watchdog_Watchdog(_Model):
+class LocalAgent_Watchdog_Watchdog_Event(_Model):
     __bbf_path__ = "Device.LocalAgent.Watchdog.{i}.Watchdog!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -474,7 +474,7 @@ class LocalAgent_Controller_SendOnBoardRequest_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class LocalAgent_Controller_Timer(_Model):
+class LocalAgent_Controller_Timer_Event(_Model):
     __bbf_path__ = "Device.LocalAgent.Controller.{i}.Timer!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     CommandKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -560,7 +560,7 @@ class LocalAgent_Request_Cancel_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.LocalAgent.AddCertificate()": (LocalAgent_AddCertificate_Input, LocalAgent_AddCertificate_Output),
     "Device.LocalAgent.Watchdog.{i}.Reset()": (LocalAgent_Watchdog_Reset_Input, LocalAgent_Watchdog_Reset_Output),
     "Device.LocalAgent.Controller.{i}.ScheduleTimer()": (LocalAgent_Controller_ScheduleTimer_Input, LocalAgent_Controller_ScheduleTimer_Output),
@@ -574,14 +574,14 @@ _COMMANDS = {
     "Device.LocalAgent.ControllerTrust.ChallengeResponse()": (LocalAgent_ControllerTrust_ChallengeResponse_Input, LocalAgent_ControllerTrust_ChallengeResponse_Output),
     "Device.LocalAgent.Request.{i}.Cancel()": (LocalAgent_Request_Cancel_Input, LocalAgent_Request_Cancel_Output),
 }
-_EVENTS = {
-    "Device.LocalAgent.Periodic!": LocalAgent_Periodic,
-    "Device.LocalAgent.WakeUp!": LocalAgent_WakeUp,
-    "Device.LocalAgent.TransferComplete!": LocalAgent_TransferComplete,
-    "Device.LocalAgent.Threshold.{i}.Triggered!": LocalAgent_Threshold_Triggered,
-    "Device.LocalAgent.Monitor.{i}.OnChange!": LocalAgent_Monitor_OnChange,
-    "Device.LocalAgent.Watchdog.{i}.Watchdog!": LocalAgent_Watchdog_Watchdog,
-    "Device.LocalAgent.Controller.{i}.Timer!": LocalAgent_Controller_Timer,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.LocalAgent.Periodic!": LocalAgent_Periodic_Event,
+    "Device.LocalAgent.WakeUp!": LocalAgent_WakeUp_Event,
+    "Device.LocalAgent.TransferComplete!": LocalAgent_TransferComplete_Event,
+    "Device.LocalAgent.Threshold.{i}.Triggered!": LocalAgent_Threshold_Triggered_Event,
+    "Device.LocalAgent.Monitor.{i}.OnChange!": LocalAgent_Monitor_OnChange_Event,
+    "Device.LocalAgent.Watchdog.{i}.Watchdog!": LocalAgent_Watchdog_Watchdog_Event,
+    "Device.LocalAgent.Controller.{i}.Timer!": LocalAgent_Controller_Timer_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

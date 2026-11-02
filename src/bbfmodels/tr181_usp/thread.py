@@ -353,7 +353,7 @@ class Thread_MLE_Stats_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Thread.BorderRouter.{i}.Start()": (Thread_BorderRouter_Start_Input, Thread_BorderRouter_Start_Output),
     "Device.Thread.BorderRouter.{i}.Stop()": (Thread_BorderRouter_Stop_Input, Thread_BorderRouter_Stop_Output),
     "Device.Thread.Radio.{i}.Scan()": (Thread_Radio_Scan_Input, Thread_Radio_Scan_Output),
@@ -367,7 +367,7 @@ _COMMANDS = {
     "Device.Thread.MLE.{i}.NetworkDiagnostic()": (Thread_MLE_NetworkDiagnostic_Input, Thread_MLE_NetworkDiagnostic_Output),
     "Device.Thread.MLE.{i}.Stats.Reset()": (Thread_MLE_Stats_Reset_Input, Thread_MLE_Stats_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

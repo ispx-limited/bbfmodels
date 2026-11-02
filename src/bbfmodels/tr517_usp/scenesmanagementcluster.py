@@ -196,7 +196,7 @@ class ScenesManagementCluster_CopyScene_Output(_Model):
     SceneIdentifierFrom: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ScenesManagementCluster.{i}.AddScene()": (ScenesManagementCluster_AddScene_Input, ScenesManagementCluster_AddScene_Output),
     "MatterService.{i}.ScenesManagementCluster.{i}.ViewScene()": (ScenesManagementCluster_ViewScene_Input, ScenesManagementCluster_ViewScene_Output),
     "MatterService.{i}.ScenesManagementCluster.{i}.RemoveScene()": (ScenesManagementCluster_RemoveScene_Input, ScenesManagementCluster_RemoveScene_Output),
@@ -206,7 +206,7 @@ _COMMANDS = {
     "MatterService.{i}.ScenesManagementCluster.{i}.GetSceneMembership()": (ScenesManagementCluster_GetSceneMembership_Input, ScenesManagementCluster_GetSceneMembership_Output),
     "MatterService.{i}.ScenesManagementCluster.{i}.CopyScene()": (ScenesManagementCluster_CopyScene_Input, ScenesManagementCluster_CopyScene_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

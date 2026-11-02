@@ -15,16 +15,16 @@ class BooleanStateCluster(_Model):
     StateValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-class BooleanStateCluster_StateChange(_Model):
+class BooleanStateCluster_StateChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.BooleanStateCluster.{i}.StateChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     StateValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
-    "MatterService.{i}.BooleanStateCluster.{i}.StateChange!": BooleanStateCluster_StateChange,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.BooleanStateCluster.{i}.StateChange!": BooleanStateCluster_StateChange_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

@@ -59,9 +59,9 @@ class MGCP(_Model):
     Network: dict[int, MGCP_Network] = _Field(default_factory=dict)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

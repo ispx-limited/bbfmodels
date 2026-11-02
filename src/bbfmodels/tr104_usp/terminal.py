@@ -101,10 +101,10 @@ class Terminal_DiagTests_Output(_Model):
     PhoneRinging: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "VoiceService.{i}.Terminal.{i}.DiagTests()": (Terminal_DiagTests_Input, Terminal_DiagTests_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

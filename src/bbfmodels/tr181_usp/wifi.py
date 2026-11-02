@@ -2401,7 +2401,7 @@ class WiFi_DataElements_Network_SetSCSDisallowed_Output(_Model):
     Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class WiFi_DataElements_Network_ControllerBTMSteer(_Model):
+class WiFi_DataElements_Network_ControllerBTMSteer_Event(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.Network.ControllerBTMSteer!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -2409,7 +2409,7 @@ class WiFi_DataElements_Network_ControllerBTMSteer(_Model):
     BTMStatusCode: _Annotated[_Literal['Accept', 'Reject_Unspecified', 'Reject_Insufficient_Response', 'Reject_Insufficient_Capacity', 'Reject_Undesired', 'Reject_Delay', 'Reject_STA_List', 'Reject_No_BSS', 'Reject_Leaving_ESS'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class WiFi_DataElements_Network_AgentOnboard(_Model):
+class WiFi_DataElements_Network_AgentOnboard_Event(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.Network.AgentOnboard!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     DeviceID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -2478,7 +2478,7 @@ class WiFi_DataElements_Network_Device_RefreshAPMetrics_Output(_Model):
     Status: _Annotated[_Literal['Success', 'Error_Invalid_Input', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class WiFi_DataElements_Network_Device_BackhaulChange(_Model):
+class WiFi_DataElements_Network_Device_BackhaulChange_Event(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.Network.Device.{i}.BackhaulChange!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -2894,7 +2894,7 @@ class WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output(_Mo
     ScanResult: dict[int, WiFi_DataElements_Network_Device_Radio_MultiAPRadio_ChannelScan_Output_ScanResult] = _Field(default_factory=dict)
 
 
-class WiFi_DataElements_AssociationEvent_Associated_WiFi6Capabilities(_Model):
+class WiFi_DataElements_AssociationEvent_Associated_Event_WiFi6Capabilities(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.AssociationEvent.Associated!.WiFi6Capabilities."
     __bbf_package__ = "bbfmodels.tr181_usp"
     HE160: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -2922,7 +2922,7 @@ class WiFi_DataElements_AssociationEvent_Associated_WiFi6Capabilities(_Model):
     AnticipatedChannelUsage: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-class WiFi_DataElements_AssociationEvent_Associated(_Model):
+class WiFi_DataElements_AssociationEvent_Associated_Event(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.AssociationEvent.Associated!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -2935,10 +2935,10 @@ class WiFi_DataElements_AssociationEvent_Associated(_Model):
     ClientCapabilities: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
     OpClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
-    WiFi6Capabilities: WiFi_DataElements_AssociationEvent_Associated_WiFi6Capabilities | None = _Field(default=None)
+    WiFi6Capabilities: WiFi_DataElements_AssociationEvent_Associated_Event_WiFi6Capabilities | None = _Field(default=None)
 
 
-class WiFi_DataElements_DisassociationEvent_Disassociated_DisassociationLinkStats(_Model):
+class WiFi_DataElements_DisassociationEvent_Disassociated_Event_DisassociationLinkStats(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.DisassociationEvent.Disassociated!.DisassociationLinkStats.{i}."
     __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -2949,7 +2949,7 @@ class WiFi_DataElements_DisassociationEvent_Disassociated_DisassociationLinkStat
     ErrorsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
-class WiFi_DataElements_DisassociationEvent_Disassociated(_Model):
+class WiFi_DataElements_DisassociationEvent_Disassociated_Event(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.DisassociationEvent.Disassociated!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -2975,10 +2975,10 @@ class WiFi_DataElements_DisassociationEvent_Disassociated(_Model):
     InitiatedBy: _Annotated[_Literal['STA', 'EasyMesh_Agent', 'EasyMesh_Controller', 'DE_Collector', 'Unknown'] | str | None, _Param(_BaseType.STRING)] = None
     OpClass: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
-    DisassociationLinkStats: dict[int, WiFi_DataElements_DisassociationEvent_Disassociated_DisassociationLinkStats] = _Field(default_factory=dict)
+    DisassociationLinkStats: dict[int, WiFi_DataElements_DisassociationEvent_Disassociated_Event_DisassociationLinkStats] = _Field(default_factory=dict)
 
 
-class WiFi_DataElements_FailedConnectionEvent_FailedConnection(_Model):
+class WiFi_DataElements_FailedConnectionEvent_FailedConnection_Event(_Model):
     __bbf_path__ = "Device.WiFi.DataElements.FailedConnectionEvent.FailedConnection!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -3226,7 +3226,7 @@ class WiFi_AccessPoint_WPS_InitiateWPSPBC_Output(_Model):
     Status: _Annotated[_Literal['Success', 'Error_Not_Ready', 'Error_Timeout', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.WiFi.NeighboringWiFiDiagnostic()": (WiFi_NeighboringWiFiDiagnostic_Input, WiFi_NeighboringWiFiDiagnostic_Output),
     "Device.WiFi.Reset()": (WiFi_Reset_Input, WiFi_Reset_Output),
     "Device.WiFi.DataElements.Network.SetTrafficSeparation()": (WiFi_DataElements_Network_SetTrafficSeparation_Input, WiFi_DataElements_Network_SetTrafficSeparation_Output),
@@ -3267,13 +3267,13 @@ _COMMANDS = {
     "Device.WiFi.AccessPoint.{i}.Security.Reset()": (WiFi_AccessPoint_Security_Reset_Input, WiFi_AccessPoint_Security_Reset_Output),
     "Device.WiFi.AccessPoint.{i}.WPS.InitiateWPSPBC()": (WiFi_AccessPoint_WPS_InitiateWPSPBC_Input, WiFi_AccessPoint_WPS_InitiateWPSPBC_Output),
 }
-_EVENTS = {
-    "Device.WiFi.DataElements.Network.ControllerBTMSteer!": WiFi_DataElements_Network_ControllerBTMSteer,
-    "Device.WiFi.DataElements.Network.AgentOnboard!": WiFi_DataElements_Network_AgentOnboard,
-    "Device.WiFi.DataElements.Network.Device.{i}.BackhaulChange!": WiFi_DataElements_Network_Device_BackhaulChange,
-    "Device.WiFi.DataElements.AssociationEvent.Associated!": WiFi_DataElements_AssociationEvent_Associated,
-    "Device.WiFi.DataElements.DisassociationEvent.Disassociated!": WiFi_DataElements_DisassociationEvent_Disassociated,
-    "Device.WiFi.DataElements.FailedConnectionEvent.FailedConnection!": WiFi_DataElements_FailedConnectionEvent_FailedConnection,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.WiFi.DataElements.Network.ControllerBTMSteer!": WiFi_DataElements_Network_ControllerBTMSteer_Event,
+    "Device.WiFi.DataElements.Network.AgentOnboard!": WiFi_DataElements_Network_AgentOnboard_Event,
+    "Device.WiFi.DataElements.Network.Device.{i}.BackhaulChange!": WiFi_DataElements_Network_Device_BackhaulChange_Event,
+    "Device.WiFi.DataElements.AssociationEvent.Associated!": WiFi_DataElements_AssociationEvent_Associated_Event,
+    "Device.WiFi.DataElements.DisassociationEvent.Disassociated!": WiFi_DataElements_DisassociationEvent_Disassociated_Event,
+    "Device.WiFi.DataElements.FailedConnectionEvent.FailedConnection!": WiFi_DataElements_FailedConnectionEvent_FailedConnection_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

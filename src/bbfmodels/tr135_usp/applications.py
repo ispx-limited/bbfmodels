@@ -107,12 +107,12 @@ class Applications_CDSPull_ContentItem_DeleteItem_Output(_Model):
     __bbf_package__ = "bbfmodels.tr135_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "STBService.{i}.Applications.AudienceStats.Reset()": (Applications_AudienceStats_Reset_Input, Applications_AudienceStats_Reset_Output),
     "STBService.{i}.Applications.CDSPush.ContentItem.{i}.DeleteItem()": (Applications_CDSPush_ContentItem_DeleteItem_Input, Applications_CDSPush_ContentItem_DeleteItem_Output),
     "STBService.{i}.Applications.CDSPull.ContentItem.{i}.DeleteItem()": (Applications_CDSPull_ContentItem_DeleteItem_Input, Applications_CDSPull_ContentItem_DeleteItem_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

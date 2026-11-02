@@ -100,13 +100,13 @@ class WebRTCTransportRequestorCluster_End_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Offer()": (WebRTCTransportRequestorCluster_Offer_Input, WebRTCTransportRequestorCluster_Offer_Output),
     "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Answer()": (WebRTCTransportRequestorCluster_Answer_Input, WebRTCTransportRequestorCluster_Answer_Output),
     "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.ICECandidates()": (WebRTCTransportRequestorCluster_ICECandidates_Input, WebRTCTransportRequestorCluster_ICECandidates_Output),
     "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.End()": (WebRTCTransportRequestorCluster_End_Input, WebRTCTransportRequestorCluster_End_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

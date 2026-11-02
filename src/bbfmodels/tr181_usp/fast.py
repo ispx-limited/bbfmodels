@@ -195,10 +195,10 @@ class FAST_Line_Stats_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.FAST.Line.{i}.Stats.Reset()": (FAST_Line_Stats_Reset_Input, FAST_Line_Stats_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

@@ -52,37 +52,37 @@ class BridgedDeviceBasicInformationCluster_KeepActive_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class BridgedDeviceBasicInformationCluster_StartUp(_Model):
+class BridgedDeviceBasicInformationCluster_StartUp_Event(_Model):
     __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class BridgedDeviceBasicInformationCluster_ShutDown(_Model):
+class BridgedDeviceBasicInformationCluster_ShutDown_Event(_Model):
     __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class BridgedDeviceBasicInformationCluster_ReachableChanged(_Model):
+class BridgedDeviceBasicInformationCluster_ReachableChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ReachableNewValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-class BridgedDeviceBasicInformationCluster_ActiveChanged(_Model):
+class BridgedDeviceBasicInformationCluster_ActiveChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     PromisedActiveDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.KeepActive()": (BridgedDeviceBasicInformationCluster_KeepActive_Input, BridgedDeviceBasicInformationCluster_KeepActive_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!": BridgedDeviceBasicInformationCluster_StartUp,
-    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!": BridgedDeviceBasicInformationCluster_ShutDown,
-    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!": BridgedDeviceBasicInformationCluster_ReachableChanged,
-    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!": BridgedDeviceBasicInformationCluster_ActiveChanged,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!": BridgedDeviceBasicInformationCluster_StartUp_Event,
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!": BridgedDeviceBasicInformationCluster_ShutDown_Event,
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!": BridgedDeviceBasicInformationCluster_ReachableChanged_Event,
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!": BridgedDeviceBasicInformationCluster_ActiveChanged_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

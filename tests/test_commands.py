@@ -82,7 +82,7 @@ def test_generated_command_and_event_classes(usp: object) -> None:
         "RouteHops.2.Host": "core",
     }
     boot = events["Device.Boot!"]
-    assert boot.__name__ == "Device_Boot" and list(boot.model_fields) == ["CommandKey"]
+    assert boot.__name__ == "Device_Boot_Event" and list(boot.model_fields) == ["CommandKey"]
     assert boot.from_flat({"CommandKey": "k"}).CommandKey == "k"
 
 
@@ -92,11 +92,15 @@ def test_command_and_event_paths(usp: object) -> None:
     assert isinstance(trace, CommandPath)
     assert str(trace) == "Device.TraceRoute()" and trace.definition.is_async
     assert str(device.child("Reboot()")) == "Device.Reboot()"
+    # the parameter Reboot and the command Reboot() share a bare name
+    assert str(device.Reboot) == "Device.Reboot" and str(device.Reboot_) == "Device.Reboot()"
+    assert isinstance(device.Reboot_, CommandPath)
     boot = device.Boot
     assert isinstance(boot, EventPath)
     assert str(boot) == "Device.Boot!" and boot.definition.version == "2.0"
     stub = Path(usp.__file__).with_name("paths.pyi").read_text()  # type: ignore[attr-defined]
     assert "    TraceRoute: CommandPath" in stub and "    Boot: EventPath" in stub
+    assert "    Reboot: ParamPath[str]" in stub and "    Reboot_: CommandPath" in stub
 
 
 def test_shipped_tr181_usp_commands() -> None:

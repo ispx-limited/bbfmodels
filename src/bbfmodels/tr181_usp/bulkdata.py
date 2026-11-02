@@ -121,17 +121,17 @@ class BulkData_Profile_ForceCollection_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class BulkData_Profile_Push(_Model):
+class BulkData_Profile_Push_Event(_Model):
     __bbf_path__ = "Device.BulkData.Profile.{i}.Push!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.BulkData.Profile.{i}.ForceCollection()": (BulkData_Profile_ForceCollection_Input, BulkData_Profile_ForceCollection_Output),
 }
-_EVENTS = {
-    "Device.BulkData.Profile.{i}.Push!": BulkData_Profile_Push,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.BulkData.Profile.{i}.Push!": BulkData_Profile_Push_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

@@ -166,7 +166,7 @@ class TLSCertificateManagementCluster_RemoveClientCertificate_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.TLSCertificateManagementCluster.{i}.ProvisionRootCertificate()": (TLSCertificateManagementCluster_ProvisionRootCertificate_Input, TLSCertificateManagementCluster_ProvisionRootCertificate_Output),
     "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindRootCertificate()": (TLSCertificateManagementCluster_FindRootCertificate_Input, TLSCertificateManagementCluster_FindRootCertificate_Output),
     "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupRootCertificate()": (TLSCertificateManagementCluster_LookupRootCertificate_Input, TLSCertificateManagementCluster_LookupRootCertificate_Output),
@@ -177,7 +177,7 @@ _COMMANDS = {
     "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupClientCertificate()": (TLSCertificateManagementCluster_LookupClientCertificate_Input, TLSCertificateManagementCluster_LookupClientCertificate_Output),
     "MatterService.{i}.TLSCertificateManagementCluster.{i}.RemoveClientCertificate()": (TLSCertificateManagementCluster_RemoveClientCertificate_Input, TLSCertificateManagementCluster_RemoveClientCertificate_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

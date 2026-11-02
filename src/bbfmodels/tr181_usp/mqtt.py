@@ -277,7 +277,7 @@ class MQTT_Client_Publish_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class MQTT_Client_Subscription_OnMessage(_Model):
+class MQTT_Client_Subscription_OnMessage_Event(_Model):
     __bbf_path__ = "Device.MQTT.Client.{i}.Subscription.{i}.OnMessage!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Topic: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -295,13 +295,13 @@ class MQTT_Broker_Bridge_ForceReconnect_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.MQTT.Client.{i}.ForceReconnect()": (MQTT_Client_ForceReconnect_Input, MQTT_Client_ForceReconnect_Output),
     "Device.MQTT.Client.{i}.Publish()": (MQTT_Client_Publish_Input, MQTT_Client_Publish_Output),
     "Device.MQTT.Broker.{i}.Bridge.{i}.ForceReconnect()": (MQTT_Broker_Bridge_ForceReconnect_Input, MQTT_Broker_Bridge_ForceReconnect_Output),
 }
-_EVENTS = {
-    "Device.MQTT.Client.{i}.Subscription.{i}.OnMessage!": MQTT_Client_Subscription_OnMessage,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.MQTT.Client.{i}.Subscription.{i}.OnMessage!": MQTT_Client_Subscription_OnMessage_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

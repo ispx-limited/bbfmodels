@@ -27,10 +27,10 @@ class WiFiNetworkManagementCluster_NetworkPassphraseRequest_Output(_Model):
     Passphrase: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.WiFiNetworkManagementCluster.{i}.NetworkPassphraseRequest()": (WiFiNetworkManagementCluster_NetworkPassphraseRequest_Input, WiFiNetworkManagementCluster_NetworkPassphraseRequest_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

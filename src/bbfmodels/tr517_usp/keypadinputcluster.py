@@ -26,10 +26,10 @@ class KeypadInputCluster_SendKey_Output(_Model):
     Status: _Annotated[_Literal['Success', 'UnsupportedKey', 'InvalidKeyInCurrentState'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.KeypadInputCluster.{i}.SendKey()": (KeypadInputCluster_SendKey_Input, KeypadInputCluster_SendKey_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

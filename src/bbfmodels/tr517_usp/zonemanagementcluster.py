@@ -173,30 +173,30 @@ class ZoneManagementCluster_RemoveTrigger_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ZoneManagementCluster_ZoneTriggered(_Model):
+class ZoneManagementCluster_ZoneTriggered_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.ZoneTriggered!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Reason: _Annotated[_Literal['Motion'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ZoneManagementCluster_ZoneStopped(_Model):
+class ZoneManagementCluster_ZoneStopped_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ZoneManagementCluster.{i}.ZoneStopped!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Reason: _Annotated[_Literal['ActionStopped', 'Timeout'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ZoneManagementCluster.{i}.CreateTwoDCartesianZone()": (ZoneManagementCluster_CreateTwoDCartesianZone_Input, ZoneManagementCluster_CreateTwoDCartesianZone_Output),
     "MatterService.{i}.ZoneManagementCluster.{i}.UpdateTwoDCartesianZone()": (ZoneManagementCluster_UpdateTwoDCartesianZone_Input, ZoneManagementCluster_UpdateTwoDCartesianZone_Output),
     "MatterService.{i}.ZoneManagementCluster.{i}.RemoveZone()": (ZoneManagementCluster_RemoveZone_Input, ZoneManagementCluster_RemoveZone_Output),
     "MatterService.{i}.ZoneManagementCluster.{i}.CreateOrUpdateTrigger()": (ZoneManagementCluster_CreateOrUpdateTrigger_Input, ZoneManagementCluster_CreateOrUpdateTrigger_Output),
     "MatterService.{i}.ZoneManagementCluster.{i}.RemoveTrigger()": (ZoneManagementCluster_RemoveTrigger_Input, ZoneManagementCluster_RemoveTrigger_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.ZoneManagementCluster.{i}.ZoneTriggered!": ZoneManagementCluster_ZoneTriggered,
-    "MatterService.{i}.ZoneManagementCluster.{i}.ZoneStopped!": ZoneManagementCluster_ZoneStopped,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ZoneManagementCluster.{i}.ZoneTriggered!": ZoneManagementCluster_ZoneTriggered_Event,
+    "MatterService.{i}.ZoneManagementCluster.{i}.ZoneStopped!": ZoneManagementCluster_ZoneStopped_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

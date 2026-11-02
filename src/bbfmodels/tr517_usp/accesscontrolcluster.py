@@ -113,7 +113,7 @@ class AccessControlCluster_ReviewFabricRestrictions_Output(_Model):
     Token: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
-class AccessControlCluster_AccessControlEntryChanged_LatestValue_Targets(_Model):
+class AccessControlCluster_AccessControlEntryChanged_Event_LatestValue_Targets(_Model):
     __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!.LatestValue.Targets.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Cluster: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -121,40 +121,40 @@ class AccessControlCluster_AccessControlEntryChanged_LatestValue_Targets(_Model)
     DeviceType: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
-class AccessControlCluster_AccessControlEntryChanged_LatestValue(_Model):
+class AccessControlCluster_AccessControlEntryChanged_Event_LatestValue(_Model):
     __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!.LatestValue."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Privilege: _Annotated[_Literal['View', 'ProxyView', 'Operate', 'Manage', 'Administer'] | str | None, _Param(_BaseType.STRING)] = None
     AuthMode: _Annotated[_Literal['PASE', 'CASE', 'Group'] | str | None, _Param(_BaseType.STRING)] = None
     Subjects: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_LONG, list=True)] = None
-    Targets: dict[int, AccessControlCluster_AccessControlEntryChanged_LatestValue_Targets] = _Field(default_factory=dict)
+    Targets: dict[int, AccessControlCluster_AccessControlEntryChanged_Event_LatestValue_Targets] = _Field(default_factory=dict)
 
 
-class AccessControlCluster_AccessControlEntryChanged(_Model):
+class AccessControlCluster_AccessControlEntryChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AdminNodeID: _Annotated[int | None, _Param(_BaseType.LONG)] = None
     AdminPasscodeID: _Annotated[int | None, _Param(_BaseType.INT)] = None
     ChangeType: _Annotated[_Literal['Changed', 'Added', 'Removed'] | str | None, _Param(_BaseType.STRING)] = None
-    LatestValue: AccessControlCluster_AccessControlEntryChanged_LatestValue | None = _Field(default=None)
+    LatestValue: AccessControlCluster_AccessControlEntryChanged_Event_LatestValue | None = _Field(default=None)
 
 
-class AccessControlCluster_AccessControlExtensionChanged_LatestValue(_Model):
+class AccessControlCluster_AccessControlExtensionChanged_Event_LatestValue(_Model):
     __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!.LatestValue."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class AccessControlCluster_AccessControlExtensionChanged(_Model):
+class AccessControlCluster_AccessControlExtensionChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AdminNodeID: _Annotated[int | None, _Param(_BaseType.LONG)] = None
     AdminPasscodeID: _Annotated[int | None, _Param(_BaseType.INT)] = None
     ChangeType: _Annotated[_Literal['Changed', 'Added', 'Removed'] | str | None, _Param(_BaseType.STRING)] = None
-    LatestValue: AccessControlCluster_AccessControlExtensionChanged_LatestValue | None = _Field(default=None)
+    LatestValue: AccessControlCluster_AccessControlExtensionChanged_Event_LatestValue | None = _Field(default=None)
 
 
-class AccessControlCluster_FabricRestrictionReviewUpdate(_Model):
+class AccessControlCluster_FabricRestrictionReviewUpdate_Event(_Model):
     __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Token: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -162,13 +162,13 @@ class AccessControlCluster_FabricRestrictionReviewUpdate(_Model):
     ARLRequestFlowUrl: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.AccessControlCluster.{i}.ReviewFabricRestrictions()": (AccessControlCluster_ReviewFabricRestrictions_Input, AccessControlCluster_ReviewFabricRestrictions_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!": AccessControlCluster_AccessControlEntryChanged,
-    "MatterService.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!": AccessControlCluster_AccessControlExtensionChanged,
-    "MatterService.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!": AccessControlCluster_FabricRestrictionReviewUpdate,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!": AccessControlCluster_AccessControlEntryChanged_Event,
+    "MatterService.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!": AccessControlCluster_AccessControlExtensionChanged_Event,
+    "MatterService.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!": AccessControlCluster_FabricRestrictionReviewUpdate_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

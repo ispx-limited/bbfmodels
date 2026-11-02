@@ -48,10 +48,10 @@ class LaundryWasherModeCluster_ChangeToMode_Output(_Model):
     StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.LaundryWasherModeCluster.{i}.ChangeToMode()": (LaundryWasherModeCluster_ChangeToMode_Input, LaundryWasherModeCluster_ChangeToMode_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

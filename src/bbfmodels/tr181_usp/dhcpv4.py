@@ -272,13 +272,13 @@ class DHCPv4_Server_Stats_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.DHCPv4.Client.{i}.Renew()": (DHCPv4_Client_Renew_Input, DHCPv4_Client_Renew_Output),
     "Device.DHCPv4.Client.{i}.Release()": (DHCPv4_Client_Release_Input, DHCPv4_Client_Release_Output),
     "Device.DHCPv4.Client.{i}.Stats.Reset()": (DHCPv4_Client_Stats_Reset_Input, DHCPv4_Client_Stats_Reset_Output),
     "Device.DHCPv4.Server.Stats.Reset()": (DHCPv4_Server_Stats_Reset_Input, DHCPv4_Server_Stats_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

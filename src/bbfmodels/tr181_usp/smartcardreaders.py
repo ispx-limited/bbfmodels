@@ -49,10 +49,10 @@ class SmartCardReaders_SmartCardReader_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.SmartCardReaders.SmartCardReader.{i}.Reset()": (SmartCardReaders_SmartCardReader_Reset_Input, SmartCardReaders_SmartCardReader_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

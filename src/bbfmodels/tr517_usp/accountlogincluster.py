@@ -52,19 +52,19 @@ class AccountLoginCluster_Logout_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class AccountLoginCluster_LoggedOut(_Model):
+class AccountLoginCluster_LoggedOut_Event(_Model):
     __bbf_path__ = "MatterService.{i}.AccountLoginCluster.{i}.LoggedOut!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     Node: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.AccountLoginCluster.{i}.GetSetupPIN()": (AccountLoginCluster_GetSetupPIN_Input, AccountLoginCluster_GetSetupPIN_Output),
     "MatterService.{i}.AccountLoginCluster.{i}.Login()": (AccountLoginCluster_Login_Input, AccountLoginCluster_Login_Output),
     "MatterService.{i}.AccountLoginCluster.{i}.Logout()": (AccountLoginCluster_Logout_Input, AccountLoginCluster_Logout_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.AccountLoginCluster.{i}.LoggedOut!": AccountLoginCluster_LoggedOut,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.AccountLoginCluster.{i}.LoggedOut!": AccountLoginCluster_LoggedOut_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

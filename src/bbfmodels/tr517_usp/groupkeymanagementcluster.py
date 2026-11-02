@@ -101,12 +101,12 @@ class GroupKeyManagementCluster_KeySetRemove_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetWrite()": (GroupKeyManagementCluster_KeySetWrite_Input, GroupKeyManagementCluster_KeySetWrite_Output),
     "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRead()": (GroupKeyManagementCluster_KeySetRead_Input, GroupKeyManagementCluster_KeySetRead_Output),
     "MatterService.{i}.GroupKeyManagementCluster.{i}.KeySetRemove()": (GroupKeyManagementCluster_KeySetRemove_Input, GroupKeyManagementCluster_KeySetRemove_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

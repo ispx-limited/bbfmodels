@@ -132,11 +132,11 @@ class UPA_Diagnostics_InterfaceMeasurement_Output(_Model):
     RxGain: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.UPA.Interface.{i}.Stats.Reset()": (UPA_Interface_Stats_Reset_Input, UPA_Interface_Stats_Reset_Output),
     "Device.UPA.Diagnostics.InterfaceMeasurement()": (UPA_Diagnostics_InterfaceMeasurement_Input, UPA_Diagnostics_InterfaceMeasurement_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

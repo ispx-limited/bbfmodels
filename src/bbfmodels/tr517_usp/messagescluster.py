@@ -76,19 +76,19 @@ class MessagesCluster_CancelMessagesRequest_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class MessagesCluster_MessageQueued(_Model):
+class MessagesCluster_MessageQueued_Event(_Model):
     __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.MessageQueued!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class MessagesCluster_MessagePresented(_Model):
+class MessagesCluster_MessagePresented_Event(_Model):
     __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.MessagePresented!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class MessagesCluster_MessageComplete(_Model):
+class MessagesCluster_MessageComplete_Event(_Model):
     __bbf_path__ = "MatterService.{i}.MessagesCluster.{i}.MessageComplete!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MessageID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -97,14 +97,14 @@ class MessagesCluster_MessageComplete(_Model):
     FutureMessagesPreference: _Annotated[_Literal['Allowed', 'Increased', 'Reduced', 'Disallowed', 'Banned'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.MessagesCluster.{i}.PresentMessagesRequest()": (MessagesCluster_PresentMessagesRequest_Input, MessagesCluster_PresentMessagesRequest_Output),
     "MatterService.{i}.MessagesCluster.{i}.CancelMessagesRequest()": (MessagesCluster_CancelMessagesRequest_Input, MessagesCluster_CancelMessagesRequest_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.MessagesCluster.{i}.MessageQueued!": MessagesCluster_MessageQueued,
-    "MatterService.{i}.MessagesCluster.{i}.MessagePresented!": MessagesCluster_MessagePresented,
-    "MatterService.{i}.MessagesCluster.{i}.MessageComplete!": MessagesCluster_MessageComplete,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.MessagesCluster.{i}.MessageQueued!": MessagesCluster_MessageQueued_Event,
+    "MatterService.{i}.MessagesCluster.{i}.MessagePresented!": MessagesCluster_MessagePresented_Event,
+    "MatterService.{i}.MessagesCluster.{i}.MessageComplete!": MessagesCluster_MessageComplete_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

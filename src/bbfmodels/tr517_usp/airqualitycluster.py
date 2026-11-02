@@ -15,9 +15,9 @@ class AirQualityCluster(_Model):
     AirQuality: _Annotated[_Literal['Unknown', 'Good', 'Fair', 'Moderate', 'Poor', 'VeryPoor', 'ExtremelyPoor'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

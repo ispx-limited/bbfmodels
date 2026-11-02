@@ -79,12 +79,12 @@ class TLSClientManagementCluster_RemoveEndpoint_Output(_Model):
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.TLSClientManagementCluster.{i}.ProvisionEndpoint()": (TLSClientManagementCluster_ProvisionEndpoint_Input, TLSClientManagementCluster_ProvisionEndpoint_Output),
     "MatterService.{i}.TLSClientManagementCluster.{i}.FindEndpoint()": (TLSClientManagementCluster_FindEndpoint_Input, TLSClientManagementCluster_FindEndpoint_Output),
     "MatterService.{i}.TLSClientManagementCluster.{i}.RemoveEndpoint()": (TLSClientManagementCluster_RemoveEndpoint_Input, TLSClientManagementCluster_RemoveEndpoint_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

@@ -266,12 +266,12 @@ class DNS_Diagnostics_NSLookupDiagnostics_Output(_Model):
     Result: dict[int, DNS_Diagnostics_NSLookupDiagnostics_Output_Result] = _Field(default_factory=dict)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.DNS.Relay.Config.{i}.FlushCache()": (DNS_Relay_Config_FlushCache_Input, DNS_Relay_Config_FlushCache_Output),
     "Device.DNS.Relay.Stats.Reset()": (DNS_Relay_Stats_Reset_Input, DNS_Relay_Stats_Reset_Output),
     "Device.DNS.Diagnostics.NSLookupDiagnostics()": (DNS_Diagnostics_NSLookupDiagnostics_Input, DNS_Diagnostics_NSLookupDiagnostics_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

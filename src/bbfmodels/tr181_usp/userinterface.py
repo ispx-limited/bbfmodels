@@ -152,12 +152,12 @@ class UserInterface_HTTPAccess_Session_Delete_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.UserInterface.PasswordReset()": (UserInterface_PasswordReset_Input, UserInterface_PasswordReset_Output),
     "Device.UserInterface.HTTPAccess.{i}.CreateWebSession()": (UserInterface_HTTPAccess_CreateWebSession_Input, UserInterface_HTTPAccess_CreateWebSession_Output),
     "Device.UserInterface.HTTPAccess.{i}.Session.{i}.Delete()": (UserInterface_HTTPAccess_Session_Delete_Input, UserInterface_HTTPAccess_Session_Delete_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

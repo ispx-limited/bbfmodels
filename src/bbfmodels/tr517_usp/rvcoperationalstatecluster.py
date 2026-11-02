@@ -94,12 +94,12 @@ class RVCOperationalStateCluster_Resume_Output(_Model):
     CommandResponseState: RVCOperationalStateCluster_Resume_Output_CommandResponseState | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.RVCOperationalStateCluster.{i}.GoHome()": (RVCOperationalStateCluster_GoHome_Input, RVCOperationalStateCluster_GoHome_Output),
     "MatterService.{i}.RVCOperationalStateCluster.{i}.Pause()": (RVCOperationalStateCluster_Pause_Input, RVCOperationalStateCluster_Pause_Output),
     "MatterService.{i}.RVCOperationalStateCluster.{i}.Resume()": (RVCOperationalStateCluster_Resume_Input, RVCOperationalStateCluster_Resume_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

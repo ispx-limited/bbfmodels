@@ -15,9 +15,9 @@ class Standby(_Model):
     TimerAware: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

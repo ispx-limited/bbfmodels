@@ -75,12 +75,12 @@ class ICDManagementCluster_StayActiveRequest_Output(_Model):
     PromisedActiveDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ICDManagementCluster.{i}.RegisterClient()": (ICDManagementCluster_RegisterClient_Input, ICDManagementCluster_RegisterClient_Output),
     "MatterService.{i}.ICDManagementCluster.{i}.UnregisterClient()": (ICDManagementCluster_UnregisterClient_Input, ICDManagementCluster_UnregisterClient_Output),
     "MatterService.{i}.ICDManagementCluster.{i}.StayActiveRequest()": (ICDManagementCluster_StayActiveRequest_Input, ICDManagementCluster_StayActiveRequest_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

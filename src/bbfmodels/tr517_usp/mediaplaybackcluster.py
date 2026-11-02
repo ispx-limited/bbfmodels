@@ -270,14 +270,14 @@ class MediaPlaybackCluster_DeactivateTextTrack_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class MediaPlaybackCluster_StateChanged_SampledPosition(_Model):
+class MediaPlaybackCluster_StateChanged_Event_SampledPosition(_Model):
     __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.StateChanged!.SampledPosition."
     __bbf_package__ = "bbfmodels.tr517_usp"
     UpdatedAt: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Position: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
-class MediaPlaybackCluster_StateChanged(_Model):
+class MediaPlaybackCluster_StateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.MediaPlaybackCluster.{i}.StateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CurrentState: _Annotated[_Literal['Playing', 'Paused', 'NotPlaying', 'Buffering'] | str | None, _Param(_BaseType.STRING)] = None
@@ -288,10 +288,10 @@ class MediaPlaybackCluster_StateChanged(_Model):
     SeekRangeStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AudioAdvanceUnmuted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
-    SampledPosition: MediaPlaybackCluster_StateChanged_SampledPosition | None = _Field(default=None)
+    SampledPosition: MediaPlaybackCluster_StateChanged_Event_SampledPosition | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.MediaPlaybackCluster.{i}.Play()": (MediaPlaybackCluster_Play_Input, MediaPlaybackCluster_Play_Output),
     "MatterService.{i}.MediaPlaybackCluster.{i}.Pause()": (MediaPlaybackCluster_Pause_Input, MediaPlaybackCluster_Pause_Output),
     "MatterService.{i}.MediaPlaybackCluster.{i}.Stop()": (MediaPlaybackCluster_Stop_Input, MediaPlaybackCluster_Stop_Output),
@@ -307,8 +307,8 @@ _COMMANDS = {
     "MatterService.{i}.MediaPlaybackCluster.{i}.ActivateTextTrack()": (MediaPlaybackCluster_ActivateTextTrack_Input, MediaPlaybackCluster_ActivateTextTrack_Output),
     "MatterService.{i}.MediaPlaybackCluster.{i}.DeactivateTextTrack()": (MediaPlaybackCluster_DeactivateTextTrack_Input, MediaPlaybackCluster_DeactivateTextTrack_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.MediaPlaybackCluster.{i}.StateChanged!": MediaPlaybackCluster_StateChanged,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.MediaPlaybackCluster.{i}.StateChanged!": MediaPlaybackCluster_StateChanged_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

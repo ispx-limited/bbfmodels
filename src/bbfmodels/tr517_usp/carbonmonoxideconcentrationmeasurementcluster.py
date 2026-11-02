@@ -24,9 +24,9 @@ class CarbonMonoxideConcentrationMeasurementCluster(_Model):
     LevelValue: _Annotated[_Literal['Unknown', 'Low', 'Medium', 'High', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

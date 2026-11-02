@@ -87,13 +87,13 @@ class GeneralCommissioningCluster_SetTCAcknowledgements_Output(_Model):
     ErrorCode: _Annotated[_Literal['OK', 'ValueOutsideRange', 'InvalidAuthentication', 'NoFailSafe', 'BusyWithOtherAdmin', 'RequiredTCNotAccepted', 'TCAcknowledgementsNotReceived', 'TCMinVersionNotMet'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.GeneralCommissioningCluster.{i}.ArmFailSafe()": (GeneralCommissioningCluster_ArmFailSafe_Input, GeneralCommissioningCluster_ArmFailSafe_Output),
     "MatterService.{i}.GeneralCommissioningCluster.{i}.SetRegulatoryConfig()": (GeneralCommissioningCluster_SetRegulatoryConfig_Input, GeneralCommissioningCluster_SetRegulatoryConfig_Output),
     "MatterService.{i}.GeneralCommissioningCluster.{i}.CommissioningComplete()": (GeneralCommissioningCluster_CommissioningComplete_Input, GeneralCommissioningCluster_CommissioningComplete_Output),
     "MatterService.{i}.GeneralCommissioningCluster.{i}.SetTCAcknowledgements()": (GeneralCommissioningCluster_SetTCAcknowledgements_Input, GeneralCommissioningCluster_SetTCAcknowledgements_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

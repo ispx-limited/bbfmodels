@@ -294,11 +294,11 @@ class XPON_ONU_EthernetUNI_Stats_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.XPON.ONU.{i}.ChangePowerMode()": (XPON_ONU_ChangePowerMode_Input, XPON_ONU_ChangePowerMode_Output),
     "Device.XPON.ONU.{i}.EthernetUNI.{i}.Stats.Reset()": (XPON_ONU_EthernetUNI_Stats_Reset_Input, XPON_ONU_EthernetUNI_Stats_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

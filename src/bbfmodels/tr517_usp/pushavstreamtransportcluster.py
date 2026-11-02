@@ -439,7 +439,7 @@ class PushAVStreamTransportCluster_FindTransport_Output(_Model):
     TransportConfigurations: dict[int, PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations] = _Field(default_factory=dict)
 
 
-class PushAVStreamTransportCluster_PushTransportBegin(_Model):
+class PushAVStreamTransportCluster_PushTransportBegin_Event(_Model):
     __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -447,13 +447,13 @@ class PushAVStreamTransportCluster_PushTransportBegin(_Model):
     ActivationReason: _Annotated[_Literal['UserInitiated', 'Automation', 'Emergency'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class PushAVStreamTransportCluster_PushTransportEnd(_Model):
+class PushAVStreamTransportCluster_PushTransportEnd_Event(_Model):
     __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport()": (PushAVStreamTransportCluster_AllocatePushTransport_Input, PushAVStreamTransportCluster_AllocatePushTransport_Output),
     "MatterService.{i}.PushAVStreamTransportCluster.{i}.DeallocatePushTransport()": (PushAVStreamTransportCluster_DeallocatePushTransport_Input, PushAVStreamTransportCluster_DeallocatePushTransport_Output),
     "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport()": (PushAVStreamTransportCluster_ModifyPushTransport_Input, PushAVStreamTransportCluster_ModifyPushTransport_Output),
@@ -461,9 +461,9 @@ _COMMANDS = {
     "MatterService.{i}.PushAVStreamTransportCluster.{i}.ManuallyTriggerTransport()": (PushAVStreamTransportCluster_ManuallyTriggerTransport_Input, PushAVStreamTransportCluster_ManuallyTriggerTransport_Output),
     "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport()": (PushAVStreamTransportCluster_FindTransport_Input, PushAVStreamTransportCluster_FindTransport_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!": PushAVStreamTransportCluster_PushTransportBegin,
-    "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!": PushAVStreamTransportCluster_PushTransportEnd,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!": PushAVStreamTransportCluster_PushTransportBegin_Event,
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!": PushAVStreamTransportCluster_PushTransportEnd_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

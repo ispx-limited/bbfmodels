@@ -237,12 +237,12 @@ class HPNA_Diagnostics_PerformanceMonitoring_Output(_Model):
     Channels: HPNA_Diagnostics_PerformanceMonitoring_Output_Channels | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.HPNA.Interface.{i}.Stats.Reset()": (HPNA_Interface_Stats_Reset_Input, HPNA_Interface_Stats_Reset_Output),
     "Device.HPNA.Diagnostics.PHYThroughput()": (HPNA_Diagnostics_PHYThroughput_Input, HPNA_Diagnostics_PHYThroughput_Output),
     "Device.HPNA.Diagnostics.PerformanceMonitoring()": (HPNA_Diagnostics_PerformanceMonitoring_Input, HPNA_Diagnostics_PerformanceMonitoring_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

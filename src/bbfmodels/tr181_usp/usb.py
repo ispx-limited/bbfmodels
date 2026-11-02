@@ -181,12 +181,12 @@ class USB_USBHosts_Host_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.USB.Interface.{i}.Stats.Reset()": (USB_Interface_Stats_Reset_Input, USB_Interface_Stats_Reset_Output),
     "Device.USB.Port.{i}.ChangePowerMode()": (USB_Port_ChangePowerMode_Input, USB_Port_ChangePowerMode_Output),
     "Device.USB.USBHosts.Host.{i}.Reset()": (USB_USBHosts_Host_Reset_Input, USB_USBHosts_Host_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

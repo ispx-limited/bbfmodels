@@ -113,17 +113,17 @@ class PeriodicFileTransfer_Transfer_ForceTransfer_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class PeriodicFileTransfer_Transfer_Push(_Model):
+class PeriodicFileTransfer_Transfer_Push_Event(_Model):
     __bbf_path__ = "Device.PeriodicFileTransfer.Transfer.{i}.Push!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.PeriodicFileTransfer.Transfer.{i}.ForceTransfer()": (PeriodicFileTransfer_Transfer_ForceTransfer_Input, PeriodicFileTransfer_Transfer_ForceTransfer_Output),
 }
-_EVENTS = {
-    "Device.PeriodicFileTransfer.Transfer.{i}.Push!": PeriodicFileTransfer_Transfer_Push,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.PeriodicFileTransfer.Transfer.{i}.Push!": PeriodicFileTransfer_Transfer_Push_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

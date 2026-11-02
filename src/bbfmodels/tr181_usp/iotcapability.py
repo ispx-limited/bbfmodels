@@ -286,7 +286,7 @@ class IoTCapability_MultiLevelControl_Control_StepDown_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.IoTCapability.{i}.BinaryControl.Toggle()": (IoTCapability_BinaryControl_Toggle_Input, IoTCapability_BinaryControl_Toggle_Output),
     "Device.IoTCapability.{i}.LevelControl.StepUp()": (IoTCapability_LevelControl_StepUp_Input, IoTCapability_LevelControl_StepUp_Output),
     "Device.IoTCapability.{i}.LevelControl.StepDown()": (IoTCapability_LevelControl_StepDown_Input, IoTCapability_LevelControl_StepDown_Output),
@@ -297,7 +297,7 @@ _COMMANDS = {
     "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepUp()": (IoTCapability_MultiLevelControl_Control_StepUp_Input, IoTCapability_MultiLevelControl_Control_StepUp_Output),
     "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepDown()": (IoTCapability_MultiLevelControl_Control_StepDown_Input, IoTCapability_MultiLevelControl_Control_StepDown_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

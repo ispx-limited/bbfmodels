@@ -273,12 +273,12 @@ class DOCSIS_Interface_Stats_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.DOCSIS.Downstream.{i}.Stats.Reset()": (DOCSIS_Downstream_Stats_Reset_Input, DOCSIS_Downstream_Stats_Reset_Output),
     "Device.DOCSIS.Upstream.{i}.Stats.Reset()": (DOCSIS_Upstream_Stats_Reset_Input, DOCSIS_Upstream_Stats_Reset_Output),
     "Device.DOCSIS.Interface.{i}.Stats.Reset()": (DOCSIS_Interface_Stats_Reset_Input, DOCSIS_Interface_Stats_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

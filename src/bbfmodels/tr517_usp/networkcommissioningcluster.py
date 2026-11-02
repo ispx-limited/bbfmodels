@@ -151,7 +151,7 @@ class NetworkCommissioningCluster_ReorderNetwork_Output(_Model):
     NetworkIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.NetworkCommissioningCluster.{i}.ScanNetworks()": (NetworkCommissioningCluster_ScanNetworks_Input, NetworkCommissioningCluster_ScanNetworks_Output),
     "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateWiFiNetwork()": (NetworkCommissioningCluster_AddOrUpdateWiFiNetwork_Input, NetworkCommissioningCluster_AddOrUpdateWiFiNetwork_Output),
     "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateThreadNetwork()": (NetworkCommissioningCluster_AddOrUpdateThreadNetwork_Input, NetworkCommissioningCluster_AddOrUpdateThreadNetwork_Output),
@@ -159,7 +159,7 @@ _COMMANDS = {
     "MatterService.{i}.NetworkCommissioningCluster.{i}.ConnectNetwork()": (NetworkCommissioningCluster_ConnectNetwork_Input, NetworkCommissioningCluster_ConnectNetwork_Output),
     "MatterService.{i}.NetworkCommissioningCluster.{i}.ReorderNetwork()": (NetworkCommissioningCluster_ReorderNetwork_Input, NetworkCommissioningCluster_ReorderNetwork_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

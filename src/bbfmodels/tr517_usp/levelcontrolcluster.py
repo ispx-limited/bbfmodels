@@ -139,7 +139,7 @@ class LevelControlCluster_MoveToClosestFrequency_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.LevelControlCluster.{i}.MoveToLevel()": (LevelControlCluster_MoveToLevel_Input, LevelControlCluster_MoveToLevel_Output),
     "MatterService.{i}.LevelControlCluster.{i}.Move()": (LevelControlCluster_Move_Input, LevelControlCluster_Move_Output),
     "MatterService.{i}.LevelControlCluster.{i}.Step()": (LevelControlCluster_Step_Input, LevelControlCluster_Step_Output),
@@ -150,7 +150,7 @@ _COMMANDS = {
     "MatterService.{i}.LevelControlCluster.{i}.StopWithOnOff()": (LevelControlCluster_StopWithOnOff_Input, LevelControlCluster_StopWithOnOff_Output),
     "MatterService.{i}.LevelControlCluster.{i}.MoveToClosestFrequency()": (LevelControlCluster_MoveToClosestFrequency_Input, LevelControlCluster_MoveToClosestFrequency_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

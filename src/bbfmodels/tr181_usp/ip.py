@@ -589,7 +589,7 @@ class IP_Diagnostics_ServerSelectionDiagnostics_Output(_Model):
     IPAddressUsed: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class IP_Diagnostics_IPLayerCapacityIncrementalResult(_Model):
+class IP_Diagnostics_IPLayerCapacityIncrementalResult_Event(_Model):
     __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacityIncrementalResult!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     IPLayerCapacity: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
@@ -603,7 +603,7 @@ class IP_Diagnostics_IPLayerCapacityIncrementalResult(_Model):
     InterfaceEthMbps: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.IP.Interface.{i}.Reset()": (IP_Interface_Reset_Input, IP_Interface_Reset_Output),
     "Device.IP.Interface.{i}.Stats.Reset()": (IP_Interface_Stats_Reset_Input, IP_Interface_Stats_Reset_Output),
     "Device.IP.Diagnostics.IPPing()": (IP_Diagnostics_IPPing_Input, IP_Diagnostics_IPPing_Output),
@@ -614,8 +614,8 @@ _COMMANDS = {
     "Device.IP.Diagnostics.IPLayerCapacity()": (IP_Diagnostics_IPLayerCapacity_Input, IP_Diagnostics_IPLayerCapacity_Output),
     "Device.IP.Diagnostics.ServerSelectionDiagnostics()": (IP_Diagnostics_ServerSelectionDiagnostics_Input, IP_Diagnostics_ServerSelectionDiagnostics_Output),
 }
-_EVENTS = {
-    "Device.IP.Diagnostics.IPLayerCapacityIncrementalResult!": IP_Diagnostics_IPLayerCapacityIncrementalResult,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.IP.Diagnostics.IPLayerCapacityIncrementalResult!": IP_Diagnostics_IPLayerCapacityIncrementalResult_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

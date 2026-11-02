@@ -45,10 +45,10 @@ class AVPlayers_ResetPINCode_Output(_Model):
     __bbf_package__ = "bbfmodels.tr135_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "STBService.{i}.AVPlayers.ResetPINCode()": (AVPlayers_ResetPINCode_Input, AVPlayers_ResetPINCode_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

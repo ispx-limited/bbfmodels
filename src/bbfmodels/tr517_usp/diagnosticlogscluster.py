@@ -31,10 +31,10 @@ class DiagnosticLogsCluster_RetrieveLogsRequest_Output(_Model):
     TimeSinceBoot: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.DiagnosticLogsCluster.{i}.RetrieveLogsRequest()": (DiagnosticLogsCluster_RetrieveLogsRequest_Input, DiagnosticLogsCluster_RetrieveLogsRequest_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

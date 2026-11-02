@@ -241,12 +241,12 @@ class Ghn_Diagnostics_PerformanceMonitoring_Output(_Model):
     Channels: Ghn_Diagnostics_PerformanceMonitoring_Output_Channels | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Ghn.Interface.{i}.Stats.Reset()": (Ghn_Interface_Stats_Reset_Input, Ghn_Interface_Stats_Reset_Output),
     "Device.Ghn.Diagnostics.PHYThroughput()": (Ghn_Diagnostics_PHYThroughput_Input, Ghn_Diagnostics_PHYThroughput_Output),
     "Device.Ghn.Diagnostics.PerformanceMonitoring()": (Ghn_Diagnostics_PerformanceMonitoring_Input, Ghn_Diagnostics_PerformanceMonitoring_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

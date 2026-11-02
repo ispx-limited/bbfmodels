@@ -353,11 +353,11 @@ class CommodityTariffCluster_GetDayEntry_Output(_Model):
     DayEntry: CommodityTariffCluster_GetDayEntry_Output_DayEntry | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.CommodityTariffCluster.{i}.GetTariffComponent()": (CommodityTariffCluster_GetTariffComponent_Input, CommodityTariffCluster_GetTariffComponent_Output),
     "MatterService.{i}.CommodityTariffCluster.{i}.GetDayEntry()": (CommodityTariffCluster_GetDayEntry_Input, CommodityTariffCluster_GetDayEntry_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

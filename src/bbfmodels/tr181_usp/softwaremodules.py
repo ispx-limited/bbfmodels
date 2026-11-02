@@ -347,14 +347,14 @@ class SoftwareModules_InstallDU_Output(_Model):
     ExecEnvRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class SoftwareModules_DUStateChange_Fault(_Model):
+class SoftwareModules_DUStateChange_Event_Fault(_Model):
     __bbf_path__ = "Device.SoftwareModules.DUStateChange!.Fault."
     __bbf_package__ = "bbfmodels.tr181_usp"
     FaultCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FaultString: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class SoftwareModules_DUStateChange(_Model):
+class SoftwareModules_DUStateChange_Event(_Model):
     __bbf_path__ = "Device.SoftwareModules.DUStateChange!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -366,7 +366,7 @@ class SoftwareModules_DUStateChange(_Model):
     StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     CompleteTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     OperationPerformed: _Annotated[_Literal['Install', 'Update', 'Uninstall'] | str | None, _Param(_BaseType.STRING)] = None
-    Fault: SoftwareModules_DUStateChange_Fault | None = _Field(default=None)
+    Fault: SoftwareModules_DUStateChange_Event_Fault | None = _Field(default=None)
 
 
 class SoftwareModules_ExecEnvClass_AddExecEnv_Input(_Model):
@@ -470,7 +470,7 @@ class SoftwareModules_ExecEnv_Remove_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-class SoftwareModules_ExecEnv_Restarted(_Model):
+class SoftwareModules_ExecEnv_Restarted_Event(_Model):
     __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Restarted!."
     __bbf_package__ = "bbfmodels.tr181_usp"
     RestartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -598,7 +598,7 @@ class SoftwareModules_ExecutionUnit_Restart_Output(_Model):
     __bbf_package__ = "bbfmodels.tr181_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.SoftwareModules.InstallDU()": (SoftwareModules_InstallDU_Input, SoftwareModules_InstallDU_Output),
     "Device.SoftwareModules.ExecEnvClass.{i}.AddExecEnv()": (SoftwareModules_ExecEnvClass_AddExecEnv_Input, SoftwareModules_ExecEnvClass_AddExecEnv_Output),
     "Device.SoftwareModules.ExecEnv.{i}.SetRunLevel()": (SoftwareModules_ExecEnv_SetRunLevel_Input, SoftwareModules_ExecEnv_SetRunLevel_Output),
@@ -614,9 +614,9 @@ _COMMANDS = {
     "Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState()": (SoftwareModules_ExecutionUnit_SetRequestedState_Input, SoftwareModules_ExecutionUnit_SetRequestedState_Output),
     "Device.SoftwareModules.ExecutionUnit.{i}.Restart()": (SoftwareModules_ExecutionUnit_Restart_Input, SoftwareModules_ExecutionUnit_Restart_Output),
 }
-_EVENTS = {
-    "Device.SoftwareModules.DUStateChange!": SoftwareModules_DUStateChange,
-    "Device.SoftwareModules.ExecEnv.{i}.Restarted!": SoftwareModules_ExecEnv_Restarted,
+_EVENTS: dict[str, type[_Model]] = {
+    "Device.SoftwareModules.DUStateChange!": SoftwareModules_DUStateChange_Event,
+    "Device.SoftwareModules.ExecEnv.{i}.Restarted!": SoftwareModules_ExecEnv_Restarted_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

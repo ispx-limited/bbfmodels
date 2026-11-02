@@ -386,12 +386,12 @@ class ServiceMonitoring_MainStream_EventLog_Reset_Output(_Model):
     __bbf_package__ = "bbfmodels.tr135_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "STBService.{i}.ServiceMonitoring.ForceSample()": (ServiceMonitoring_ForceSample_Input, ServiceMonitoring_ForceSample_Output),
     "STBService.{i}.ServiceMonitoring.MainStream.{i}.Total.Reset()": (ServiceMonitoring_MainStream_Total_Reset_Input, ServiceMonitoring_MainStream_Total_Reset_Output),
     "STBService.{i}.ServiceMonitoring.MainStream.{i}.EventLog.Reset()": (ServiceMonitoring_MainStream_EventLog_Reset_Input, ServiceMonitoring_MainStream_EventLog_Reset_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

@@ -45,26 +45,26 @@ class BooleanStateConfigurationCluster_EnableDisableAlarm_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class BooleanStateConfigurationCluster_AlarmsStateChanged(_Model):
+class BooleanStateConfigurationCluster_AlarmsStateChanged_Event(_Model):
     __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmsActive: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     AlarmsSuppressed: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-class BooleanStateConfigurationCluster_SensorFault(_Model):
+class BooleanStateConfigurationCluster_SensorFault_Event(_Model):
     __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     SensorFault: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SuppressAlarm()": (BooleanStateConfigurationCluster_SuppressAlarm_Input, BooleanStateConfigurationCluster_SuppressAlarm_Output),
     "MatterService.{i}.BooleanStateConfigurationCluster.{i}.EnableDisableAlarm()": (BooleanStateConfigurationCluster_EnableDisableAlarm_Input, BooleanStateConfigurationCluster_EnableDisableAlarm_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!": BooleanStateConfigurationCluster_AlarmsStateChanged,
-    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!": BooleanStateConfigurationCluster_SensorFault,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!": BooleanStateConfigurationCluster_AlarmsStateChanged_Event,
+    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!": BooleanStateConfigurationCluster_SensorFault_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

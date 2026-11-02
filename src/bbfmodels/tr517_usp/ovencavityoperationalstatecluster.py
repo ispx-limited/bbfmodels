@@ -75,11 +75,11 @@ class OvenCavityOperationalStateCluster_Start_Output(_Model):
     CommandResponseState: OvenCavityOperationalStateCluster_Start_Output_CommandResponseState | None = _Field(default=None)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Stop()": (OvenCavityOperationalStateCluster_Stop_Input, OvenCavityOperationalStateCluster_Stop_Output),
     "MatterService.{i}.OvenCavityOperationalStateCluster.{i}.Start()": (OvenCavityOperationalStateCluster_Start_Input, OvenCavityOperationalStateCluster_Start_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

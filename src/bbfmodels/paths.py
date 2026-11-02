@@ -159,14 +159,15 @@ class ObjectPath(ObjectPathBase):
             raise AttributeError(name)
         obj = self.definition
         schema = self._schema()
-        members = (
-            *obj.parameters,
-            *(c.name for c in schema.children(self._schema_path)),
-            *obj.commands,
-            *obj.events,
-        )
-        for forum in members:
-            if forum == name or identifier(member_name(forum)) == name:
+        plain = (*obj.parameters, *(c.name for c in schema.children(self._schema_path)))
+        for forum in plain:
+            if forum == name or identifier(forum) == name:
+                return self.child(forum)
+        # A command or event is reached by its bare name, or by the name with a
+        # trailing underscore when a parameter or child object has the bare one.
+        wanted = name[:-1] if name.endswith("_") else name
+        for forum in (*obj.commands, *obj.events):
+            if identifier(member_name(forum)) == wanted:
                 return self.child(forum)
         raise AttributeError(f"{self._schema_path} has no parameter or object {name!r}")
 

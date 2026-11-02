@@ -558,26 +558,26 @@ class DoorLockCluster_ClearAliroReaderConfig_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class DoorLockCluster_DoorLockAlarm(_Model):
+class DoorLockCluster_DoorLockAlarm_Event(_Model):
     __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.DoorLockAlarm!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     AlarmCode: _Annotated[_Literal['LockJammed', 'LockFactoryReset', 'LockRadioPowerCycled', 'WrongCodeEntryLimit', 'FrontEsceutcheonRemoved', 'DoorForcedOpen', 'DoorAjar', 'ForcedUser'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class DoorLockCluster_DoorStateChange(_Model):
+class DoorLockCluster_DoorStateChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.DoorStateChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     DoorState: _Annotated[_Literal['DoorOpen', 'DoorClosed', 'DoorJammed', 'DoorForcedOpen', 'DoorUnspecifiedError', 'DoorAjar'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class DoorLockCluster_LockOperation_Credentials(_Model):
+class DoorLockCluster_LockOperation_Event_Credentials(_Model):
     __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperation!.Credentials.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
     CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class DoorLockCluster_LockOperation(_Model):
+class DoorLockCluster_LockOperation_Event(_Model):
     __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperation!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     LockOperationType: _Annotated[_Literal['Lock', 'Unlock', 'NonAccessUserEvent', 'ForcedUserEvent', 'Unlatch'] | str | None, _Param(_BaseType.STRING)] = None
@@ -585,17 +585,17 @@ class DoorLockCluster_LockOperation(_Model):
     UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     FabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     SourceNode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
-    Credentials: dict[int, DoorLockCluster_LockOperation_Credentials] = _Field(default_factory=dict)
+    Credentials: dict[int, DoorLockCluster_LockOperation_Event_Credentials] = _Field(default_factory=dict)
 
 
-class DoorLockCluster_LockOperationError_Credentials(_Model):
+class DoorLockCluster_LockOperationError_Event_Credentials(_Model):
     __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperationError!.Credentials.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CredentialType: _Annotated[_Literal['ProgrammingPIN', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
     CredentialIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
-class DoorLockCluster_LockOperationError(_Model):
+class DoorLockCluster_LockOperationError_Event(_Model):
     __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockOperationError!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     LockOperationType: _Annotated[_Literal['Lock', 'Unlock', 'NonAccessUserEvent', 'ForcedUserEvent', 'Unlatch'] | str | None, _Param(_BaseType.STRING)] = None
@@ -604,10 +604,10 @@ class DoorLockCluster_LockOperationError(_Model):
     UserIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     FabricIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
     SourceNode: _Annotated[int | None, _Param(_BaseType.LONG)] = None
-    Credentials: dict[int, DoorLockCluster_LockOperationError_Credentials] = _Field(default_factory=dict)
+    Credentials: dict[int, DoorLockCluster_LockOperationError_Event_Credentials] = _Field(default_factory=dict)
 
 
-class DoorLockCluster_LockUserChange(_Model):
+class DoorLockCluster_LockUserChange_Event(_Model):
     __bbf_path__ = "MatterService.{i}.DoorLockCluster.{i}.LockUserChange!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     LockDataType: _Annotated[_Literal['Unspecified', 'ProgrammingCode', 'UserIndex', 'WeekDaySchedule', 'YearDaySchedule', 'HolidaySchedule', 'PIN', 'RFID', 'Fingerprint', 'FingerVein', 'Face', 'AliroCredentialIssuerKey', 'AliroEvictableEndpointKey', 'AliroNonEvictableEndpointKey'] | str | None, _Param(_BaseType.STRING)] = None
@@ -619,7 +619,7 @@ class DoorLockCluster_LockUserChange(_Model):
     DataIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.DoorLockCluster.{i}.LockDoor()": (DoorLockCluster_LockDoor_Input, DoorLockCluster_LockDoor_Output),
     "MatterService.{i}.DoorLockCluster.{i}.UnlockDoor()": (DoorLockCluster_UnlockDoor_Input, DoorLockCluster_UnlockDoor_Output),
     "MatterService.{i}.DoorLockCluster.{i}.UnlockWithTimeout()": (DoorLockCluster_UnlockWithTimeout_Input, DoorLockCluster_UnlockWithTimeout_Output),
@@ -654,12 +654,12 @@ _COMMANDS = {
     "MatterService.{i}.DoorLockCluster.{i}.SetAliroReaderConfig()": (DoorLockCluster_SetAliroReaderConfig_Input, DoorLockCluster_SetAliroReaderConfig_Output),
     "MatterService.{i}.DoorLockCluster.{i}.ClearAliroReaderConfig()": (DoorLockCluster_ClearAliroReaderConfig_Input, DoorLockCluster_ClearAliroReaderConfig_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.DoorLockCluster.{i}.DoorLockAlarm!": DoorLockCluster_DoorLockAlarm,
-    "MatterService.{i}.DoorLockCluster.{i}.DoorStateChange!": DoorLockCluster_DoorStateChange,
-    "MatterService.{i}.DoorLockCluster.{i}.LockOperation!": DoorLockCluster_LockOperation,
-    "MatterService.{i}.DoorLockCluster.{i}.LockOperationError!": DoorLockCluster_LockOperationError,
-    "MatterService.{i}.DoorLockCluster.{i}.LockUserChange!": DoorLockCluster_LockUserChange,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.DoorLockCluster.{i}.DoorLockAlarm!": DoorLockCluster_DoorLockAlarm_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.DoorStateChange!": DoorLockCluster_DoorStateChange_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.LockOperation!": DoorLockCluster_LockOperation_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.LockOperationError!": DoorLockCluster_LockOperationError_Event,
+    "MatterService.{i}.DoorLockCluster.{i}.LockUserChange!": DoorLockCluster_LockUserChange_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

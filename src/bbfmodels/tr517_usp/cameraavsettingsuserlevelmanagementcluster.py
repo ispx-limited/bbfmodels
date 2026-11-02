@@ -164,7 +164,7 @@ class CameraAVSettingsUserLevelManagementCluster_DPTZRelativeMove_Output(_Model)
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZSetPosition()": (CameraAVSettingsUserLevelManagementCluster_MPTZSetPosition_Input, CameraAVSettingsUserLevelManagementCluster_MPTZSetPosition_Output),
     "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZRelativeMove()": (CameraAVSettingsUserLevelManagementCluster_MPTZRelativeMove_Input, CameraAVSettingsUserLevelManagementCluster_MPTZRelativeMove_Output),
     "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.MPTZMoveToPreset()": (CameraAVSettingsUserLevelManagementCluster_MPTZMoveToPreset_Input, CameraAVSettingsUserLevelManagementCluster_MPTZMoveToPreset_Output),
@@ -173,7 +173,7 @@ _COMMANDS = {
     "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZSetViewport()": (CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Input, CameraAVSettingsUserLevelManagementCluster_DPTZSetViewport_Output),
     "MatterService.{i}.CameraAVSettingsUserLevelManagementCluster.{i}.DPTZRelativeMove()": (CameraAVSettingsUserLevelManagementCluster_DPTZRelativeMove_Input, CameraAVSettingsUserLevelManagementCluster_DPTZRelativeMove_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

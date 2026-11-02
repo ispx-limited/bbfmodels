@@ -98,11 +98,11 @@ class ServiceAreaCluster_SkipArea_Output(_Model):
     StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ServiceAreaCluster.{i}.SelectAreas()": (ServiceAreaCluster_SelectAreas_Input, ServiceAreaCluster_SelectAreas_Output),
     "MatterService.{i}.ServiceAreaCluster.{i}.SkipArea()": (ServiceAreaCluster_SkipArea_Input, ServiceAreaCluster_SkipArea_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

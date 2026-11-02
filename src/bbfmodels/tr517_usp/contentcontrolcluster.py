@@ -313,17 +313,17 @@ class ContentControlCluster_RemoveBlockContentTimeWindow_Output(_Model):
     Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-class ContentControlCluster_RemainingScreenTimeExpired(_Model):
+class ContentControlCluster_RemainingScreenTimeExpired_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-class ContentControlCluster_EnteringBlockContentTimeWindow(_Model):
+class ContentControlCluster_EnteringBlockContentTimeWindow_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!."
     __bbf_package__ = "bbfmodels.tr517_usp"
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.ContentControlCluster.{i}.UpdatePIN()": (ContentControlCluster_UpdatePIN_Input, ContentControlCluster_UpdatePIN_Output),
     "MatterService.{i}.ContentControlCluster.{i}.ResetPIN()": (ContentControlCluster_ResetPIN_Input, ContentControlCluster_ResetPIN_Output),
     "MatterService.{i}.ContentControlCluster.{i}.Enable()": (ContentControlCluster_Enable_Input, ContentControlCluster_Enable_Output),
@@ -341,9 +341,9 @@ _COMMANDS = {
     "MatterService.{i}.ContentControlCluster.{i}.SetBlockContentTimeWindow()": (ContentControlCluster_SetBlockContentTimeWindow_Input, ContentControlCluster_SetBlockContentTimeWindow_Output),
     "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockContentTimeWindow()": (ContentControlCluster_RemoveBlockContentTimeWindow_Input, ContentControlCluster_RemoveBlockContentTimeWindow_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!": ContentControlCluster_RemainingScreenTimeExpired,
-    "MatterService.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!": ContentControlCluster_EnteringBlockContentTimeWindow,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!": ContentControlCluster_RemainingScreenTimeExpired_Event,
+    "MatterService.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!": ContentControlCluster_EnteringBlockContentTimeWindow_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

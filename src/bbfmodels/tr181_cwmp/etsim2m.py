@@ -177,9 +177,9 @@ class ETSIM2M(_Model):
     SCL: dict[int, ETSIM2M_SCL] = _Field(default_factory=dict)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

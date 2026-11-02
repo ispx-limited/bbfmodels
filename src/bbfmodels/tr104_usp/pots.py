@@ -107,11 +107,11 @@ class POTS_FXS_DiagTests_Output(_Model):
     TestResult: _Annotated[_Literal['Success', 'Failure'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "VoiceService.{i}.POTS.FXO.{i}.DiagTests()": (POTS_FXO_DiagTests_Input, POTS_FXO_DiagTests_Output),
     "VoiceService.{i}.POTS.FXS.{i}.DiagTests()": (POTS_FXS_DiagTests_Input, POTS_FXS_DiagTests_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

@@ -113,7 +113,7 @@ class OperationalStateCluster_Resume_Output(_Model):
     CommandResponseState: OperationalStateCluster_Resume_Output_CommandResponseState | None = _Field(default=None)
 
 
-class OperationalStateCluster_OperationalError_ErrorState(_Model):
+class OperationalStateCluster_OperationalError_Event_ErrorState(_Model):
     __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.OperationalError!.ErrorState."
     __bbf_package__ = "bbfmodels.tr517_usp"
     ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
@@ -121,13 +121,13 @@ class OperationalStateCluster_OperationalError_ErrorState(_Model):
     ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
-class OperationalStateCluster_OperationalError(_Model):
+class OperationalStateCluster_OperationalError_Event(_Model):
     __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.OperationalError!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    ErrorState: OperationalStateCluster_OperationalError_ErrorState | None = _Field(default=None)
+    ErrorState: OperationalStateCluster_OperationalError_Event_ErrorState | None = _Field(default=None)
 
 
-class OperationalStateCluster_OperationCompletion(_Model):
+class OperationalStateCluster_OperationCompletion_Event(_Model):
     __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.OperationCompletion!."
     __bbf_package__ = "bbfmodels.tr517_usp"
     CompletionErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -135,15 +135,15 @@ class OperationalStateCluster_OperationCompletion(_Model):
     PausedTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "MatterService.{i}.OperationalStateCluster.{i}.Pause()": (OperationalStateCluster_Pause_Input, OperationalStateCluster_Pause_Output),
     "MatterService.{i}.OperationalStateCluster.{i}.Stop()": (OperationalStateCluster_Stop_Input, OperationalStateCluster_Stop_Output),
     "MatterService.{i}.OperationalStateCluster.{i}.Start()": (OperationalStateCluster_Start_Input, OperationalStateCluster_Start_Output),
     "MatterService.{i}.OperationalStateCluster.{i}.Resume()": (OperationalStateCluster_Resume_Input, OperationalStateCluster_Resume_Output),
 }
-_EVENTS = {
-    "MatterService.{i}.OperationalStateCluster.{i}.OperationalError!": OperationalStateCluster_OperationalError,
-    "MatterService.{i}.OperationalStateCluster.{i}.OperationCompletion!": OperationalStateCluster_OperationCompletion,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.OperationalStateCluster.{i}.OperationalError!": OperationalStateCluster_OperationalError_Event,
+    "MatterService.{i}.OperationalStateCluster.{i}.OperationCompletion!": OperationalStateCluster_OperationCompletion_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

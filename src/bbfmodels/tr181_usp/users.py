@@ -82,10 +82,10 @@ class Users_CheckCredentialsDiagnostics_Output(_Model):
     Status: _Annotated[_Literal['Credentials_Good', 'Credentials_Bad_Requested_Username_Not_Supported', 'Credentials_Bad_Requested_Password_Incorrect', 'Credentials_Missing', 'Error_Invalid_Input', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
     "Device.Users.CheckCredentialsDiagnostics()": (Users_CheckCredentialsDiagnostics_Input, Users_CheckCredentialsDiagnostics_Output),
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

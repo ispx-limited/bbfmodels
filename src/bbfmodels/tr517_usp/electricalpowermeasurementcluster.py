@@ -96,7 +96,7 @@ class ElectricalPowerMeasurementCluster(_Model):
     HarmonicPhases: dict[int, ElectricalPowerMeasurementCluster_HarmonicPhases] = _Field(default_factory=dict)
 
 
-class ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Ranges(_Model):
+class ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event_Ranges(_Model):
     __bbf_path__ = "MatterService.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!.Ranges.{i}."
     __bbf_package__ = "bbfmodels.tr517_usp"
     MeasurementType: _Annotated[_Literal['Unspecified', 'Voltage', 'ActiveCurrent', 'ReactiveCurrent', 'ApparentCurrent', 'ActivePower', 'ReactivePower', 'ApparentPower', 'RMSVoltage', 'RMSCurrent', 'RMSPower', 'Frequency', 'PowerFactor', 'NeutralCurrent', 'ElectricalEnergy', 'ReactiveEnergy', 'ApparentEnergy'] | str | None, _Param(_BaseType.STRING)] = None
@@ -112,16 +112,16 @@ class ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Ranges(_Model):
     MaxSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
-class ElectricalPowerMeasurementCluster_MeasurementPeriodRanges(_Model):
+class ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event(_Model):
     __bbf_path__ = "MatterService.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!."
     __bbf_package__ = "bbfmodels.tr517_usp"
-    Ranges: dict[int, ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Ranges] = _Field(default_factory=dict)
+    Ranges: dict[int, ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event_Ranges] = _Field(default_factory=dict)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
-    "MatterService.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!": ElectricalPowerMeasurementCluster_MeasurementPeriodRanges,
+_EVENTS: dict[str, type[_Model]] = {
+    "MatterService.{i}.ElectricalPowerMeasurementCluster.{i}.MeasurementPeriodRanges!": ElectricalPowerMeasurementCluster_MeasurementPeriodRanges_Event,
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS

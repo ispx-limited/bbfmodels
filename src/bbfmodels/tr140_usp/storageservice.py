@@ -45,9 +45,9 @@ class StorageService(_Model):
     LogicalVolume: dict[int, logicalvolume.LogicalVolume] = _Field(default_factory=dict)
 
 
-_COMMANDS = {
+_COMMANDS: dict[str, tuple[type[_Model], type[_Model]]] = {
 }
-_EVENTS = {
+_EVENTS: dict[str, type[_Model]] = {
 }
 COMMANDS = _COMMANDS
 EVENTS = _EVENTS
