@@ -67,6 +67,13 @@ def main(argv: list[str] | None = None) -> int:
         "--no-descriptions", action="store_true", help="leave the Forum's descriptions out"
     )
 
+    dist = sub.add_parser(
+        "distribute", help="assemble the Go module or the npm package of every shipped model"
+    )
+    dist.add_argument("kind", choices=["go", "npm"])
+    dist.add_argument("-o", "--output", type=Path, required=True, help="directory to write into")
+    dist.add_argument("--stamp", default=None, help="version to stamp; default is bbfmodels' own")
+
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
@@ -87,6 +94,8 @@ def main(argv: list[str] | None = None) -> int:
             return _typescript(args)
         if args.command == "go":
             return _go(args)
+        if args.command == "distribute":
+            return _distribute(args)
     except ParseError as exc:
         print(f"bbfmodels: {exc}", file=sys.stderr)
         return 1
@@ -154,6 +163,15 @@ def _go(args: argparse.Namespace) -> int:
         parse_file(args.document), args.package, args.output, descriptions=not args.no_descriptions
     )
     for path in paths:
+        print(path)
+    return 0
+
+
+def _distribute(args: argparse.Namespace) -> int:
+    from bbfmodels import distribute
+
+    build = distribute.go_module if args.kind == "go" else distribute.npm_package
+    for path in build(args.output, args.stamp or __version__):
         print(path)
     return 0
 

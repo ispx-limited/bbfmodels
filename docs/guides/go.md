@@ -1,10 +1,29 @@
 # Go
 
-`go` writes the Go types of a document's model into a directory, one file
-per top-level subtree, ready to import as a package:
+Every release publishes the Go types of each shipped model to the module
+`github.com/ispx-limited/bbfmodels-go`, one package per document, tagged
+with the bbfmodels version:
 
 ```sh
-bbfmodels go tr-181-2-21-0-cwmp-full.xml --package tr181cwmp -o internal/tr181cwmp
+go get github.com/ispx-limited/bbfmodels-go/tr181usp@latest
+```
+
+```go
+import "github.com/ispx-limited/bbfmodels-go/tr181usp"
+
+var device tr181usp.Device
+json.Unmarshal(body, &device)
+*device.WiFi.Radio[1].Channel   // 36
+```
+
+The packages are `tr181cwmp`, `tr181usp`, `tr098`, `tr1041`, `tr104cwmp`,
+`tr104usp`, `tr135cwmp`, `tr135usp`, `tr140cwmp`, `tr140usp`, `tr196cwmp`,
+`tr196usp` and `tr517usp`. For any other document, a vendor's included,
+`go` writes the same types into a directory of your own, one file per
+top-level subtree:
+
+```sh
+bbfmodels go vendor-datamodel.xml --package acmegw -o internal/acmegw
 ```
 
 ```go
@@ -48,11 +67,5 @@ a JSON document that a generated Python model dumps unmarshals into it.
 Vendor members the model does not define are not kept by the structs;
 generate from the vendor's document for typed access, as for Python.
 
-```go
-var device tr181cwmp.Device
-json.Unmarshal(body, &device)
-*device.WiFi.Radio[1].Channel   // 36
-```
-
-The Go types are generated on demand with the command above. A published
-Go module is a later step, taken when someone needs one.
+The module repository is written only by the release workflow; issues and
+changes go to bbfmodels.
