@@ -8,6 +8,7 @@ bbfmodels generate [DOCUMENT --package NAME] [--root DIR]
 bbfmodels jsonschema DOCUMENT [-o FILE] [--indent N] [--lenient] [--no-descriptions]
 bbfmodels typescript DOCUMENT [-o FILE] [--no-descriptions]
 bbfmodels go DOCUMENT --package NAME -o DIR [--no-descriptions]
+bbfmodels distribute go|npm -o DIR [--stamp VERSION]
 bbfmodels --version
 ```
 
@@ -20,6 +21,7 @@ bbfmodels --version
 | `jsonschema` | Writes the JSON Schema of a document's model. `--lenient` keeps types only; `--no-descriptions` leaves the Forum's prose out. |
 | `typescript` | Writes the TypeScript declarations of a document's model. |
 | `go` | Writes the Go types of a document's model into a directory, one file per subtree. |
+| `distribute` | Assembles the Go module or the npm package of every shipped model, as the release does. |
 
 The cache is `~/.cache/bbfmodels`, or `$XDG_CACHE_HOME/bbfmodels`, or
 `$BBFMODELS_CACHE` when set.

@@ -48,4 +48,4 @@ pydantic models for TR-181, TR-098 and every service model, typed paths with aut
 
 ## Status
 
-Early. `pip install bbfmodels` gives the parser, the intermediate representation, the runtime and typed models for every document the Forum publishes. Every release carries the JSON Schema and TypeScript declarations of each model, and Go types are generated on demand.
+Early. `pip install bbfmodels` gives the parser, the intermediate representation, the runtime and typed models for every document the Forum publishes. Every release publishes the TypeScript declarations to npm, the Go types to their module and the JSON Schema of each model to the GitHub release.

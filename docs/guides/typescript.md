@@ -1,14 +1,14 @@
 # TypeScript
 
-`typescript` writes the TypeScript declarations of a document's model, one
-`.d.ts` module per document:
+Every release publishes the declarations of each shipped model to npm as
+`bbfmodels`, types only, one module per document:
 
 ```sh
-bbfmodels typescript tr-181-2-21-0-cwmp-full.xml -o tr181_cwmp.d.ts
+npm install --save-dev bbfmodels
 ```
 
 ```ts
-import type { Root, WiFi_Radio, Commands } from "./tr181_usp";
+import type { Root, WiFi_Radio, Commands } from "bbfmodels/tr181_usp";
 
 const radio: WiFi_Radio = {
   Enable: true,
@@ -50,7 +50,14 @@ out. The root of the model is `Root`, `Instances<VoiceService>` for a
 service model. `Commands` maps every command path to its input and output
 interfaces and `Events` every event path to its payload.
 
-## Published declarations
+## Any other document
 
-Every release attaches the declarations of each shipped package to the
-GitHub release as `<package>.d.ts`, beside the JSON Schemas.
+`typescript` writes the same declarations for any document in the TR-106
+schema, a vendor's included:
+
+```sh
+bbfmodels typescript vendor-datamodel.xml -o acme-gateway.d.ts
+```
+
+The declarations of each shipped package are also attached to every GitHub
+release as `<package>.d.ts`, beside the JSON Schemas.

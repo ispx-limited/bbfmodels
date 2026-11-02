@@ -1,9 +1,12 @@
 name: publish
 
 # Runs on the vX.Y.Z tag that merging the Release PR creates. Builds the
-# wheel and sdist, attaches them to the GitHub release, and publishes to
-# PyPI through trusted publishing: PyPI trusts this repository's workflow
-# by name and environment, so no token is stored anywhere.
+# wheel and sdist, attaches them and the schemas and declarations to the
+# GitHub release, publishes to PyPI through trusted publishing, pushes the
+# generated Go module to bbfmodels-go and tags it, and publishes the
+# TypeScript declarations to npm through trusted publishing. PyPI and npm
+# trust this repository's workflow by name and environment, so no token is
+# stored anywhere; the Go push uses the release app's installation token.
 on:
   push:
     tags: ["v*"]
@@ -78,3 +81,87 @@ jobs:
           name: dist
           path: dist/
       - uses: pypa/gh-action-pypi-publish@release/v1
+
+  go-module:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: false
+      - name: Install
+        run: uv sync --frozen --group dev
+      - name: Cache the published documents
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/bbfmodels
+          key: bbf-documents-${{ hashFiles('src/bbfmodels/sources.py') }}
+      - name: Assemble the Go module
+        run: |
+          uv run bbfmodels fetch
+          uv run bbfmodels distribute go -o gomod --stamp "${GITHUB_REF_NAME#v}"
+          (cd gomod && test -z "$(gofmt -l .)" && go vet ./...)
+      - name: Mint a token for bbfmodels-go
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_KEY }}
+          owner: ispx-limited
+          repositories: bbfmodels-go
+      - name: Push and tag bbfmodels-go
+        env:
+          TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          git clone "https://x-access-token:${TOKEN}@github.com/ispx-limited/bbfmodels-go.git" target
+          cd target
+          git checkout -B main
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -r ../gomod/. .
+          git config user.name "ispx-release[bot]"
+          git config user.email "ispx-release[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "bbfmodels ${GITHUB_REF_NAME}" || echo "nothing changed"
+          git tag -f "${GITHUB_REF_NAME}"
+          git push origin main
+          git push -f origin "${GITHUB_REF_NAME}"
+
+  npm:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/bbfmodels
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: https://registry.npmjs.org
+      - name: Install
+        run: |
+          uv sync --frozen --group dev
+          npm install -g npm@latest
+      - name: Cache the published documents
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/bbfmodels
+          key: bbf-documents-${{ hashFiles('src/bbfmodels/sources.py') }}
+      - name: Assemble the npm package
+        run: |
+          uv run bbfmodels fetch
+          uv run bbfmodels distribute npm -o npmpkg --stamp "${GITHUB_REF_NAME#v}"
+      - name: Publish to npm
+        working-directory: npmpkg
+        run: npm publish --provenance --access public
