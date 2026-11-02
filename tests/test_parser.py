@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from bbfmodels.ir import Access, ActiveNotify, BaseType, Document, Status
-from bbfmodels.parser import ParseError, parse, parse_file, sanitize
+from bbfmodels.parser import ParseError, ParseWarning, parse, parse_file, sanitize
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -169,3 +169,14 @@ def test_rejects_what_is_not_a_model() -> None:
             'minEntries="1" maxEntries="1"><parameter name="P" access="readOnly">'
             '<syntax><dataType ref="Nope"/></syntax></parameter></object></model></dm:document>'
         )
+
+
+def test_a_typeless_syntax_is_a_string_with_a_warning() -> None:
+    text = (
+        '<dm:document xmlns:dm="x" spec="s"><model name="D:1"><object name="D." '
+        'minEntries="1" maxEntries="1"><parameter name="P" access="readOnly">'
+        "<syntax/></parameter></object></model></dm:document>"
+    )
+    with pytest.warns(ParseWarning, match="D.P has a syntax without a type"):
+        doc = parse(text)
+    assert doc.models[0].objects["D."].parameters["P"].syntax.base_type is BaseType.STRING
