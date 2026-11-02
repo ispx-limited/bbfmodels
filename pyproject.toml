@@ -20,7 +20,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "pydantic>=2.7",
+  "pydantic>=2.14",
 ]
 
 [project.urls]

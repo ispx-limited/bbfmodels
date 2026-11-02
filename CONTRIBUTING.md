@@ -24,3 +24,9 @@ make lint              # format check, lint and type check, what CI runs
 - Attribute and class names keep the Forum's PascalCase verbatim.
 - The tool carries no knowledge of any vendor or product. Vendor behaviour
   comes from a vendor's own data model document, never from code.
+
+## Releases
+
+Merging the Release PR that release automation keeps open creates the
+version tag. The tag publishes the package to PyPI and attaches the wheel
+and sdist to the GitHub release. Nothing is tagged or uploaded by hand.
