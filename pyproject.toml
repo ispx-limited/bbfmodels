@@ -1,6 +1,6 @@
 [project]
 name = "bbfmodels"
-version = "0.5.0"
+version = "0.6.0"
 description = "Typed models and schema tooling for Broadband Forum data models (TR-181, TR-098, TR-104 and more), generated from the published XML"
 readme = "README.md"
 license = "Apache-2.0"

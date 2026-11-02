@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/ispx-limited/bbfmodels/compare/v0.5.0...v0.6.0) (2026-11-02)
+
+
+### Added
+
+* **typescript:** TypeScript declarations of every model from the IR, attached to each release ([#26](https://github.com/ispx-limited/bbfmodels/issues/26)) ([6a99d5d](https://github.com/ispx-limited/bbfmodels/commit/6a99d5d3584bb7350c69635c9fa6150b0d1c9f1f))
+
 ## [0.5.0](https://github.com/ispx-limited/bbfmodels/compare/v0.4.0...v0.5.0) (2026-11-02)
 
 
