@@ -1,13 +1,11 @@
 # Quickstart
 
-bbfmodels is pre-release and not yet on PyPI, so it runs from a clone.
-Prerequisites: git and [uv](https://docs.astral.sh/uv/).
-
 ```sh
-git clone https://github.com/ispx-limited/bbfmodels.git
-cd bbfmodels
-scripts/bootstrap.sh
+pip install bbfmodels
 ```
+
+Python 3.11 or later. To work on bbfmodels itself, clone the repository and
+run `scripts/bootstrap.sh`; it needs git and [uv](https://docs.astral.sh/uv/).
 
 ## Fetch the published documents
 
@@ -16,9 +14,9 @@ The Forum publishes every data model as a flattened `-full.xml` document.
 `$BBFMODELS_CACHE`) and reuses what is already there.
 
 ```sh
-uv run bbfmodels fetch                           # the core set: TR-098, TR-104, TR-135, TR-140, TR-157, TR-181
-uv run bbfmodels fetch tr-181-2-21-0-usp-full.xml
-uv run bbfmodels fetch --list usp                # everything the Forum publishes for USP
+bbfmodels fetch                                  # the core set: TR-098, TR-104, TR-135, TR-140, TR-157, TR-181
+bbfmodels fetch tr-181-2-21-0-usp-full.xml
+bbfmodels fetch --list usp                       # everything the Forum publishes for USP
 ```
 
 ## Turn a document into its IR
@@ -27,7 +25,7 @@ uv run bbfmodels fetch --list usp                # everything the Forum publishe
 Everything else in bbfmodels reads this representation, never the XML.
 
 ```sh
-uv run bbfmodels ir ~/.cache/bbfmodels/tr-181-2-21-0-cwmp-full.xml -o tr-181.json --indent 2
+bbfmodels ir ~/.cache/bbfmodels/tr-181-2-21-0-cwmp-full.xml -o tr-181.json --indent 2
 ```
 
 The output has the document's data types and models, each model's objects
@@ -66,7 +64,7 @@ keyed by path, and each object's parameters, commands and events:
 
 Fields at their default are left out: an object without `status` is
 current, a parameter without `list` is a single value. The JSON Schema of
-the representation is `uv run bbfmodels ir-schema`.
+the representation is `bbfmodels ir-schema`.
 
 ## Use it from Python
 
