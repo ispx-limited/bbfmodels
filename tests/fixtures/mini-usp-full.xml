@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:document xmlns:dm="urn:broadband-forum-org:cwmp:datamodel-1-10"
+    spec="urn:example-org:mini-1-0-0-usp" file="mini-1-0-0-usp-full.xml">
+  <model name="Device:2.0">
+    <object name="Device." access="readOnly" minEntries="1" maxEntries="1">
+      <command name="Reboot()" async="false" version="2.0">
+        <description>Reboot.</description>
+        <input>
+          <parameter name="Cause" mandatory="false">
+            <syntax><string/></syntax>
+          </parameter>
+        </input>
+      </command>
+      <command name="TraceRoute()" async="true">
+        <input>
+          <parameter name="Host" mandatory="true">
+            <syntax><string/></syntax>
+          </parameter>
+        </input>
+        <output>
+          <parameter name="ResponseTime">
+            <syntax><unsignedInt><units value="milliseconds"/></unsignedInt></syntax>
+          </parameter>
+          <object name="RouteHops.{i}." minEntries="0" maxEntries="unbounded">
+            <parameter name="Host">
+              <syntax><string/></syntax>
+            </parameter>
+          </object>
+        </output>
+      </command>
+      <event name="Boot!" version="2.0">
+        <description>Booted.</description>
+        <parameter name="CommandKey">
+          <syntax><string/></syntax>
+        </parameter>
+      </event>
+    </object>
+    <object name="Device.Services." access="readOnly" minEntries="1" maxEntries="1" mountType="mountPoint"/>
+  </model>
+</dm:document>
