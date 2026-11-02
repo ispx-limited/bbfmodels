@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/ispx-limited/bbfmodels/compare/v0.6.0...v0.7.0) (2026-11-02)
+
+
+### Added
+
+* **go:** Go types of any model from the IR, gofmt-clean and vetted ([#29](https://github.com/ispx-limited/bbfmodels/issues/29)) ([ca8eecc](https://github.com/ispx-limited/bbfmodels/commit/ca8eecc9a0e9fde1e80ac3a1b27261a1a43faa20))
+
 ## [0.6.0](https://github.com/ispx-limited/bbfmodels/compare/v0.5.0...v0.6.0) (2026-11-02)
 
 
