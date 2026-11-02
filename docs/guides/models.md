@@ -65,8 +65,8 @@ said. `problems()` reports every violation against the shipped schema:
 device.WiFi.Radio[1].Channel = 999
 device.WiFi.Radio[1].Status = "zz"
 device.problems()
-# [('Device.WiFi.Radio.1.Channel', '999 is outside the allowed ranges'),
-#  ('Device.WiFi.Radio.1.Status', "'zz' is not one of the enumerated values")]
+# [('Device.WiFi.Radio.1.Status', "'zz' is not one of the enumerated values"),
+#  ('Device.WiFi.Radio.1.Channel', '999 is outside the allowed ranges')]
 ```
 
 An enumeration is typed `Literal[...] | str`: an editor completes the
