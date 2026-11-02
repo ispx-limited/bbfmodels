@@ -50,6 +50,15 @@ def main(argv: list[str] | None = None) -> int:
     gen.add_argument("--package", help="dotted package name, for example vendor.models")
     gen.add_argument("--root", type=Path, default=Path("src"), help="source root to write under")
 
+    ts = sub.add_parser(
+        "typescript", help="write the TypeScript declarations of a document's model"
+    )
+    ts.add_argument("document", type=Path)
+    ts.add_argument("-o", "--output", type=Path, help="write here instead of stdout")
+    ts.add_argument(
+        "--no-descriptions", action="store_true", help="leave the Forum's descriptions out"
+    )
+
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
@@ -66,6 +75,8 @@ def main(argv: list[str] | None = None) -> int:
             return _generate(args)
         if args.command == "jsonschema":
             return _jsonschema(args)
+        if args.command == "typescript":
+            return _typescript(args)
     except ParseError as exc:
         print(f"bbfmodels: {exc}", file=sys.stderr)
         return 1
@@ -112,6 +123,17 @@ def _jsonschema(args: argparse.Namespace) -> int:
         args.output.write_text(text + "\n", encoding="utf-8")
     else:
         print(text)
+    return 0
+
+
+def _typescript(args: argparse.Namespace) -> int:
+    from bbfmodels.typescript import declarations
+
+    text = declarations(parse_file(args.document), descriptions=not args.no_descriptions)
+    if args.output:
+        args.output.write_text(text, encoding="utf-8")
+    else:
+        print(text, end="")
     return 0
 
 
