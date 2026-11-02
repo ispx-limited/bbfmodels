@@ -19,3 +19,4 @@ changes, a new record is written and the old one is marked superseded.
 | [0006](decisions/0006-everything-optional-unknown-paths-kept.md) | Everything is optional and unknown paths round-trip | Accepted |
 | [0007](decisions/0007-vendor-extensions-are-overlays.md) | Vendor extensions are overlays in the same schema | Accepted |
 | [0008](decisions/0008-python-toolchain.md) | Python toolchain: uv, ruff, mypy, pytest, standard library XML | Accepted |
+| [0009](decisions/0009-the-tree-keeps-wire-text.md) | The data tree keeps wire text and decodes on demand | Accepted |

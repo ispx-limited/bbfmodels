@@ -79,3 +79,49 @@ print(radio.multi_instance, radio.num_entries_parameter)
 channel = radio.parameters["Channel"].syntax
 print(channel.base_type, channel.facets.ranges[0].max_inclusive)
 ```
+
+## Work with a device's values
+
+A `Schema` indexes one or more documents by path. A service model such as
+TR-104 mounts under the root's `Services.` object, where it sits on a real
+device.
+
+```python
+from bbfmodels.parser import parse_file
+from bbfmodels.schema import Schema
+
+schema = Schema.from_documents(
+    parse_file("tr-181-2-21-0-cwmp-full.xml"),
+    parse_file("tr-104-2-0-2-cwmp-full.xml"),
+)
+r = schema.resolve("Device.WiFi.Radio.2.Channel")
+print(r.schema_path, r.instances)  # Device.WiFi.Radio.{i}.Channel (2,)
+print(Schema.data_path("Device.WiFi.SSID.{i}.SSID", 1))  # Device.WiFi.SSID.1.SSID
+print("Device.Services.VoiceService.{i}." in schema.objects)  # True
+```
+
+A `Tree` holds the flat path and value pairs a device returns, arranged as
+objects, tables and instances. Values decode through the schema when read
+and the text comes back out exactly as it went in, vendor parameters
+included.
+
+```python
+from bbfmodels.tree import Tree
+
+tree = Tree.from_flat(
+    schema,
+    {
+        "Device.WiFi.Radio.1.Enable": "1",
+        "Device.WiFi.Radio.1.Channel": "36",
+        "Device.WiFi.Radio.1.SupportedFrequencyBands": "2.4GHz,5GHz",
+        "Device.WiFi.Radio.1.X_EXAMPLE_TxPower": "high",
+    },
+)
+radio = tree["Device"]["WiFi"]["Radio"][1]
+print(radio.value("Enable"), radio.value("Channel"))  # True 36
+print(radio.value("SupportedFrequencyBands"))  # ['2.4GHz', '5GHz']
+print(radio.unknown_parameters)  # ['X_EXAMPLE_TxPower']
+tree.set("Device.WiFi.Radio.1.Channel", 999)
+print(tree.problems())  # [('Device.WiFi.Radio.1.Channel', '999 is outside the allowed ranges')]
+print(tree.flatten()["Device.WiFi.Radio.1.Enable"])  # 1
+```
