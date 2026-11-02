@@ -59,6 +59,14 @@ def main(argv: list[str] | None = None) -> int:
         "--no-descriptions", action="store_true", help="leave the Forum's descriptions out"
     )
 
+    go = sub.add_parser("go", help="write the Go types of a document's model into a directory")
+    go.add_argument("document", type=Path)
+    go.add_argument("--package", required=True, help="Go package name, for example tr181cwmp")
+    go.add_argument("-o", "--output", type=Path, required=True, help="directory to write into")
+    go.add_argument(
+        "--no-descriptions", action="store_true", help="leave the Forum's descriptions out"
+    )
+
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
@@ -77,6 +85,8 @@ def main(argv: list[str] | None = None) -> int:
             return _jsonschema(args)
         if args.command == "typescript":
             return _typescript(args)
+        if args.command == "go":
+            return _go(args)
     except ParseError as exc:
         print(f"bbfmodels: {exc}", file=sys.stderr)
         return 1
@@ -134,6 +144,17 @@ def _typescript(args: argparse.Namespace) -> int:
         args.output.write_text(text, encoding="utf-8")
     else:
         print(text, end="")
+    return 0
+
+
+def _go(args: argparse.Namespace) -> int:
+    from bbfmodels.golang import write_go_package
+
+    paths = write_go_package(
+        parse_file(args.document), args.package, args.output, descriptions=not args.no_descriptions
+    )
+    for path in paths:
+        print(path)
     return 0
 
 

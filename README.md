@@ -20,7 +20,7 @@ the same parameter paths as strings. bbfmodels does it once:
   TR-140 storage, TR-196 femtocell, TR-517 Matter), and generated on demand
   for any other document, a vendor's included.
 - JSON Schema and TypeScript declarations of every model, attached to each
-  release.
+  release, and Go types generated on demand.
 - Typed paths for code that only needs correct path strings:
   `str(Device.WiFi.SSID[1].SSID)` with autocomplete over the whole model
   and the parameter's definition one attribute away. JSON Schema and TypeScript follow from the
@@ -42,8 +42,8 @@ Python 3.11 or later. The one runtime dependency is pydantic.
 
 Early. The parser, the intermediate representation, the runtime, the
 generated Python models with USP commands and events, and typed paths are
-in place, and every release carries the JSON Schema and TypeScript
-declarations of each model. Go comes next. Before 1.0 a minor release
+in place, every release carries the JSON Schema and TypeScript
+declarations of each model, and `bbfmodels go` writes Go types. Before 1.0 a minor release
 may change the IR and the runtime API.
 
 ```python
