@@ -40,12 +40,12 @@ Resolve a path, validate a value against the model's constraints, and convert be
 </div>
 
 <div class="ispx-card" markdown>
-### Typed bindings
-pydantic models for Python, JSON Schema and TypeScript from the same representation. Names stay as the Forum wrote them.
+### Typed models
+pydantic models for TR-181, TR-098 and every service model, and a generator for any vendor's document. Names stay as the Forum wrote them.
 </div>
 
 </div>
 
 ## Status
 
-Early. `pip install bbfmodels` gives the parser, the intermediate representation and the runtime, which read every document the Forum publishes. Generated Python models come next.
+Early. `pip install bbfmodels` gives the parser, the intermediate representation, the runtime and typed models for every document the Forum publishes. Commands and events in the generated models, JSON Schema and TypeScript come next.
