@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import filecmp
+import gzip
 import importlib
 import sys
 import time
@@ -124,8 +125,15 @@ def test_shipped_packages_are_current(package: str, document: str, tmp_path: Pat
     fresh_files = sorted(p.name for p in fresh.iterdir())
     committed_files = sorted(p.name for p in committed.iterdir() if p.name != "__pycache__")
     assert fresh_files == committed_files
-    stale = [n for n in fresh_files if not filecmp.cmp(fresh / n, committed / n, shallow=False)]
+    stale = [n for n in fresh_files if not _same(fresh / n, committed / n)]
     assert stale == [], f"run 'make generate': {stale}"
+
+
+def _same(a: Path, b: Path) -> bool:
+    # The archive's bytes depend on the zlib build; its content does not.
+    if a.suffix == ".gz":
+        return gzip.decompress(a.read_bytes()) == gzip.decompress(b.read_bytes())
+    return filecmp.cmp(a, b, shallow=False)
 
 
 def test_tr181_models_on_device_values() -> None:
