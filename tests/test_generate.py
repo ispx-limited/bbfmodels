@@ -174,3 +174,58 @@ def test_tr181_import_stays_fast() -> None:
     start = time.perf_counter()
     importlib.import_module("bbfmodels.tr181_cwmp")
     assert time.perf_counter() - start < 3.0
+
+
+@pytest.fixture(scope="module")
+def voice(tmp_path_factory: pytest.TempPathFactory) -> type[Model]:
+    root = tmp_path_factory.mktemp("gen-service")
+    generate.write_package("minisvc.voice", FIXTURES / "mini-service-full.xml", root)
+    (root / "minisvc" / "__init__.py").write_text("")
+    sys.path.insert(0, str(root))
+    try:
+        module = importlib.import_module("minisvc.voice")
+    finally:
+        sys.path.pop(0)
+    service: type[Model] = module.VoiceService
+    return service
+
+
+def test_service_model_root_is_a_table(voice: type[Model]) -> None:
+    assert voice.__bbf_path__ == "VoiceService.{i}."
+    values = {
+        "Device.Services.VoiceService.1.Name": "sip",
+        "Device.Services.VoiceService.1.Capabilities.MaxLineCount": "2",
+        "Device.Services.VoiceService.1.Line.1.Enable": "1",
+        "Device.Services.VoiceService.1.Line.2.Enable": "0",
+    }
+    service = voice.from_flat(values, "Device.Services.VoiceService.1.")
+    assert service.Name == "sip"  # type: ignore[attr-defined]
+    assert service.Capabilities.MaxLineCount == 2  # type: ignore[attr-defined]
+    assert service.Line[1].Enable is True and service.Line[2].Enable is False  # type: ignore[attr-defined]
+    flat = service.flatten("Device.Services.VoiceService.1.")
+    assert flat == {
+        **values,
+        "Device.Services.VoiceService.1.Line.1.Enable": "true",
+        "Device.Services.VoiceService.1.Line.2.Enable": "false",
+    }
+    relative = voice.from_flat({"Name": "too-long-name", "Line.1.Enable": "true"})
+    assert relative.problems() == [
+        ("VoiceService.1.Name", "length 13 is outside the allowed sizes")
+    ]
+    assert relative.problems("Device.Services.VoiceService.3.") == [
+        ("Device.Services.VoiceService.3.Name", "length 13 is outside the allowed sizes")
+    ]
+
+
+def test_shipped_service_packages() -> None:
+    from bbfmodels.tr104_cwmp import VoiceService
+    from bbfmodels.tr140_usp import StorageService
+
+    service = VoiceService.from_flat(
+        {"Device.Services.VoiceService.1.Capabilities.MaxLineCount": "4"},
+        "Device.Services.VoiceService.1.",
+    )
+    assert service.Capabilities is not None and service.Capabilities.MaxLineCount == 4
+    assert service.problems() == []
+    storage = StorageService.from_flat({"Enable": "1", "PhysicalMedium.1.Vendor": "acme"})
+    assert storage.Enable is True and storage.PhysicalMedium[1].Vendor == "acme"

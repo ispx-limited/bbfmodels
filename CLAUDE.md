@@ -13,7 +13,7 @@ is for anyone, person or coding agent, working in the repository.
 - `src/bbfmodels/` is the package. `cli.py` is the command line entry point,
   `parser.py` reads the XML into the IR in `ir.py`, `schema.py`, `tree.py`
   and `codec.py` are the runtime, `generate.py` writes the model packages.
-- `src/bbfmodels/tr181_cwmp/`, `tr181_usp/` and `tr098/` are generated.
+- `src/bbfmodels/tr*/` are generated packages, one per published document.
   Never edit them; run `make generate` after changing the generator or
   the pinned documents in `sources.py`. A test fails when they are stale.
 - `tests/` holds the pytest suite.

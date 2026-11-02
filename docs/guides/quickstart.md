@@ -126,10 +126,12 @@ print(tree.flatten()["Device.WiFi.Radio.1.Enable"])  # 1
 
 ## Use the generated models
 
-Three packages ship with typed models: `bbfmodels.tr181_cwmp`,
-`bbfmodels.tr181_usp` and `bbfmodels.tr098`. Every object is a class, every
-parameter a typed optional field, every table a `dict[int, Child]`. Names
-are the Forum's names.
+Packages of typed models ship for every published model: `tr181_cwmp`,
+`tr181_usp`, `tr098`, and the service models `tr104_1`, `tr104_cwmp`,
+`tr104_usp`, `tr135_cwmp`, `tr135_usp`, `tr140_cwmp`, `tr140_usp`,
+`tr196_cwmp`, `tr196_usp` and `tr517_usp`, all under `bbfmodels.`. Every
+object is a class, every parameter a typed optional field, every table a
+`dict[int, Child]`. Names are the Forum's names.
 
 ```python
 from bbfmodels.tr181_cwmp import Device
@@ -165,6 +167,17 @@ from bbfmodels.tr181_cwmp.wifi import WiFi_Radio
 
 WiFi_Radio(Enable=True, Channel=36).flatten("Device.WiFi.Radio.1.")
 # {'Device.WiFi.Radio.1.Enable': 'true', 'Device.WiFi.Radio.1.Channel': '36'}
+```
+
+A service model's root is a table that a device mounts under its
+`Services.` object, so the instance path is given when converting:
+
+```python
+from bbfmodels.tr104_cwmp import VoiceService
+
+voice = VoiceService.from_flat(values, "Device.Services.VoiceService.1.")
+voice.Capabilities.MaxLineCount
+voice.flatten("Device.Services.VoiceService.1.")
 ```
 
 Any document in the TR-106 schema generates the same way, a vendor's

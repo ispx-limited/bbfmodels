@@ -86,14 +86,20 @@ class Model(BaseModel):
         return load_schema(cls.__bbf_package__)
 
     @classmethod
-    def from_flat(cls, values: typing.Mapping[str, str]) -> typing.Self:
-        """An instance from path and text pairs; paths are relative to the object or absolute."""
+    def from_flat(cls, values: typing.Mapping[str, str], prefix: str | None = None) -> typing.Self:
+        """An instance from path and text pairs.
+
+        Paths are relative to the object (``Radio.1.Channel``) or start with
+        ``prefix``, the object's data path (``Device.WiFi.``). The prefix
+        defaults to the schema path for an object with no table above it; a
+        service model's root is a table, so its instance path is given:
+        ``VoiceService.from_flat(values, "Device.Services.VoiceService.1.")``.
+        """
         nested: dict[str, Any] = {}
-        prefix = cls.__bbf_path__.replace("{i}.", "")
+        if prefix is None and "{i}" not in cls.__bbf_path__:
+            prefix = cls.__bbf_path__
         for path, text in values.items():
-            rel = path
-            if path.startswith(prefix) and "{i}" not in cls.__bbf_path__:
-                rel = path[len(prefix) :]
+            rel = path[len(prefix) :] if prefix and path.startswith(prefix) else path
             _place(cls, nested, rel.split("."), text)
         return cls.model_validate(nested)
 
@@ -124,7 +130,14 @@ class Model(BaseModel):
         return out
 
     def problems(self, prefix: str | None = None) -> list[tuple[str, str]]:
-        """Every facet violation, as data path and message."""
+        """Every facet violation, as data path and message.
+
+        Without ``prefix`` a table root such as ``VoiceService.{i}.`` is
+        checked as its first instance; the instance number does not change
+        what is valid.
+        """
+        if prefix is None:
+            prefix = self.__bbf_path__.replace("{i}", "1")
         return Tree.from_flat(self.schema_of(), self.flatten(prefix)).problems()
 
 
@@ -201,5 +214,9 @@ def load_schema(package: str) -> Schema:
     if package not in _schemas:
         data = importlib.resources.files(package).joinpath("ir.json.gz").read_bytes()
         doc = Document.model_validate_json(gzip.decompress(data))
-        _schemas[package] = Schema.from_documents(doc)
+        schema = Schema()
+        # A service model is indexed as the document writes it, unmounted,
+        # which is how the generated classes name their paths.
+        schema.add(doc, mount="" if all(m.is_service for m in doc.models) else None)
+        _schemas[package] = schema
     return _schemas[package]

@@ -11,10 +11,19 @@ parameter can be named like a Python helper.
 ## Decision
 
 - **One package per published document**, named after it: `tr181_cwmp`,
-  `tr181_usp`, `tr098`. The CWMP and USP editions of TR-181 differ in
-  commands, events and a few objects, and a user works against one of
-  them. The package ships the IR it was generated from as `ir.json.gz`
-  and exposes it through `schema()`.
+  `tr181_usp`, `tr098`, `tr104_cwmp`, and so on. The CWMP and USP editions
+  of a document differ in commands, events and a few objects, and a user
+  works against one of them; an older issue that is still deployed carries
+  its issue number (`tr104_1`, the voice model of TR-098 gateways). The
+  package ships the IR it was generated from as `ir.json.gz` and exposes
+  it through `schema()`.
+- **Service models are generated as the document writes them.** A service
+  model's root (`VoiceService.{i}.`) is a table that a device mounts under
+  its `Services.` object, and the document does not say under which root.
+  The classes carry the document's paths; the mount is given when
+  converting: `VoiceService.from_flat(values, "Device.Services.VoiceService.1.")`.
+  Documents that only hold components (TR-143, TR-157) are not generated,
+  because their content is already merged into the root models.
 - **A class per object, a module per top-level subtree.** The root object
   is a class named after it (`Device`) in `device.py`; every other object
   is `WiFi_Radio_Stats`, its path with the root dropped, in `wifi.py`.

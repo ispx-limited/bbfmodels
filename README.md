@@ -16,8 +16,9 @@ the same parameter paths as strings. bbfmodels does it once:
   validate a value against the model's constraints, convert between the flat
   path and value lists that CWMP and USP carry on the wire and a typed tree.
 - Generated typed bindings: pydantic models for Python, shipped for TR-181
-  (CWMP and USP editions) and TR-098 and generated on demand for any other
-  document, a vendor's included. JSON Schema and TypeScript follow from the
+  and TR-098 and the service models (TR-104 voice, TR-135 set-top box,
+  TR-140 storage, TR-196 femtocell, TR-517 Matter), and generated on demand
+  for any other document, a vendor's included. JSON Schema and TypeScript follow from the
   same representation, Go when there is a consumer.
 
 Names stay as the Forum wrote them. `Device.WiFi.SSID.{i}.SSID` is a table of

@@ -25,11 +25,24 @@ from pydantic import BaseModel
 from bbfmodels import __version__
 from bbfmodels.ir import BaseType, Document, Model, Object, Parameter
 
-# The documents the shipped packages are generated from.
+# The documents the shipped packages are generated from. A package is named
+# after its document: the protocol suffix appears where the Forum publishes
+# both editions, and an older issue that is still deployed carries its
+# issue number (``tr104_1`` is the voice model of TR-098 gateways).
 PACKAGES = {
     "bbfmodels.tr181_cwmp": "tr-181-2-21-0-cwmp-full.xml",
     "bbfmodels.tr181_usp": "tr-181-2-21-0-usp-full.xml",
     "bbfmodels.tr098": "tr-098-1-8-0-full.xml",
+    "bbfmodels.tr104_1": "tr-104-1-1-0-full.xml",
+    "bbfmodels.tr104_cwmp": "tr-104-2-0-2-cwmp-full.xml",
+    "bbfmodels.tr104_usp": "tr-104-2-0-2-usp-full.xml",
+    "bbfmodels.tr135_cwmp": "tr-135-1-4-1-cwmp-full.xml",
+    "bbfmodels.tr135_usp": "tr-135-1-4-1-usp-full.xml",
+    "bbfmodels.tr140_cwmp": "tr-140-1-3-1-cwmp-full.xml",
+    "bbfmodels.tr140_usp": "tr-140-1-3-1-usp-full.xml",
+    "bbfmodels.tr196_cwmp": "tr-196-2-1-2-cwmp-full.xml",
+    "bbfmodels.tr196_usp": "tr-196-2-1-2-usp-full.xml",
+    "bbfmodels.tr517_usp": "tr-517-1-0-0-usp-full.xml",
 }
 
 # Every helper is imported under a leading-underscore alias because a
@@ -117,13 +130,18 @@ def generate(doc: Document, package: str, out: Path) -> list[Path]:
 
 
 def _root_model(doc: Document) -> Model:
-    roots = [m for m in doc.models if not m.is_service]
-    if len(roots) != 1:
+    """The one model a package is generated from, root or service.
+
+    A service model's root object is a table (``VoiceService.{i}.``) that a
+    device mounts under its ``Services.`` object; the package is generated
+    as the document writes it and the mount is given when converting.
+    """
+    if len(doc.models) != 1:
         raise ValueError(
-            f"{doc.file or doc.spec} has {len(roots)} root models; "
-            "one package is generated per root model"
+            f"{doc.file or doc.spec} has {len(doc.models)} models; "
+            "one package is generated per model"
         )
-    return roots[0]
+    return doc.models[0]
 
 
 def _group_of(obj: Object, root: str) -> str:
@@ -138,7 +156,8 @@ def _module_names(groups: dict[str, list[Object]]) -> dict[str, str]:
     for group in sorted(groups, key=lambda g: (g != "", g)):
         base = re.sub(r"[^a-z0-9_]", "_", group.lower()) or "root"
         if group == "":
-            base = next(iter(groups[""])).path.rstrip(".").lower() if groups[""] else "root"
+            root = groups[""][0] if groups[""] else None
+            base = class_name(root, root.name).lower() if root else "root"
         name = base + "_" if keyword.iskeyword(base) else base
         while name in taken:
             name += "_"
