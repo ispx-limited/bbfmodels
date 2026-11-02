@@ -24,10 +24,13 @@ Names stay as the Forum wrote them. `Device.WiFi.SSID.{i}.SSID` is a table of
 
 ## Status
 
-Pre-release. The repository holds the project scaffold and nothing that does
-the job yet. The parser and intermediate representation land first, then the
-runtime, then generated Python models. Until the first release there is no
-package on PyPI.
+Pre-release. The parser and the intermediate representation are in place:
+`bbfmodels fetch` downloads the Forum's published documents and
+`bbfmodels ir` turns one into JSON. The runtime comes next, then generated
+Python models. Until the first release there is no package on PyPI.
+
+The design decisions behind the code are in `context/decisions/`, indexed in
+`context/README.md`. Read them before changing the parser or the IR.
 
 ## Development
 

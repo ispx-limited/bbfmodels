@@ -11,8 +11,8 @@ hide:
 <p class="ispx-kicker">Typed models and schema tooling for Broadband Forum data models, so nobody hand-types TR-181 parameter paths as strings again.</p>
 
 <div class="ispx-actions" markdown>
-[View on GitHub](https://github.com/ispx-limited/bbfmodels){ .ispx-btn .ispx-btn--primary }
-[Changelog](changelog.md){ .ispx-btn .ispx-btn--ghost }
+[Get started](guides/quickstart.md){ .ispx-btn .ispx-btn--primary }
+[View on GitHub](https://github.com/ispx-limited/bbfmodels){ .ispx-btn .ispx-btn--ghost }
 </div>
 
 <div class="ispx-signal__chips">
@@ -48,4 +48,4 @@ pydantic models for Python, JSON Schema and TypeScript from the same representat
 
 ## Status
 
-Pre-release. The parser and intermediate representation land first, then the runtime, then generated Python models. There is no package on PyPI until the first release.
+Pre-release. The parser and the intermediate representation are in place and read every document the Forum publishes. The runtime comes next, then generated Python models. There is no package on PyPI until the first release.

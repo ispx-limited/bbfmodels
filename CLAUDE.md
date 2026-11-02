@@ -6,6 +6,10 @@ is for anyone, person or coding agent, working in the repository.
 
 ## Layout
 
+- `context/` is the design memory: `context/decisions/` holds the
+  architecture decision records and `context/README.md` indexes them. Read
+  it before touching the parser, the IR or a generator, and add a record
+  when a change makes or reverses a significant decision.
 - `src/bbfmodels/` is the package. `cli.py` is the command line entry point.
 - `tests/` holds the pytest suite.
 - `docs/` is the documentation site (mkdocs), built strictly in CI. A page

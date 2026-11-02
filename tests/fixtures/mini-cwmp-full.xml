@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:document xmlns:dm="urn:broadband-forum-org:cwmp:datamodel-1-10"
+    xmlns:dmr="urn:broadband-forum-org:cwmp:datamodel-report-1-0"
+    spec="urn:example-org:mini-1-0-0-cwmp" file="mini-1-0-0-cwmp-full.xml">
+  <description>
+    A small model for the tests, in the style of TR-181 & friends, with
+    literal <OUI> markup and a bare ampersand in prose.
+  </description>
+
+  <dataType name="Alias">
+    <description>A non-volatile handle.</description>
+    <string>
+      <size maxLength="64"/>
+    </string>
+  </dataType>
+  <dataType name="StatsCounter32">
+    <unsignedInt/>
+  </dataType>
+  <dataType name="IPAddress">
+    <string>
+      <size maxLength="45"/>
+      <pattern value=""/>
+      <pattern value="[0-9.]+"/>
+    </string>
+  </dataType>
+  <dataType name="IPv4Address" base="IPAddress">
+    <size maxLength="15"/>
+  </dataType>
+  <dataType name="Names">
+    <list maxItems="4">
+      <size maxLength="256"/>
+    </list>
+    <string>
+      <size maxLength="32"/>
+    </string>
+  </dataType>
+
+  <model name="Device:2.0">
+    <object name="Device." access="readOnly" minEntries="1" maxEntries="1">
+      <description>The root.</description>
+      <parameter name="RadioNumberOfEntries" access="readOnly">
+        <syntax><unsignedInt/></syntax>
+      </parameter>
+      <parameter name="Password" access="readWrite" activeNotify="canDeny" version="2.0">
+        <syntax hidden="true">
+          <string>
+            <size maxLength="64"/>
+          </string>
+          <default type="factory" value="&quot;"/>
+        </syntax>
+      </parameter>
+      <parameter name="Reset" access="readWrite" status="deprecated">
+        <syntax command="true">
+          <boolean/>
+        </syntax>
+      </parameter>
+    </object>
+
+    <object name="Device.Radio.{i}." access="readWrite" minEntries="0" maxEntries="unbounded"
+        numEntriesParameter="RadioNumberOfEntries" enableParameter="Enable" version="2.0">
+      <description>
+        One radio.
+
+        Second paragraph with {{param|Enable}} markup.
+      </description>
+      <uniqueKey functional="false">
+        <parameter ref="Alias"/>
+      </uniqueKey>
+      <uniqueKey>
+        <parameter ref="Name"/>
+        <parameter ref="Channel"/>
+      </uniqueKey>
+      <parameter name="Alias" access="readWrite">
+        <syntax>
+          <dataType ref="Alias"/>
+        </syntax>
+      </parameter>
+      <parameter name="Enable" access="readWrite">
+        <syntax>
+          <boolean/>
+          <default type="object" value="false"/>
+        </syntax>
+      </parameter>
+      <parameter name="Name" access="readOnly">
+        <syntax><string><size maxLength="64"/></string></syntax>
+      </parameter>
+      <parameter name="Channel" access="readWrite">
+        <syntax>
+          <unsignedInt>
+            <range minInclusive="1" maxInclusive="255"/>
+            <units value="channel"/>
+          </unsignedInt>
+        </syntax>
+      </parameter>
+      <parameter name="Band" access="readWrite">
+        <syntax>
+          <string>
+            <enumeration value="2.4GHz"/>
+            <enumeration value="5GHz" optional="true"/>
+            <enumeration value="6GHz" status="deprecated" version="2.0" code="6">
+              <description>Six.</description>
+            </enumeration>
+          </string>
+        </syntax>
+      </parameter>
+      <parameter name="Standards" access="readWrite">
+        <syntax>
+          <list maxItems="3"/>
+          <string>
+            <enumeration value="a"/>
+            <enumeration value="b"/>
+          </string>
+        </syntax>
+      </parameter>
+      <parameter name="BytesSent" access="readOnly">
+        <syntax>
+          <dataType ref="StatsCounter32">
+            <units value="bytes"/>
+          </dataType>
+        </syntax>
+      </parameter>
+      <parameter name="Address" access="readWrite">
+        <syntax>
+          <dataType ref="IPv4Address"/>
+        </syntax>
+      </parameter>
+      <parameter name="Aliases" access="readWrite">
+        <syntax>
+          <dataType ref="Names"/>
+        </syntax>
+      </parameter>
+      <parameter name="LowerLayer" access="readWrite">
+        <syntax>
+          <string>
+            <pathRef refType="weak" targetParent="Device.Radio." targetType="row"/>
+          </string>
+        </syntax>
+      </parameter>
+      <parameter name="Mode" access="readWrite">
+        <syntax>
+          <string>
+            <enumerationRef targetParam="#.ModesSupported" nullValue=""/>
+          </string>
+        </syntax>
+      </parameter>
+    </object>
+
+    <profile name="Baseline:1" version="2.0">
+      <object ref="Device." requirement="present">
+        <parameter ref="RadioNumberOfEntries" requirement="readOnly"/>
+      </object>
+      <object ref="Device.Radio.{i}." requirement="createDelete">
+        <parameter ref="Enable" requirement="readWrite"/>
+      </object>
+    </profile>
+    <profile name="Radio:2" base="Baseline:1" extends="Other:1 Another:1" status="deprecated">
+      <object ref="Device.Radio.{i}." requirement="present"/>
+    </profile>
+  </model>
+</dm:document>

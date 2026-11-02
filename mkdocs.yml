@@ -46,4 +46,6 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Guides:
+      - Quickstart: guides/quickstart.md
   - Changelog: changelog.md
