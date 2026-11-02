@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.1](https://github.com/ispx-limited/bbfmodels/compare/v0.2.0...v0.2.1) (2026-11-02)
+
+
+### Fixed
+
+* **models:** generated files no longer record the tool version, which broke the release build ([#10](https://github.com/ispx-limited/bbfmodels/issues/10)) ([ab909c7](https://github.com/ispx-limited/bbfmodels/commit/ab909c7d67b102b11f09122d8c01cea674859e8c))
+* **parser:** a vendor document's empty syntax is read as a string instead of failing ([#11](https://github.com/ispx-limited/bbfmodels/issues/11)) ([7cdb4a1](https://github.com/ispx-limited/bbfmodels/commit/7cdb4a1c4fa39b7741c90a67c84b43812c889fe2))
+* **parser:** a vendor document's unknown vocabulary values fall back with a warning instead of failing ([#13](https://github.com/ispx-limited/bbfmodels/issues/13)) ([bb3e807](https://github.com/ispx-limited/bbfmodels/commit/bb3e80723320fdd69d2b2263ef066d790a28feb2))
+
 ## [0.2.0](https://github.com/ispx-limited/bbfmodels/compare/v0.1.0...v0.2.0) (2026-11-02)
 
 
