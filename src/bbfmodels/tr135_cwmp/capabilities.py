@@ -209,3 +209,10 @@ class Capabilities(_Model):
     AudienceStats: Capabilities_AudienceStats | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -62,3 +62,10 @@ class XMPP(_Model):
     Connection: dict[int, XMPP_Connection] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

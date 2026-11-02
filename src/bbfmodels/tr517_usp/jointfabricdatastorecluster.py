@@ -217,3 +217,353 @@ class JointFabricDatastoreCluster(_Model):
     NodeEndpointList: dict[int, JointFabricDatastoreCluster_NodeEndpointList] = _Field(default_factory=dict)
 
 
+class JointFabricDatastoreCluster_AddKeySet_Input_GroupKeySet(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddKeySet().Input.GroupKeySet."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupKeySecurityPolicy: _Annotated[_Literal['TrustFirst'] | str | None, _Param(_BaseType.STRING)] = None
+    EpochKey0: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime0: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey1: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime1: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey2: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime2: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    GroupKeyMulticastPolicy: _Annotated[_Literal['PerGroupID', 'AllNodes'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddKeySet_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddKeySet().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySet: JointFabricDatastoreCluster_AddKeySet_Input_GroupKeySet | None = _Field(default=None)
+
+
+class JointFabricDatastoreCluster_AddKeySet_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddKeySet().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateKeySet_Input_GroupKeySet(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateKeySet().Input.GroupKeySet."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupKeySecurityPolicy: _Annotated[_Literal['TrustFirst'] | str | None, _Param(_BaseType.STRING)] = None
+    EpochKey0: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime0: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey1: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime1: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    EpochKey2: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EpochStartTime2: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    GroupKeyMulticastPolicy: _Annotated[_Literal['PerGroupID', 'AllNodes'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateKeySet_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateKeySet().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySet: JointFabricDatastoreCluster_UpdateKeySet_Input_GroupKeySet | None = _Field(default=None)
+
+
+class JointFabricDatastoreCluster_UpdateKeySet_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateKeySet().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RemoveKeySet_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveKeySet().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class JointFabricDatastoreCluster_RemoveKeySet_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveKeySet().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddGroup_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddGroup().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupCAT: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupCATVersion: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupPermission: _Annotated[_Literal['View', 'ProxyView', 'Operate', 'Manage', 'Administer'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddGroup_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddGroup().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateGroup_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateGroup().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupKeySetID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupCAT: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupCATVersion: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupPermission: _Annotated[_Literal['View', 'ProxyView', 'Operate', 'Manage', 'Administer'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateGroup_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateGroup().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RemoveGroup_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveGroup().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class JointFabricDatastoreCluster_RemoveGroup_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveGroup().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddAdmin_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddAdmin().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    VendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ICAC: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddAdmin_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddAdmin().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateAdmin_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateAdmin().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ICAC: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateAdmin_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateAdmin().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RemoveAdmin_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveAdmin().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class JointFabricDatastoreCluster_RemoveAdmin_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveAdmin().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddPendingNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddPendingNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddPendingNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddPendingNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RefreshNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RefreshNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class JointFabricDatastoreCluster_RefreshNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RefreshNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RemoveNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class JointFabricDatastoreCluster_RemoveNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateEndpointForNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateEndpointForNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_UpdateEndpointForNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateEndpointForNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddGroupIDToEndpointForNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddGroupIDToEndpointForNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class JointFabricDatastoreCluster_AddGroupIDToEndpointForNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddGroupIDToEndpointForNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RemoveGroupIDFromEndpointForNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveGroupIDFromEndpointForNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class JointFabricDatastoreCluster_RemoveGroupIDFromEndpointForNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveGroupIDFromEndpointForNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddBindingToEndpointForNode_Input_Binding(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddBindingToEndpointForNode().Input.Binding."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Node: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Group: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Endpoint: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Cluster: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class JointFabricDatastoreCluster_AddBindingToEndpointForNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddBindingToEndpointForNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Binding: JointFabricDatastoreCluster_AddBindingToEndpointForNode_Input_Binding | None = _Field(default=None)
+
+
+class JointFabricDatastoreCluster_AddBindingToEndpointForNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddBindingToEndpointForNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RemoveBindingFromEndpointForNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveBindingFromEndpointForNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ListID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class JointFabricDatastoreCluster_RemoveBindingFromEndpointForNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveBindingFromEndpointForNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_AddACLToNode_Input_ACLEntry_Targets(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddACLToNode().Input.ACLEntry.Targets.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Cluster: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Endpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    DeviceType: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class JointFabricDatastoreCluster_AddACLToNode_Input_ACLEntry(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddACLToNode().Input.ACLEntry."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Privilege: _Annotated[_Literal['View', 'ProxyView', 'Operate', 'Manage', 'Administer'] | str | None, _Param(_BaseType.STRING)] = None
+    AuthMode: _Annotated[_Literal['PASE', 'CASE', 'Group'] | str | None, _Param(_BaseType.STRING)] = None
+    Subjects: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_LONG, list=True)] = None
+    Targets: dict[int, JointFabricDatastoreCluster_AddACLToNode_Input_ACLEntry_Targets] = _Field(default_factory=dict)
+
+
+class JointFabricDatastoreCluster_AddACLToNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddACLToNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ACLEntry: JointFabricDatastoreCluster_AddACLToNode_Input_ACLEntry | None = _Field(default=None)
+
+
+class JointFabricDatastoreCluster_AddACLToNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddACLToNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class JointFabricDatastoreCluster_RemoveACLFromNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveACLFromNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ListID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class JointFabricDatastoreCluster_RemoveACLFromNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveACLFromNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddKeySet()": (JointFabricDatastoreCluster_AddKeySet_Input, JointFabricDatastoreCluster_AddKeySet_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateKeySet()": (JointFabricDatastoreCluster_UpdateKeySet_Input, JointFabricDatastoreCluster_UpdateKeySet_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveKeySet()": (JointFabricDatastoreCluster_RemoveKeySet_Input, JointFabricDatastoreCluster_RemoveKeySet_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddGroup()": (JointFabricDatastoreCluster_AddGroup_Input, JointFabricDatastoreCluster_AddGroup_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateGroup()": (JointFabricDatastoreCluster_UpdateGroup_Input, JointFabricDatastoreCluster_UpdateGroup_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveGroup()": (JointFabricDatastoreCluster_RemoveGroup_Input, JointFabricDatastoreCluster_RemoveGroup_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddAdmin()": (JointFabricDatastoreCluster_AddAdmin_Input, JointFabricDatastoreCluster_AddAdmin_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateAdmin()": (JointFabricDatastoreCluster_UpdateAdmin_Input, JointFabricDatastoreCluster_UpdateAdmin_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveAdmin()": (JointFabricDatastoreCluster_RemoveAdmin_Input, JointFabricDatastoreCluster_RemoveAdmin_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddPendingNode()": (JointFabricDatastoreCluster_AddPendingNode_Input, JointFabricDatastoreCluster_AddPendingNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RefreshNode()": (JointFabricDatastoreCluster_RefreshNode_Input, JointFabricDatastoreCluster_RefreshNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateNode()": (JointFabricDatastoreCluster_UpdateNode_Input, JointFabricDatastoreCluster_UpdateNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveNode()": (JointFabricDatastoreCluster_RemoveNode_Input, JointFabricDatastoreCluster_RemoveNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.UpdateEndpointForNode()": (JointFabricDatastoreCluster_UpdateEndpointForNode_Input, JointFabricDatastoreCluster_UpdateEndpointForNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddGroupIDToEndpointForNode()": (JointFabricDatastoreCluster_AddGroupIDToEndpointForNode_Input, JointFabricDatastoreCluster_AddGroupIDToEndpointForNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveGroupIDFromEndpointForNode()": (JointFabricDatastoreCluster_RemoveGroupIDFromEndpointForNode_Input, JointFabricDatastoreCluster_RemoveGroupIDFromEndpointForNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddBindingToEndpointForNode()": (JointFabricDatastoreCluster_AddBindingToEndpointForNode_Input, JointFabricDatastoreCluster_AddBindingToEndpointForNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveBindingFromEndpointForNode()": (JointFabricDatastoreCluster_RemoveBindingFromEndpointForNode_Input, JointFabricDatastoreCluster_RemoveBindingFromEndpointForNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.AddACLToNode()": (JointFabricDatastoreCluster_AddACLToNode_Input, JointFabricDatastoreCluster_AddACLToNode_Output),
+    "MatterService.{i}.JointFabricDatastoreCluster.{i}.RemoveACLFromNode()": (JointFabricDatastoreCluster_RemoveACLFromNode_Input, JointFabricDatastoreCluster_RemoveACLFromNode_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

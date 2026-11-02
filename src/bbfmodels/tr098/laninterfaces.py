@@ -37,3 +37,10 @@ class LANInterfaces(_Model):
     WLANConfiguration: dict[int, LANInterfaces_WLANConfiguration] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

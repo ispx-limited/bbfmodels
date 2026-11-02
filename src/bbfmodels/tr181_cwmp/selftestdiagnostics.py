@@ -15,3 +15,10 @@ class SelfTestDiagnostics(_Model):
     Results: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

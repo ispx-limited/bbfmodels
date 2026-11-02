@@ -27,3 +27,10 @@ class FTPServer(_Model):
     AnonymousUser: FTPServer_AnonymousUser | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

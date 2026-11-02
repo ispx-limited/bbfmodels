@@ -71,3 +71,43 @@ class IEEE8021x(_Model):
     Supplicant: dict[int, IEEE8021x_Supplicant] = _Field(default_factory=dict)
 
 
+class IEEE8021x_Supplicant_Reset_Input(_Model):
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IEEE8021x_Supplicant_Reset_Output(_Model):
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IEEE8021x_Supplicant_Disconnect_Input(_Model):
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.Disconnect().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IEEE8021x_Supplicant_Disconnect_Output(_Model):
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.Disconnect().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IEEE8021x_Supplicant_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IEEE8021x_Supplicant_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.IEEE8021x.Supplicant.{i}.Reset()": (IEEE8021x_Supplicant_Reset_Input, IEEE8021x_Supplicant_Reset_Output),
+    "Device.IEEE8021x.Supplicant.{i}.Disconnect()": (IEEE8021x_Supplicant_Disconnect_Input, IEEE8021x_Supplicant_Disconnect_Output),
+    "Device.IEEE8021x.Supplicant.{i}.Stats.Reset()": (IEEE8021x_Supplicant_Stats_Reset_Input, IEEE8021x_Supplicant_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -431,3 +431,10 @@ class Components(_Model):
     DRM: dict[int, Components_DRM] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

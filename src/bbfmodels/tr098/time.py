@@ -27,3 +27,10 @@ class Time(_Model):
     Status: _Annotated[_Literal['Disabled', 'Unsynchronized', 'Synchronized', 'Error_FailedToSynchronize', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

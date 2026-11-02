@@ -37,3 +37,148 @@ class TLSCertificateManagementCluster(_Model):
     ProvisionedClientCertificates: dict[int, TLSCertificateManagementCluster_ProvisionedClientCertificates] = _Field(default_factory=dict)
 
 
+class TLSCertificateManagementCluster_ProvisionRootCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.ProvisionRootCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CAID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class TLSCertificateManagementCluster_ProvisionRootCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.ProvisionRootCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CAID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSCertificateManagementCluster_FindRootCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindRootCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CAID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class TLSCertificateManagementCluster_FindRootCertificate_Output_CertificateDetails(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindRootCertificate().Output.CertificateDetails.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CAID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TLSCertificateManagementCluster_FindRootCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindRootCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CertificateDetails: dict[int, TLSCertificateManagementCluster_FindRootCertificate_Output_CertificateDetails] = _Field(default_factory=dict)
+
+
+class TLSCertificateManagementCluster_LookupRootCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupRootCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Fingerprint: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TLSCertificateManagementCluster_LookupRootCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupRootCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CAID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSCertificateManagementCluster_RemoveRootCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.RemoveRootCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CAID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSCertificateManagementCluster_RemoveRootCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.RemoveRootCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class TLSCertificateManagementCluster_ClientCSR_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.ClientCSR().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Nonce: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CCDID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class TLSCertificateManagementCluster_ClientCSR_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.ClientCSR().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CCDID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CSR: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NonceSignature: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TLSCertificateManagementCluster_ProvisionClientCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.ProvisionClientCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CCDID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ClientCertificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IntermediateCertificates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class TLSCertificateManagementCluster_ProvisionClientCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.ProvisionClientCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class TLSCertificateManagementCluster_FindClientCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindClientCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CCDID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class TLSCertificateManagementCluster_FindClientCertificate_Output_CertificateDetails(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindClientCertificate().Output.CertificateDetails.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CCDID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ClientCertificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IntermediateCertificates: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class TLSCertificateManagementCluster_FindClientCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindClientCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CertificateDetails: dict[int, TLSCertificateManagementCluster_FindClientCertificate_Output_CertificateDetails] = _Field(default_factory=dict)
+
+
+class TLSCertificateManagementCluster_LookupClientCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupClientCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Fingerprint: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class TLSCertificateManagementCluster_LookupClientCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupClientCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CCDID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSCertificateManagementCluster_RemoveClientCertificate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.RemoveClientCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CCDID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class TLSCertificateManagementCluster_RemoveClientCertificate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.TLSCertificateManagementCluster.{i}.RemoveClientCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.ProvisionRootCertificate()": (TLSCertificateManagementCluster_ProvisionRootCertificate_Input, TLSCertificateManagementCluster_ProvisionRootCertificate_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindRootCertificate()": (TLSCertificateManagementCluster_FindRootCertificate_Input, TLSCertificateManagementCluster_FindRootCertificate_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupRootCertificate()": (TLSCertificateManagementCluster_LookupRootCertificate_Input, TLSCertificateManagementCluster_LookupRootCertificate_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.RemoveRootCertificate()": (TLSCertificateManagementCluster_RemoveRootCertificate_Input, TLSCertificateManagementCluster_RemoveRootCertificate_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.ClientCSR()": (TLSCertificateManagementCluster_ClientCSR_Input, TLSCertificateManagementCluster_ClientCSR_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.ProvisionClientCertificate()": (TLSCertificateManagementCluster_ProvisionClientCertificate_Input, TLSCertificateManagementCluster_ProvisionClientCertificate_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.FindClientCertificate()": (TLSCertificateManagementCluster_FindClientCertificate_Input, TLSCertificateManagementCluster_FindClientCertificate_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.LookupClientCertificate()": (TLSCertificateManagementCluster_LookupClientCertificate_Input, TLSCertificateManagementCluster_LookupClientCertificate_Output),
+    "MatterService.{i}.TLSCertificateManagementCluster.{i}.RemoveClientCertificate()": (TLSCertificateManagementCluster_RemoveClientCertificate_Input, TLSCertificateManagementCluster_RemoveClientCertificate_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

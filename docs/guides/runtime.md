@@ -104,3 +104,23 @@ codec.problems(schema.parameter("Device.WiFi.Radio.{i}.Channel").syntax, "999")
 `problems` checks the base type's bounds, ranges with their step, sizes,
 enumerations (unless the parameter takes its values from another parameter
 through an enumeration reference), patterns, and list bounds.
+
+`xsd_type` gives the `xsi:type` a CWMP SetParameterValues carries for a
+parameter, `xsd:unsignedInt` for `Channel`, `xsd:string` for any list.
+
+## Commands and events
+
+A USP document's commands and events are on the objects that own them:
+`schema.object("Device.").commands["Reboot()"]` and `.events["Boot!"]`.
+Their arguments are indexed as objects under paths of bbfmodels' own,
+`Device.IP.Diagnostics.TraceRoute().Input.`, `...TraceRoute().Output.`
+and `Device.Boot!.`, with any object inside an output beneath them, so an
+argument value resolves and validates like a parameter:
+
+```python
+schema = Schema.from_documents(parse_file(fetch("tr-181-2-21-0-usp-full.xml")))
+schema.parameter("Device.IP.Diagnostics.TraceRoute().Input.Host").mandatory   # True
+schema.resolve("Device.IP.Diagnostics.TraceRoute().Output.RouteHops.1.Host").instances   # (1,)
+```
+
+These paths never appear on the wire; `children()` leaves them out.

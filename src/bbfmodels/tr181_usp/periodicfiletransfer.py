@@ -103,3 +103,28 @@ class PeriodicFileTransfer(_Model):
     Stats: PeriodicFileTransfer_Stats | None = _Field(default=None)
 
 
+class PeriodicFileTransfer_Transfer_ForceTransfer_Input(_Model):
+    __bbf_path__ = "Device.PeriodicFileTransfer.Transfer.{i}.ForceTransfer().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PeriodicFileTransfer_Transfer_ForceTransfer_Output(_Model):
+    __bbf_path__ = "Device.PeriodicFileTransfer.Transfer.{i}.ForceTransfer().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PeriodicFileTransfer_Transfer_Push(_Model):
+    __bbf_path__ = "Device.PeriodicFileTransfer.Transfer.{i}.Push!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "Device.PeriodicFileTransfer.Transfer.{i}.ForceTransfer()": (PeriodicFileTransfer_Transfer_ForceTransfer_Input, PeriodicFileTransfer_Transfer_ForceTransfer_Output),
+}
+_EVENTS = {
+    "Device.PeriodicFileTransfer.Transfer.{i}.Push!": PeriodicFileTransfer_Transfer_Push,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

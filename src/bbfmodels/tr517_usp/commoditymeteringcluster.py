@@ -26,3 +26,10 @@ class CommodityMeteringCluster(_Model):
     MeteredQuantity: dict[int, CommodityMeteringCluster_MeteredQuantity] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

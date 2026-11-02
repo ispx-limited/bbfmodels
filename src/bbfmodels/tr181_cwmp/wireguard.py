@@ -91,3 +91,10 @@ class WireGuard(_Model):
     Peer: dict[int, WireGuard_Peer] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

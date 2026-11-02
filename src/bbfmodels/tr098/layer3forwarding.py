@@ -35,3 +35,10 @@ class Layer3Forwarding(_Model):
     Forwarding: dict[int, Layer3Forwarding_Forwarding] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

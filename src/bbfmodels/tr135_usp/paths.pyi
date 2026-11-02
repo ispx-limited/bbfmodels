@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class Components_FrontEnd_DVBT_ServiceListDatabase_LogicalChannel_ServicePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -148,6 +148,7 @@ class Components_FrontEnd_DVBT_ServiceListDatabasePath(ObjectPathBase):
     TotalServices: ParamPath[int]
     LogicalChannelNumberOfEntries: ParamPath[int]
     LogicalChannel: TablePath[Components_FrontEnd_DVBT_ServiceListDatabase_LogicalChannelPath]
+    Reset: CommandPath
 
 class Components_FrontEnd_IP_RTCPPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -368,6 +369,9 @@ class Components_FrontEnd_DVBTPath(ObjectPathBase):
     Modulation: Components_FrontEnd_DVBT_ModulationPath
     Service: Components_FrontEnd_DVBT_ServicePath
     ServiceListDatabase: Components_FrontEnd_DVBT_ServiceListDatabasePath
+    Install: CommandPath
+    LogicalChannelConnect: CommandPath
+    ServiceConnect: CommandPath
 
 class Components_FrontEnd_IPPath(ObjectPathBase):
     InboundNumberOfEntries: ParamPath[int]
@@ -382,6 +386,7 @@ class Components_FrontEnd_IPPath(ObjectPathBase):
     Inbound: TablePath[Components_FrontEnd_IP_InboundPath]
     Outbound: TablePath[Components_FrontEnd_IP_OutboundPath]
     ForceMonitor: Components_FrontEnd_IP_ForceMonitorPath
+    ServiceConnect: CommandPath
 
 class Components_PVR_StoragePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -409,6 +414,7 @@ class ServiceMonitoring_MainStream_TotalPath(ObjectPathBase):
     VideoDecoderStats: ServiceMonitoring_MainStream_Total_VideoDecoderStatsPath
     AudioDecoderStats: ServiceMonitoring_MainStream_Total_AudioDecoderStatsPath
     VideoResponseStats: ServiceMonitoring_MainStream_Total_VideoResponseStatsPath
+    Reset: CommandPath
 
 class ServiceMonitoring_MainStream_SamplePath(ObjectPathBase):
     SampleSeconds: ParamPath[list[int]]
@@ -427,6 +433,7 @@ class ServiceMonitoring_MainStream_SamplePath(ObjectPathBase):
 class ServiceMonitoring_MainStream_EventLogPath(ObjectPathBase):
     EntryNumberOfEntries: ParamPath[int]
     Entry: TablePath[ServiceMonitoring_MainStream_EventLog_EntryPath]
+    Reset: CommandPath
 
 class Applications_AudienceStats_ChannelPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -437,11 +444,13 @@ class Applications_CDSPush_ContentItemPath(ObjectPathBase):
     Alias: ParamPath[str]
     ContentReferenceId: ParamPath[str]
     VersionNumber: ParamPath[int]
+    DeleteItem: CommandPath
 
 class Applications_CDSPull_ContentItemPath(ObjectPathBase):
     Alias: ParamPath[str]
     ContentReferenceId: ParamPath[str]
     VersionNumber: ParamPath[int]
+    DeleteItem: CommandPath
 
 class Capabilities_FrontEnd_DVBTPath(ObjectPathBase):
     MaxActiveDVBTStreams: ParamPath[int]
@@ -512,6 +521,7 @@ class Components_AudioOutputPath(ObjectPathBase):
     AudioFormat: ParamPath[str]
     AudioLevel: ParamPath[int]
     SCARTs: ParamPath[list[str]]
+    CancelMute: CommandPath
 
 class Components_SPDIFPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -697,6 +707,7 @@ class Applications_AudienceStatsPath(ObjectPathBase):
     ResetTime: ParamPath[int]
     ChannelNumberOfEntries: ParamPath[int]
     Channel: TablePath[Applications_AudienceStats_ChannelPath]
+    Reset: CommandPath
 
 class Applications_CDSPushPath(ObjectPathBase):
     Reference: ParamPath[str]
@@ -759,6 +770,7 @@ class AVPlayersPath(ObjectPathBase):
     PreferredSubtitlingLanguage: ParamPath[str]
     PreferredBehaviour: ParamPath[str]
     AVPlayer: TablePath[AVPlayers_AVPlayerPath]
+    ResetPINCode: CommandPath
 
 class ServiceMonitoringPath(ObjectPathBase):
     SampleEnable: ParamPath[bool]
@@ -774,6 +786,7 @@ class ServiceMonitoringPath(ObjectPathBase):
     EventCollectionEnable: ParamPath[bool]
     MainStream: TablePath[ServiceMonitoring_MainStreamPath]
     GlobalOperation: ServiceMonitoring_GlobalOperationPath
+    ForceSample: CommandPath
 
 class ApplicationsPath(ObjectPathBase):
     ServiceProviderNumberOfEntries: ParamPath[int]

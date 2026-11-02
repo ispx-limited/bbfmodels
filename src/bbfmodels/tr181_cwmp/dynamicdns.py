@@ -60,3 +60,10 @@ class DynamicDNS(_Model):
     Server: dict[int, DynamicDNS_Server] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

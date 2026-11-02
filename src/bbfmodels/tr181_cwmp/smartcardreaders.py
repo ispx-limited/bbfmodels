@@ -40,3 +40,10 @@ class SmartCardReaders(_Model):
     SmartCardReader: dict[int, SmartCardReaders_SmartCardReader] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

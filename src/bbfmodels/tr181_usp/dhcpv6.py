@@ -229,3 +229,54 @@ class DHCPv6(_Model):
     Server: DHCPv6_Server | None = _Field(default=None)
 
 
+class DHCPv6_Client_Renew_Input(_Model):
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Renew().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DHCPv6_Client_Renew_Output(_Model):
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Renew().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DHCPv6_Client_Release_Input(_Model):
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Release().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DHCPv6_Client_Release_Output(_Model):
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Release().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DHCPv6_Client_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DHCPv6_Client_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DHCPv6_Server_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DHCPv6.Server.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DHCPv6_Server_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DHCPv6.Server.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.DHCPv6.Client.{i}.Renew()": (DHCPv6_Client_Renew_Input, DHCPv6_Client_Renew_Output),
+    "Device.DHCPv6.Client.{i}.Release()": (DHCPv6_Client_Release_Input, DHCPv6_Client_Release_Output),
+    "Device.DHCPv6.Client.{i}.Stats.Reset()": (DHCPv6_Client_Stats_Reset_Input, DHCPv6_Client_Stats_Reset_Output),
+    "Device.DHCPv6.Server.Stats.Reset()": (DHCPv6_Server_Stats_Reset_Input, DHCPv6_Server_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

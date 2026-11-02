@@ -398,3 +398,81 @@ class Components(_Model):
     DRM: dict[int, Components_DRM] = _Field(default_factory=dict)
 
 
+class Components_FrontEnd_DVBT_Install_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.Install().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+    StartFrequency: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StopFrequency: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Components_FrontEnd_DVBT_Install_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.Install().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Components_FrontEnd_DVBT_LogicalChannelConnect_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.LogicalChannelConnect().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+    LogicalChannelNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Components_FrontEnd_DVBT_LogicalChannelConnect_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.LogicalChannelConnect().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Components_FrontEnd_DVBT_ServiceConnect_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.ServiceConnect().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+    DvbId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Components_FrontEnd_DVBT_ServiceConnect_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.ServiceConnect().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Components_FrontEnd_DVBT_ServiceListDatabase_Reset_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.ServiceListDatabase.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Components_FrontEnd_DVBT_ServiceListDatabase_Reset_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.DVBT.ServiceListDatabase.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Components_FrontEnd_IP_ServiceConnect_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.IP.ServiceConnect().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+    URI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Components_FrontEnd_IP_ServiceConnect_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Components.FrontEnd.{i}.IP.ServiceConnect().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Components_AudioOutput_CancelMute_Input(_Model):
+    __bbf_path__ = "STBService.{i}.Components.AudioOutput.{i}.CancelMute().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class Components_AudioOutput_CancelMute_Output(_Model):
+    __bbf_path__ = "STBService.{i}.Components.AudioOutput.{i}.CancelMute().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+_COMMANDS = {
+    "STBService.{i}.Components.FrontEnd.{i}.DVBT.Install()": (Components_FrontEnd_DVBT_Install_Input, Components_FrontEnd_DVBT_Install_Output),
+    "STBService.{i}.Components.FrontEnd.{i}.DVBT.LogicalChannelConnect()": (Components_FrontEnd_DVBT_LogicalChannelConnect_Input, Components_FrontEnd_DVBT_LogicalChannelConnect_Output),
+    "STBService.{i}.Components.FrontEnd.{i}.DVBT.ServiceConnect()": (Components_FrontEnd_DVBT_ServiceConnect_Input, Components_FrontEnd_DVBT_ServiceConnect_Output),
+    "STBService.{i}.Components.FrontEnd.{i}.DVBT.ServiceListDatabase.Reset()": (Components_FrontEnd_DVBT_ServiceListDatabase_Reset_Input, Components_FrontEnd_DVBT_ServiceListDatabase_Reset_Output),
+    "STBService.{i}.Components.FrontEnd.{i}.IP.ServiceConnect()": (Components_FrontEnd_IP_ServiceConnect_Input, Components_FrontEnd_IP_ServiceConnect_Output),
+    "STBService.{i}.Components.AudioOutput.{i}.CancelMute()": (Components_AudioOutput_CancelMute_Input, Components_AudioOutput_CancelMute_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

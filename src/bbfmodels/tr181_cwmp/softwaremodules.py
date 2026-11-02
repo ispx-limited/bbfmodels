@@ -241,3 +241,10 @@ class SoftwareModules(_Model):
     Config_: SoftwareModules_Config | None = _Field(default=None, alias="Config")
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

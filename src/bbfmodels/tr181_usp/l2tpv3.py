@@ -110,3 +110,21 @@ class L2TPv3(_Model):
     Filter: dict[int, L2TPv3_Filter] = _Field(default_factory=dict)
 
 
+class L2TPv3_Tunnel_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.L2TPv3.Tunnel.{i}.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class L2TPv3_Tunnel_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.L2TPv3.Tunnel.{i}.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.L2TPv3.Tunnel.{i}.Interface.{i}.Stats.Reset()": (L2TPv3_Tunnel_Interface_Stats_Reset_Input, L2TPv3_Tunnel_Interface_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

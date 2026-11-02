@@ -2298,3 +2298,10 @@ class WiFi(_Model):
     EndPoint: dict[int, WiFi_EndPoint] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

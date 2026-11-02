@@ -32,3 +32,10 @@ class AVStreams(_Model):
     AVStream: dict[int, AVStreams_AVStream] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

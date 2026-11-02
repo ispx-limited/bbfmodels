@@ -252,3 +252,10 @@ class MQTT(_Model):
     Broker: dict[int, MQTT_Broker] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

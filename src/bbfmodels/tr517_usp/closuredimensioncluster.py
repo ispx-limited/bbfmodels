@@ -56,3 +56,40 @@ class ClosureDimensionCluster(_Model):
     LimitRange: ClosureDimensionCluster_LimitRange | None = _Field(default=None)
 
 
+class ClosureDimensionCluster_SetTarget_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ClosureDimensionCluster.{i}.SetTarget().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Position: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Latch: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Speed: _Annotated[_Literal['Auto', 'Low', 'Medium', 'High'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ClosureDimensionCluster_SetTarget_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ClosureDimensionCluster.{i}.SetTarget().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ClosureDimensionCluster_Step_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ClosureDimensionCluster.{i}.Step().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Direction: _Annotated[_Literal['Decrease', 'Increase'] | str | None, _Param(_BaseType.STRING)] = None
+    NumberOfSteps: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Speed: _Annotated[_Literal['Auto', 'Low', 'Medium', 'High'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ClosureDimensionCluster_Step_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ClosureDimensionCluster.{i}.Step().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.ClosureDimensionCluster.{i}.SetTarget()": (ClosureDimensionCluster_SetTarget_Input, ClosureDimensionCluster_SetTarget_Output),
+    "MatterService.{i}.ClosureDimensionCluster.{i}.Step()": (ClosureDimensionCluster_Step_Input, ClosureDimensionCluster_Step_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

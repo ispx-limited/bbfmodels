@@ -33,3 +33,10 @@ class SmartCardReader(_Model):
     SmartCard: SmartCardReader_SmartCard | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

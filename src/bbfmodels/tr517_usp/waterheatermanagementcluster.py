@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, HexBinary as _HexBinary
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class WaterHeaterManagementCluster(_Model):
@@ -19,4 +19,71 @@ class WaterHeaterManagementCluster(_Model):
     TankPercentage: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BoostState: _Annotated[_Literal['Inactive', 'Active'] | str | None, _Param(_BaseType.STRING)] = None
 
+
+class WaterHeaterManagementCluster_Boost_Input_BoostInfo(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.Boost().Input.BoostInfo."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OneShot: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    EmergencyBoost: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    TemporarySetpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TargetPercentage: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetReheat: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WaterHeaterManagementCluster_Boost_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.Boost().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    BoostInfo: WaterHeaterManagementCluster_Boost_Input_BoostInfo | None = _Field(default=None)
+
+
+class WaterHeaterManagementCluster_Boost_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.Boost().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WaterHeaterManagementCluster_CancelBoost_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.CancelBoost().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class WaterHeaterManagementCluster_CancelBoost_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.CancelBoost().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WaterHeaterManagementCluster_BoostStarted_BoostInfo(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.BoostStarted!.BoostInfo."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    OneShot: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    EmergencyBoost: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    TemporarySetpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TargetPercentage: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetReheat: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WaterHeaterManagementCluster_BoostStarted(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.BoostStarted!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    BoostInfo: WaterHeaterManagementCluster_BoostStarted_BoostInfo | None = _Field(default=None)
+
+
+class WaterHeaterManagementCluster_BoostEnded(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterHeaterManagementCluster.{i}.BoostEnded!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+_COMMANDS = {
+    "MatterService.{i}.WaterHeaterManagementCluster.{i}.Boost()": (WaterHeaterManagementCluster_Boost_Input, WaterHeaterManagementCluster_Boost_Output),
+    "MatterService.{i}.WaterHeaterManagementCluster.{i}.CancelBoost()": (WaterHeaterManagementCluster_CancelBoost_Input, WaterHeaterManagementCluster_CancelBoost_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.WaterHeaterManagementCluster.{i}.BoostStarted!": WaterHeaterManagementCluster_BoostStarted,
+    "MatterService.{i}.WaterHeaterManagementCluster.{i}.BoostEnded!": WaterHeaterManagementCluster_BoostEnded,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

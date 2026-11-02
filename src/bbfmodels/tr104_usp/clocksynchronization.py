@@ -27,3 +27,10 @@ class ClockSynchronization(_Model):
     ClockSource: dict[int, ClockSynchronization_ClockSource] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

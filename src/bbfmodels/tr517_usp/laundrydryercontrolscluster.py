@@ -16,3 +16,10 @@ class LaundryDryerControlsCluster(_Model):
     SelectedDrynessLevel: _Annotated[_Literal['Low', 'Normal', 'Extra', 'Max'] | str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

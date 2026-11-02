@@ -53,3 +53,10 @@ class PeriodicStatistics(_Model):
     SampleSet: dict[int, PeriodicStatistics_SampleSet] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

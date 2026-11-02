@@ -24,3 +24,134 @@ class LevelControlCluster(_Model):
     StartUpCurrentLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
+class LevelControlCluster_MoveToLevel_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveToLevel().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Level: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class LevelControlCluster_MoveToLevel_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveToLevel().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_Move_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.Move().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    MoveMode: _Annotated[_Literal['Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    Rate: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class LevelControlCluster_Move_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.Move().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_Step_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.Step().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StepMode: _Annotated[_Literal['Up', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
+    StepSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class LevelControlCluster_Step_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.Step().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_Stop_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.Stop().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OptionsMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    OptionsOverride: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class LevelControlCluster_Stop_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.Stop().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_MoveToLevelWithOnOff_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveToLevelWithOnOff().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class LevelControlCluster_MoveToLevelWithOnOff_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveToLevelWithOnOff().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_MoveWithOnOff_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveWithOnOff().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class LevelControlCluster_MoveWithOnOff_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveWithOnOff().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_StepWithOnOff_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.StepWithOnOff().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class LevelControlCluster_StepWithOnOff_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.StepWithOnOff().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_StopWithOnOff_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.StopWithOnOff().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class LevelControlCluster_StopWithOnOff_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.StopWithOnOff().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LevelControlCluster_MoveToClosestFrequency_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveToClosestFrequency().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Frequency: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class LevelControlCluster_MoveToClosestFrequency_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LevelControlCluster.{i}.MoveToClosestFrequency().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.LevelControlCluster.{i}.MoveToLevel()": (LevelControlCluster_MoveToLevel_Input, LevelControlCluster_MoveToLevel_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.Move()": (LevelControlCluster_Move_Input, LevelControlCluster_Move_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.Step()": (LevelControlCluster_Step_Input, LevelControlCluster_Step_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.Stop()": (LevelControlCluster_Stop_Input, LevelControlCluster_Stop_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.MoveToLevelWithOnOff()": (LevelControlCluster_MoveToLevelWithOnOff_Input, LevelControlCluster_MoveToLevelWithOnOff_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.MoveWithOnOff()": (LevelControlCluster_MoveWithOnOff_Input, LevelControlCluster_MoveWithOnOff_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.StepWithOnOff()": (LevelControlCluster_StepWithOnOff_Input, LevelControlCluster_StepWithOnOff_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.StopWithOnOff()": (LevelControlCluster_StopWithOnOff_Input, LevelControlCluster_StopWithOnOff_Output),
+    "MatterService.{i}.LevelControlCluster.{i}.MoveToClosestFrequency()": (LevelControlCluster_MoveToClosestFrequency_Input, LevelControlCluster_MoveToClosestFrequency_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -37,3 +37,112 @@ class PumpConfigurationandControlCluster(_Model):
     ControlMode: _Annotated[_Literal['ConstantSpeed', 'ConstantPressure', 'ProportionalPressure', 'ConstantFlow', 'ConstantTemperature', 'Automatic'] | str | None, _Param(_BaseType.STRING)] = None
 
 
+class PumpConfigurationandControlCluster_SupplyVoltageLow(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageLow!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_SupplyVoltageHigh(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageHigh!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_PowerMissingPhase(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.PowerMissingPhase!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_SystemPressureLow(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureLow!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_SystemPressureHigh(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureHigh!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_DryRunning(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.DryRunning!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_MotorTemperatureHigh(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.MotorTemperatureHigh!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_PumpMotorFatalFailure(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.PumpMotorFatalFailure!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_ElectronicTemperatureHigh(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.ElectronicTemperatureHigh!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_PumpBlocked(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.PumpBlocked!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_SensorFailure(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SensorFailure!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_ElectronicNonFatalFailure(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.ElectronicNonFatalFailure!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_ElectronicFatalFailure(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.ElectronicFatalFailure!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_GeneralFault(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.GeneralFault!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_Leakage(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.Leakage!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_AirDetection(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.AirDetection!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class PumpConfigurationandControlCluster_TurbineOperation(_Model):
+    __bbf_path__ = "MatterService.{i}.PumpConfigurationandControlCluster.{i}.TurbineOperation!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+_COMMANDS = {
+}
+_EVENTS = {
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageLow!": PumpConfigurationandControlCluster_SupplyVoltageLow,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SupplyVoltageHigh!": PumpConfigurationandControlCluster_SupplyVoltageHigh,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.PowerMissingPhase!": PumpConfigurationandControlCluster_PowerMissingPhase,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureLow!": PumpConfigurationandControlCluster_SystemPressureLow,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SystemPressureHigh!": PumpConfigurationandControlCluster_SystemPressureHigh,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.DryRunning!": PumpConfigurationandControlCluster_DryRunning,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.MotorTemperatureHigh!": PumpConfigurationandControlCluster_MotorTemperatureHigh,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.PumpMotorFatalFailure!": PumpConfigurationandControlCluster_PumpMotorFatalFailure,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.ElectronicTemperatureHigh!": PumpConfigurationandControlCluster_ElectronicTemperatureHigh,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.PumpBlocked!": PumpConfigurationandControlCluster_PumpBlocked,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.SensorFailure!": PumpConfigurationandControlCluster_SensorFailure,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.ElectronicNonFatalFailure!": PumpConfigurationandControlCluster_ElectronicNonFatalFailure,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.ElectronicFatalFailure!": PumpConfigurationandControlCluster_ElectronicFatalFailure,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.GeneralFault!": PumpConfigurationandControlCluster_GeneralFault,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.Leakage!": PumpConfigurationandControlCluster_Leakage,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.AirDetection!": PumpConfigurationandControlCluster_AirDetection,
+    "MatterService.{i}.PumpConfigurationandControlCluster.{i}.TurbineOperation!": PumpConfigurationandControlCluster_TurbineOperation,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

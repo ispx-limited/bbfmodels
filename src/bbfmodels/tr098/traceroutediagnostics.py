@@ -33,3 +33,10 @@ class TraceRouteDiagnostics(_Model):
     RouteHops: dict[int, TraceRouteDiagnostics_RouteHops] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

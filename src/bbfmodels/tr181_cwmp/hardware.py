@@ -97,3 +97,10 @@ class Hardware(_Model):
     Buttons: Hardware_Buttons | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

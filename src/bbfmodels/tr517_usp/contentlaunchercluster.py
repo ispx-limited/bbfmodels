@@ -3,9 +3,10 @@
 # ruff: noqa
 
 from typing import Annotated as _Annotated, Literal as _Literal
+from decimal import Decimal as _Decimal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, HexBinary as _HexBinary
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class ContentLauncherCluster(_Model):
@@ -15,4 +16,226 @@ class ContentLauncherCluster(_Model):
     AcceptHeader: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     SupportedStreamingProtocols: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
+
+class ContentLauncherCluster_LaunchContent_Input_Search_ParameterList_ExternalIDList(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.Search.ParameterList.{i}.ExternalIDList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_AudioTracks_Characteristics(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.PlaybackPreferences.AudioTracks.{i}.Characteristics.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_TextTrack_Characteristics(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.PlaybackPreferences.TextTrack.Characteristics.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentLauncherCluster_LaunchContent_Input_Search_ParameterList(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.Search.ParameterList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Type: _Annotated[_Literal['Actor', 'Channel', 'Character', 'Director', 'Event', 'Franchise', 'Genre', 'League', 'Popularity', 'Provider', 'Sport', 'SportsTeam', 'Type', 'Video', 'Season', 'Episode', 'Any'] | str | None, _Param(_BaseType.STRING)] = None
+    Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExternalIDList: dict[int, ContentLauncherCluster_LaunchContent_Input_Search_ParameterList_ExternalIDList] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_AudioTracks(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.PlaybackPreferences.AudioTracks.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LanguageCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AudioOutputIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Characteristics: dict[int, ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_AudioTracks_Characteristics] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_TextTrack(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.PlaybackPreferences.TextTrack."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LanguageCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AudioOutputIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Characteristics: dict[int, ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_TextTrack_Characteristics] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchContent_Input_Search(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.Search."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ParameterList: dict[int, ContentLauncherCluster_LaunchContent_Input_Search_ParameterList] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input.PlaybackPreferences."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PlaybackPosition: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    TextTrack: ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_TextTrack | None = _Field(default=None)
+    AudioTracks: dict[int, ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences_AudioTracks] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchContent_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AutoPlay: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UseCurrentContext: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Search: ContentLauncherCluster_LaunchContent_Input_Search | None = _Field(default=None)
+    PlaybackPreferences: ContentLauncherCluster_LaunchContent_Input_PlaybackPreferences | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchContent_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'URLNotAvailable', 'AuthFailed', 'TextTrackNotAvailable', 'AudioTrackNotAvailable'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_AudioTracks_Characteristics(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.PlaybackPreferences.AudioTracks.{i}.Characteristics.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_TextTrack_Characteristics(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.PlaybackPreferences.TextTrack.Characteristics.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Background_Size(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.Background.Size."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Height: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Metric: _Annotated[_Literal['Pixels', 'Percentage'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Logo_Size(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.Logo.Size."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Height: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Metric: _Annotated[_Literal['Pixels', 'Percentage'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_ProgressBar_Size(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.ProgressBar.Size."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Height: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Metric: _Annotated[_Literal['Pixels', 'Percentage'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Splash_Size(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.Splash.Size."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Height: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Metric: _Annotated[_Literal['Pixels', 'Percentage'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_WaterMark_Size(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.WaterMark.Size."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Height: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
+    Metric: _Annotated[_Literal['Pixels', 'Percentage'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_AudioTracks(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.PlaybackPreferences.AudioTracks.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LanguageCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AudioOutputIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Characteristics: dict[int, ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_AudioTracks_Characteristics] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Background(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.Background."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ImageURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Color: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Size: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Background_Size | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Logo(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.Logo."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ImageURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Color: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Size: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Logo_Size | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_ProgressBar(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.ProgressBar."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ImageURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Color: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Size: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_ProgressBar_Size | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Splash(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.Splash."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ImageURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Color: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Size: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Splash_Size | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation_WaterMark(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation.WaterMark."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ImageURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Color: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Size: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_WaterMark_Size | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_TextTrack(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.PlaybackPreferences.TextTrack."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    LanguageCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AudioOutputIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Characteristics: dict[int, ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_TextTrack_Characteristics] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchURL_Input_BrandingInformation(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.BrandingInformation."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ProviderName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Background: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Background | None = _Field(default=None)
+    Logo: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Logo | None = _Field(default=None)
+    ProgressBar: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_ProgressBar | None = _Field(default=None)
+    Splash: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_Splash | None = _Field(default=None)
+    WaterMark: ContentLauncherCluster_LaunchURL_Input_BrandingInformation_WaterMark | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input.PlaybackPreferences."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PlaybackPosition: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    TextTrack: ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_TextTrack | None = _Field(default=None)
+    AudioTracks: dict[int, ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences_AudioTracks] = _Field(default_factory=dict)
+
+
+class ContentLauncherCluster_LaunchURL_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ContentURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DisplayString: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BrandingInformation: ContentLauncherCluster_LaunchURL_Input_BrandingInformation | None = _Field(default=None)
+    PlaybackPreferences: ContentLauncherCluster_LaunchURL_Input_PlaybackPreferences | None = _Field(default=None)
+
+
+class ContentLauncherCluster_LaunchURL_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'URLNotAvailable', 'AuthFailed', 'TextTrackNotAvailable', 'AudioTrackNotAvailable'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.ContentLauncherCluster.{i}.LaunchContent()": (ContentLauncherCluster_LaunchContent_Input, ContentLauncherCluster_LaunchContent_Output),
+    "MatterService.{i}.ContentLauncherCluster.{i}.LaunchURL()": (ContentLauncherCluster_LaunchURL_Input, ContentLauncherCluster_LaunchURL_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

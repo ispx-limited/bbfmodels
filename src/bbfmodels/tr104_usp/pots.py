@@ -81,3 +81,38 @@ class POTS(_Model):
     Ringer: POTS_Ringer | None = _Field(default=None)
 
 
+class POTS_FXO_DiagTests_Input(_Model):
+    __bbf_path__ = "VoiceService.{i}.POTS.FXO.{i}.DiagTests().Input."
+    __bbf_package__ = "bbfmodels.tr104_usp"
+    TestSelector: _Annotated[_Literal['Battery', 'DialTone'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class POTS_FXO_DiagTests_Output(_Model):
+    __bbf_path__ = "VoiceService.{i}.POTS.FXO.{i}.DiagTests().Output."
+    __bbf_package__ = "bbfmodels.tr104_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    TestResult: _Annotated[_Literal['Success', 'Failure'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class POTS_FXS_DiagTests_Input(_Model):
+    __bbf_path__ = "VoiceService.{i}.POTS.FXS.{i}.DiagTests().Input."
+    __bbf_package__ = "bbfmodels.tr104_usp"
+    TestSelector: _Annotated[_Literal['Hazard Potential', 'Foreign Voltage', 'Resistive Faults', 'Off-hook', 'REN'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class POTS_FXS_DiagTests_Output(_Model):
+    __bbf_path__ = "VoiceService.{i}.POTS.FXS.{i}.DiagTests().Output."
+    __bbf_package__ = "bbfmodels.tr104_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    TestResult: _Annotated[_Literal['Success', 'Failure'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "VoiceService.{i}.POTS.FXO.{i}.DiagTests()": (POTS_FXO_DiagTests_Input, POTS_FXO_DiagTests_Output),
+    "VoiceService.{i}.POTS.FXS.{i}.DiagTests()": (POTS_FXS_DiagTests_Input, POTS_FXS_DiagTests_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

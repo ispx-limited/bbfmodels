@@ -106,3 +106,10 @@ class NAT(_Model):
     NPTv6: NAT_NPTv6 | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

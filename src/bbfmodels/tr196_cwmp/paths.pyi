@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class CellConfig_LTE_RAN_Mobility_IdleMode_IRAT_UTRA_UTRANFDDFreqPath(ObjectPathBase):
     Enable: ParamPath[bool]

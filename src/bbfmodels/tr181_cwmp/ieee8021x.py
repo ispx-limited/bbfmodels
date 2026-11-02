@@ -74,3 +74,10 @@ class IEEE8021x(_Model):
     Supplicant: dict[int, IEEE8021x_Supplicant] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

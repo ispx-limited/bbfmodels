@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, HexBinary as _HexBinary
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class FanControlCluster(_Model):
@@ -25,4 +25,26 @@ class FanControlCluster(_Model):
     WindSetting: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     AirflowDirection: _Annotated[_Literal['Forward', 'Reverse'] | str | None, _Param(_BaseType.STRING)] = None
 
+
+class FanControlCluster_Step_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.FanControlCluster.{i}.Step().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Direction: _Annotated[_Literal['Increase', 'Decrease'] | str | None, _Param(_BaseType.STRING)] = None
+    Wrap: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    LowestOff: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class FanControlCluster_Step_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.FanControlCluster.{i}.Step().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.FanControlCluster.{i}.Step()": (FanControlCluster_Step_Input, FanControlCluster_Step_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

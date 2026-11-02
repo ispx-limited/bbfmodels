@@ -35,3 +35,10 @@ class UnixDomainSockets(_Model):
     UnixDomainSocket: dict[int, UnixDomainSockets_UnixDomainSocket] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -17,3 +17,52 @@ class AdministratorCommissioningCluster(_Model):
     AdminVendorId: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
+class AdministratorCommissioningCluster_OpenCommissioningWindow_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.AdministratorCommissioningCluster.{i}.OpenCommissioningWindow().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommissioningTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PAKEPasscodeVerifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Discriminator: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Iterations: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Salt: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class AdministratorCommissioningCluster_OpenCommissioningWindow_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.AdministratorCommissioningCluster.{i}.OpenCommissioningWindow().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class AdministratorCommissioningCluster_OpenBasicCommissioningWindow_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.AdministratorCommissioningCluster.{i}.OpenBasicCommissioningWindow().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommissioningTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class AdministratorCommissioningCluster_OpenBasicCommissioningWindow_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.AdministratorCommissioningCluster.{i}.OpenBasicCommissioningWindow().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class AdministratorCommissioningCluster_RevokeCommissioning_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.AdministratorCommissioningCluster.{i}.RevokeCommissioning().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class AdministratorCommissioningCluster_RevokeCommissioning_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.AdministratorCommissioningCluster.{i}.RevokeCommissioning().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.AdministratorCommissioningCluster.{i}.OpenCommissioningWindow()": (AdministratorCommissioningCluster_OpenCommissioningWindow_Input, AdministratorCommissioningCluster_OpenCommissioningWindow_Output),
+    "MatterService.{i}.AdministratorCommissioningCluster.{i}.OpenBasicCommissioningWindow()": (AdministratorCommissioningCluster_OpenBasicCommissioningWindow_Input, AdministratorCommissioningCluster_OpenBasicCommissioningWindow_Output),
+    "MatterService.{i}.AdministratorCommissioningCluster.{i}.RevokeCommissioning()": (AdministratorCommissioningCluster_RevokeCommissioning_Input, AdministratorCommissioningCluster_RevokeCommissioning_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

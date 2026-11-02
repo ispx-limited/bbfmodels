@@ -6,7 +6,7 @@ from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class DeviceInfo_LogRotate_LogFile(_Model):
@@ -387,4 +387,241 @@ class DeviceInfo(_Model):
     Reboots: DeviceInfo_Reboots | None = _Field(default=None)
     BootTiming: DeviceInfo_BootTiming | None = _Field(default=None)
 
+
+class DeviceInfo_VendorConfigFile_Backup_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.VendorConfigFile.{i}.Backup().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceInfo_VendorConfigFile_Backup_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.VendorConfigFile.{i}.Backup().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_VendorConfigFile_Restore_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.VendorConfigFile.{i}.Restore().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    FileSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TargetFileName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CheckSumAlgorithm: _Annotated[_Literal['SHA-1', 'SHA-224', 'SHA-256', 'SHA-384', 'SHA-512'] | str | None, _Param(_BaseType.STRING)] = None
+    CheckSum: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class DeviceInfo_VendorConfigFile_Restore_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.VendorConfigFile.{i}.Restore().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_MemoryStatus_MemoryMonitor_MemoryCriticalState(_Model):
+    __bbf_path__ = "Device.DeviceInfo.MemoryStatus.MemoryMonitor.MemoryCriticalState!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MemUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DeviceInfo_ProcessStatus_CPU_CPUCriticalState(_Model):
+    __bbf_path__ = "Device.DeviceInfo.ProcessStatus.CPU.{i}.CPUCriticalState!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CPUUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceInfo_TemperatureStatus_TemperatureSensor_Reset_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_TemperatureStatus_TemperatureSensor_Reset_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_TemperatureStatus_TemperatureSensor_HighTemperatureAlarm(_Model):
+    __bbf_path__ = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.HighTemperatureAlarm!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Value: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class DeviceInfo_TemperatureStatus_TemperatureSensor_LowTemperatureAlarm(_Model):
+    __bbf_path__ = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.LowTemperatureAlarm!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Value: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class DeviceInfo_VendorLogFile_Upload_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.VendorLogFile.{i}.Upload().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceInfo_VendorLogFile_Upload_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.VendorLogFile.{i}.Upload().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_FirmwareImage_Download_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.FirmwareImage.{i}.Download().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AutoActivate: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    FileSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CheckSumAlgorithm: _Annotated[_Literal['SHA-1', 'SHA-224', 'SHA-256', 'SHA-384', 'SHA-512'] | str | None, _Param(_BaseType.STRING)] = None
+    CheckSum: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class DeviceInfo_FirmwareImage_Download_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.FirmwareImage.{i}.Download().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_FirmwareImage_Activate_Input_TimeWindow(_Model):
+    __bbf_path__ = "Device.DeviceInfo.FirmwareImage.{i}.Activate().Input.TimeWindow.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Start: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    End: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Mode: _Annotated[_Literal['AnyTime', 'Immediately', 'WhenIdle', 'ConfirmationNeeded'] | str | None, _Param(_BaseType.STRING)] = None
+    UserMessage: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MaxRetries: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class DeviceInfo_FirmwareImage_Activate_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.FirmwareImage.{i}.Activate().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeWindow: dict[int, DeviceInfo_FirmwareImage_Activate_Input_TimeWindow] = _Field(default_factory=dict)
+
+
+class DeviceInfo_FirmwareImage_Activate_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.FirmwareImage.{i}.Activate().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_KernelFaults_RemoveAllKernelFaults_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.RemoveAllKernelFaults().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_KernelFaults_RemoveAllKernelFaults_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.RemoveAllKernelFaults().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_KernelFaults_KernelFault_Upload_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.KernelFault.{i}.Upload().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceInfo_KernelFaults_KernelFault_Upload_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.KernelFault.{i}.Upload().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_KernelFaults_KernelFault_Remove_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.KernelFault.{i}.Remove().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_KernelFaults_KernelFault_Remove_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.KernelFault.{i}.Remove().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_ProcessFaults_RemoveAllProcessFaults_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.RemoveAllProcessFaults().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_ProcessFaults_RemoveAllProcessFaults_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.RemoveAllProcessFaults().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_ProcessFaults_ProcessFault_Upload_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}.Upload().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DeviceInfo_ProcessFaults_ProcessFault_Upload_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}.Upload().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_ProcessFaults_ProcessFault_Remove_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}.Remove().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_ProcessFaults_ProcessFault_Remove_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}.Remove().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_Reboots_RemoveAllReboots_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.Reboots.RemoveAllReboots().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_Reboots_RemoveAllReboots_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.Reboots.RemoveAllReboots().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_Reboots_Reboot_Remove_Input(_Model):
+    __bbf_path__ = "Device.DeviceInfo.Reboots.Reboot.{i}.Remove().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DeviceInfo_Reboots_Reboot_Remove_Output(_Model):
+    __bbf_path__ = "Device.DeviceInfo.Reboots.Reboot.{i}.Remove().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.DeviceInfo.VendorConfigFile.{i}.Backup()": (DeviceInfo_VendorConfigFile_Backup_Input, DeviceInfo_VendorConfigFile_Backup_Output),
+    "Device.DeviceInfo.VendorConfigFile.{i}.Restore()": (DeviceInfo_VendorConfigFile_Restore_Input, DeviceInfo_VendorConfigFile_Restore_Output),
+    "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.Reset()": (DeviceInfo_TemperatureStatus_TemperatureSensor_Reset_Input, DeviceInfo_TemperatureStatus_TemperatureSensor_Reset_Output),
+    "Device.DeviceInfo.VendorLogFile.{i}.Upload()": (DeviceInfo_VendorLogFile_Upload_Input, DeviceInfo_VendorLogFile_Upload_Output),
+    "Device.DeviceInfo.FirmwareImage.{i}.Download()": (DeviceInfo_FirmwareImage_Download_Input, DeviceInfo_FirmwareImage_Download_Output),
+    "Device.DeviceInfo.FirmwareImage.{i}.Activate()": (DeviceInfo_FirmwareImage_Activate_Input, DeviceInfo_FirmwareImage_Activate_Output),
+    "Device.DeviceInfo.KernelFaults.RemoveAllKernelFaults()": (DeviceInfo_KernelFaults_RemoveAllKernelFaults_Input, DeviceInfo_KernelFaults_RemoveAllKernelFaults_Output),
+    "Device.DeviceInfo.KernelFaults.KernelFault.{i}.Upload()": (DeviceInfo_KernelFaults_KernelFault_Upload_Input, DeviceInfo_KernelFaults_KernelFault_Upload_Output),
+    "Device.DeviceInfo.KernelFaults.KernelFault.{i}.Remove()": (DeviceInfo_KernelFaults_KernelFault_Remove_Input, DeviceInfo_KernelFaults_KernelFault_Remove_Output),
+    "Device.DeviceInfo.ProcessFaults.RemoveAllProcessFaults()": (DeviceInfo_ProcessFaults_RemoveAllProcessFaults_Input, DeviceInfo_ProcessFaults_RemoveAllProcessFaults_Output),
+    "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}.Upload()": (DeviceInfo_ProcessFaults_ProcessFault_Upload_Input, DeviceInfo_ProcessFaults_ProcessFault_Upload_Output),
+    "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}.Remove()": (DeviceInfo_ProcessFaults_ProcessFault_Remove_Input, DeviceInfo_ProcessFaults_ProcessFault_Remove_Output),
+    "Device.DeviceInfo.Reboots.RemoveAllReboots()": (DeviceInfo_Reboots_RemoveAllReboots_Input, DeviceInfo_Reboots_RemoveAllReboots_Output),
+    "Device.DeviceInfo.Reboots.Reboot.{i}.Remove()": (DeviceInfo_Reboots_Reboot_Remove_Input, DeviceInfo_Reboots_Reboot_Remove_Output),
+}
+_EVENTS = {
+    "Device.DeviceInfo.MemoryStatus.MemoryMonitor.MemoryCriticalState!": DeviceInfo_MemoryStatus_MemoryMonitor_MemoryCriticalState,
+    "Device.DeviceInfo.ProcessStatus.CPU.{i}.CPUCriticalState!": DeviceInfo_ProcessStatus_CPU_CPUCriticalState,
+    "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.HighTemperatureAlarm!": DeviceInfo_TemperatureStatus_TemperatureSensor_HighTemperatureAlarm,
+    "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}.LowTemperatureAlarm!": DeviceInfo_TemperatureStatus_TemperatureSensor_LowTemperatureAlarm,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

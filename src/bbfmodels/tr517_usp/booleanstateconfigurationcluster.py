@@ -21,3 +21,51 @@ class BooleanStateConfigurationCluster(_Model):
     SensorFault: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
+class BooleanStateConfigurationCluster_SuppressAlarm_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SuppressAlarm().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmsToSuppress: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class BooleanStateConfigurationCluster_SuppressAlarm_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SuppressAlarm().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class BooleanStateConfigurationCluster_EnableDisableAlarm_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.EnableDisableAlarm().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmsToEnableDisable: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class BooleanStateConfigurationCluster_EnableDisableAlarm_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.EnableDisableAlarm().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class BooleanStateConfigurationCluster_AlarmsStateChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmsActive: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    AlarmsSuppressed: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class BooleanStateConfigurationCluster_SensorFault(_Model):
+    __bbf_path__ = "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SensorFault: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SuppressAlarm()": (BooleanStateConfigurationCluster_SuppressAlarm_Input, BooleanStateConfigurationCluster_SuppressAlarm_Output),
+    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.EnableDisableAlarm()": (BooleanStateConfigurationCluster_EnableDisableAlarm_Input, BooleanStateConfigurationCluster_EnableDisableAlarm_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.AlarmsStateChanged!": BooleanStateConfigurationCluster_AlarmsStateChanged,
+    "MatterService.{i}.BooleanStateConfigurationCluster.{i}.SensorFault!": BooleanStateConfigurationCluster_SensorFault,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

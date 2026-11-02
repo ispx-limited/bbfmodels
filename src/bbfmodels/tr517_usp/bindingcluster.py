@@ -26,3 +26,10 @@ class BindingCluster(_Model):
     Binding: dict[int, BindingCluster_Binding] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

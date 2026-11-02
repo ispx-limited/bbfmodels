@@ -214,3 +214,10 @@ class Ghn(_Model):
     Diagnostics: Ghn_Diagnostics | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

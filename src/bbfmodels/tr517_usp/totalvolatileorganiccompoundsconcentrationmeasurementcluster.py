@@ -24,3 +24,10 @@ class TotalVolatileOrganicCompoundsConcentrationMeasurementCluster(_Model):
     LevelValue: _Annotated[_Literal['Unknown', 'Low', 'Medium', 'High', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -89,3 +89,10 @@ class Capabilities(_Model):
     Codecs: dict[int, Capabilities_Codecs] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

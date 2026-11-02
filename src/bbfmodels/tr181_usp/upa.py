@@ -106,3 +106,38 @@ class UPA(_Model):
     Diagnostics: UPA_Diagnostics | None = _Field(default=None)
 
 
+class UPA_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.UPA.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class UPA_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.UPA.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class UPA_Diagnostics_InterfaceMeasurement_Input(_Model):
+    __bbf_path__ = "Device.UPA.Diagnostics.InterfaceMeasurement().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Type: _Annotated[_Literal['SNR', 'CFR'] | str | None, _Param(_BaseType.STRING)] = None
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class UPA_Diagnostics_InterfaceMeasurement_Output(_Model):
+    __bbf_path__ = "Device.UPA.Diagnostics.InterfaceMeasurement().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_InvalidPort'] | str | None, _Param(_BaseType.STRING)] = None
+    Measurements: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    RxGain: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+_COMMANDS = {
+    "Device.UPA.Interface.{i}.Stats.Reset()": (UPA_Interface_Stats_Reset_Input, UPA_Interface_Stats_Reset_Output),
+    "Device.UPA.Diagnostics.InterfaceMeasurement()": (UPA_Diagnostics_InterfaceMeasurement_Input, UPA_Diagnostics_InterfaceMeasurement_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

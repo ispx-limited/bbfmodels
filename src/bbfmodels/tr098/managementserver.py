@@ -145,3 +145,10 @@ class ManagementServer(_Model):
     InformParameter: dict[int, ManagementServer_InformParameter] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

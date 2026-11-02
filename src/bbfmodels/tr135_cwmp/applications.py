@@ -80,3 +80,10 @@ class Applications(_Model):
     ServiceProvider: dict[int, Applications_ServiceProvider] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -185,3 +185,21 @@ class FAST(_Model):
     Line: dict[int, FAST_Line] = _Field(default_factory=dict)
 
 
+class FAST_Line_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class FAST_Line_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.FAST.Line.{i}.Stats.Reset()": (FAST_Line_Stats_Reset_Input, FAST_Line_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

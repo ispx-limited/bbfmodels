@@ -35,3 +35,10 @@ class USPServices(_Model):
     USPService: dict[int, USPServices_USPService] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

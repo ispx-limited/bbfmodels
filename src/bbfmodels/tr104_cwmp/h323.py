@@ -55,3 +55,10 @@ class H323(_Model):
     Network: dict[int, H323_Network] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

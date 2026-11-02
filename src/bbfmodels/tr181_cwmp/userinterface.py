@@ -119,3 +119,10 @@ class UserInterface(_Model):
     Messages: UserInterface_Messages | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

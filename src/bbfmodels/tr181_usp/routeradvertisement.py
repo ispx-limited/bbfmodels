@@ -55,3 +55,10 @@ class RouterAdvertisement(_Model):
     InterfaceSetting: dict[int, RouterAdvertisement_InterfaceSetting] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

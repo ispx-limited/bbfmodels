@@ -26,3 +26,37 @@ class AudioOutputCluster(_Model):
     OutputList: dict[int, AudioOutputCluster_OutputList] = _Field(default_factory=dict)
 
 
+class AudioOutputCluster_SelectOutput_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.AudioOutputCluster.{i}.SelectOutput().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Index: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class AudioOutputCluster_SelectOutput_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.AudioOutputCluster.{i}.SelectOutput().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class AudioOutputCluster_RenameOutput_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.AudioOutputCluster.{i}.RenameOutput().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Index: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class AudioOutputCluster_RenameOutput_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.AudioOutputCluster.{i}.RenameOutput().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.AudioOutputCluster.{i}.SelectOutput()": (AudioOutputCluster_SelectOutput_Input, AudioOutputCluster_SelectOutput_Output),
+    "MatterService.{i}.AudioOutputCluster.{i}.RenameOutput()": (AudioOutputCluster_RenameOutput_Input, AudioOutputCluster_RenameOutput_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

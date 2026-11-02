@@ -29,3 +29,13 @@ class FAPService(_Model):
     Transport: transport.Transport | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
+# Every command's input and output class, and every event's class, by path.
+COMMANDS = {**accessmgmt.COMMANDS, **capabilities.COMMANDS, **cellconfig.COMMANDS, **fapcontrol.COMMANDS, **rem.COMMANDS, **transport.COMMANDS, **_COMMANDS}
+EVENTS = {**accessmgmt.EVENTS, **capabilities.EVENTS, **cellconfig.EVENTS, **fapcontrol.EVENTS, **rem.EVENTS, **transport.EVENTS, **_EVENTS}

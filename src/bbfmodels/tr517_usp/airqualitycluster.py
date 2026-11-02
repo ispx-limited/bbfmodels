@@ -15,3 +15,10 @@ class AirQualityCluster(_Model):
     AirQuality: _Annotated[_Literal['Unknown', 'Good', 'Fair', 'Moderate', 'Poor', 'VeryPoor', 'ExtremelyPoor'] | str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

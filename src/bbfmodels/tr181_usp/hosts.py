@@ -94,3 +94,23 @@ class Hosts(_Model):
     AccessControl: dict[int, Hosts_AccessControl] = _Field(default_factory=dict)
 
 
+class Hosts_RemoveInactiveHosts_Input(_Model):
+    __bbf_path__ = "Device.Hosts.RemoveInactiveHosts().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MinimumInactiveTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Hosts_RemoveInactiveHosts_Output(_Model):
+    __bbf_path__ = "Device.Hosts.RemoveInactiveHosts().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    NumberOfRemovedHosts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS = {
+    "Device.Hosts.RemoveInactiveHosts()": (Hosts_RemoveInactiveHosts_Input, Hosts_RemoveInactiveHosts_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

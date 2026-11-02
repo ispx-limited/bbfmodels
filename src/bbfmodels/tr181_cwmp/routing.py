@@ -288,3 +288,10 @@ class Routing(_Model):
     Babel: Routing_Babel | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -25,3 +25,51 @@ class ValveConfigurationandControlCluster(_Model):
     LevelStep: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+class ValveConfigurationandControlCluster_Open_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Open().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OpenDuration: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TargetLevel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ValveConfigurationandControlCluster_Open_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Open().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ValveConfigurationandControlCluster_Close_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Close().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ValveConfigurationandControlCluster_Close_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Close().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ValveConfigurationandControlCluster_ValveStateChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ValveState: _Annotated[_Literal['Closed', 'Open', 'Transitioning'] | str | None, _Param(_BaseType.STRING)] = None
+    ValveLevel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ValveConfigurationandControlCluster_ValveFault(_Model):
+    __bbf_path__ = "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ValveFault: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Open()": (ValveConfigurationandControlCluster_Open_Input, ValveConfigurationandControlCluster_Open_Output),
+    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.Close()": (ValveConfigurationandControlCluster_Close_Input, ValveConfigurationandControlCluster_Close_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveStateChanged!": ValveConfigurationandControlCluster_ValveStateChanged,
+    "MatterService.{i}.ValveConfigurationandControlCluster.{i}.ValveFault!": ValveConfigurationandControlCluster_ValveFault,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

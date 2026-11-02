@@ -80,3 +80,10 @@ class WWC(_Model):
     URSP: dict[int, WWC_URSP] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

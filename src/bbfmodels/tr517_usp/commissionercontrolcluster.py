@@ -15,3 +15,53 @@ class CommissionerControlCluster(_Model):
     SupportedDeviceCategories: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
+class CommissionerControlCluster_RequestCommissioningApproval_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CommissionerControlCluster.{i}.RequestCommissioningApproval().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    RequestID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    VendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ProductID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Label: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class CommissionerControlCluster_RequestCommissioningApproval_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CommissionerControlCluster.{i}.RequestCommissioningApproval().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CommissionerControlCluster_CommissionNode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CommissionerControlCluster.{i}.CommissionNode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    RequestID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ResponseTimeoutSeconds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CommissionerControlCluster_CommissionNode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CommissionerControlCluster.{i}.CommissionNode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommissioningTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PAKEPasscodeVerifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Discriminator: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Iterations: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Salt: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class CommissionerControlCluster_CommissioningRequestResult(_Model):
+    __bbf_path__ = "MatterService.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    RequestID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ClientNodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    StatusCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.CommissionerControlCluster.{i}.RequestCommissioningApproval()": (CommissionerControlCluster_RequestCommissioningApproval_Input, CommissionerControlCluster_RequestCommissioningApproval_Output),
+    "MatterService.{i}.CommissionerControlCluster.{i}.CommissionNode()": (CommissionerControlCluster_CommissionNode_Input, CommissionerControlCluster_CommissionNode_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.CommissionerControlCluster.{i}.CommissioningRequestResult!": CommissionerControlCluster_CommissioningRequestResult,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

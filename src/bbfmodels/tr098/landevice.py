@@ -382,3 +382,10 @@ class LANDevice(_Model):
     Hosts: LANDevice_Hosts | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

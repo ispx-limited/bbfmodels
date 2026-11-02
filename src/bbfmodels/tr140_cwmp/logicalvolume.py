@@ -68,3 +68,10 @@ class LogicalVolume(_Model):
     Folder: dict[int, LogicalVolume_Folder] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

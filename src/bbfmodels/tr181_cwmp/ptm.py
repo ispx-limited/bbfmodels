@@ -50,3 +50,10 @@ class PTM(_Model):
     Link: dict[int, PTM_Link] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -69,3 +69,24 @@ class Users(_Model):
     Role: dict[int, Users_Role] = _Field(default_factory=dict)
 
 
+class Users_CheckCredentialsDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.Users.CheckCredentialsDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Users_CheckCredentialsDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.Users.CheckCredentialsDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Credentials_Good', 'Credentials_Bad_Requested_Username_Not_Supported', 'Credentials_Bad_Requested_Password_Incorrect', 'Credentials_Missing', 'Error_Invalid_Input', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "Device.Users.CheckCredentialsDiagnostics()": (Users_CheckCredentialsDiagnostics_Input, Users_CheckCredentialsDiagnostics_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

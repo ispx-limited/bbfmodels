@@ -52,3 +52,10 @@ class TrustedElements(_Model):
     SIM: dict[int, TrustedElements_SIM] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

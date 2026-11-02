@@ -283,3 +283,35 @@ class Routing(_Model):
     Babel: Routing_Babel | None = _Field(default=None)
 
 
+class Routing_Babel_StatsReset_Input(_Model):
+    __bbf_path__ = "Device.Routing.Babel.StatsReset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Routing_Babel_StatsReset_Output(_Model):
+    __bbf_path__ = "Device.Routing.Babel.StatsReset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Routing_Babel_MACKeySet_MACKey_MACTest_Input(_Model):
+    __bbf_path__ = "Device.Routing.Babel.MACKeySet.{i}.MACKey.{i}.MACTest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    InputString: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    InputMAC: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class Routing_Babel_MACKeySet_MACKey_MACTest_Output(_Model):
+    __bbf_path__ = "Device.Routing.Babel.MACKeySet.{i}.MACKey.{i}.MACTest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Match: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+_COMMANDS = {
+    "Device.Routing.Babel.StatsReset()": (Routing_Babel_StatsReset_Input, Routing_Babel_StatsReset_Output),
+    "Device.Routing.Babel.MACKeySet.{i}.MACKey.{i}.MACTest()": (Routing_Babel_MACKeySet_MACKey_MACTest_Input, Routing_Babel_MACKeySet_MACKey_MACTest_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

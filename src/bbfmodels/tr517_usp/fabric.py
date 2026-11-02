@@ -18,3 +18,10 @@ class Fabric(_Model):
     FabricNodeList: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

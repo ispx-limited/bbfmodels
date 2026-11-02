@@ -80,3 +80,21 @@ class HomePlug(_Model):
     Interface: dict[int, HomePlug_Interface] = _Field(default_factory=dict)
 
 
+class HomePlug_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.HomePlug.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class HomePlug_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.HomePlug.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.HomePlug.Interface.{i}.Stats.Reset()": (HomePlug_Interface_Stats_Reset_Input, HomePlug_Interface_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

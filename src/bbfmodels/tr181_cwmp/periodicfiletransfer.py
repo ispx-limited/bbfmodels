@@ -102,3 +102,10 @@ class PeriodicFileTransfer(_Model):
     Stats: PeriodicFileTransfer_Stats | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -165,3 +165,10 @@ class DeviceInfo(_Model):
     Location: dict[int, DeviceInfo_Location] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

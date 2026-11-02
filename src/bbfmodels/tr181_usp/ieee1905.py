@@ -403,3 +403,10 @@ class IEEE1905(_Model):
     Network: IEEE1905_Network | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -38,9 +38,9 @@ Python 3.11 or later. The one runtime dependency is pydantic.
 
 ## Status
 
-Early. The parser, the intermediate representation, the runtime and the
-generated Python models are in place. Commands and events in the generated
-models, JSON Schema and TypeScript come next. Before 1.0 a minor release
+Early. The parser, the intermediate representation, the runtime, the
+generated Python models with USP commands and events, and typed paths are
+in place. JSON Schema and TypeScript come next. Before 1.0 a minor release
 may change the IR and the runtime API.
 
 ```python

@@ -27,3 +27,93 @@ class SmokeCOAlarmCluster(_Model):
     ExpiryDate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+class SmokeCOAlarmCluster_SelfTestRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.SelfTestRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class SmokeCOAlarmCluster_SelfTestRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.SelfTestRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SmokeCOAlarmCluster_SmokeAlarm(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.SmokeAlarm!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SmokeCOAlarmCluster_COAlarm(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.COAlarm!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SmokeCOAlarmCluster_LowBattery(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.LowBattery!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SmokeCOAlarmCluster_HardwareFault(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.HardwareFault!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class SmokeCOAlarmCluster_EndOfService(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.EndOfService!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class SmokeCOAlarmCluster_SelfTestComplete(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.SelfTestComplete!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class SmokeCOAlarmCluster_AlarmMuted(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.AlarmMuted!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class SmokeCOAlarmCluster_MuteEnded(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.MuteEnded!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class SmokeCOAlarmCluster_InterconnectSmokeAlarm(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.InterconnectSmokeAlarm!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SmokeCOAlarmCluster_InterconnectCOAlarm(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.InterconnectCOAlarm!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AlarmSeverityLevel: _Annotated[_Literal['Normal', 'Warning', 'Critical'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SmokeCOAlarmCluster_AllClear(_Model):
+    __bbf_path__ = "MatterService.{i}.SmokeCOAlarmCluster.{i}.AllClear!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+_COMMANDS = {
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.SelfTestRequest()": (SmokeCOAlarmCluster_SelfTestRequest_Input, SmokeCOAlarmCluster_SelfTestRequest_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.SmokeAlarm!": SmokeCOAlarmCluster_SmokeAlarm,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.COAlarm!": SmokeCOAlarmCluster_COAlarm,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.LowBattery!": SmokeCOAlarmCluster_LowBattery,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.HardwareFault!": SmokeCOAlarmCluster_HardwareFault,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.EndOfService!": SmokeCOAlarmCluster_EndOfService,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.SelfTestComplete!": SmokeCOAlarmCluster_SelfTestComplete,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.AlarmMuted!": SmokeCOAlarmCluster_AlarmMuted,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.MuteEnded!": SmokeCOAlarmCluster_MuteEnded,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.InterconnectSmokeAlarm!": SmokeCOAlarmCluster_InterconnectSmokeAlarm,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.InterconnectCOAlarm!": SmokeCOAlarmCluster_InterconnectCOAlarm,
+    "MatterService.{i}.SmokeCOAlarmCluster.{i}.AllClear!": SmokeCOAlarmCluster_AllClear,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

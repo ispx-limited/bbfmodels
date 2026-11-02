@@ -13,3 +13,10 @@ class Services(_Model):
     __bbf_package__ = "bbfmodels.tr098"
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

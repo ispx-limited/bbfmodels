@@ -193,3 +193,10 @@ class Thread(_Model):
     Node: dict[int, Thread_Node] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

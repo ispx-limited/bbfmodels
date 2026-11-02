@@ -35,3 +35,21 @@ class AVPlayers(_Model):
     AVPlayer: dict[int, AVPlayers_AVPlayer] = _Field(default_factory=dict)
 
 
+class AVPlayers_ResetPINCode_Input(_Model):
+    __bbf_path__ = "STBService.{i}.AVPlayers.ResetPINCode().Input."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+class AVPlayers_ResetPINCode_Output(_Model):
+    __bbf_path__ = "STBService.{i}.AVPlayers.ResetPINCode().Output."
+    __bbf_package__ = "bbfmodels.tr135_usp"
+
+
+_COMMANDS = {
+    "STBService.{i}.AVPlayers.ResetPINCode()": (AVPlayers_ResetPINCode_Input, AVPlayers_ResetPINCode_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -31,3 +31,10 @@ class IPv6rd(_Model):
     InterfaceSetting: dict[int, IPv6rd_InterfaceSetting] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

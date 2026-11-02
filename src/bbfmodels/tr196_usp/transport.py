@@ -141,3 +141,10 @@ class Transport(_Model):
     Security: Transport_Security | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

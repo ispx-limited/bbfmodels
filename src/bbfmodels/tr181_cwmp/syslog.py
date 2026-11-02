@@ -106,3 +106,10 @@ class Syslog(_Model):
     Action: dict[int, Syslog_Action] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

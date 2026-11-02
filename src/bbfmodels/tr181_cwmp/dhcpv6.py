@@ -232,3 +232,10 @@ class DHCPv6(_Model):
     Server: DHCPv6_Server | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

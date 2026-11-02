@@ -152,3 +152,10 @@ class UPnP(_Model):
     Description: UPnP_Description | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

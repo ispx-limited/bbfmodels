@@ -88,3 +88,10 @@ class SSH(_Model):
     AuthorizedKey: dict[int, SSH_AuthorizedKey] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

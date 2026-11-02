@@ -125,3 +125,111 @@ class ThermostatCluster(_Model):
     Schedules: dict[int, ThermostatCluster_Schedules] = _Field(default_factory=dict)
 
 
+class ThermostatCluster_SetpointRaiseLower_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetpointRaiseLower().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Mode: _Annotated[_Literal['Heat', 'Cool', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
+    Amount: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ThermostatCluster_SetpointRaiseLower_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetpointRaiseLower().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThermostatCluster_SetWeeklySchedule_Input_Transitions(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetWeeklySchedule().Input.Transitions.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HeatSetpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    CoolSetpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ThermostatCluster_SetWeeklySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetWeeklySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NumberOfTransitionsForSequence: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DayOfWeekForSequence: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    ModeForSequence: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    Transitions: dict[int, ThermostatCluster_SetWeeklySchedule_Input_Transitions] = _Field(default_factory=dict)
+
+
+class ThermostatCluster_SetWeeklySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetWeeklySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThermostatCluster_GetWeeklySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.GetWeeklySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    DaysToReturn: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    ModeToReturn: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class ThermostatCluster_GetWeeklySchedule_Output_Transitions(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.GetWeeklySchedule().Output.Transitions.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HeatSetpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    CoolSetpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ThermostatCluster_GetWeeklySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.GetWeeklySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NumberOfTransitionsForSequence: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    DayOfWeekForSequence: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    ModeForSequence: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    Transitions: dict[int, ThermostatCluster_GetWeeklySchedule_Output_Transitions] = _Field(default_factory=dict)
+
+
+class ThermostatCluster_ClearWeeklySchedule_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.ClearWeeklySchedule().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ThermostatCluster_ClearWeeklySchedule_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.ClearWeeklySchedule().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThermostatCluster_SetActiveScheduleRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetActiveScheduleRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ScheduleHandle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThermostatCluster_SetActiveScheduleRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetActiveScheduleRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThermostatCluster_SetActivePresetRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetActivePresetRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PresetHandle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThermostatCluster_SetActivePresetRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThermostatCluster.{i}.SetActivePresetRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.ThermostatCluster.{i}.SetpointRaiseLower()": (ThermostatCluster_SetpointRaiseLower_Input, ThermostatCluster_SetpointRaiseLower_Output),
+    "MatterService.{i}.ThermostatCluster.{i}.SetWeeklySchedule()": (ThermostatCluster_SetWeeklySchedule_Input, ThermostatCluster_SetWeeklySchedule_Output),
+    "MatterService.{i}.ThermostatCluster.{i}.GetWeeklySchedule()": (ThermostatCluster_GetWeeklySchedule_Input, ThermostatCluster_GetWeeklySchedule_Output),
+    "MatterService.{i}.ThermostatCluster.{i}.ClearWeeklySchedule()": (ThermostatCluster_ClearWeeklySchedule_Input, ThermostatCluster_ClearWeeklySchedule_Output),
+    "MatterService.{i}.ThermostatCluster.{i}.SetActiveScheduleRequest()": (ThermostatCluster_SetActiveScheduleRequest_Input, ThermostatCluster_SetActiveScheduleRequest_Output),
+    "MatterService.{i}.ThermostatCluster.{i}.SetActivePresetRequest()": (ThermostatCluster_SetActivePresetRequest_Input, ThermostatCluster_SetActivePresetRequest_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

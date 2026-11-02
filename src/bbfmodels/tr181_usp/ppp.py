@@ -101,3 +101,32 @@ class PPP(_Model):
     Interface: dict[int, PPP_Interface] = _Field(default_factory=dict)
 
 
+class PPP_Interface_Reset_Input(_Model):
+    __bbf_path__ = "Device.PPP.Interface.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PPP_Interface_Reset_Output(_Model):
+    __bbf_path__ = "Device.PPP.Interface.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PPP_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.PPP.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PPP_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.PPP.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.PPP.Interface.{i}.Reset()": (PPP_Interface_Reset_Input, PPP_Interface_Reset_Output),
+    "Device.PPP.Interface.{i}.Stats.Reset()": (PPP_Interface_Stats_Reset_Input, PPP_Interface_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

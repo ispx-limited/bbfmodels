@@ -52,3 +52,37 @@ class BasicInformationCluster(_Model):
     ProductAppearance: BasicInformationCluster_ProductAppearance | None = _Field(default=None)
 
 
+class BasicInformationCluster_StartUp(_Model):
+    __bbf_path__ = "MatterService.{i}.BasicInformationCluster.{i}.StartUp!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class BasicInformationCluster_ShutDown(_Model):
+    __bbf_path__ = "MatterService.{i}.BasicInformationCluster.{i}.ShutDown!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class BasicInformationCluster_Leave(_Model):
+    __bbf_path__ = "MatterService.{i}.BasicInformationCluster.{i}.Leave!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    FabricIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class BasicInformationCluster_ReachableChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.BasicInformationCluster.{i}.ReachableChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ReachableNewValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+_COMMANDS = {
+}
+_EVENTS = {
+    "MatterService.{i}.BasicInformationCluster.{i}.StartUp!": BasicInformationCluster_StartUp,
+    "MatterService.{i}.BasicInformationCluster.{i}.ShutDown!": BasicInformationCluster_ShutDown,
+    "MatterService.{i}.BasicInformationCluster.{i}.Leave!": BasicInformationCluster_Leave,
+    "MatterService.{i}.BasicInformationCluster.{i}.ReachableChanged!": BasicInformationCluster_ReachableChanged,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

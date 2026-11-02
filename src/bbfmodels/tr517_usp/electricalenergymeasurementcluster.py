@@ -102,3 +102,74 @@ class ElectricalEnergyMeasurementCluster(_Model):
     CumulativeEnergyReset: ElectricalEnergyMeasurementCluster_CumulativeEnergyReset | None = _Field(default=None)
 
 
+class ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyImported(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!.EnergyImported."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    StartTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ApparentEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyExported(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!.EnergyExported."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    StartTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ApparentEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EnergyImported: ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyImported | None = _Field(default=None)
+    EnergyExported: ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured_EnergyExported | None = _Field(default=None)
+
+
+class ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyImported(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!.EnergyImported."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    StartTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ApparentEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyExported(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!.EnergyExported."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Energy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    StartTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndTimestamp: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    EndSystime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ApparentEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    ReactiveEnergy: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured(_Model):
+    __bbf_path__ = "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EnergyImported: ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyImported | None = _Field(default=None)
+    EnergyExported: ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured_EnergyExported | None = _Field(default=None)
+
+
+_COMMANDS = {
+}
+_EVENTS = {
+    "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.CumulativeEnergyMeasured!": ElectricalEnergyMeasurementCluster_CumulativeEnergyMeasured,
+    "MatterService.{i}.ElectricalEnergyMeasurementCluster.{i}.PeriodicEnergyMeasured!": ElectricalEnergyMeasurementCluster_PeriodicEnergyMeasured,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

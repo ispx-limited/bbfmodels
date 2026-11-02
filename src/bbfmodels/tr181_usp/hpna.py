@@ -3,6 +3,7 @@
 # ruff: noqa
 
 from typing import Annotated as _Annotated, Literal as _Literal
+from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
@@ -115,4 +116,134 @@ class HPNA(_Model):
     Interface: dict[int, HPNA_Interface] = _Field(default_factory=dict)
     Diagnostics: HPNA_Diagnostics | None = _Field(default=None)
 
+
+class HPNA_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.HPNA.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class HPNA_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.HPNA.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class HPNA_Diagnostics_PHYThroughput_Input(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PHYThroughput().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NumPacketsInBurst: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BurstInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TestPacketPayloadLength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PayloadEncoding: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PayloadDataGen: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PayloadType: _Annotated[_Literal['Pattern', 'IncrementByte'] | str | None, _Param(_BaseType.STRING)] = None
+    PriorityLevel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class HPNA_Diagnostics_PHYThroughput_Output_Result(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PHYThroughput().Output.Result.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    SrcMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DestMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    PHYRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BaudRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SNR: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Attenuation: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class HPNA_Diagnostics_PHYThroughput_Output(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PHYThroughput().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_FailToEnableCert', 'Error_CertCmdTimeout', 'Error_UnknownErr', 'Error_UnsupportedOpcode', 'Error_InvalidParam', 'Error_UnsupportedCmdSegment', 'Error_UnsupportedDataGen', 'Error_InvalidSequence', 'Error_InvalidFrame', 'Eror_InvalidOpcode'] | str | None, _Param(_BaseType.STRING)] = None
+    Result: dict[int, HPNA_Diagnostics_PHYThroughput_Output_Result] = _Field(default_factory=dict)
+
+
+class HPNA_Diagnostics_PerformanceMonitoring_Input(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SampleInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class HPNA_Diagnostics_PerformanceMonitoring_Output_Nodes_Node(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring().Output.Nodes.Node.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BroadcastPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BroadcastPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MulticastPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MulticastPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsCrcErrored: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsCrcErroredHost: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsShortErrored: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsShortErroredHost: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RxPacketsDropped: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TxPacketsDropped: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ControlRequestLocal: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ControlReplyLocal: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ControlRequestRemote: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ControlReplyRemote: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsSentWire: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    BroadcastPacketsSentWire: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    MulticastPacketsSentWire: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PacketsInternalControl: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BroadcastPacketsInternalControl: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsReceivedQueued: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsReceivedForwardUnknown: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    NodeUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class HPNA_Diagnostics_PerformanceMonitoring_Output_Channels_Channel(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring().Output.Channels.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    HostSrcMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    HostDestMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    HPNASrcMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    HPNADestMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    PHYRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BaudRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SNR: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LARQPacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FlowSpec: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class HPNA_Diagnostics_PerformanceMonitoring_Output_Nodes(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring().Output.Nodes."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CurrentStart: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    CurrentEnd: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    Node: dict[int, HPNA_Diagnostics_PerformanceMonitoring_Output_Nodes_Node] = _Field(default_factory=dict)
+
+
+class HPNA_Diagnostics_PerformanceMonitoring_Output_Channels(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring().Output.Channels."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    Channel: dict[int, HPNA_Diagnostics_PerformanceMonitoring_Output_Channels_Channel] = _Field(default_factory=dict)
+
+
+class HPNA_Diagnostics_PerformanceMonitoring_Output(_Model):
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_SampleIntervalTooSmall'] | str | None, _Param(_BaseType.STRING)] = None
+    Nodes: HPNA_Diagnostics_PerformanceMonitoring_Output_Nodes | None = _Field(default=None)
+    Channels: HPNA_Diagnostics_PerformanceMonitoring_Output_Channels | None = _Field(default=None)
+
+
+_COMMANDS = {
+    "Device.HPNA.Interface.{i}.Stats.Reset()": (HPNA_Interface_Stats_Reset_Input, HPNA_Interface_Stats_Reset_Output),
+    "Device.HPNA.Diagnostics.PHYThroughput()": (HPNA_Diagnostics_PHYThroughput_Input, HPNA_Diagnostics_PHYThroughput_Output),
+    "Device.HPNA.Diagnostics.PerformanceMonitoring()": (HPNA_Diagnostics_PerformanceMonitoring_Input, HPNA_Diagnostics_PerformanceMonitoring_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

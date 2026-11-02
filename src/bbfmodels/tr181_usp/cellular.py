@@ -144,3 +144,21 @@ class Cellular(_Model):
     AccessPoint: dict[int, Cellular_AccessPoint] = _Field(default_factory=dict)
 
 
+class Cellular_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.Cellular.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Cellular_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.Cellular.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.Cellular.Interface.{i}.Stats.Reset()": (Cellular_Interface_Stats_Reset_Input, Cellular_Interface_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

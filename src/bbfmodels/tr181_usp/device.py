@@ -3,9 +3,10 @@
 # ruff: noqa
 
 from typing import Annotated as _Annotated, Literal as _Literal
+from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 from bbfmodels.tr181_usp import atm
@@ -202,3 +203,119 @@ class Device(_Model):
     Node: dict[int, node.Node] = _Field(default_factory=dict)
 
 
+class Device_Reboot_Input(_Model):
+    __bbf_path__ = "Device.Reboot().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Cause: _Annotated[_Literal['LocalReboot', 'RemoteReboot'] | str | None, _Param(_BaseType.STRING)] = None
+    Reason: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Device_Reboot_Output(_Model):
+    __bbf_path__ = "Device.Reboot().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Device_Shutdown_Input(_Model):
+    __bbf_path__ = "Device.Shutdown().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Cause: _Annotated[_Literal['LocalShutdown', 'RemoteShutdown'] | str | None, _Param(_BaseType.STRING)] = None
+    Reason: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Device_Shutdown_Output(_Model):
+    __bbf_path__ = "Device.Shutdown().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Device_FactoryReset_Input(_Model):
+    __bbf_path__ = "Device.FactoryReset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Cause: _Annotated[_Literal['LocalFactoryReset', 'RemoteFactoryReset'] | str | None, _Param(_BaseType.STRING)] = None
+    Reason: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Device_FactoryReset_Output(_Model):
+    __bbf_path__ = "Device.FactoryReset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Device_SelfTestDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.SelfTestDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Device_SelfTestDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.SelfTestDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Complete', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    Results: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Device_PacketCaptureDiagnostics_Input(_Model):
+    __bbf_path__ = "Device.PacketCaptureDiagnostics().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Format: _Annotated[_Literal['libpcap', 'pcapng'] | str | None, _Param(_BaseType.STRING)] = None
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PacketCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ByteCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FileTarget: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    FilterExpression: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class Device_PacketCaptureDiagnostics_Output_PacketCaptureResult(_Model):
+    __bbf_path__ = "Device.PacketCaptureDiagnostics().Output.PacketCaptureResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    FileLocation: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    EndTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    Count: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Device_PacketCaptureDiagnostics_Output(_Model):
+    __bbf_path__ = "Device.PacketCaptureDiagnostics().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    PacketCaptureResult: dict[int, Device_PacketCaptureDiagnostics_Output_PacketCaptureResult] = _Field(default_factory=dict)
+
+
+class Device_ScheduleTimer_Input(_Model):
+    __bbf_path__ = "Device.ScheduleTimer().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DelaySeconds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class Device_ScheduleTimer_Output(_Model):
+    __bbf_path__ = "Device.ScheduleTimer().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class Device_Boot(_Model):
+    __bbf_path__ = "Device.Boot!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CommandKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Cause: _Annotated[_Literal['LocalReboot', 'RemoteReboot', 'LocalShutdown', 'RemoteShutdown', 'FactoryReset', 'LocalFactoryReset', 'RemoteFactoryReset'] | str | None, _Param(_BaseType.STRING)] = None
+    Reason: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    FirmwareUpdated: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    ParameterMap: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "Device.Reboot()": (Device_Reboot_Input, Device_Reboot_Output),
+    "Device.Shutdown()": (Device_Shutdown_Input, Device_Shutdown_Output),
+    "Device.FactoryReset()": (Device_FactoryReset_Input, Device_FactoryReset_Output),
+    "Device.SelfTestDiagnostics()": (Device_SelfTestDiagnostics_Input, Device_SelfTestDiagnostics_Output),
+    "Device.PacketCaptureDiagnostics()": (Device_PacketCaptureDiagnostics_Input, Device_PacketCaptureDiagnostics_Output),
+    "Device.ScheduleTimer()": (Device_ScheduleTimer_Input, Device_ScheduleTimer_Output),
+}
+_EVENTS = {
+    "Device.Boot!": Device_Boot,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
+# Every command's input and output class, and every event's class, by path.
+COMMANDS = {**atm.COMMANDS, **basapm.COMMANDS, **bridging.COMMANDS, **bulkdata.COMMANDS, **cwmpmanagementserver.COMMANDS, **captiveportal.COMMANDS, **cellular.COMMANDS, **collectiondevice.COMMANDS, **connectionmonitoring.COMMANDS, **dhcpv4.COMMANDS, **dhcpv6.COMMANDS, **dlna.COMMANDS, **dns.COMMANDS, **docsis.COMMANDS, **dsl.COMMANDS, **dslite.COMMANDS, **deviceinfo.COMMANDS, **dynamicdns.COMMANDS, **ethernet.COMMANDS, **fap.COMMANDS, **fast.COMMANDS, **fwe.COMMANDS, **faultmgmt.COMMANDS, **firewall.COMMANDS, **gre.COMMANDS, **gatewayinfo.COMMANDS, **ghn.COMMANDS, **hpna.COMMANDS, **hardware.COMMANDS, **homeplug.COMMANDS, **hosts.COMMANDS, **ieee1905.COMMANDS, **ieee8021x.COMMANDS, **ip.COMMANDS, **ipsec.COMMANDS, **ipv6rd.COMMANDS, **interfacestack.COMMANDS, **iotcapability.COMMANDS, **l2tpv3.COMMANDS, **lanconfigsecurity.COMMANDS, **leds.COMMANDS, **lldp.COMMANDS, **lmap.COMMANDS, **localagent.COMMANDS, **logical.COMMANDS, **map.COMMANDS, **mqtt.COMMANDS, **moca.COMMANDS, **nat.COMMANDS, **neighbordiscovery.COMMANDS, **node.COMMANDS, **optical.COMMANDS, **pcp.COMMANDS, **pdu.COMMANDS, **ppp.COMMANDS, **ptm.COMMANDS, **periodicfiletransfer.COMMANDS, **periodicstatistics.COMMANDS, **proxieddevice.COMMANDS, **qos.COMMANDS, **radsecproxy.COMMANDS, **routeradvertisement.COMMANDS, **routing.COMMANDS, **sfps.COMMANDS, **ssh.COMMANDS, **stomp.COMMANDS, **schedules.COMMANDS, **security.COMMANDS, **services.COMMANDS, **sessionmanagement.COMMANDS, **smartcardreaders.COMMANDS, **softwaremodules.COMMANDS, **standby.COMMANDS, **syslog.COMMANDS, **thread.COMMANDS, **time.COMMANDS, **trustedelements.COMMANDS, **upa.COMMANDS, **upnp.COMMANDS, **usb.COMMANDS, **uspservices.COMMANDS, **unixdomainsockets.COMMANDS, **userinterface.COMMANDS, **users.COMMANDS, **vxlan.COMMANDS, **wwc.COMMANDS, **wifi.COMMANDS, **wireguard.COMMANDS, **xmpp.COMMANDS, **xpon.COMMANDS, **zigbee.COMMANDS, **_COMMANDS}
+EVENTS = {**atm.EVENTS, **basapm.EVENTS, **bridging.EVENTS, **bulkdata.EVENTS, **cwmpmanagementserver.EVENTS, **captiveportal.EVENTS, **cellular.EVENTS, **collectiondevice.EVENTS, **connectionmonitoring.EVENTS, **dhcpv4.EVENTS, **dhcpv6.EVENTS, **dlna.EVENTS, **dns.EVENTS, **docsis.EVENTS, **dsl.EVENTS, **dslite.EVENTS, **deviceinfo.EVENTS, **dynamicdns.EVENTS, **ethernet.EVENTS, **fap.EVENTS, **fast.EVENTS, **fwe.EVENTS, **faultmgmt.EVENTS, **firewall.EVENTS, **gre.EVENTS, **gatewayinfo.EVENTS, **ghn.EVENTS, **hpna.EVENTS, **hardware.EVENTS, **homeplug.EVENTS, **hosts.EVENTS, **ieee1905.EVENTS, **ieee8021x.EVENTS, **ip.EVENTS, **ipsec.EVENTS, **ipv6rd.EVENTS, **interfacestack.EVENTS, **iotcapability.EVENTS, **l2tpv3.EVENTS, **lanconfigsecurity.EVENTS, **leds.EVENTS, **lldp.EVENTS, **lmap.EVENTS, **localagent.EVENTS, **logical.EVENTS, **map.EVENTS, **mqtt.EVENTS, **moca.EVENTS, **nat.EVENTS, **neighbordiscovery.EVENTS, **node.EVENTS, **optical.EVENTS, **pcp.EVENTS, **pdu.EVENTS, **ppp.EVENTS, **ptm.EVENTS, **periodicfiletransfer.EVENTS, **periodicstatistics.EVENTS, **proxieddevice.EVENTS, **qos.EVENTS, **radsecproxy.EVENTS, **routeradvertisement.EVENTS, **routing.EVENTS, **sfps.EVENTS, **ssh.EVENTS, **stomp.EVENTS, **schedules.EVENTS, **security.EVENTS, **services.EVENTS, **sessionmanagement.EVENTS, **smartcardreaders.EVENTS, **softwaremodules.EVENTS, **standby.EVENTS, **syslog.EVENTS, **thread.EVENTS, **time.EVENTS, **trustedelements.EVENTS, **upa.EVENTS, **upnp.EVENTS, **usb.EVENTS, **uspservices.EVENTS, **unixdomainsockets.EVENTS, **userinterface.EVENTS, **users.EVENTS, **vxlan.EVENTS, **wwc.EVENTS, **wifi.EVENTS, **wireguard.EVENTS, **xmpp.EVENTS, **xpon.EVENTS, **zigbee.EVENTS, **_EVENTS}

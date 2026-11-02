@@ -240,3 +240,21 @@ class ZigBee(_Model):
     Discovery: ZigBee_Discovery | None = _Field(default=None)
 
 
+class ZigBee_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.ZigBee.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class ZigBee_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.ZigBee.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.ZigBee.Interface.{i}.Stats.Reset()": (ZigBee_Interface_Stats_Reset_Input, ZigBee_Interface_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

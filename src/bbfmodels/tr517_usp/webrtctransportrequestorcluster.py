@@ -29,3 +29,85 @@ class WebRTCTransportRequestorCluster(_Model):
     CurrentSessions: dict[int, WebRTCTransportRequestorCluster_CurrentSessions] = _Field(default_factory=dict)
 
 
+class WebRTCTransportRequestorCluster_Offer_Input_ICEServers(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Offer().Input.ICEServers.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    URLs: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Credential: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CAID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WebRTCTransportRequestorCluster_Offer_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Offer().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WebRTCSessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SDP: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ICETransportPolicy: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ICEServers: dict[int, WebRTCTransportRequestorCluster_Offer_Input_ICEServers] = _Field(default_factory=dict)
+
+
+class WebRTCTransportRequestorCluster_Offer_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Offer().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WebRTCTransportRequestorCluster_Answer_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Answer().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WebRTCSessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SDP: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class WebRTCTransportRequestorCluster_Answer_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Answer().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WebRTCTransportRequestorCluster_ICECandidates_Input_ICECandidates(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.ICECandidates().Input.ICECandidates.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Candidate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SDPMid: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SDPMLineIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class WebRTCTransportRequestorCluster_ICECandidates_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.ICECandidates().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WebRTCSessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ICECandidates: dict[int, WebRTCTransportRequestorCluster_ICECandidates_Input_ICECandidates] = _Field(default_factory=dict)
+
+
+class WebRTCTransportRequestorCluster_ICECandidates_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.ICECandidates().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WebRTCTransportRequestorCluster_End_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.End().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    WebRTCSessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Reason: _Annotated[_Literal['ICEFailed', 'ICETimeout', 'UserHangup', 'UserBusy', 'Replaced', 'NoUserMedia', 'InviteTimeout', 'AnsweredElsewhere', 'OutOfResources', 'MediaTimeout', 'LowPower', 'PrivacyMode', 'UnknownReason'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WebRTCTransportRequestorCluster_End_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.End().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Offer()": (WebRTCTransportRequestorCluster_Offer_Input, WebRTCTransportRequestorCluster_Offer_Output),
+    "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.Answer()": (WebRTCTransportRequestorCluster_Answer_Input, WebRTCTransportRequestorCluster_Answer_Output),
+    "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.ICECandidates()": (WebRTCTransportRequestorCluster_ICECandidates_Input, WebRTCTransportRequestorCluster_ICECandidates_Output),
+    "MatterService.{i}.WebRTCTransportRequestorCluster.{i}.End()": (WebRTCTransportRequestorCluster_End_Input, WebRTCTransportRequestorCluster_End_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

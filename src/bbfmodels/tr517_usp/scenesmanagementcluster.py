@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class ScenesManagementCluster_FabricSceneInfo(_Model):
@@ -27,4 +27,187 @@ class ScenesManagementCluster(_Model):
     FabricSceneInfoNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FabricSceneInfo: dict[int, ScenesManagementCluster_FabricSceneInfo] = _Field(default_factory=dict)
 
+
+class ScenesManagementCluster_AddScene_Input_ExtensionFieldSetStructs_AttributeValueList(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.AddScene().Input.ExtensionFieldSetStructs.{i}.AttributeValueList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AttributeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueUnsigned8: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueSigned8: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValueUnsigned16: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueSigned16: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValueUnsigned32: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueSigned32: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValueUnsigned64: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ValueSigned64: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class ScenesManagementCluster_AddScene_Input_ExtensionFieldSetStructs(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.AddScene().Input.ExtensionFieldSetStructs.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ClusterID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AttributeValueList: dict[int, ScenesManagementCluster_AddScene_Input_ExtensionFieldSetStructs_AttributeValueList] = _Field(default_factory=dict)
+
+
+class ScenesManagementCluster_AddScene_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.AddScene().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExtensionFieldSetStructs: dict[int, ScenesManagementCluster_AddScene_Input_ExtensionFieldSetStructs] = _Field(default_factory=dict)
+
+
+class ScenesManagementCluster_AddScene_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.AddScene().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_ViewScene_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.ViewScene().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_ViewScene_Output_ExtensionFieldSetStructs_AttributeValueList(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.ViewScene().Output.ExtensionFieldSetStructs.{i}.AttributeValueList.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AttributeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueUnsigned8: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueSigned8: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValueUnsigned16: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueSigned16: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValueUnsigned32: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ValueSigned32: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ValueUnsigned64: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    ValueSigned64: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class ScenesManagementCluster_ViewScene_Output_ExtensionFieldSetStructs(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.ViewScene().Output.ExtensionFieldSetStructs.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ClusterID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AttributeValueList: dict[int, ScenesManagementCluster_ViewScene_Output_ExtensionFieldSetStructs_AttributeValueList] = _Field(default_factory=dict)
+
+
+class ScenesManagementCluster_ViewScene_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.ViewScene().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExtensionFieldSetStructs: dict[int, ScenesManagementCluster_ViewScene_Output_ExtensionFieldSetStructs] = _Field(default_factory=dict)
+
+
+class ScenesManagementCluster_RemoveScene_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.RemoveScene().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_RemoveScene_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.RemoveScene().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_RemoveAllScenes_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.RemoveAllScenes().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_RemoveAllScenes_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.RemoveAllScenes().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_StoreScene_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.StoreScene().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_StoreScene_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.StoreScene().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_RecallScene_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.RecallScene().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransitionTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class ScenesManagementCluster_RecallScene_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.RecallScene().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ScenesManagementCluster_GetSceneMembership_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.GetSceneMembership().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_GetSceneMembership_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.GetSceneMembership().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Capacity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneList: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class ScenesManagementCluster_CopyScene_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.CopyScene().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Mode: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    GroupIdentifierFrom: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneIdentifierFrom: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    GroupIdentifierTo: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneIdentifierTo: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ScenesManagementCluster_CopyScene_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ScenesManagementCluster.{i}.CopyScene().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    GroupIdentifierFrom: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SceneIdentifierFrom: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.ScenesManagementCluster.{i}.AddScene()": (ScenesManagementCluster_AddScene_Input, ScenesManagementCluster_AddScene_Output),
+    "MatterService.{i}.ScenesManagementCluster.{i}.ViewScene()": (ScenesManagementCluster_ViewScene_Input, ScenesManagementCluster_ViewScene_Output),
+    "MatterService.{i}.ScenesManagementCluster.{i}.RemoveScene()": (ScenesManagementCluster_RemoveScene_Input, ScenesManagementCluster_RemoveScene_Output),
+    "MatterService.{i}.ScenesManagementCluster.{i}.RemoveAllScenes()": (ScenesManagementCluster_RemoveAllScenes_Input, ScenesManagementCluster_RemoveAllScenes_Output),
+    "MatterService.{i}.ScenesManagementCluster.{i}.StoreScene()": (ScenesManagementCluster_StoreScene_Input, ScenesManagementCluster_StoreScene_Output),
+    "MatterService.{i}.ScenesManagementCluster.{i}.RecallScene()": (ScenesManagementCluster_RecallScene_Input, ScenesManagementCluster_RecallScene_Output),
+    "MatterService.{i}.ScenesManagementCluster.{i}.GetSceneMembership()": (ScenesManagementCluster_GetSceneMembership_Input, ScenesManagementCluster_GetSceneMembership_Output),
+    "MatterService.{i}.ScenesManagementCluster.{i}.CopyScene()": (ScenesManagementCluster_CopyScene_Input, ScenesManagementCluster_CopyScene_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

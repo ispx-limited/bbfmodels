@@ -78,3 +78,10 @@ class Users(_Model):
     Role: dict[int, Users_Role] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

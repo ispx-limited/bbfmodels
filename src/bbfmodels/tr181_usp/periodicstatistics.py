@@ -55,3 +55,49 @@ class PeriodicStatistics(_Model):
     SampleSet: dict[int, PeriodicStatistics_SampleSet] = _Field(default_factory=dict)
 
 
+class PeriodicStatistics_SampleSet_ForceSample_Input(_Model):
+    __bbf_path__ = "Device.PeriodicStatistics.SampleSet.{i}.ForceSample().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PeriodicStatistics_SampleSet_ForceSample_Output(_Model):
+    __bbf_path__ = "Device.PeriodicStatistics.SampleSet.{i}.ForceSample().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PeriodicStatistics_SampleSet_ForceCollection_Input(_Model):
+    __bbf_path__ = "Device.PeriodicStatistics.SampleSet.{i}.ForceCollection().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PeriodicStatistics_SampleSet_ForceCollection_Output(_Model):
+    __bbf_path__ = "Device.PeriodicStatistics.SampleSet.{i}.ForceCollection().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PeriodicStatistics_SampleSet_Push_Parameter(_Model):
+    __bbf_path__ = "Device.PeriodicStatistics.SampleSet.{i}.Push!.Parameter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Values: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SampleSeconds: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    SuspectData: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    Failures: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PeriodicStatistics_SampleSet_Push(_Model):
+    __bbf_path__ = "Device.PeriodicStatistics.SampleSet.{i}.Push!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Parameter: dict[int, PeriodicStatistics_SampleSet_Push_Parameter] = _Field(default_factory=dict)
+
+
+_COMMANDS = {
+    "Device.PeriodicStatistics.SampleSet.{i}.ForceSample()": (PeriodicStatistics_SampleSet_ForceSample_Input, PeriodicStatistics_SampleSet_ForceSample_Output),
+    "Device.PeriodicStatistics.SampleSet.{i}.ForceCollection()": (PeriodicStatistics_SampleSet_ForceCollection_Input, PeriodicStatistics_SampleSet_ForceCollection_Output),
+}
+_EVENTS = {
+    "Device.PeriodicStatistics.SampleSet.{i}.Push!": PeriodicStatistics_SampleSet_Push,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

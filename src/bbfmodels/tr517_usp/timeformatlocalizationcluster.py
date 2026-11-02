@@ -17,3 +17,10 @@ class TimeFormatLocalizationCluster(_Model):
     SupportedCalendarTypes: _Annotated[_CommaList[_Literal['Buddhist', 'Chinese', 'Coptic', 'Ethiopian', 'Gregorian', 'Hebrew', 'Indian', 'Islamic', 'Japanese', 'Korean', 'Persian', 'Taiwanese', 'UseActiveLocale'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

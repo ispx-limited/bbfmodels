@@ -194,3 +194,111 @@ class IoTCapability(_Model):
     PulseSensor: IoTCapability_PulseSensor | None = _Field(default=None)
 
 
+class IoTCapability_BinaryControl_Toggle_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.BinaryControl.Toggle().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_BinaryControl_Toggle_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.BinaryControl.Toggle().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_LevelControl_StepUp_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.LevelControl.StepUp().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_LevelControl_StepUp_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.LevelControl.StepUp().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_LevelControl_StepDown_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.LevelControl.StepDown().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_LevelControl_StepDown_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.LevelControl.StepDown().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_EnumControl_StepUp_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.EnumControl.StepUp().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_EnumControl_StepUp_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.EnumControl.StepUp().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_EnumControl_StepDown_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.EnumControl.StepDown().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_EnumControl_StepDown_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.EnumControl.StepDown().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_PulseControl_TransitionHigh_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.PulseControl.TransitionHigh().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IoTCapability_PulseControl_TransitionHigh_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.PulseControl.TransitionHigh().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_PulseControl_TransitionLow_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.PulseControl.TransitionLow().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IoTCapability_PulseControl_TransitionLow_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.PulseControl.TransitionLow().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_MultiLevelControl_Control_StepUp_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepUp().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_MultiLevelControl_Control_StepUp_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepUp().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_MultiLevelControl_Control_StepDown_Input(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepDown().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class IoTCapability_MultiLevelControl_Control_StepDown_Output(_Model):
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepDown().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.IoTCapability.{i}.BinaryControl.Toggle()": (IoTCapability_BinaryControl_Toggle_Input, IoTCapability_BinaryControl_Toggle_Output),
+    "Device.IoTCapability.{i}.LevelControl.StepUp()": (IoTCapability_LevelControl_StepUp_Input, IoTCapability_LevelControl_StepUp_Output),
+    "Device.IoTCapability.{i}.LevelControl.StepDown()": (IoTCapability_LevelControl_StepDown_Input, IoTCapability_LevelControl_StepDown_Output),
+    "Device.IoTCapability.{i}.EnumControl.StepUp()": (IoTCapability_EnumControl_StepUp_Input, IoTCapability_EnumControl_StepUp_Output),
+    "Device.IoTCapability.{i}.EnumControl.StepDown()": (IoTCapability_EnumControl_StepDown_Input, IoTCapability_EnumControl_StepDown_Output),
+    "Device.IoTCapability.{i}.PulseControl.TransitionHigh()": (IoTCapability_PulseControl_TransitionHigh_Input, IoTCapability_PulseControl_TransitionHigh_Output),
+    "Device.IoTCapability.{i}.PulseControl.TransitionLow()": (IoTCapability_PulseControl_TransitionLow_Input, IoTCapability_PulseControl_TransitionLow_Output),
+    "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepUp()": (IoTCapability_MultiLevelControl_Control_StepUp_Input, IoTCapability_MultiLevelControl_Control_StepUp_Output),
+    "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}.StepDown()": (IoTCapability_MultiLevelControl_Control_StepDown_Input, IoTCapability_MultiLevelControl_Control_StepDown_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

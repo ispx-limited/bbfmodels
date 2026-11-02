@@ -331,3 +331,10 @@ class CallControl(_Model):
     CallingFeatures: CallControl_CallingFeatures | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

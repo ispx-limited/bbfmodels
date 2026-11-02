@@ -34,3 +34,133 @@ class NetworkCommissioningCluster(_Model):
     Networks: dict[int, NetworkCommissioningCluster_Networks] = _Field(default_factory=dict)
 
 
+class NetworkCommissioningCluster_ScanNetworks_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ScanNetworks().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class NetworkCommissioningCluster_ScanNetworks_Output_WiFiScanResults(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ScanNetworks().Output.WiFiScanResults.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Security: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BSSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WiFiBand: _Annotated[_Literal['2G4', '3G65', '5G', '6G', '60G', '1G'] | str | None, _Param(_BaseType.STRING)] = None
+    RSSI: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class NetworkCommissioningCluster_ScanNetworks_Output_ThreadScanResults(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ScanNetworks().Output.ThreadScanResults.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PanId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ExtendedPanId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    NetworkName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Channel: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Version: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ExtendedAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    RSSI: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    LQI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class NetworkCommissioningCluster_ScanNetworks_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ScanNetworks().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkingStatus: _Annotated[_Literal['Success', 'OutOfRange', 'BoundsExceeded', 'NetworkIDNotFound', 'DuplicateNetworkID', 'NetworkNotFound', 'RegulatoryError', 'AuthFailure', 'UnsupportedSecurity', 'OtherConnectionFailure', 'IPV6Failed', 'IPBindFailed', 'UnknownError'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    WiFiScanResults: dict[int, NetworkCommissioningCluster_ScanNetworks_Output_WiFiScanResults] = _Field(default_factory=dict)
+    ThreadScanResults: dict[int, NetworkCommissioningCluster_ScanNetworks_Output_ThreadScanResults] = _Field(default_factory=dict)
+
+
+class NetworkCommissioningCluster_AddOrUpdateWiFiNetwork_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateWiFiNetwork().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SSID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Credentials: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class NetworkCommissioningCluster_AddOrUpdateWiFiNetwork_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateWiFiNetwork().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkingStatus: _Annotated[_Literal['Success', 'OutOfRange', 'BoundsExceeded', 'NetworkIDNotFound', 'DuplicateNetworkID', 'NetworkNotFound', 'RegulatoryError', 'AuthFailure', 'UnsupportedSecurity', 'OtherConnectionFailure', 'IPV6Failed', 'IPBindFailed', 'UnknownError'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NetworkIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class NetworkCommissioningCluster_AddOrUpdateThreadNetwork_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateThreadNetwork().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OperationalDataset: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class NetworkCommissioningCluster_AddOrUpdateThreadNetwork_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateThreadNetwork().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkingStatus: _Annotated[_Literal['Success', 'OutOfRange', 'BoundsExceeded', 'NetworkIDNotFound', 'DuplicateNetworkID', 'NetworkNotFound', 'RegulatoryError', 'AuthFailure', 'UnsupportedSecurity', 'OtherConnectionFailure', 'IPV6Failed', 'IPBindFailed', 'UnknownError'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NetworkIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class NetworkCommissioningCluster_RemoveNetwork_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.RemoveNetwork().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class NetworkCommissioningCluster_RemoveNetwork_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.RemoveNetwork().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkingStatus: _Annotated[_Literal['Success', 'OutOfRange', 'BoundsExceeded', 'NetworkIDNotFound', 'DuplicateNetworkID', 'NetworkNotFound', 'RegulatoryError', 'AuthFailure', 'UnsupportedSecurity', 'OtherConnectionFailure', 'IPV6Failed', 'IPBindFailed', 'UnknownError'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NetworkIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class NetworkCommissioningCluster_ConnectNetwork_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ConnectNetwork().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class NetworkCommissioningCluster_ConnectNetwork_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ConnectNetwork().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkingStatus: _Annotated[_Literal['Success', 'OutOfRange', 'BoundsExceeded', 'NetworkIDNotFound', 'DuplicateNetworkID', 'NetworkNotFound', 'RegulatoryError', 'AuthFailure', 'UnsupportedSecurity', 'OtherConnectionFailure', 'IPV6Failed', 'IPBindFailed', 'UnknownError'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorValue: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class NetworkCommissioningCluster_ReorderNetwork_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ReorderNetwork().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NetworkIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Breadcrumb: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class NetworkCommissioningCluster_ReorderNetwork_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.NetworkCommissioningCluster.{i}.ReorderNetwork().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NetworkingStatus: _Annotated[_Literal['Success', 'OutOfRange', 'BoundsExceeded', 'NetworkIDNotFound', 'DuplicateNetworkID', 'NetworkNotFound', 'RegulatoryError', 'AuthFailure', 'UnsupportedSecurity', 'OtherConnectionFailure', 'IPV6Failed', 'IPBindFailed', 'UnknownError'] | str | None, _Param(_BaseType.STRING)] = None
+    DebugText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NetworkIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.NetworkCommissioningCluster.{i}.ScanNetworks()": (NetworkCommissioningCluster_ScanNetworks_Input, NetworkCommissioningCluster_ScanNetworks_Output),
+    "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateWiFiNetwork()": (NetworkCommissioningCluster_AddOrUpdateWiFiNetwork_Input, NetworkCommissioningCluster_AddOrUpdateWiFiNetwork_Output),
+    "MatterService.{i}.NetworkCommissioningCluster.{i}.AddOrUpdateThreadNetwork()": (NetworkCommissioningCluster_AddOrUpdateThreadNetwork_Input, NetworkCommissioningCluster_AddOrUpdateThreadNetwork_Output),
+    "MatterService.{i}.NetworkCommissioningCluster.{i}.RemoveNetwork()": (NetworkCommissioningCluster_RemoveNetwork_Input, NetworkCommissioningCluster_RemoveNetwork_Output),
+    "MatterService.{i}.NetworkCommissioningCluster.{i}.ConnectNetwork()": (NetworkCommissioningCluster_ConnectNetwork_Input, NetworkCommissioningCluster_ConnectNetwork_Output),
+    "MatterService.{i}.NetworkCommissioningCluster.{i}.ReorderNetwork()": (NetworkCommissioningCluster_ReorderNetwork_Input, NetworkCommissioningCluster_ReorderNetwork_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

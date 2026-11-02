@@ -223,3 +223,10 @@ class HPNA(_Model):
     Diagnostics: HPNA_Diagnostics | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

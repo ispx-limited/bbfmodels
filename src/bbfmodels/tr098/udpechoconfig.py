@@ -26,3 +26,10 @@ class UDPEchoConfig(_Model):
     TimeLastPacketReceived: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

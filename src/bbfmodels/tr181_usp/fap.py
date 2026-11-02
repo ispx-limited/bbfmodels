@@ -237,3 +237,21 @@ class FAP(_Model):
     ApplicationPlatform: FAP_ApplicationPlatform | None = _Field(default=None)
 
 
+class FAP_GPS_GPSReset_Input(_Model):
+    __bbf_path__ = "Device.FAP.GPS.GPSReset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class FAP_GPS_GPSReset_Output(_Model):
+    __bbf_path__ = "Device.FAP.GPS.GPSReset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.FAP.GPS.GPSReset()": (FAP_GPS_GPSReset_Input, FAP_GPS_GPSReset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

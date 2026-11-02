@@ -43,3 +43,10 @@ class BASAPM(_Model):
     MeasurementEndpoint: dict[int, BASAPM_MeasurementEndpoint] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

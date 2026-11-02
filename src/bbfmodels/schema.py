@@ -12,7 +12,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from bbfmodels.ir import DataType, Document, Object, Parameter
+from bbfmodels.ir import Arguments, DataType, Document, Object, Parameter
+
+
+def _is_argument_path(path: str) -> bool:
+    """Whether a schema path lies under a command's or an event's arguments."""
+    return any(seg.endswith(("()", "!")) for seg in path.split("."))
 
 
 class UnknownPath(KeyError):
@@ -61,6 +66,31 @@ class Schema:
             for obj in model.objects.values():
                 mounted = obj.model_copy(update={"path": prefix + obj.path}) if prefix else obj
                 self.objects[mounted.path] = mounted
+                self._index_arguments(mounted)
+
+    def _index_arguments(self, obj: Object) -> None:
+        """Index a command's input and output and an event's payload as objects.
+
+        USP names a command ``Device.IP.Diagnostics.TraceRoute()`` and an
+        event ``Device.Boot!``; neither has a path for its arguments. The
+        schema gives them one, ``...TraceRoute().Input.``,
+        ``...TraceRoute().Output.``, ``...Boot!.``, and the objects inside an
+        output (``RouteHops.{i}.``) hang under it, so argument values resolve
+        and validate like any other.
+        """
+        for cmd in obj.commands.values():
+            # The command itself is a step on the way to its arguments, so a
+            # path through it resolves segment by segment.
+            self.objects[f"{obj.path}{cmd.name}."] = Object(path=f"{obj.path}{cmd.name}.")
+            self._index_argument_objects(f"{obj.path}{cmd.name}.Input.", cmd.input)
+            self._index_argument_objects(f"{obj.path}{cmd.name}.Output.", cmd.output)
+        for ev in obj.events.values():
+            self._index_argument_objects(f"{obj.path}{ev.name}.", ev.arguments)
+
+    def _index_argument_objects(self, path: str, args: Arguments) -> None:
+        self.objects[path] = Object(path=path, parameters=args.parameters)
+        for rel, nested in args.objects.items():
+            self.objects[path + rel] = nested.model_copy(update={"path": path + rel})
 
     def _services_mount(self) -> str:
         roots = [p for p in self.objects if p.count(".") == 1]
@@ -89,8 +119,16 @@ class Schema:
             raise UnknownPath(schema_path) from None
 
     def children(self, schema_path: str) -> list[Object]:
-        """The objects directly under an object, tables included."""
-        return [o for o in self.objects.values() if o.parent_path == schema_path]
+        """The objects directly under an object, tables included.
+
+        The synthetic objects that hold command and event arguments are
+        not children; they are reached through the command or event.
+        """
+        return [
+            o
+            for o in self.objects.values()
+            if o.parent_path == schema_path and not _is_argument_path(o.path)
+        ]
 
     def resolve(self, data_path: str) -> Resolved:
         """The schema node a data path points at, and the instance numbers in it.

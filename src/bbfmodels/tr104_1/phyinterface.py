@@ -26,3 +26,10 @@ class PhyInterface(_Model):
     Tests: PhyInterface_Tests | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

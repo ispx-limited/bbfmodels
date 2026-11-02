@@ -97,3 +97,374 @@ class PushAVStreamTransportCluster(_Model):
     CurrentConnections: dict[int, PushAVStreamTransportCluster_CurrentConnections] = _Field(default_factory=dict)
 
 
+class PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_TriggerOptions_MotionZones(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Input.TransportOptions.TriggerOptions.MotionZones.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Sensitivity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_TriggerOptions_MotionTimeControl(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Input.TransportOptions.TriggerOptions.MotionTimeControl."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    InitialDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AugmentationDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BlindDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_ContainerOptions_CMAFContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Input.TransportOptions.ContainerOptions.CMAFContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CMAFInterface: _Annotated[_Literal['Interface1', 'Interface2DASH', 'Interface2HLS'] | str | None, _Param(_BaseType.STRING)] = None
+    SegmentDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChunkDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SessionGroup: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TrackName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKeyID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MetadataEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_TriggerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Input.TransportOptions.TriggerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TriggerType: _Annotated[_Literal['Command', 'Motion', 'Continuous'] | str | None, _Param(_BaseType.STRING)] = None
+    MotionSensitivity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    MaxPreRollLen: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MotionZones: dict[int, PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_TriggerOptions_MotionZones] = _Field(default_factory=dict)
+    MotionTimeControl: PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_TriggerOptions_MotionTimeControl | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_ContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Input.TransportOptions.ContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ContainerType: _Annotated[_Literal['CMAF'] | str | None, _Param(_BaseType.STRING)] = None
+    CMAFContainerOptions: PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_ContainerOptions_CMAFContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Input.TransportOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StreamUsage: _Annotated[_Literal['Internal', 'Recording', 'Analysis', 'LiveView'] | str | None, _Param(_BaseType.STRING)] = None
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AudioStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TLSEndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IngestMethod: _Annotated[_Literal['CMAFIngest'] | str | None, _Param(_BaseType.STRING)] = None
+    ExpiryTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TriggerOptions: PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_TriggerOptions | None = _Field(default=None)
+    ContainerOptions: PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions_ContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TransportOptions: PushAVStreamTransportCluster_AllocatePushTransport_Input_TransportOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_TriggerOptions_MotionZones(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output.TransportConfiguration.TransportOptions.TriggerOptions.MotionZones.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Sensitivity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_TriggerOptions_MotionTimeControl(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output.TransportConfiguration.TransportOptions.TriggerOptions.MotionTimeControl."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    InitialDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AugmentationDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BlindDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_ContainerOptions_CMAFContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output.TransportConfiguration.TransportOptions.ContainerOptions.CMAFContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CMAFInterface: _Annotated[_Literal['Interface1', 'Interface2DASH', 'Interface2HLS'] | str | None, _Param(_BaseType.STRING)] = None
+    SegmentDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChunkDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SessionGroup: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TrackName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKeyID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MetadataEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_TriggerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output.TransportConfiguration.TransportOptions.TriggerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TriggerType: _Annotated[_Literal['Command', 'Motion', 'Continuous'] | str | None, _Param(_BaseType.STRING)] = None
+    MotionSensitivity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    MaxPreRollLen: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MotionZones: dict[int, PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_TriggerOptions_MotionZones] = _Field(default_factory=dict)
+    MotionTimeControl: PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_TriggerOptions_MotionTimeControl | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_ContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output.TransportConfiguration.TransportOptions.ContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ContainerType: _Annotated[_Literal['CMAF'] | str | None, _Param(_BaseType.STRING)] = None
+    CMAFContainerOptions: PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_ContainerOptions_CMAFContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output.TransportConfiguration.TransportOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StreamUsage: _Annotated[_Literal['Internal', 'Recording', 'Analysis', 'LiveView'] | str | None, _Param(_BaseType.STRING)] = None
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AudioStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TLSEndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IngestMethod: _Annotated[_Literal['CMAFIngest'] | str | None, _Param(_BaseType.STRING)] = None
+    ExpiryTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TriggerOptions: PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_TriggerOptions | None = _Field(default=None)
+    ContainerOptions: PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions_ContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output.TransportConfiguration."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransportStatus: _Annotated[_Literal['Active', 'Inactive'] | str | None, _Param(_BaseType.STRING)] = None
+    TransportOptions: PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration_TransportOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_AllocatePushTransport_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TransportConfiguration: PushAVStreamTransportCluster_AllocatePushTransport_Output_TransportConfiguration | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_DeallocatePushTransport_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.DeallocatePushTransport().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_DeallocatePushTransport_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.DeallocatePushTransport().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_TriggerOptions_MotionZones(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Input.TransportOptions.TriggerOptions.MotionZones.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Sensitivity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_TriggerOptions_MotionTimeControl(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Input.TransportOptions.TriggerOptions.MotionTimeControl."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    InitialDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AugmentationDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BlindDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_ContainerOptions_CMAFContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Input.TransportOptions.ContainerOptions.CMAFContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CMAFInterface: _Annotated[_Literal['Interface1', 'Interface2DASH', 'Interface2HLS'] | str | None, _Param(_BaseType.STRING)] = None
+    SegmentDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChunkDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SessionGroup: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TrackName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKeyID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MetadataEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_TriggerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Input.TransportOptions.TriggerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TriggerType: _Annotated[_Literal['Command', 'Motion', 'Continuous'] | str | None, _Param(_BaseType.STRING)] = None
+    MotionSensitivity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    MaxPreRollLen: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MotionZones: dict[int, PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_TriggerOptions_MotionZones] = _Field(default_factory=dict)
+    MotionTimeControl: PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_TriggerOptions_MotionTimeControl | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_ContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Input.TransportOptions.ContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ContainerType: _Annotated[_Literal['CMAF'] | str | None, _Param(_BaseType.STRING)] = None
+    CMAFContainerOptions: PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_ContainerOptions_CMAFContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Input.TransportOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StreamUsage: _Annotated[_Literal['Internal', 'Recording', 'Analysis', 'LiveView'] | str | None, _Param(_BaseType.STRING)] = None
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AudioStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TLSEndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IngestMethod: _Annotated[_Literal['CMAFIngest'] | str | None, _Param(_BaseType.STRING)] = None
+    ExpiryTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TriggerOptions: PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_TriggerOptions | None = _Field(default=None)
+    ContainerOptions: PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions_ContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransportOptions: PushAVStreamTransportCluster_ModifyPushTransport_Input_TransportOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_ModifyPushTransport_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class PushAVStreamTransportCluster_SetTransportStatus_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.SetTransportStatus().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TransportStatus: _Annotated[_Literal['Active', 'Inactive'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class PushAVStreamTransportCluster_SetTransportStatus_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.SetTransportStatus().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class PushAVStreamTransportCluster_ManuallyTriggerTransport_Input_TimeControl(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ManuallyTriggerTransport().Input.TimeControl."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    InitialDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AugmentationDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BlindDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_ManuallyTriggerTransport_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ManuallyTriggerTransport().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ActivationReason: _Annotated[_Literal['UserInitiated', 'Automation', 'Emergency'] | str | None, _Param(_BaseType.STRING)] = None
+    UserDefined: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TimeControl: PushAVStreamTransportCluster_ManuallyTriggerTransport_Input_TimeControl | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_ManuallyTriggerTransport_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.ManuallyTriggerTransport().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class PushAVStreamTransportCluster_FindTransport_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_TriggerOptions_MotionZones(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output.TransportConfigurations.{i}.TransportOptions.TriggerOptions.MotionZones.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Zone: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Sensitivity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_TriggerOptions_MotionTimeControl(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output.TransportConfigurations.{i}.TransportOptions.TriggerOptions.MotionTimeControl."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    InitialDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    AugmentationDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BlindDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_ContainerOptions_CMAFContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output.TransportConfigurations.{i}.TransportOptions.ContainerOptions.CMAFContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CMAFInterface: _Annotated[_Literal['Interface1', 'Interface2DASH', 'Interface2HLS'] | str | None, _Param(_BaseType.STRING)] = None
+    SegmentDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ChunkDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SessionGroup: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TrackName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CENCKeyID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    MetadataEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_TriggerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output.TransportConfigurations.{i}.TransportOptions.TriggerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TriggerType: _Annotated[_Literal['Command', 'Motion', 'Continuous'] | str | None, _Param(_BaseType.STRING)] = None
+    MotionSensitivity: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    MaxPreRollLen: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MotionZones: dict[int, PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_TriggerOptions_MotionZones] = _Field(default_factory=dict)
+    MotionTimeControl: PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_TriggerOptions_MotionTimeControl | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_ContainerOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output.TransportConfigurations.{i}.TransportOptions.ContainerOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ContainerType: _Annotated[_Literal['CMAF'] | str | None, _Param(_BaseType.STRING)] = None
+    CMAFContainerOptions: PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_ContainerOptions_CMAFContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output.TransportConfigurations.{i}.TransportOptions."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StreamUsage: _Annotated[_Literal['Internal', 'Recording', 'Analysis', 'LiveView'] | str | None, _Param(_BaseType.STRING)] = None
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AudioStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    TLSEndpointID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    IngestMethod: _Annotated[_Literal['CMAFIngest'] | str | None, _Param(_BaseType.STRING)] = None
+    ExpiryTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TriggerOptions: PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_TriggerOptions | None = _Field(default=None)
+    ContainerOptions: PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions_ContainerOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output.TransportConfigurations.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TransportStatus: _Annotated[_Literal['Active', 'Inactive'] | str | None, _Param(_BaseType.STRING)] = None
+    TransportOptions: PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations_TransportOptions | None = _Field(default=None)
+
+
+class PushAVStreamTransportCluster_FindTransport_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TransportConfigurations: dict[int, PushAVStreamTransportCluster_FindTransport_Output_TransportConfigurations] = _Field(default_factory=dict)
+
+
+class PushAVStreamTransportCluster_PushTransportBegin(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TriggerType: _Annotated[_Literal['Command', 'Motion', 'Continuous'] | str | None, _Param(_BaseType.STRING)] = None
+    ActivationReason: _Annotated[_Literal['UserInitiated', 'Automation', 'Emergency'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class PushAVStreamTransportCluster_PushTransportEnd(_Model):
+    __bbf_path__ = "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.AllocatePushTransport()": (PushAVStreamTransportCluster_AllocatePushTransport_Input, PushAVStreamTransportCluster_AllocatePushTransport_Output),
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.DeallocatePushTransport()": (PushAVStreamTransportCluster_DeallocatePushTransport_Input, PushAVStreamTransportCluster_DeallocatePushTransport_Output),
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.ModifyPushTransport()": (PushAVStreamTransportCluster_ModifyPushTransport_Input, PushAVStreamTransportCluster_ModifyPushTransport_Output),
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.SetTransportStatus()": (PushAVStreamTransportCluster_SetTransportStatus_Input, PushAVStreamTransportCluster_SetTransportStatus_Output),
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.ManuallyTriggerTransport()": (PushAVStreamTransportCluster_ManuallyTriggerTransport_Input, PushAVStreamTransportCluster_ManuallyTriggerTransport_Output),
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.FindTransport()": (PushAVStreamTransportCluster_FindTransport_Input, PushAVStreamTransportCluster_FindTransport_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportBegin!": PushAVStreamTransportCluster_PushTransportBegin,
+    "MatterService.{i}.PushAVStreamTransportCluster.{i}.PushTransportEnd!": PushAVStreamTransportCluster_PushTransportEnd,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

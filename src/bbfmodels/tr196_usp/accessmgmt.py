@@ -146,3 +146,10 @@ class AccessMgmt(_Model):
     Legacy: AccessMgmt_Legacy | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

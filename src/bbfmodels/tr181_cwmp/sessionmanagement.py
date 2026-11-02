@@ -162,3 +162,10 @@ class SessionManagement(_Model):
     PDU: dict[int, SessionManagement_PDU] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

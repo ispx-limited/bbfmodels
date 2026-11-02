@@ -145,3 +145,10 @@ class Cellular(_Model):
     AccessPoint: dict[int, Cellular_AccessPoint] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -97,3 +97,10 @@ class Terminal(_Model):
     DiagTests: Terminal_DiagTests | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

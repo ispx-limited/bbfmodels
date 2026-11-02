@@ -235,3 +235,10 @@ class DHCPv4(_Model):
     Relay: DHCPv4_Relay | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

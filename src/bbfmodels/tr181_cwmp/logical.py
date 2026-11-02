@@ -133,3 +133,10 @@ class Logical(_Model):
     TAP: Logical_TAP | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

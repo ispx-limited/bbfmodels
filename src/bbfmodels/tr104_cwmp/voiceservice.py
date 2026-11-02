@@ -55,3 +55,13 @@ class VoiceService(_Model):
     ClockSynchronization: clocksynchronization.ClockSynchronization | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
+# Every command's input and output class, and every event's class, by path.
+COMMANDS = {**callcontrol.COMMANDS, **calllog.COMMANDS, **capabilities.COMMANDS, **clocksynchronization.COMMANDS, **codecprofile.COMMANDS, **dect.COMMANDS, **h323.COMMANDS, **isdn.COMMANDS, **interwork.COMMANDS, **mgcp.COMMANDS, **pots.COMMANDS, **reservedports.COMMANDS, **sip.COMMANDS, **terminal.COMMANDS, **tone.COMMANDS, **trunk.COMMANDS, **voipprofile.COMMANDS, **_COMMANDS}
+EVENTS = {**callcontrol.EVENTS, **calllog.EVENTS, **capabilities.EVENTS, **clocksynchronization.EVENTS, **codecprofile.EVENTS, **dect.EVENTS, **h323.EVENTS, **isdn.EVENTS, **interwork.EVENTS, **mgcp.EVENTS, **pots.EVENTS, **reservedports.EVENTS, **sip.EVENTS, **terminal.EVENTS, **tone.EVENTS, **trunk.EVENTS, **voipprofile.EVENTS, **_EVENTS}

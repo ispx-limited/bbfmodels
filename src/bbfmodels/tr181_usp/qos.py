@@ -263,3 +263,10 @@ class QoS(_Model):
     Scheduler: dict[int, QoS_Scheduler] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

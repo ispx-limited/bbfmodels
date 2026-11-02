@@ -37,3 +37,10 @@ class EnergyPreferenceCluster(_Model):
     LowPowerModeSensitivities: dict[int, EnergyPreferenceCluster_LowPowerModeSensitivities] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

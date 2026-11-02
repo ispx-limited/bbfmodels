@@ -16,3 +16,37 @@ class IdentifyCluster(_Model):
     IdentifyType: _Annotated[_Literal['None', 'LightOutput', 'VisibleIndicator', 'AudibleBeep', 'Display', 'Actuator'] | str | None, _Param(_BaseType.STRING)] = None
 
 
+class IdentifyCluster_Identify_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.IdentifyCluster.{i}.Identify().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    IdentifyTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class IdentifyCluster_Identify_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.IdentifyCluster.{i}.Identify().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class IdentifyCluster_TriggerEffect_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.IdentifyCluster.{i}.TriggerEffect().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EffectIdentifier: _Annotated[_Literal['Blink', 'Breathe', 'Okay', 'ChannelChange', 'FinishEffect', 'StopEffect'] | str | None, _Param(_BaseType.STRING)] = None
+    EffectVariant: _Annotated[_Literal['Default'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class IdentifyCluster_TriggerEffect_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.IdentifyCluster.{i}.TriggerEffect().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.IdentifyCluster.{i}.Identify()": (IdentifyCluster_Identify_Input, IdentifyCluster_Identify_Output),
+    "MatterService.{i}.IdentifyCluster.{i}.TriggerEffect()": (IdentifyCluster_TriggerEffect_Input, IdentifyCluster_TriggerEffect_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

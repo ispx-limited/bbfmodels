@@ -38,3 +38,10 @@ class STOMP(_Model):
     Connection: dict[int, STOMP_Connection] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

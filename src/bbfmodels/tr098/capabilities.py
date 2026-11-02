@@ -21,3 +21,10 @@ class Capabilities(_Model):
     PerformanceDiagnostic: Capabilities_PerformanceDiagnostic | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

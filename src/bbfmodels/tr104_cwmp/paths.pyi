@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class SIP_Registrar_Account_ContactPath(ObjectPathBase):
     Enable: ParamPath[bool]

@@ -197,3 +197,10 @@ class CallLog(_Model):
     Session: dict[int, CallLog_Session] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

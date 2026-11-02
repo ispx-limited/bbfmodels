@@ -37,3 +37,70 @@ class RVCOperationalStateCluster(_Model):
     OperationalError: RVCOperationalStateCluster_OperationalError | None = _Field(default=None)
 
 
+class RVCOperationalStateCluster_GoHome_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.GoHome().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class RVCOperationalStateCluster_GoHome_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.GoHome().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState', 'FailedToFindChargingDock', 'Stuck', 'DustBinMissing', 'DustBinFull', 'WaterTankEmpty', 'WaterTankMissing', 'WaterTankLidOpen', 'MopCleaningPadMissing', 'LowBattery', 'CannotReachTargetArea', 'DirtyWaterTankFull', 'DirtyWaterTankMissing', 'WheelsJammed', 'BrushJammed', 'NavigationSensorObscured'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class RVCOperationalStateCluster_GoHome_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.GoHome().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: RVCOperationalStateCluster_GoHome_Output_CommandResponseState | None = _Field(default=None)
+
+
+class RVCOperationalStateCluster_Pause_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.Pause().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class RVCOperationalStateCluster_Pause_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.Pause().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState', 'FailedToFindChargingDock', 'Stuck', 'DustBinMissing', 'DustBinFull', 'WaterTankEmpty', 'WaterTankMissing', 'WaterTankLidOpen', 'MopCleaningPadMissing', 'LowBattery', 'CannotReachTargetArea', 'DirtyWaterTankFull', 'DirtyWaterTankMissing', 'WheelsJammed', 'BrushJammed', 'NavigationSensorObscured'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class RVCOperationalStateCluster_Pause_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.Pause().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: RVCOperationalStateCluster_Pause_Output_CommandResponseState | None = _Field(default=None)
+
+
+class RVCOperationalStateCluster_Resume_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.Resume().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class RVCOperationalStateCluster_Resume_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.Resume().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState', 'FailedToFindChargingDock', 'Stuck', 'DustBinMissing', 'DustBinFull', 'WaterTankEmpty', 'WaterTankMissing', 'WaterTankLidOpen', 'MopCleaningPadMissing', 'LowBattery', 'CannotReachTargetArea', 'DirtyWaterTankFull', 'DirtyWaterTankMissing', 'WheelsJammed', 'BrushJammed', 'NavigationSensorObscured'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class RVCOperationalStateCluster_Resume_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.RVCOperationalStateCluster.{i}.Resume().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: RVCOperationalStateCluster_Resume_Output_CommandResponseState | None = _Field(default=None)
+
+
+_COMMANDS = {
+    "MatterService.{i}.RVCOperationalStateCluster.{i}.GoHome()": (RVCOperationalStateCluster_GoHome_Input, RVCOperationalStateCluster_GoHome_Output),
+    "MatterService.{i}.RVCOperationalStateCluster.{i}.Pause()": (RVCOperationalStateCluster_Pause_Input, RVCOperationalStateCluster_Pause_Output),
+    "MatterService.{i}.RVCOperationalStateCluster.{i}.Resume()": (RVCOperationalStateCluster_Resume_Input, RVCOperationalStateCluster_Resume_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

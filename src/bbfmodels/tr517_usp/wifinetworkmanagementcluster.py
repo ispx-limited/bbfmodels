@@ -16,3 +16,22 @@ class WiFiNetworkManagementCluster(_Model):
     PassphraseSurrogate: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
+class WiFiNetworkManagementCluster_NetworkPassphraseRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WiFiNetworkManagementCluster.{i}.NetworkPassphraseRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class WiFiNetworkManagementCluster_NetworkPassphraseRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WiFiNetworkManagementCluster.{i}.NetworkPassphraseRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Passphrase: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.WiFiNetworkManagementCluster.{i}.NetworkPassphraseRequest()": (WiFiNetworkManagementCluster_NetworkPassphraseRequest_Input, WiFiNetworkManagementCluster_NetworkPassphraseRequest_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

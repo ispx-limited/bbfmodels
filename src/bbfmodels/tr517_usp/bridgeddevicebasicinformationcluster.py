@@ -39,3 +39,51 @@ class BridgedDeviceBasicInformationCluster(_Model):
     ProductAppearance: BridgedDeviceBasicInformationCluster_ProductAppearance | None = _Field(default=None)
 
 
+class BridgedDeviceBasicInformationCluster_KeepActive_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.KeepActive().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StayActiveDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TimeoutMs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class BridgedDeviceBasicInformationCluster_KeepActive_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.KeepActive().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class BridgedDeviceBasicInformationCluster_StartUp(_Model):
+    __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SoftwareVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class BridgedDeviceBasicInformationCluster_ShutDown(_Model):
+    __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class BridgedDeviceBasicInformationCluster_ReachableChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ReachableNewValue: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class BridgedDeviceBasicInformationCluster_ActiveChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PromisedActiveDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.KeepActive()": (BridgedDeviceBasicInformationCluster_KeepActive_Input, BridgedDeviceBasicInformationCluster_KeepActive_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.StartUp!": BridgedDeviceBasicInformationCluster_StartUp,
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ShutDown!": BridgedDeviceBasicInformationCluster_ShutDown,
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ReachableChanged!": BridgedDeviceBasicInformationCluster_ReachableChanged,
+    "MatterService.{i}.BridgedDeviceBasicInformationCluster.{i}.ActiveChanged!": BridgedDeviceBasicInformationCluster_ActiveChanged,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

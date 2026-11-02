@@ -36,3 +36,10 @@ class AVPlayers(_Model):
     AVPlayer: dict[int, AVPlayers_AVPlayer] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

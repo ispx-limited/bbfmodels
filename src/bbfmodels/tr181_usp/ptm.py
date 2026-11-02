@@ -49,3 +49,21 @@ class PTM(_Model):
     Link: dict[int, PTM_Link] = _Field(default_factory=dict)
 
 
+class PTM_Link_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.PTM.Link.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class PTM_Link_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.PTM.Link.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.PTM.Link.{i}.Stats.Reset()": (PTM_Link_Stats_Reset_Input, PTM_Link_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

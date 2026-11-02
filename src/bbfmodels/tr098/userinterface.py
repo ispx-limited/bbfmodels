@@ -62,3 +62,10 @@ class UserInterface(_Model):
     LocalDisplay: UserInterface_LocalDisplay | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

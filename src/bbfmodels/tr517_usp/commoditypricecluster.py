@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, HexBinary as _HexBinary
 
 
 class CommodityPriceCluster_PriceForecast_Components(_Model):
@@ -70,4 +70,104 @@ class CommodityPriceCluster(_Model):
     CurrentPrice: CommodityPriceCluster_CurrentPrice | None = _Field(default=None)
     PriceForecast: dict[int, CommodityPriceCluster_PriceForecast] = _Field(default_factory=dict)
 
+
+class CommodityPriceCluster_GetDetailedPriceRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedPriceRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Details: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class CommodityPriceCluster_GetDetailedPriceRequest_Output_CurrentPrice_Components(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedPriceRequest().Output.CurrentPrice.Components.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Source: _Annotated[_Literal['Standard', 'Critical', 'Virtual', 'Incentive', 'IncentiveSignal'] | str | None, _Param(_BaseType.STRING)] = None
+    Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TariffComponentID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CommodityPriceCluster_GetDetailedPriceRequest_Output_CurrentPrice(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedPriceRequest().Output.CurrentPrice."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PeriodStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PeriodEnd: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    PriceLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Components: dict[int, CommodityPriceCluster_GetDetailedPriceRequest_Output_CurrentPrice_Components] = _Field(default_factory=dict)
+
+
+class CommodityPriceCluster_GetDetailedPriceRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedPriceRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CurrentPrice: CommodityPriceCluster_GetDetailedPriceRequest_Output_CurrentPrice | None = _Field(default=None)
+
+
+class CommodityPriceCluster_GetDetailedForecastRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedForecastRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Details: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class CommodityPriceCluster_GetDetailedForecastRequest_Output_PriceForecast_Components(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedForecastRequest().Output.PriceForecast.{i}.Components.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Source: _Annotated[_Literal['Standard', 'Critical', 'Virtual', 'Incentive', 'IncentiveSignal'] | str | None, _Param(_BaseType.STRING)] = None
+    Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TariffComponentID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CommodityPriceCluster_GetDetailedForecastRequest_Output_PriceForecast(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedForecastRequest().Output.PriceForecast.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PeriodStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PeriodEnd: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    PriceLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Components: dict[int, CommodityPriceCluster_GetDetailedForecastRequest_Output_PriceForecast_Components] = _Field(default_factory=dict)
+
+
+class CommodityPriceCluster_GetDetailedForecastRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedForecastRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PriceForecast: dict[int, CommodityPriceCluster_GetDetailedForecastRequest_Output_PriceForecast] = _Field(default_factory=dict)
+
+
+class CommodityPriceCluster_PriceChange_CurrentPrice_Components(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!.CurrentPrice.Components.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    Source: _Annotated[_Literal['Standard', 'Critical', 'Virtual', 'Incentive', 'IncentiveSignal'] | str | None, _Param(_BaseType.STRING)] = None
+    Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TariffComponentID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CommodityPriceCluster_PriceChange_CurrentPrice(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!.CurrentPrice."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PeriodStart: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PeriodEnd: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Price: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    PriceLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Components: dict[int, CommodityPriceCluster_PriceChange_CurrentPrice_Components] = _Field(default_factory=dict)
+
+
+class CommodityPriceCluster_PriceChange(_Model):
+    __bbf_path__ = "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CurrentPrice: CommodityPriceCluster_PriceChange_CurrentPrice | None = _Field(default=None)
+
+
+_COMMANDS = {
+    "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedPriceRequest()": (CommodityPriceCluster_GetDetailedPriceRequest_Input, CommodityPriceCluster_GetDetailedPriceRequest_Output),
+    "MatterService.{i}.CommodityPriceCluster.{i}.GetDetailedForecastRequest()": (CommodityPriceCluster_GetDetailedForecastRequest_Input, CommodityPriceCluster_GetDetailedForecastRequest_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.CommodityPriceCluster.{i}.PriceChange!": CommodityPriceCluster_PriceChange,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

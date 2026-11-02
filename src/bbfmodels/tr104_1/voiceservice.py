@@ -22,3 +22,13 @@ class VoiceService(_Model):
     PhyInterface: dict[int, phyinterface.PhyInterface] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
+# Every command's input and output class, and every event's class, by path.
+COMMANDS = {**capabilities.COMMANDS, **phyinterface.COMMANDS, **voiceprofile.COMMANDS, **_COMMANDS}
+EVENTS = {**capabilities.EVENTS, **phyinterface.EVENTS, **voiceprofile.EVENTS, **_EVENTS}

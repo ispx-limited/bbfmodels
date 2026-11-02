@@ -315,3 +315,10 @@ class FAP(_Model):
     ApplicationPlatform: FAP_ApplicationPlatform | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

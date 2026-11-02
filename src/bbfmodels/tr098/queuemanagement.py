@@ -224,3 +224,10 @@ class QueueManagement(_Model):
     QueueStats: dict[int, QueueManagement_QueueStats] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

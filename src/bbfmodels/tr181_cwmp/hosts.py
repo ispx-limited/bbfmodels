@@ -94,3 +94,10 @@ class Hosts(_Model):
     AccessControl: dict[int, Hosts_AccessControl] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

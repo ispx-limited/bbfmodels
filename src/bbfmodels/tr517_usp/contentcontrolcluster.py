@@ -84,3 +84,267 @@ class ContentControlCluster(_Model):
     BlockContentTimeWindow: dict[int, ContentControlCluster_BlockContentTimeWindow] = _Field(default_factory=dict)
 
 
+class ContentControlCluster_UpdatePIN_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.UpdatePIN().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OldPIN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    NewPIN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_UpdatePIN_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.UpdatePIN().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_ResetPIN_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.ResetPIN().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentControlCluster_ResetPIN_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.ResetPIN().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PINCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_Enable_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.Enable().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentControlCluster_Enable_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.Enable().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_Disable_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.Disable().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentControlCluster_Disable_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.Disable().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_AddBonusTime_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBonusTime().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PINCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    BonusTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ContentControlCluster_AddBonusTime_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBonusTime().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_SetScreenDailyTime_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetScreenDailyTime().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ScreenTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ContentControlCluster_SetScreenDailyTime_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetScreenDailyTime().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_BlockUnratedContent_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.BlockUnratedContent().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentControlCluster_BlockUnratedContent_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.BlockUnratedContent().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_UnblockUnratedContent_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.UnblockUnratedContent().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentControlCluster_UnblockUnratedContent_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.UnblockUnratedContent().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_SetOnDemandRatingThreshold_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetOnDemandRatingThreshold().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Rating: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_SetOnDemandRatingThreshold_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetOnDemandRatingThreshold().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_SetScheduledContentRatingThreshold_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetScheduledContentRatingThreshold().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Rating: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_SetScheduledContentRatingThreshold_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetScheduledContentRatingThreshold().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_AddBlockChannels_Input_Channels(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBlockChannels().Input.Channels.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    BlockChannelIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    MajorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinorNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Identifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_AddBlockChannels_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBlockChannels().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Channels: dict[int, ContentControlCluster_AddBlockChannels_Input_Channels] = _Field(default_factory=dict)
+
+
+class ContentControlCluster_AddBlockChannels_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBlockChannels().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_RemoveBlockChannels_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockChannels().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ChannelIndexes: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class ContentControlCluster_RemoveBlockChannels_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockChannels().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_AddBlockApplications_Input_Applications(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBlockApplications().Input.Applications.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CatalogVendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ApplicationID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_AddBlockApplications_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBlockApplications().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Applications: dict[int, ContentControlCluster_AddBlockApplications_Input_Applications] = _Field(default_factory=dict)
+
+
+class ContentControlCluster_AddBlockApplications_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.AddBlockApplications().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_RemoveBlockApplications_Input_Applications(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockApplications().Input.Applications.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CatalogVendorID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ApplicationID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_RemoveBlockApplications_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockApplications().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Applications: dict[int, ContentControlCluster_RemoveBlockApplications_Input_Applications] = _Field(default_factory=dict)
+
+
+class ContentControlCluster_RemoveBlockApplications_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockApplications().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_SetBlockContentTimeWindow_Input_TimeWindow_TimePeriod(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetBlockContentTimeWindow().Input.TimeWindow.TimePeriod.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StartHour: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartMinute: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndHour: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    EndMinute: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class ContentControlCluster_SetBlockContentTimeWindow_Input_TimeWindow(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetBlockContentTimeWindow().Input.TimeWindow."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TimeWindowIndex: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    DayOfWeek: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+    TimePeriod: dict[int, ContentControlCluster_SetBlockContentTimeWindow_Input_TimeWindow_TimePeriod] = _Field(default_factory=dict)
+
+
+class ContentControlCluster_SetBlockContentTimeWindow_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetBlockContentTimeWindow().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TimeWindow: ContentControlCluster_SetBlockContentTimeWindow_Input_TimeWindow | None = _Field(default=None)
+
+
+class ContentControlCluster_SetBlockContentTimeWindow_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.SetBlockContentTimeWindow().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_RemoveBlockContentTimeWindow_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockContentTimeWindow().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TimeWindowIndexes: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+class ContentControlCluster_RemoveBlockContentTimeWindow_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockContentTimeWindow().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentControlCluster_RemainingScreenTimeExpired(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ContentControlCluster_EnteringBlockContentTimeWindow(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+_COMMANDS = {
+    "MatterService.{i}.ContentControlCluster.{i}.UpdatePIN()": (ContentControlCluster_UpdatePIN_Input, ContentControlCluster_UpdatePIN_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.ResetPIN()": (ContentControlCluster_ResetPIN_Input, ContentControlCluster_ResetPIN_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.Enable()": (ContentControlCluster_Enable_Input, ContentControlCluster_Enable_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.Disable()": (ContentControlCluster_Disable_Input, ContentControlCluster_Disable_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.AddBonusTime()": (ContentControlCluster_AddBonusTime_Input, ContentControlCluster_AddBonusTime_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.SetScreenDailyTime()": (ContentControlCluster_SetScreenDailyTime_Input, ContentControlCluster_SetScreenDailyTime_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.BlockUnratedContent()": (ContentControlCluster_BlockUnratedContent_Input, ContentControlCluster_BlockUnratedContent_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.UnblockUnratedContent()": (ContentControlCluster_UnblockUnratedContent_Input, ContentControlCluster_UnblockUnratedContent_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.SetOnDemandRatingThreshold()": (ContentControlCluster_SetOnDemandRatingThreshold_Input, ContentControlCluster_SetOnDemandRatingThreshold_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.SetScheduledContentRatingThreshold()": (ContentControlCluster_SetScheduledContentRatingThreshold_Input, ContentControlCluster_SetScheduledContentRatingThreshold_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.AddBlockChannels()": (ContentControlCluster_AddBlockChannels_Input, ContentControlCluster_AddBlockChannels_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockChannels()": (ContentControlCluster_RemoveBlockChannels_Input, ContentControlCluster_RemoveBlockChannels_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.AddBlockApplications()": (ContentControlCluster_AddBlockApplications_Input, ContentControlCluster_AddBlockApplications_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockApplications()": (ContentControlCluster_RemoveBlockApplications_Input, ContentControlCluster_RemoveBlockApplications_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.SetBlockContentTimeWindow()": (ContentControlCluster_SetBlockContentTimeWindow_Input, ContentControlCluster_SetBlockContentTimeWindow_Output),
+    "MatterService.{i}.ContentControlCluster.{i}.RemoveBlockContentTimeWindow()": (ContentControlCluster_RemoveBlockContentTimeWindow_Input, ContentControlCluster_RemoveBlockContentTimeWindow_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.ContentControlCluster.{i}.RemainingScreenTimeExpired!": ContentControlCluster_RemainingScreenTimeExpired,
+    "MatterService.{i}.ContentControlCluster.{i}.EnteringBlockContentTimeWindow!": ContentControlCluster_EnteringBlockContentTimeWindow,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

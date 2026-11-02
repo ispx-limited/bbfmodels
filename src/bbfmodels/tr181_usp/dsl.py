@@ -467,3 +467,150 @@ class DSL(_Model):
     Diagnostics: DSL_Diagnostics | None = _Field(default=None)
 
 
+class DSL_Line_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DSL_Line_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DSL_Channel_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DSL_Channel_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DSL_BondingGroup_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DSL_BondingGroup_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DSL_Diagnostics_ADSLLineTest_Input(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.ADSLLineTest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class DSL_Diagnostics_ADSLLineTest_Output(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.ADSLLineTest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
+    ACTPSDds: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ACTPSDus: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ACTATPds: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ACTATPus: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    HLINSCds: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    HLINSCus: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    HLINGds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HLINGus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HLOGGds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HLOGGus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HLOGpsds: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    HLOGpsus: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    HLOGMTds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    HLOGMTus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LATNpbds: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    LATNpbus: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SATNds: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SATNus: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    HLINpsds: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
+    HLINpsus: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    QLNGds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    QLNGus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    QLNpsds: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
+    QLNpsus: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    QLNMTds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    QLNMTus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SNRGds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SNRGus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SNRpsds: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
+    SNRpsus: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    SNRMTds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SNRMTus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BITSpsds: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
+    BITSpsus: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class DSL_Diagnostics_SELTUER_Input(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTUER().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UERMaxMeasurementDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DSL_Diagnostics_SELTUER_Output(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTUER().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
+    ExtendedBandwidthOperation: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    UER: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
+    UERScaleFactor: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UERGroupSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    UERVar: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
+
+
+class DSL_Diagnostics_SELTQLN_Input(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTQLN().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    QLNMaxMeasurementDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DSL_Diagnostics_SELTQLN_Output(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTQLN().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
+    ExtendedBandwidthOperation: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    QLN: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
+    QLNGroupSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DSL_Diagnostics_SELTP_Input(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTP().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CapacityEstimateEnabling: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    CapacitySignalPSD: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    CapacityNoisePSD: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    CapacityTargetMargin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class DSL_Diagnostics_SELTP_Output(_Model):
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTP().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Status: _Annotated[_Literal['Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
+    LoopTermination: _Annotated[_Literal['Open', 'Short', 'Powered on DSLAM/DPU', 'Powered on CPE', 'Unknown'] | str | None, _Param(_BaseType.STRING)] = None
+    LoopLength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    LoopTopology: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    AttenuationCharacteristics: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+    TFlogGroupSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MissingFilter: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    CapacityEstimate: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
+
+
+_COMMANDS = {
+    "Device.DSL.Line.{i}.Stats.Reset()": (DSL_Line_Stats_Reset_Input, DSL_Line_Stats_Reset_Output),
+    "Device.DSL.Channel.{i}.Stats.Reset()": (DSL_Channel_Stats_Reset_Input, DSL_Channel_Stats_Reset_Output),
+    "Device.DSL.BondingGroup.{i}.Stats.Reset()": (DSL_BondingGroup_Stats_Reset_Input, DSL_BondingGroup_Stats_Reset_Output),
+    "Device.DSL.Diagnostics.ADSLLineTest()": (DSL_Diagnostics_ADSLLineTest_Input, DSL_Diagnostics_ADSLLineTest_Output),
+    "Device.DSL.Diagnostics.SELTUER()": (DSL_Diagnostics_SELTUER_Input, DSL_Diagnostics_SELTUER_Output),
+    "Device.DSL.Diagnostics.SELTQLN()": (DSL_Diagnostics_SELTQLN_Input, DSL_Diagnostics_SELTQLN_Output),
+    "Device.DSL.Diagnostics.SELTP()": (DSL_Diagnostics_SELTP_Input, DSL_Diagnostics_SELTP_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

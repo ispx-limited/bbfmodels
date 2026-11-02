@@ -16,3 +16,10 @@ class GatewayInfo(_Model):
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

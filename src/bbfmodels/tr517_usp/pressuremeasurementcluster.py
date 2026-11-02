@@ -19,3 +19,10 @@ class PressureMeasurementCluster(_Model):
     Scale: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

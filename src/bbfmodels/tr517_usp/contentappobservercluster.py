@@ -14,3 +14,26 @@ class ContentAppObserverCluster(_Model):
     EndpointRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+class ContentAppObserverCluster_ContentAppMessage_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentAppObserverCluster.{i}.ContentAppMessage().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EncodingHint: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ContentAppObserverCluster_ContentAppMessage_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ContentAppObserverCluster.{i}.ContentAppMessage().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'UnexpectedData'] | str | None, _Param(_BaseType.STRING)] = None
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EncodingHint: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.ContentAppObserverCluster.{i}.ContentAppMessage()": (ContentAppObserverCluster_ContentAppMessage_Input, ContentAppObserverCluster_ContentAppMessage_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

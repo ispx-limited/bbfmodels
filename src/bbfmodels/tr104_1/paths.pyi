@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class VoiceProfile_Line_SIP_EventSubscribePath(ObjectPathBase):
     Alias: ParamPath[str]

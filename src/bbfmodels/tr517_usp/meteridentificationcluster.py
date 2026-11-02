@@ -27,3 +27,10 @@ class MeterIdentificationCluster(_Model):
     PowerThreshold: MeterIdentificationCluster_PowerThreshold | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

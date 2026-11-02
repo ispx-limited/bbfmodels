@@ -506,3 +506,10 @@ class VoiceProfile(_Model):
     Line: dict[int, VoiceProfile_Line] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

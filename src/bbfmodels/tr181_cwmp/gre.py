@@ -103,3 +103,10 @@ class GRE(_Model):
     Filter: dict[int, GRE_Filter] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

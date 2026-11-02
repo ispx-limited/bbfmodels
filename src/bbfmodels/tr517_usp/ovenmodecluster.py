@@ -14,3 +14,24 @@ class OvenModeCluster(_Model):
     EndpointRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+class OvenModeCluster_ChangeToMode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenModeCluster.{i}.ChangeToMode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewMode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class OvenModeCluster_ChangeToMode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OvenModeCluster.{i}.ChangeToMode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.OvenModeCluster.{i}.ChangeToMode()": (OvenModeCluster_ChangeToMode_Input, OvenModeCluster_ChangeToMode_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

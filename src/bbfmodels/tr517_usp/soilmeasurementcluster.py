@@ -41,3 +41,10 @@ class SoilMeasurementCluster(_Model):
     SoilMoistureMeasurementLimits: SoilMeasurementCluster_SoilMoistureMeasurementLimits | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

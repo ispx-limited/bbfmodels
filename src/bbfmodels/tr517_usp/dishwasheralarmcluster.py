@@ -18,3 +18,36 @@ class DishwasherAlarmCluster(_Model):
     Supported: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
+class DishwasherAlarmCluster_Reset_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DishwasherAlarmCluster.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Alarms: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class DishwasherAlarmCluster_Reset_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DishwasherAlarmCluster.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class DishwasherAlarmCluster_ModifyEnabledAlarms_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.DishwasherAlarmCluster.{i}.ModifyEnabledAlarms().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Mask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class DishwasherAlarmCluster_ModifyEnabledAlarms_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.DishwasherAlarmCluster.{i}.ModifyEnabledAlarms().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.DishwasherAlarmCluster.{i}.Reset()": (DishwasherAlarmCluster_Reset_Input, DishwasherAlarmCluster_Reset_Output),
+    "MatterService.{i}.DishwasherAlarmCluster.{i}.ModifyEnabledAlarms()": (DishwasherAlarmCluster_ModifyEnabledAlarms_Input, DishwasherAlarmCluster_ModifyEnabledAlarms_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

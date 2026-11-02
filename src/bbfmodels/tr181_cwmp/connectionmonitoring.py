@@ -56,3 +56,10 @@ class ConnectionMonitoring(_Model):
     Connection: dict[int, ConnectionMonitoring_Connection] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

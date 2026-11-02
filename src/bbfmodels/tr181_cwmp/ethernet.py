@@ -229,3 +229,10 @@ class Ethernet(_Model):
     WoL: Ethernet_WoL | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

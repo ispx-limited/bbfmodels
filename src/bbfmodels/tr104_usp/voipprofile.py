@@ -81,3 +81,10 @@ class VoIPProfile(_Model):
     FaxT38: VoIPProfile_FaxT38 | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -49,3 +49,10 @@ class BulkData(_Model):
     Profile: dict[int, BulkData_Profile] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

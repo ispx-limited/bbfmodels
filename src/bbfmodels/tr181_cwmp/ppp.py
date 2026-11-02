@@ -103,3 +103,10 @@ class PPP(_Model):
     Interface: dict[int, PPP_Interface] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

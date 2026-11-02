@@ -17,3 +17,10 @@ class Firewall(_Model):
     LastChange: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -129,3 +129,10 @@ class PCP(_Model):
     Client: dict[int, PCP_Client] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

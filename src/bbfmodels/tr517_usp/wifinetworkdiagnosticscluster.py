@@ -27,3 +27,44 @@ class WiFiNetworkDiagnosticsCluster(_Model):
     OverrunCount: _Annotated[int | None, _Param(_BaseType.LONG)] = None
 
 
+class WiFiNetworkDiagnosticsCluster_ResetCounts_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.ResetCounts().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class WiFiNetworkDiagnosticsCluster_ResetCounts_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.ResetCounts().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class WiFiNetworkDiagnosticsCluster_Disconnection(_Model):
+    __bbf_path__ = "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.Disconnection!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ReasonCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFiNetworkDiagnosticsCluster_AssociationFailure(_Model):
+    __bbf_path__ = "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.AssociationFailure!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AssociationFailureCause: _Annotated[_Literal['Unknown', 'AssociationFailed', 'AuthenticationFailed', 'SsidNotFound'] | str | None, _Param(_BaseType.STRING)] = None
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class WiFiNetworkDiagnosticsCluster_ConnectionStatus(_Model):
+    __bbf_path__ = "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.ConnectionStatus!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ConnectionStatus: _Annotated[_Literal['Connected', 'NotConnected'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.ResetCounts()": (WiFiNetworkDiagnosticsCluster_ResetCounts_Input, WiFiNetworkDiagnosticsCluster_ResetCounts_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.Disconnection!": WiFiNetworkDiagnosticsCluster_Disconnection,
+    "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.AssociationFailure!": WiFiNetworkDiagnosticsCluster_AssociationFailure,
+    "MatterService.{i}.WiFiNetworkDiagnosticsCluster.{i}.ConnectionStatus!": WiFiNetworkDiagnosticsCluster_ConnectionStatus,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -63,3 +63,10 @@ class ISDN(_Model):
     PRI: dict[int, ISDN_PRI] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

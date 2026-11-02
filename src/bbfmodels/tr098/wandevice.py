@@ -648,3 +648,10 @@ class WANDevice(_Model):
     WANConnectionDevice: dict[int, WANDevice_WANConnectionDevice] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

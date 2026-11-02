@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from decimal import Decimal
-from bbfmodels.paths import ObjectPathBase, ParamPath, TablePath
+from bbfmodels.paths import CommandPath, EventPath, ObjectPathBase, ParamPath, TablePath
 
 class WiFi_DataElements_Network_Device_Radio_ScanResult_OpClassScan_ChannelScan_NeighborBSSPath(ObjectPathBase):
     BSSID: ParamPath[str]
@@ -71,6 +71,8 @@ class WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTAPath(ObjectPathBa
     SteeringHistoryNumberOfEntries: ParamPath[int]
     SteeringSummaryStats: WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_SteeringSummaryStatsPath
     SteeringHistory: TablePath[WiFi_DataElements_Network_Device_Radio_BSS_STA_MultiAPSTA_SteeringHistoryPath]
+    Disassociate: CommandPath
+    BTMRequest: CommandPath
 
 class WiFi_DataElements_Network_Device_Radio_BSS_STA_WiFi6CapabilitiesPath(ObjectPathBase):
     HE160: ParamPath[bool]
@@ -233,6 +235,7 @@ class WiFi_DataElements_Network_Device_Radio_BSS_STAPath(ObjectPathBase):
     WiFi6Capabilities: WiFi_DataElements_Network_Device_Radio_BSS_STA_WiFi6CapabilitiesPath
     HaLowCapabilities: WiFi_DataElements_Network_Device_Radio_BSS_STA_HaLowCapabilitiesPath
     TIDQueueSizes: TablePath[WiFi_DataElements_Network_Device_Radio_BSS_STA_TIDQueueSizesPath]
+    ClientSteer: CommandPath
 
 class WiFi_DataElements_Network_Device_APMLD_STAMLD_STATIDLinkMapPath(ObjectPathBase):
     Direction: ParamPath[str]
@@ -610,6 +613,11 @@ class WiFi_DataElements_Network_Device_Radio_BSSPath(ObjectPathBase):
     LatencyTestResult: WiFi_DataElements_Network_Device_Radio_BSS_LatencyTestResultPath
     SetQoSManagementInput: WiFi_DataElements_Network_Device_Radio_BSS_SetQoSManagementInputPath
     STA: TablePath[WiFi_DataElements_Network_Device_Radio_BSS_STAPath]
+    SetQMDescriptors: CommandPath
+    ThroughputTest: CommandPath
+    LatencyTest: CommandPath
+    SetEHTOperations: CommandPath
+    SetQoSManagement: CommandPath
 
 class WiFi_DataElements_Network_Device_Radio_UnassociatedSTAPath(ObjectPathBase):
     MACAddress: ParamPath[str]
@@ -803,6 +811,8 @@ class WiFi_DataElements_Network_Device_Radio_SpatialReusePath(ObjectPathBase):
 
 class WiFi_DataElements_Network_Device_Radio_MultiAPRadioPath(ObjectPathBase):
     RadarDetections: ParamPath[list[int]]
+    FullScan: CommandPath
+    ChannelScan: CommandPath
 
 class WiFi_DataElements_Network_Device_APMLD_APMLDConfigPath(ObjectPathBase):
     EMLMREnabled: ParamPath[bool]
@@ -958,6 +968,7 @@ class WiFi_DataElements_Network_Device_MultiAPDevice_BackhaulPath(ObjectPathBase
     CurrentOperatingClassProfileNumberOfEntries: ParamPath[int]
     CurrentOperatingClassProfile: TablePath[WiFi_DataElements_Network_Device_MultiAPDevice_Backhaul_CurrentOperatingClassProfilePath]
     Stats: WiFi_DataElements_Network_Device_MultiAPDevice_Backhaul_StatsPath
+    SteerWiFiBackhaul: CommandPath
 
 class WiFi_DataElements_Network_Device_RadioPath(ObjectPathBase):
     ID: ParamPath[bytes]
@@ -999,6 +1010,12 @@ class WiFi_DataElements_Network_Device_RadioPath(ObjectPathBase):
     BSS: TablePath[WiFi_DataElements_Network_Device_Radio_BSSPath]
     MultiAPRadio: WiFi_DataElements_Network_Device_Radio_MultiAPRadioPath
     UnassociatedSTA: TablePath[WiFi_DataElements_Network_Device_Radio_UnassociatedSTAPath]
+    ChannelScanRequest: CommandPath
+    RadioEnable: CommandPath
+    SetTxPowerLimit: CommandPath
+    SetSpatialReuse: CommandPath
+    WiFiRestart: CommandPath
+    ChannelSelectionRequest: CommandPath
 
 class WiFi_DataElements_Network_Device_APMLDPath(ObjectPathBase):
     MLDMACAddress: ParamPath[str]
@@ -1628,6 +1645,7 @@ class Bridging_Bridge_Port_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Bridging_Bridge_Port_PriorityCodePointPath(ObjectPathBase):
     PCPSelection: ParamPath[int]
@@ -1675,6 +1693,7 @@ class GRE_Tunnel_Interface_StatsPath(ObjectPathBase):
     UnknownProtoPacketsReceived: ParamPath[int]
     DiscardChecksumReceived: ParamPath[int]
     DiscardSequenceNumberReceived: ParamPath[int]
+    Reset: CommandPath
 
 class L2TPv3_Tunnel_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -1694,6 +1713,7 @@ class L2TPv3_Tunnel_Interface_StatsPath(ObjectPathBase):
     UnknownProtoPacketsReceived: ParamPath[int]
     DiscardChecksumReceived: ParamPath[int]
     DiscardSequenceNumberReceived: ParamPath[int]
+    Reset: CommandPath
 
 class VXLAN_Tunnel_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -1713,6 +1733,7 @@ class VXLAN_Tunnel_Interface_StatsPath(ObjectPathBase):
     UnknownProtoPacketsReceived: ParamPath[int]
     DiscardChecksumReceived: ParamPath[int]
     DiscardSequenceNumberReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Routing_RouteInformation_InterfaceSetting_OptionPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -1737,6 +1758,7 @@ class Routing_Babel_MACKeySet_MACKeyPath(ObjectPathBase):
     KeyUseVerify: ParamPath[bool]
     KeyValue: ParamPath[bytes]
     MACKeyAlgorithm: ParamPath[str]
+    MACTest: CommandPath
 
 class Routing_Babel_DTLSCertSet_DTLSCertPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -1876,6 +1898,7 @@ class XPON_ONU_EthernetUNI_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class XPON_ONU_ANI_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -1912,6 +1935,7 @@ class Hardware_Buttons_Button_TriggerConditionPath(ObjectPathBase):
     Timeout: ParamPath[int]
     Active: ParamPath[bool]
     ActiveTime: ParamPath[int]
+    Triggered: EventPath
 
 class WireGuard_Tunnel_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -1929,6 +1953,7 @@ class WireGuard_Tunnel_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class LocalAgent_Controller_MTP_CoAPPath(ObjectPathBase):
     Host: ParamPath[str]
@@ -1952,6 +1977,7 @@ class LocalAgent_Controller_MTP_WebSocketPath(ObjectPathBase):
     SessionRetryMinimumWaitInterval: ParamPath[int]
     SessionRetryIntervalMultiplier: ParamPath[int]
     USPServiceRef: ParamPath[str]
+    Reset: CommandPath
 
 class LocalAgent_Controller_MTP_MQTTPath(ObjectPathBase):
     Reference: ParamPath[str]
@@ -1988,6 +2014,7 @@ class UserInterface_HTTPAccess_SessionPath(ObjectPathBase):
     Port: ParamPath[int]
     Protocol: ParamPath[str]
     StartDate: ParamPath[datetime]
+    Delete: CommandPath
 
 class SFPs_Mgmt_SFF8472_TransceiverPath(ObjectPathBase):
     Connector: ParamPath[bytes]
@@ -2475,6 +2502,12 @@ class WiFi_DataElements_Network_DevicePath(ObjectPathBase):
     WPS: WiFi_DataElements_Network_Device_WPSPath
     APMLD: TablePath[WiFi_DataElements_Network_Device_APMLDPath]
     bSTAMLD: WiFi_DataElements_Network_Device_bSTAMLDPath
+    SetSTASteeringState: CommandPath
+    SetDFSState: CommandPath
+    SetAnticipatedChannelPreference: CommandPath
+    InitiateWPSPBC: CommandPath
+    RefreshAPMetrics: CommandPath
+    BackhaulChange: EventPath
 
 class WiFi_DataElements_Network_PreferredBackhaulsPath(ObjectPathBase):
     BackhaulMACAddress: ParamPath[str]
@@ -2871,6 +2904,7 @@ class MAP_Domain_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class MAP_Domain_RulePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -3093,6 +3127,7 @@ class SoftwareModules_ExecEnv_ApplicationDataPath(ObjectPathBase):
     Alias: ParamPath[str]
     ApplicationUUID: ParamPath[str]
     Utilization: ParamPath[int]
+    Remove: CommandPath
 
 class SoftwareModules_ExecutionUnit_HostObjectPath(ObjectPathBase):
     Source: ParamPath[str]
@@ -3166,6 +3201,7 @@ class MQTT_Client_SubscriptionPath(ObjectPathBase):
     Status: ParamPath[str]
     Topic: ParamPath[str]
     QoS: ParamPath[int]
+    OnMessage: EventPath
 
 class MQTT_Client_UserPropertyPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -3198,6 +3234,7 @@ class MQTT_Broker_BridgePath(ObjectPathBase):
     SubscriptionNumberOfEntries: ParamPath[int]
     Server: TablePath[MQTT_Broker_Bridge_ServerPath]
     Subscription: TablePath[MQTT_Broker_Bridge_SubscriptionPath]
+    ForceReconnect: CommandPath
 
 class DynamicDNS_Client_HostnamePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -3328,6 +3365,7 @@ class Logical_TUN_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Logical_TAP_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -3345,6 +3383,7 @@ class Logical_TAP_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class XPON_ONU_EthernetUNIPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -3385,6 +3424,7 @@ class SSH_Server_SessionPath(ObjectPathBase):
     User: ParamPath[str]
     IPAddress: ParamPath[str]
     Port: ParamPath[int]
+    Delete: CommandPath
 
 class SSH_Server_AccessLogPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -3498,6 +3538,8 @@ class IoTCapability_MultiLevelControl_ControlPath(ObjectPathBase):
     MinValue: ParamPath[Decimal]
     MaxValue: ParamPath[Decimal]
     StepValue: ParamPath[Decimal]
+    StepUp: CommandPath
+    StepDown: CommandPath
 
 class DeviceInfo_ProcessStatus_CPUPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -3518,6 +3560,7 @@ class DeviceInfo_ProcessStatus_CPUPath(ObjectPathBase):
     VendorLogFileRef: ParamPath[str]
     FilePath: ParamPath[str]
     InterruptRate: ParamPath[int]
+    CPUCriticalState: EventPath
 
 class DeviceInfo_ProcessStatus_ProcessPath(ObjectPathBase):
     PID: ParamPath[int]
@@ -3554,6 +3597,9 @@ class DeviceInfo_TemperatureStatus_TemperatureSensorPath(ObjectPathBase):
     HighAlarmValue: ParamPath[int]
     PollingInterval: ParamPath[int]
     HighAlarmTime: ParamPath[datetime]
+    Reset: CommandPath
+    HighTemperatureAlarm: EventPath
+    LowTemperatureAlarm: EventPath
 
 class DeviceInfo_KernelFaults_KernelFaultPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -3563,6 +3609,8 @@ class DeviceInfo_KernelFaults_KernelFaultPath(ObjectPathBase):
     FirmwareVersion: ParamPath[str]
     ProcessName: ParamPath[str]
     Reason: ParamPath[str]
+    Upload: CommandPath
+    Remove: CommandPath
 
 class DeviceInfo_KernelFaults_StatsPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -3580,6 +3628,8 @@ class DeviceInfo_ProcessFaults_ProcessFaultPath(ObjectPathBase):
     FirmwareVersion: ParamPath[str]
     Arguments: ParamPath[str]
     Reason: ParamPath[str]
+    Upload: CommandPath
+    Remove: CommandPath
 
 class DeviceInfo_ProcessFaults_StatsPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -3594,6 +3644,7 @@ class DeviceInfo_Reboots_RebootPath(ObjectPathBase):
     FirmwareUpdated: ParamPath[bool]
     Cause: ParamPath[str]
     Reason: ParamPath[str]
+    Remove: CommandPath
 
 class DeviceInfo_BootTiming_LastBootMilestonePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -3662,6 +3713,7 @@ class DSL_Line_StatsPath(ObjectPathBase):
     LastShowtime: DSL_Line_Stats_LastShowtimePath
     CurrentDay: DSL_Line_Stats_CurrentDayPath
     QuarterHour: DSL_Line_Stats_QuarterHourPath
+    Reset: CommandPath
 
 class DSL_Line_TestParamsPath(ObjectPathBase):
     HLOGGds: ParamPath[int]
@@ -3711,6 +3763,7 @@ class DSL_Channel_StatsPath(ObjectPathBase):
     LastShowtime: DSL_Channel_Stats_LastShowtimePath
     CurrentDay: DSL_Channel_Stats_CurrentDayPath
     QuarterHour: DSL_Channel_Stats_QuarterHourPath
+    Reset: CommandPath
 
 class DSL_BondingGroup_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -3734,6 +3787,7 @@ class DSL_BondingGroup_StatsPath(ObjectPathBase):
     Total: DSL_BondingGroup_Stats_TotalPath
     CurrentDay: DSL_BondingGroup_Stats_CurrentDayPath
     QuarterHour: DSL_BondingGroup_Stats_QuarterHourPath
+    Reset: CommandPath
 
 class DSL_BondingGroup_EthernetPath(ObjectPathBase):
     Stats: DSL_BondingGroup_Ethernet_StatsPath
@@ -3757,6 +3811,7 @@ class FAST_Line_StatsPath(ObjectPathBase):
     LastShowtime: FAST_Line_Stats_LastShowtimePath
     CurrentDay: FAST_Line_Stats_CurrentDayPath
     QuarterHour: FAST_Line_Stats_QuarterHourPath
+    Reset: CommandPath
 
 class FAST_Line_TestParamsPath(ObjectPathBase):
     SNRGds: ParamPath[int]
@@ -3781,6 +3836,7 @@ class Optical_Interface_StatsPath(ObjectPathBase):
     ErrorsReceived: ParamPath[int]
     DiscardPacketsSent: ParamPath[int]
     DiscardPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Cellular_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -3798,6 +3854,7 @@ class Cellular_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Cellular_Interface_USIMPath(ObjectPathBase):
     Status: ParamPath[str]
@@ -3835,6 +3892,7 @@ class ATM_Link_StatsPath(ObjectPathBase):
     ReceivedBlocks: ParamPath[int]
     CRCErrors: ParamPath[int]
     HECErrors: ParamPath[int]
+    Reset: CommandPath
 
 class ATM_Link_QoSPath(ObjectPathBase):
     QoSClass: ParamPath[str]
@@ -3858,6 +3916,7 @@ class DOCSIS_Downstream_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class DOCSIS_Upstream_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -3875,6 +3934,7 @@ class DOCSIS_Upstream_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class DOCSIS_DownstreamChannel_SignalQualityPath(ObjectPathBase):
     SignalNoise: ParamPath[int]
@@ -3916,6 +3976,7 @@ class DOCSIS_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class DOCSIS_Interface_ConnectivityStatusPath(ObjectPathBase):
     Value: ParamPath[str]
@@ -3950,6 +4011,7 @@ class PTM_Link_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Ethernet_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -3968,6 +4030,7 @@ class Ethernet_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
     Collisions: ParamPath[int]
+    Reset: CommandPath
 
 class Ethernet_Link_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -3987,6 +4050,7 @@ class Ethernet_Link_StatsPath(ObjectPathBase):
     UnknownProtoPacketsReceived: ParamPath[int]
     PausePacketsSent: ParamPath[int]
     PausePacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Ethernet_VLANTermination_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -4004,6 +4068,7 @@ class Ethernet_VLANTermination_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Ethernet_LAG_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -4021,6 +4086,7 @@ class Ethernet_LAG_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class USB_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -4038,6 +4104,7 @@ class USB_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class USB_USBHosts_HostPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -4048,6 +4115,7 @@ class USB_USBHosts_HostPath(ObjectPathBase):
     USBVersion: ParamPath[str]
     DeviceNumberOfEntries: ParamPath[int]
     Device: TablePath[USB_USBHosts_Host_DevicePath]
+    Reset: CommandPath
 
 class USB_USBHosts_AllowedDevicePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -4076,6 +4144,7 @@ class HPNA_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class HPNA_Interface_QoSPath(ObjectPathBase):
     FlowSpecNumberOfEntries: ParamPath[int]
@@ -4098,9 +4167,10 @@ class MoCA_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
     RxCorrectedErrors: ParamPath[int]
+    Reset: CommandPath
 
 class MoCA_Interface_AcaPath(ObjectPathBase):
-    pass
+    Aca: CommandPath
 
 class MoCA_Interface_ResetPath(ObjectPathBase):
     NodeMask: ParamPath[bytes]
@@ -4138,6 +4208,7 @@ class Ghn_Interface_StatsPath(ObjectPathBase):
     BlocksReceived: ParamPath[int]
     BlocksResent: ParamPath[int]
     BlocksErrorsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Ghn_Interface_DMInfoPath(ObjectPathBase):
     DomainName: ParamPath[bytes]
@@ -4178,6 +4249,7 @@ class HomePlug_Interface_StatsPath(ObjectPathBase):
     MPDUTxFailed: ParamPath[int]
     MPDURxAck: ParamPath[int]
     MPDURxFailed: ParamPath[int]
+    Reset: CommandPath
 
 class UPA_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -4195,6 +4267,7 @@ class UPA_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class WiFi_MultiAP_APDevicePath(ObjectPathBase):
     MACAddress: ParamPath[str]
@@ -4328,6 +4401,7 @@ class WiFi_Radio_StatsPath(ObjectPathBase):
     AutoRefreshChannelChangeCount: ParamPath[int]
     AutoDynamicChannelChangeCount: ParamPath[int]
     AutoDFSChannelChangeCount: ParamPath[int]
+    Reset: CommandPath
 
 class WiFi_Radio_CapabilitiesPath(ObjectPathBase):
     WiFi7APRole: WiFi_Radio_Capabilities_WiFi7APRolePath
@@ -4363,6 +4437,7 @@ class WiFi_SSID_StatsPath(ObjectPathBase):
     TooLongReceived: ParamPath[int]
     TooShortReceived: ParamPath[int]
     AckUcastReceived: ParamPath[int]
+    Reset: CommandPath
 
 class WiFi_AccessPoint_SecurityPath(ObjectPathBase):
     ModesSupported: ParamPath[list[str]]
@@ -4383,6 +4458,7 @@ class WiFi_AccessPoint_SecurityPath(ObjectPathBase):
     SAEGroupDependantHashEnable: ParamPath[str]
     SPPAMSDU: ParamPath[str]
     TransitionDisableIndication: ParamPath[bool]
+    Reset: CommandPath
 
 class WiFi_AccessPoint_InterworkingPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -4421,6 +4497,7 @@ class WiFi_AccessPoint_WPSPath(ObjectPathBase):
     Status: ParamPath[str]
     Version: ParamPath[str]
     PIN: ParamPath[str]
+    InitiateWPSPBC: CommandPath
 
 class WiFi_AccessPoint_AccountingPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -4458,6 +4535,7 @@ class Thread_Radio_StatsPath(ObjectPathBase):
     ErrorsReceived: ParamPath[int]
     DiscardPacketsSent: ParamPath[int]
     DiscardPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Thread_MLE_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -4475,6 +4553,7 @@ class Thread_MLE_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Thread_MLE_LeaderDataPath(ObjectPathBase):
     DataVersion: ParamPath[int]
@@ -4500,6 +4579,7 @@ class ZigBee_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
     UnknownPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class ZigBee_ZDO_NodeDescriptorPath(ObjectPathBase):
     LogicalType: ParamPath[str]
@@ -4582,6 +4662,7 @@ class PPP_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class PPP_Interface_PPPoEPath(ObjectPathBase):
     SessionID: ParamPath[int]
@@ -4618,6 +4699,7 @@ class IP_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class IP_Diagnostics_IPLayerCapacityAuthCodePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -4817,6 +4899,7 @@ class DNS_Relay_ConfigPath(ObjectPathBase):
     CacheSize: ParamPath[int]
     CacheMinTTL: ParamPath[int]
     CacheMaxTTL: ParamPath[int]
+    FlushCache: CommandPath
 
 class DNS_Relay_ForwardingPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -4893,6 +4976,7 @@ class DHCPv4_Client_StatsPath(ObjectPathBase):
     ForceRenew: ParamPath[int]
     DiscardedPackets: ParamPath[int]
     TransmitFailure: ParamPath[int]
+    Reset: CommandPath
 
 class DHCPv4_Server_PoolPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -4991,6 +5075,7 @@ class DHCPv6_Client_StatsPath(ObjectPathBase):
     InformationRequest: ParamPath[int]
     DiscardedPackets: ParamPath[int]
     TransmitFailure: ParamPath[int]
+    Reset: CommandPath
 
 class DHCPv6_Server_PoolPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -5035,6 +5120,7 @@ class IEEE8021x_Supplicant_StatsPath(ObjectPathBase):
     LastFrameSourceMACAddress: ParamPath[str]
     SuccessCount: ParamPath[int]
     FailureCount: ParamPath[int]
+    Reset: CommandPath
 
 class IEEE8021x_Supplicant_EAPMD5Path(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -5450,6 +5536,7 @@ class FWE_Link_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Logical_Interface_StatsPath(ObjectPathBase):
     BytesSent: ParamPath[int]
@@ -5467,6 +5554,7 @@ class Logical_Interface_StatsPath(ObjectPathBase):
     BroadcastPacketsSent: ParamPath[int]
     BroadcastPacketsReceived: ParamPath[int]
     UnknownProtoPacketsReceived: ParamPath[int]
+    Reset: CommandPath
 
 class Logical_TUN_InterfacePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -5477,6 +5565,7 @@ class Logical_TUN_InterfacePath(ObjectPathBase):
     LastChange: ParamPath[int]
     LowerLayers: ParamPath[list[str]]
     Stats: Logical_TUN_Interface_StatsPath
+    Delete: CommandPath
 
 class Logical_TAP_InterfacePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -5487,6 +5576,7 @@ class Logical_TAP_InterfacePath(ObjectPathBase):
     LastChange: ParamPath[int]
     LowerLayers: ParamPath[list[str]]
     Stats: Logical_TAP_Interface_StatsPath
+    Delete: CommandPath
 
 class XPON_ONU_PowerManagementPath(ObjectPathBase):
     PowerReductionManagementCapability: ParamPath[list[str]]
@@ -5556,6 +5646,8 @@ class Hardware_Buttons_ButtonPath(ObjectPathBase):
     InputFile: ParamPath[str]
     TriggerConditionNumberOfEntries: ParamPath[int]
     TriggerCondition: TablePath[Hardware_Buttons_Button_TriggerConditionPath]
+    Push: CommandPath
+    Release: CommandPath
 
 class ConnectionMonitoring_Connection_StatsPath(ObjectPathBase):
     TotalNumberOfAttempts: ParamPath[int]
@@ -5612,6 +5704,7 @@ class LocalAgent_Controller_E2ESessionPath(ObjectPathBase):
     MaxUSPRecordSize: ParamPath[int]
     MaxRetransmitTries: ParamPath[int]
     PayloadSecurity: ParamPath[str]
+    Reset: CommandPath
 
 class LocalAgent_ControllerTrust_RolePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -5659,6 +5752,8 @@ class DeviceInfo_VendorConfigFilePath(ObjectPathBase):
     Date: ParamPath[datetime]
     Description: ParamPath[str]
     UseForBackupRestore: ParamPath[bool]
+    Backup: CommandPath
+    Restore: CommandPath
 
 class DeviceInfo_MemoryStatus_MemoryMonitorPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -5671,6 +5766,7 @@ class DeviceInfo_MemoryStatus_MemoryMonitorPath(ObjectPathBase):
     EnableCriticalLog: ParamPath[bool]
     VendorLogFileRef: ParamPath[str]
     FilePath: ParamPath[str]
+    MemoryCriticalState: EventPath
 
 class DeviceInfo_ProcessorPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -5693,6 +5789,7 @@ class DeviceInfo_VendorLogFilePath(ObjectPathBase):
     Name: ParamPath[str]
     MaximumSize: ParamPath[int]
     Persistent: ParamPath[bool]
+    Upload: CommandPath
 
 class DeviceInfo_LocationPath(ObjectPathBase):
     Source: ParamPath[str]
@@ -5714,6 +5811,8 @@ class DeviceInfo_FirmwareImagePath(ObjectPathBase):
     Status: ParamPath[str]
     LastUpdate: ParamPath[datetime]
     BootFailureLog: ParamPath[str]
+    Download: CommandPath
+    Activate: CommandPath
 
 class Time_ClientPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -5776,6 +5875,7 @@ class UserInterface_HTTPAccessPath(ObjectPathBase):
     ActivationDate: ParamPath[datetime]
     SessionNumberOfEntries: ParamPath[int]
     Session: TablePath[UserInterface_HTTPAccess_SessionPath]
+    CreateWebSession: CommandPath
 
 class SFPs_SFPCagePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -6171,6 +6271,7 @@ class Ethernet_InterfacePath(ObjectPathBase):
     MDIX: ParamPath[str]
     CurrentMDIX: ParamPath[str]
     Stats: Ethernet_Interface_StatsPath
+    ChangePowerMode: CommandPath
 
 class Ethernet_LinkPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6259,6 +6360,7 @@ class USB_PortPath(ObjectPathBase):
     Receptacle: ParamPath[str]
     Rate: ParamPath[str]
     Power: ParamPath[str]
+    ChangePowerMode: CommandPath
 
 class HPNA_InterfacePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6431,6 +6533,35 @@ class MoCA_InterfacePath(ObjectPathBase):
     Mesh: TablePath[MoCA_Interface_MeshPath]
     Bridge: TablePath[MoCA_Interface_BridgePath]
     MeshScMod: TablePath[MoCA_Interface_MeshScModPath]
+    BelowPhyThresholdTrap: EventPath
+    AbovePhyThresholdTrap: EventPath
+    StatusChangeTrap: EventPath
+    NumNodesChangeTrap: EventPath
+    MrRstSuccessTrap: EventPath
+    MrRstFailTrap: EventPath
+    MrNetworkSuccessTrap: EventPath
+    MrNetworkFailTrap: EventPath
+    PowerStateBcstRecTrap: EventPath
+    PowerStateM0NcTrap: EventPath
+    PowerStateNc1xTrap: EventPath
+    PowerStateNetVerTrap: EventPath
+    PowerStateRespTrap: EventPath
+    PowerStateUcstPenTrap: EventPath
+    PowerStateTrnsReqTrap: EventPath
+    PowerStateWupUrTrap: EventPath
+    LmoStatusTrap: EventPath
+    LinkFailureTrap: EventPath
+    ConnectedNodesChangeTrap: EventPath
+    MgntEntityNetwIePayloadRecTrap: EventPath
+    MpsInitScanRecTrap: EventPath
+    MpsPairFailTrap: EventPath
+    MpsPrivacyChangedTrap: EventPath
+    NcPrivacySupportedRecTrap: EventPath
+    NetworkNameRecTrap: EventPath
+    NodeDropAdmFailureTrap: EventPath
+    NodeDropNcTrap: EventPath
+    NodeDropMpsTriggeredTrap: EventPath
+    NodeDropNcChgTrap: EventPath
 
 class Ghn_InterfacePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6557,18 +6688,29 @@ class WiFi_DataElements_NetworkPath(ObjectPathBase):
     MultiAPSteeringSummaryStats: WiFi_DataElements_Network_MultiAPSteeringSummaryStatsPath
     Device: TablePath[WiFi_DataElements_Network_DevicePath]
     PreferredBackhauls: TablePath[WiFi_DataElements_Network_PreferredBackhaulsPath]
+    SetTrafficSeparation: CommandPath
+    SetServicePrioritization: CommandPath
+    SetPreferredBackhauls: CommandPath
+    SetSSID: CommandPath
+    SetMSCSDisallowed: CommandPath
+    SetSCSDisallowed: CommandPath
+    ControllerBTMSteer: EventPath
+    AgentOnboard: EventPath
 
 class WiFi_DataElements_AssociationEventPath(ObjectPathBase):
     AssociationEventDataNumberOfEntries: ParamPath[int]
     AssociationEventData: TablePath[WiFi_DataElements_AssociationEvent_AssociationEventDataPath]
+    Associated: EventPath
 
 class WiFi_DataElements_DisassociationEventPath(ObjectPathBase):
     DisassociationEventDataNumberOfEntries: ParamPath[int]
     DisassociationEventData: TablePath[WiFi_DataElements_DisassociationEvent_DisassociationEventDataPath]
+    Disassociated: EventPath
 
 class WiFi_DataElements_FailedConnectionEventPath(ObjectPathBase):
     FailedConnectionEventDataNumberOfEntries: ParamPath[int]
     FailedConnectionEventData: TablePath[WiFi_DataElements_FailedConnectionEvent_FailedConnectionEventDataPath]
+    FailedConnection: EventPath
 
 class WiFi_Templates_NetworkPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6662,6 +6804,11 @@ class WiFi_RadioPath(ObjectPathBase):
     ActiveTransmitAntennas: ParamPath[int]
     Stats: WiFi_Radio_StatsPath
     Capabilities: WiFi_Radio_CapabilitiesPath
+    RemoteMeasurementRequest: CommandPath
+    InitiateCCAMeasurement: CommandPath
+    FullScan: CommandPath
+    ChannelScan: CommandPath
+    ChangePowerMode: CommandPath
 
 class WiFi_SSIDPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6729,6 +6876,8 @@ class Thread_BorderRouterPath(ObjectPathBase):
     BorderAgentID: ParamPath[bytes]
     MLEReference: ParamPath[str]
     RoutingRef: ParamPath[str]
+    Start: CommandPath
+    Stop: CommandPath
 
 class Thread_RadioPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6747,6 +6896,9 @@ class Thread_RadioPath(ObjectPathBase):
     HardwareVersion: ParamPath[str]
     FirmwareVersion: ParamPath[str]
     Stats: Thread_Radio_StatsPath
+    Scan: CommandPath
+    EnergyScan: CommandPath
+    ChangePowerMode: CommandPath
 
 class Thread_MLEPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6764,6 +6916,11 @@ class Thread_MLEPath(ObjectPathBase):
     LeaderData: Thread_MLE_LeaderDataPath
     Dataset: TablePath[Thread_MLE_DatasetPath]
     AssociatedNode: TablePath[Thread_MLE_AssociatedNodePath]
+    SetActiveDataset: CommandPath
+    SetPendingDataset: CommandPath
+    GetActiveDataset: CommandPath
+    GetPendingDataset: CommandPath
+    NetworkDiagnostic: CommandPath
 
 class Thread_NodePath(ObjectPathBase):
     ExtendedMAC: ParamPath[bytes]
@@ -6905,6 +7062,7 @@ class PPP_InterfacePath(ObjectPathBase):
     IPCP: PPP_Interface_IPCPPath
     IPv6CP: PPP_Interface_IPv6CPPath
     PPPoA: PPP_Interface_PPPoAPath
+    Reset: CommandPath
 
 class IP_InterfacePath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -6931,6 +7089,7 @@ class IP_InterfacePath(ObjectPathBase):
     TWAMPReflector: TablePath[IP_Interface_TWAMPReflectorPath]
     IPv6Address: TablePath[IP_Interface_IPv6AddressPath]
     IPv6Prefix: TablePath[IP_Interface_IPv6PrefixPath]
+    Reset: CommandPath
 
 class IP_ActivePortPath(ObjectPathBase):
     LocalIPAddress: ParamPath[str]
@@ -7515,6 +7674,7 @@ class DNS_Relay_StatsPath(ObjectPathBase):
     AnswerRCodeNoData: ParamPath[int]
     UnwantedQueries: ParamPath[int]
     UnwantedReplies: ParamPath[int]
+    Reset: CommandPath
 
 class NAT_InterfaceSettingPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -7601,6 +7761,8 @@ class DHCPv4_ClientPath(ObjectPathBase):
     ReqOption: TablePath[DHCPv4_Client_ReqOptionPath]
     Retransmission: DHCPv4_Client_RetransmissionPath
     Stats: DHCPv4_Client_StatsPath
+    Renew: CommandPath
+    Release: CommandPath
 
 class DHCPv4_Server_StatsPath(ObjectPathBase):
     Discover: ParamPath[int]
@@ -7616,6 +7778,7 @@ class DHCPv4_Server_StatsPath(ObjectPathBase):
     TransmitFailure: ParamPath[int]
     RelayOptionDropped: ParamPath[int]
     SecondServerDetected: ParamPath[int]
+    Reset: CommandPath
 
 class DHCPv6_ClientPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -7641,6 +7804,8 @@ class DHCPv6_ClientPath(ObjectPathBase):
     ReceivedOption: TablePath[DHCPv6_Client_ReceivedOptionPath]
     Retransmission: DHCPv6_Client_RetransmissionPath
     Stats: DHCPv6_Client_StatsPath
+    Renew: CommandPath
+    Release: CommandPath
 
 class DHCPv6_Server_StatsPath(ObjectPathBase):
     Solicit: ParamPath[int]
@@ -7658,6 +7823,7 @@ class DHCPv6_Server_StatsPath(ObjectPathBase):
     RelayReply: ParamPath[int]
     DiscardedPackets: ParamPath[int]
     TransmitFailure: ParamPath[int]
+    Reset: CommandPath
 
 class IEEE8021x_SupplicantPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -7676,6 +7842,8 @@ class IEEE8021x_SupplicantPath(ObjectPathBase):
     Stats: IEEE8021x_Supplicant_StatsPath
     EAPMD5: IEEE8021x_Supplicant_EAPMD5Path
     EAPTLS: IEEE8021x_Supplicant_EAPTLSPath
+    Reset: CommandPath
+    Disconnect: CommandPath
 
 class Users_UserPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -7721,6 +7889,7 @@ class SmartCardReaders_SmartCardReaderPath(ObjectPathBase):
     DecryptionFailedCounter: ParamPath[int]
     DecryptionFailedNoKeyCounter: ParamPath[int]
     SmartCard: SmartCardReaders_SmartCardReader_SmartCardPath
+    Reset: CommandPath
 
 class UPnP_Device_CapabilitiesPath(ObjectPathBase):
     UPnPArchitecture: ParamPath[int]
@@ -7902,6 +8071,9 @@ class PeriodicStatistics_SampleSetPath(ObjectPathBase):
     ParameterNumberOfEntries: ParamPath[int]
     FetchSamples: ParamPath[int]
     Parameter: TablePath[PeriodicStatistics_SampleSet_ParameterPath]
+    ForceSample: CommandPath
+    ForceCollection: CommandPath
+    Push: EventPath
 
 class PeriodicFileTransfer_ProfilePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -7922,6 +8094,8 @@ class PeriodicFileTransfer_TransferPath(ObjectPathBase):
     TimeReference: ParamPath[datetime]
     NextTransferDate: ParamPath[datetime]
     Stats: PeriodicFileTransfer_Transfer_StatsPath
+    ForceTransfer: CommandPath
+    Push: EventPath
 
 class FaultMgmt_SupportedAlarmPath(ObjectPathBase):
     EventType: ParamPath[str]
@@ -7990,11 +8164,17 @@ class Security_CertificatePath(ObjectPathBase):
     Subject: ParamPath[str]
     SubjectAlt: ParamPath[list[str]]
     SignatureAlgorithm: ParamPath[str]
+    GetCertificateURI: CommandPath
+    Delete: CommandPath
 
 class Security_CABundlePath(ObjectPathBase):
     Enable: ParamPath[bool]
     Name: ParamPath[str]
     CACertificates: ParamPath[list[str]]
+    CADir: CommandPath
+    CAFile: CommandPath
+    Update: CommandPath
+    Delete: CommandPath
 
 class FAP_GPS_ContinuousGPSStatusPath(ObjectPathBase):
     CurrentFix: ParamPath[bool]
@@ -8078,6 +8258,8 @@ class BulkData_ProfilePath(ObjectPathBase):
     JSONEncoding: BulkData_Profile_JSONEncodingPath
     HTTP: BulkData_Profile_HTTPPath
     MQTT: BulkData_Profile_MQTTPath
+    ForceCollection: CommandPath
+    Push: EventPath
 
 class SoftwareModules_ExecEnvClassPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8087,6 +8269,7 @@ class SoftwareModules_ExecEnvClassPath(ObjectPathBase):
     DeploymentUnitRef: ParamPath[str]
     CapabilityNumberOfEntries: ParamPath[int]
     Capability: TablePath[SoftwareModules_ExecEnvClass_CapabilityPath]
+    AddExecEnv: CommandPath
 
 class SoftwareModules_ExecEnvPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -8119,6 +8302,14 @@ class SoftwareModules_ExecEnvPath(ObjectPathBase):
     AvailableAccessInterfaces: ParamPath[list[str]]
     AvailableUserRoles: ParamPath[list[str]]
     ApplicationData: TablePath[SoftwareModules_ExecEnv_ApplicationDataPath]
+    SetRunLevel: CommandPath
+    ModifyConstraints: CommandPath
+    ModifyAvailableRoles: CommandPath
+    ModifyAvailableAccessInterfaces: CommandPath
+    Restart: CommandPath
+    Reset: CommandPath
+    Remove: CommandPath
+    Restarted: EventPath
 
 class SoftwareModules_DeploymentUnitPath(ObjectPathBase):
     UUID: ParamPath[str]
@@ -8139,6 +8330,8 @@ class SoftwareModules_DeploymentUnitPath(ObjectPathBase):
     Installed: ParamPath[datetime]
     LastUpdate: ParamPath[datetime]
     ModuleVersion: ParamPath[str]
+    Update: CommandPath
+    Uninstall: CommandPath
 
 class SoftwareModules_ExecutionUnitPath(ObjectPathBase):
     EUID: ParamPath[str]
@@ -8185,6 +8378,8 @@ class SoftwareModules_ExecutionUnitPath(ObjectPathBase):
     HostObject: TablePath[SoftwareModules_ExecutionUnit_HostObjectPath]
     EnvVariable: TablePath[SoftwareModules_ExecutionUnit_EnvVariablePath]
     Extensions: SoftwareModules_ExecutionUnit_ExtensionsPath
+    SetRequestedState: CommandPath
+    Restart: CommandPath
 
 class XMPP_ConnectionPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -8282,6 +8477,8 @@ class MQTT_ClientPath(ObjectPathBase):
     Subscription: TablePath[MQTT_Client_SubscriptionPath]
     UserProperty: TablePath[MQTT_Client_UserPropertyPath]
     Stats: MQTT_Client_StatsPath
+    ForceReconnect: CommandPath
+    Publish: CommandPath
 
 class MQTT_BrokerPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8478,6 +8675,7 @@ class XPON_ONUPath(ObjectPathBase):
     SoftwareImage: TablePath[XPON_ONU_SoftwareImagePath]
     ANI: TablePath[XPON_ONU_ANIPath]
     PowerManagement: XPON_ONU_PowerManagementPath
+    ChangePowerMode: CommandPath
 
 class SSH_ServerPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -8566,6 +8764,7 @@ class Syslog_ActionPath(ObjectPathBase):
     StructuredData: ParamPath[bool]
     LogFile: Syslog_Action_LogFilePath
     LogRemote: Syslog_Action_LogRemotePath
+    LogEvent: EventPath
 
 class Schedules_SchedulePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8688,6 +8887,7 @@ class Hardware_PowerManagement_StandbyPath(ObjectPathBase):
     StandbyOccurred: ParamPath[bool]
     NetworkAware: ParamPath[bool]
     TimerAware: ParamPath[bool]
+    EnterStandbyMode: CommandPath
 
 class ConnectionMonitoring_ConnectionPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -8752,6 +8952,7 @@ class LocalAgent_ThresholdPath(ObjectPathBase):
     ThresholdOperator: ParamPath[str]
     ThresholdValue: ParamPath[str]
     Controller: ParamPath[str]
+    Triggered: EventPath
 
 class LocalAgent_MonitorPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8759,6 +8960,7 @@ class LocalAgent_MonitorPath(ObjectPathBase):
     Interval: ParamPath[int]
     ReferenceList: ParamPath[list[str]]
     Controller: ParamPath[str]
+    OnChange: EventPath
 
 class LocalAgent_WatchdogPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8769,6 +8971,8 @@ class LocalAgent_WatchdogPath(ObjectPathBase):
     Reference: ParamPath[str]
     SeverityIndication: ParamPath[str]
     Controller: ParamPath[str]
+    Reset: CommandPath
+    Watchdog: EventPath
 
 class LocalAgent_ControllerPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8791,12 +8995,18 @@ class LocalAgent_ControllerPath(ObjectPathBase):
     TransferCompletePolicy: LocalAgent_Controller_TransferCompletePolicyPath
     BootParameter: TablePath[LocalAgent_Controller_BootParameterPath]
     E2ESession: LocalAgent_Controller_E2ESessionPath
+    ScheduleTimer: CommandPath
+    AddMyCertificate: CommandPath
+    SendOnBoardRequest: CommandPath
+    Timer: EventPath
 
 class LocalAgent_CertificatePath(ObjectPathBase):
     Alias: ParamPath[str]
     Enable: ParamPath[bool]
     SerialNumber: ParamPath[str]
     Issuer: ParamPath[str]
+    Delete: CommandPath
+    GetFingerprint: CommandPath
 
 class LocalAgent_SubscriptionPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8819,6 +9029,7 @@ class LocalAgent_RequestPath(ObjectPathBase):
     Command: ParamPath[str]
     CommandKey: ParamPath[str]
     Status: ParamPath[str]
+    Cancel: CommandPath
 
 class STOMP_ConnectionPath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -8843,6 +9054,7 @@ class IoTCapability_BinaryControlPath(ObjectPathBase):
     Type: ParamPath[str]
     Description: ParamPath[str]
     Value: ParamPath[bool]
+    Toggle: CommandPath
 
 class IoTCapability_LevelControlPath(ObjectPathBase):
     Type: ParamPath[str]
@@ -8852,18 +9064,24 @@ class IoTCapability_LevelControlPath(ObjectPathBase):
     MinValue: ParamPath[Decimal]
     MaxValue: ParamPath[Decimal]
     StepValue: ParamPath[Decimal]
+    StepUp: CommandPath
+    StepDown: CommandPath
 
 class IoTCapability_EnumControlPath(ObjectPathBase):
     Type: ParamPath[str]
     Description: ParamPath[str]
     Value: ParamPath[str]
     ValidValues: ParamPath[list[str]]
+    StepUp: CommandPath
+    StepDown: CommandPath
 
 class IoTCapability_PulseControlPath(ObjectPathBase):
     Type: ParamPath[str]
     Description: ParamPath[str]
     Duration: ParamPath[int]
     Transition: ParamPath[str]
+    TransitionHigh: CommandPath
+    TransitionLow: CommandPath
 
 class IoTCapability_BinarySensorPath(ObjectPathBase):
     Type: ParamPath[str]
@@ -8968,6 +9186,7 @@ class DeviceInfo_KernelFaultsPath(ObjectPathBase):
     StatsNumberOfEntries: ParamPath[int]
     KernelFault: TablePath[DeviceInfo_KernelFaults_KernelFaultPath]
     Stats: TablePath[DeviceInfo_KernelFaults_StatsPath]
+    RemoveAllKernelFaults: CommandPath
 
 class DeviceInfo_ProcessFaultsPath(ObjectPathBase):
     StoragePath: ParamPath[str]
@@ -8981,6 +9200,7 @@ class DeviceInfo_ProcessFaultsPath(ObjectPathBase):
     StatsNumberOfEntries: ParamPath[int]
     ProcessFault: TablePath[DeviceInfo_ProcessFaults_ProcessFaultPath]
     Stats: TablePath[DeviceInfo_ProcessFaults_StatsPath]
+    RemoveAllProcessFaults: CommandPath
 
 class DeviceInfo_RebootsPath(ObjectPathBase):
     BootCount: ParamPath[int]
@@ -8992,6 +9212,7 @@ class DeviceInfo_RebootsPath(ObjectPathBase):
     MaxRebootEntries: ParamPath[int]
     RebootNumberOfEntries: ParamPath[int]
     Reboot: TablePath[DeviceInfo_Reboots_RebootPath]
+    RemoveAllReboots: CommandPath
 
 class DeviceInfo_BootTimingPath(ObjectPathBase):
     BootStartTime: ParamPath[datetime]
@@ -9050,10 +9271,13 @@ class InterfaceStackPath(ObjectPathBase):
     LowerAlias: ParamPath[str]
 
 class DSL_DiagnosticsPath(ObjectPathBase):
-    pass
+    ADSLLineTest: CommandPath
+    SELTUER: CommandPath
+    SELTQLN: CommandPath
+    SELTP: CommandPath
 
 class ATM_DiagnosticsPath(ObjectPathBase):
-    pass
+    F5Loopback: CommandPath
 
 class DOCSIS_SpectrumAnalysisPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -9069,7 +9293,7 @@ class DOCSIS_SpectrumAnalysisPath(ObjectPathBase):
     Result: TablePath[DOCSIS_SpectrumAnalysis_ResultPath]
 
 class Ethernet_WoLPath(ObjectPathBase):
-    pass
+    SendMagicPacket: CommandPath
 
 class USB_USBHostsPath(ObjectPathBase):
     HostNumberOfEntries: ParamPath[int]
@@ -9079,13 +9303,15 @@ class USB_USBHostsPath(ObjectPathBase):
     AllowedDevice: TablePath[USB_USBHosts_AllowedDevicePath]
 
 class HPNA_DiagnosticsPath(ObjectPathBase):
-    pass
+    PHYThroughput: CommandPath
+    PerformanceMonitoring: CommandPath
 
 class Ghn_DiagnosticsPath(ObjectPathBase):
-    pass
+    PHYThroughput: CommandPath
+    PerformanceMonitoring: CommandPath
 
 class UPA_DiagnosticsPath(ObjectPathBase):
-    pass
+    InterfaceMeasurement: CommandPath
 
 class WiFi_MultiAPPath(ObjectPathBase):
     APDeviceNumberOfEntries: ParamPath[int]
@@ -9166,6 +9392,14 @@ class IP_DiagnosticsPath(ObjectPathBase):
     IPLayerCapacityAuthCodeNumberOfEntries: ParamPath[int]
     UDPEchoConfig: IP_Diagnostics_UDPEchoConfigPath
     IPLayerCapacityAuthCode: TablePath[IP_Diagnostics_IPLayerCapacityAuthCodePath]
+    IPPing: CommandPath
+    TraceRoute: CommandPath
+    DownloadDiagnostics: CommandPath
+    UploadDiagnostics: CommandPath
+    UDPEchoDiagnostics: CommandPath
+    IPLayerCapacity: CommandPath
+    ServerSelectionDiagnostics: CommandPath
+    IPLayerCapacityIncrementalResult: EventPath
 
 class LLDP_DiscoveryPath(ObjectPathBase):
     DeviceNumberOfEntries: ParamPath[int]
@@ -9216,6 +9450,7 @@ class Routing_BabelPath(ObjectPathBase):
     Route: TablePath[Routing_Babel_RoutePath]
     MACKeySet: TablePath[Routing_Babel_MACKeySetPath]
     DTLSCertSet: TablePath[Routing_Babel_DTLSCertSetPath]
+    StatsReset: CommandPath
 
 class DNS_ClientPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -9233,7 +9468,7 @@ class DNS_RelayPath(ObjectPathBase):
     Stats: DNS_Relay_StatsPath
 
 class DNS_DiagnosticsPath(ObjectPathBase):
-    pass
+    NSLookupDiagnostics: CommandPath
 
 class DNS_SDPath(ObjectPathBase):
     Enable: ParamPath[bool]
@@ -9339,6 +9574,7 @@ class FAP_GPSPath(ObjectPathBase):
     NumberOfSatellites: ParamPath[int]
     ContinuousGPSStatus: FAP_GPS_ContinuousGPSStatusPath
     AGPSServerConfig: FAP_GPS_AGPSServerConfigPath
+    GPSReset: CommandPath
 
 class FAP_PerfMgmtPath(ObjectPathBase):
     ConfigNumberOfEntries: ParamPath[int]
@@ -9402,10 +9638,12 @@ class MQTT_BrokerSecurityPath(ObjectPathBase):
 class Logical_TUNPath(ObjectPathBase):
     InterfaceNumberOfEntries: ParamPath[int]
     Interface: TablePath[Logical_TUN_InterfacePath]
+    CreateInterface: CommandPath
 
 class Logical_TAPPath(ObjectPathBase):
     InterfaceNumberOfEntries: ParamPath[int]
     Interface: TablePath[Logical_TAP_InterfacePath]
+    CreateInterface: CommandPath
 
 class Hardware_CPUsPath(ObjectPathBase):
     CPUNumberOfEntries: ParamPath[int]
@@ -9430,6 +9668,8 @@ class LocalAgent_ControllerTrustPath(ObjectPathBase):
     Role: TablePath[LocalAgent_ControllerTrust_RolePath]
     Credential: TablePath[LocalAgent_ControllerTrust_CredentialPath]
     Challenge: TablePath[LocalAgent_ControllerTrust_ChallengePath]
+    RequestChallenge: CommandPath
+    ChallengeResponse: CommandPath
 
 class CollectionDevicePath(ObjectPathBase):
     Alias: ParamPath[str]
@@ -9581,6 +9821,7 @@ class UserInterfacePath(ObjectPathBase):
     RemoteAccess: UserInterface_RemoteAccessPath
     LocalDisplay: UserInterface_LocalDisplayPath
     Messages: UserInterface_MessagesPath
+    PasswordReset: CommandPath
 
 class SFPsPath(ObjectPathBase):
     SFPCageNumberOfEntries: ParamPath[int]
@@ -9703,6 +9944,8 @@ class WiFiPath(ObjectPathBase):
     SSID: TablePath[WiFi_SSIDPath]
     AccessPoint: TablePath[WiFi_AccessPointPath]
     EndPoint: TablePath[WiFi_EndPointPath]
+    NeighboringWiFiDiagnostic: CommandPath
+    Reset: CommandPath
 
 class ThreadPath(ObjectPathBase):
     BorderRouterNumberOfEntries: ParamPath[int]
@@ -9881,6 +10124,7 @@ class HostsPath(ObjectPathBase):
     AccessControlNumberOfEntries: ParamPath[int]
     Host: TablePath[Hosts_HostPath]
     AccessControl: TablePath[Hosts_AccessControlPath]
+    RemoveInactiveHosts: CommandPath
 
 class DNSPath(ObjectPathBase):
     SupportedRecordTypes: ParamPath[list[str]]
@@ -9936,6 +10180,7 @@ class UsersPath(ObjectPathBase):
     Group: TablePath[Users_GroupPath]
     SupportedShell: TablePath[Users_SupportedShellPath]
     Role: TablePath[Users_RolePath]
+    CheckCredentialsDiagnostics: CommandPath
 
 class SmartCardReadersPath(ObjectPathBase):
     SmartCardReaderNumberOfEntries: ParamPath[int]
@@ -10014,6 +10259,8 @@ class SecurityPath(ObjectPathBase):
     SupportedBundleFormats: ParamPath[list[str]]
     Certificate: TablePath[Security_CertificatePath]
     CABundle: TablePath[Security_CABundlePath]
+    AddCertificateBundle: CommandPath
+    AddCABundle: CommandPath
 
 class FAPPath(ObjectPathBase):
     GPS: FAP_GPSPath
@@ -10043,6 +10290,8 @@ class SoftwareModulesPath(ObjectPathBase):
     ExecutionUnit: TablePath[SoftwareModules_ExecutionUnitPath]
     LocalManagement: SoftwareModules_LocalManagementPath
     Config: SoftwareModules_ConfigPath
+    InstallDU: CommandPath
+    DUStateChange: EventPath
 
 class XMPPPath(ObjectPathBase):
     ConnectionNumberOfEntries: ParamPath[int]
@@ -10222,6 +10471,10 @@ class LocalAgentPath(ObjectPathBase):
     ControllerTrust: LocalAgent_ControllerTrustPath
     Subscription: TablePath[LocalAgent_SubscriptionPath]
     Request: TablePath[LocalAgent_RequestPath]
+    AddCertificate: CommandPath
+    Periodic: EventPath
+    WakeUp: EventPath
+    TransferComplete: EventPath
 
 class StandbyPath(ObjectPathBase):
     NetworkAware: ParamPath[bool]
@@ -10241,6 +10494,9 @@ class GatewayInfoPath(ObjectPathBase):
     ManufacturerOUI: ParamPath[str]
     ProductClass: ParamPath[str]
     SerialNumber: ParamPath[str]
+    UnknownGatewayDiscovered: EventPath
+    USPGatewayDiscovered: EventPath
+    CWMPGatewayDiscovered: EventPath
 
 class DevicePath(ObjectPathBase):
     RootDataModelVersion: ParamPath[str]
@@ -10340,5 +10596,12 @@ class DevicePath(ObjectPathBase):
     GatewayInfo: GatewayInfoPath
     IoTCapability: TablePath[IoTCapabilityPath]
     Node: TablePath[NodePath]
+    Reboot: CommandPath
+    Shutdown: CommandPath
+    FactoryReset: CommandPath
+    SelfTestDiagnostics: CommandPath
+    PacketCaptureDiagnostics: CommandPath
+    ScheduleTimer: CommandPath
+    Boot: EventPath
 
 Device: DevicePath

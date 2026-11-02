@@ -104,3 +104,10 @@ class Time(_Model):
     Server: dict[int, Time_Server] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

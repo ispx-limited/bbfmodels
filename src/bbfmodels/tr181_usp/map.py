@@ -86,3 +86,21 @@ class MAP(_Model):
     Domain: dict[int, MAP_Domain] = _Field(default_factory=dict)
 
 
+class MAP_Domain_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.MAP.Domain.{i}.Interface.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class MAP_Domain_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.MAP.Domain.{i}.Interface.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.MAP.Domain.{i}.Interface.Stats.Reset()": (MAP_Domain_Interface_Stats_Reset_Input, MAP_Domain_Interface_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -123,3 +123,10 @@ class Layer2Bridging(_Model):
     AvailableInterface: dict[int, Layer2Bridging_AvailableInterface] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -331,3 +331,10 @@ class LMAP(_Model):
     Event: dict[int, LMAP_Event] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

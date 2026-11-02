@@ -244,3 +244,10 @@ class DNS(_Model):
     RebindProtection: DNS_RebindProtection | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

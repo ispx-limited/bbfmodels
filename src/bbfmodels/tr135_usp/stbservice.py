@@ -28,3 +28,13 @@ class STBService(_Model):
     Applications: applications.Applications | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
+# Every command's input and output class, and every event's class, by path.
+COMMANDS = {**avplayers.COMMANDS, **avstreams.COMMANDS, **applications.COMMANDS, **capabilities.COMMANDS, **components.COMMANDS, **servicemonitoring.COMMANDS, **_COMMANDS}
+EVENTS = {**avplayers.EVENTS, **avstreams.EVENTS, **applications.EVENTS, **capabilities.EVENTS, **components.EVENTS, **servicemonitoring.EVENTS, **_EVENTS}

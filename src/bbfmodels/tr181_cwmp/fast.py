@@ -186,3 +186,10 @@ class FAST(_Model):
     Line: dict[int, FAST_Line] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

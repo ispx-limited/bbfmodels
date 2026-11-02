@@ -111,3 +111,28 @@ class BulkData(_Model):
     Profile: dict[int, BulkData_Profile] = _Field(default_factory=dict)
 
 
+class BulkData_Profile_ForceCollection_Input(_Model):
+    __bbf_path__ = "Device.BulkData.Profile.{i}.ForceCollection().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class BulkData_Profile_ForceCollection_Output(_Model):
+    __bbf_path__ = "Device.BulkData.Profile.{i}.ForceCollection().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class BulkData_Profile_Push(_Model):
+    __bbf_path__ = "Device.BulkData.Profile.{i}.Push!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "Device.BulkData.Profile.{i}.ForceCollection()": (BulkData_Profile_ForceCollection_Input, BulkData_Profile_ForceCollection_Output),
+}
+_EVENTS = {
+    "Device.BulkData.Profile.{i}.Push!": BulkData_Profile_Push,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

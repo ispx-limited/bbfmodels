@@ -42,3 +42,10 @@ class Security(_Model):
     CABundle: dict[int, Security_CABundle] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

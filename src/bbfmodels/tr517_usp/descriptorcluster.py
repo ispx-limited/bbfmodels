@@ -40,3 +40,10 @@ class DescriptorCluster(_Model):
     TagList: dict[int, DescriptorCluster_TagList] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

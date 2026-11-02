@@ -35,3 +35,24 @@ class LaundryWasherModeCluster(_Model):
     SupportedModes: dict[int, LaundryWasherModeCluster_SupportedModes] = _Field(default_factory=dict)
 
 
+class LaundryWasherModeCluster_ChangeToMode_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.LaundryWasherModeCluster.{i}.ChangeToMode().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewMode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class LaundryWasherModeCluster_ChangeToMode_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.LaundryWasherModeCluster.{i}.ChangeToMode().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StatusText: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.LaundryWasherModeCluster.{i}.ChangeToMode()": (LaundryWasherModeCluster_ChangeToMode_Input, LaundryWasherModeCluster_ChangeToMode_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -207,3 +207,10 @@ class SFPs(_Model):
     AllowedSFPs: SFPs_AllowedSFPs | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

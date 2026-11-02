@@ -243,3 +243,43 @@ class DOCSIS(_Model):
     SpectrumAnalysis: DOCSIS_SpectrumAnalysis | None = _Field(default=None)
 
 
+class DOCSIS_Downstream_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DOCSIS.Downstream.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DOCSIS_Downstream_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DOCSIS.Downstream.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DOCSIS_Upstream_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DOCSIS.Upstream.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DOCSIS_Upstream_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DOCSIS.Upstream.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DOCSIS_Interface_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.DOCSIS.Interface.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class DOCSIS_Interface_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.DOCSIS.Interface.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.DOCSIS.Downstream.{i}.Stats.Reset()": (DOCSIS_Downstream_Stats_Reset_Input, DOCSIS_Downstream_Stats_Reset_Output),
+    "Device.DOCSIS.Upstream.{i}.Stats.Reset()": (DOCSIS_Upstream_Stats_Reset_Input, DOCSIS_Upstream_Stats_Reset_Output),
+    "Device.DOCSIS.Interface.{i}.Stats.Reset()": (DOCSIS_Interface_Stats_Reset_Input, DOCSIS_Interface_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

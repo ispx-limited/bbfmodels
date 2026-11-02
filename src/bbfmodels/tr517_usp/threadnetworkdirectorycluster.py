@@ -27,3 +27,49 @@ class ThreadNetworkDirectoryCluster(_Model):
     ThreadNetworks: dict[int, ThreadNetworkDirectoryCluster_ThreadNetworks] = _Field(default_factory=dict)
 
 
+class ThreadNetworkDirectoryCluster_AddNetwork_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.AddNetwork().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OperationalDataset: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThreadNetworkDirectoryCluster_AddNetwork_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.AddNetwork().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThreadNetworkDirectoryCluster_RemoveNetwork_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.RemoveNetwork().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ExtendedPanID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThreadNetworkDirectoryCluster_RemoveNetwork_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.RemoveNetwork().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThreadNetworkDirectoryCluster_GetOperationalDataset_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.GetOperationalDataset().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ExtendedPanID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class ThreadNetworkDirectoryCluster_GetOperationalDataset_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.GetOperationalDataset().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    OperationalDataset: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.AddNetwork()": (ThreadNetworkDirectoryCluster_AddNetwork_Input, ThreadNetworkDirectoryCluster_AddNetwork_Output),
+    "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.RemoveNetwork()": (ThreadNetworkDirectoryCluster_RemoveNetwork_Input, ThreadNetworkDirectoryCluster_RemoveNetwork_Output),
+    "MatterService.{i}.ThreadNetworkDirectoryCluster.{i}.GetOperationalDataset()": (ThreadNetworkDirectoryCluster_GetOperationalDataset_Input, ThreadNetworkDirectoryCluster_GetOperationalDataset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

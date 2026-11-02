@@ -22,3 +22,10 @@ class Capabilities(_Model):
     VolumeEncryptionCapable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -37,3 +37,114 @@ class OperationalStateCluster(_Model):
     OperationalError: OperationalStateCluster_OperationalError | None = _Field(default=None)
 
 
+class OperationalStateCluster_Pause_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Pause().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OperationalStateCluster_Pause_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Pause().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalStateCluster_Pause_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Pause().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: OperationalStateCluster_Pause_Output_CommandResponseState | None = _Field(default=None)
+
+
+class OperationalStateCluster_Stop_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Stop().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OperationalStateCluster_Stop_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Stop().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalStateCluster_Stop_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Stop().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: OperationalStateCluster_Stop_Output_CommandResponseState | None = _Field(default=None)
+
+
+class OperationalStateCluster_Start_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Start().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OperationalStateCluster_Start_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Start().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalStateCluster_Start_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Start().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: OperationalStateCluster_Start_Output_CommandResponseState | None = _Field(default=None)
+
+
+class OperationalStateCluster_Resume_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Resume().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class OperationalStateCluster_Resume_Output_CommandResponseState(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Resume().Output.CommandResponseState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalStateCluster_Resume_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.Resume().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CommandResponseState: OperationalStateCluster_Resume_Output_CommandResponseState | None = _Field(default=None)
+
+
+class OperationalStateCluster_OperationalError_ErrorState(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.OperationalError!.ErrorState."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorStateID: _Annotated[_Literal['NoError', 'UnableToStartOrResume', 'UnableToCompleteOperation', 'CommandInvalidInState'] | str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateLabel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ErrorStateDetails: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class OperationalStateCluster_OperationalError(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.OperationalError!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ErrorState: OperationalStateCluster_OperationalError_ErrorState | None = _Field(default=None)
+
+
+class OperationalStateCluster_OperationCompletion(_Model):
+    __bbf_path__ = "MatterService.{i}.OperationalStateCluster.{i}.OperationCompletion!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CompletionErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TotalOperationalTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    PausedTime: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.OperationalStateCluster.{i}.Pause()": (OperationalStateCluster_Pause_Input, OperationalStateCluster_Pause_Output),
+    "MatterService.{i}.OperationalStateCluster.{i}.Stop()": (OperationalStateCluster_Stop_Input, OperationalStateCluster_Stop_Output),
+    "MatterService.{i}.OperationalStateCluster.{i}.Start()": (OperationalStateCluster_Start_Input, OperationalStateCluster_Start_Output),
+    "MatterService.{i}.OperationalStateCluster.{i}.Resume()": (OperationalStateCluster_Resume_Input, OperationalStateCluster_Resume_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.OperationalStateCluster.{i}.OperationalError!": OperationalStateCluster_OperationalError,
+    "MatterService.{i}.OperationalStateCluster.{i}.OperationCompletion!": OperationalStateCluster_OperationCompletion,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

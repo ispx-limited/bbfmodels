@@ -46,3 +46,34 @@ class PowerSourceCluster(_Model):
     EndpointList: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
 
 
+class PowerSourceCluster_WiredFaultChange(_Model):
+    __bbf_path__ = "MatterService.{i}.PowerSourceCluster.{i}.WiredFaultChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Current: _Annotated[_CommaList[_Literal['Unspecified', 'OverVoltage', 'UnderVoltage'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Previous: _Annotated[_CommaList[_Literal['Unspecified', 'OverVoltage', 'UnderVoltage'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class PowerSourceCluster_BatFaultChange(_Model):
+    __bbf_path__ = "MatterService.{i}.PowerSourceCluster.{i}.BatFaultChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Current: _Annotated[_CommaList[_Literal['Unspecified', 'OverTemp', 'UnderTemp'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Previous: _Annotated[_CommaList[_Literal['Unspecified', 'OverTemp', 'UnderTemp'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class PowerSourceCluster_BatChargeFaultChange(_Model):
+    __bbf_path__ = "MatterService.{i}.PowerSourceCluster.{i}.BatChargeFaultChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Current: _Annotated[_CommaList[_Literal['Unspecified', 'AmbientTooHot', 'AmbientTooCold', 'BatteryTooHot', 'BatteryTooCold', 'BatteryAbsent', 'BatteryOverVoltage', 'BatteryUnderVoltage', 'ChargerOverVoltage', 'ChargerUnderVoltage', 'SafetyTimeout'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Previous: _Annotated[_CommaList[_Literal['Unspecified', 'AmbientTooHot', 'AmbientTooCold', 'BatteryTooHot', 'BatteryTooCold', 'BatteryAbsent', 'BatteryOverVoltage', 'BatteryUnderVoltage', 'ChargerOverVoltage', 'ChargerUnderVoltage', 'SafetyTimeout'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+_COMMANDS = {
+}
+_EVENTS = {
+    "MatterService.{i}.PowerSourceCluster.{i}.WiredFaultChange!": PowerSourceCluster_WiredFaultChange,
+    "MatterService.{i}.PowerSourceCluster.{i}.BatFaultChange!": PowerSourceCluster_BatFaultChange,
+    "MatterService.{i}.PowerSourceCluster.{i}.BatChargeFaultChange!": PowerSourceCluster_BatChargeFaultChange,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

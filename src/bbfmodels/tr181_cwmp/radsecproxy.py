@@ -91,3 +91,10 @@ class RadSecProxy(_Model):
     TLS: dict[int, RadSecProxy_TLS] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

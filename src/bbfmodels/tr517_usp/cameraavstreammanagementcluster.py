@@ -211,3 +211,210 @@ class CameraAVStreamManagementCluster(_Model):
     Viewport: CameraAVStreamManagementCluster_Viewport | None = _Field(default=None)
 
 
+class CameraAVStreamManagementCluster_AudioStreamAllocate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamAllocate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StreamUsage: _Annotated[_Literal['Internal', 'Recording', 'Analysis', 'LiveView'] | str | None, _Param(_BaseType.STRING)] = None
+    AudioCodec: _Annotated[_Literal['OPUS', 'AACLC'] | str | None, _Param(_BaseType.STRING)] = None
+    ChannelCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SampleRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BitRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    BitDepth: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_AudioStreamAllocate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamAllocate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AudioStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_AudioStreamDeallocate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamDeallocate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AudioStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_AudioStreamDeallocate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamDeallocate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVStreamManagementCluster_VideoStreamAllocate_Input_MinResolution(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamAllocate().Input.MinResolution."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Height: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_VideoStreamAllocate_Input_MaxResolution(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamAllocate().Input.MaxResolution."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Height: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_VideoStreamAllocate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamAllocate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StreamUsage: _Annotated[_Literal['Internal', 'Recording', 'Analysis', 'LiveView'] | str | None, _Param(_BaseType.STRING)] = None
+    VideoCodec: _Annotated[_Literal['H264', 'HEVC', 'VVC', 'AV1'] | str | None, _Param(_BaseType.STRING)] = None
+    MinFrameRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxFrameRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MinBitRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaxBitRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    KeyFrameInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WatermarkEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OSDEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MinResolution: CameraAVStreamManagementCluster_VideoStreamAllocate_Input_MinResolution | None = _Field(default=None)
+    MaxResolution: CameraAVStreamManagementCluster_VideoStreamAllocate_Input_MaxResolution | None = _Field(default=None)
+
+
+class CameraAVStreamManagementCluster_VideoStreamAllocate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamAllocate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_VideoStreamModify_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamModify().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WatermarkEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OSDEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class CameraAVStreamManagementCluster_VideoStreamModify_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamModify().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVStreamManagementCluster_VideoStreamDeallocate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamDeallocate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    VideoStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_VideoStreamDeallocate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamDeallocate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamAllocate_Input_MinResolution(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamAllocate().Input.MinResolution."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Height: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamAllocate_Input_MaxResolution(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamAllocate().Input.MaxResolution."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Height: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamAllocate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamAllocate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ImageCodec: _Annotated[_Literal['JPEG'] | str | None, _Param(_BaseType.STRING)] = None
+    MaxFrameRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Quality: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WatermarkEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OSDEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    MinResolution: CameraAVStreamManagementCluster_SnapshotStreamAllocate_Input_MinResolution | None = _Field(default=None)
+    MaxResolution: CameraAVStreamManagementCluster_SnapshotStreamAllocate_Input_MaxResolution | None = _Field(default=None)
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamAllocate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamAllocate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SnapshotStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamModify_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamModify().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SnapshotStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WatermarkEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    OSDEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamModify_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamModify().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamDeallocate_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamDeallocate().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SnapshotStreamID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_SnapshotStreamDeallocate_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamDeallocate().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVStreamManagementCluster_SetStreamPriorities_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SetStreamPriorities().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    StreamPriorities: _Annotated[_CommaList[_Literal['Internal', 'Recording', 'Analysis', 'LiveView'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class CameraAVStreamManagementCluster_SetStreamPriorities_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SetStreamPriorities().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class CameraAVStreamManagementCluster_CaptureSnapshot_Input_RequestedResolution(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.CaptureSnapshot().Input.RequestedResolution."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Height: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_CaptureSnapshot_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.CaptureSnapshot().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SnapshotStreamID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    RequestedResolution: CameraAVStreamManagementCluster_CaptureSnapshot_Input_RequestedResolution | None = _Field(default=None)
+
+
+class CameraAVStreamManagementCluster_CaptureSnapshot_Output_Resolution(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.CaptureSnapshot().Output.Resolution."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Width: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Height: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class CameraAVStreamManagementCluster_CaptureSnapshot_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.CameraAVStreamManagementCluster.{i}.CaptureSnapshot().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ImageCodec: _Annotated[_Literal['JPEG'] | str | None, _Param(_BaseType.STRING)] = None
+    Resolution: CameraAVStreamManagementCluster_CaptureSnapshot_Output_Resolution | None = _Field(default=None)
+
+
+_COMMANDS = {
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamAllocate()": (CameraAVStreamManagementCluster_AudioStreamAllocate_Input, CameraAVStreamManagementCluster_AudioStreamAllocate_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.AudioStreamDeallocate()": (CameraAVStreamManagementCluster_AudioStreamDeallocate_Input, CameraAVStreamManagementCluster_AudioStreamDeallocate_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamAllocate()": (CameraAVStreamManagementCluster_VideoStreamAllocate_Input, CameraAVStreamManagementCluster_VideoStreamAllocate_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamModify()": (CameraAVStreamManagementCluster_VideoStreamModify_Input, CameraAVStreamManagementCluster_VideoStreamModify_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.VideoStreamDeallocate()": (CameraAVStreamManagementCluster_VideoStreamDeallocate_Input, CameraAVStreamManagementCluster_VideoStreamDeallocate_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamAllocate()": (CameraAVStreamManagementCluster_SnapshotStreamAllocate_Input, CameraAVStreamManagementCluster_SnapshotStreamAllocate_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamModify()": (CameraAVStreamManagementCluster_SnapshotStreamModify_Input, CameraAVStreamManagementCluster_SnapshotStreamModify_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SnapshotStreamDeallocate()": (CameraAVStreamManagementCluster_SnapshotStreamDeallocate_Input, CameraAVStreamManagementCluster_SnapshotStreamDeallocate_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.SetStreamPriorities()": (CameraAVStreamManagementCluster_SetStreamPriorities_Input, CameraAVStreamManagementCluster_SetStreamPriorities_Output),
+    "MatterService.{i}.CameraAVStreamManagementCluster.{i}.CaptureSnapshot()": (CameraAVStreamManagementCluster_CaptureSnapshot_Input, CameraAVStreamManagementCluster_CaptureSnapshot_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

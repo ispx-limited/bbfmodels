@@ -39,3 +39,21 @@ class SmartCardReaders(_Model):
     SmartCardReader: dict[int, SmartCardReaders_SmartCardReader] = _Field(default_factory=dict)
 
 
+class SmartCardReaders_SmartCardReader_Reset_Input(_Model):
+    __bbf_path__ = "Device.SmartCardReaders.SmartCardReader.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SmartCardReaders_SmartCardReader_Reset_Output(_Model):
+    __bbf_path__ = "Device.SmartCardReaders.SmartCardReader.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.SmartCardReaders.SmartCardReader.{i}.Reset()": (SmartCardReaders_SmartCardReader_Reset_Input, SmartCardReaders_SmartCardReader_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -45,3 +45,13 @@ class StorageService(_Model):
     LogicalVolume: dict[int, logicalvolume.LogicalVolume] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
+# Every command's input and output class, and every event's class, by path.
+COMMANDS = {**capabilities.COMMANDS, **ftpserver.COMMANDS, **httpsserver.COMMANDS, **httpserver.COMMANDS, **logicalvolume.COMMANDS, **netinfo.COMMANDS, **networkserver.COMMANDS, **physicalmedium.COMMANDS, **sftpserver.COMMANDS, **storagearray.COMMANDS, **useraccount.COMMANDS, **usergroup.COMMANDS, **_COMMANDS}
+EVENTS = {**capabilities.EVENTS, **ftpserver.EVENTS, **httpsserver.EVENTS, **httpserver.EVENTS, **logicalvolume.EVENTS, **netinfo.EVENTS, **networkserver.EVENTS, **physicalmedium.EVENTS, **sftpserver.EVENTS, **storagearray.EVENTS, **useraccount.EVENTS, **usergroup.EVENTS, **_EVENTS}

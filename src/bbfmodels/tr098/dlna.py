@@ -27,3 +27,10 @@ class DLNA(_Model):
     Capabilities: DLNA_Capabilities | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

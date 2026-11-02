@@ -244,3 +244,10 @@ class SIP(_Model):
     Registrar: dict[int, SIP_Registrar] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

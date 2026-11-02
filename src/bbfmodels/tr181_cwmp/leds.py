@@ -55,3 +55,10 @@ class LEDs(_Model):
     LED: dict[int, LEDs_LED] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

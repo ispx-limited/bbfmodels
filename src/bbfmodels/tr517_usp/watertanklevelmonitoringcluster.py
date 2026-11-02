@@ -29,3 +29,22 @@ class WaterTankLevelMonitoringCluster(_Model):
     ReplacementProductList: dict[int, WaterTankLevelMonitoringCluster_ReplacementProductList] = _Field(default_factory=dict)
 
 
+class WaterTankLevelMonitoringCluster_ResetCondition_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterTankLevelMonitoringCluster.{i}.ResetCondition().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class WaterTankLevelMonitoringCluster_ResetCondition_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.WaterTankLevelMonitoringCluster.{i}.ResetCondition().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.WaterTankLevelMonitoringCluster.{i}.ResetCondition()": (WaterTankLevelMonitoringCluster_ResetCondition_Input, WaterTankLevelMonitoringCluster_ResetCondition_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

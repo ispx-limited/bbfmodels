@@ -359,3 +359,10 @@ class ServiceMonitoring(_Model):
     GlobalOperation: ServiceMonitoring_GlobalOperation | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

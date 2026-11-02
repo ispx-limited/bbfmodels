@@ -273,3 +273,33 @@ class XPON(_Model):
     ONU: dict[int, XPON_ONU] = _Field(default_factory=dict)
 
 
+class XPON_ONU_ChangePowerMode_Input(_Model):
+    __bbf_path__ = "Device.XPON.ONU.{i}.ChangePowerMode().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    PowerState: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class XPON_ONU_ChangePowerMode_Output(_Model):
+    __bbf_path__ = "Device.XPON.ONU.{i}.ChangePowerMode().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class XPON_ONU_EthernetUNI_Stats_Reset_Input(_Model):
+    __bbf_path__ = "Device.XPON.ONU.{i}.EthernetUNI.{i}.Stats.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class XPON_ONU_EthernetUNI_Stats_Reset_Output(_Model):
+    __bbf_path__ = "Device.XPON.ONU.{i}.EthernetUNI.{i}.Stats.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.XPON.ONU.{i}.ChangePowerMode()": (XPON_ONU_ChangePowerMode_Input, XPON_ONU_ChangePowerMode_Output),
+    "Device.XPON.ONU.{i}.EthernetUNI.{i}.Stats.Reset()": (XPON_ONU_EthernetUNI_Stats_Reset_Input, XPON_ONU_EthernetUNI_Stats_Reset_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -93,3 +93,13 @@ class InternetGatewayDevice(_Model):
     XMPP: xmpp.XMPP | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
+# Every command's input and output class, and every event's class, by path.
+COMMANDS = {**bulkdata.COMMANDS, **capabilities.COMMANDS, **captiveportal.COMMANDS, **dlna.COMMANDS, **dns.COMMANDS, **deviceconfig.COMMANDS, **deviceinfo.COMMANDS, **downloadavailability.COMMANDS, **downloaddiagnostics.COMMANDS, **fap.COMMANDS, **faultmgmt.COMMANDS, **firewall.COMMANDS, **ippingdiagnostics.COMMANDS, **lanconfigsecurity.COMMANDS, **landevice.COMMANDS, **laninterfaces.COMMANDS, **layer2bridging.COMMANDS, **layer3forwarding.COMMANDS, **managementserver.COMMANDS, **nslookupdiagnostics.COMMANDS, **periodicstatistics.COMMANDS, **queuemanagement.COMMANDS, **security.COMMANDS, **selftestdiagnostics.COMMANDS, **services.COMMANDS, **smartcardreader.COMMANDS, **softwaremodules.COMMANDS, **time.COMMANDS, **traceroutediagnostics.COMMANDS, **udpechoconfig.COMMANDS, **upnp.COMMANDS, **usbhosts.COMMANDS, **uploaddiagnostics.COMMANDS, **user.COMMANDS, **userinterface.COMMANDS, **wandevice.COMMANDS, **xmpp.COMMANDS, **_COMMANDS}
+EVENTS = {**bulkdata.EVENTS, **capabilities.EVENTS, **captiveportal.EVENTS, **dlna.EVENTS, **dns.EVENTS, **deviceconfig.EVENTS, **deviceinfo.EVENTS, **downloadavailability.EVENTS, **downloaddiagnostics.EVENTS, **fap.EVENTS, **faultmgmt.EVENTS, **firewall.EVENTS, **ippingdiagnostics.EVENTS, **lanconfigsecurity.EVENTS, **landevice.EVENTS, **laninterfaces.EVENTS, **layer2bridging.EVENTS, **layer3forwarding.EVENTS, **managementserver.EVENTS, **nslookupdiagnostics.EVENTS, **periodicstatistics.EVENTS, **queuemanagement.EVENTS, **security.EVENTS, **selftestdiagnostics.EVENTS, **services.EVENTS, **smartcardreader.EVENTS, **softwaremodules.EVENTS, **time.EVENTS, **traceroutediagnostics.EVENTS, **udpechoconfig.EVENTS, **upnp.EVENTS, **usbhosts.EVENTS, **uploaddiagnostics.EVENTS, **user.EVENTS, **userinterface.EVENTS, **wandevice.EVENTS, **xmpp.EVENTS, **_EVENTS}

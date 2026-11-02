@@ -6,7 +6,7 @@ from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class LocalAgent_Controller_MTP_CoAP(_Model):
@@ -354,4 +354,235 @@ class LocalAgent(_Model):
     Subscription: dict[int, LocalAgent_Subscription] = _Field(default_factory=dict)
     Request: dict[int, LocalAgent_Request] = _Field(default_factory=dict)
 
+
+class LocalAgent_AddCertificate_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.AddCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class LocalAgent_AddCertificate_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.AddCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Periodic(_Model):
+    __bbf_path__ = "Device.LocalAgent.Periodic!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_WakeUp(_Model):
+    __bbf_path__ = "Device.LocalAgent.WakeUp!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_TransferComplete(_Model):
+    __bbf_path__ = "Device.LocalAgent.TransferComplete!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Command: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CommandKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Requestor: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TransferType: _Annotated[_Literal['Download', 'Upload'] | str | None, _Param(_BaseType.STRING)] = None
+    Affected: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    TransferURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    CompleteTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    FaultCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FaultString: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CheckSumAlgorithm: _Annotated[_Literal['SHA-1', 'SHA-224', 'SHA-256', 'SHA-384', 'SHA-512', 'Unknown'] | str | None, _Param(_BaseType.STRING)] = None
+    CheckSum: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class LocalAgent_Threshold_Triggered(_Model):
+    __bbf_path__ = "Device.LocalAgent.Threshold.{i}.Triggered!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ParamPath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ParamValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class LocalAgent_Monitor_OnChange_ChangeSet_Parameter(_Model):
+    __bbf_path__ = "Device.LocalAgent.Monitor.{i}.OnChange!.ChangeSet.{i}.Parameter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    OldValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ChangeTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+
+
+class LocalAgent_Monitor_OnChange_ChangeSet(_Model):
+    __bbf_path__ = "Device.LocalAgent.Monitor.{i}.OnChange!.ChangeSet.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ObjectPath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Parameter: dict[int, LocalAgent_Monitor_OnChange_ChangeSet_Parameter] = _Field(default_factory=dict)
+
+
+class LocalAgent_Monitor_OnChange(_Model):
+    __bbf_path__ = "Device.LocalAgent.Monitor.{i}.OnChange!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ChangeSet: dict[int, LocalAgent_Monitor_OnChange_ChangeSet] = _Field(default_factory=dict)
+
+
+class LocalAgent_Watchdog_Reset_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Watchdog.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Watchdog_Reset_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Watchdog.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Watchdog_Watchdog(_Model):
+    __bbf_path__ = "Device.LocalAgent.Watchdog.{i}.Watchdog!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ReloadTimerValue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    SeverityIndication: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class LocalAgent_Controller_ScheduleTimer_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.ScheduleTimer().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    DelaySeconds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class LocalAgent_Controller_ScheduleTimer_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.ScheduleTimer().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Controller_AddMyCertificate_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.AddMyCertificate().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class LocalAgent_Controller_AddMyCertificate_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.AddMyCertificate().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Controller_SendOnBoardRequest_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.SendOnBoardRequest().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Controller_SendOnBoardRequest_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.SendOnBoardRequest().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Controller_Timer(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.Timer!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    CommandKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class LocalAgent_Controller_MTP_WebSocket_Reset_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}.WebSocket.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Controller_MTP_WebSocket_Reset_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}.WebSocket.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Controller_E2ESession_Reset_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.E2ESession.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Controller_E2ESession_Reset_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.E2ESession.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Certificate_Delete_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Certificate.{i}.Delete().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Certificate_Delete_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Certificate.{i}.Delete().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Certificate_GetFingerprint_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Certificate.{i}.GetFingerprint().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    FingerprintAlgorithm: _Annotated[_Literal['SHA-1', 'SHA-224', 'SHA-256', 'SHA-384', 'SHA-512'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class LocalAgent_Certificate_GetFingerprint_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Certificate.{i}.GetFingerprint().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Fingerprint: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+class LocalAgent_ControllerTrust_RequestChallenge_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.RequestChallenge().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ChallengeRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    RequestExpiration: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class LocalAgent_ControllerTrust_RequestChallenge_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.RequestChallenge().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Instruction: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+    InstructionType: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ValueType: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ChallengeID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class LocalAgent_ControllerTrust_ChallengeResponse_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.ChallengeResponse().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ChallengeID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Value: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
+
+
+class LocalAgent_ControllerTrust_ChallengeResponse_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.ChallengeResponse().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Request_Cancel_Input(_Model):
+    __bbf_path__ = "Device.LocalAgent.Request.{i}.Cancel().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class LocalAgent_Request_Cancel_Output(_Model):
+    __bbf_path__ = "Device.LocalAgent.Request.{i}.Cancel().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.LocalAgent.AddCertificate()": (LocalAgent_AddCertificate_Input, LocalAgent_AddCertificate_Output),
+    "Device.LocalAgent.Watchdog.{i}.Reset()": (LocalAgent_Watchdog_Reset_Input, LocalAgent_Watchdog_Reset_Output),
+    "Device.LocalAgent.Controller.{i}.ScheduleTimer()": (LocalAgent_Controller_ScheduleTimer_Input, LocalAgent_Controller_ScheduleTimer_Output),
+    "Device.LocalAgent.Controller.{i}.AddMyCertificate()": (LocalAgent_Controller_AddMyCertificate_Input, LocalAgent_Controller_AddMyCertificate_Output),
+    "Device.LocalAgent.Controller.{i}.SendOnBoardRequest()": (LocalAgent_Controller_SendOnBoardRequest_Input, LocalAgent_Controller_SendOnBoardRequest_Output),
+    "Device.LocalAgent.Controller.{i}.MTP.{i}.WebSocket.Reset()": (LocalAgent_Controller_MTP_WebSocket_Reset_Input, LocalAgent_Controller_MTP_WebSocket_Reset_Output),
+    "Device.LocalAgent.Controller.{i}.E2ESession.Reset()": (LocalAgent_Controller_E2ESession_Reset_Input, LocalAgent_Controller_E2ESession_Reset_Output),
+    "Device.LocalAgent.Certificate.{i}.Delete()": (LocalAgent_Certificate_Delete_Input, LocalAgent_Certificate_Delete_Output),
+    "Device.LocalAgent.Certificate.{i}.GetFingerprint()": (LocalAgent_Certificate_GetFingerprint_Input, LocalAgent_Certificate_GetFingerprint_Output),
+    "Device.LocalAgent.ControllerTrust.RequestChallenge()": (LocalAgent_ControllerTrust_RequestChallenge_Input, LocalAgent_ControllerTrust_RequestChallenge_Output),
+    "Device.LocalAgent.ControllerTrust.ChallengeResponse()": (LocalAgent_ControllerTrust_ChallengeResponse_Input, LocalAgent_ControllerTrust_ChallengeResponse_Output),
+    "Device.LocalAgent.Request.{i}.Cancel()": (LocalAgent_Request_Cancel_Input, LocalAgent_Request_Cancel_Output),
+}
+_EVENTS = {
+    "Device.LocalAgent.Periodic!": LocalAgent_Periodic,
+    "Device.LocalAgent.WakeUp!": LocalAgent_WakeUp,
+    "Device.LocalAgent.TransferComplete!": LocalAgent_TransferComplete,
+    "Device.LocalAgent.Threshold.{i}.Triggered!": LocalAgent_Threshold_Triggered,
+    "Device.LocalAgent.Monitor.{i}.OnChange!": LocalAgent_Monitor_OnChange,
+    "Device.LocalAgent.Watchdog.{i}.Watchdog!": LocalAgent_Watchdog_Watchdog,
+    "Device.LocalAgent.Controller.{i}.Timer!": LocalAgent_Controller_Timer,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

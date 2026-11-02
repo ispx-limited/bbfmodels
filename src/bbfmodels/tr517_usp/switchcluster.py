@@ -17,3 +17,61 @@ class SwitchCluster(_Model):
     MultiPressMax: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+class SwitchCluster_SwitchLatched(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.SwitchLatched!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_InitialPress(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.InitialPress!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_LongPress(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.LongPress!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_ShortRelease(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.ShortRelease!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_LongRelease(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.LongRelease!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_MultiPressOngoing(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.MultiPressOngoing!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    NewPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CurrentNumberOfPressesCounted: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SwitchCluster_MultiPressComplete(_Model):
+    __bbf_path__ = "MatterService.{i}.SwitchCluster.{i}.MultiPressComplete!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    PreviousPosition: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    TotalNumberOfPressesCounted: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+_COMMANDS = {
+}
+_EVENTS = {
+    "MatterService.{i}.SwitchCluster.{i}.SwitchLatched!": SwitchCluster_SwitchLatched,
+    "MatterService.{i}.SwitchCluster.{i}.InitialPress!": SwitchCluster_InitialPress,
+    "MatterService.{i}.SwitchCluster.{i}.LongPress!": SwitchCluster_LongPress,
+    "MatterService.{i}.SwitchCluster.{i}.ShortRelease!": SwitchCluster_ShortRelease,
+    "MatterService.{i}.SwitchCluster.{i}.LongRelease!": SwitchCluster_LongRelease,
+    "MatterService.{i}.SwitchCluster.{i}.MultiPressOngoing!": SwitchCluster_MultiPressOngoing,
+    "MatterService.{i}.SwitchCluster.{i}.MultiPressComplete!": SwitchCluster_MultiPressComplete,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

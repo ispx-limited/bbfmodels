@@ -86,3 +86,90 @@ class AccessControlCluster(_Model):
     ARL: dict[int, AccessControlCluster_ARL] = _Field(default_factory=dict)
 
 
+class AccessControlCluster_ReviewFabricRestrictions_Input_ARL_Restrictions(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.ReviewFabricRestrictions().Input.ARL.{i}.Restrictions.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Type: _Annotated[_Literal['AttributeAccessForbidden', 'AttributeWriteForbidden', 'CommandForbidden', 'EventForbidden'] | str | None, _Param(_BaseType.STRING)] = None
+    ID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class AccessControlCluster_ReviewFabricRestrictions_Input_ARL(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.ReviewFabricRestrictions().Input.ARL.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Endpoint: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Cluster: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Restrictions: dict[int, AccessControlCluster_ReviewFabricRestrictions_Input_ARL_Restrictions] = _Field(default_factory=dict)
+
+
+class AccessControlCluster_ReviewFabricRestrictions_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.ReviewFabricRestrictions().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    ARL: dict[int, AccessControlCluster_ReviewFabricRestrictions_Input_ARL] = _Field(default_factory=dict)
+
+
+class AccessControlCluster_ReviewFabricRestrictions_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.ReviewFabricRestrictions().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Token: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class AccessControlCluster_AccessControlEntryChanged_LatestValue_Targets(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!.LatestValue.Targets.{i}."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Cluster: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    Endpoint: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    DeviceType: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class AccessControlCluster_AccessControlEntryChanged_LatestValue(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!.LatestValue."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Privilege: _Annotated[_Literal['View', 'ProxyView', 'Operate', 'Manage', 'Administer'] | str | None, _Param(_BaseType.STRING)] = None
+    AuthMode: _Annotated[_Literal['PASE', 'CASE', 'Group'] | str | None, _Param(_BaseType.STRING)] = None
+    Subjects: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_LONG, list=True)] = None
+    Targets: dict[int, AccessControlCluster_AccessControlEntryChanged_LatestValue_Targets] = _Field(default_factory=dict)
+
+
+class AccessControlCluster_AccessControlEntryChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AdminNodeID: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    AdminPasscodeID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ChangeType: _Annotated[_Literal['Changed', 'Added', 'Removed'] | str | None, _Param(_BaseType.STRING)] = None
+    LatestValue: AccessControlCluster_AccessControlEntryChanged_LatestValue | None = _Field(default=None)
+
+
+class AccessControlCluster_AccessControlExtensionChanged_LatestValue(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!.LatestValue."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Data: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class AccessControlCluster_AccessControlExtensionChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    AdminNodeID: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+    AdminPasscodeID: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    ChangeType: _Annotated[_Literal['Changed', 'Added', 'Removed'] | str | None, _Param(_BaseType.STRING)] = None
+    LatestValue: AccessControlCluster_AccessControlExtensionChanged_LatestValue | None = _Field(default=None)
+
+
+class AccessControlCluster_FabricRestrictionReviewUpdate(_Model):
+    __bbf_path__ = "MatterService.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Token: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    Instruction: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ARLRequestFlowUrl: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.AccessControlCluster.{i}.ReviewFabricRestrictions()": (AccessControlCluster_ReviewFabricRestrictions_Input, AccessControlCluster_ReviewFabricRestrictions_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.AccessControlCluster.{i}.AccessControlEntryChanged!": AccessControlCluster_AccessControlEntryChanged,
+    "MatterService.{i}.AccessControlCluster.{i}.AccessControlExtensionChanged!": AccessControlCluster_AccessControlExtensionChanged,
+    "MatterService.{i}.AccessControlCluster.{i}.FabricRestrictionReviewUpdate!": AccessControlCluster_FabricRestrictionReviewUpdate,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

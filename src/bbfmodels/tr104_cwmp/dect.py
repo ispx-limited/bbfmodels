@@ -76,3 +76,10 @@ class DECT(_Model):
     Portable: dict[int, DECT_Portable] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

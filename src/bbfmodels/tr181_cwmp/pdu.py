@@ -92,3 +92,10 @@ class PDU(_Model):
     Session: dict[int, PDU_Session] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

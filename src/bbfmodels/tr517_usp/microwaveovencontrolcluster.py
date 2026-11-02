@@ -5,7 +5,7 @@
 from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
-from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
+from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class MicrowaveOvenControlCluster(_Model):
@@ -21,4 +21,41 @@ class MicrowaveOvenControlCluster(_Model):
     SelectedWattIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     WattRating: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
+
+class MicrowaveOvenControlCluster_SetCookingParameters_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MicrowaveOvenControlCluster.{i}.SetCookingParameters().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    CookMode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    CookTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    PowerSetting: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    WattSettingIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    StartAfterSetting: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class MicrowaveOvenControlCluster_SetCookingParameters_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MicrowaveOvenControlCluster.{i}.SetCookingParameters().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class MicrowaveOvenControlCluster_AddMoreTime_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.MicrowaveOvenControlCluster.{i}.AddMoreTime().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    TimeToAdd: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class MicrowaveOvenControlCluster_AddMoreTime_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.MicrowaveOvenControlCluster.{i}.AddMoreTime().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.MicrowaveOvenControlCluster.{i}.SetCookingParameters()": (MicrowaveOvenControlCluster_SetCookingParameters_Input, MicrowaveOvenControlCluster_SetCookingParameters_Output),
+    "MatterService.{i}.MicrowaveOvenControlCluster.{i}.AddMoreTime()": (MicrowaveOvenControlCluster_AddMoreTime_Input, MicrowaveOvenControlCluster_AddMoreTime_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
 

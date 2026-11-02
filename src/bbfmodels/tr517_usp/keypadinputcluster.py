@@ -14,3 +14,23 @@ class KeypadInputCluster(_Model):
     EndpointRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
+class KeypadInputCluster_SendKey_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.KeypadInputCluster.{i}.SendKey().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    KeyCode: _Annotated[_Literal['Select', 'Up', 'Down', 'Left', 'Right', 'RightUp', 'RightDown', 'LeftUp', 'LeftDown', 'RootMenu', 'SetupMenu', 'ContentsMenu', 'FavoriteMenu', 'Exit', 'MediaTopMenu', 'MediaContextSensitiveMenu', 'NumberEntryMode', 'Number11', 'Number12', 'Number0OrNumber10', 'Numbers1', 'Numbers2', 'Numbers3', 'Numbers4', 'Numbers5', 'Numbers6', 'Numbers7', 'Numbers8', 'Numbers9', 'Dot', 'Enter', 'Clear', 'NextFavorite', 'ChannelUp', 'ChannelDown', 'PreviousChannel', 'SoundSelect', 'InputSelect', 'DisplayInformation', 'Help', 'PageUp', 'PageDown', 'Power', 'VolumeUp', 'VolumeDown', 'Mute', 'Play', 'Stop', 'Pause', 'Record', 'Rewind', 'FastForward', 'Eject', 'Forward', 'Backward', 'StopRecord', 'PauseRecord', 'Reserved', 'Angle', 'SubPicture', 'VideoOnDemand', 'ElectronicProgramGuide', 'TimerProgramming', 'InitialConfiguration', 'SelectBroadcastType', 'SelectSoundPresentation', 'PlayFunction', 'PausePlayFunction', 'RecordFunction', 'PauseRecordFunction', 'StopFunction', 'MuteFunction', 'RestoreVolumeFunction', 'TuneFunction', 'SelectMediaFunction', 'SelectAvInputFunction', 'SelectAudioInputFunction', 'PowerToggleFunction', 'PowerOffFunction', 'PowerOnFunction', 'F1Blue', 'F2Red', 'F3Green', 'F4Yellow', 'F5', 'Data'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class KeypadInputCluster_SendKey_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.KeypadInputCluster.{i}.SendKey().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['Success', 'UnsupportedKey', 'InvalidKeyInCurrentState'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.KeypadInputCluster.{i}.SendKey()": (KeypadInputCluster_SendKey_Input, KeypadInputCluster_SendKey_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

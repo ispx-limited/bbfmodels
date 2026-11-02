@@ -18,3 +18,10 @@ class SFTPServer(_Model):
     PortNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

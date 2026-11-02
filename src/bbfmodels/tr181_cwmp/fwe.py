@@ -49,3 +49,10 @@ class FWE(_Model):
     Link: dict[int, FWE_Link] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

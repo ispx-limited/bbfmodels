@@ -551,3 +551,10 @@ class IP(_Model):
     Diagnostics: IP_Diagnostics | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

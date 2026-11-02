@@ -26,3 +26,21 @@ class ChimeCluster(_Model):
     InstalledChimeSounds: dict[int, ChimeCluster_InstalledChimeSounds] = _Field(default_factory=dict)
 
 
+class ChimeCluster_PlayChimeSound_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.ChimeCluster.{i}.PlayChimeSound().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class ChimeCluster_PlayChimeSound_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.ChimeCluster.{i}.PlayChimeSound().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+_COMMANDS = {
+    "MatterService.{i}.ChimeCluster.{i}.PlayChimeSound()": (ChimeCluster_PlayChimeSound_Input, ChimeCluster_PlayChimeSound_Output),
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

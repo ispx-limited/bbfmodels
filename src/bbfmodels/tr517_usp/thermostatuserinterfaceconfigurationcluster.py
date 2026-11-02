@@ -17,3 +17,10 @@ class ThermostatUserInterfaceConfigurationCluster(_Model):
     ScheduleProgrammingVisibility: _Annotated[_Literal['ScheduleProgrammingPermitted', 'ScheduleProgrammingDenied'] | str | None, _Param(_BaseType.STRING)] = None
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -24,3 +24,10 @@ class UserLabelCluster(_Model):
     LabelList: dict[int, UserLabelCluster_LabelList] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

@@ -29,3 +29,10 @@ class ApplicationBasicCluster(_Model):
     Application: ApplicationBasicCluster_Application | None = _Field(default=None)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

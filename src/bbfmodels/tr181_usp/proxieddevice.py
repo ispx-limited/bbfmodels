@@ -32,3 +32,10 @@ class ProxiedDevice(_Model):
     Node: dict[int, ProxiedDevice_Node] = _Field(default_factory=dict)
 
 
+_COMMANDS = {
+}
+_EVENTS = {
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

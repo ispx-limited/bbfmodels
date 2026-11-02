@@ -251,3 +251,373 @@ class SoftwareModules(_Model):
     Config_: SoftwareModules_Config | None = _Field(default=None, alias="Config")
 
 
+class SoftwareModules_InstallDU_Input_NetworkConfig_PortMapping(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input.NetworkConfig.PortMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExternalPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InternalPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Protocol: _Annotated[_Literal['TCP', 'UDP'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_InstallDU_Input_ApplicationData(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input.ApplicationData.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Capacity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Encrypted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Retain: _Annotated[_Literal['UntilStopped', 'Forever'] | str | None, _Param(_BaseType.STRING)] = None
+    AccessPath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_InstallDU_Input_HostObject(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input.HostObject.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Source: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Destination: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Options: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_InstallDU_Input_EnvVariable(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input.EnvVariable.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Key: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_InstallDU_Input_AutoRestart(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input.AutoRestart."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    RetryMinimumWaitInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RetryMaximumWaitInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RetryIntervalMultiplier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    MaximumRetryCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ResetPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class SoftwareModules_InstallDU_Input_Resources(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input.Resources."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    AllocatedDiskSpace: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedMemory: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedCPUPercent: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class SoftwareModules_InstallDU_Input_NetworkConfig(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input.NetworkConfig."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ShareParentNetwork: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AccessInterfaces: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    PortMapping: dict[int, SoftwareModules_InstallDU_Input_NetworkConfig_PortMapping] = _Field(default_factory=dict)
+
+
+class SoftwareModules_InstallDU_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Privileged: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    NumRequiredUIDs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    ExecutionEnvRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Signature: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignatureUsername: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignaturePassword: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ShutdownDelay: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    RequiredRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OptionalRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    RequiredUserRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    RegisterTrustPaths: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    ModuleVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AutoRestart: SoftwareModules_InstallDU_Input_AutoRestart | None = _Field(default=None)
+    Resources: SoftwareModules_InstallDU_Input_Resources | None = _Field(default=None)
+    ApplicationData: dict[int, SoftwareModules_InstallDU_Input_ApplicationData] = _Field(default_factory=dict)
+    HostObject: dict[int, SoftwareModules_InstallDU_Input_HostObject] = _Field(default_factory=dict)
+    EnvVariable: dict[int, SoftwareModules_InstallDU_Input_EnvVariable] = _Field(default_factory=dict)
+    NetworkConfig: SoftwareModules_InstallDU_Input_NetworkConfig | None = _Field(default=None)
+
+
+class SoftwareModules_InstallDU_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.InstallDU().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExecEnvRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_DUStateChange_Fault(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DUStateChange!.Fault."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    FaultCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    FaultString: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_DUStateChange(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DUStateChange!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    DeploymentUnitRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    CurrentState: _Annotated[_Literal['Installed', 'UnInstalled', 'Uninstalled', 'Failed'] | str | None, _Param(_BaseType.STRING)] = None
+    Resolved: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    ExecutionUnitRefList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    CompleteTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    OperationPerformed: _Annotated[_Literal['Install', 'Update', 'Uninstall'] | str | None, _Param(_BaseType.STRING)] = None
+    Fault: SoftwareModules_DUStateChange_Fault | None = _Field(default=None)
+
+
+class SoftwareModules_ExecEnvClass_AddExecEnv_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnvClass.{i}.AddExecEnv().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ParentExecEnv: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    AvailableRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    AvailableUserRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AllocatedDiskSpace: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedMemory: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedCPUPercent: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class SoftwareModules_ExecEnvClass_AddExecEnv_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnvClass.{i}.AddExecEnv().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ExecEnvRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_ExecEnv_SetRunLevel_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.SetRunLevel().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    RequestedRunLevel: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class SoftwareModules_ExecEnv_SetRunLevel_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.SetRunLevel().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_ModifyConstraints_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ModifyConstraints().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Force: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AllocatedDiskSpace: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedMemory: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedCPUPercent: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class SoftwareModules_ExecEnv_ModifyConstraints_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ModifyConstraints().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_ModifyAvailableRoles_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ModifyAvailableRoles().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    AvailableRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    AvailableUserRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class SoftwareModules_ExecEnv_ModifyAvailableRoles_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ModifyAvailableRoles().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_ModifyAvailableAccessInterfaces_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ModifyAvailableAccessInterfaces().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    AccessInterfaces: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class SoftwareModules_ExecEnv_ModifyAvailableAccessInterfaces_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ModifyAvailableAccessInterfaces().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_Restart_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Restart().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Reason: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Force: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class SoftwareModules_ExecEnv_Restart_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Restart().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_Reset_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Reset().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_Reset_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Reset().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_Remove_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Remove().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Force: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class SoftwareModules_ExecEnv_Remove_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Remove().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_Restarted(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.Restarted!."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    RestartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
+    RestartReason: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_ExecEnv_ApplicationData_Remove_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ApplicationData.{i}.Remove().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecEnv_ApplicationData_Remove_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ApplicationData.{i}.Remove().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_DeploymentUnit_Update_Input_NetworkConfig_PortMapping(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Input.NetworkConfig.PortMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    ExternalPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    InternalPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Protocol: _Annotated[_Literal['TCP', 'UDP'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_DeploymentUnit_Update_Input_ApplicationData(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Input.ApplicationData.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Capacity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Encrypted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    Retain: _Annotated[_Literal['UntilStopped', 'Forever'] | str | None, _Param(_BaseType.STRING)] = None
+    AccessPath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_DeploymentUnit_Update_Input_HostObject(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Input.HostObject.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Source: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Destination: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Options: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_DeploymentUnit_Update_Input_EnvVariable(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Input.EnvVariable.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    Key: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_DeploymentUnit_Update_Input_Resources(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Input.Resources."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    AllocatedDiskSpace: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedMemory: _Annotated[int | None, _Param(_BaseType.INT)] = None
+    AllocatedCPUPercent: _Annotated[int | None, _Param(_BaseType.INT)] = None
+
+
+class SoftwareModules_DeploymentUnit_Update_Input_NetworkConfig(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Input.NetworkConfig."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    ShareParentNetwork: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    AccessInterfaces: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    PortMapping: dict[int, SoftwareModules_DeploymentUnit_Update_Input_NetworkConfig_PortMapping] = _Field(default_factory=dict)
+
+
+class SoftwareModules_DeploymentUnit_Update_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Privileged: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    NumRequiredUIDs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Signature: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignatureUsername: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    SignaturePassword: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    RequiredRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    OptionalRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    RequiredUserRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    RegisterTrustPaths: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
+    RetainData: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    ModuleVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Resources: SoftwareModules_DeploymentUnit_Update_Input_Resources | None = _Field(default=None)
+    ApplicationData: dict[int, SoftwareModules_DeploymentUnit_Update_Input_ApplicationData] = _Field(default_factory=dict)
+    HostObject: dict[int, SoftwareModules_DeploymentUnit_Update_Input_HostObject] = _Field(default_factory=dict)
+    EnvVariable: dict[int, SoftwareModules_DeploymentUnit_Update_Input_EnvVariable] = _Field(default_factory=dict)
+    NetworkConfig: SoftwareModules_DeploymentUnit_Update_Input_NetworkConfig | None = _Field(default=None)
+
+
+class SoftwareModules_DeploymentUnit_Update_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Update().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_DeploymentUnit_Uninstall_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Uninstall().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    RetainData: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+
+
+class SoftwareModules_DeploymentUnit_Uninstall_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}.Uninstall().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecutionUnit_SetRequestedState_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+    RequestedState: _Annotated[_Literal['Idle', 'Active'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class SoftwareModules_ExecutionUnit_SetRequestedState_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecutionUnit_Restart_Input(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.Restart().Input."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+class SoftwareModules_ExecutionUnit_Restart_Output(_Model):
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.Restart().Output."
+    __bbf_package__ = "bbfmodels.tr181_usp"
+
+
+_COMMANDS = {
+    "Device.SoftwareModules.InstallDU()": (SoftwareModules_InstallDU_Input, SoftwareModules_InstallDU_Output),
+    "Device.SoftwareModules.ExecEnvClass.{i}.AddExecEnv()": (SoftwareModules_ExecEnvClass_AddExecEnv_Input, SoftwareModules_ExecEnvClass_AddExecEnv_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.SetRunLevel()": (SoftwareModules_ExecEnv_SetRunLevel_Input, SoftwareModules_ExecEnv_SetRunLevel_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.ModifyConstraints()": (SoftwareModules_ExecEnv_ModifyConstraints_Input, SoftwareModules_ExecEnv_ModifyConstraints_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.ModifyAvailableRoles()": (SoftwareModules_ExecEnv_ModifyAvailableRoles_Input, SoftwareModules_ExecEnv_ModifyAvailableRoles_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.ModifyAvailableAccessInterfaces()": (SoftwareModules_ExecEnv_ModifyAvailableAccessInterfaces_Input, SoftwareModules_ExecEnv_ModifyAvailableAccessInterfaces_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.Restart()": (SoftwareModules_ExecEnv_Restart_Input, SoftwareModules_ExecEnv_Restart_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.Reset()": (SoftwareModules_ExecEnv_Reset_Input, SoftwareModules_ExecEnv_Reset_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.Remove()": (SoftwareModules_ExecEnv_Remove_Input, SoftwareModules_ExecEnv_Remove_Output),
+    "Device.SoftwareModules.ExecEnv.{i}.ApplicationData.{i}.Remove()": (SoftwareModules_ExecEnv_ApplicationData_Remove_Input, SoftwareModules_ExecEnv_ApplicationData_Remove_Output),
+    "Device.SoftwareModules.DeploymentUnit.{i}.Update()": (SoftwareModules_DeploymentUnit_Update_Input, SoftwareModules_DeploymentUnit_Update_Output),
+    "Device.SoftwareModules.DeploymentUnit.{i}.Uninstall()": (SoftwareModules_DeploymentUnit_Uninstall_Input, SoftwareModules_DeploymentUnit_Uninstall_Output),
+    "Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState()": (SoftwareModules_ExecutionUnit_SetRequestedState_Input, SoftwareModules_ExecutionUnit_SetRequestedState_Output),
+    "Device.SoftwareModules.ExecutionUnit.{i}.Restart()": (SoftwareModules_ExecutionUnit_Restart_Input, SoftwareModules_ExecutionUnit_Restart_Output),
+}
+_EVENTS = {
+    "Device.SoftwareModules.DUStateChange!": SoftwareModules_DUStateChange,
+    "Device.SoftwareModules.ExecEnv.{i}.Restarted!": SoftwareModules_ExecEnv_Restarted,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

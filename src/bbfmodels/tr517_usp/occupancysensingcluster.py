@@ -16,3 +16,17 @@ class OccupancySensingCluster(_Model):
     HoldTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
+class OccupancySensingCluster_OccupancyChanged(_Model):
+    __bbf_path__ = "MatterService.{i}.OccupancySensingCluster.{i}.OccupancyChanged!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Occupancy: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
+
+
+_COMMANDS = {
+}
+_EVENTS = {
+    "MatterService.{i}.OccupancySensingCluster.{i}.OccupancyChanged!": OccupancySensingCluster_OccupancyChanged,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+

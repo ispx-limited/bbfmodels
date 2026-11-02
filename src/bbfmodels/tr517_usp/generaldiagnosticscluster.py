@@ -38,3 +38,83 @@ class GeneralDiagnosticsCluster(_Model):
     NetworkInterfaces: dict[int, GeneralDiagnosticsCluster_NetworkInterfaces] = _Field(default_factory=dict)
 
 
+class GeneralDiagnosticsCluster_TestEventTrigger_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TestEventTrigger().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EnableKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    EventTrigger: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+
+
+class GeneralDiagnosticsCluster_TestEventTrigger_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TestEventTrigger().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Status: _Annotated[_Literal['SUCCESS', 'FAILURE', 'INVALID_SUBSCRIPTION', 'UNSUPPORTED_ACCESS', 'UNSUPPORTED_ENDPOINT', 'INVALID_ACTION', 'UNSUPPORTED_COMMAND', 'INVALID_COMMAND', 'UNSUPPORTED_ATTRIBUTE', 'CONSTRAINT_ERROR', 'UNSUPPORTED_WRITE', 'RESOURCE_EXHAUSTED', 'NOT_FOUND', 'UNREPORTABLE_ATTRIBUTE', 'INVALID_DATA_TYPE', 'UNSUPPORTED_READ', 'DATA_VERSION_MISMATCH', 'TIMEOUT', 'UNSUPPORTED_NODE', 'BUSY', 'UNSUPPORTED_CLUSTER', 'NO_UPSTREAM_SUBSCRIPTION', 'NEEDS_TIMED_INTERACTION', 'UNSUPPORTED_EVENT', 'PATHS_EXHAUSTED', 'TIMED_REQUEST_MISMATCH', 'FAILSAFE_REQUIRED', 'INVALID_IN_STATE'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+class GeneralDiagnosticsCluster_TimeSnapshot_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TimeSnapshot().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+
+
+class GeneralDiagnosticsCluster_TimeSnapshot_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TimeSnapshot().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    SystemTimeMs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
+    PosixTimeMs: _Annotated[int | None, _Param(_BaseType.LONG)] = None
+
+
+class GeneralDiagnosticsCluster_PayloadTestRequest_Input(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.PayloadTestRequest().Input."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    EnableKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+    Value: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+    Count: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
+
+
+class GeneralDiagnosticsCluster_PayloadTestRequest_Output(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.PayloadTestRequest().Output."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Payload: _Annotated[str | None, _Param(_BaseType.STRING)] = None
+
+
+class GeneralDiagnosticsCluster_HardwareFaultChange(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Current: _Annotated[_CommaList[_Literal['Unspecified', 'Radio', 'Sensor', 'ResettableOverTemp', 'NonResettableOverTemp', 'PowerSource', 'VisualDisplayFault', 'AudioOutputFault', 'UserInterfaceFault', 'NonVolatileMemoryError', 'TamperDetected'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Previous: _Annotated[_CommaList[_Literal['Unspecified', 'Radio', 'Sensor', 'ResettableOverTemp', 'NonResettableOverTemp', 'PowerSource', 'VisualDisplayFault', 'AudioOutputFault', 'UserInterfaceFault', 'NonVolatileMemoryError', 'TamperDetected'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class GeneralDiagnosticsCluster_RadioFaultChange(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Current: _Annotated[_CommaList[_Literal['Unspecified', 'WiFiFault', 'CellularFault', 'ThreadFault', 'NFCFault', 'BLEFault', 'EthernetFault'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Previous: _Annotated[_CommaList[_Literal['Unspecified', 'WiFiFault', 'CellularFault', 'ThreadFault', 'NFCFault', 'BLEFault', 'EthernetFault'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class GeneralDiagnosticsCluster_NetworkFaultChange(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    Current: _Annotated[_CommaList[_Literal['Unspecified', 'HardwareFailure', 'NetworkJammed', 'ConnectionFailed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+    Previous: _Annotated[_CommaList[_Literal['Unspecified', 'HardwareFailure', 'NetworkJammed', 'ConnectionFailed'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
+
+
+class GeneralDiagnosticsCluster_BootReason(_Model):
+    __bbf_path__ = "MatterService.{i}.GeneralDiagnosticsCluster.{i}.BootReason!."
+    __bbf_package__ = "bbfmodels.tr517_usp"
+    BootReason: _Annotated[_Literal['Unspecified', 'PowerOnReboot', 'BrownOutReset', 'SoftwareWatchdogReset', 'HardwareWatchdogReset', 'SoftwareUpdateCompleted', 'SoftwareReset'] | str | None, _Param(_BaseType.STRING)] = None
+
+
+_COMMANDS = {
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TestEventTrigger()": (GeneralDiagnosticsCluster_TestEventTrigger_Input, GeneralDiagnosticsCluster_TestEventTrigger_Output),
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.TimeSnapshot()": (GeneralDiagnosticsCluster_TimeSnapshot_Input, GeneralDiagnosticsCluster_TimeSnapshot_Output),
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.PayloadTestRequest()": (GeneralDiagnosticsCluster_PayloadTestRequest_Input, GeneralDiagnosticsCluster_PayloadTestRequest_Output),
+}
+_EVENTS = {
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.HardwareFaultChange!": GeneralDiagnosticsCluster_HardwareFaultChange,
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.RadioFaultChange!": GeneralDiagnosticsCluster_RadioFaultChange,
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.NetworkFaultChange!": GeneralDiagnosticsCluster_NetworkFaultChange,
+    "MatterService.{i}.GeneralDiagnosticsCluster.{i}.BootReason!": GeneralDiagnosticsCluster_BootReason,
+}
+COMMANDS = _COMMANDS
+EVENTS = _EVENTS
+
