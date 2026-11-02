@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/ispx-limited/bbfmodels/compare/v0.1.0...v0.2.0) (2026-11-02)
+
+
+### Added
+
+* **models:** generated pydantic models for every published data model, and a generator for any document ([#7](https://github.com/ispx-limited/bbfmodels/issues/7)) ([adf73f2](https://github.com/ispx-limited/bbfmodels/commit/adf73f2004eb7cf24673a52298a251af45f39364))
+
 ## 0.1.0 (2026-11-02)
 
 
