@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
 
 
 class SelfTestDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.SelfTestDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SelfTestDiagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Results: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 

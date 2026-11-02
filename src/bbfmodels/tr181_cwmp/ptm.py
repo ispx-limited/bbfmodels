@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class PTM_Link_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.PTM.Link.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PTM.Link.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -30,8 +30,8 @@ class PTM_Link_Stats(_Model):
 
 
 class PTM_Link(_Model):
-    bbf_path: _ClassVar[str] = "Device.PTM.Link.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PTM.Link.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -44,8 +44,8 @@ class PTM_Link(_Model):
 
 
 class PTM(_Model):
-    bbf_path: _ClassVar[str] = "Device.PTM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PTM."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     LinkNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Link: dict[int, PTM_Link] = _Field(default_factory=dict)
 

@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class LEDs_LED_CycleElement(_Model):
-    bbf_path: _ClassVar[str] = "Device.LEDs.LED.{i}.CycleElement.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LEDs.LED.{i}.CycleElement.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -21,16 +21,16 @@ class LEDs_LED_CycleElement(_Model):
 
 
 class LEDs_LED_CurrentCycleElement(_Model):
-    bbf_path: _ClassVar[str] = "Device.LEDs.LED.{i}.CurrentCycleElement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LEDs.LED.{i}.CurrentCycleElement."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     CycleElementReference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Color: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class LEDs_LED(_Model):
-    bbf_path: _ClassVar[str] = "Device.LEDs.LED.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LEDs.LED.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -48,8 +48,8 @@ class LEDs_LED(_Model):
 
 
 class LEDs(_Model):
-    bbf_path: _ClassVar[str] = "Device.LEDs."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LEDs."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BrightnessLimiter: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LEDNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LED: dict[int, LEDs_LED] = _Field(default_factory=dict)

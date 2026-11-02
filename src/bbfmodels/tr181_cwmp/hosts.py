@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,20 +10,20 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class Hosts_Host_IPv4Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hosts.Host.{i}.IPv4Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hosts.Host.{i}.IPv4Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Hosts_Host_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hosts.Host.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hosts.Host.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Hosts_AccessControl_Schedule(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hosts.AccessControl.{i}.Schedule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hosts.AccessControl.{i}.Schedule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Day: _Annotated[_CommaList[_Literal['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -32,8 +32,8 @@ class Hosts_AccessControl_Schedule(_Model):
 
 
 class Hosts_Host_WANStats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hosts.Host.{i}.WANStats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hosts.Host.{i}.WANStats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -44,8 +44,8 @@ class Hosts_Host_WANStats(_Model):
 
 
 class Hosts_Host(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hosts.Host.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hosts.Host.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PhysAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -70,8 +70,8 @@ class Hosts_Host(_Model):
 
 
 class Hosts_AccessControl(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hosts.AccessControl.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hosts.AccessControl.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Origin: _Annotated[_Literal['User', 'System', 'Controller'] | str | None, _Param(_BaseType.STRING)] = None
     PhysAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -85,8 +85,8 @@ class Hosts_AccessControl(_Model):
 
 
 class Hosts(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hosts."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hosts."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     HostNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CleanupHostsThreshold: _Annotated[int | None, _Param(_BaseType.INT)] = None
     AccessControlNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

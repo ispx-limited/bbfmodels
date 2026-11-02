@@ -23,6 +23,10 @@ parameter can be named like a Python helper.
   leading-underscore alias. Together these make a class body resolve a
   class name before a field of the same name exists in it, and keep a
   parameter named `Param` (TR-181 has one) from shadowing the helper.
+  The class's own metadata, its schema path and the package holding its
+  IR, lives in dunder attributes (`__bbf_path__`, `__bbf_package__`):
+  Forum names never start with an underscore, so nothing can collide with
+  them, and pydantic leaves dunder names alone.
 - **Types coerce, facets report.** A field's type is the parameter's
   Python type: `int`, `bool`, `datetime`, `bytes`, `Decimal`, `str`, or a
   comma-list of one of them. Ranges, sizes, patterns and enumerations are

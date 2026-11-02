@@ -2,22 +2,22 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class USPServices_Trust(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPServices.Trust.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPServices.Trust.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TargetPaths: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class USPServices_USPService(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPServices.USPService.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPServices.USPService.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Protocol: _Annotated[_Literal['WebSocket', 'STOMP', 'MQTT', 'UDS'] | str | None, _Param(_BaseType.STRING)] = None
     DataModelPaths: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -27,8 +27,8 @@ class USPServices_USPService(_Model):
 
 
 class USPServices(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPServices."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPServices."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TrustNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     USPServiceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Trust: dict[int, USPServices_Trust] = _Field(default_factory=dict)

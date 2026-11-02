@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class MoCA_Interface_QoS_FlowStats(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.QoS.FlowStats.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.QoS.FlowStats.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     FlowID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PacketDA: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MaxRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -31,15 +31,15 @@ class MoCA_Interface_QoS_FlowStats(_Model):
 
 
 class MoCA_Interface_AccessControl(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.AccessControl.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.AccessControl.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class MoCA_Interface_Rlapm(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.Rlapm.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.Rlapm.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Profile: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Frequency: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -49,8 +49,8 @@ class MoCA_Interface_Rlapm(_Model):
 
 
 class MoCA_Interface_Sapm(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.Sapm.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.Sapm.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Profile: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Frequency: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -60,8 +60,8 @@ class MoCA_Interface_Sapm(_Model):
 
 
 class MoCA_Interface_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PreferredNC: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -101,8 +101,8 @@ class MoCA_Interface_AssociatedDevice(_Model):
 
 
 class MoCA_Interface_Mesh(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.Mesh.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.Mesh.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TxNodeIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RxNodeIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TxRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -115,15 +115,15 @@ class MoCA_Interface_Mesh(_Model):
 
 
 class MoCA_Interface_Bridge(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.Bridge.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.Bridge.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NodeIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MACAddresses: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class MoCA_Interface_MeshScMod(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.MeshScMod.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.MeshScMod.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TxNodeIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RxNodeIndex: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ChannelIndex: _Annotated[_Literal['primary', 'secondary', 'm25first', 'm25second', 'm25third', 'm25fourth', 'm25fifth'] | str | None, _Param(_BaseType.STRING)] = None
@@ -134,8 +134,8 @@ class MoCA_Interface_MeshScMod(_Model):
 
 
 class MoCA_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -155,13 +155,13 @@ class MoCA_Interface_Stats(_Model):
 
 
 class MoCA_Interface_Aca(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.Aca."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.Aca."
+    __bbf_package__ = "bbfmodels.tr181_usp"
 
 
 class MoCA_Interface_Reset(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.Reset."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.Reset."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NodeMask: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     StartTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     StatusTrapEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -169,8 +169,8 @@ class MoCA_Interface_Reset(_Model):
 
 
 class MoCA_Interface_QoS(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}.QoS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}.QoS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     EgressNumFlows: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     IngressNumFlows: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FlowStatsNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -178,8 +178,8 @@ class MoCA_Interface_QoS(_Model):
 
 
 class MoCA_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -320,8 +320,8 @@ class MoCA_Interface(_Model):
 
 
 class MoCA(_Model):
-    bbf_path: _ClassVar[str] = "Device.MoCA."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MoCA."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, MoCA_Interface] = _Field(default_factory=dict)
 

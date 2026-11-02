@@ -2,23 +2,23 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class UnixDomainSockets_Authentication(_Model):
-    bbf_path: _ClassVar[str] = "Device.UnixDomainSockets.Authentication.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UnixDomainSockets.Authentication.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class UnixDomainSockets_UnixDomainSocket(_Model):
-    bbf_path: _ClassVar[str] = "Device.UnixDomainSockets.UnixDomainSocket.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UnixDomainSockets.UnixDomainSocket.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Mode: _Annotated[_Literal['Listen', 'Connect'] | str | None, _Param(_BaseType.STRING)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -27,8 +27,8 @@ class UnixDomainSockets_UnixDomainSocket(_Model):
 
 
 class UnixDomainSockets(_Model):
-    bbf_path: _ClassVar[str] = "Device.UnixDomainSockets."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UnixDomainSockets."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     UnixDomainSocketNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AuthenticationNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Authentication: dict[int, UnixDomainSockets_Authentication] = _Field(default_factory=dict)

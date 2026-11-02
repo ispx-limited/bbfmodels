@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_IEEE1905Neighbor_Metric(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IEEE1905Neighbor.{i}.Metric.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IEEE1905Neighbor.{i}.Metric.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NeighborMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IEEE802dot1Bridge: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PacketErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -25,16 +25,16 @@ class IEEE1905_AL_NetworkTopology_IEEE1905Device_IEEE1905Neighbor_Metric(_Model)
 
 
 class IEEE1905_Network_AL_Interface_Link_GenericPhy(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.Link.{i}.GenericPhy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.Link.{i}.GenericPhy."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     OUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Variant: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class IEEE1905_Network_AL_Interface_Link_Metric(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.Link.{i}.Metric."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.Link.{i}.Metric."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IEEE802dot1Bridge: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PacketErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -47,8 +47,8 @@ class IEEE1905_Network_AL_Interface_Link_Metric(_Model):
 
 
 class IEEE1905_Network_AL_Interface_Link(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.Link.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.Link.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IEEE1905Id: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MediaType: _Annotated[_Literal['IEEE 802.3u', 'IEEE 802.3ab', 'IEEE 802.11b', 'IEEE 802.11g', 'IEEE 802.11a', 'IEEE 802.11n 2.4', 'IEEE 802.11n 5.0', 'IEEE 802.11ac', 'IEEE 802.11ad', 'IEEE 802.11af', 'IEEE 802.11ax', 'IEEE 802.11be', 'IEEE 1901 Wavelet', 'IEEE 1901 FFT', 'MoCAv1.1', 'Generic Phy', 'IEEE 802.11ah'] | str | None, _Param(_BaseType.STRING)] = None
@@ -57,29 +57,29 @@ class IEEE1905_Network_AL_Interface_Link(_Model):
 
 
 class IEEE1905_Network_AL_Interface_NonIEEE1905Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.NonIEEE1905Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.NonIEEE1905Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NeighborInterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class IEEE1905_Network_AL_Interface_IEEE1905Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.IEEE1905Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.IEEE1905Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NeighborDeviceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IEEE1905DeviceRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IEEE802dot1Bridge: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
 class IEEE1905_Network_AL_Interface_L2Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.L2Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.L2Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NeighborInterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     BehindInterfaceIds: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class IEEE1905_AL_Interface_Link_Metric(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.Interface.{i}.Link.{i}.Metric."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.Interface.{i}.Link.{i}.Metric."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IEEE802dot1Bridge: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PacketErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -92,8 +92,8 @@ class IEEE1905_AL_Interface_Link_Metric(_Model):
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_IPv4Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IPv4Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IPv4Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv4Address: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv4AddressType: _Annotated[_Literal['Unknown', 'DHCP', 'Static', 'Auto-IP'] | str | None, _Param(_BaseType.STRING)] = None
@@ -101,8 +101,8 @@ class IEEE1905_AL_NetworkTopology_IEEE1905Device_IPv4Address(_Model):
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv6Address: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv6AddressType: _Annotated[_Literal['Unknown', 'LinkLocal', 'DHCP', 'Static', 'SLAAC'] | str | None, _Param(_BaseType.STRING)] = None
@@ -110,16 +110,16 @@ class IEEE1905_AL_NetworkTopology_IEEE1905Device_IPv6Address(_Model):
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_VendorProperties(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.VendorProperties.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.VendorProperties.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MessageType: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     OUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Information: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MediaType: _Annotated[_Literal['IEEE 802.3u', 'IEEE 802.3ab', 'IEEE 802.11b', 'IEEE 802.11g', 'IEEE 802.11a', 'IEEE 802.11n 2.4', 'IEEE 802.11n 5.0', 'IEEE 802.11ac', 'IEEE 802.11ad', 'IEEE 802.11af', 'IEEE 1901 Wavelet', 'IEEE 1901 FFT', 'MoCAv1.1', 'Generic PHY'] | str | None, _Param(_BaseType.STRING)] = None
     PowerState: _Annotated[_Literal['On', 'Power_Save', 'Off', 'Unsupported'] | str | None, _Param(_BaseType.STRING)] = None
@@ -134,23 +134,23 @@ class IEEE1905_AL_NetworkTopology_IEEE1905Device_Interface(_Model):
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_NonIEEE1905Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.NonIEEE1905Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.NonIEEE1905Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LocalInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NeighborInterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_L2Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.L2Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.L2Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LocalInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NeighborInterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     BehindInterfaceIds: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_IEEE1905Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IEEE1905Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.IEEE1905Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LocalInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NeighborDeviceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MetricNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -158,29 +158,29 @@ class IEEE1905_AL_NetworkTopology_IEEE1905Device_IEEE1905Neighbor(_Model):
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device_BridgingTuple(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.BridgingTuple.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}.BridgingTuple.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class IEEE1905_Network_AL_Interface_GenericPhy(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.GenericPhy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}.GenericPhy."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     OUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Variant: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class IEEE1905_AL_Interface_VendorProperties(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.Interface.{i}.VendorProperties.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.Interface.{i}.VendorProperties.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     OUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Information: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
 class IEEE1905_AL_Interface_Link(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.Interface.{i}.Link.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.Interface.{i}.Link.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IEEE1905Id: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MediaType: _Annotated[_Literal['IEEE 802.3u', 'IEEE 802.3ab', 'IEEE 802.11b', 'IEEE 802.11g', 'IEEE 802.11a', 'IEEE 802.11n 2.4', 'IEEE 802.11n 5.0', 'IEEE 802.11ac', 'IEEE 802.11ad', 'IEEE 802.11af', 'IEEE 1901 Wavelet', 'IEEE 1901 FFT', 'MoCAv1.1', 'Generic PHY'] | str | None, _Param(_BaseType.STRING)] = None
@@ -191,8 +191,8 @@ class IEEE1905_AL_Interface_Link(_Model):
 
 
 class IEEE1905_Network_AL_IPv4Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.IPv4Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.IPv4Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv4Address: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv4AddressType: _Annotated[_Literal['Unknown', 'DHCP', 'Static', 'Auto-IP'] | str | None, _Param(_BaseType.STRING)] = None
@@ -200,8 +200,8 @@ class IEEE1905_Network_AL_IPv4Address(_Model):
 
 
 class IEEE1905_Network_AL_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv6Address: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv6AddressType: _Annotated[_Literal['Unknown', 'LinkLocal', 'DHCP', 'Static', 'SLAAC'] | str | None, _Param(_BaseType.STRING)] = None
@@ -209,8 +209,8 @@ class IEEE1905_Network_AL_IPv6Address(_Model):
 
 
 class IEEE1905_Network_AL_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MediaType: _Annotated[_Literal['IEEE 802.3u', 'IEEE 802.3ab', 'IEEE 802.11b', 'IEEE 802.11g', 'IEEE 802.11a', 'IEEE 802.11n 2.4', 'IEEE 802.11n 5.0', 'IEEE 802.11ac', 'IEEE 802.11ad', 'IEEE 802.11af', 'IEEE 802.11ax', 'IEEE 802.11be', 'IEEE 1901 Wavelet', 'IEEE 1901 FFT', 'MoCAv1.1', 'Generic Phy', 'IEEE 802.11ah'] | str | None, _Param(_BaseType.STRING)] = None
     PowerState: _Annotated[_Literal['On', 'PowerSave', 'Off', 'Unsupported'] | str | None, _Param(_BaseType.STRING)] = None
@@ -231,14 +231,14 @@ class IEEE1905_Network_AL_Interface(_Model):
 
 
 class IEEE1905_Network_AL_BridgingTuple(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}.BridgingTuple.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}.BridgingTuple.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class IEEE1905_AL_ForwardingTable_ForwardingRule(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.ForwardingTable.ForwardingRule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.ForwardingTable.ForwardingRule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     MACDestinationAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MACDestinationAddressFlag: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -253,8 +253,8 @@ class IEEE1905_AL_ForwardingTable_ForwardingRule(_Model):
 
 
 class IEEE1905_AL_NetworkTopology_ChangeLog(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.ChangeLog.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.ChangeLog.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     EventType: _Annotated[_Literal['NewNeighbor', 'LostNeighbor'] | str | None, _Param(_BaseType.STRING)] = None
     ReporterDeviceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -264,8 +264,8 @@ class IEEE1905_AL_NetworkTopology_ChangeLog(_Model):
 
 
 class IEEE1905_AL_NetworkTopology_IEEE1905Device(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IEEE1905Id: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Version: _Annotated[_Literal['1905.1', '1905.1a'] | str | None, _Param(_BaseType.STRING)] = None
     RegistrarFreqBand: _Annotated[_CommaList[_Literal['802.11 2.4 GHz', '802.11 5 GHz', '802.11 60 GHz'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -293,8 +293,8 @@ class IEEE1905_AL_NetworkTopology_IEEE1905Device(_Model):
 
 
 class IEEE1905_AL_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     LastChange: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -313,8 +313,8 @@ class IEEE1905_AL_Interface(_Model):
 
 
 class IEEE1905_Network_AL(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network.AL.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network.AL.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IEEE1905Id: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Version: _Annotated[_Literal['1905.1', '1905.1a'] | str | None, _Param(_BaseType.STRING)] = None
     RegistrarFreqBand: _Annotated[_CommaList[_Literal['802.11 2.4 GHz', '802.11 5 GHz', '802.11 6 GHz', '802.11 60 GHz'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -334,16 +334,16 @@ class IEEE1905_Network_AL(_Model):
 
 
 class IEEE1905_AL_ForwardingTable(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.ForwardingTable."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.ForwardingTable."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SetForwardingEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ForwardingRuleNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ForwardingRule: dict[int, IEEE1905_AL_ForwardingTable_ForwardingRule] = _Field(default_factory=dict)
 
 
 class IEEE1905_AL_NetworkTopology(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkTopology."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkTopology."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Incomplete', 'Available', 'Error_Misconfigured'] | str | None, _Param(_BaseType.STRING)] = None
     MaxChangeLogEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -355,15 +355,15 @@ class IEEE1905_AL_NetworkTopology(_Model):
 
 
 class IEEE1905_AL_Security(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.Security."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.Security."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SetupMethod: _Annotated[_CommaList[_Literal['UCPK', 'PBC', 'NFCNK'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class IEEE1905_AL_NetworkingRegistrar(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL.NetworkingRegistrar."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL.NetworkingRegistrar."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Registrar2dot4: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Registrar5: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Registrar6: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -371,8 +371,8 @@ class IEEE1905_AL_NetworkingRegistrar(_Model):
 
 
 class IEEE1905_AL(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.AL."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.AL."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IEEE1905Id: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     LastChange: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -387,8 +387,8 @@ class IEEE1905_AL(_Model):
 
 
 class IEEE1905_Network(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905.Network."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905.Network."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Incomplete', 'Available', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ALNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -396,8 +396,8 @@ class IEEE1905_Network(_Model):
 
 
 class IEEE1905(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE1905."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE1905."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Version: _Annotated[_Literal['1905.1', '1905.1a'] | str | None, _Param(_BaseType.STRING)] = None
     AL: IEEE1905_AL | None = _Field(default=None)
     Network: IEEE1905_Network | None = _Field(default=None)

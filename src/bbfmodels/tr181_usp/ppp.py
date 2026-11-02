@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class PPP_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.PPP.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PPP.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -29,16 +29,16 @@ class PPP_Interface_Stats(_Model):
 
 
 class PPP_Interface_PPPoE(_Model):
-    bbf_path: _ClassVar[str] = "Device.PPP.Interface.{i}.PPPoE."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PPP.Interface.{i}.PPPoE."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ACName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ServiceName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class PPP_Interface_IPCP(_Model):
-    bbf_path: _ClassVar[str] = "Device.PPP.Interface.{i}.IPCP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PPP.Interface.{i}.IPCP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LocalIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     RemoteIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DNSServers: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -47,20 +47,20 @@ class PPP_Interface_IPCP(_Model):
 
 
 class PPP_Interface_IPv6CP(_Model):
-    bbf_path: _ClassVar[str] = "Device.PPP.Interface.{i}.IPv6CP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PPP.Interface.{i}.IPv6CP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LocalInterfaceIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     RemoteInterfaceIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class PPP_Interface_PPPoA(_Model):
-    bbf_path: _ClassVar[str] = "Device.PPP.Interface.{i}.PPPoA."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PPP.Interface.{i}.PPPoA."
+    __bbf_package__ = "bbfmodels.tr181_usp"
 
 
 class PPP_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.PPP.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PPP.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -94,8 +94,8 @@ class PPP_Interface(_Model):
 
 
 class PPP(_Model):
-    bbf_path: _ClassVar[str] = "Device.PPP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PPP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SupportedNCPs: _Annotated[_CommaList[_Literal['ATCP', 'IPCP', 'IPXCP', 'NBFCP', 'IPv6CP'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Interface: dict[int, PPP_Interface] = _Field(default_factory=dict)

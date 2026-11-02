@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class PDU_Session_QoSRule_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.PDU.Session.{i}.QoSRule.{i}.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PDU.Session.{i}.QoSRule.{i}.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Direction: _Annotated[_Literal['downlink', 'uplink', 'bidirectional'] | str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -18,8 +18,8 @@ class PDU_Session_QoSRule_Filter(_Model):
 
 
 class PDU_Session_QoSRule(_Model):
-    bbf_path: _ClassVar[str] = "Device.PDU.Session.{i}.QoSRule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PDU.Session.{i}.QoSRule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Identifier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Precedence: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -31,8 +31,8 @@ class PDU_Session_QoSRule(_Model):
 
 
 class PDU_Session_QoSFlow(_Model):
-    bbf_path: _ClassVar[str] = "Device.PDU.Session.{i}.QoSFlow.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PDU.Session.{i}.QoSFlow.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     QFI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FiveQI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -45,8 +45,8 @@ class PDU_Session_QoSFlow(_Model):
 
 
 class PDU_Session_PCO(_Model):
-    bbf_path: _ClassVar[str] = "Device.PDU.Session.{i}.PCO."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PDU.Session.{i}.PCO."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     IPv6PCSCF: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv6DNS: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     IPv4PCSCF: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -54,15 +54,15 @@ class PDU_Session_PCO(_Model):
 
 
 class PDU_Session_NetworkSlice(_Model):
-    bbf_path: _ClassVar[str] = "Device.PDU.Session.{i}.NetworkSlice."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PDU.Session.{i}.NetworkSlice."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SliceServiceType: _Annotated[_Literal['eMBB', 'URLLC', 'MIoT', 'V2X'] | str | None, _Param(_BaseType.STRING)] = None
     SliceDifferentiator: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class PDU_Session(_Model):
-    bbf_path: _ClassVar[str] = "Device.PDU.Session.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PDU.Session.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SessionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -86,8 +86,8 @@ class PDU_Session(_Model):
 
 
 class PDU(_Model):
-    bbf_path: _ClassVar[str] = "Device.PDU."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PDU."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SessionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Session: dict[int, PDU_Session] = _Field(default_factory=dict)
 

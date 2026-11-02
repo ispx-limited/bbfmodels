@@ -20,7 +20,7 @@ import gzip
 import importlib.resources
 import typing
 from dataclasses import dataclass
-from typing import Annotated, Any, ClassVar, TypeVar, get_args, get_origin
+from typing import Annotated, Any, TypeVar, get_args, get_origin
 
 from pydantic import BaseModel, BeforeValidator, ConfigDict, PlainSerializer
 
@@ -75,23 +75,24 @@ class Model(BaseModel):
 
     model_config = ConfigDict(extra="allow", defer_build=True, populate_by_name=True)
 
-    # The schema path of the object, ``Device.WiFi.Radio.{i}.``.
-    bbf_path: ClassVar[str] = ""
-    # The package that holds the IR the class was generated from.
-    bbf_package: ClassVar[str] = ""
+    # Dunder names so no Forum name can collide with them: the schema path of
+    # the object, ``Device.WiFi.Radio.{i}.``, and the package holding the IR
+    # the class was generated from.
+    __bbf_path__ = ""
+    __bbf_package__ = ""
 
     @classmethod
     def schema_of(cls) -> Schema:
-        return load_schema(cls.bbf_package)
+        return load_schema(cls.__bbf_package__)
 
     @classmethod
     def from_flat(cls, values: typing.Mapping[str, str]) -> typing.Self:
         """An instance from path and text pairs; paths are relative to the object or absolute."""
         nested: dict[str, Any] = {}
-        prefix = cls.bbf_path.replace("{i}.", "")
+        prefix = cls.__bbf_path__.replace("{i}.", "")
         for path, text in values.items():
             rel = path
-            if path.startswith(prefix) and "{i}" not in cls.bbf_path:
+            if path.startswith(prefix) and "{i}" not in cls.__bbf_path__:
                 rel = path[len(prefix) :]
             _place(cls, nested, rel.split("."), text)
         return cls.model_validate(nested)
@@ -104,7 +105,7 @@ class Model(BaseModel):
         without a table above them.
         """
         out: dict[str, str] = {}
-        base = self.bbf_path if prefix is None else prefix
+        base = self.__bbf_path__ if prefix is None else prefix
         for name, info in type(self).model_fields.items():
             value = getattr(self, name)
             if value is None:

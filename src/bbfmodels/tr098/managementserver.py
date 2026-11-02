@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class ManagementServer_ManageableDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer.ManageableDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer.ManageableDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProductClass: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -19,8 +19,8 @@ class ManagementServer_ManageableDevice(_Model):
 
 
 class ManagementServer_EmbeddedDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer.EmbeddedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer.EmbeddedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     ControllerID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProxiedDeviceID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -36,8 +36,8 @@ class ManagementServer_EmbeddedDevice(_Model):
 
 
 class ManagementServer_VirtualDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer.VirtualDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer.VirtualDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProductClass: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -49,8 +49,8 @@ class ManagementServer_VirtualDevice(_Model):
 
 
 class ManagementServer_InformParameter(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer.InformParameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer.InformParameter.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ParameterName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -58,8 +58,8 @@ class ManagementServer_InformParameter(_Model):
 
 
 class ManagementServer_AutonomousTransferCompletePolicy(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer.AutonomousTransferCompletePolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer.AutonomousTransferCompletePolicy."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     TransferTypeFilter: _Annotated[_Literal['Upload', 'Download', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
     ResultTypeFilter: _Annotated[_Literal['Success', 'Failure', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
@@ -67,8 +67,8 @@ class ManagementServer_AutonomousTransferCompletePolicy(_Model):
 
 
 class ManagementServer_DUStateChangeComplPolicy(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer.DUStateChangeComplPolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer.DUStateChangeComplPolicy."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     OperationTypeFilter: _Annotated[_CommaList[_Literal['Install', 'Update', 'Uninstall'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     ResultTypeFilter: _Annotated[_Literal['Success', 'Failure', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
@@ -76,8 +76,8 @@ class ManagementServer_DUStateChangeComplPolicy(_Model):
 
 
 class ManagementServer_StandbyPolicy(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer.StandbyPolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer.StandbyPolicy."
+    __bbf_package__ = "bbfmodels.tr098"
     CRUnawarenessMaxDuration: _Annotated[int | None, _Param(_BaseType.INT)] = None
     MaxMissedPeriodic: _Annotated[int | None, _Param(_BaseType.INT)] = None
     NotifyMissedScheduled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -89,8 +89,8 @@ class ManagementServer_StandbyPolicy(_Model):
 
 
 class ManagementServer(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.ManagementServer."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.ManagementServer."
+    __bbf_package__ = "bbfmodels.tr098"
     EnableCWMP: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None

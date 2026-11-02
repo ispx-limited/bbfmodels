@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class IEEE8021x_Supplicant_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE8021x.Supplicant.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ReceivedFrames: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmittedFrames: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmittedStartFrames: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -28,15 +28,15 @@ class IEEE8021x_Supplicant_Stats(_Model):
 
 
 class IEEE8021x_Supplicant_EAPMD5(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE8021x.Supplicant.{i}.EAPMD5."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.EAPMD5."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SharedSecret: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class IEEE8021x_Supplicant_EAPTLS(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE8021x.Supplicant.{i}.EAPTLS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}.EAPTLS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MutualAuthenticationEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -44,8 +44,8 @@ class IEEE8021x_Supplicant_EAPTLS(_Model):
 
 
 class IEEE8021x_Supplicant(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE8021x.Supplicant.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE8021x.Supplicant.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -65,8 +65,8 @@ class IEEE8021x_Supplicant(_Model):
 
 
 class IEEE8021x(_Model):
-    bbf_path: _ClassVar[str] = "Device.IEEE8021x."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IEEE8021x."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SupplicantNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Supplicant: dict[int, IEEE8021x_Supplicant] = _Field(default_factory=dict)
 

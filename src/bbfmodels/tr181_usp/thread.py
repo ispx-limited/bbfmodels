@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,15 +10,15 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class Thread_MLE_AssociatedNode_Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.AssociatedNode.{i}.Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.AssociatedNode.{i}.Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NodeReference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AvgRSSI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class Thread_MLE_AssociatedNode_Route(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.AssociatedNode.{i}.Route.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.AssociatedNode.{i}.Route.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PathCost: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LQIn: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -26,23 +26,23 @@ class Thread_MLE_AssociatedNode_Route(_Model):
 
 
 class Thread_MLE_AssociatedNode_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.AssociatedNode.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.AssociatedNode.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Thread_MLE_Dataset_SecurityPolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.Dataset.{i}.SecurityPolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.Dataset.{i}.SecurityPolicy."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     RotationTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Flags: _Annotated[_CommaList[_Literal['o', 'n', 'r', 'c', 'C', 'e', 'p', 'R'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class Thread_MLE_Dataset(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.Dataset.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.Dataset.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Status: _Annotated[_Literal['active', 'pending'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -59,8 +59,8 @@ class Thread_MLE_Dataset(_Model):
 
 
 class Thread_MLE_AssociatedNode(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.AssociatedNode.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.AssociatedNode.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LastContactTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ExtendedMAC: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -76,8 +76,8 @@ class Thread_MLE_AssociatedNode(_Model):
 
 
 class Thread_Radio_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.Radio.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.Radio.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -89,8 +89,8 @@ class Thread_Radio_Stats(_Model):
 
 
 class Thread_MLE_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -109,8 +109,8 @@ class Thread_MLE_Stats(_Model):
 
 
 class Thread_MLE_LeaderData(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}.LeaderData."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}.LeaderData."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DataVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LeaderRouterID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PartitionID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -119,8 +119,8 @@ class Thread_MLE_LeaderData(_Model):
 
 
 class Thread_BorderRouter(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.BorderRouter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.BorderRouter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Started', 'Stopped', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -130,8 +130,8 @@ class Thread_BorderRouter(_Model):
 
 
 class Thread_Radio(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.Radio.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.Radio.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -151,8 +151,8 @@ class Thread_Radio(_Model):
 
 
 class Thread_MLE(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.MLE.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.MLE.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -171,16 +171,16 @@ class Thread_MLE(_Model):
 
 
 class Thread_Node(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread.Node.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread.Node.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ExtendedMAC: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     Connected: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MLEReference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Thread(_Model):
-    bbf_path: _ClassVar[str] = "Device.Thread."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Thread."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BorderRouterNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RadioNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MLENumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

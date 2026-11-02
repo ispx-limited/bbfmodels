@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,16 +10,16 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class SoftwareModules_ExecEnvClass_Capability(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecEnvClass.{i}.Capability.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecEnvClass.{i}.Capability.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Specification: _Annotated[_Literal['OCIImage', 'VMRawImage', 'OSGiBundle', 'JAR', 'WAR'] | str | None, _Param(_BaseType.STRING)] = None
     SpecificationVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SpecificationURI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class SoftwareModules_ExecEnv_ApplicationData(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecEnv.{i}.ApplicationData.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}.ApplicationData.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Capacity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Encrypted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -31,8 +31,8 @@ class SoftwareModules_ExecEnv_ApplicationData(_Model):
 
 
 class SoftwareModules_ExecutionUnit_HostObject(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecutionUnit.{i}.HostObject.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.HostObject.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Source: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Destination: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Options: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -40,16 +40,16 @@ class SoftwareModules_ExecutionUnit_HostObject(_Model):
 
 
 class SoftwareModules_ExecutionUnit_EnvVariable(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecutionUnit.{i}.EnvVariable.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.EnvVariable.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Key: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class SoftwareModules_ExecutionUnit_AutoRestart(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecutionUnit.{i}.AutoRestart."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.AutoRestart."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     RetryMinimumWaitInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RetryMaximumWaitInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -62,20 +62,20 @@ class SoftwareModules_ExecutionUnit_AutoRestart(_Model):
 
 
 class SoftwareModules_ExecutionUnit_NetworkConfig(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecutionUnit.{i}.NetworkConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.NetworkConfig."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     AccessInterfaceRefList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     PortMappingRefList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class SoftwareModules_ExecutionUnit_Extensions(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecutionUnit.{i}.Extensions."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}.Extensions."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
 
 
 class SoftwareModules_LocalManagement_Action(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.LocalManagement.Action.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.LocalManagement.Action.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Action: _Annotated[_Literal['Invalid', 'Install', 'Update', 'Uninstall'] | str | None, _Param(_BaseType.STRING)] = None
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -87,8 +87,8 @@ class SoftwareModules_LocalManagement_Action(_Model):
 
 
 class SoftwareModules_Config_Repository(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.Config.Repository.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.Config.Repository.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -99,8 +99,8 @@ class SoftwareModules_Config_Repository(_Model):
 
 
 class SoftwareModules_ExecEnvClass(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecEnvClass.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecEnvClass.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Vendor: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -111,8 +111,8 @@ class SoftwareModules_ExecEnvClass(_Model):
 
 
 class SoftwareModules_ExecEnv(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecEnv.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecEnv.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -141,8 +141,8 @@ class SoftwareModules_ExecEnv(_Model):
 
 
 class SoftwareModules_DeploymentUnit(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.DeploymentUnit.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.DeploymentUnit.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -162,8 +162,8 @@ class SoftwareModules_DeploymentUnit(_Model):
 
 
 class SoftwareModules_ExecutionUnit(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.ExecutionUnit.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.ExecutionUnit.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     EUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -208,16 +208,16 @@ class SoftwareModules_ExecutionUnit(_Model):
 
 
 class SoftwareModules_LocalManagement(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.LocalManagement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.LocalManagement."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SystemName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ActionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Action: dict[int, SoftwareModules_LocalManagement_Action] = _Field(default_factory=dict)
 
 
 class SoftwareModules_Config(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules.Config."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules.Config."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     RepositoryNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -227,8 +227,8 @@ class SoftwareModules_Config(_Model):
 
 
 class SoftwareModules(_Model):
-    bbf_path: _ClassVar[str] = "Device.SoftwareModules."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SoftwareModules."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ExecEnvClassNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ExecEnvNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DeploymentUnitNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

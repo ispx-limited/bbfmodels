@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class Schedules_Schedule(_Model):
-    bbf_path: _ClassVar[str] = "Device.Schedules.Schedule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Schedules.Schedule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Active', 'Inactive', 'StackDisabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -23,8 +23,8 @@ class Schedules_Schedule(_Model):
 
 
 class Schedules(_Model):
-    bbf_path: _ClassVar[str] = "Device.Schedules."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Schedules."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ScheduleNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Schedule: dict[int, Schedules_Schedule] = _Field(default_factory=dict)

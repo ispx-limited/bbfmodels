@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class NeighborDiscovery_InterfaceSetting_NDP(_Model):
-    bbf_path: _ClassVar[str] = "Device.NeighborDiscovery.InterfaceSetting.{i}.NDP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NeighborDiscovery.InterfaceSetting.{i}.NDP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured'] | str | None, _Param(_BaseType.STRING)] = None
     DADTransmits: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -27,8 +27,8 @@ class NeighborDiscovery_InterfaceSetting_NDP(_Model):
 
 
 class NeighborDiscovery_InterfaceSetting_ARP(_Model):
-    bbf_path: _ClassVar[str] = "Device.NeighborDiscovery.InterfaceSetting.{i}.ARP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NeighborDiscovery.InterfaceSetting.{i}.ARP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured'] | str | None, _Param(_BaseType.STRING)] = None
     BaseReachableTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -38,8 +38,8 @@ class NeighborDiscovery_InterfaceSetting_ARP(_Model):
 
 
 class NeighborDiscovery_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.NeighborDiscovery.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NeighborDiscovery.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -55,8 +55,8 @@ class NeighborDiscovery_InterfaceSetting(_Model):
 
 
 class NeighborDiscovery(_Model):
-    bbf_path: _ClassVar[str] = "Device.NeighborDiscovery."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NeighborDiscovery."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     InterfaceSettingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InterfaceSetting: dict[int, NeighborDiscovery_InterfaceSetting] = _Field(default_factory=dict)

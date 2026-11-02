@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class LocalAgent_Controller_MTP_CoAP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.MTP.{i}.CoAP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}.CoAP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -19,16 +19,16 @@ class LocalAgent_Controller_MTP_CoAP(_Model):
 
 
 class LocalAgent_Controller_MTP_STOMP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.MTP.{i}.STOMP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}.STOMP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Destination: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     USPServiceRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LocalAgent_Controller_MTP_WebSocket(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.MTP.{i}.WebSocket."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}.WebSocket."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -42,8 +42,8 @@ class LocalAgent_Controller_MTP_WebSocket(_Model):
 
 
 class LocalAgent_Controller_MTP_MQTT(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.MTP.{i}.MQTT."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}.MQTT."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Topic: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PublishRetainResponse: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -53,15 +53,15 @@ class LocalAgent_Controller_MTP_MQTT(_Model):
 
 
 class LocalAgent_Controller_MTP_UDS(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.MTP.{i}.UDS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}.UDS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     UnixDomainSocketRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     USPServiceRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LocalAgent_ControllerTrust_Role_Permission(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.ControllerTrust.Role.{i}.Permission.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.Role.{i}.Permission.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -73,8 +73,8 @@ class LocalAgent_ControllerTrust_Role_Permission(_Model):
 
 
 class LocalAgent_Controller_MTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.MTP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.MTP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Protocol: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -87,16 +87,16 @@ class LocalAgent_Controller_MTP(_Model):
 
 
 class LocalAgent_Controller_BootParameter(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.BootParameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.BootParameter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ParameterName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LocalAgent_MTP_CoAP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.MTP.{i}.CoAP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.MTP.{i}.CoAP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Interfaces: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -105,16 +105,16 @@ class LocalAgent_MTP_CoAP(_Model):
 
 
 class LocalAgent_MTP_STOMP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.MTP.{i}.STOMP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.MTP.{i}.STOMP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Destination: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DestinationFromServer: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LocalAgent_MTP_WebSocket(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.MTP.{i}.WebSocket."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.MTP.{i}.WebSocket."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Interfaces: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -123,8 +123,8 @@ class LocalAgent_MTP_WebSocket(_Model):
 
 
 class LocalAgent_MTP_MQTT(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.MTP.{i}.MQTT."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.MTP.{i}.MQTT."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ResponseTopicConfigured: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ResponseTopicDiscovered: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -132,20 +132,20 @@ class LocalAgent_MTP_MQTT(_Model):
 
 
 class LocalAgent_MTP_UDS(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.MTP.{i}.UDS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.MTP.{i}.UDS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     UnixDomainSocketRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LocalAgent_Controller_TransferCompletePolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.TransferCompletePolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.TransferCompletePolicy."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ResultTypeFilter: _Annotated[_Literal['Success', 'Failure', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class LocalAgent_Controller_E2ESession(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}.E2ESession."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}.E2ESession."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SessionMode: _Annotated[_Literal['Require', 'Allow', 'Forbid'] | str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Up', 'Negotiating', 'Down'] | str | None, _Param(_BaseType.STRING)] = None
@@ -160,8 +160,8 @@ class LocalAgent_Controller_E2ESession(_Model):
 
 
 class LocalAgent_ControllerTrust_Role(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.ControllerTrust.Role.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.Role.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -170,8 +170,8 @@ class LocalAgent_ControllerTrust_Role(_Model):
 
 
 class LocalAgent_ControllerTrust_Credential(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.ControllerTrust.Credential.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.Credential.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Role: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -180,8 +180,8 @@ class LocalAgent_ControllerTrust_Credential(_Model):
 
 
 class LocalAgent_ControllerTrust_Challenge(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.ControllerTrust.Challenge.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust.Challenge.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Role: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -196,8 +196,8 @@ class LocalAgent_ControllerTrust_Challenge(_Model):
 
 
 class LocalAgent_MTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.MTP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.MTP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -211,8 +211,8 @@ class LocalAgent_MTP(_Model):
 
 
 class LocalAgent_Threshold(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Threshold.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Threshold.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     OperatingMode: _Annotated[_Literal['Normal', 'Single'] | str | None, _Param(_BaseType.STRING)] = None
@@ -224,8 +224,8 @@ class LocalAgent_Threshold(_Model):
 
 
 class LocalAgent_Monitor(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Monitor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Monitor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Interval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -234,8 +234,8 @@ class LocalAgent_Monitor(_Model):
 
 
 class LocalAgent_Watchdog(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Watchdog.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Watchdog.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ReloadTimerValue: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -247,8 +247,8 @@ class LocalAgent_Watchdog(_Model):
 
 
 class LocalAgent_Controller(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Controller.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Controller.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ControllerCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -272,8 +272,8 @@ class LocalAgent_Controller(_Model):
 
 
 class LocalAgent_Certificate(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Certificate.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Certificate.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -281,8 +281,8 @@ class LocalAgent_Certificate(_Model):
 
 
 class LocalAgent_Subscription(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Subscription.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Subscription.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Recipient: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -299,8 +299,8 @@ class LocalAgent_Subscription(_Model):
 
 
 class LocalAgent_Request(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.Request.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.Request.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Originator: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Command: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -309,8 +309,8 @@ class LocalAgent_Request(_Model):
 
 
 class LocalAgent_ControllerTrust(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent.ControllerTrust."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent.ControllerTrust."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     UntrustedRole: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     BannedRole: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SecuredRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -325,8 +325,8 @@ class LocalAgent_ControllerTrust(_Model):
 
 
 class LocalAgent(_Model):
-    bbf_path: _ClassVar[str] = "Device.LocalAgent."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LocalAgent."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SoftwareVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     UpTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

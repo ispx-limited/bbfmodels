@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class HPNA_Interface_QoS_FlowSpec(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Interface.{i}.QoS.FlowSpec.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Interface.{i}.QoS.FlowSpec.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -29,8 +29,8 @@ class HPNA_Interface_QoS_FlowSpec(_Model):
 
 
 class HPNA_Diagnostics_PerformanceMonitoring_Nodes_Node(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics.PerformanceMonitoring.Nodes.Node.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring.Nodes.Node.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -61,8 +61,8 @@ class HPNA_Diagnostics_PerformanceMonitoring_Nodes_Node(_Model):
 
 
 class HPNA_Diagnostics_PerformanceMonitoring_Channels_Channel(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics.PerformanceMonitoring.Channels.Channel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring.Channels.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     HostSrcMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     HostDestMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     HPNASrcMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -77,8 +77,8 @@ class HPNA_Diagnostics_PerformanceMonitoring_Channels_Channel(_Model):
 
 
 class HPNA_Interface_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Interface.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Interface.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NodeID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     IsMaster: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -90,8 +90,8 @@ class HPNA_Interface_AssociatedDevice(_Model):
 
 
 class HPNA_Diagnostics_PHYThroughput_Result(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics.PHYThroughput.Result.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics.PHYThroughput.Result.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SrcMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DestMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PHYRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -102,8 +102,8 @@ class HPNA_Diagnostics_PHYThroughput_Result(_Model):
 
 
 class HPNA_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -123,15 +123,15 @@ class HPNA_Interface_Stats(_Model):
 
 
 class HPNA_Interface_QoS(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Interface.{i}.QoS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Interface.{i}.QoS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     FlowSpecNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FlowSpec: dict[int, HPNA_Interface_QoS_FlowSpec] = _Field(default_factory=dict)
 
 
 class HPNA_Diagnostics_PerformanceMonitoring_Nodes(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics.PerformanceMonitoring.Nodes."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring.Nodes."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CurrentStart: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     CurrentEnd: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     NodeNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -139,16 +139,16 @@ class HPNA_Diagnostics_PerformanceMonitoring_Nodes(_Model):
 
 
 class HPNA_Diagnostics_PerformanceMonitoring_Channels(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics.PerformanceMonitoring.Channels."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring.Channels."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ChannelNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Channel: dict[int, HPNA_Diagnostics_PerformanceMonitoring_Channels_Channel] = _Field(default_factory=dict)
 
 
 class HPNA_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -183,8 +183,8 @@ class HPNA_Interface(_Model):
 
 
 class HPNA_Diagnostics_PHYThroughput(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics.PHYThroughput."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics.PHYThroughput."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error', 'Error_FailToEnableCert', 'Error_CertCmdTimeout', 'Error_UnknownErr', 'Error_UnsupportedOpcode', 'Error_InvalidParam', 'Error_UnsupportedCmdSegment', 'Error_UnsupportedDataGen', 'Error_InvalidSequence', 'Error_InvalidFrame', 'Eror_InvalidOpcode'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NumPacketsInBurst: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -199,8 +199,8 @@ class HPNA_Diagnostics_PHYThroughput(_Model):
 
 
 class HPNA_Diagnostics_PerformanceMonitoring(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics.PerformanceMonitoring."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics.PerformanceMonitoring."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error', 'Error_SampleIntervalTooSmall'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SampleInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -209,15 +209,15 @@ class HPNA_Diagnostics_PerformanceMonitoring(_Model):
 
 
 class HPNA_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PHYThroughput: HPNA_Diagnostics_PHYThroughput | None = _Field(default=None)
     PerformanceMonitoring: HPNA_Diagnostics_PerformanceMonitoring | None = _Field(default=None)
 
 
 class HPNA(_Model):
-    bbf_path: _ClassVar[str] = "Device.HPNA."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HPNA."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, HPNA_Interface] = _Field(default_factory=dict)
     Diagnostics: HPNA_Diagnostics | None = _Field(default=None)

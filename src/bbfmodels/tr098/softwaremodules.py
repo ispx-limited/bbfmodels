@@ -2,20 +2,20 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class SoftwareModules_ExecutionUnit_Extensions(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.SoftwareModules.ExecutionUnit.{i}.Extensions."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.SoftwareModules.ExecutionUnit.{i}.Extensions."
+    __bbf_package__ = "bbfmodels.tr098"
 
 
 class SoftwareModules_ExecEnv(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.SoftwareModules.ExecEnv.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.SoftwareModules.ExecEnv.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -38,8 +38,8 @@ class SoftwareModules_ExecEnv(_Model):
 
 
 class SoftwareModules_DeploymentUnit(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.SoftwareModules.DeploymentUnit.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.SoftwareModules.DeploymentUnit.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -57,8 +57,8 @@ class SoftwareModules_DeploymentUnit(_Model):
 
 
 class SoftwareModules_ExecutionUnit(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.SoftwareModules.ExecutionUnit.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.SoftwareModules.ExecutionUnit.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     EUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -84,8 +84,8 @@ class SoftwareModules_ExecutionUnit(_Model):
 
 
 class SoftwareModules(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.SoftwareModules."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.SoftwareModules."
+    __bbf_package__ = "bbfmodels.tr098"
     ExecEnvNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DeploymentUnitNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ExecutionUnitNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DeviceInfo_ProcessStatus_Process(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.ProcessStatus.Process.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.ProcessStatus.Process.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     PID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Command: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Size: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -21,8 +21,8 @@ class DeviceInfo_ProcessStatus_Process(_Model):
 
 
 class DeviceInfo_TemperatureStatus_TemperatureSensor(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -43,8 +43,8 @@ class DeviceInfo_TemperatureStatus_TemperatureSensor(_Model):
 
 
 class DeviceInfo_VendorConfigFile(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.VendorConfigFile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.VendorConfigFile.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -53,8 +53,8 @@ class DeviceInfo_VendorConfigFile(_Model):
 
 
 class DeviceInfo_SupportedDataModel(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.SupportedDataModel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.SupportedDataModel.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -63,15 +63,15 @@ class DeviceInfo_SupportedDataModel(_Model):
 
 
 class DeviceInfo_Processor(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.Processor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.Processor.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Architecture: _Annotated[_Literal['arm', 'i386', 'm68010', 'm68k', 'mipseb', 'mipsel', 'powerpc', 'sh3eb', 'sh3el', 'x86_64'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class DeviceInfo_VendorLogFile(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.VendorLogFile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.VendorLogFile.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MaximumSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -79,8 +79,8 @@ class DeviceInfo_VendorLogFile(_Model):
 
 
 class DeviceInfo_Location(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.Location.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.Location.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Source: _Annotated[_Literal['GPS', 'AGPS', 'Manual', 'External'] | str | None, _Param(_BaseType.STRING)] = None
     AcquiredTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ExternalSource: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -89,37 +89,37 @@ class DeviceInfo_Location(_Model):
 
 
 class DeviceInfo_MemoryStatus(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.MemoryStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.MemoryStatus."
+    __bbf_package__ = "bbfmodels.tr098"
     Total: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Free: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class DeviceInfo_ProcessStatus(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.ProcessStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.ProcessStatus."
+    __bbf_package__ = "bbfmodels.tr098"
     CPUUsage: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ProcessNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Process: dict[int, DeviceInfo_ProcessStatus_Process] = _Field(default_factory=dict)
 
 
 class DeviceInfo_TemperatureStatus(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.TemperatureStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.TemperatureStatus."
+    __bbf_package__ = "bbfmodels.tr098"
     TemperatureSensorNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TemperatureSensor: dict[int, DeviceInfo_TemperatureStatus_TemperatureSensor] = _Field(default_factory=dict)
 
 
 class DeviceInfo_NetworkProperties(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.NetworkProperties."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.NetworkProperties."
+    __bbf_package__ = "bbfmodels.tr098"
     MaxTCPWindowSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TCPImplementation: _Annotated[_CommaList[_Literal['Tahoe', 'Reno', 'New Reno', 'Vegas'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class DeviceInfo_ProxierInfo(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo.ProxierInfo."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo.ProxierInfo."
+    __bbf_package__ = "bbfmodels.tr098"
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProductClass: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -127,8 +127,8 @@ class DeviceInfo_ProxierInfo(_Model):
 
 
 class DeviceInfo(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DeviceInfo."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DeviceInfo."
+    __bbf_package__ = "bbfmodels.tr098"
     DeviceCategory: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Manufacturer: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None

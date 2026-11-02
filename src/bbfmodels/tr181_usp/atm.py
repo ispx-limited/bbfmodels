@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class ATM_Link_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.ATM.Link.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ATM.Link.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -33,8 +33,8 @@ class ATM_Link_Stats(_Model):
 
 
 class ATM_Link_QoS(_Model):
-    bbf_path: _ClassVar[str] = "Device.ATM.Link.{i}.QoS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ATM.Link.{i}.QoS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     QoSClass: _Annotated[_Literal['UBR', 'CBR', 'GFR', 'VBR-nrt', 'VBR-rt', 'UBR+', 'ABR'] | str | None, _Param(_BaseType.STRING)] = None
     PeakCellRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaximumBurstSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -42,8 +42,8 @@ class ATM_Link_QoS(_Model):
 
 
 class ATM_Link(_Model):
-    bbf_path: _ClassVar[str] = "Device.ATM.Link.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ATM.Link.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -63,13 +63,13 @@ class ATM_Link(_Model):
 
 
 class ATM_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.ATM.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ATM.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_usp"
 
 
 class ATM(_Model):
-    bbf_path: _ClassVar[str] = "Device.ATM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ATM."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LinkNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Link: dict[int, ATM_Link] = _Field(default_factory=dict)
     Diagnostics: ATM_Diagnostics | None = _Field(default=None)

@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,23 +10,23 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class LLDP_Discovery_Device_Port_LinkInformation(_Model):
-    bbf_path: _ClassVar[str] = "Device.LLDP.Discovery.Device.{i}.Port.{i}.LinkInformation."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LLDP.Discovery.Device.{i}.Port.{i}.LinkInformation."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceType: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MACForwardingTable: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class LLDP_Discovery_Device_DeviceInformation_VendorSpecific(_Model):
-    bbf_path: _ClassVar[str] = "Device.LLDP.Discovery.Device.{i}.DeviceInformation.VendorSpecific.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LLDP.Discovery.Device.{i}.DeviceInformation.VendorSpecific.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     OrganizationCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     InformationType: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Information: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LLDP_Discovery_Device_Port(_Model):
-    bbf_path: _ClassVar[str] = "Device.LLDP.Discovery.Device.{i}.Port.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LLDP.Discovery.Device.{i}.Port.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     PortIDSubtype: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PortID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TTL: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -37,8 +37,8 @@ class LLDP_Discovery_Device_Port(_Model):
 
 
 class LLDP_Discovery_Device_DeviceInformation(_Model):
-    bbf_path: _ClassVar[str] = "Device.LLDP.Discovery.Device.{i}.DeviceInformation."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LLDP.Discovery.Device.{i}.DeviceInformation."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DeviceCategory: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ModelName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -48,8 +48,8 @@ class LLDP_Discovery_Device_DeviceInformation(_Model):
 
 
 class LLDP_Discovery_Device(_Model):
-    bbf_path: _ClassVar[str] = "Device.LLDP.Discovery.Device.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LLDP.Discovery.Device.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ChassisIDSubtype: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ChassisID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -60,15 +60,15 @@ class LLDP_Discovery_Device(_Model):
 
 
 class LLDP_Discovery(_Model):
-    bbf_path: _ClassVar[str] = "Device.LLDP.Discovery."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LLDP.Discovery."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DeviceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Device: dict[int, LLDP_Discovery_Device] = _Field(default_factory=dict)
 
 
 class LLDP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LLDP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LLDP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Discovery: LLDP_Discovery | None = _Field(default=None)
 
 

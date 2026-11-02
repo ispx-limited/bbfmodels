@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean
 
 
 class WANDevice_WANConnectionDevice_WANIPConnection_DHCPClient_SentDHCPOption(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.DHCPClient.SentDHCPOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.DHCPClient.SentDHCPOption.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -18,8 +18,8 @@ class WANDevice_WANConnectionDevice_WANIPConnection_DHCPClient_SentDHCPOption(_M
 
 
 class WANDevice_WANConnectionDevice_WANIPConnection_DHCPClient_ReqDHCPOption(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.DHCPClient.ReqDHCPOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.DHCPClient.ReqDHCPOption.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -28,8 +28,8 @@ class WANDevice_WANConnectionDevice_WANIPConnection_DHCPClient_ReqDHCPOption(_Mo
 
 
 class WANDevice_WANConnectionDevice_WANIPConnection_PortMapping(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.PortMapping.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.PortMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     PortMappingEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PortMappingLeaseDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -43,8 +43,8 @@ class WANDevice_WANConnectionDevice_WANIPConnection_PortMapping(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANPPPConnection_PortMapping(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     PortMappingEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PortMappingLeaseDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -58,8 +58,8 @@ class WANDevice_WANConnectionDevice_WANPPPConnection_PortMapping(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANIPConnection_DHCPClient(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.DHCPClient."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.DHCPClient."
+    __bbf_package__ = "bbfmodels.tr098"
     SentDHCPOptionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ReqDHCPOptionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SentDHCPOption: dict[int, WANDevice_WANConnectionDevice_WANIPConnection_DHCPClient_SentDHCPOption] = _Field(default_factory=dict)
@@ -67,8 +67,8 @@ class WANDevice_WANConnectionDevice_WANIPConnection_DHCPClient(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANIPConnection_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     EthernetBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EthernetBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EthernetPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -87,8 +87,8 @@ class WANDevice_WANConnectionDevice_WANIPConnection_Stats(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANPPPConnection_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     EthernetBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EthernetBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EthernetPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -107,8 +107,8 @@ class WANDevice_WANConnectionDevice_WANPPPConnection_Stats(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANPTMLinkConfig_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FramesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -129,8 +129,8 @@ class WANDevice_WANConnectionDevice_WANPTMLinkConfig_Stats(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANIPConnection(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANIPConnection.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -166,8 +166,8 @@ class WANDevice_WANConnectionDevice_WANIPConnection(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANPPPConnection(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -213,16 +213,16 @@ class WANDevice_WANConnectionDevice_WANPPPConnection(_Model):
 
 
 class WANDevice_WANCommonInterfaceConfig_Connection(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANCommonInterfaceConfig.Connection.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANCommonInterfaceConfig.Connection.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ActiveConnectionDeviceContainer: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ActiveConnectionServiceID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class WANDevice_WANDSLInterfaceConfig_Stats_Total(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.Total."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.Total."
+    __bbf_package__ = "bbfmodels.tr098"
     ReceiveBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmitBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CellDelin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -245,8 +245,8 @@ class WANDevice_WANDSLInterfaceConfig_Stats_Total(_Model):
 
 
 class WANDevice_WANDSLInterfaceConfig_Stats_Showtime(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.Showtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.Showtime."
+    __bbf_package__ = "bbfmodels.tr098"
     ReceiveBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmitBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CellDelin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -269,8 +269,8 @@ class WANDevice_WANDSLInterfaceConfig_Stats_Showtime(_Model):
 
 
 class WANDevice_WANDSLInterfaceConfig_Stats_LastShowtime(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.LastShowtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.LastShowtime."
+    __bbf_package__ = "bbfmodels.tr098"
     ReceiveBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmitBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CellDelin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -293,8 +293,8 @@ class WANDevice_WANDSLInterfaceConfig_Stats_LastShowtime(_Model):
 
 
 class WANDevice_WANDSLInterfaceConfig_Stats_CurrentDay(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.CurrentDay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.CurrentDay."
+    __bbf_package__ = "bbfmodels.tr098"
     ReceiveBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmitBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CellDelin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -317,8 +317,8 @@ class WANDevice_WANDSLInterfaceConfig_Stats_CurrentDay(_Model):
 
 
 class WANDevice_WANDSLInterfaceConfig_Stats_QuarterHour(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.QuarterHour."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats.QuarterHour."
+    __bbf_package__ = "bbfmodels.tr098"
     ReceiveBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmitBlocks: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CellDelin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -341,8 +341,8 @@ class WANDevice_WANDSLInterfaceConfig_Stats_QuarterHour(_Model):
 
 
 class WANDevice_WANDSLConnectionManagement_ConnectionService(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLConnectionManagement.ConnectionService.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLConnectionManagement.ConnectionService.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     WANConnectionDevice: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     WANConnectionService: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DestinationAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -352,8 +352,8 @@ class WANDevice_WANDSLConnectionManagement_ConnectionService(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANDSLLinkConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANDSLLinkConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANDSLLinkConfig."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     LinkStatus: _Annotated[_Literal['Up', 'Down', 'Initializing', 'Unavailable'] | str | None, _Param(_BaseType.STRING)] = None
     LinkType: _Annotated[_Literal['EoA', 'IPoA', 'PPPoA', 'PPPoE', 'CIP', 'Unconfigured'] | str | None, _Param(_BaseType.STRING)] = None
@@ -376,8 +376,8 @@ class WANDevice_WANConnectionDevice_WANDSLLinkConfig(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANATMF5LoopbackDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANATMF5LoopbackDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANATMF5LoopbackDiagnostics."
+    __bbf_package__ = "bbfmodels.tr098"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Complete', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     NumberOfRepetitions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Timeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -389,8 +389,8 @@ class WANDevice_WANConnectionDevice_WANATMF5LoopbackDiagnostics(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANPTMLinkConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     LinkStatus: _Annotated[_Literal['Up', 'Down', 'Initializing', 'Unavailable'] | str | None, _Param(_BaseType.STRING)] = None
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -398,14 +398,14 @@ class WANDevice_WANConnectionDevice_WANPTMLinkConfig(_Model):
 
 
 class WANDevice_WANConnectionDevice_WANEthernetLinkConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANEthernetLinkConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANEthernetLinkConfig."
+    __bbf_package__ = "bbfmodels.tr098"
     EthernetLinkStatus: _Annotated[_Literal['Up', 'Down', 'Unavailable'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class WANDevice_WANConnectionDevice_WANPOTSLinkConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPOTSLinkConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPOTSLinkConfig."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     LinkStatus: _Annotated[_Literal['Up', 'Down', 'Dialing', 'Connecting', 'Unavailable'] | str | None, _Param(_BaseType.STRING)] = None
     ISPPhoneNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -421,8 +421,8 @@ class WANDevice_WANConnectionDevice_WANPOTSLinkConfig(_Model):
 
 
 class WANDevice_WANDSLInterfaceConfig_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     Total: WANDevice_WANDSLInterfaceConfig_Stats_Total | None = _Field(default=None)
     Showtime: WANDevice_WANDSLInterfaceConfig_Stats_Showtime | None = _Field(default=None)
     LastShowtime: WANDevice_WANDSLInterfaceConfig_Stats_LastShowtime | None = _Field(default=None)
@@ -431,8 +431,8 @@ class WANDevice_WANDSLInterfaceConfig_Stats(_Model):
 
 
 class WANDevice_WANDSLInterfaceConfig_TestParams(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.TestParams."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig.TestParams."
+    __bbf_package__ = "bbfmodels.tr098"
     HLOGGds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     HLOGGus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     HLOGpsds: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -458,8 +458,8 @@ class WANDevice_WANDSLInterfaceConfig_TestParams(_Model):
 
 
 class WANDevice_WANEthernetInterfaceConfig_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANEthernetInterfaceConfig.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANEthernetInterfaceConfig.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -467,8 +467,8 @@ class WANDevice_WANEthernetInterfaceConfig_Stats(_Model):
 
 
 class WANDevice_WANConnectionDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     WANIPConnectionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     WANPPPConnectionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -482,8 +482,8 @@ class WANDevice_WANConnectionDevice(_Model):
 
 
 class WANDevice_WANCommonInterfaceConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANCommonInterfaceConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANCommonInterfaceConfig."
+    __bbf_package__ = "bbfmodels.tr098"
     EnabledForInternet: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     WANAccessType: _Annotated[_Literal['DSL', 'Ethernet', 'POTS'] | str | None, _Param(_BaseType.STRING)] = None
     Layer1UpstreamMaxBitRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -500,8 +500,8 @@ class WANDevice_WANCommonInterfaceConfig(_Model):
 
 
 class WANDevice_WANDSLInterfaceConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLInterfaceConfig."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Initializing', 'EstablishingLink', 'NoSignal', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     LinkEncapsulationSupported: _Annotated[_CommaList[_Literal['G.992.3_Annex_K_ATM', 'G.992.3_Annex_K_PTM', 'G.993.2_Annex_K_ATM', 'G.993.2_Annex_K_PTM', 'G.994.1'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -575,8 +575,8 @@ class WANDevice_WANDSLInterfaceConfig(_Model):
 
 
 class WANDevice_WANEthernetInterfaceConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANEthernetInterfaceConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANEthernetInterfaceConfig."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'NoLink', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -588,15 +588,15 @@ class WANDevice_WANEthernetInterfaceConfig(_Model):
 
 
 class WANDevice_WANDSLConnectionManagement(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLConnectionManagement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLConnectionManagement."
+    __bbf_package__ = "bbfmodels.tr098"
     ConnectionServiceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ConnectionService: dict[int, WANDevice_WANDSLConnectionManagement_ConnectionService] = _Field(default_factory=dict)
 
 
 class WANDevice_WANDSLDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}.WANDSLDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}.WANDSLDiagnostics."
+    __bbf_package__ = "bbfmodels.tr098"
     LoopDiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Complete', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     ACTPSDds: _Annotated[int | None, _Param(_BaseType.INT)] = None
     ACTPSDus: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -636,8 +636,8 @@ class WANDevice_WANDSLDiagnostics(_Model):
 
 
 class WANDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.WANDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.WANDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     WANConnectionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     WANCommonInterfaceConfig: WANDevice_WANCommonInterfaceConfig | None = _Field(default=None)

@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean
 
 
 class WireGuard_Tunnel_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.WireGuard.Tunnel.{i}.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.WireGuard.Tunnel.{i}.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -29,8 +29,8 @@ class WireGuard_Tunnel_Interface_Stats(_Model):
 
 
 class WireGuard_Tunnel_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.WireGuard.Tunnel.{i}.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.WireGuard.Tunnel.{i}.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -42,8 +42,8 @@ class WireGuard_Tunnel_Interface(_Model):
 
 
 class WireGuard_Tunnel_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.WireGuard.Tunnel.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.WireGuard.Tunnel.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -53,8 +53,8 @@ class WireGuard_Tunnel_Stats(_Model):
 
 
 class WireGuard_Tunnel(_Model):
-    bbf_path: _ClassVar[str] = "Device.WireGuard.Tunnel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.WireGuard.Tunnel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -68,8 +68,8 @@ class WireGuard_Tunnel(_Model):
 
 
 class WireGuard_Peer(_Model):
-    bbf_path: _ClassVar[str] = "Device.WireGuard.Peer.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.WireGuard.Peer.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PublicKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -82,8 +82,8 @@ class WireGuard_Peer(_Model):
 
 
 class WireGuard(_Model):
-    bbf_path: _ClassVar[str] = "Device.WireGuard."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.WireGuard."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TunnelNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PeerNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Tunnel: dict[int, WireGuard_Tunnel] = _Field(default_factory=dict)

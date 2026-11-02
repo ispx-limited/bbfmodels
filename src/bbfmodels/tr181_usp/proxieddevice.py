@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,16 +10,16 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class ProxiedDevice_Node(_Model):
-    bbf_path: _ClassVar[str] = "Device.ProxiedDevice.{i}.Node.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ProxiedDevice.{i}.Node.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['Alarm', 'AntiTheft', 'Bell', 'Clock', 'Door', 'Fan', 'GarageDoor', 'HVAC', 'Light', 'Lock', 'Meter', 'Motor', 'Oven', 'PowerStrip', 'Sensor', 'SensorStrip', 'Siren', 'Thermostat'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class ProxiedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.ProxiedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ProxiedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['Alarm', 'AntiTheft', 'Bell', 'Clock', 'Door', 'Fan', 'GarageDoor', 'HVAC', 'Light', 'Lock', 'Meter', 'Motor', 'Oven', 'PowerStrip', 'Sensor', 'SensorStrip', 'Siren', 'Thermostat'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None

@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class Ghn_Interface_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DeviceId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TxPhyRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -19,8 +19,8 @@ class Ghn_Interface_AssociatedDevice(_Model):
 
 
 class Ghn_Interface_SMMaskedBand(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.SMMaskedBand.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.SMMaskedBand.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BandNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     StartSubCarrier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -28,8 +28,8 @@ class Ghn_Interface_SMMaskedBand(_Model):
 
 
 class Ghn_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -56,8 +56,8 @@ class Ghn_Interface_Stats(_Model):
 
 
 class Ghn_Interface_DMInfo(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.DMInfo."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.DMInfo."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DomainName: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     DomainNameIdentifier: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     DomainId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -71,8 +71,8 @@ class Ghn_Interface_DMInfo(_Model):
 
 
 class Ghn_Interface_SCInfo(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.SCInfo."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.SCInfo."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ModesSupported: _Annotated[_CommaList[_Literal['NN', 'NMK'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     ModeEnabled: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MICSize: _Annotated[_Literal['4-byte MIC', '8-byte MIC', '16-byte MIC'] | str | None, _Param(_BaseType.STRING)] = None
@@ -80,8 +80,8 @@ class Ghn_Interface_SCInfo(_Model):
 
 
 class Ghn_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -127,13 +127,13 @@ class Ghn_Interface(_Model):
 
 
 class Ghn_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_usp"
 
 
 class Ghn(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Ghn."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, Ghn_Interface] = _Field(default_factory=dict)
     Diagnostics: Ghn_Diagnostics | None = _Field(default=None)

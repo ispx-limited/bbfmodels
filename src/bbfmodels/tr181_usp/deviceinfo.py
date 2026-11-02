@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DeviceInfo_LogRotate_LogFile(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.LogRotate.{i}.LogFile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.LogRotate.{i}.LogFile.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Size: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -19,8 +19,8 @@ class DeviceInfo_LogRotate_LogFile(_Model):
 
 
 class DeviceInfo_ProcessStatus_CPU(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.ProcessStatus.CPU.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.ProcessStatus.CPU.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -42,8 +42,8 @@ class DeviceInfo_ProcessStatus_CPU(_Model):
 
 
 class DeviceInfo_ProcessStatus_Process(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.ProcessStatus.Process.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.ProcessStatus.Process.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     PID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Command: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Size: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -53,8 +53,8 @@ class DeviceInfo_ProcessStatus_Process(_Model):
 
 
 class DeviceInfo_PowerStatus_PowerSensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.PowerStatus.PowerSensor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.PowerStatus.PowerSensor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -66,8 +66,8 @@ class DeviceInfo_PowerStatus_PowerSensor(_Model):
 
 
 class DeviceInfo_TemperatureStatus_TemperatureSensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.TemperatureStatus.TemperatureSensor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -87,8 +87,8 @@ class DeviceInfo_TemperatureStatus_TemperatureSensor(_Model):
 
 
 class DeviceInfo_KernelFaults_KernelFault(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.KernelFaults.KernelFault.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.KernelFault.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FaultLocation: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LastInstruction: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -99,8 +99,8 @@ class DeviceInfo_KernelFaults_KernelFault(_Model):
 
 
 class DeviceInfo_KernelFaults_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.KernelFaults.Stats.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults.Stats.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['Unknown', 'PageFault', 'GeneralProtectionFault', 'InvalidOpcode', 'DivideError', 'DeviceNotAvailable', 'DoubleFault', 'StackSegmentFault', 'AlignmentCheck', 'MachineCheck', 'MathFault', 'Breakpoint', 'DebugException', 'NMI', 'SecurityException', 'Oops', 'Panic'] | str | None, _Param(_BaseType.STRING)] = None
     LastUpgradeCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -109,8 +109,8 @@ class DeviceInfo_KernelFaults_Stats(_Model):
 
 
 class DeviceInfo_ProcessFaults_ProcessFault(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.ProcessFault.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProcessID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProcessName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -122,8 +122,8 @@ class DeviceInfo_ProcessFaults_ProcessFault(_Model):
 
 
 class DeviceInfo_ProcessFaults_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.ProcessFaults.Stats.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults.Stats.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['Unknown', 'SegmentationFault', 'BusError', 'IllegalInstruction', 'FloatingPointException', 'Abort', 'Trap', 'BadSystemCall', 'OOMKilled', 'BrokenPipe', 'HangUp'] | str | None, _Param(_BaseType.STRING)] = None
     LastUpgradeCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -132,8 +132,8 @@ class DeviceInfo_ProcessFaults_Stats(_Model):
 
 
 class DeviceInfo_Reboots_Reboot(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.Reboots.Reboot.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.Reboots.Reboot.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     FirmwareUpdated: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -142,16 +142,16 @@ class DeviceInfo_Reboots_Reboot(_Model):
 
 
 class DeviceInfo_BootTiming_LastBootMilestone(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.BootTiming.LastBootMilestone.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.BootTiming.LastBootMilestone.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     BootStage: _Annotated[_Literal['Started', 'PowerOn', 'KernelReady', 'NetworkReady', 'ManagementReady', 'Completed', 'Stopping'] | str | None, _Param(_BaseType.STRING)] = None
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
 class DeviceInfo_VendorConfigFile(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.VendorConfigFile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.VendorConfigFile.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -161,8 +161,8 @@ class DeviceInfo_VendorConfigFile(_Model):
 
 
 class DeviceInfo_MemoryStatus_MemoryMonitor(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.MemoryStatus.MemoryMonitor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.MemoryStatus.MemoryMonitor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MemUtilization: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PollingInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -176,15 +176,15 @@ class DeviceInfo_MemoryStatus_MemoryMonitor(_Model):
 
 
 class DeviceInfo_Processor(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.Processor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.Processor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Architecture: _Annotated[_Literal['arm', 'i386', 'm68010', 'm68k', 'mipseb', 'mipsel', 'powerpc', 'sh3eb', 'sh3el', 'x86_64'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class DeviceInfo_LogRotate(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.LogRotate.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.LogRotate.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -198,8 +198,8 @@ class DeviceInfo_LogRotate(_Model):
 
 
 class DeviceInfo_VendorLogFile(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.VendorLogFile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.VendorLogFile.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MaximumSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -207,8 +207,8 @@ class DeviceInfo_VendorLogFile(_Model):
 
 
 class DeviceInfo_Location(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.Location.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.Location.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Source: _Annotated[_Literal['GPS', 'Barometer', 'AGPS', 'Manual', 'External'] | str | None, _Param(_BaseType.STRING)] = None
     AcquiredTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ExternalSource: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -217,16 +217,16 @@ class DeviceInfo_Location(_Model):
 
 
 class DeviceInfo_DeviceImageFile(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.DeviceImageFile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.DeviceImageFile.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Location: _Annotated[_Literal['Front', 'Back', 'Left', 'Right', 'Top', 'Bottom'] | str | None, _Param(_BaseType.STRING)] = None
     Image: _Annotated[_Base64Binary | None, _Param(_BaseType.BASE64)] = None
 
 
 class DeviceInfo_FirmwareImage(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.FirmwareImage.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.FirmwareImage.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -237,8 +237,8 @@ class DeviceInfo_FirmwareImage(_Model):
 
 
 class DeviceInfo_MemoryStatus(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.MemoryStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.MemoryStatus."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Total: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Available: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Free: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -248,8 +248,8 @@ class DeviceInfo_MemoryStatus(_Model):
 
 
 class DeviceInfo_ProcessStatus(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.ProcessStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.ProcessStatus."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     CPUUsage: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ProcessNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CPUNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -258,29 +258,29 @@ class DeviceInfo_ProcessStatus(_Model):
 
 
 class DeviceInfo_PowerStatus(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.PowerStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.PowerStatus."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     PowerSensorNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PowerSensor: dict[int, DeviceInfo_PowerStatus_PowerSensor] = _Field(default_factory=dict)
 
 
 class DeviceInfo_TemperatureStatus(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.TemperatureStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.TemperatureStatus."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TemperatureSensorNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TemperatureSensor: dict[int, DeviceInfo_TemperatureStatus_TemperatureSensor] = _Field(default_factory=dict)
 
 
 class DeviceInfo_NetworkProperties(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.NetworkProperties."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.NetworkProperties."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MaxTCPWindowSize: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TCPImplementation: _Annotated[_CommaList[_Literal['Tahoe', 'Reno', 'New Reno', 'Vegas'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class DeviceInfo_KernelFaults(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.KernelFaults."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.KernelFaults."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     StoragePath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LastUpgradeCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PreviousBootCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -295,8 +295,8 @@ class DeviceInfo_KernelFaults(_Model):
 
 
 class DeviceInfo_ProcessFaults(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.ProcessFaults."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.ProcessFaults."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     StoragePath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LastUpgradeCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PreviousBootCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -311,8 +311,8 @@ class DeviceInfo_ProcessFaults(_Model):
 
 
 class DeviceInfo_Reboots(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.Reboots."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.Reboots."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BootCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CurrentVersionBootCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     WatchdogBootCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -325,8 +325,8 @@ class DeviceInfo_Reboots(_Model):
 
 
 class DeviceInfo_BootTiming(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo.BootTiming."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo.BootTiming."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BootStartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     BootCompleteTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     BootDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -335,8 +335,8 @@ class DeviceInfo_BootTiming(_Model):
 
 
 class DeviceInfo(_Model):
-    bbf_path: _ClassVar[str] = "Device.DeviceInfo."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DeviceInfo."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DeviceCategory: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Manufacturer: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None

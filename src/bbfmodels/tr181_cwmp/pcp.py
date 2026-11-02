@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class PCP_Client_Server_InboundMapping_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP.Client.{i}.Server.{i}.InboundMapping.{i}.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP.Client.{i}.Server.{i}.InboundMapping.{i}.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     RemoteHostIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PrefixLength: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -19,8 +19,8 @@ class PCP_Client_Server_InboundMapping_Filter(_Model):
 
 
 class PCP_Client_Server_InboundMapping(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP.Client.{i}.Server.{i}.InboundMapping.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP.Client.{i}.Server.{i}.InboundMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_PCPErrorCodeReceived', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -42,8 +42,8 @@ class PCP_Client_Server_InboundMapping(_Model):
 
 
 class PCP_Client_Server_OutboundMapping(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP.Client.{i}.Server.{i}.OutboundMapping.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP.Client.{i}.Server.{i}.OutboundMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_PCPErrorCodeReceived', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -63,8 +63,8 @@ class PCP_Client_Server_OutboundMapping(_Model):
 
 
 class PCP_Client_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP.Client.{i}.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP.Client.{i}.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Connecting', 'Error_Timeout', 'Error_HostNameNotResolved', 'Error_NetworkFailure', 'Error_NotAuthorized', 'Error_Unsupported', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -85,23 +85,23 @@ class PCP_Client_Server(_Model):
 
 
 class PCP_Client_PCPProxy(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP.Client.{i}.PCPProxy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP.Client.{i}.PCPProxy."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     HighestVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class PCP_Client_UPnPIWF(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP.Client.{i}.UPnPIWF."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP.Client.{i}.UPnPIWF."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class PCP_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     WANInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -119,8 +119,8 @@ class PCP_Client(_Model):
 
 
 class PCP(_Model):
-    bbf_path: _ClassVar[str] = "Device.PCP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PCP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SupportedVersions: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
     PreferredVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

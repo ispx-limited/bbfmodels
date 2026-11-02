@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DynamicDNS_Client_Hostname(_Model):
-    bbf_path: _ClassVar[str] = "Device.DynamicDNS.Client.{i}.Hostname.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DynamicDNS.Client.{i}.Hostname.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Registered', 'UpdateNeeded', 'Updating', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -19,8 +19,8 @@ class DynamicDNS_Client_Hostname(_Model):
 
 
 class DynamicDNS_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.DynamicDNS.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DynamicDNS.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Connecting', 'Authenticating', 'Updated', 'Error_Misconfigured', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -35,8 +35,8 @@ class DynamicDNS_Client(_Model):
 
 
 class DynamicDNS_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.DynamicDNS.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DynamicDNS.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -51,8 +51,8 @@ class DynamicDNS_Server(_Model):
 
 
 class DynamicDNS(_Model):
-    bbf_path: _ClassVar[str] = "Device.DynamicDNS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DynamicDNS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ClientNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ServerNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SupportedServices: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None

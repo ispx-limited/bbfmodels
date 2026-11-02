@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class Ghn_Diagnostics_PerformanceMonitoring_Nodes_Node(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics.PerformanceMonitoring.Nodes.Node.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring.Nodes.Node.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DestinationMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -39,15 +39,15 @@ class Ghn_Diagnostics_PerformanceMonitoring_Nodes_Node(_Model):
 
 
 class Ghn_Diagnostics_PerformanceMonitoring_Channels_Channel(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics.PerformanceMonitoring.Channels.Channel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring.Channels.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DestinationMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SNR: _Annotated[_CommaList[int] | None, _Param(_BaseType.UNSIGNED_INT, list=True)] = None
 
 
 class Ghn_Interface_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DeviceId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TxPhyRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -56,8 +56,8 @@ class Ghn_Interface_AssociatedDevice(_Model):
 
 
 class Ghn_Interface_SMMaskedBand(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.SMMaskedBand.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.SMMaskedBand.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BandNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     StartSubCarrier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -65,8 +65,8 @@ class Ghn_Interface_SMMaskedBand(_Model):
 
 
 class Ghn_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -94,8 +94,8 @@ class Ghn_Interface_Stats(_Model):
 
 
 class Ghn_Interface_DMInfo(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.DMInfo."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.DMInfo."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DomainName: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     DomainNameIdentifier: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     DomainId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -109,8 +109,8 @@ class Ghn_Interface_DMInfo(_Model):
 
 
 class Ghn_Interface_SCInfo(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}.SCInfo."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}.SCInfo."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ModesSupported: _Annotated[_CommaList[_Literal['NN', 'NMK'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     ModeEnabled: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MICSize: _Annotated[_Literal['4-byte MIC', '8-byte MIC', '16-byte MIC'] | str | None, _Param(_BaseType.STRING)] = None
@@ -118,8 +118,8 @@ class Ghn_Interface_SCInfo(_Model):
 
 
 class Ghn_Diagnostics_PerformanceMonitoring_Nodes(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics.PerformanceMonitoring.Nodes."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring.Nodes."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CurrentStart: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     CurrentEnd: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     NodeNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -127,16 +127,16 @@ class Ghn_Diagnostics_PerformanceMonitoring_Nodes(_Model):
 
 
 class Ghn_Diagnostics_PerformanceMonitoring_Channels(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics.PerformanceMonitoring.Channels."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring.Channels."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ChannelNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Channel: dict[int, Ghn_Diagnostics_PerformanceMonitoring_Channels_Channel] = _Field(default_factory=dict)
 
 
 class Ghn_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -182,14 +182,14 @@ class Ghn_Interface(_Model):
 
 
 class Ghn_Diagnostics_PHYThroughput(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics.PHYThroughput."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Diagnostics.PHYThroughput."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class Ghn_Diagnostics_PerformanceMonitoring(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics.PerformanceMonitoring."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Diagnostics.PerformanceMonitoring."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DiagnoseMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -200,15 +200,15 @@ class Ghn_Diagnostics_PerformanceMonitoring(_Model):
 
 
 class Ghn_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PHYThroughput: Ghn_Diagnostics_PHYThroughput | None = _Field(default=None)
     PerformanceMonitoring: Ghn_Diagnostics_PerformanceMonitoring | None = _Field(default=None)
 
 
 class Ghn(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ghn."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ghn."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, Ghn_Interface] = _Field(default_factory=dict)
     Diagnostics: Ghn_Diagnostics | None = _Field(default=None)

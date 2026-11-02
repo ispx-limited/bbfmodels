@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class DSL_BondingGroup_BondedChannel_Ethernet_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.BondedChannel.{i}.Ethernet.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.BondedChannel.{i}.Ethernet.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     UnderflowErrorsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CRCErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AlignmentErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -22,49 +22,49 @@ class DSL_BondingGroup_BondedChannel_Ethernet_Stats(_Model):
 
 
 class DSL_BondingGroup_BondedChannel_Ethernet(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.BondedChannel.{i}.Ethernet."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.BondedChannel.{i}.Ethernet."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Stats: DSL_BondingGroup_BondedChannel_Ethernet_Stats | None = _Field(default=None)
 
 
 class DSL_Line_Stats_Total(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.Stats.Total."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats.Total."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class DSL_Line_Stats_Showtime(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.Stats.Showtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats.Showtime."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class DSL_Line_Stats_LastShowtime(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.Stats.LastShowtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats.LastShowtime."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class DSL_Line_Stats_CurrentDay(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.Stats.CurrentDay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats.CurrentDay."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class DSL_Line_Stats_QuarterHour(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.Stats.QuarterHour."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats.QuarterHour."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class DSL_Channel_Stats_Total(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Channel.{i}.Stats.Total."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats.Total."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     XTURFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTUCFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTURHECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -74,8 +74,8 @@ class DSL_Channel_Stats_Total(_Model):
 
 
 class DSL_Channel_Stats_Showtime(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Channel.{i}.Stats.Showtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats.Showtime."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     XTURFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTUCFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTURHECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -85,8 +85,8 @@ class DSL_Channel_Stats_Showtime(_Model):
 
 
 class DSL_Channel_Stats_LastShowtime(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Channel.{i}.Stats.LastShowtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats.LastShowtime."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     XTURFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTUCFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTURHECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -96,8 +96,8 @@ class DSL_Channel_Stats_LastShowtime(_Model):
 
 
 class DSL_Channel_Stats_CurrentDay(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Channel.{i}.Stats.CurrentDay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats.CurrentDay."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     XTURFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTUCFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTURHECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -107,8 +107,8 @@ class DSL_Channel_Stats_CurrentDay(_Model):
 
 
 class DSL_Channel_Stats_QuarterHour(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Channel.{i}.Stats.QuarterHour."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats.QuarterHour."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     XTURFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTUCFECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     XTURHECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -118,8 +118,8 @@ class DSL_Channel_Stats_QuarterHour(_Model):
 
 
 class DSL_BondingGroup_Stats_Total(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.Stats.Total."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Stats.Total."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     FailureReasons: _Annotated[_CommaList[_Literal['LowRate', 'ExcessiveDelay', 'InsufficientBuffers', 'Other'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     UpstreamRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DownstreamRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -134,8 +134,8 @@ class DSL_BondingGroup_Stats_Total(_Model):
 
 
 class DSL_BondingGroup_Stats_CurrentDay(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.Stats.CurrentDay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Stats.CurrentDay."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     FailureReasons: _Annotated[_CommaList[_Literal['LowRate', 'ExcessiveDelay', 'InsufficientBuffers', 'Other'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     UpstreamRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DownstreamRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -150,8 +150,8 @@ class DSL_BondingGroup_Stats_CurrentDay(_Model):
 
 
 class DSL_BondingGroup_Stats_QuarterHour(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.Stats.QuarterHour."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Stats.QuarterHour."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     FailureReasons: _Annotated[_CommaList[_Literal['LowRate', 'ExcessiveDelay', 'InsufficientBuffers', 'Other'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     UpstreamRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DownstreamRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -166,16 +166,16 @@ class DSL_BondingGroup_Stats_QuarterHour(_Model):
 
 
 class DSL_BondingGroup_BondedChannel(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.BondedChannel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.BondedChannel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Channel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Ethernet: DSL_BondingGroup_BondedChannel_Ethernet | None = _Field(default=None)
 
 
 class DSL_BondingGroup_Ethernet_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.Ethernet.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Ethernet.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PAFErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PAFSmallFragments: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PAFLargeFragments: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -195,8 +195,8 @@ class DSL_BondingGroup_Ethernet_Stats(_Model):
 
 
 class DSL_Line_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -219,8 +219,8 @@ class DSL_Line_Stats(_Model):
 
 
 class DSL_Line_TestParams(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.TestParams."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.TestParams."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     HLOGGds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     HLOGGus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     HLOGpsds: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -246,16 +246,16 @@ class DSL_Line_TestParams(_Model):
 
 
 class DSL_Line_DataGathering(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}.DataGathering."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}.DataGathering."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     LoggingDepthR: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ActLoggingDepthReportingR: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EventTraceBufferR: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class DSL_Channel_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Channel.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Channel.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -278,8 +278,8 @@ class DSL_Channel_Stats(_Model):
 
 
 class DSL_BondingGroup_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -305,14 +305,14 @@ class DSL_BondingGroup_Stats(_Model):
 
 
 class DSL_BondingGroup_Ethernet(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}.Ethernet."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}.Ethernet."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Stats: DSL_BondingGroup_Ethernet_Stats | None = _Field(default=None)
 
 
 class DSL_Line(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Line.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Line.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     EnableDataGathering: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -398,8 +398,8 @@ class DSL_Line(_Model):
 
 
 class DSL_Channel(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Channel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Channel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -426,8 +426,8 @@ class DSL_Channel(_Model):
 
 
 class DSL_BondingGroup(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.BondingGroup.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.BondingGroup.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -454,8 +454,8 @@ class DSL_BondingGroup(_Model):
 
 
 class DSL_Diagnostics_ADSLLineTest(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Diagnostics.ADSLLineTest."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Diagnostics.ADSLLineTest."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ACTPSDds: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -495,8 +495,8 @@ class DSL_Diagnostics_ADSLLineTest(_Model):
 
 
 class DSL_Diagnostics_SELTUER(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Diagnostics.SELTUER."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTUER."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     UERMaxMeasurementDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -508,8 +508,8 @@ class DSL_Diagnostics_SELTUER(_Model):
 
 
 class DSL_Diagnostics_SELTQLN(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Diagnostics.SELTQLN."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTQLN."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     QLNMaxMeasurementDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -519,8 +519,8 @@ class DSL_Diagnostics_SELTQLN(_Model):
 
 
 class DSL_Diagnostics_SELTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Diagnostics.SELTP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Diagnostics.SELTP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CapacityEstimateEnabling: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -537,8 +537,8 @@ class DSL_Diagnostics_SELTP(_Model):
 
 
 class DSL_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ADSLLineTest: DSL_Diagnostics_ADSLLineTest | None = _Field(default=None)
     SELTUER: DSL_Diagnostics_SELTUER | None = _Field(default=None)
     SELTQLN: DSL_Diagnostics_SELTQLN | None = _Field(default=None)
@@ -546,8 +546,8 @@ class DSL_Diagnostics(_Model):
 
 
 class DSL(_Model):
-    bbf_path: _ClassVar[str] = "Device.DSL."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DSL."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     LineNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ChannelNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BondingGroupNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

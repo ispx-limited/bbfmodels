@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
 
 
 class DLNA_Capabilities(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DLNA.Capabilities."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DLNA.Capabilities."
+    __bbf_package__ = "bbfmodels.tr098"
     HNDDeviceClass: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     DeviceCapability: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     HIDDeviceClass: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -22,8 +22,8 @@ class DLNA_Capabilities(_Model):
 
 
 class DLNA(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DLNA."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DLNA."
+    __bbf_package__ = "bbfmodels.tr098"
     Capabilities: DLNA_Capabilities | None = _Field(default=None)
 
 

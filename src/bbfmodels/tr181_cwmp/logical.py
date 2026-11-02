@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class Logical_TUN_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.TUN.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.TUN.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -30,8 +30,8 @@ class Logical_TUN_Interface_Stats(_Model):
 
 
 class Logical_TAP_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.TAP.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.TAP.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -51,8 +51,8 @@ class Logical_TAP_Interface_Stats(_Model):
 
 
 class Logical_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -72,8 +72,8 @@ class Logical_Interface_Stats(_Model):
 
 
 class Logical_TUN_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.TUN.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.TUN.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -85,8 +85,8 @@ class Logical_TUN_Interface(_Model):
 
 
 class Logical_TAP_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.TAP.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.TAP.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -98,8 +98,8 @@ class Logical_TAP_Interface(_Model):
 
 
 class Logical_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -111,22 +111,22 @@ class Logical_Interface(_Model):
 
 
 class Logical_TUN(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.TUN."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.TUN."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, Logical_TUN_Interface] = _Field(default_factory=dict)
 
 
 class Logical_TAP(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical.TAP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical.TAP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, Logical_TAP_Interface] = _Field(default_factory=dict)
 
 
 class Logical(_Model):
-    bbf_path: _ClassVar[str] = "Device.Logical."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Logical."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, Logical_Interface] = _Field(default_factory=dict)
     TUN: Logical_TUN | None = _Field(default=None)

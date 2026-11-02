@@ -2,33 +2,33 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
 
 
 class LANInterfaces_LANEthernetInterfaceConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANInterfaces.LANEthernetInterfaceConfig.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANInterfaces.LANEthernetInterfaceConfig.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LANInterfaces_LANUSBInterfaceConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANInterfaces.LANUSBInterfaceConfig.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANInterfaces.LANUSBInterfaceConfig.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LANInterfaces_WLANConfiguration(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANInterfaces.WLANConfiguration.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANInterfaces.WLANConfiguration.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LANInterfaces(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANInterfaces."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANInterfaces."
+    __bbf_package__ = "bbfmodels.tr098"
     LANEthernetInterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LANUSBInterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LANWLANConfigurationNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

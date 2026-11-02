@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class Syslog_Source_Network(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Source.{i}.Network."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Source.{i}.Network."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -21,23 +21,23 @@ class Syslog_Source_Network(_Model):
 
 
 class Syslog_Source_UnixDomainSocket(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Source.{i}.UnixDomainSocket."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Source.{i}.UnixDomainSocket."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Syslog_Action_LogFile(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Action.{i}.LogFile."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Action.{i}.LogFile."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     VendorLogFileRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FilePath: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Syslog_Action_LogRemote(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Action.{i}.LogRemote."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Action.{i}.LogRemote."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Unreachable', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Address: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -49,8 +49,8 @@ class Syslog_Action_LogRemote(_Model):
 
 
 class Syslog_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FacilityLevel: _Annotated[_CommaList[_Literal['Kern', 'User', 'Mail', 'Daemon', 'Auth', 'Syslog', 'LPR', 'News', 'UUCP', 'Cron', 'AuthPriv', 'FTP', 'NTP', 'Audit', 'Console', 'Cron2', 'Local0', 'Local1', 'Local2', 'Local3', 'Local4', 'Local5', 'Local6', 'Local7', 'All'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Severity: _Annotated[_Literal['Emergency', 'Alert', 'Critical', 'Error', 'Warning', 'Notice', 'Info', 'Debug', 'All', 'None'] | str | None, _Param(_BaseType.STRING)] = None
@@ -60,8 +60,8 @@ class Syslog_Filter(_Model):
 
 
 class Syslog_Source(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Source.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Source.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     KernelMessages: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SystemMessages: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -72,16 +72,16 @@ class Syslog_Source(_Model):
 
 
 class Syslog_Template(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Template.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Template.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Expression: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     EscapeMessage: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
 class Syslog_Action(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog.Action.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog.Action.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SourceRef: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     FilterRef: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -92,8 +92,8 @@ class Syslog_Action(_Model):
 
 
 class Syslog(_Model):
-    bbf_path: _ClassVar[str] = "Device.Syslog."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Syslog."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     FilterNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

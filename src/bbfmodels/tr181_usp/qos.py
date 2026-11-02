@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class QoS_Classification(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.Classification.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.Classification.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -101,8 +101,8 @@ class QoS_Classification(_Model):
 
 
 class QoS_App(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.App.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.App.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -117,8 +117,8 @@ class QoS_App(_Model):
 
 
 class QoS_Flow(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.Flow.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.Flow.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -135,8 +135,8 @@ class QoS_Flow(_Model):
 
 
 class QoS_Policer(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.Policer.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.Policer.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -161,8 +161,8 @@ class QoS_Policer(_Model):
 
 
 class QoS_Queue(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.Queue.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.Queue.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -186,8 +186,8 @@ class QoS_Queue(_Model):
 
 
 class QoS_QueueStats(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.QueueStats.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.QueueStats.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -202,8 +202,8 @@ class QoS_QueueStats(_Model):
 
 
 class QoS_Shaper(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.Shaper.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.Shaper.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -214,8 +214,8 @@ class QoS_Shaper(_Model):
 
 
 class QoS_Scheduler(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS.Scheduler.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS.Scheduler.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -228,8 +228,8 @@ class QoS_Scheduler(_Model):
 
 
 class QoS(_Model):
-    bbf_path: _ClassVar[str] = "Device.QoS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.QoS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MaxClassificationEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ClassificationNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxAppEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

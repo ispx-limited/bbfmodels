@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class Hardware_Buttons_Button_TriggerCondition(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.Buttons.Button.{i}.TriggerCondition.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.Buttons.Button.{i}.TriggerCondition.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -23,8 +23,8 @@ class Hardware_Buttons_Button_TriggerCondition(_Model):
 
 
 class Hardware_CPUs_CPU_DVFS(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.CPUs.CPU.{i}.DVFS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.CPUs.CPU.{i}.DVFS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Unsupported'] | str | None, _Param(_BaseType.STRING)] = None
     Supported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -39,15 +39,15 @@ class Hardware_CPUs_CPU_DVFS(_Model):
 
 
 class Hardware_CPUs_CPU(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.CPUs.CPU.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.CPUs.CPU.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DVFS: Hardware_CPUs_CPU_DVFS | None = _Field(default=None)
 
 
 class Hardware_Buttons_Button(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.Buttons.Button.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.Buttons.Button.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Label: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -59,8 +59,8 @@ class Hardware_Buttons_Button(_Model):
 
 
 class Hardware_PowerManagement_Standby(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.PowerManagement.Standby."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.PowerManagement.Standby."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Capability: _Annotated[_Literal['DeepSleep'] | str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Disabled', 'Scheduled', 'Error', 'Error_Misconfigured'] | str | None, _Param(_BaseType.STRING)] = None
     ScheduleRef: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -70,28 +70,28 @@ class Hardware_PowerManagement_Standby(_Model):
 
 
 class Hardware_CPUs(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.CPUs."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.CPUs."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CPUNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CPU: dict[int, Hardware_CPUs_CPU] = _Field(default_factory=dict)
 
 
 class Hardware_PowerManagement(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.PowerManagement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.PowerManagement."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Standby: Hardware_PowerManagement_Standby | None = _Field(default=None)
 
 
 class Hardware_Buttons(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware.Buttons."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware.Buttons."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ButtonNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Button: dict[int, Hardware_Buttons_Button] = _Field(default_factory=dict)
 
 
 class Hardware(_Model):
-    bbf_path: _ClassVar[str] = "Device.Hardware."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Hardware."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CPUs: Hardware_CPUs | None = _Field(default=None)
     PowerManagement: Hardware_PowerManagement | None = _Field(default=None)
     Buttons: Hardware_Buttons | None = _Field(default=None)

@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class Ethernet_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -31,8 +31,8 @@ class Ethernet_Interface_Stats(_Model):
 
 
 class Ethernet_Link_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.Link.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.Link.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -54,8 +54,8 @@ class Ethernet_Link_Stats(_Model):
 
 
 class Ethernet_VLANTermination_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.VLANTermination.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.VLANTermination.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -75,8 +75,8 @@ class Ethernet_VLANTermination_Stats(_Model):
 
 
 class Ethernet_LAG_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.LAG.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.LAG.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -96,8 +96,8 @@ class Ethernet_LAG_Stats(_Model):
 
 
 class Ethernet_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error', 'NotAllowed'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -129,8 +129,8 @@ class Ethernet_Interface(_Model):
 
 
 class Ethernet_Link(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.Link.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.Link.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -147,8 +147,8 @@ class Ethernet_Link(_Model):
 
 
 class Ethernet_VLANTermination(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.VLANTermination.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.VLANTermination.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -163,8 +163,8 @@ class Ethernet_VLANTermination(_Model):
 
 
 class Ethernet_LAG(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.LAG.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.LAG.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -177,8 +177,8 @@ class Ethernet_LAG(_Model):
 
 
 class Ethernet_RMONStats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.RMONStats.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.RMONStats.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -204,16 +204,16 @@ class Ethernet_RMONStats(_Model):
 
 
 class Ethernet_WoL(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet.WoL."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet.WoL."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SendMagicPacket: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Ethernet(_Model):
-    bbf_path: _ClassVar[str] = "Device.Ethernet."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Ethernet."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     WoLSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     FlowControlSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

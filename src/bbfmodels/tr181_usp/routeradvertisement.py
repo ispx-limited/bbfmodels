@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class RouterAdvertisement_InterfaceSetting_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.RouterAdvertisement.InterfaceSetting.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RouterAdvertisement.InterfaceSetting.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -18,8 +18,8 @@ class RouterAdvertisement_InterfaceSetting_Option(_Model):
 
 
 class RouterAdvertisement_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.RouterAdvertisement.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RouterAdvertisement.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -48,8 +48,8 @@ class RouterAdvertisement_InterfaceSetting(_Model):
 
 
 class RouterAdvertisement(_Model):
-    bbf_path: _ClassVar[str] = "Device.RouterAdvertisement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RouterAdvertisement."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     InterfaceSettingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InterfaceSetting: dict[int, RouterAdvertisement_InterfaceSetting] = _Field(default_factory=dict)

@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class FaultMgmt_SupportedAlarm(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.FaultMgmt.SupportedAlarm.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.FaultMgmt.SupportedAlarm.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     EventType: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProbableCause: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SpecificProblem: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -20,8 +20,8 @@ class FaultMgmt_SupportedAlarm(_Model):
 
 
 class FaultMgmt_CurrentAlarm(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.FaultMgmt.CurrentAlarm.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.FaultMgmt.CurrentAlarm.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     AlarmIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AlarmRaisedTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     AlarmChangedTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -35,8 +35,8 @@ class FaultMgmt_CurrentAlarm(_Model):
 
 
 class FaultMgmt_HistoryEvent(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.FaultMgmt.HistoryEvent.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.FaultMgmt.HistoryEvent.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     EventTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     AlarmIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NotificationType: _Annotated[_Literal['NewAlarm', 'ChangedAlarm', 'ClearedAlarm'] | str | None, _Param(_BaseType.STRING)] = None
@@ -50,8 +50,8 @@ class FaultMgmt_HistoryEvent(_Model):
 
 
 class FaultMgmt_ExpeditedEvent(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.FaultMgmt.ExpeditedEvent.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.FaultMgmt.ExpeditedEvent.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     EventTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     AlarmIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NotificationType: _Annotated[_Literal['NewAlarm', 'ChangedAlarm', 'ClearedAlarm'] | str | None, _Param(_BaseType.STRING)] = None
@@ -65,8 +65,8 @@ class FaultMgmt_ExpeditedEvent(_Model):
 
 
 class FaultMgmt_QueuedEvent(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.FaultMgmt.QueuedEvent.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.FaultMgmt.QueuedEvent.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     EventTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     AlarmIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NotificationType: _Annotated[_Literal['NewAlarm', 'ChangedAlarm', 'ClearedAlarm'] | str | None, _Param(_BaseType.STRING)] = None
@@ -80,8 +80,8 @@ class FaultMgmt_QueuedEvent(_Model):
 
 
 class FaultMgmt(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.FaultMgmt."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.FaultMgmt."
+    __bbf_package__ = "bbfmodels.tr098"
     SupportedAlarmNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxCurrentAlarmEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CurrentAlarmNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

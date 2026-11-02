@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,16 +10,16 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class Routing_RouteInformation_InterfaceSetting_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.RouteInformation.InterfaceSetting.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.RouteInformation.InterfaceSetting.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Value: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
 class Routing_Babel_InterfaceSetting_Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.InterfaceSetting.{i}.Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.InterfaceSetting.{i}.Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     NeighborAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     HelloMCastHistory: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     HelloUCastHistory: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -33,8 +33,8 @@ class Routing_Babel_InterfaceSetting_Neighbor(_Model):
 
 
 class Routing_Babel_MACKeySet_MACKey(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.MACKeySet.{i}.MACKey.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.MACKeySet.{i}.MACKey.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     KeyUseSend: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     KeyUseVerify: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -47,8 +47,8 @@ class Routing_Babel_MACKeySet_MACKey(_Model):
 
 
 class Routing_Babel_DTLSCertSet_DTLSCert(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.DTLSCertSet.{i}.DTLSCert.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.DTLSCertSet.{i}.DTLSCert.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CertValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CertType: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -56,8 +56,8 @@ class Routing_Babel_DTLSCertSet_DTLSCert(_Model):
 
 
 class Routing_Router_IPv4Forwarding(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Router.{i}.IPv4Forwarding.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Router.{i}.IPv4Forwarding.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -76,8 +76,8 @@ class Routing_Router_IPv4Forwarding(_Model):
 
 
 class Routing_Router_IPv6Forwarding(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Router.{i}.IPv6Forwarding.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Router.{i}.IPv6Forwarding.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -94,8 +94,8 @@ class Routing_Router_IPv6Forwarding(_Model):
 
 
 class Routing_Babel_InterfaceSetting_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.InterfaceSetting.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.InterfaceSetting.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SentMcastHello: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     SentMcastUpdate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     SentUcastHello: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -105,8 +105,8 @@ class Routing_Babel_InterfaceSetting_Stats(_Model):
 
 
 class Routing_RIP_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.RIP.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.RIP.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -116,8 +116,8 @@ class Routing_RIP_InterfaceSetting(_Model):
 
 
 class Routing_RouteInformation_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.RouteInformation.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.RouteInformation.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Status: _Annotated[_Literal['ForwardingEntryCreated', 'NoForwardingEntry', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SourceRouter: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -135,8 +135,8 @@ class Routing_RouteInformation_InterfaceSetting(_Model):
 
 
 class Routing_Babel_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -161,8 +161,8 @@ class Routing_Babel_InterfaceSetting(_Model):
 
 
 class Routing_Babel_Route(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.Route.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.Route.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     RoutePrefix: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SourceRouterID: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     Neighbor: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -175,8 +175,8 @@ class Routing_Babel_Route(_Model):
 
 
 class Routing_Babel_MACKeySet(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.MACKeySet.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.MACKeySet.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DefaultApply: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MACKeyNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -184,8 +184,8 @@ class Routing_Babel_MACKeySet(_Model):
 
 
 class Routing_Babel_DTLSCertSet(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.DTLSCertSet.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.DTLSCertSet.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DefaultApply: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     DTLSCertNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -193,8 +193,8 @@ class Routing_Babel_DTLSCertSet(_Model):
 
 
 class Routing_Router(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Router.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Router.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -207,8 +207,8 @@ class Routing_Router(_Model):
 
 
 class Routing_Policy(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Policy.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Policy.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured'] | str | None, _Param(_BaseType.STRING)] = None
@@ -228,15 +228,15 @@ class Routing_Policy(_Model):
 
 
 class Routing_Babel_Constants(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel.Constants."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel.Constants."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     UDPPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MulticastGroup: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Routing_RIP(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.RIP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.RIP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SupportedModes: _Annotated[_Literal['Send', 'Receive', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
     InterfaceSettingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -244,16 +244,16 @@ class Routing_RIP(_Model):
 
 
 class Routing_RouteInformation(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.RouteInformation."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.RouteInformation."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     InterfaceSettingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InterfaceSetting: dict[int, Routing_RouteInformation_InterfaceSetting] = _Field(default_factory=dict)
 
 
 class Routing_Babel(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing.Babel."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing.Babel."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ImplementationVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -277,8 +277,8 @@ class Routing_Babel(_Model):
 
 
 class Routing(_Model):
-    bbf_path: _ClassVar[str] = "Device.Routing."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Routing."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     RouterNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PolicyNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Router: dict[int, Routing_Router] = _Field(default_factory=dict)

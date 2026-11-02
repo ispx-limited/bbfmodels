@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class SSH_Server_Session(_Model):
-    bbf_path: _ClassVar[str] = "Device.SSH.Server.{i}.Session.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SSH.Server.{i}.Session.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     User: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -19,8 +19,8 @@ class SSH_Server_Session(_Model):
 
 
 class SSH_Server_AccessLog(_Model):
-    bbf_path: _ClassVar[str] = "Device.SSH.Server.{i}.AccessLog.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SSH.Server.{i}.AccessLog.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TimeStamp: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     User: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -30,8 +30,8 @@ class SSH_Server_AccessLog(_Model):
 
 
 class SSH_Server_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.SSH.Server.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SSH.Server.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     NumberOfFailedAttempts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     NumberOfFailedAttemptsSinceActivation: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     NumberOfSuccessfulAttempts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -39,8 +39,8 @@ class SSH_Server_Stats(_Model):
 
 
 class SSH_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.SSH.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SSH.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error', 'Error_Misconfigured'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -70,16 +70,16 @@ class SSH_Server(_Model):
 
 
 class SSH_AuthorizedKey(_Model):
-    bbf_path: _ClassVar[str] = "Device.SSH.AuthorizedKey.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SSH.AuthorizedKey.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     User: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Key: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class SSH(_Model):
-    bbf_path: _ClassVar[str] = "Device.SSH."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SSH."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ServerNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

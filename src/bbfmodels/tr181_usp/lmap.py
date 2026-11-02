@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class LMAP_MeasurementAgent_Schedule_Action_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Action.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Action.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -20,21 +20,21 @@ class LMAP_MeasurementAgent_Schedule_Action_Option(_Model):
 
 
 class LMAP_Report_Result_ReportTable_ResultRow(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Report.{i}.Result.{i}.ReportTable.{i}.ResultRow.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Report.{i}.Result.{i}.ReportTable.{i}.ResultRow.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Values: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class LMAP_Report_Result_ReportTable_Registry(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Report.{i}.Result.{i}.ReportTable.{i}.Registry.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Report.{i}.Result.{i}.ReportTable.{i}.Registry.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     RegistryEntry: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Roles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class LMAP_MeasurementAgent_Schedule_Action_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Action.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Action.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Invocations: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Suppressions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Overlaps: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -42,15 +42,15 @@ class LMAP_MeasurementAgent_Schedule_Action_Stats(_Model):
 
 
 class LMAP_MeasurementAgent_TaskCapability_Registry(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.TaskCapability.{i}.Registry.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.TaskCapability.{i}.Registry.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     RegistryEntry: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Roles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class LMAP_MeasurementAgent_Schedule_Action(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Action.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Action.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     State: _Annotated[_Literal['Enabled', 'Suppressed', 'Disabled', 'Running'] | str | None, _Param(_BaseType.STRING)] = None
@@ -73,8 +73,8 @@ class LMAP_MeasurementAgent_Schedule_Action(_Model):
 
 
 class LMAP_MeasurementAgent_Task_Registry(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Task.{i}.Registry.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Task.{i}.Registry.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     RegistryEntry: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -82,8 +82,8 @@ class LMAP_MeasurementAgent_Task_Registry(_Model):
 
 
 class LMAP_MeasurementAgent_Task_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Task.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Task.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -92,8 +92,8 @@ class LMAP_MeasurementAgent_Task_Option(_Model):
 
 
 class LMAP_MeasurementAgent_Instruction_MeasurementSuppression(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Instruction.{i}.MeasurementSuppression.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Instruction.{i}.MeasurementSuppression.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -105,24 +105,24 @@ class LMAP_MeasurementAgent_Instruction_MeasurementSuppression(_Model):
 
 
 class LMAP_Report_Result_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Report.{i}.Result.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Report.{i}.Result.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Name: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LMAP_Report_Result_Conflict(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Report.{i}.Result.{i}.Conflict.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Report.{i}.Result.{i}.Conflict.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TaskName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ScheduleName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ActionName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LMAP_Report_Result_ReportTable(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Report.{i}.Result.{i}.ReportTable.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Report.{i}.Result.{i}.ReportTable.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ColumnLabels: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     ResultReportRowNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RegistryNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -131,8 +131,8 @@ class LMAP_Report_Result_ReportTable(_Model):
 
 
 class LMAP_MeasurementAgent_Schedule_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Invocations: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Suppressions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Overlaps: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -140,8 +140,8 @@ class LMAP_MeasurementAgent_Schedule_Stats(_Model):
 
 
 class LMAP_MeasurementAgent_TaskCapability(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.TaskCapability.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.TaskCapability.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TaskCapabilityRegistryNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -149,8 +149,8 @@ class LMAP_MeasurementAgent_TaskCapability(_Model):
 
 
 class LMAP_MeasurementAgent_Schedule(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Schedule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -169,8 +169,8 @@ class LMAP_MeasurementAgent_Schedule(_Model):
 
 
 class LMAP_MeasurementAgent_Task(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Task.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Task.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -182,8 +182,8 @@ class LMAP_MeasurementAgent_Task(_Model):
 
 
 class LMAP_MeasurementAgent_CommunicationChannel(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.CommunicationChannel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.CommunicationChannel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -195,8 +195,8 @@ class LMAP_MeasurementAgent_CommunicationChannel(_Model):
 
 
 class LMAP_MeasurementAgent_Instruction(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Instruction.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Instruction.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LastChange: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -208,8 +208,8 @@ class LMAP_MeasurementAgent_Instruction(_Model):
 
 
 class LMAP_Report_Result(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Report.{i}.Result.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Report.{i}.Result.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TaskName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ScheduleName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ActionName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -228,8 +228,8 @@ class LMAP_Report_Result(_Model):
 
 
 class LMAP_MeasurementAgent_Controller(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}.Controller."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}.Controller."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ControllerTimeout: _Annotated[int | None, _Param(_BaseType.INT)] = None
     ControlSchedules: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     ControlTasks: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -237,16 +237,16 @@ class LMAP_MeasurementAgent_Controller(_Model):
 
 
 class LMAP_Event_PeriodicTimer(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Event.{i}.PeriodicTimer."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Event.{i}.PeriodicTimer."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     EndTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     Interval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class LMAP_Event_CalendarTimer(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Event.{i}.CalendarTimer."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Event.{i}.CalendarTimer."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     EndTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ScheduleMonths: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -260,14 +260,14 @@ class LMAP_Event_CalendarTimer(_Model):
 
 
 class LMAP_Event_OneOff(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Event.{i}.OneOff."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Event.{i}.OneOff."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
 class LMAP_MeasurementAgent(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.MeasurementAgent.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.MeasurementAgent.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -296,8 +296,8 @@ class LMAP_MeasurementAgent(_Model):
 
 
 class LMAP_Report(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Report.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Report.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ReportDate: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     AgentIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     GroupIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -307,8 +307,8 @@ class LMAP_Report(_Model):
 
 
 class LMAP_Event(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP.Event.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP.Event.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -321,8 +321,8 @@ class LMAP_Event(_Model):
 
 
 class LMAP(_Model):
-    bbf_path: _ClassVar[str] = "Device.LMAP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.LMAP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MeasurementAgentNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ReportNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EventNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

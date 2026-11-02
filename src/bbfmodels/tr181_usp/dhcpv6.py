@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,31 +10,31 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DHCPv6_Server_Pool_Client_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server.Pool.{i}.Client.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server.Pool.{i}.Client.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PreferredLifetime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ValidLifetime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
 class DHCPv6_Server_Pool_Client_IPv6Prefix(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server.Pool.{i}.Client.{i}.IPv6Prefix.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server.Pool.{i}.Client.{i}.IPv6Prefix.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Prefix: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PreferredLifetime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     ValidLifetime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
 class DHCPv6_Server_Pool_Client_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server.Pool.{i}.Client.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server.Pool.{i}.Client.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Value: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
 class DHCPv6_Server_Pool_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server.Pool.{i}.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server.Pool.{i}.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SourceAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Active: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -47,8 +47,8 @@ class DHCPv6_Server_Pool_Client(_Model):
 
 
 class DHCPv6_Server_Pool_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server.Pool.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server.Pool.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -58,16 +58,16 @@ class DHCPv6_Server_Pool_Option(_Model):
 
 
 class DHCPv6_Client_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Client.{i}.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SourceAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DUID: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     InformationRefreshTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
 class DHCPv6_Client_SentOption(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Client.{i}.SentOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.SentOption.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -75,16 +75,16 @@ class DHCPv6_Client_SentOption(_Model):
 
 
 class DHCPv6_Client_ReceivedOption(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Client.{i}.ReceivedOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.ReceivedOption.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Value: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     Server: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class DHCPv6_Client_Retransmission(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Client.{i}.Retransmission."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Retransmission."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SolicitMaxDelay: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SolicitInitialTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SolicitMaxTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -116,8 +116,8 @@ class DHCPv6_Client_Retransmission(_Model):
 
 
 class DHCPv6_Client_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Client.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Client.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Solicit: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Advertise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Request: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -134,8 +134,8 @@ class DHCPv6_Client_Stats(_Model):
 
 
 class DHCPv6_Server_Pool(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server.Pool.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server.Pool.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -165,8 +165,8 @@ class DHCPv6_Server_Pool(_Model):
 
 
 class DHCPv6_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -193,8 +193,8 @@ class DHCPv6_Client(_Model):
 
 
 class DHCPv6_Server_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Solicit: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Advertise: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Request: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -213,8 +213,8 @@ class DHCPv6_Server_Stats(_Model):
 
 
 class DHCPv6_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6.Server."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6.Server."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PoolNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Pool: dict[int, DHCPv6_Server_Pool] = _Field(default_factory=dict)
@@ -222,8 +222,8 @@ class DHCPv6_Server(_Model):
 
 
 class DHCPv6(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv6."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv6."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ClientNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Client: dict[int, DHCPv6_Client] = _Field(default_factory=dict)
     Server: DHCPv6_Server | None = _Field(default=None)

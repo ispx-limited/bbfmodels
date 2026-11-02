@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class HomePlug_Interface_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.HomePlug.Interface.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HomePlug.Interface.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Manufacturer: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FirmwareVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -23,8 +23,8 @@ class HomePlug_Interface_AssociatedDevice(_Model):
 
 
 class HomePlug_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.HomePlug.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HomePlug.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -49,8 +49,8 @@ class HomePlug_Interface_Stats(_Model):
 
 
 class HomePlug_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.HomePlug.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HomePlug.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -75,8 +75,8 @@ class HomePlug_Interface(_Model):
 
 
 class HomePlug(_Model):
-    bbf_path: _ClassVar[str] = "Device.HomePlug."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.HomePlug."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, HomePlug_Interface] = _Field(default_factory=dict)
 

@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class PacketCaptureDiagnostics_PacketCaptureResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.PacketCaptureDiagnostics.PacketCaptureResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PacketCaptureDiagnostics.PacketCaptureResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     FileLocation: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     EndTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -19,8 +19,8 @@ class PacketCaptureDiagnostics_PacketCaptureResult(_Model):
 
 
 class PacketCaptureDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.PacketCaptureDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.PacketCaptureDiagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Format: _Annotated[_Literal['libpcap', 'pcapng'] | str | None, _Param(_BaseType.STRING)] = None

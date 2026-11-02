@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
@@ -101,8 +101,8 @@ from bbfmodels.tr181_usp import xpon
 from bbfmodels.tr181_usp import zigbee
 
 class Device(_Model):
-    bbf_path: _ClassVar[str] = "Device."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     RootDataModelVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     InterfaceStackNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ProxiedDeviceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

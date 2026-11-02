@@ -50,8 +50,8 @@ FLAT = {
 
 
 def test_generated_package_shape(mini: type[Model]) -> None:
-    assert mini.__name__ == "Device" and mini.bbf_path == "Device."
-    assert mini.bbf_package == "mini.cwmp"
+    assert mini.__name__ == "Device" and mini.__bbf_path__ == "Device."
+    assert mini.__bbf_package__ == "mini.cwmp"
     radio = mini.model_fields["Radio"]
     assert "dict[int," in str(radio.annotation)
     assert set(mini.model_fields) >= {"RadioNumberOfEntries", "Param", "Model", "Radio", "Config_"}

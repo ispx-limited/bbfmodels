@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class Firewall_Chain_Rule(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Chain.{i}.Rule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Chain.{i}.Rule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -58,8 +58,8 @@ class Firewall_Chain_Rule(_Model):
 
 
 class Firewall_Set_Rule(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Set.{i}.Rule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Set.{i}.Rule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Exclude: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPAddressList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -68,16 +68,16 @@ class Firewall_Set_Rule(_Model):
 
 
 class Firewall_Log_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Log.{i}.Filter."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Log.{i}.Filter."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Policy: _Annotated[_Literal['All', 'Denied', 'Allowed'] | str | None, _Param(_BaseType.STRING)] = None
     SourceInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DestinationInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Firewall_Level(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Level.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Level.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -90,8 +90,8 @@ class Firewall_Level(_Model):
 
 
 class Firewall_Policy(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Policy.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Policy.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -107,8 +107,8 @@ class Firewall_Policy(_Model):
 
 
 class Firewall_Chain(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Chain.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Chain.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -118,8 +118,8 @@ class Firewall_Chain(_Model):
 
 
 class Firewall_Pinhole(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Pinhole.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Pinhole.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Inactive', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -143,8 +143,8 @@ class Firewall_Pinhole(_Model):
 
 
 class Firewall_DMZ(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.DMZ.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.DMZ.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -160,8 +160,8 @@ class Firewall_DMZ(_Model):
 
 
 class Firewall_Service(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Service.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Service.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -177,8 +177,8 @@ class Firewall_Service(_Model):
 
 
 class Firewall_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -192,8 +192,8 @@ class Firewall_InterfaceSetting(_Model):
 
 
 class Firewall_ConnectionTracking_SIP(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.ConnectionTracking.SIP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.ConnectionTracking.SIP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Ports: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
     DirectMedia: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -203,8 +203,8 @@ class Firewall_ConnectionTracking_SIP(_Model):
 
 
 class Firewall_ConnectionTracking_H323(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.ConnectionTracking.H323."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.ConnectionTracking.H323."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     RegistrationRequestTTL: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     GKRoutedOnly: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -212,29 +212,29 @@ class Firewall_ConnectionTracking_H323(_Model):
 
 
 class Firewall_ConnectionTracking_FTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.ConnectionTracking.FTP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.ConnectionTracking.FTP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Ports: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
     Loose: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
 class Firewall_ConnectionTracking_PPTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.ConnectionTracking.PPTP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.ConnectionTracking.PPTP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
 class Firewall_ConnectionTracking_TFTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.ConnectionTracking.TFTP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.ConnectionTracking.TFTP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Ports: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
 
 
 class Firewall_ConnectionTracking_IRC(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.ConnectionTracking.IRC."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.ConnectionTracking.IRC."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Ports: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
     MAXDCCChannels: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -242,8 +242,8 @@ class Firewall_ConnectionTracking_IRC(_Model):
 
 
 class Firewall_Set(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Set.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Set.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Origin: _Annotated[_Literal['User', 'System', 'Controller'] | str | None, _Param(_BaseType.STRING)] = None
@@ -255,8 +255,8 @@ class Firewall_Set(_Model):
 
 
 class Firewall_Log(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.Log.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.Log.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -266,8 +266,8 @@ class Firewall_Log(_Model):
 
 
 class Firewall_ConnectionTracking(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall.ConnectionTracking."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall.ConnectionTracking."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SIP: Firewall_ConnectionTracking_SIP | None = _Field(default=None)
     H323: Firewall_ConnectionTracking_H323 | None = _Field(default=None)
     FTP: Firewall_ConnectionTracking_FTP | None = _Field(default=None)
@@ -277,8 +277,8 @@ class Firewall_ConnectionTracking(_Model):
 
 
 class Firewall(_Model):
-    bbf_path: _ClassVar[str] = "Device.Firewall."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Firewall."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Config_: _Annotated[_Literal['High', 'Low', 'Off', 'Advanced', 'Policy'] | str | None, _Param(_BaseType.STRING)] = _Field(default=None, alias="Config")
     AdvancedLevel: _Annotated[str | None, _Param(_BaseType.STRING)] = None

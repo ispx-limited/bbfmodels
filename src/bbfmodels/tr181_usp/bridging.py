@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class Bridging_Bridge_Port_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Bridge.{i}.Port.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Bridge.{i}.Port.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -29,8 +29,8 @@ class Bridging_Bridge_Port_Stats(_Model):
 
 
 class Bridging_Bridge_Port_PriorityCodePoint(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Bridge.{i}.Port.{i}.PriorityCodePoint."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Bridge.{i}.Port.{i}.PriorityCodePoint."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     PCPSelection: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     UseDEI: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     RequireDropEncoding: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -39,8 +39,8 @@ class Bridging_Bridge_Port_PriorityCodePoint(_Model):
 
 
 class Bridging_Bridge_Port(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Bridge.{i}.Port.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Bridge.{i}.Port.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -71,8 +71,8 @@ class Bridging_Bridge_Port(_Model):
 
 
 class Bridging_Bridge_VLAN(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Bridge.{i}.VLAN.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Bridge.{i}.VLAN.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -80,8 +80,8 @@ class Bridging_Bridge_VLAN(_Model):
 
 
 class Bridging_Bridge_VLANPort(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Bridge.{i}.VLANPort.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Bridge.{i}.VLANPort.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     VLAN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -90,8 +90,8 @@ class Bridging_Bridge_VLANPort(_Model):
 
 
 class Bridging_Bridge_STP(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Bridge.{i}.STP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Bridge.{i}.STP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Protocol: _Annotated[_Literal['STP', 'RSTP'] | str | None, _Param(_BaseType.STRING)] = None
@@ -102,8 +102,8 @@ class Bridging_Bridge_STP(_Model):
 
 
 class Bridging_Bridge(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Bridge.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Bridge.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -120,8 +120,8 @@ class Bridging_Bridge(_Model):
 
 
 class Bridging_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -169,8 +169,8 @@ class Bridging_Filter(_Model):
 
 
 class Bridging_ProviderBridge(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging.ProviderBridge.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging.ProviderBridge.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -180,8 +180,8 @@ class Bridging_ProviderBridge(_Model):
 
 
 class Bridging(_Model):
-    bbf_path: _ClassVar[str] = "Device.Bridging."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Bridging."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MaxBridgeEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxDBridgeEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxQBridgeEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

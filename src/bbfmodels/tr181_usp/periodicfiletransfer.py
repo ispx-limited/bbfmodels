@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,23 +10,23 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class PeriodicFileTransfer_Profile_HTTP_RequestURIParameter(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer.Profile.{i}.HTTP.RequestURIParameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer.Profile.{i}.HTTP.RequestURIParameter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class PeriodicFileTransfer_Profile_HTTP_RequestHeaderParameter(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer.Profile.{i}.HTTP.RequestHeaderParameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer.Profile.{i}.HTTP.RequestHeaderParameter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class PeriodicFileTransfer_Profile_HTTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer.Profile.{i}.HTTP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer.Profile.{i}.HTTP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -46,8 +46,8 @@ class PeriodicFileTransfer_Profile_HTTP(_Model):
 
 
 class PeriodicFileTransfer_Transfer_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer.Transfer.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer.Transfer.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LastSuccess: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     LastFailed: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     LastErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -56,8 +56,8 @@ class PeriodicFileTransfer_Transfer_Stats(_Model):
 
 
 class PeriodicFileTransfer_Profile(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer.Profile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer.Profile.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Controller: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -66,8 +66,8 @@ class PeriodicFileTransfer_Profile(_Model):
 
 
 class PeriodicFileTransfer_Transfer(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer.Transfer.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer.Transfer.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Idle', 'Creating', 'Uploading', 'Success', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -82,15 +82,15 @@ class PeriodicFileTransfer_Transfer(_Model):
 
 
 class PeriodicFileTransfer_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     UploadSuccessful: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     UploadFailed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
 class PeriodicFileTransfer(_Model):
-    bbf_path: _ClassVar[str] = "Device.PeriodicFileTransfer."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.PeriodicFileTransfer."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ProtocolsSupported: _Annotated[_CommaList[_Literal['HTTP', 'USPEventNotif'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     TypesSupported: _Annotated[_CommaList[_Literal['VendorLogFile', 'ProcessFaults', 'KernelFaults', 'LogRotate'] | str] | None, _Param(_BaseType.STRING, list=True)] = None

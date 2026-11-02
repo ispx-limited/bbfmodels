@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DownloadDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DownloadDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DownloadDiagnostics."
+    __bbf_package__ = "bbfmodels.tr098"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Completed', 'Error_InitConnectionFailed', 'Error_NoResponse', 'Error_TransferFailed', 'Error_PasswordRequestFailed', 'Error_LoginFailed', 'Error_NoTransferMode', 'Error_NoPASV', 'Error_IncorrectSize', 'Error_Timeout'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DownloadURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None

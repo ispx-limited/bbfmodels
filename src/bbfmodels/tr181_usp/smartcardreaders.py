@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class SmartCardReaders_SmartCardReader_SmartCard(_Model):
-    bbf_path: _ClassVar[str] = "Device.SmartCardReaders.SmartCardReader.{i}.SmartCard."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SmartCardReaders.SmartCardReader.{i}.SmartCard."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Status: _Annotated[_Literal['None', 'Running', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['CA', 'DRM', 'UICC'] | str | None, _Param(_BaseType.STRING)] = None
     Application: _Annotated[_CommaList[_Literal['SIM', 'USIM', 'ISIM'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -20,8 +20,8 @@ class SmartCardReaders_SmartCardReader_SmartCard(_Model):
 
 
 class SmartCardReaders_SmartCardReader(_Model):
-    bbf_path: _ClassVar[str] = "Device.SmartCardReaders.SmartCardReader.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SmartCardReaders.SmartCardReader.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -33,8 +33,8 @@ class SmartCardReaders_SmartCardReader(_Model):
 
 
 class SmartCardReaders(_Model):
-    bbf_path: _ClassVar[str] = "Device.SmartCardReaders."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SmartCardReaders."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SmartCardReaderNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SmartCardReader: dict[int, SmartCardReaders_SmartCardReader] = _Field(default_factory=dict)
 

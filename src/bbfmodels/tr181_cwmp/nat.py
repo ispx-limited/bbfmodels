@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class NAT_PortTrigger_Rule(_Model):
-    bbf_path: _ClassVar[str] = "Device.NAT.PortTrigger.{i}.Rule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NAT.PortTrigger.{i}.Rule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PortEndRange: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -19,8 +19,8 @@ class NAT_PortTrigger_Rule(_Model):
 
 
 class NAT_NPTv6_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.NAT.NPTv6.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NAT.NPTv6.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -30,8 +30,8 @@ class NAT_NPTv6_InterfaceSetting(_Model):
 
 
 class NAT_InterfaceSetting(_Model):
-    bbf_path: _ClassVar[str] = "Device.NAT.InterfaceSetting.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NAT.InterfaceSetting.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Enabled_NATForcedDisabled', 'Enabled_PortMappingDisabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -42,8 +42,8 @@ class NAT_InterfaceSetting(_Model):
 
 
 class NAT_PortMapping(_Model):
-    bbf_path: _ClassVar[str] = "Device.NAT.PortMapping.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NAT.PortMapping.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Inactive', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Origin: _Annotated[_Literal['User', 'System', 'UPnP', 'Controller'] | str | None, _Param(_BaseType.STRING)] = None
@@ -65,8 +65,8 @@ class NAT_PortMapping(_Model):
 
 
 class NAT_PortTrigger(_Model):
-    bbf_path: _ClassVar[str] = "Device.NAT.PortTrigger.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NAT.PortTrigger.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Inactive', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -86,15 +86,15 @@ class NAT_PortTrigger(_Model):
 
 
 class NAT_NPTv6(_Model):
-    bbf_path: _ClassVar[str] = "Device.NAT.NPTv6."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NAT.NPTv6."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceSettingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InterfaceSetting: dict[int, NAT_NPTv6_InterfaceSetting] = _Field(default_factory=dict)
 
 
 class NAT(_Model):
-    bbf_path: _ClassVar[str] = "Device.NAT."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.NAT."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceSettingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PortMappingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxNumberOfPortMappings: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

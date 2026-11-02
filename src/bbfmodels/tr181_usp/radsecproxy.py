@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class RadSecProxy_ListenConfig(_Model):
-    bbf_path: _ClassVar[str] = "Device.RadSecProxy.ListenConfig.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RadSecProxy.ListenConfig.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Protocol: _Annotated[_Literal['UDP', 'TCP', 'TLS', 'DTLS'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -18,8 +18,8 @@ class RadSecProxy_ListenConfig(_Model):
 
 
 class RadSecProxy_SourceConfig(_Model):
-    bbf_path: _ClassVar[str] = "Device.RadSecProxy.SourceConfig.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RadSecProxy.SourceConfig.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Protocol: _Annotated[_Literal['UDP', 'TCP', 'TLS', 'DTLS'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -27,8 +27,8 @@ class RadSecProxy_SourceConfig(_Model):
 
 
 class RadSecProxy_Realm(_Model):
-    bbf_path: _ClassVar[str] = "Device.RadSecProxy.Realm.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RadSecProxy.Realm.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -39,8 +39,8 @@ class RadSecProxy_Realm(_Model):
 
 
 class RadSecProxy_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.RadSecProxy.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RadSecProxy.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -52,8 +52,8 @@ class RadSecProxy_Server(_Model):
 
 
 class RadSecProxy_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.RadSecProxy.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RadSecProxy.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -64,8 +64,8 @@ class RadSecProxy_Client(_Model):
 
 
 class RadSecProxy_TLS(_Model):
-    bbf_path: _ClassVar[str] = "Device.RadSecProxy.TLS.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RadSecProxy.TLS.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CABundle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -73,8 +73,8 @@ class RadSecProxy_TLS(_Model):
 
 
 class RadSecProxy(_Model):
-    bbf_path: _ClassVar[str] = "Device.RadSecProxy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.RadSecProxy."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ListenConfigNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

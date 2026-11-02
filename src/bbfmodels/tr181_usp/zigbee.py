@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class ZigBee_ZDO_Network_Neighbor(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.Network.Neighbor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.Network.Neighbor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Neighbor: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LQI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Relationship: _Annotated[_Literal['Parent', 'Child', 'PrevChild', 'Sibling', 'None'] | str | None, _Param(_BaseType.STRING)] = None
@@ -20,8 +20,8 @@ class ZigBee_ZDO_Network_Neighbor(_Model):
 
 
 class ZigBee_ZDO_NodeManager_RoutingTable(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.NodeManager.RoutingTable.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.NodeManager.RoutingTable.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DestinationAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NextHopAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Active', 'DiscoveryUnderway', 'DiscoveryFailed', 'Inactive', 'ValidationUnderway'] | str | None, _Param(_BaseType.STRING)] = None
@@ -31,8 +31,8 @@ class ZigBee_ZDO_NodeManager_RoutingTable(_Model):
 
 
 class ZigBee_ZDO_ApplicationEndpoint_SimpleDescriptor(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.ApplicationEndpoint.{i}.SimpleDescriptor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.ApplicationEndpoint.{i}.SimpleDescriptor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ProfileId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DeviceId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DeviceVersion: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -41,8 +41,8 @@ class ZigBee_ZDO_ApplicationEndpoint_SimpleDescriptor(_Model):
 
 
 class ZigBee_Interface_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.Interface.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.Interface.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IEEEAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NetworkAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Active: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -50,8 +50,8 @@ class ZigBee_Interface_AssociatedDevice(_Model):
 
 
 class ZigBee_ZDO_Binding(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.Binding.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.Binding.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SourceEndpoint: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -64,8 +64,8 @@ class ZigBee_ZDO_Binding(_Model):
 
 
 class ZigBee_ZDO_Group(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.Group.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.Group.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     GroupId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -73,8 +73,8 @@ class ZigBee_ZDO_Group(_Model):
 
 
 class ZigBee_ZDO_ApplicationEndpoint(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.ApplicationEndpoint.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.ApplicationEndpoint.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     EndpointId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -82,8 +82,8 @@ class ZigBee_ZDO_ApplicationEndpoint(_Model):
 
 
 class ZigBee_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -103,8 +103,8 @@ class ZigBee_Interface_Stats(_Model):
 
 
 class ZigBee_ZDO_NodeDescriptor(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.NodeDescriptor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.NodeDescriptor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LogicalType: _Annotated[_Literal['ZC', 'ZR', 'ZED'] | str | None, _Param(_BaseType.STRING)] = None
     ComplexDescriptorSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UserDescriptorSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -119,8 +119,8 @@ class ZigBee_ZDO_NodeDescriptor(_Model):
 
 
 class ZigBee_ZDO_PowerDescriptor(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.PowerDescriptor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.PowerDescriptor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     CurrentPowerMode: _Annotated[_Literal['Synchronized', 'Periodic', 'Manual'] | str | None, _Param(_BaseType.STRING)] = None
     AvailablePowerSource: _Annotated[_CommaList[_Literal['Constant', 'Rechargeable', 'Disposable'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     CurrentPowerSource: _Annotated[_Literal['Constant', 'Rechargeable', 'Disposable'] | str | None, _Param(_BaseType.STRING)] = None
@@ -128,15 +128,15 @@ class ZigBee_ZDO_PowerDescriptor(_Model):
 
 
 class ZigBee_ZDO_UserDescriptor(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.UserDescriptor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.UserDescriptor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DescriptorAvailable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class ZigBee_ZDO_ComplexDescriptor(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.ComplexDescriptor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.ComplexDescriptor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DescriptorAvailable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Language: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CharacterSet: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -149,30 +149,30 @@ class ZigBee_ZDO_ComplexDescriptor(_Model):
 
 
 class ZigBee_ZDO_Security(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.Security."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.Security."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TrustCenterAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SecurityLevel: _Annotated[_Literal['None', 'MIC-32', 'MIC-64', 'MIC-128', 'ENC', 'ENC-MIC-32', 'ENC-MIC-64', 'ENC-MIC-128'] | str | None, _Param(_BaseType.STRING)] = None
     TimeOutPeriod: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class ZigBee_ZDO_Network(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.Network."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.Network."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     NeighborNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Neighbor: dict[int, ZigBee_ZDO_Network_Neighbor] = _Field(default_factory=dict)
 
 
 class ZigBee_ZDO_NodeManager(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}.NodeManager."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}.NodeManager."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     RoutingTableNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RoutingTable: dict[int, ZigBee_ZDO_NodeManager_RoutingTable] = _Field(default_factory=dict)
 
 
 class ZigBee_Discovery_AreaNetwork(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.Discovery.AreaNetwork.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.Discovery.AreaNetwork.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     LastUpdate: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     Status: _Annotated[_Literal['Indeterminate', 'InProgress', 'Success', 'Error', 'Error_Timeout'] | str | None, _Param(_BaseType.STRING)] = None
@@ -183,8 +183,8 @@ class ZigBee_Discovery_AreaNetwork(_Model):
 
 
 class ZigBee_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -203,8 +203,8 @@ class ZigBee_Interface(_Model):
 
 
 class ZigBee_ZDO(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.ZDO.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.ZDO.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IEEEAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NetworkAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -224,15 +224,15 @@ class ZigBee_ZDO(_Model):
 
 
 class ZigBee_Discovery(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee.Discovery."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee.Discovery."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     AreaNetworkNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AreaNetwork: dict[int, ZigBee_Discovery_AreaNetwork] = _Field(default_factory=dict)
 
 
 class ZigBee(_Model):
-    bbf_path: _ClassVar[str] = "Device.ZigBee."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.ZigBee."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ZDONumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, ZigBee_Interface] = _Field(default_factory=dict)

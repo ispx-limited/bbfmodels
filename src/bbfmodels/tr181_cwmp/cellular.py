@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class Cellular_Interface_SMS_Storage(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}.SMS.Storage.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}.SMS.Storage.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Location: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Capacity: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -20,8 +20,8 @@ class Cellular_Interface_SMS_Storage(_Model):
 
 
 class Cellular_Interface_SMS_Message(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}.SMS.Message.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}.SMS.Message.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Sender: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Receiver: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -33,22 +33,22 @@ class Cellular_Interface_SMS_Message(_Model):
 
 
 class Cellular_Interface_SMS_Incoming(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}.SMS.Incoming."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}.SMS.Incoming."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     StorageRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CapacityLimit: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
 class Cellular_Interface_SMS_Outgoing(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}.SMS.Outgoing."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}.SMS.Outgoing."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     StorageRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CapacityLimit: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
 class Cellular_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -68,8 +68,8 @@ class Cellular_Interface_Stats(_Model):
 
 
 class Cellular_Interface_USIM(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}.USIM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}.USIM."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Status: _Annotated[_Literal['None', 'Available', 'Valid', 'Blocked', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     IMSI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ICCID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -79,8 +79,8 @@ class Cellular_Interface_USIM(_Model):
 
 
 class Cellular_Interface_SMS(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}.SMS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}.SMS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     StorageNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MessageNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Storage: dict[int, Cellular_Interface_SMS_Storage] = _Field(default_factory=dict)
@@ -90,8 +90,8 @@ class Cellular_Interface_SMS(_Model):
 
 
 class Cellular_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -120,8 +120,8 @@ class Cellular_Interface(_Model):
 
 
 class Cellular_AccessPoint(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular.AccessPoint.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular.AccessPoint.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     APN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -135,8 +135,8 @@ class Cellular_AccessPoint(_Model):
 
 
 class Cellular(_Model):
-    bbf_path: _ClassVar[str] = "Device.Cellular."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Cellular."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     RoamingEnabled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     RoamingStatus: _Annotated[_Literal['Home', 'Roaming'] | str | None, _Param(_BaseType.STRING)] = None
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

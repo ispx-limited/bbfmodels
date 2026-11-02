@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class IPsec_IKEv2SA_ChildSA_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.IKEv2SA.{i}.ChildSA.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.IKEv2SA.{i}.ChildSA.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -25,8 +25,8 @@ class IPsec_IKEv2SA_ChildSA_Stats(_Model):
 
 
 class IPsec_Profile_SentCPAttr(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.Profile.{i}.SentCPAttr.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.Profile.{i}.SentCPAttr.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -34,15 +34,15 @@ class IPsec_Profile_SentCPAttr(_Model):
 
 
 class IPsec_IKEv2SA_ReceivedCPAttr(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.IKEv2SA.{i}.ReceivedCPAttr.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.IKEv2SA.{i}.ReceivedCPAttr.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Type: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Value: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
 class IPsec_IKEv2SA_ChildSA(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.IKEv2SA.{i}.ChildSA.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.IKEv2SA.{i}.ChildSA.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     InboundSPI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -52,8 +52,8 @@ class IPsec_IKEv2SA_ChildSA(_Model):
 
 
 class IPsec_Tunnel_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.Tunnel.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.Tunnel.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DecryptionErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     IntegrityErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ReplayErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -62,8 +62,8 @@ class IPsec_Tunnel_Stats(_Model):
 
 
 class IPsec_IKEv2SA_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.IKEv2SA.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.IKEv2SA.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -75,8 +75,8 @@ class IPsec_IKEv2SA_Stats(_Model):
 
 
 class IPsec_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -102,8 +102,8 @@ class IPsec_Filter(_Model):
 
 
 class IPsec_Profile(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.Profile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.Profile.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MaxChildSAs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RemoteEndpoints: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -139,8 +139,8 @@ class IPsec_Profile(_Model):
 
 
 class IPsec_Secret(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.Secret.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.Secret.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PreSharedKey: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -148,8 +148,8 @@ class IPsec_Secret(_Model):
 
 
 class IPsec_Tunnel(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.Tunnel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.Tunnel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TunnelInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TunneledInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -158,8 +158,8 @@ class IPsec_Tunnel(_Model):
 
 
 class IPsec_IKEv2SA(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.IKEv2SA.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.IKEv2SA.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tunnel: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -180,8 +180,8 @@ class IPsec_IKEv2SA(_Model):
 
 
 class IPsec_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     NegotiationFailures: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -197,8 +197,8 @@ class IPsec_Stats(_Model):
 
 
 class IPsec(_Model):
-    bbf_path: _ClassVar[str] = "Device.IPsec."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IPsec."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     AHSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None

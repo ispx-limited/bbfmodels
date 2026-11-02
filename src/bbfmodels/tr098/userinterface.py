@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class UserInterface_RemoteAccess(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UserInterface.RemoteAccess."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UserInterface.RemoteAccess."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SupportedProtocols: _Annotated[_CommaList[_Literal['HTTP', 'HTTPS'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -19,8 +19,8 @@ class UserInterface_RemoteAccess(_Model):
 
 
 class UserInterface_LocalDisplay(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UserInterface.LocalDisplay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UserInterface.LocalDisplay."
+    __bbf_package__ = "bbfmodels.tr098"
     Movable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Resizable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PosX: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -32,8 +32,8 @@ class UserInterface_LocalDisplay(_Model):
 
 
 class UserInterface(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UserInterface."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UserInterface."
+    __bbf_package__ = "bbfmodels.tr098"
     UserDatabaseSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PasswordRequired: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PasswordUserSelectable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None

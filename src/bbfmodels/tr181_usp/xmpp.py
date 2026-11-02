@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class XMPP_Connection_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.XMPP.Connection.{i}.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.XMPP.Connection.{i}.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Priority: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -21,8 +21,8 @@ class XMPP_Connection_Server(_Model):
 
 
 class XMPP_Connection_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.XMPP.Connection.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.XMPP.Connection.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ReceivedMessages: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TransmittedMessages: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ReceivedErrorMessages: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -30,8 +30,8 @@ class XMPP_Connection_Stats(_Model):
 
 
 class XMPP_Connection(_Model):
-    bbf_path: _ClassVar[str] = "Device.XMPP.Connection.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.XMPP.Connection.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -55,8 +55,8 @@ class XMPP_Connection(_Model):
 
 
 class XMPP(_Model):
-    bbf_path: _ClassVar[str] = "Device.XMPP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.XMPP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ConnectionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SupportedServerConnectAlgorithms: _Annotated[_CommaList[_Literal['DNS-SRV', 'DNS', 'ServerTable', 'WebSocket'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Connection: dict[int, XMPP_Connection] = _Field(default_factory=dict)

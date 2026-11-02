@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class IP_Interface_IPv4Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.IPv4Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Interface.{i}.IPv4Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -21,8 +21,8 @@ class IP_Interface_IPv4Address(_Model):
 
 
 class IP_Interface_TWAMPReflector(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.TWAMPReflector.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Interface.{i}.TWAMPReflector.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Active', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -33,8 +33,8 @@ class IP_Interface_TWAMPReflector(_Model):
 
 
 class IP_Interface_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Interface.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     IPAddressStatus: _Annotated[_Literal['Preferred', 'Deprecated', 'Invalid', 'Inaccessible', 'Unknown', 'Tentative', 'Duplicate', 'Optimistic'] | str | None, _Param(_BaseType.STRING)] = None
@@ -48,8 +48,8 @@ class IP_Interface_IPv6Address(_Model):
 
 
 class IP_Interface_IPv6Prefix(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.IPv6Prefix.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Interface.{i}.IPv6Prefix.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     PrefixStatus: _Annotated[_Literal['Preferred', 'Deprecated', 'Invalid', 'Inaccessible', 'Unknown'] | str | None, _Param(_BaseType.STRING)] = None
@@ -66,8 +66,8 @@ class IP_Interface_IPv6Prefix(_Model):
 
 
 class IP_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -86,16 +86,16 @@ class IP_Interface_Stats(_Model):
 
 
 class IP_Diagnostics_IPLayerCapacityAuthCode(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.IPLayerCapacityAuthCode.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacityAuthCode.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AuthenticationKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AuthenticationKeyID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class IP_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -123,8 +123,8 @@ class IP_Interface(_Model):
 
 
 class IP_ActivePort(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.ActivePort.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.ActivePort.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     LocalIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LocalPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RemoteIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -133,8 +133,8 @@ class IP_ActivePort(_Model):
 
 
 class IP_Diagnostics_UDPEchoConfig(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.UDPEchoConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Diagnostics.UDPEchoConfig."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SourceIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -150,8 +150,8 @@ class IP_Diagnostics_UDPEchoConfig(_Model):
 
 
 class IP_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IPv4PingSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv6PingSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4TraceRouteSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -183,8 +183,8 @@ class IP_Diagnostics(_Model):
 
 
 class IP(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IPv4Capable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None

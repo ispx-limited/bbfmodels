@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class DOCSIS_Downstream_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.Downstream.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.Downstream.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -30,8 +30,8 @@ class DOCSIS_Downstream_Stats(_Model):
 
 
 class DOCSIS_Upstream_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.Upstream.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.Upstream.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -51,8 +51,8 @@ class DOCSIS_Upstream_Stats(_Model):
 
 
 class DOCSIS_DownstreamChannel_SignalQuality(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.DownstreamChannel.{i}.SignalQuality."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.DownstreamChannel.{i}.SignalQuality."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SignalNoise: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Microreflections: _Annotated[int | None, _Param(_BaseType.INT)] = None
     EqualizationData: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -62,16 +62,16 @@ class DOCSIS_DownstreamChannel_SignalQuality(_Model):
 
 
 class DOCSIS_DownstreamChannel_SignalQualityExt(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.DownstreamChannel.{i}.SignalQualityExt."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.DownstreamChannel.{i}.SignalQualityExt."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     RxMER: _Annotated[int | None, _Param(_BaseType.INT)] = None
     RxMerSamples: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FbeNormalizationCoefficient: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
 class DOCSIS_UpstreamChannel_Status(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.UpstreamChannel.{i}.Status."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.UpstreamChannel.{i}.Status."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TxPower: _Annotated[int | None, _Param(_BaseType.INT)] = None
     T3Timeouts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     T4Timeouts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -84,8 +84,8 @@ class DOCSIS_UpstreamChannel_Status(_Model):
 
 
 class DOCSIS_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -105,8 +105,8 @@ class DOCSIS_Interface_Stats(_Model):
 
 
 class DOCSIS_Interface_ConnectivityStatus(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.Interface.{i}.ConnectivityStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.Interface.{i}.ConnectivityStatus."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Value: _Annotated[_Literal['Other', 'NotReady', 'NotSynchronized', 'PhySynchronized', 'UsParametersAcquired', 'RangingComplete', 'DHCPv4Complete', 'ToDEstablished', 'SecurityEstablished', 'ConfigFileDownloadComplete', 'RegistrationComplete', 'Operational', 'AccessDenied', 'EAEInProgress', 'DHCPv4InProgress', 'DHCPv6InProgress', 'DHCPv6Complete', 'RegistrationInProgress', 'BPIInit', 'ForwardingDisabled', 'DsTopologyResolutionInProgress', 'RangingInProgress', 'RFMuteAll'] | str | None, _Param(_BaseType.STRING)] = None
     StatusCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Resets: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -120,16 +120,16 @@ class DOCSIS_Interface_ConnectivityStatus(_Model):
 
 
 class DOCSIS_SpectrumAnalysis_Result(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.SpectrumAnalysis.Result.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.SpectrumAnalysis.Result.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Frequency: _Annotated[int | None, _Param(_BaseType.INT)] = None
     AmplitudeData: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     TotalSegmentPower: _Annotated[int | None, _Param(_BaseType.INT)] = None
 
 
 class DOCSIS_Downstream(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.Downstream.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.Downstream.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -145,8 +145,8 @@ class DOCSIS_Downstream(_Model):
 
 
 class DOCSIS_Upstream(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.Upstream.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.Upstream.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -162,8 +162,8 @@ class DOCSIS_Upstream(_Model):
 
 
 class DOCSIS_DownstreamChannel(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.DownstreamChannel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.DownstreamChannel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Frequency: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -177,8 +177,8 @@ class DOCSIS_DownstreamChannel(_Model):
 
 
 class DOCSIS_UpstreamChannel(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.UpstreamChannel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.UpstreamChannel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ID: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Frequency: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -193,8 +193,8 @@ class DOCSIS_UpstreamChannel(_Model):
 
 
 class DOCSIS_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -213,8 +213,8 @@ class DOCSIS_Interface(_Model):
 
 
 class DOCSIS_SpectrumAnalysis(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS.SpectrumAnalysis."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS.SpectrumAnalysis."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     InactivityTimeout: _Annotated[int | None, _Param(_BaseType.INT)] = None
     FirstSegmentCenterFrequency: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -229,8 +229,8 @@ class DOCSIS_SpectrumAnalysis(_Model):
 
 
 class DOCSIS(_Model):
-    bbf_path: _ClassVar[str] = "Device.DOCSIS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.DOCSIS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CapabilitiesReq: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     CapabilitiesRsp: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     DownstreamChannelNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

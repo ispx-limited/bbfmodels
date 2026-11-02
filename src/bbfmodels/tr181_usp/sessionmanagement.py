@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class SessionManagement_PDU_QoSRule_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.PDU.{i}.QoSRule.{i}.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.PDU.{i}.QoSRule.{i}.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Direction: _Annotated[_Literal['downlink', 'uplink', 'bidirectional'] | str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -18,8 +18,8 @@ class SessionManagement_PDU_QoSRule_Filter(_Model):
 
 
 class SessionManagement_Session_IPv4Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.Session.{i}.IPv4Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.Session.{i}.IPv4Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SubnetMask: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -28,8 +28,8 @@ class SessionManagement_Session_IPv4Address(_Model):
 
 
 class SessionManagement_Session_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.Session.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.Session.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPPrefix: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -38,8 +38,8 @@ class SessionManagement_Session_IPv6Address(_Model):
 
 
 class SessionManagement_PDU_QoSRule(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.PDU.{i}.QoSRule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.PDU.{i}.QoSRule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Identifier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Precedence: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -51,8 +51,8 @@ class SessionManagement_PDU_QoSRule(_Model):
 
 
 class SessionManagement_PDU_QoSFlow(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.PDU.{i}.QoSFlow.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.PDU.{i}.QoSFlow.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     QFI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FiveQI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -65,8 +65,8 @@ class SessionManagement_PDU_QoSFlow(_Model):
 
 
 class SessionManagement_Session_PCO(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.Session.{i}.PCO."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.Session.{i}.PCO."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IPv6PCSCF: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPv6DNS: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     IPv4PCSCF: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -74,15 +74,15 @@ class SessionManagement_Session_PCO(_Model):
 
 
 class SessionManagement_PDU_NetworkSlice(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.PDU.{i}.NetworkSlice."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.PDU.{i}.NetworkSlice."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SliceServiceType: _Annotated[_Literal['eMBB', 'URLLC', 'MIoT', 'V2X'] | str | None, _Param(_BaseType.STRING)] = None
     SliceDifferentiator: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class SessionManagement_Session(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.Session.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.Session.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -103,8 +103,8 @@ class SessionManagement_Session(_Model):
 
 
 class SessionManagement_PDP(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.PDP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.PDP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TrafficClass: _Annotated[_Literal['Conversational', 'Streaming', 'Interactive', 'Background', 'SubscribedValue'] | str | None, _Param(_BaseType.STRING)] = None
     UpstreamMaxBitRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -120,8 +120,8 @@ class SessionManagement_PDP(_Model):
 
 
 class SessionManagement_PDN(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.PDN.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.PDN.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     QCI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     UpstreamMaxBitRate: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -133,8 +133,8 @@ class SessionManagement_PDN(_Model):
 
 
 class SessionManagement_PDU(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement.PDU.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement.PDU.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PTI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SSC: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -150,8 +150,8 @@ class SessionManagement_PDU(_Model):
 
 
 class SessionManagement(_Model):
-    bbf_path: _ClassVar[str] = "Device.SessionManagement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.SessionManagement."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SessionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PDPNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PDNNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

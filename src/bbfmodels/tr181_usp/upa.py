@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class UPA_Interface_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.UPA.Interface.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UPA.Interface.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LogicalNetwork: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -25,8 +25,8 @@ class UPA_Interface_AssociatedDevice(_Model):
 
 
 class UPA_Interface_ActiveNotch(_Model):
-    bbf_path: _ClassVar[str] = "Device.UPA.Interface.{i}.ActiveNotch.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UPA.Interface.{i}.ActiveNotch.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     StartFreq: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -35,16 +35,16 @@ class UPA_Interface_ActiveNotch(_Model):
 
 
 class UPA_Interface_BridgeFor(_Model):
-    bbf_path: _ClassVar[str] = "Device.UPA.Interface.{i}.BridgeFor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UPA.Interface.{i}.BridgeFor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class UPA_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.UPA.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UPA.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -63,8 +63,8 @@ class UPA_Interface_Stats(_Model):
 
 
 class UPA_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.UPA.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UPA.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -94,13 +94,13 @@ class UPA_Interface(_Model):
 
 
 class UPA_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.UPA.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UPA.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_usp"
 
 
 class UPA(_Model):
-    bbf_path: _ClassVar[str] = "Device.UPA."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.UPA."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, UPA_Interface] = _Field(default_factory=dict)
     Diagnostics: UPA_Diagnostics | None = _Field(default=None)

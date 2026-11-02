@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,16 +10,16 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class Time_Client_Authentication(_Model):
-    bbf_path: _ClassVar[str] = "Device.Time.Client.{i}.Authentication."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Time.Client.{i}.Authentication."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NTSPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class Time_Client_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Time.Client.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Time.Client.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketsSentFailed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -27,16 +27,16 @@ class Time_Client_Stats(_Model):
 
 
 class Time_Server_Authentication(_Model):
-    bbf_path: _ClassVar[str] = "Device.Time.Server.{i}.Authentication."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Time.Server.{i}.Authentication."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Certificate: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NTSNTPServer: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class Time_Server_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.Time.Server.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Time.Server.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketsSentFailed: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -44,8 +44,8 @@ class Time_Server_Stats(_Model):
 
 
 class Time_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.Time.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Time.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Unsynchronized', 'Synchronized', 'Error_FailedToSynchronize', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -69,8 +69,8 @@ class Time_Client(_Model):
 
 
 class Time_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.Time.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Time.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -87,8 +87,8 @@ class Time_Server(_Model):
 
 
 class Time(_Model):
-    bbf_path: _ClassVar[str] = "Device.Time."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.Time."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Unsynchronized', 'Synchronized', 'Error_FailedToSynchronize', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     NTPServer1: _Annotated[str | None, _Param(_BaseType.STRING)] = None

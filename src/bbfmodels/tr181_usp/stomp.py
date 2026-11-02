@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class STOMP_Connection(_Model):
-    bbf_path: _ClassVar[str] = "Device.STOMP.Connection.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.STOMP.Connection.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Enabled', 'Disabled', 'Unknown', 'Connecting', 'ServerNotPresent', 'Error_Misconfigured', 'Error_AuthenticationFailure', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -32,8 +32,8 @@ class STOMP_Connection(_Model):
 
 
 class STOMP(_Model):
-    bbf_path: _ClassVar[str] = "Device.STOMP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.STOMP."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ConnectionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Connection: dict[int, STOMP_Connection] = _Field(default_factory=dict)
 

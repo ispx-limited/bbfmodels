@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Base64Binary as _Base64Binary, Boolean as _Boolean
 
 
 class LANDevice_LANHostConfigManagement_DHCPConditionalServingPool_DHCPStaticAddress(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.DHCPStaticAddress.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.DHCPStaticAddress.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Chaddr: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -18,8 +18,8 @@ class LANDevice_LANHostConfigManagement_DHCPConditionalServingPool_DHCPStaticAdd
 
 
 class LANDevice_LANHostConfigManagement_DHCPConditionalServingPool_DHCPOption(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.DHCPOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.DHCPOption.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -27,8 +27,8 @@ class LANDevice_LANHostConfigManagement_DHCPConditionalServingPool_DHCPOption(_M
 
 
 class LANDevice_WLANConfiguration_WPS_Registrar(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.WPS.Registrar.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.WPS.Registrar.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -36,8 +36,8 @@ class LANDevice_WLANConfiguration_WPS_Registrar(_Model):
 
 
 class LANDevice_WLANConfiguration_AssociatedDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.AssociatedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.AssociatedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     AssociatedDeviceMACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AssociatedDeviceIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AssociatedDeviceAuthenticationState: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -48,15 +48,15 @@ class LANDevice_WLANConfiguration_AssociatedDevice(_Model):
 
 
 class LANDevice_WLANConfiguration_WEPKey(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.WEPKey.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.WEPKey.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     WEPKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class LANDevice_WLANConfiguration_PreSharedKey(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.PreSharedKey.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.PreSharedKey.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PreSharedKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     KeyPassphrase: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -64,8 +64,8 @@ class LANDevice_WLANConfiguration_PreSharedKey(_Model):
 
 
 class LANDevice_WLANConfiguration_APWMMParameter(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.APWMMParameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.APWMMParameter.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AIFSN: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ECWMin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -75,8 +75,8 @@ class LANDevice_WLANConfiguration_APWMMParameter(_Model):
 
 
 class LANDevice_WLANConfiguration_STAWMMParameter(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.STAWMMParameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.STAWMMParameter.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AIFSN: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ECWMin: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -86,8 +86,8 @@ class LANDevice_WLANConfiguration_STAWMMParameter(_Model):
 
 
 class LANDevice_LANHostConfigManagement_IPInterface(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.IPInterface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.IPInterface.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPInterfaceIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -96,8 +96,8 @@ class LANDevice_LANHostConfigManagement_IPInterface(_Model):
 
 
 class LANDevice_LANHostConfigManagement_DHCPStaticAddress(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPStaticAddress.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPStaticAddress.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Chaddr: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -105,8 +105,8 @@ class LANDevice_LANHostConfigManagement_DHCPStaticAddress(_Model):
 
 
 class LANDevice_LANHostConfigManagement_DHCPOption(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPOption.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -114,8 +114,8 @@ class LANDevice_LANHostConfigManagement_DHCPOption(_Model):
 
 
 class LANDevice_LANHostConfigManagement_DHCPConditionalServingPool(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PoolOrder: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -149,8 +149,8 @@ class LANDevice_LANHostConfigManagement_DHCPConditionalServingPool(_Model):
 
 
 class LANDevice_LANEthernetInterfaceConfig_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANEthernetInterfaceConfig.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANEthernetInterfaceConfig.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -169,8 +169,8 @@ class LANDevice_LANEthernetInterfaceConfig_Stats(_Model):
 
 
 class LANDevice_LANUSBInterfaceConfig_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANUSBInterfaceConfig.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANUSBInterfaceConfig.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     CellsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -189,8 +189,8 @@ class LANDevice_LANUSBInterfaceConfig_Stats(_Model):
 
 
 class LANDevice_WLANConfiguration_Stats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr098"
     ErrorsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ErrorsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     UnicastPacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -205,8 +205,8 @@ class LANDevice_WLANConfiguration_Stats(_Model):
 
 
 class LANDevice_WLANConfiguration_WPS(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.WPS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.WPS."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     DeviceName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DevicePassword: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -224,8 +224,8 @@ class LANDevice_WLANConfiguration_WPS(_Model):
 
 
 class LANDevice_Hosts_Host(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.Hosts.Host.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.Hosts.Host.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AddressSource: _Annotated[_Literal['DHCP', 'Static', 'AutoIP'] | str | None, _Param(_BaseType.STRING)] = None
     LeaseTimeRemaining: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -240,8 +240,8 @@ class LANDevice_Hosts_Host(_Model):
 
 
 class LANDevice_LANEthernetInterfaceConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANEthernetInterfaceConfig.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANEthernetInterfaceConfig.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'NoLink', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -254,8 +254,8 @@ class LANDevice_LANEthernetInterfaceConfig(_Model):
 
 
 class LANDevice_LANUSBInterfaceConfig(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANUSBInterfaceConfig.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANUSBInterfaceConfig.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'NoLink', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -270,8 +270,8 @@ class LANDevice_LANUSBInterfaceConfig(_Model):
 
 
 class LANDevice_WLANConfiguration(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Error', 'Disabled'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -332,8 +332,8 @@ class LANDevice_WLANConfiguration(_Model):
 
 
 class LANDevice_LANHostConfigManagement(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement."
+    __bbf_package__ = "bbfmodels.tr098"
     MACAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DHCPServerConfigurable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     DHCPServerEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -362,15 +362,15 @@ class LANDevice_LANHostConfigManagement(_Model):
 
 
 class LANDevice_Hosts(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}.Hosts."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}.Hosts."
+    __bbf_package__ = "bbfmodels.tr098"
     HostNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Host: dict[int, LANDevice_Hosts_Host] = _Field(default_factory=dict)
 
 
 class LANDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.LANDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.LANDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LANEthernetInterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LANUSBInterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

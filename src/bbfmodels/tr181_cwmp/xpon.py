@@ -2,22 +2,22 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class XPON_ONU_ANI_TC_GEM_Port_PM(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.GEM.Port.{i}.PM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.GEM.Port.{i}.PM."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     FramesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     FramesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
 class XPON_ONU_ANI_TC_GEM_Port(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.GEM.Port.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.GEM.Port.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PortID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Direction: _Annotated[_Literal['UNI-to-ANI', 'ANI-to-UNI', 'bidirectional'] | str | None, _Param(_BaseType.STRING)] = None
     PortType: _Annotated[_Literal['unicast', 'multicast', 'broadcast'] | str | None, _Param(_BaseType.STRING)] = None
@@ -25,8 +25,8 @@ class XPON_ONU_ANI_TC_GEM_Port(_Model):
 
 
 class XPON_ONU_ANI_TC_PM_PHY(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.PHY."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.PHY."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CorrectedFECBytes: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     CorrectedFECCodewords: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     UncorrectableFECCodewords: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -37,8 +37,8 @@ class XPON_ONU_ANI_TC_PM_PHY(_Model):
 
 
 class XPON_ONU_ANI_TC_PM_GEM(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.GEM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.GEM."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     FramesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     FramesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     FrameHeaderHECErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -46,8 +46,8 @@ class XPON_ONU_ANI_TC_PM_GEM(_Model):
 
 
 class XPON_ONU_ANI_TC_PM_PLOAM(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.PLOAM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.PLOAM."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     MICErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DownstreamMessageCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     RangingTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -55,16 +55,16 @@ class XPON_ONU_ANI_TC_PM_PLOAM(_Model):
 
 
 class XPON_ONU_ANI_TC_PM_OMCI(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.OMCI."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM.OMCI."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     BaselineMessagesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     ExtendedMessagesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     MICErrors: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class XPON_ONU_ANI_TC_ONUActivation(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.ONUActivation."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.ONUActivation."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ONUState: _Annotated[_Literal['O1', 'O2', 'O3', 'O2-3', 'O4', 'O5', 'O6', 'O7', 'O8', 'O9'] | str | None, _Param(_BaseType.STRING)] = None
     VendorID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -72,15 +72,15 @@ class XPON_ONU_ANI_TC_ONUActivation(_Model):
 
 
 class XPON_ONU_ANI_TC_Authentication(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.Authentication."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.Authentication."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Password: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     HexadecimalPassword: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
 class XPON_ONU_ANI_TC_PM(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.PM."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PHY: XPON_ONU_ANI_TC_PM_PHY | None = _Field(default=None)
     GEM: XPON_ONU_ANI_TC_PM_GEM | None = _Field(default=None)
     PLOAM: XPON_ONU_ANI_TC_PM_PLOAM | None = _Field(default=None)
@@ -88,22 +88,22 @@ class XPON_ONU_ANI_TC_PM(_Model):
 
 
 class XPON_ONU_ANI_TC_GEM(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.GEM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.GEM."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PortNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Port: dict[int, XPON_ONU_ANI_TC_GEM_Port] = _Field(default_factory=dict)
 
 
 class XPON_ONU_ANI_TC_PerformanceThresholds(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.PerformanceThresholds."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.PerformanceThresholds."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SignalFail: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SignalDegrade: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class XPON_ONU_ANI_TC_Alarms(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC.Alarms."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC.Alarms."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     LOS: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     LOF: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SF: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -122,8 +122,8 @@ class XPON_ONU_ANI_TC_Alarms(_Model):
 
 
 class XPON_ONU_ANI_Transceiver(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.Transceiver.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.Transceiver.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Identifier: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     VendorName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -141,8 +141,8 @@ class XPON_ONU_ANI_Transceiver(_Model):
 
 
 class XPON_ONU_EthernetUNI_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.EthernetUNI.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.EthernetUNI.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -162,8 +162,8 @@ class XPON_ONU_EthernetUNI_Stats(_Model):
 
 
 class XPON_ONU_ANI_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     PacketsSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -182,8 +182,8 @@ class XPON_ONU_ANI_Stats(_Model):
 
 
 class XPON_ONU_ANI_TC(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}.TC."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}.TC."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ONUActivation: XPON_ONU_ANI_TC_ONUActivation | None = _Field(default=None)
     Authentication: XPON_ONU_ANI_TC_Authentication | None = _Field(default=None)
     PM: XPON_ONU_ANI_TC_PM | None = _Field(default=None)
@@ -193,8 +193,8 @@ class XPON_ONU_ANI_TC(_Model):
 
 
 class XPON_ONU_EthernetUNI(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.EthernetUNI.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.EthernetUNI.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -210,8 +210,8 @@ class XPON_ONU_EthernetUNI(_Model):
 
 
 class XPON_ONU_SoftwareImage(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.SoftwareImage.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.SoftwareImage.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IsCommitted: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -220,8 +220,8 @@ class XPON_ONU_SoftwareImage(_Model):
 
 
 class XPON_ONU_ANI(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.ANI.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.ANI.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'Error', 'NotAllowed'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -236,8 +236,8 @@ class XPON_ONU_ANI(_Model):
 
 
 class XPON_ONU_PowerManagement(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}.PowerManagement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}.PowerManagement."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PowerReductionManagementCapability: _Annotated[_CommaList[_Literal['WatchfulSleepMode', 'DozeMode', 'CyclicSleepMode'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     OLTSleepAllow: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PowerReductionManagementStatus: _Annotated[_Literal['Active', 'WatchfulSleepMode', 'DozeMode', 'CyclicSleepMode'] | str | None, _Param(_BaseType.STRING)] = None
@@ -250,8 +250,8 @@ class XPON_ONU_PowerManagement(_Model):
 
 
 class XPON_ONU(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON.ONU.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON.ONU.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PowerCapability: _Annotated[_CommaList[_Literal['On', 'Off', 'LowPower'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     PowerStatus: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -268,8 +268,8 @@ class XPON_ONU(_Model):
 
 
 class XPON(_Model):
-    bbf_path: _ClassVar[str] = "Device.XPON."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.XPON."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ONUNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ONU: dict[int, XPON_ONU] = _Field(default_factory=dict)
 

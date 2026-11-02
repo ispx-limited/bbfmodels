@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class FAP_PerfMgmt_Config(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.PerfMgmt.Config.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.PerfMgmt.Config.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -22,8 +22,8 @@ class FAP_PerfMgmt_Config(_Model):
 
 
 class FAP_ApplicationPlatform_Control_FemtoAwareness(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Control.FemtoAwareness."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Control.FemtoAwareness."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
@@ -35,8 +35,8 @@ class FAP_ApplicationPlatform_Control_FemtoAwareness(_Model):
 
 
 class FAP_ApplicationPlatform_Control_SMS(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Control.SMS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Control.SMS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
@@ -47,8 +47,8 @@ class FAP_ApplicationPlatform_Control_SMS(_Model):
 
 
 class FAP_ApplicationPlatform_Control_MMS(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Control.MMS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Control.MMS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
@@ -59,8 +59,8 @@ class FAP_ApplicationPlatform_Control_MMS(_Model):
 
 
 class FAP_ApplicationPlatform_Control_TerminalLocation(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Control.TerminalLocation."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Control.TerminalLocation."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
@@ -72,8 +72,8 @@ class FAP_ApplicationPlatform_Control_TerminalLocation(_Model):
 
 
 class FAP_ApplicationPlatform_Monitoring_FemtoAwareness(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Monitoring.FemtoAwareness."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Monitoring.FemtoAwareness."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIAvailable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     APIUsers: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     QueueState: _Annotated[_Literal['Disabled', 'Ready', 'Flushed'] | str | None, _Param(_BaseType.STRING)] = None
@@ -83,8 +83,8 @@ class FAP_ApplicationPlatform_Monitoring_FemtoAwareness(_Model):
 
 
 class FAP_ApplicationPlatform_Monitoring_SMS(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Monitoring.SMS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Monitoring.SMS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIAvailable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     APIUsers: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     QueueState: _Annotated[_Literal['Disabled', 'Ready', 'Flushed'] | str | None, _Param(_BaseType.STRING)] = None
@@ -94,8 +94,8 @@ class FAP_ApplicationPlatform_Monitoring_SMS(_Model):
 
 
 class FAP_ApplicationPlatform_Monitoring_MMS(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Monitoring.MMS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Monitoring.MMS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIAvailable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     APIUsers: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     QueueState: _Annotated[_Literal['Disabled', 'Ready', 'Flushed'] | str | None, _Param(_BaseType.STRING)] = None
@@ -105,8 +105,8 @@ class FAP_ApplicationPlatform_Monitoring_MMS(_Model):
 
 
 class FAP_ApplicationPlatform_Monitoring_TerminalLocation(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Monitoring.TerminalLocation."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Monitoring.TerminalLocation."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     APIAvailable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     APIUsers: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     QueueState: _Annotated[_Literal['Disabled', 'Ready', 'Flushed'] | str | None, _Param(_BaseType.STRING)] = None
@@ -116,8 +116,8 @@ class FAP_ApplicationPlatform_Monitoring_TerminalLocation(_Model):
 
 
 class FAP_GPS_ContinuousGPSStatus(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.GPS.ContinuousGPSStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.GPS.ContinuousGPSStatus."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CurrentFix: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     GotFix: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     TimingGood: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -135,8 +135,8 @@ class FAP_GPS_ContinuousGPSStatus(_Model):
 
 
 class FAP_GPS_AGPSServerConfig(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.GPS.AGPSServerConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.GPS.AGPSServerConfig."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ServerURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ServerPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -148,8 +148,8 @@ class FAP_GPS_AGPSServerConfig(_Model):
 
 
 class FAP_ApplicationPlatform_Capabilities(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Capabilities."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Capabilities."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PresenceApplicationSupport: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     FemtoAwarenessAPISupport: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SMSAPISupport: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -166,8 +166,8 @@ class FAP_ApplicationPlatform_Capabilities(_Model):
 
 
 class FAP_ApplicationPlatform_Control(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Control."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Control."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     AuthenticationMethod: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TunnelInst: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FemtoAwareness: FAP_ApplicationPlatform_Control_FemtoAwareness | None = _Field(default=None)
@@ -177,8 +177,8 @@ class FAP_ApplicationPlatform_Control(_Model):
 
 
 class FAP_ApplicationPlatform_Monitoring(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform.Monitoring."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform.Monitoring."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MonitoringInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AuthenticationRequestsReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -190,8 +190,8 @@ class FAP_ApplicationPlatform_Monitoring(_Model):
 
 
 class FAP_GPS(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.GPS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.GPS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ScanOnBoot: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ScanPeriodically: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PeriodicInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -211,15 +211,15 @@ class FAP_GPS(_Model):
 
 
 class FAP_PerfMgmt(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.PerfMgmt."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.PerfMgmt."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ConfigNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Config_: dict[int, FAP_PerfMgmt_Config] = _Field(default_factory=dict, alias="Config")
 
 
 class FAP_ApplicationPlatform(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP.ApplicationPlatform."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP.ApplicationPlatform."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Version: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Reset', 'Initializing'] | str | None, _Param(_BaseType.STRING)] = None
@@ -231,8 +231,8 @@ class FAP_ApplicationPlatform(_Model):
 
 
 class FAP(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     GPS: FAP_GPS | None = _Field(default=None)
     PerfMgmt: FAP_PerfMgmt | None = _Field(default=None)
     ApplicationPlatform: FAP_ApplicationPlatform | None = _Field(default=None)

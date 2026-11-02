@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class SFPs_Mgmt_SFF8472_Transceiver_Thresholds(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Thresholds."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Thresholds."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     HighTempAlarm: _Annotated[int | None, _Param(_BaseType.INT)] = None
     HighTempWarning: _Annotated[int | None, _Param(_BaseType.INT)] = None
     LowTempWarning: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -34,8 +34,8 @@ class SFPs_Mgmt_SFF8472_Transceiver_Thresholds(_Model):
 
 
 class SFPs_Mgmt_SFF8472_Transceiver_Status(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Status."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Status."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Temperature: _Annotated[int | None, _Param(_BaseType.INT)] = None
     Vcc: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TxBias: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -52,8 +52,8 @@ class SFPs_Mgmt_SFF8472_Transceiver_Status(_Model):
 
 
 class SFPs_Mgmt_SFF8472_Transceiver_Alarms(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Alarms."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Alarms."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TemperatureHigh: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     TemperatureLow: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     VccHigh: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -67,8 +67,8 @@ class SFPs_Mgmt_SFF8472_Transceiver_Alarms(_Model):
 
 
 class SFPs_Mgmt_SFF8472_Transceiver_Warnings(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Warnings."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver.Warnings."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TemperatureHigh: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     TemperatureLow: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     VccHigh: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -82,8 +82,8 @@ class SFPs_Mgmt_SFF8472_Transceiver_Warnings(_Model):
 
 
 class SFPs_Mgmt_SFF8472_Transceiver(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.Mgmt.SFF8472.{i}.Transceiver."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Connector: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     Transceiver: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     Encoding: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -132,16 +132,16 @@ class SFPs_Mgmt_SFF8472_Transceiver(_Model):
 
 
 class SFPs_Mgmt_SFF8472(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.Mgmt.SFF8472.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.Mgmt.SFF8472.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Transceiver: SFPs_Mgmt_SFF8472_Transceiver | None = _Field(default=None)
 
 
 class SFPs_SFPProperties_SFP(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.SFPProperties.SFP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.SFPProperties.SFP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     VendorName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     VendorOUI: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -150,8 +150,8 @@ class SFPs_SFPProperties_SFP(_Model):
 
 
 class SFPs_AllowedSFPs_AllowedSFP(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.AllowedSFPs.AllowedSFP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.AllowedSFPs.AllowedSFP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SFPType: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -162,8 +162,8 @@ class SFPs_AllowedSFPs_AllowedSFP(_Model):
 
 
 class SFPs_SFPCage(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.SFPCage.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.SFPCage.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SFPPresent: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -175,30 +175,30 @@ class SFPs_SFPCage(_Model):
 
 
 class SFPs_Mgmt(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.Mgmt."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.Mgmt."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SFF8472NumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SFF8472: dict[int, SFPs_Mgmt_SFF8472] = _Field(default_factory=dict)
 
 
 class SFPs_SFPProperties(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.SFPProperties."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.SFPProperties."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SFPNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SFP: dict[int, SFPs_SFPProperties_SFP] = _Field(default_factory=dict)
 
 
 class SFPs_AllowedSFPs(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs.AllowedSFPs."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs.AllowedSFPs."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     AllowedSFPNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AllowAllSFPs: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     AllowedSFP: dict[int, SFPs_AllowedSFPs_AllowedSFP] = _Field(default_factory=dict)
 
 
 class SFPs(_Model):
-    bbf_path: _ClassVar[str] = "Device.SFPs."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.SFPs."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SFPCageNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SupportedSFPTypes: _Annotated[_CommaList[_Literal['G-PON', 'XG-PON', 'NG-PON2', 'XGS-PON', 'EPON', 'MoCA', 'Optical Ethernet', 'Electrical Ethernet'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     SFPCage: dict[int, SFPs_SFPCage] = _Field(default_factory=dict)

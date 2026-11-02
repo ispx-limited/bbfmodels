@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class SmartCardReader_SmartCard(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.SmartCardReader.{i}.SmartCard."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.SmartCardReader.{i}.SmartCard."
+    __bbf_package__ = "bbfmodels.tr098"
     Status: _Annotated[_Literal['None', 'Running', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['CA', 'DRM', 'UICC'] | str | None, _Param(_BaseType.STRING)] = None
     Application: _Annotated[_CommaList[_Literal['SIM', 'USIM', 'ISIM'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -20,8 +20,8 @@ class SmartCardReader_SmartCard(_Model):
 
 
 class SmartCardReader(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.SmartCardReader.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.SmartCardReader.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None

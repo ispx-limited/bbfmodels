@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from decimal import Decimal as _Decimal
 from pydantic import Field as _Field
@@ -11,8 +11,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class IP_Interface_IPv4Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.IPv4Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Interface.{i}.IPv4Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -22,8 +22,8 @@ class IP_Interface_IPv4Address(_Model):
 
 
 class IP_Interface_TWAMPReflector(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.TWAMPReflector.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Interface.{i}.TWAMPReflector.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Active', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -34,8 +34,8 @@ class IP_Interface_TWAMPReflector(_Model):
 
 
 class IP_Interface_IPv6Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.IPv6Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Interface.{i}.IPv6Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     IPAddressStatus: _Annotated[_Literal['Preferred', 'Deprecated', 'Invalid', 'Inaccessible', 'Unknown', 'Tentative', 'Duplicate', 'Optimistic'] | str | None, _Param(_BaseType.STRING)] = None
@@ -49,8 +49,8 @@ class IP_Interface_IPv6Address(_Model):
 
 
 class IP_Interface_IPv6Prefix(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.IPv6Prefix.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Interface.{i}.IPv6Prefix.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     PrefixStatus: _Annotated[_Literal['Preferred', 'Deprecated', 'Invalid', 'Inaccessible', 'Unknown'] | str | None, _Param(_BaseType.STRING)] = None
@@ -67,8 +67,8 @@ class IP_Interface_IPv6Prefix(_Model):
 
 
 class IP_Diagnostics_DownloadDiagnostics_PerConnectionResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.DownloadDiagnostics.PerConnectionResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.DownloadDiagnostics.PerConnectionResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ROMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     BOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     EOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -80,8 +80,8 @@ class IP_Diagnostics_DownloadDiagnostics_PerConnectionResult(_Model):
 
 
 class IP_Diagnostics_DownloadDiagnostics_IncrementalResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.DownloadDiagnostics.IncrementalResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.DownloadDiagnostics.IncrementalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TestBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -90,8 +90,8 @@ class IP_Diagnostics_DownloadDiagnostics_IncrementalResult(_Model):
 
 
 class IP_Diagnostics_TraceRoute_RouteHops(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.TraceRoute.RouteHops.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.TraceRoute.RouteHops.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     HostAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -99,8 +99,8 @@ class IP_Diagnostics_TraceRoute_RouteHops(_Model):
 
 
 class IP_Diagnostics_UploadDiagnostics_PerConnectionResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.UploadDiagnostics.PerConnectionResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.UploadDiagnostics.PerConnectionResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ROMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     BOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     EOMTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -112,8 +112,8 @@ class IP_Diagnostics_UploadDiagnostics_PerConnectionResult(_Model):
 
 
 class IP_Diagnostics_UploadDiagnostics_IncrementalResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.UploadDiagnostics.IncrementalResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.UploadDiagnostics.IncrementalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TestBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     TotalBytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     TotalBytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -122,8 +122,8 @@ class IP_Diagnostics_UploadDiagnostics_IncrementalResult(_Model):
 
 
 class IP_Diagnostics_UDPEchoDiagnostics_IndividualPacketResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.UDPEchoDiagnostics.IndividualPacketResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.UDPEchoDiagnostics.IndividualPacketResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PacketSuccess: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PacketSendTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     PacketReceiveTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -135,16 +135,16 @@ class IP_Diagnostics_UDPEchoDiagnostics_IndividualPacketResult(_Model):
 
 
 class IP_Diagnostics_IPLayerCapacityMetrics_IPLayerCapacityAuthCode(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.IPLayerCapacityMetrics.IPLayerCapacityAuthCode.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacityMetrics.IPLayerCapacityAuthCode.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AuthenticationKey: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AuthenticationKeyID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class IP_Diagnostics_IPLayerCapacityMetrics_ModalResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.IPLayerCapacityMetrics.ModalResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacityMetrics.ModalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     MaxIPLayerCapacity: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
     TimeOfMax: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     MaxETHCapacityNoFCS: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
@@ -160,8 +160,8 @@ class IP_Diagnostics_IPLayerCapacityMetrics_ModalResult(_Model):
 
 
 class IP_Diagnostics_IPLayerCapacityMetrics_IncrementalResult(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.IPLayerCapacityMetrics.IncrementalResult.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacityMetrics.IncrementalResult.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     IPLayerCapacity: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
     TimeOfSubInterval: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     LossRatio: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
@@ -174,8 +174,8 @@ class IP_Diagnostics_IPLayerCapacityMetrics_IncrementalResult(_Model):
 
 
 class IP_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -195,8 +195,8 @@ class IP_Interface_Stats(_Model):
 
 
 class IP_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -225,8 +225,8 @@ class IP_Interface(_Model):
 
 
 class IP_ActivePort(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.ActivePort.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.ActivePort.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     LocalIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LocalPort: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RemoteIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -235,8 +235,8 @@ class IP_ActivePort(_Model):
 
 
 class IP_Diagnostics_IPPing(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.IPPing."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.IPPing."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
@@ -257,8 +257,8 @@ class IP_Diagnostics_IPPing(_Model):
 
 
 class IP_Diagnostics_TraceRoute(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.TraceRoute."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.TraceRoute."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_MaxHopCountExceeded', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
@@ -275,8 +275,8 @@ class IP_Diagnostics_TraceRoute(_Model):
 
 
 class IP_Diagnostics_DownloadDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.DownloadDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.DownloadDiagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Completed', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_InitConnectionFailed', 'Error_NoResponse', 'Error_TransferFailed', 'Error_PasswordRequestFailed', 'Error_LoginFailed', 'Error_NoTransferMode', 'Error_NoPASV', 'Error_IncorrectSize', 'Error_Timeout', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DownloadURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -311,8 +311,8 @@ class IP_Diagnostics_DownloadDiagnostics(_Model):
 
 
 class IP_Diagnostics_UDPEchoConfig(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.UDPEchoConfig."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.UDPEchoConfig."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SourceIPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -328,8 +328,8 @@ class IP_Diagnostics_UDPEchoConfig(_Model):
 
 
 class IP_Diagnostics_UploadDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.UploadDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.UploadDiagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Completed', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_InitConnectionFailed', 'Error_NoResponse', 'Error_PasswordRequestFailed', 'Error_LoginFailed', 'Error_NoTransferMode', 'Error_NoPASV', 'Error_NoCWD', 'Error_NoSTOR', 'Error_NoTransferComplete', 'Error_Timeout', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     UploadURL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -365,8 +365,8 @@ class IP_Diagnostics_UploadDiagnostics(_Model):
 
 
 class IP_Diagnostics_UDPEchoDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.UDPEchoDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.UDPEchoDiagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Completed', 'Error_CannotResolveHostName', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -390,8 +390,8 @@ class IP_Diagnostics_UDPEchoDiagnostics(_Model):
 
 
 class IP_Diagnostics_IPLayerCapacityMetrics(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.IPLayerCapacityMetrics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.IPLayerCapacityMetrics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Error_CannotResolveHostName', 'Error_NoRouteToHost', 'Error_InitConnectionFailed', 'Error_NoResponse', 'Error_PasswordRequestFailed', 'Error_LoginFailed', 'Error_RejectedByRemote', 'Error_IncorrectSize', 'Error_Timeout', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     IPLayerMaxConnections: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     IPLayerMaxIncrementalResult: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -492,8 +492,8 @@ class IP_Diagnostics_IPLayerCapacityMetrics(_Model):
 
 
 class IP_Diagnostics_ServerSelectionDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics.ServerSelectionDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics.ServerSelectionDiagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Canceled', 'Complete', 'Completed', 'Error_CannotResolveHostName', 'Error_Internal', 'Error_Other'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProtocolVersion: _Annotated[_Literal['Any', 'IPv4', 'IPv6'] | str | None, _Param(_BaseType.STRING)] = None
@@ -509,8 +509,8 @@ class IP_Diagnostics_ServerSelectionDiagnostics(_Model):
 
 
 class IP_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     IPv4PingSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv6PingSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4TraceRouteSupported: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -535,8 +535,8 @@ class IP_Diagnostics(_Model):
 
 
 class IP(_Model):
-    bbf_path: _ClassVar[str] = "Device.IP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.IP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     IPv4Capable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPv4Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None

@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class MQTT_Broker_Bridge_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Broker.{i}.Bridge.{i}.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Broker.{i}.Bridge.{i}.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Priority: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -22,8 +22,8 @@ class MQTT_Broker_Bridge_Server(_Model):
 
 
 class MQTT_Broker_Bridge_Subscription(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Broker.{i}.Bridge.{i}.Subscription.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Broker.{i}.Bridge.{i}.Subscription.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Enabled', 'Disabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -35,8 +35,8 @@ class MQTT_Broker_Bridge_Subscription(_Model):
 
 
 class MQTT_Client_Subscription(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Client.{i}.Subscription.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Client.{i}.Subscription.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Unsubscribed', 'Subscribed', 'Subscribing', 'Unsubscribing', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -45,8 +45,8 @@ class MQTT_Client_Subscription(_Model):
 
 
 class MQTT_Client_UserProperty(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Client.{i}.UserProperty.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Client.{i}.UserProperty.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -55,8 +55,8 @@ class MQTT_Client_UserProperty(_Model):
 
 
 class MQTT_Broker_Bridge(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Broker.{i}.Bridge.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Broker.{i}.Bridge.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -83,8 +83,8 @@ class MQTT_Broker_Bridge(_Model):
 
 
 class MQTT_Client_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Client.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Client.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     BrokerConnectionEstablished: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     LastPublishMessageSent: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
     LastPublishMessageReceived: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -99,8 +99,8 @@ class MQTT_Client_Stats(_Model):
 
 
 class MQTT_BrokerSecurity_ACL(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.BrokerSecurity.ACL.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.BrokerSecurity.ACL.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -113,8 +113,8 @@ class MQTT_BrokerSecurity_ACL(_Model):
 
 
 class MQTT_BrokerSecurity_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.BrokerSecurity.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.BrokerSecurity.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -125,8 +125,8 @@ class MQTT_BrokerSecurity_Client(_Model):
 
 
 class MQTT_Broker_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Broker.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Broker.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TotalNumberOfClients: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     NumberOfActiveClients: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     NumberOfInactiveClients: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -140,8 +140,8 @@ class MQTT_Broker_Stats(_Model):
 
 
 class MQTT_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -193,8 +193,8 @@ class MQTT_Client(_Model):
 
 
 class MQTT_Broker(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Broker.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Broker.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -220,8 +220,8 @@ class MQTT_Broker(_Model):
 
 
 class MQTT_Capabilities(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.Capabilities."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.Capabilities."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ProtocolVersionsSupported: _Annotated[_CommaList[_Literal['3.1', '3.1.1', '5.0'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     TransportProtocolSupported: _Annotated[_CommaList[_Literal['TCP/IP', 'TLS', 'WebSocket', 'WebSocketTLS'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     MaxNumberOfClientSubscriptions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -230,8 +230,8 @@ class MQTT_Capabilities(_Model):
 
 
 class MQTT_BrokerSecurity(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT.BrokerSecurity."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT.BrokerSecurity."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ACLNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ClientNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ACL: dict[int, MQTT_BrokerSecurity_ACL] = _Field(default_factory=dict)
@@ -239,8 +239,8 @@ class MQTT_BrokerSecurity(_Model):
 
 
 class MQTT(_Model):
-    bbf_path: _ClassVar[str] = "Device.MQTT."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.MQTT."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ClientNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BrokerNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LogConnectionMessages: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None

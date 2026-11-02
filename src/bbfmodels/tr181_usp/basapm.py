@@ -2,29 +2,29 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class BASAPM_MeasurementEndpoint_ISPDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.BASAPM.MeasurementEndpoint.{i}.ISPDevice."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.BASAPM.MeasurementEndpoint.{i}.ISPDevice."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ReferencePoint: _Annotated[_Literal['STP', 'IDTP', 'RNTP', 'IRTP', 'MTP', 'IATP', 'UNITP', 'CEDTP'] | str | None, _Param(_BaseType.STRING)] = None
     GeographicalLocation: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class BASAPM_MeasurementEndpoint_CustomerDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.BASAPM.MeasurementEndpoint.{i}.CustomerDevice."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.BASAPM.MeasurementEndpoint.{i}.CustomerDevice."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     EquipmentIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     CustomerIdentifier: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class BASAPM_MeasurementEndpoint(_Model):
-    bbf_path: _ClassVar[str] = "Device.BASAPM.MeasurementEndpoint.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.BASAPM.MeasurementEndpoint.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MeasurementAgent: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -37,8 +37,8 @@ class BASAPM_MeasurementEndpoint(_Model):
 
 
 class BASAPM(_Model):
-    bbf_path: _ClassVar[str] = "Device.BASAPM."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.BASAPM."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     MeasurementEndpointNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MeasurementEndpoint: dict[int, BASAPM_MeasurementEndpoint] = _Field(default_factory=dict)
 

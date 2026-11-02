@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class UserInterface_HTTPAccess_Session(_Model):
-    bbf_path: _ClassVar[str] = "Device.UserInterface.HTTPAccess.{i}.Session.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.UserInterface.HTTPAccess.{i}.Session.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SessionID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     User: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -21,8 +21,8 @@ class UserInterface_HTTPAccess_Session(_Model):
 
 
 class UserInterface_HTTPAccess(_Model):
-    bbf_path: _ClassVar[str] = "Device.UserInterface.HTTPAccess.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.UserInterface.HTTPAccess.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -49,8 +49,8 @@ class UserInterface_HTTPAccess(_Model):
 
 
 class UserInterface_RemoteAccess(_Model):
-    bbf_path: _ClassVar[str] = "Device.UserInterface.RemoteAccess."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.UserInterface.RemoteAccess."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SupportedProtocols: _Annotated[_CommaList[_Literal['HTTP', 'HTTPS'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -58,8 +58,8 @@ class UserInterface_RemoteAccess(_Model):
 
 
 class UserInterface_LocalDisplay(_Model):
-    bbf_path: _ClassVar[str] = "Device.UserInterface.LocalDisplay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.UserInterface.LocalDisplay."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Movable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Resizable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PosX: _Annotated[int | None, _Param(_BaseType.INT)] = None
@@ -71,8 +71,8 @@ class UserInterface_LocalDisplay(_Model):
 
 
 class UserInterface_Messages(_Model):
-    bbf_path: _ClassVar[str] = "Device.UserInterface.Messages."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.UserInterface.Messages."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Title: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SubTitle: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -87,8 +87,8 @@ class UserInterface_Messages(_Model):
 
 
 class UserInterface(_Model):
-    bbf_path: _ClassVar[str] = "Device.UserInterface."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.UserInterface."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PasswordRequired: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PasswordUserSelectable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None

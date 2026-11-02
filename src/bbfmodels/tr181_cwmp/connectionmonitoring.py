@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class ConnectionMonitoring_Connection_Action(_Model):
-    bbf_path: _ClassVar[str] = "Device.ConnectionMonitoring.Connection.{i}.Action.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ConnectionMonitoring.Connection.{i}.Action.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     AttemptCount: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -19,15 +19,15 @@ class ConnectionMonitoring_Connection_Action(_Model):
 
 
 class ConnectionMonitoring_Connection_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.ConnectionMonitoring.Connection.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ConnectionMonitoring.Connection.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TotalNumberOfAttempts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     TotalTriggeredActions: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
 
 
 class ConnectionMonitoring_Connection(_Model):
-    bbf_path: _ClassVar[str] = "Device.ConnectionMonitoring.Connection.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ConnectionMonitoring.Connection.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error', 'Error_Misconfigured'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -48,8 +48,8 @@ class ConnectionMonitoring_Connection(_Model):
 
 
 class ConnectionMonitoring(_Model):
-    bbf_path: _ClassVar[str] = "Device.ConnectionMonitoring."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ConnectionMonitoring."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ConnectionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

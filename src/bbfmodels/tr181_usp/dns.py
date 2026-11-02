@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,22 +10,22 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DNS_SD_Advertise_TextRecord(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.SD.Advertise.{i}.TextRecord.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.SD.Advertise.{i}.TextRecord.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Key: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class DNS_SD_Service_TextRecord(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.SD.Service.{i}.TextRecord.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.SD.Service.{i}.TextRecord.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Key: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class DNS_Zone_Host(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Zone.{i}.Host.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Zone.{i}.Host.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -35,8 +35,8 @@ class DNS_Zone_Host(_Model):
 
 
 class DNS_Client_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Client.Server.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Client.Server.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -46,8 +46,8 @@ class DNS_Client_Server(_Model):
 
 
 class DNS_Relay_Config(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Relay.Config.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Relay.Config.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Forwarders: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -62,8 +62,8 @@ class DNS_Relay_Config(_Model):
 
 
 class DNS_Relay_Forwarding(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Relay.Forwarding.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Relay.Forwarding.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -73,8 +73,8 @@ class DNS_Relay_Forwarding(_Model):
 
 
 class DNS_SD_Advertise(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.SD.Advertise.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.SD.Advertise.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -89,8 +89,8 @@ class DNS_SD_Advertise(_Model):
 
 
 class DNS_SD_Service(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.SD.Service.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.SD.Service.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     InstanceName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ApplicationProtocol: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TransportProtocol: _Annotated[_Literal['TCP', 'UDP'] | str | None, _Param(_BaseType.STRING)] = None
@@ -108,8 +108,8 @@ class DNS_SD_Service(_Model):
 
 
 class DNS_Zone(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Zone.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Zone.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -120,8 +120,8 @@ class DNS_Zone(_Model):
 
 
 class DNS_Relay_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Relay.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Relay.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     TotalQueries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     CacheHits: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     CacheMisses: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -159,8 +159,8 @@ class DNS_Relay_Stats(_Model):
 
 
 class DNS_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Client."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Client."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ServerNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -168,8 +168,8 @@ class DNS_Client(_Model):
 
 
 class DNS_Relay(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Relay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Relay."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ConfigNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -180,13 +180,13 @@ class DNS_Relay(_Model):
 
 
 class DNS_Diagnostics(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.Diagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.Diagnostics."
+    __bbf_package__ = "bbfmodels.tr181_usp"
 
 
 class DNS_SD(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.SD."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.SD."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     AdvertiseNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -197,16 +197,16 @@ class DNS_SD(_Model):
 
 
 class DNS_RebindProtection(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS.RebindProtection."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS.RebindProtection."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     IPExceptions: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     DomainExceptions: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class DNS(_Model):
-    bbf_path: _ClassVar[str] = "Device.DNS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DNS."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     SupportedRecordTypes: _Annotated[_CommaList[_Literal['A', 'AAAA', 'SRV', 'PTR'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     ZoneNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Zone: dict[int, DNS_Zone] = _Field(default_factory=dict)

@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class QueueManagement_Classification(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.QueueManagement.Classification.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.QueueManagement.Classification.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     ClassificationKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ClassificationEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ClassificationStatus: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -93,8 +93,8 @@ class QueueManagement_Classification(_Model):
 
 
 class QueueManagement_App(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.QueueManagement.App.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.QueueManagement.App.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     AppKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AppEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     AppStatus: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -110,8 +110,8 @@ class QueueManagement_App(_Model):
 
 
 class QueueManagement_Flow(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.QueueManagement.Flow.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.QueueManagement.Flow.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     FlowKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FlowEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     FlowStatus: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -129,8 +129,8 @@ class QueueManagement_Flow(_Model):
 
 
 class QueueManagement_Policer(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.QueueManagement.Policer.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.QueueManagement.Policer.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     PolicerKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PolicerEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PolicerStatus: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -158,8 +158,8 @@ class QueueManagement_Policer(_Model):
 
 
 class QueueManagement_Queue(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.QueueManagement.Queue.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.QueueManagement.Queue.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     QueueKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueStatus: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -178,8 +178,8 @@ class QueueManagement_Queue(_Model):
 
 
 class QueueManagement_QueueStats(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.QueueManagement.QueueStats.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.QueueManagement.QueueStats.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -194,8 +194,8 @@ class QueueManagement_QueueStats(_Model):
 
 
 class QueueManagement(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.QueueManagement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.QueueManagement."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     MaxQueues: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxClassificationEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

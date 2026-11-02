@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_RequestCategory_Schedule_AbsTimeSpan(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.RequestCategory.{i}.Schedule.{i}.AbsTimeSpan.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.RequestCategory.{i}.Schedule.{i}.AbsTimeSpan.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     StartTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -19,8 +19,8 @@ class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_RequestCategory_Schedule_AbsTimeSpan(_M
 
 
 class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_RequestCategory_Schedule(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.RequestCategory.{i}.Schedule.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.RequestCategory.{i}.Schedule.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Schedules: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -29,8 +29,8 @@ class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_RequestCategory_Schedule(_Model):
 
 
 class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_BlockPeriod(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.BlockPeriod.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.BlockPeriod.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FailedAttempts: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -38,8 +38,8 @@ class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_BlockPeriod(_Model):
 
 
 class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_RequestCategory(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.RequestCategory.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}.RequestCategory.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     RCAT: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -48,8 +48,8 @@ class ETSIM2M_SCL_SAFPolicySet_ANPPolicy_RequestCategory(_Model):
 
 
 class ETSIM2M_SCL_SAFPolicySet_M2MSPPolicy_RequestCategory(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.M2MSPPolicy.RequestCategory.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.M2MSPPolicy.RequestCategory.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     RCAT: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -60,8 +60,8 @@ class ETSIM2M_SCL_SAFPolicySet_M2MSPPolicy_RequestCategory(_Model):
 
 
 class ETSIM2M_SCL_SAFPolicySet_ANPPolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.ANPPolicy.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ANName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -72,37 +72,37 @@ class ETSIM2M_SCL_SAFPolicySet_ANPPolicy(_Model):
 
 
 class ETSIM2M_SCL_AreaNwkInstance_Property(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.AreaNwkInstance.{i}.Property.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.AreaNwkInstance.{i}.Property.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class ETSIM2M_SCL_AreaNwkDeviceInfoInstance_Property(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.AreaNwkDeviceInfoInstance.{i}.Property.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.AreaNwkDeviceInfoInstance.{i}.Property.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class ETSIM2M_SCL_SAFPolicySet_M2MSPPolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.M2MSPPolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}.M2MSPPolicy."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DefaultRCATValue: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     RequestCategoryNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RequestCategory: dict[int, ETSIM2M_SCL_SAFPolicySet_M2MSPPolicy_RequestCategory] = _Field(default_factory=dict)
 
 
 class ETSIM2M_SCL_Reregistration_ActionStatus(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.Reregistration.ActionStatus."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.Reregistration.ActionStatus."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Progress: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FinalStatus: _Annotated[_Literal['SUCCESS', 'FAILURE'] | str | None, _Param(_BaseType.STRING)] = None
 
 
 class ETSIM2M_SCL_SAFPolicySet(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.SAFPolicySet.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PolicyScope: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -112,8 +112,8 @@ class ETSIM2M_SCL_SAFPolicySet(_Model):
 
 
 class ETSIM2M_SCL_AreaNwkInstance(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.AreaNwkInstance.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.AreaNwkInstance.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AreaNwkType: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ListOfDevices: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -122,8 +122,8 @@ class ETSIM2M_SCL_AreaNwkInstance(_Model):
 
 
 class ETSIM2M_SCL_AreaNwkDeviceInfoInstance(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.AreaNwkDeviceInfoInstance.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.AreaNwkDeviceInfoInstance.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     AreaNwkInstance: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Host: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     ListOfDeviceNeighbors: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -137,15 +137,15 @@ class ETSIM2M_SCL_AreaNwkDeviceInfoInstance(_Model):
 
 
 class ETSIM2M_SCL_Discovery(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.Discovery."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.Discovery."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     MaxNumberOfDiscovRecords: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxSizeOfDiscovAnswer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class ETSIM2M_SCL_Reregistration(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}.Reregistration."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}.Reregistration."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     RegTargetNSCLList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     RegSearchStrings: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     RegAccessRightID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -155,8 +155,8 @@ class ETSIM2M_SCL_Reregistration(_Model):
 
 
 class ETSIM2M_SCL(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M.SCL.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M.SCL.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AnnouncedToSCLList: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -171,8 +171,8 @@ class ETSIM2M_SCL(_Model):
 
 
 class ETSIM2M(_Model):
-    bbf_path: _ClassVar[str] = "Device.ETSIM2M."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ETSIM2M."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SCLNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SCL: dict[int, ETSIM2M_SCL] = _Field(default_factory=dict)
 

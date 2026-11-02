@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class Layer2Bridging_Bridge_Port(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Layer2Bridging.Bridge.{i}.Port.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Layer2Bridging.Bridge.{i}.Port.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     PortEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PortInterface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -21,8 +21,8 @@ class Layer2Bridging_Bridge_Port(_Model):
 
 
 class Layer2Bridging_Bridge_VLAN(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Layer2Bridging.Bridge.{i}.VLAN.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Layer2Bridging.Bridge.{i}.VLAN.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     VLANEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     VLANName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -30,8 +30,8 @@ class Layer2Bridging_Bridge_VLAN(_Model):
 
 
 class Layer2Bridging_Bridge(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Layer2Bridging.Bridge.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Layer2Bridging.Bridge.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     BridgeKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BridgeStandard: _Annotated[_Literal['802.1D', '802.1Q'] | str | None, _Param(_BaseType.STRING)] = None
@@ -46,8 +46,8 @@ class Layer2Bridging_Bridge(_Model):
 
 
 class Layer2Bridging_Filter(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Layer2Bridging.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Layer2Bridging.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FilterKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FilterEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -80,8 +80,8 @@ class Layer2Bridging_Filter(_Model):
 
 
 class Layer2Bridging_Marking(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Layer2Bridging.Marking.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Layer2Bridging.Marking.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     MarkingKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MarkingEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -96,8 +96,8 @@ class Layer2Bridging_Marking(_Model):
 
 
 class Layer2Bridging_AvailableInterface(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Layer2Bridging.AvailableInterface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Layer2Bridging.AvailableInterface.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     AvailableInterfaceKey: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InterfaceType: _Annotated[_Literal['LANInterface', 'WANInterface', 'LANRouterConnection', 'WANRouterConnection'] | str | None, _Param(_BaseType.STRING)] = None
@@ -105,8 +105,8 @@ class Layer2Bridging_AvailableInterface(_Model):
 
 
 class Layer2Bridging(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Layer2Bridging."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Layer2Bridging."
+    __bbf_package__ = "bbfmodels.tr098"
     MaxBridgeEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxDBridgeEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxFilterEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

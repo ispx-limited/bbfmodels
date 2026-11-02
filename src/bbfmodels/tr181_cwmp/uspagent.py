@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class USPAgent_Controller_MTP_CoAP(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Controller.{i}.MTP.{i}.CoAP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Controller.{i}.MTP.{i}.CoAP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -19,16 +19,16 @@ class USPAgent_Controller_MTP_CoAP(_Model):
 
 
 class USPAgent_Controller_MTP_STOMP(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Controller.{i}.MTP.{i}.STOMP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Controller.{i}.MTP.{i}.STOMP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Destination: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     USPServiceRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class USPAgent_Controller_MTP_WebSocket(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Controller.{i}.MTP.{i}.WebSocket."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Controller.{i}.MTP.{i}.WebSocket."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -42,8 +42,8 @@ class USPAgent_Controller_MTP_WebSocket(_Model):
 
 
 class USPAgent_Controller_MTP_MQTT(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Controller.{i}.MTP.{i}.MQTT."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Controller.{i}.MTP.{i}.MQTT."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Topic: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PublishRetainResponse: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -53,15 +53,15 @@ class USPAgent_Controller_MTP_MQTT(_Model):
 
 
 class USPAgent_Controller_MTP_UDS(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Controller.{i}.MTP.{i}.UDS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Controller.{i}.MTP.{i}.UDS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     UnixDomainSocketRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     USPServiceRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class USPAgent_ControllerTrust_Role_Permission(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.ControllerTrust.Role.{i}.Permission.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.ControllerTrust.Role.{i}.Permission.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -73,8 +73,8 @@ class USPAgent_ControllerTrust_Role_Permission(_Model):
 
 
 class USPAgent_Controller_MTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Controller.{i}.MTP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Controller.{i}.MTP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Protocol: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -87,8 +87,8 @@ class USPAgent_Controller_MTP(_Model):
 
 
 class USPAgent_MTP_CoAP(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.MTP.{i}.CoAP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.MTP.{i}.CoAP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Interfaces: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -97,16 +97,16 @@ class USPAgent_MTP_CoAP(_Model):
 
 
 class USPAgent_MTP_STOMP(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.MTP.{i}.STOMP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.MTP.{i}.STOMP."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Destination: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DestinationFromServer: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class USPAgent_MTP_WebSocket(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.MTP.{i}.WebSocket."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.MTP.{i}.WebSocket."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Interfaces: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     Port: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Path: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -115,8 +115,8 @@ class USPAgent_MTP_WebSocket(_Model):
 
 
 class USPAgent_MTP_MQTT(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.MTP.{i}.MQTT."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.MTP.{i}.MQTT."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ResponseTopicConfigured: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ResponseTopicDiscovered: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -124,14 +124,14 @@ class USPAgent_MTP_MQTT(_Model):
 
 
 class USPAgent_MTP_UDS(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.MTP.{i}.UDS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.MTP.{i}.UDS."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     UnixDomainSocketRef: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class USPAgent_ControllerTrust_Role(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.ControllerTrust.Role.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.ControllerTrust.Role.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -140,8 +140,8 @@ class USPAgent_ControllerTrust_Role(_Model):
 
 
 class USPAgent_ControllerTrust_Credential(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.ControllerTrust.Credential.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.ControllerTrust.Credential.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Role: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -150,8 +150,8 @@ class USPAgent_ControllerTrust_Credential(_Model):
 
 
 class USPAgent_ControllerTrust_Challenge(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.ControllerTrust.Challenge.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.ControllerTrust.Challenge.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Role: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -166,8 +166,8 @@ class USPAgent_ControllerTrust_Challenge(_Model):
 
 
 class USPAgent_MTP(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.MTP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.MTP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -181,8 +181,8 @@ class USPAgent_MTP(_Model):
 
 
 class USPAgent_Controller(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Controller.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Controller.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ControllerCode: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -201,8 +201,8 @@ class USPAgent_Controller(_Model):
 
 
 class USPAgent_Certificate(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.Certificate.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.Certificate.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -210,8 +210,8 @@ class USPAgent_Certificate(_Model):
 
 
 class USPAgent_ControllerTrust(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent.ControllerTrust."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent.ControllerTrust."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     UntrustedRole: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
     BannedRole: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SecuredRoles: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
@@ -226,8 +226,8 @@ class USPAgent_ControllerTrust(_Model):
 
 
 class USPAgent(_Model):
-    bbf_path: _ClassVar[str] = "Device.USPAgent."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USPAgent."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     EndpointID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SoftwareVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     UpTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

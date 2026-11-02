@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class ManagementServer_DownloadAvailability_Announcement_Group(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.DownloadAvailability.Announcement.Group.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.DownloadAvailability.Announcement.Group.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
@@ -19,8 +19,8 @@ class ManagementServer_DownloadAvailability_Announcement_Group(_Model):
 
 
 class ManagementServer_ManageableDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.ManageableDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.ManageableDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -29,8 +29,8 @@ class ManagementServer_ManageableDevice(_Model):
 
 
 class ManagementServer_DownloadAvailability_Announcement(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.DownloadAvailability.Announcement."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.DownloadAvailability.Announcement."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     GroupNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -38,16 +38,16 @@ class ManagementServer_DownloadAvailability_Announcement(_Model):
 
 
 class ManagementServer_DownloadAvailability_Query(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.DownloadAvailability.Query."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.DownloadAvailability.Query."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class ManagementServer_EmbeddedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.EmbeddedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.EmbeddedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ControllerID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProxiedDeviceID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -63,8 +63,8 @@ class ManagementServer_EmbeddedDevice(_Model):
 
 
 class ManagementServer_VirtualDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.VirtualDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.VirtualDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ManufacturerOUI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ProductClass: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SerialNumber: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -76,8 +76,8 @@ class ManagementServer_VirtualDevice(_Model):
 
 
 class ManagementServer_InformParameter(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.InformParameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.InformParameter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ParameterName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -85,8 +85,8 @@ class ManagementServer_InformParameter(_Model):
 
 
 class ManagementServer_AutonomousTransferCompletePolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.AutonomousTransferCompletePolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.AutonomousTransferCompletePolicy."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     TransferTypeFilter: _Annotated[_Literal['Upload', 'Download', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
     ResultTypeFilter: _Annotated[_Literal['Success', 'Failure', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
@@ -94,15 +94,15 @@ class ManagementServer_AutonomousTransferCompletePolicy(_Model):
 
 
 class ManagementServer_DownloadAvailability(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.DownloadAvailability."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.DownloadAvailability."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Announcement: ManagementServer_DownloadAvailability_Announcement | None = _Field(default=None)
     Query: ManagementServer_DownloadAvailability_Query | None = _Field(default=None)
 
 
 class ManagementServer_DUStateChangeComplPolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.DUStateChangeComplPolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.DUStateChangeComplPolicy."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     OperationTypeFilter: _Annotated[_CommaList[_Literal['Install', 'Update', 'Uninstall'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     ResultTypeFilter: _Annotated[_Literal['Success', 'Failure', 'Both'] | str | None, _Param(_BaseType.STRING)] = None
@@ -110,8 +110,8 @@ class ManagementServer_DUStateChangeComplPolicy(_Model):
 
 
 class ManagementServer_StandbyPolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.StandbyPolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.StandbyPolicy."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     CRUnawarenessMaxDuration: _Annotated[int | None, _Param(_BaseType.INT)] = None
     MaxMissedPeriodic: _Annotated[int | None, _Param(_BaseType.INT)] = None
     NotifyMissedScheduled: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -123,16 +123,16 @@ class ManagementServer_StandbyPolicy(_Model):
 
 
 class ManagementServer_HeartbeatPolicy(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer.HeartbeatPolicy."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer.HeartbeatPolicy."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ReportingInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InitiationTime: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
 class ManagementServer(_Model):
-    bbf_path: _ClassVar[str] = "Device.ManagementServer."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.ManagementServer."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     EnableCWMP: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     URL: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Username: _Annotated[str | None, _Param(_BaseType.STRING)] = None

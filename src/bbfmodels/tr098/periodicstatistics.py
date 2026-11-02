@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class PeriodicStatistics_SampleSet_Parameter(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.PeriodicStatistics.SampleSet.{i}.Parameter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.PeriodicStatistics.SampleSet.{i}.Parameter.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Reference: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -26,8 +26,8 @@ class PeriodicStatistics_SampleSet_Parameter(_Model):
 
 
 class PeriodicStatistics_SampleSet(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.PeriodicStatistics.SampleSet.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.PeriodicStatistics.SampleSet.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Trigger'] | str | None, _Param(_BaseType.STRING)] = None
@@ -45,8 +45,8 @@ class PeriodicStatistics_SampleSet(_Model):
 
 
 class PeriodicStatistics(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.PeriodicStatistics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.PeriodicStatistics."
+    __bbf_package__ = "bbfmodels.tr098"
     MinSampleInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MaxReportSamples: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SampleSetNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

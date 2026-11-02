@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,22 +10,22 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DHCPv4_Server_Pool_Client_IPv4Address(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server.Pool.{i}.Client.{i}.IPv4Address.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server.Pool.{i}.Client.{i}.IPv4Address.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     IPAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LeaseTimeRemaining: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
 
 
 class DHCPv4_Server_Pool_Client_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server.Pool.{i}.Client.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server.Pool.{i}.Client.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Value: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
 
 
 class DHCPv4_Server_Pool_StaticAddress(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server.Pool.{i}.StaticAddress.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server.Pool.{i}.StaticAddress.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Chaddr: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -34,8 +34,8 @@ class DHCPv4_Server_Pool_StaticAddress(_Model):
 
 
 class DHCPv4_Server_Pool_Option(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server.Pool.{i}.Option.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server.Pool.{i}.Option.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -44,8 +44,8 @@ class DHCPv4_Server_Pool_Option(_Model):
 
 
 class DHCPv4_Server_Pool_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server.Pool.{i}.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server.Pool.{i}.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Chaddr: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Active: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -56,8 +56,8 @@ class DHCPv4_Server_Pool_Client(_Model):
 
 
 class DHCPv4_Client_SentOption(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Client.{i}.SentOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Client.{i}.SentOption.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Tag: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -65,8 +65,8 @@ class DHCPv4_Client_SentOption(_Model):
 
 
 class DHCPv4_Client_ReqOption(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Client.{i}.ReqOption.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Client.{i}.ReqOption.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -75,8 +75,8 @@ class DHCPv4_Client_ReqOption(_Model):
 
 
 class DHCPv4_Client_Retransmission(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Client.{i}.Retransmission."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Client.{i}.Retransmission."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     DiscoverInitialTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DiscoverMaxTimeout: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DiscoverMaxDuration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -87,8 +87,8 @@ class DHCPv4_Client_Retransmission(_Model):
 
 
 class DHCPv4_Client_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Client.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Client.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Discover: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Offer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Request: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -103,8 +103,8 @@ class DHCPv4_Client_Stats(_Model):
 
 
 class DHCPv4_Server_Pool(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server.Pool.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server.Pool.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -140,8 +140,8 @@ class DHCPv4_Server_Pool(_Model):
 
 
 class DHCPv4_Relay_Forwarding(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Relay.Forwarding.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Relay.Forwarding.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -162,8 +162,8 @@ class DHCPv4_Relay_Forwarding(_Model):
 
 
 class DHCPv4_Client(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Client.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Client.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -188,8 +188,8 @@ class DHCPv4_Client(_Model):
 
 
 class DHCPv4_Server_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server.Stats."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Discover: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Offer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     Request: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -206,8 +206,8 @@ class DHCPv4_Server_Stats(_Model):
 
 
 class DHCPv4_Server(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Server."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Server."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     PoolNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Pool: dict[int, DHCPv4_Server_Pool] = _Field(default_factory=dict)
@@ -215,8 +215,8 @@ class DHCPv4_Server(_Model):
 
 
 class DHCPv4_Relay(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4.Relay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4.Relay."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     ForwardingNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -224,8 +224,8 @@ class DHCPv4_Relay(_Model):
 
 
 class DHCPv4(_Model):
-    bbf_path: _ClassVar[str] = "Device.DHCPv4."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.DHCPv4."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     ClientNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Client: dict[int, DHCPv4_Client] = _Field(default_factory=dict)
     Server: DHCPv4_Server | None = _Field(default=None)

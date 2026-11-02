@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class FAST_Line_Stats_Total(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}.Stats.Total."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats.Total."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LOSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -26,8 +26,8 @@ class FAST_Line_Stats_Total(_Model):
 
 
 class FAST_Line_Stats_Showtime(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}.Stats.Showtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats.Showtime."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LOSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -43,8 +43,8 @@ class FAST_Line_Stats_Showtime(_Model):
 
 
 class FAST_Line_Stats_LastShowtime(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}.Stats.LastShowtime."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats.LastShowtime."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LOSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -60,8 +60,8 @@ class FAST_Line_Stats_LastShowtime(_Model):
 
 
 class FAST_Line_Stats_CurrentDay(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}.Stats.CurrentDay."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats.CurrentDay."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LOSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -77,8 +77,8 @@ class FAST_Line_Stats_CurrentDay(_Model):
 
 
 class FAST_Line_Stats_QuarterHour(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}.Stats.QuarterHour."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats.QuarterHour."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SeverelyErroredSecs: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     LOSS: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -94,8 +94,8 @@ class FAST_Line_Stats_QuarterHour(_Model):
 
 
 class FAST_Line_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -118,8 +118,8 @@ class FAST_Line_Stats(_Model):
 
 
 class FAST_Line_TestParams(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}.TestParams."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}.TestParams."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SNRGds: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SNRGus: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SNRpsds: _Annotated[_CommaList[int] | None, _Param(_BaseType.INT, list=True)] = None
@@ -135,8 +135,8 @@ class FAST_Line_TestParams(_Model):
 
 
 class FAST_Line(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST.Line.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST.Line.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -180,8 +180,8 @@ class FAST_Line(_Model):
 
 
 class FAST(_Model):
-    bbf_path: _ClassVar[str] = "Device.FAST."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.FAST."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     LineNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Line: dict[int, FAST_Line] = _Field(default_factory=dict)
 

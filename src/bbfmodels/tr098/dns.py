@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,15 +10,15 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class DNS_SD_Service_TextRecord(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DNS.SD.Service.{i}.TextRecord.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DNS.SD.Service.{i}.TextRecord.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Key: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class DNS_SD_Service(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DNS.SD.Service.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DNS.SD.Service.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     InstanceName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ApplicationProtocol: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     TransportProtocol: _Annotated[_Literal['TCP', 'UDP'] | str | None, _Param(_BaseType.STRING)] = None
@@ -36,16 +36,16 @@ class DNS_SD_Service(_Model):
 
 
 class DNS_SD(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DNS.SD."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DNS.SD."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     ServiceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Service: dict[int, DNS_SD_Service] = _Field(default_factory=dict)
 
 
 class DNS(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.DNS."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.DNS."
+    __bbf_package__ = "bbfmodels.tr098"
     SD: DNS_SD | None = _Field(default=None)
 
 

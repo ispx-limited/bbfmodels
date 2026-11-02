@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean, HexBinary as _HexBinary
 
 
 class USB_USBHosts_Host_Device_Configuration_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.USBHosts.Host.{i}.Device.{i}.Configuration.{i}.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.USBHosts.Host.{i}.Device.{i}.Configuration.{i}.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InterfaceClass: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
     InterfaceSubClass: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -18,16 +18,16 @@ class USB_USBHosts_Host_Device_Configuration_Interface(_Model):
 
 
 class USB_USBHosts_Host_Device_Configuration(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.USBHosts.Host.{i}.Device.{i}.Configuration.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.USBHosts.Host.{i}.Device.{i}.Configuration.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     ConfigurationNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, USB_USBHosts_Host_Device_Configuration_Interface] = _Field(default_factory=dict)
 
 
 class USB_USBHosts_Host_Device(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.USBHosts.Host.{i}.Device.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.USBHosts.Host.{i}.Device.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     DeviceNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     USBVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DeviceClass: _Annotated[_HexBinary | None, _Param(_BaseType.HEX_BINARY)] = None
@@ -53,8 +53,8 @@ class USB_USBHosts_Host_Device(_Model):
 
 
 class USB_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -74,8 +74,8 @@ class USB_Interface_Stats(_Model):
 
 
 class USB_USBHosts_Host(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.USBHosts.Host.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.USBHosts.Host.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -88,8 +88,8 @@ class USB_USBHosts_Host(_Model):
 
 
 class USB_USBHosts_AllowedDevice(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.USBHosts.AllowedDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.USBHosts.AllowedDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -102,8 +102,8 @@ class USB_USBHosts_AllowedDevice(_Model):
 
 
 class USB_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -119,8 +119,8 @@ class USB_Interface(_Model):
 
 
 class USB_Port(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.Port.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.Port.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     PowerCapability: _Annotated[_CommaList[_Literal['On', 'Off', 'LowPower'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     PowerStatus: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -133,8 +133,8 @@ class USB_Port(_Model):
 
 
 class USB_USBHosts(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB.USBHosts."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB.USBHosts."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     HostNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AllowedDeviceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AllowAllDevices: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -143,8 +143,8 @@ class USB_USBHosts(_Model):
 
 
 class USB(_Model):
-    bbf_path: _ClassVar[str] = "Device.USB."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.USB."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     InterfaceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     PortNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Interface: dict[int, USB_Interface] = _Field(default_factory=dict)

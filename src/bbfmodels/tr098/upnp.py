@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
@@ -10,8 +10,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class UPnP_Discovery_RootDevice(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Discovery.RootDevice.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Discovery.RootDevice.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Status: _Annotated[_Literal['LeaseActive', 'LeaseExpired', 'ByebyeReceived'] | str | None, _Param(_BaseType.STRING)] = None
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     USN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -23,8 +23,8 @@ class UPnP_Discovery_RootDevice(_Model):
 
 
 class UPnP_Discovery_Device(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Discovery.Device.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Discovery.Device.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Status: _Annotated[_Literal['LeaseActive', 'LeaseExpired', 'ByebyeReceived'] | str | None, _Param(_BaseType.STRING)] = None
     UUID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     USN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -36,8 +36,8 @@ class UPnP_Discovery_Device(_Model):
 
 
 class UPnP_Discovery_Service(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Discovery.Service.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Discovery.Service.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     Status: _Annotated[_Literal['LeaseActive', 'LeaseExpired', 'ByebyeReceived'] | str | None, _Param(_BaseType.STRING)] = None
     USN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LeaseTime: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -49,16 +49,16 @@ class UPnP_Discovery_Service(_Model):
 
 
 class UPnP_Description_DeviceDescription(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Description.DeviceDescription.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Description.DeviceDescription.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     URLBase: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     SpecVersion: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Host: _Annotated[_CommaList[str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class UPnP_Description_DeviceInstance(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Description.DeviceInstance.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Description.DeviceInstance.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     UDN: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ParentDevice: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     DiscoveryDevice: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -78,8 +78,8 @@ class UPnP_Description_DeviceInstance(_Model):
 
 
 class UPnP_Description_ServiceInstance(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Description.ServiceInstance.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Description.ServiceInstance.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     ParentDevice: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ServiceId: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ServiceDiscovery: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -90,8 +90,8 @@ class UPnP_Description_ServiceInstance(_Model):
 
 
 class UPnP_Device_Capabilities(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Device.Capabilities."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Device.Capabilities."
+    __bbf_package__ = "bbfmodels.tr098"
     UPnPArchitecture: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     UPnPArchitectureMinorVer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     UPnPMediaServer: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -107,8 +107,8 @@ class UPnP_Device_Capabilities(_Model):
 
 
 class UPnP_Device(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Device."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Device."
+    __bbf_package__ = "bbfmodels.tr098"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UPnPMediaServer: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UPnPMediaRenderer: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -123,8 +123,8 @@ class UPnP_Device(_Model):
 
 
 class UPnP_Discovery(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Discovery."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Discovery."
+    __bbf_package__ = "bbfmodels.tr098"
     RootDeviceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DeviceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ServiceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -134,8 +134,8 @@ class UPnP_Discovery(_Model):
 
 
 class UPnP_Description(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP.Description."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP.Description."
+    __bbf_package__ = "bbfmodels.tr098"
     DeviceDescriptionNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     DeviceInstanceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     ServiceInstanceNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -145,8 +145,8 @@ class UPnP_Description(_Model):
 
 
 class UPnP(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.UPnP."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.UPnP."
+    __bbf_package__ = "bbfmodels.tr098"
     Device: UPnP_Device | None = _Field(default=None)
     Discovery: UPnP_Discovery | None = _Field(default=None)
     Description: UPnP_Description | None = _Field(default=None)

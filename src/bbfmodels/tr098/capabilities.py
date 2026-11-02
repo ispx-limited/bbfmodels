@@ -2,22 +2,22 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
 
 
 class Capabilities_PerformanceDiagnostic(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Capabilities.PerformanceDiagnostic."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Capabilities.PerformanceDiagnostic."
+    __bbf_package__ = "bbfmodels.tr098"
     DownloadTransports: _Annotated[_CommaList[_Literal['HTTP', 'FTP'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     UploadTransports: _Annotated[_CommaList[_Literal['HTTP', 'FTP'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
 
 
 class Capabilities(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.Capabilities."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.Capabilities."
+    __bbf_package__ = "bbfmodels.tr098"
     PerformanceDiagnostic: Capabilities_PerformanceDiagnostic | None = _Field(default=None)
 
 

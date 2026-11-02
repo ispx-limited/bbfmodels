@@ -2,22 +2,22 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
 
 
 class WWC_URSP_TrafficDescriptor_RouteSelectionDescriptor_NetworkSlice(_Model):
-    bbf_path: _ClassVar[str] = "Device.WWC.URSP.{i}.TrafficDescriptor.{i}.RouteSelectionDescriptor.{i}.NetworkSlice."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.WWC.URSP.{i}.TrafficDescriptor.{i}.RouteSelectionDescriptor.{i}.NetworkSlice."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SliceServiceType: _Annotated[_Literal['eMBB', 'URLLC', 'MIoT', 'V2X'] | str | None, _Param(_BaseType.STRING)] = None
     SliceDifferentiator: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class WWC_URSP_TrafficDescriptor_RouteSelectionDescriptor(_Model):
-    bbf_path: _ClassVar[str] = "Device.WWC.URSP.{i}.TrafficDescriptor.{i}.RouteSelectionDescriptor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.WWC.URSP.{i}.TrafficDescriptor.{i}.RouteSelectionDescriptor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Precedence: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SSC: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -28,8 +28,8 @@ class WWC_URSP_TrafficDescriptor_RouteSelectionDescriptor(_Model):
 
 
 class WWC_URSP_TrafficDescriptor(_Model):
-    bbf_path: _ClassVar[str] = "Device.WWC.URSP.{i}.TrafficDescriptor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.WWC.URSP.{i}.TrafficDescriptor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -38,16 +38,16 @@ class WWC_URSP_TrafficDescriptor(_Model):
 
 
 class WWC_AccessNetwork_GUTI(_Model):
-    bbf_path: _ClassVar[str] = "Device.WWC.AccessNetwork.{i}.GUTI."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.WWC.AccessNetwork.{i}.GUTI."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     PLMN: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     AMFId: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TMSI: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
 
 
 class WWC_AccessNetwork(_Model):
-    bbf_path: _ClassVar[str] = "Device.WWC.AccessNetwork.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.WWC.AccessNetwork.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -59,8 +59,8 @@ class WWC_AccessNetwork(_Model):
 
 
 class WWC_URSP(_Model):
-    bbf_path: _ClassVar[str] = "Device.WWC.URSP.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.WWC.URSP.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Precedence: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     TrafficDescriptorNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -68,8 +68,8 @@ class WWC_URSP(_Model):
 
 
 class WWC(_Model):
-    bbf_path: _ClassVar[str] = "Device.WWC."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.WWC."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     HwCapabilities: _Annotated[_CommaList[_Literal['NG-RAN', 'E-UTRAN', 'W-5GAN'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     SwCapabilities: _Annotated[_CommaList[_Literal['FN-RG', '5G-RG', 'ATSSS'] | str] | None, _Param(_BaseType.STRING, list=True)] = None
     Mode: _Annotated[_Literal['FN-RG', '5G-RG', 'Auto'] | str | None, _Param(_BaseType.STRING)] = None

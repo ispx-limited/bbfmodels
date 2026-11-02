@@ -2,7 +2,7 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from datetime import datetime as _datetime
 from decimal import Decimal as _Decimal
 from pydantic import Field as _Field
@@ -11,8 +11,8 @@ from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _
 
 
 class IoTCapability_MultiLevelSensor_Sensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.MultiLevelSensor.Sensor.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelSensor.Sensor.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['Acceleration', 'Area', 'Battery', 'Brightness', 'Concentration', 'Conductivity', 'Distance', 'Energy', 'Flow', 'Humidity', 'Intensity', 'Luminance', 'Meter', 'Motion', 'Position', 'Power', 'Pressure', 'Radiation', 'Speed', 'Temperature', 'Volume', 'Weight', 'Depth', 'Counter', 'Duration', 'Longitude', 'Latitude', 'Altitude', 'Voltage', 'Current', 'Color', 'ActivePower', 'ReactivePower', 'ApparentPower', 'Hue', 'ColorSaturation', 'ColorBrightness', 'Frequency'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -27,8 +27,8 @@ class IoTCapability_MultiLevelSensor_Sensor(_Model):
 
 
 class IoTCapability_MultiLevelControl_Control(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelControl.Control.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Type: _Annotated[_Literal['Acceleration', 'Area', 'Battery', 'Brightness', 'Concentration', 'Conductivity', 'Distance', 'Energy', 'Flow', 'Humidity', 'Intensity', 'Luminance', 'Meter', 'Motion', 'Position', 'Power', 'Pressure', 'Radiation', 'Speed', 'Temperature', 'Volume', 'Weight', 'Depth', 'Counter', 'Duration', 'Longitude', 'Latitude', 'Altitude', 'Voltage', 'Current', 'Color', 'ActivePower', 'ReactivePower', 'ApparentPower', 'Hue', 'ColorSaturation', 'ColorBrightness', 'Frequency'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -41,8 +41,8 @@ class IoTCapability_MultiLevelControl_Control(_Model):
 
 
 class IoTCapability_Binding(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.Binding.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.Binding.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     FriendlyName: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -51,16 +51,16 @@ class IoTCapability_Binding(_Model):
 
 
 class IoTCapability_BinaryControl(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.BinaryControl."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.BinaryControl."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['Switch', 'Locked'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
 
 
 class IoTCapability_LevelControl(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.LevelControl."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.LevelControl."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['Acceleration', 'Area', 'Battery', 'Brightness', 'Concentration', 'Conductivity', 'Distance', 'Energy', 'Flow', 'Humidity', 'Intensity', 'Luminance', 'Meter', 'Motion', 'Position', 'Power', 'Pressure', 'Radiation', 'Speed', 'Temperature', 'Volume', 'Weight', 'Depth', 'Counter', 'Duration', 'Longitude', 'Latitude', 'Altitude', 'Voltage', 'Current', 'Color', 'ActivePower', 'ReactivePower', 'ApparentPower', 'Hue', 'ColorSaturation', 'ColorBrightness', 'Frequency'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
@@ -71,8 +71,8 @@ class IoTCapability_LevelControl(_Model):
 
 
 class IoTCapability_EnumControl(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.EnumControl."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.EnumControl."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['AlarmMode', 'DoorMode', 'FanMode', 'LockMode', 'OperatingMode', 'TemperatureMode', 'ThermostatMode'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -80,8 +80,8 @@ class IoTCapability_EnumControl(_Model):
 
 
 class IoTCapability_PulseControl(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.PulseControl."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.PulseControl."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['PushButton', 'MagneticContact', 'ElectronicLock', 'MotionTrigger'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Duration: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -89,8 +89,8 @@ class IoTCapability_PulseControl(_Model):
 
 
 class IoTCapability_BinarySensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.BinarySensor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.BinarySensor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['CarbonDioxideDetected', 'CarbonMonoxideDetected', 'DoorOpen', 'MotionDetected', 'SmokeDetected', 'WindowOpen', 'WaterDetected'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -102,8 +102,8 @@ class IoTCapability_BinarySensor(_Model):
 
 
 class IoTCapability_LevelSensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.LevelSensor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.LevelSensor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['Acceleration', 'Area', 'Battery', 'Brightness', 'Concentration', 'Conductivity', 'Distance', 'Energy', 'Flow', 'Humidity', 'Intensity', 'Luminance', 'Meter', 'Motion', 'Position', 'Power', 'Pressure', 'Radiation', 'Speed', 'Temperature', 'Volume', 'Weight', 'Depth', 'Counter', 'Duration', 'Longitude', 'Latitude', 'Altitude', 'Voltage', 'Current', 'Color', 'ActivePower', 'ReactivePower', 'ApparentPower', 'Hue', 'ColorSaturation', 'ColorBrightness', 'Frequency'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[_Decimal | None, _Param(_BaseType.DECIMAL)] = None
@@ -117,8 +117,8 @@ class IoTCapability_LevelSensor(_Model):
 
 
 class IoTCapability_MultiLevelSensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.MultiLevelSensor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelSensor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['RGB', 'Location'] | str | None, _Param(_BaseType.STRING)] = None
     MultiLevelSensorType: _Annotated[_Literal['Location', 'HSV', 'MultiPhaseVoltage', 'MultiPhaseCurrent', 'MultiPhaseReactivePower', 'MultiPhaseApparentPower', 'MultiPhaseActivePower', 'MultiPhaseVoltageCurrentPower', 'MultiPhaseElectric', 'sRGB', 'Temperatures'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -132,8 +132,8 @@ class IoTCapability_MultiLevelSensor(_Model):
 
 
 class IoTCapability_MultiLevelControl(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.MultiLevelControl."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.MultiLevelControl."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['Location', 'HSV', 'MultiPhaseVoltage', 'MultiPhaseCurrent', 'MultiPhaseReactivePower', 'MultiPhaseApparentPower', 'MultiPhaseActivePower', 'MultiPhaseVoltageCurrentPower', 'MultiPhaseElectric', 'sRGB', 'Temperatures'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     ControlNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -141,8 +141,8 @@ class IoTCapability_MultiLevelControl(_Model):
 
 
 class IoTCapability_EnumSensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.EnumSensor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.EnumSensor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['AlarmState', 'DoorState', 'FanState', 'LockState', 'OperatingState', 'TemperatureState', 'ThermostatFanState'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Value: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -152,8 +152,8 @@ class IoTCapability_EnumSensor(_Model):
 
 
 class IoTCapability_BlobSensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.BlobSensor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.BlobSensor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['ascii', 'base64', 'id', 'gif', 'jpeg', 'json', 'numberplate', 'text', 'url', 'raw', 'utf-8', 'utf-16', 'utf-32', 'uuid', 'xml', 'yaml'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LastChange: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -162,8 +162,8 @@ class IoTCapability_BlobSensor(_Model):
 
 
 class IoTCapability_PulseSensor(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}.PulseSensor."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}.PulseSensor."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Type: _Annotated[_Literal['PushButton', 'MagneticContact', 'ElectronicLock', 'MotionTrigger'] | str | None, _Param(_BaseType.STRING)] = None
     Description: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     LastChange: _Annotated[_datetime | None, _Param(_BaseType.DATE_TIME)] = None
@@ -174,8 +174,8 @@ class IoTCapability_PulseSensor(_Model):
 
 
 class IoTCapability(_Model):
-    bbf_path: _ClassVar[str] = "Device.IoTCapability.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.IoTCapability.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Class: _Annotated[_Literal['BinaryControl', 'LevelControl', 'EnumControl', 'PulseControl', 'BinarySensor', 'LevelSensor', 'MultiLevelSensor', 'MultiLevelControl', 'EnumSensor', 'BlobSensor', 'PulseSensor'] | str | None, _Param(_BaseType.STRING)] = None

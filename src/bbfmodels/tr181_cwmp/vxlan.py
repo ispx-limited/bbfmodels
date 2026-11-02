@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class VXLAN_Tunnel_Interface_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.VXLAN.Tunnel.{i}.Interface.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.VXLAN.Tunnel.{i}.Interface.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Reset: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
     BytesReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -32,8 +32,8 @@ class VXLAN_Tunnel_Interface_Stats(_Model):
 
 
 class VXLAN_Tunnel_Interface(_Model):
-    bbf_path: _ClassVar[str] = "Device.VXLAN.Tunnel.{i}.Interface.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.VXLAN.Tunnel.{i}.Interface.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Up', 'Down', 'Unknown', 'Dormant', 'NotPresent', 'LowerLayerDown', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -46,8 +46,8 @@ class VXLAN_Tunnel_Interface(_Model):
 
 
 class VXLAN_Tunnel_Stats(_Model):
-    bbf_path: _ClassVar[str] = "Device.VXLAN.Tunnel.{i}.Stats."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.VXLAN.Tunnel.{i}.Stats."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     KeepAliveSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     KeepAliveReceived: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     BytesSent: _Annotated[int | None, _Param(_BaseType.UNSIGNED_LONG)] = None
@@ -59,8 +59,8 @@ class VXLAN_Tunnel_Stats(_Model):
 
 
 class VXLAN_Tunnel(_Model):
-    bbf_path: _ClassVar[str] = "Device.VXLAN.Tunnel.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.VXLAN.Tunnel.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -79,8 +79,8 @@ class VXLAN_Tunnel(_Model):
 
 
 class VXLAN_Filter(_Model):
-    bbf_path: _ClassVar[str] = "Device.VXLAN.Filter.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.VXLAN.Filter.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Status: _Annotated[_Literal['Disabled', 'Enabled', 'Error_Misconfigured', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     Order: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -93,8 +93,8 @@ class VXLAN_Filter(_Model):
 
 
 class VXLAN(_Model):
-    bbf_path: _ClassVar[str] = "Device.VXLAN."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.VXLAN."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     TunnelNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FilterNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     Tunnel: dict[int, VXLAN_Tunnel] = _Field(default_factory=dict)

@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class TrustedElements_SIM_Profile(_Model):
-    bbf_path: _ClassVar[str] = "Device.TrustedElements.SIM.{i}.Profile.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.TrustedElements.SIM.{i}.Profile.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     IMSI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -21,8 +21,8 @@ class TrustedElements_SIM_Profile(_Model):
 
 
 class TrustedElements_SIM(_Model):
-    bbf_path: _ClassVar[str] = "Device.TrustedElements.SIM.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.TrustedElements.SIM.{i}."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Status: _Annotated[_Literal['None', 'Available', 'Valid', 'Blocked', 'Error'] | str | None, _Param(_BaseType.STRING)] = None
     IMSI: _Annotated[str | None, _Param(_BaseType.STRING)] = None
@@ -46,8 +46,8 @@ class TrustedElements_SIM(_Model):
 
 
 class TrustedElements(_Model):
-    bbf_path: _ClassVar[str] = "Device.TrustedElements."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_cwmp"
+    __bbf_path__ = "Device.TrustedElements."
+    __bbf_package__ = "bbfmodels.tr181_cwmp"
     SIMNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     SIM: dict[int, TrustedElements_SIM] = _Field(default_factory=dict)
 

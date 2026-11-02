@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param, Boolean as _Boolean
 
 
 class Users_User(_Model):
-    bbf_path: _ClassVar[str] = "Device.Users.User.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Users.User.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UserID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -26,8 +26,8 @@ class Users_User(_Model):
 
 
 class Users_Group(_Model):
-    bbf_path: _ClassVar[str] = "Device.Users.Group.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Users.Group.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     GroupID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -37,16 +37,16 @@ class Users_Group(_Model):
 
 
 class Users_SupportedShell(_Model):
-    bbf_path: _ClassVar[str] = "Device.Users.SupportedShell.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Users.SupportedShell.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     Name: _Annotated[str | None, _Param(_BaseType.STRING)] = None
 
 
 class Users_Role(_Model):
-    bbf_path: _ClassVar[str] = "Device.Users.Role.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Users.Role.{i}."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     Alias: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Enable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     RoleID: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -56,8 +56,8 @@ class Users_Role(_Model):
 
 
 class Users(_Model):
-    bbf_path: _ClassVar[str] = "Device.Users."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr181_usp"
+    __bbf_path__ = "Device.Users."
+    __bbf_package__ = "bbfmodels.tr181_usp"
     UserNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     GroupNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     RoleNumberOfEntries: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None

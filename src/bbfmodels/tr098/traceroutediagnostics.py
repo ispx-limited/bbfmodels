@@ -2,15 +2,15 @@
 # generator or the source document and regenerate.
 # ruff: noqa
 
-from typing import Annotated as _Annotated, ClassVar as _ClassVar, Literal as _Literal
+from typing import Annotated as _Annotated, Literal as _Literal
 from pydantic import Field as _Field
 from bbfmodels.ir import BaseType as _BaseType
 from bbfmodels.model import CommaList as _CommaList, Model as _Model, Param as _Param
 
 
 class TraceRouteDiagnostics_RouteHops(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.TraceRouteDiagnostics.RouteHops.{i}."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.TraceRouteDiagnostics.RouteHops.{i}."
+    __bbf_package__ = "bbfmodels.tr098"
     HopHost: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     HopHostAddress: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     HopErrorCode: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
@@ -18,8 +18,8 @@ class TraceRouteDiagnostics_RouteHops(_Model):
 
 
 class TraceRouteDiagnostics(_Model):
-    bbf_path: _ClassVar[str] = "InternetGatewayDevice.TraceRouteDiagnostics."
-    bbf_package: _ClassVar[str] = "bbfmodels.tr098"
+    __bbf_path__ = "InternetGatewayDevice.TraceRouteDiagnostics."
+    __bbf_package__ = "bbfmodels.tr098"
     DiagnosticsState: _Annotated[_Literal['None', 'Requested', 'Complete', 'Error_CannotResolveHostName', 'Error_MaxHopCountExceeded'] | str | None, _Param(_BaseType.STRING)] = None
     Interface: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     Host: _Annotated[str | None, _Param(_BaseType.STRING)] = None
