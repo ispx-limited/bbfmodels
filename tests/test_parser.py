@@ -180,3 +180,35 @@ def test_a_typeless_syntax_is_a_string_with_a_warning() -> None:
     with pytest.warns(ParseWarning, match="D.P has a syntax without a type"):
         doc = parse(text)
     assert doc.models[0].objects["D."].parameters["P"].syntax.base_type is BaseType.STRING
+
+
+def test_unknown_vocabulary_values_fall_back_with_a_warning() -> None:
+    text = (
+        '<dm:document xmlns:dm="x" spec="s"><model name="D:1"><object name="D." '
+        'access="readOnly" minEntries="1" maxEntries="1" status="odd">'
+        '<parameter name="P" access="writeSometimes" activeNotify="forceDefaultPolled">'
+        "<syntax><string/></syntax></parameter></object></model></dm:document>"
+    )
+    with pytest.warns(ParseWarning) as record:
+        doc = parse(text)
+    messages = sorted(str(w.message) for w in record)
+    assert messages == [
+        "D.: 'odd' is not a Status; read as 'current'",
+        "D.P: 'forceDefaultPolled' is not a ActiveNotify; read as 'normal'",
+        "D.P: 'writeSometimes' is not a Access; read as 'readOnly'",
+    ]
+    param = doc.models[0].objects["D."].parameters["P"]
+    assert param.access is Access.READ_ONLY
+    assert param.active_notify is ActiveNotify.NORMAL
+    assert doc.models[0].objects["D."].status is Status.CURRENT
+
+
+def test_other_document_faults_are_parse_errors() -> None:
+    text = (
+        '<dm:document xmlns:dm="x" spec="s"><model name="D:1"><object name="D." '
+        'minEntries="1" maxEntries="1"><parameter name="P" access="readOnly">'
+        '<syntax><unsignedInt><range minInclusive="low"/></unsignedInt></syntax>'
+        "</parameter></object></model></dm:document>"
+    )
+    with pytest.raises(ParseError, match="not an integer"):
+        parse(text)
