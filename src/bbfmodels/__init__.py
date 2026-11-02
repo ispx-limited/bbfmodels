@@ -11,6 +11,6 @@ from importlib.metadata import PackageNotFoundError, version
 try:
     __version__ = version("bbfmodels")
 except PackageNotFoundError:  # running from a source tree that is not installed
-    __version__ = "0.7.0"
+    __version__ = "0.7.1"
 
 __all__ = ["__version__"]
