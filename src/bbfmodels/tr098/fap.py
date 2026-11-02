@@ -85,7 +85,7 @@ class FAP_ApplicationPlatform_Control_FemtoAwareness(_Model):
     __bbf_package__ = "bbfmodels.tr098"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
-    Queueing : _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
+    Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
     MaxAPIUsersNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     FemtozoneID: _Annotated[str | None, _Param(_BaseType.STRING)] = None
     NotificationsUserIdentifierMSISDN: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -98,7 +98,7 @@ class FAP_ApplicationPlatform_Control_SMS(_Model):
     __bbf_package__ = "bbfmodels.tr098"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
-    Queueing : _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
+    Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
     MaxAPIUsersNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MinSendSMSTimeInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EnableQuerySMSDeliveryStatus: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -110,7 +110,7 @@ class FAP_ApplicationPlatform_Control_MMS(_Model):
     __bbf_package__ = "bbfmodels.tr098"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
-    Queueing : _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
+    Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
     MaxAPIUsersNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     MinSendMMSTimeInterval: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     EnableQueryMMSDeliveryStatus: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
@@ -122,7 +122,7 @@ class FAP_ApplicationPlatform_Control_TerminalLocation(_Model):
     __bbf_package__ = "bbfmodels.tr098"
     APIEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     QueueEnable: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
-    Queueing : _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
+    Queueing: _Annotated[_Literal['FiFo', 'Priority'] | str | None, _Param(_BaseType.STRING)] = None
     MaxAPIUsersNumber: _Annotated[int | None, _Param(_BaseType.UNSIGNED_INT)] = None
     QueryMobileLocationResponseAddress: _Annotated[_Literal['TelUri', 'AnonymousReference'] | str | None, _Param(_BaseType.STRING)] = None
     QueryMobileLocationResponseLongitudeLatitude: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None

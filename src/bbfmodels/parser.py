@@ -19,8 +19,9 @@ import re
 import warnings
 import xml.etree.ElementTree as ET
 from collections.abc import Iterator
+from enum import StrEnum
 from pathlib import Path
-from typing import Literal
+from typing import Literal, TypeVar
 
 from bbfmodels.ir import (
     Access,
@@ -145,7 +146,13 @@ def parse(text: str) -> Document:
         raise ParseError(f"not a data model document: {exc}") from exc
     if _local(root.tag) != "document":
         raise ParseError(f"root element is <{_local(root.tag)}>, expected <document>")
-    return _Parser().document(root)
+    try:
+        return _Parser().document(root)
+    except ParseError:
+        raise
+    except ValueError as exc:
+        # A value the IR rejects is a fault in the document, reported as one.
+        raise ParseError(str(exc)) from exc
 
 
 def _local(tag: str) -> str:
@@ -165,6 +172,12 @@ def _attr(el: ET.Element, name: str) -> str | None:
     return el.get(name)
 
 
+def _name(el: ET.Element) -> str:
+    # TR-098 publishes one parameter as ``name="Queueing "``. No device
+    # reports a name with whitespace around it, so none is kept.
+    return (el.get("name") or "").strip()
+
+
 def _flag(el: ET.Element, name: str) -> bool:
     return _attr(el, name) == "true"
 
@@ -179,9 +192,31 @@ def _int(el: ET.Element, name: str) -> int | None:
         raise ParseError(f"<{_local(el.tag)} {name}={raw!r}> is not an integer") from exc
 
 
-def _status(el: ET.Element) -> Status:
-    raw = _attr(el, "status")
-    return Status(raw) if raw else Status.CURRENT
+_E = TypeVar("_E", bound=StrEnum)
+
+
+def _vocab(enum: type[_E], raw: str | None, default: _E, owner: str) -> _E:
+    """A value from a controlled vocabulary, or the default with a warning.
+
+    Vendor documents captured from devices carry values the schema does not
+    define (``activeNotify="forceDefaultPolled"``); the default is the
+    conservative reading and the warning names the place.
+    """
+    if not raw:
+        return default
+    try:
+        return enum(raw)
+    except ValueError:
+        warnings.warn(
+            f"{owner}: {raw!r} is not a {enum.__name__}; read as {default.value!r}",
+            ParseWarning,
+            stacklevel=3,
+        )
+        return default
+
+
+def _status(el: ET.Element, owner: str = "") -> Status:
+    return _vocab(Status, _attr(el, "status"), Status.CURRENT, owner or _local(el.tag))
 
 
 def _text(el: ET.Element | None) -> str:
@@ -297,7 +332,9 @@ class _Parser:
                     Enumeration(
                         value=_attr(c, "value") or "",
                         code=_int(c, "code"),
-                        access=Access(access) if access else None,
+                        access=_vocab(Access, access, Access.READ_ONLY, "enumeration")
+                        if access
+                        else None,
                         optional=_flag(c, "optional"),
                         status=_status(c),
                         version=_attr(c, "version"),
@@ -404,34 +441,35 @@ class _Parser:
     # -- objects -----------------------------------------------------------
 
     def parameter(self, el: ET.Element, owner: str) -> Parameter:
-        name = _attr(el, "name") or ""
+        name = _name(el)
         syntax_el = _child(el, "syntax")
         if syntax_el is None:
             raise ParseError(f"parameter {owner}{name} has no syntax")
         access = _attr(el, "access")
-        notify = _attr(el, "activeNotify")
         mandatory = _attr(el, "mandatory")
         return Parameter(
             name=name,
-            access=Access(access) if access else None,
+            access=_vocab(Access, access, Access.READ_ONLY, owner + name) if access else None,
             description=_text(_child(el, "description")),
             version=_attr(el, "version"),
-            status=_status(el),
-            active_notify=ActiveNotify(notify) if notify else ActiveNotify.NORMAL,
+            status=_status(el, owner + name),
+            active_notify=_vocab(
+                ActiveNotify, _attr(el, "activeNotify"), ActiveNotify.NORMAL, owner + name
+            ),
             forced_inform=_flag(el, "forcedInform"),
             mandatory=None if mandatory is None else mandatory == "true",
             syntax=self.syntax(syntax_el, owner + name),
         )
 
     def object(self, el: ET.Element, prefix: str = "") -> Object:
-        path = _attr(el, "name") or ""
+        path = _name(el)
         full = prefix + path
         max_raw = _attr(el, "maxEntries")
         min_raw = _int(el, "minEntries")
         access = _attr(el, "access")
         return Object(
             path=path,
-            access=Access(access) if access else None,
+            access=_vocab(Access, access, Access.READ_ONLY, full) if access else None,
             min_entries=1 if min_raw is None else min_raw,
             max_entries=None if max_raw == "unbounded" else (int(max_raw) if max_raw else 1),
             num_entries_parameter=_attr(el, "numEntriesParameter"),
@@ -447,7 +485,7 @@ class _Parser:
             ),
             description=_text(_child(el, "description")),
             version=_attr(el, "version"),
-            status=_status(el),
+            status=_status(el, full),
             parameters={
                 p.name: p for p in (self.parameter(c, full) for c in _children(el, "parameter"))
             },
@@ -466,7 +504,7 @@ class _Parser:
         )
 
     def command(self, el: ET.Element, owner: str) -> Command:
-        name = _attr(el, "name") or ""
+        name = _name(el)
         return Command(
             name=name,
             is_async=_flag(el, "async"),
@@ -478,7 +516,7 @@ class _Parser:
         )
 
     def event(self, el: ET.Element, owner: str) -> Event:
-        name = _attr(el, "name") or ""
+        name = _name(el)
         return Event(
             name=name,
             description=_text(_child(el, "description")),

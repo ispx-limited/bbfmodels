@@ -42,6 +42,7 @@ FLAT = {
     "Device.Radio.1.Standards": "a, b",
     "Device.Radio.1.Aliases": "x,y",
     "Device.Radio.2.Band": "7GHz",
+    "Device.Radio.2.11kEnable": "1",
     "Device.Radio.2.X_EXAMPLE_Power": "high",
     "Device.X_EXAMPLE_Thing.1.Foo": "bar",
     "Device.X_EXAMPLE_Single.Baz": "1",
@@ -66,6 +67,7 @@ def test_from_flat_and_back(mini: type[Model]) -> None:
     assert one.Enable is True and one.Channel == 36 and one.Band == "5GHz"
     assert one.Standards == ["a", "b"] and one.Aliases == ["x", "y"]
     assert radios[2].Band == "7GHz"  # a value outside the enumeration is kept
+    assert radios[2].N11kEnable is True  # a name no identifier can carry, aliased
     assert radios[2].X_EXAMPLE_Power == "high"
     assert device.X_EXAMPLE_Thing == {"1": {"Foo": "bar"}}  # type: ignore[attr-defined]
     assert device.Param == "p" and device.Model == "m"  # type: ignore[attr-defined]
@@ -76,6 +78,7 @@ def test_from_flat_and_back(mini: type[Model]) -> None:
     assert flat["Device.Radio.1.Standards"] == "a,b"
     assert flat["Device.X_EXAMPLE_Thing.1.Foo"] == "bar"
     assert flat["Device.X_EXAMPLE_Single.Baz"] == "1"
+    assert flat["Device.Radio.2.11kEnable"] == "true"
     assert mini.from_flat(flat).flatten() == flat
 
 

@@ -113,7 +113,7 @@ class UPnP_Device(_Model):
     UPnPMediaServer: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UPnPMediaRenderer: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UPnPWLANAccessPoint: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
-    UPnPQoSDevice : _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
+    UPnPQoSDevice: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UPnPQoSPolicyHolder: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UPnPIGD: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None
     UPnPDMBasicMgmt: _Annotated[_Boolean | None, _Param(_BaseType.BOOLEAN)] = None

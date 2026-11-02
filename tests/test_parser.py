@@ -55,7 +55,7 @@ def test_named_data_types_resolve_through_their_base(cwmp: Document) -> None:
 
 def test_objects_and_tables(cwmp: Document) -> None:
     model = cwmp.models[0]
-    assert model.root == "Device" and model.version == "2.0"
+    assert model.root == "Device_vendor-1.2" and model.version == "2.0"
     assert list(model.objects) == ["Device.", "Device.Radio.{i}.", "Device.Config.{i}."]
     root = model.objects["Device."]
     assert not root.multi_instance and root.parent_path == "" and root.name == "Device"
@@ -180,3 +180,44 @@ def test_a_typeless_syntax_is_a_string_with_a_warning() -> None:
     with pytest.warns(ParseWarning, match="D.P has a syntax without a type"):
         doc = parse(text)
     assert doc.models[0].objects["D."].parameters["P"].syntax.base_type is BaseType.STRING
+
+
+def test_unknown_vocabulary_values_fall_back_with_a_warning() -> None:
+    text = (
+        '<dm:document xmlns:dm="x" spec="s"><model name="D:1"><object name="D." '
+        'access="readOnly" minEntries="1" maxEntries="1" status="odd">'
+        '<parameter name="P" access="writeSometimes" activeNotify="forceDefaultPolled">'
+        "<syntax><string/></syntax></parameter></object></model></dm:document>"
+    )
+    with pytest.warns(ParseWarning) as record:
+        doc = parse(text)
+    messages = sorted(str(w.message) for w in record)
+    assert messages == [
+        "D.: 'odd' is not a Status; read as 'current'",
+        "D.P: 'forceDefaultPolled' is not a ActiveNotify; read as 'normal'",
+        "D.P: 'writeSometimes' is not a Access; read as 'readOnly'",
+    ]
+    param = doc.models[0].objects["D."].parameters["P"]
+    assert param.access is Access.READ_ONLY
+    assert param.active_notify is ActiveNotify.NORMAL
+    assert doc.models[0].objects["D."].status is Status.CURRENT
+
+
+def test_other_document_faults_are_parse_errors() -> None:
+    text = (
+        '<dm:document xmlns:dm="x" spec="s"><model name="D:1"><object name="D." '
+        'minEntries="1" maxEntries="1"><parameter name="P" access="readOnly">'
+        '<syntax><unsignedInt><range minInclusive="low"/></unsignedInt></syntax>'
+        "</parameter></object></model></dm:document>"
+    )
+    with pytest.raises(ParseError, match="not an integer"):
+        parse(text)
+
+
+def test_whitespace_around_a_name_is_dropped() -> None:
+    text = (
+        '<dm:document xmlns:dm="x" spec="s"><model name="D:1"><object name="D." '
+        'minEntries="1" maxEntries="1"><parameter name="Queueing " access="readOnly">'
+        "<syntax><string/></syntax></parameter></object></model></dm:document>"
+    )
+    assert list(parse(text).models[0].objects["D."].parameters) == ["Queueing"]
