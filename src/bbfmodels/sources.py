@@ -33,6 +33,9 @@ CORE = (
     "tr-157-1-3-0-full.xml",
     "tr-181-2-21-0-cwmp-full.xml",
     "tr-181-2-21-0-usp-full.xml",
+    "tr-196-2-1-2-cwmp-full.xml",
+    "tr-196-2-1-2-usp-full.xml",
+    "tr-517-1-0-0-usp-full.xml",
 )
 
 _FILE = re.compile(r"^tr-\d+-\d+-\d+-\d+(?:-(cwmp|usp))?-full\.xml$")

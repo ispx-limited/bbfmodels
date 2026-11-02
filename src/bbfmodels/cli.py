@@ -34,6 +34,13 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("ir-schema", help="print the JSON Schema of the IR")
 
+    gen = sub.add_parser("generate", help="generate a package of pydantic models from a document")
+    gen.add_argument(
+        "document", type=Path, nargs="?", help="a document; none means every shipped package"
+    )
+    gen.add_argument("--package", help="dotted package name, for example vendor.models")
+    gen.add_argument("--root", type=Path, default=Path("src"), help="source root to write under")
+
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
@@ -46,6 +53,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "ir-schema":
             print(json.dumps(Document.model_json_schema(), indent=2))
             return 0
+        if args.command == "generate":
+            return _generate(args)
     except ParseError as exc:
         print(f"bbfmodels: {exc}", file=sys.stderr)
         return 1
@@ -62,6 +71,22 @@ def _fetch(args: argparse.Namespace) -> int:
         return 0
     for name in args.names or sources.CORE:
         print(sources.fetch(name, args.into))
+    return 0
+
+
+def _generate(args: argparse.Namespace) -> int:
+    from bbfmodels import generate
+
+    if args.document is None:
+        for package, name in generate.PACKAGES.items():
+            for path in generate.write_package(package, sources.fetch(name), args.root):
+                print(path)
+        return 0
+    if not args.package:
+        print("bbfmodels: --package is required with a document", file=sys.stderr)
+        return 2
+    for path in generate.write_package(args.package, args.document, args.root):
+        print(path)
     return 0
 
 

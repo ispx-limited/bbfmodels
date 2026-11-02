@@ -56,7 +56,7 @@ def test_named_data_types_resolve_through_their_base(cwmp: Document) -> None:
 def test_objects_and_tables(cwmp: Document) -> None:
     model = cwmp.models[0]
     assert model.root == "Device" and model.version == "2.0"
-    assert list(model.objects) == ["Device.", "Device.Radio.{i}."]
+    assert list(model.objects) == ["Device.", "Device.Radio.{i}.", "Device.Config.{i}."]
     root = model.objects["Device."]
     assert not root.multi_instance and root.parent_path == "" and root.name == "Device"
     radio = model.objects["Device.Radio.{i}."]

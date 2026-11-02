@@ -123,3 +123,66 @@ tree.set("Device.WiFi.Radio.1.Channel", 999)
 print(tree.problems())  # [('Device.WiFi.Radio.1.Channel', '999 is outside the allowed ranges')]
 print(tree.flatten()["Device.WiFi.Radio.1.Enable"])  # 1
 ```
+
+## Use the generated models
+
+Packages of typed models ship for every published model: `tr181_cwmp`,
+`tr181_usp`, `tr098`, and the service models `tr104_1`, `tr104_cwmp`,
+`tr104_usp`, `tr135_cwmp`, `tr135_usp`, `tr140_cwmp`, `tr140_usp`,
+`tr196_cwmp`, `tr196_usp` and `tr517_usp`, all under `bbfmodels.`. Every
+object is a class, every parameter a typed optional field, every table a
+`dict[int, Child]`. Names are the Forum's names.
+
+```python
+from bbfmodels.tr181_cwmp import Device
+
+device = Device.from_flat(
+    {
+        "Device.DeviceInfo.UpTime": "1234",
+        "Device.WiFi.Radio.1.Enable": "1",
+        "Device.WiFi.Radio.1.Channel": "36",
+        "Device.WiFi.Radio.1.SupportedFrequencyBands": "2.4GHz,5GHz",
+        "Device.WiFi.Radio.1.X_EXAMPLE_TxPower": "high",
+    }
+)
+radio = device.WiFi.Radio[1]
+print(device.DeviceInfo.UpTime, radio.Enable, radio.Channel)  # 1234 True 36
+print(radio.SupportedFrequencyBands)  # ['2.4GHz', '5GHz']
+print(radio.X_EXAMPLE_TxPower)  # high, kept as text
+radio.Channel = 999
+print(device.problems())  # [('Device.WiFi.Radio.1.Channel', '999 is outside the allowed ranges')]
+print(device.flatten()["Device.WiFi.Radio.1.Enable"])  # true
+```
+
+Values coerce to their Python type on the way in. The model's ranges,
+sizes, patterns and enumerations are not enforced at that point, because a
+real device returns values outside them; `problems()` reports every
+violation against the shipped schema instead.
+
+Classes construct directly, and `flatten` takes the data path to write
+under:
+
+```python
+from bbfmodels.tr181_cwmp.wifi import WiFi_Radio
+
+WiFi_Radio(Enable=True, Channel=36).flatten("Device.WiFi.Radio.1.")
+# {'Device.WiFi.Radio.1.Enable': 'true', 'Device.WiFi.Radio.1.Channel': '36'}
+```
+
+A service model's root is a table that a device mounts under its
+`Services.` object, so the instance path is given when converting:
+
+```python
+from bbfmodels.tr104_cwmp import VoiceService
+
+voice = VoiceService.from_flat(values, "Device.Services.VoiceService.1.")
+voice.Capabilities.MaxLineCount
+voice.flatten("Device.Services.VoiceService.1.")
+```
+
+Any document in the TR-106 schema generates the same way, a vendor's
+extensions included:
+
+```sh
+bbfmodels generate vendor-model-full.xml --package acme.models --root src
+```

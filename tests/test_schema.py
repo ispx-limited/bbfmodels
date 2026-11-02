@@ -18,7 +18,10 @@ def test_lookup(schema: Schema) -> None:
     assert [o.path for o in schema.roots] == ["Device."]
     assert schema.object("Device.Radio.{i}.").num_entries_parameter == "RadioNumberOfEntries"
     assert schema.parameter("Device.Radio.{i}.Channel").syntax.facets.units == "channel"
-    assert [o.path for o in schema.children("Device.")] == ["Device.Radio.{i}."]
+    assert [o.path for o in schema.children("Device.")] == [
+        "Device.Radio.{i}.",
+        "Device.Config.{i}.",
+    ]
     with pytest.raises(UnknownPath):
         schema.object("Device.Nope.")
     with pytest.raises(UnknownPath):

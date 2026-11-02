@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:document xmlns:dm="urn:broadband-forum-org:cwmp:datamodel-1-10"
+    spec="urn:example-org:mini-service-1-0-0" file="mini-service-1-0-0-full.xml">
+  <model name="VoiceService:1.0" isService="true">
+    <object name="VoiceService.{i}." access="readOnly" minEntries="0" maxEntries="unbounded">
+      <parameter name="Name" access="readOnly">
+        <syntax><string><size maxLength="8"/></string></syntax>
+      </parameter>
+    </object>
+    <object name="VoiceService.{i}.Capabilities." access="readOnly" minEntries="1" maxEntries="1">
+      <parameter name="MaxLineCount" access="readOnly">
+        <syntax><unsignedInt/></syntax>
+      </parameter>
+    </object>
+    <object name="VoiceService.{i}.Line.{i}." access="readWrite" minEntries="0" maxEntries="unbounded">
+      <parameter name="Enable" access="readWrite">
+        <syntax><boolean/></syntax>
+      </parameter>
+    </object>
+  </model>
+</dm:document>

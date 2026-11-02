@@ -20,7 +20,8 @@ make lint              # format check, lint and type check, what CI runs
   rejects any other title.
 - One change per PR. PRs are squash merged, so the title is the commit.
 - Generated files are never edited by hand. Change the generator or the
-  source document and regenerate; CI fails when committed output is stale.
+  pinned source document and run `make generate`; CI fails when committed
+  output is stale.
 - Attribute and class names keep the Forum's PascalCase verbatim.
 - The tool carries no knowledge of any vendor or product. Vendor behaviour
   comes from a vendor's own data model document, never from code.
