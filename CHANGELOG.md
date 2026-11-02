@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/ispx-limited/bbfmodels/compare/v0.7.0...v0.7.1) (2026-11-02)
+
+
+### Fixed
+
+* **models:** read-only parameters say so, and doc comments render the Forum's markup as prose ([#32](https://github.com/ispx-limited/bbfmodels/issues/32)) ([4bbf339](https://github.com/ispx-limited/bbfmodels/commit/4bbf3393092adc24a7ce5d4cc6dabb45e0354f11))
+
 ## [0.7.0](https://github.com/ispx-limited/bbfmodels/compare/v0.6.0...v0.7.0) (2026-11-02)
 
 
