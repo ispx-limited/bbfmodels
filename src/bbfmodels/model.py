@@ -27,7 +27,6 @@ from pydantic import BaseModel, BeforeValidator, ConfigDict, PlainSerializer
 from bbfmodels import codec
 from bbfmodels.ir import BaseType, Document
 from bbfmodels.schema import Schema
-from bbfmodels.tree import Tree
 
 T = TypeVar("T")
 
@@ -132,13 +131,32 @@ class Model(BaseModel):
     def problems(self, prefix: str | None = None) -> list[tuple[str, str]]:
         """Every facet violation, as data path and message.
 
-        Without ``prefix`` a table root such as ``VoiceService.{i}.`` is
-        checked as its first instance; the instance number does not change
-        what is valid.
+        Each value is checked against its parameter's syntax in the shipped
+        schema; ``prefix`` only names the data path in the report and
+        defaults to the schema path with ``1`` for every instance, so a table
+        root such as ``VoiceService.{i}.`` is reported as its first instance.
         """
         if prefix is None:
             prefix = self.__bbf_path__.replace("{i}", "1")
-        return Tree.from_flat(self.schema_of(), self.flatten(prefix)).problems()
+        schema = self.schema_of()
+        found: list[tuple[str, str]] = []
+        for name, info in type(self).model_fields.items():
+            value = getattr(self, name)
+            if value is None:
+                continue
+            wire = info.alias or name
+            param = _param_of(info.metadata)
+            if param is not None:
+                syntax = schema.parameter(self.__bbf_path__ + wire).syntax
+                found.extend(
+                    (prefix + wire, p) for p in codec.problems(syntax, _encode(param, value))
+                )
+            elif isinstance(value, Model):
+                found.extend(value.problems(f"{prefix}{wire}."))
+            elif isinstance(value, dict):
+                for number, instance in value.items():
+                    found.extend(instance.problems(f"{prefix}{wire}.{number}."))
+        return found
 
 
 def _param_of(metadata: list[Any]) -> Param | None:
