@@ -54,6 +54,7 @@ nav:
       - Typed paths: guides/paths.md
       - JSON Schema: guides/json-schema.md
       - TypeScript: guides/typescript.md
+      - Go: guides/go.md
       - Vendor models: guides/vendor-models.md
       - Command line: guides/cli.md
   - Changelog: changelog.md

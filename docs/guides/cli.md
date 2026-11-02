@@ -7,6 +7,7 @@ bbfmodels ir-schema
 bbfmodels generate [DOCUMENT --package NAME] [--root DIR]
 bbfmodels jsonschema DOCUMENT [-o FILE] [--indent N] [--lenient] [--no-descriptions]
 bbfmodels typescript DOCUMENT [-o FILE] [--no-descriptions]
+bbfmodels go DOCUMENT --package NAME -o DIR [--no-descriptions]
 bbfmodels --version
 ```
 
@@ -18,6 +19,7 @@ bbfmodels --version
 | `generate` | Writes a package of pydantic models from a document under `--root` (default `src`). With no document, regenerates every shipped package. |
 | `jsonschema` | Writes the JSON Schema of a document's model. `--lenient` keeps types only; `--no-descriptions` leaves the Forum's prose out. |
 | `typescript` | Writes the TypeScript declarations of a document's model. |
+| `go` | Writes the Go types of a document's model into a directory, one file per subtree. |
 
 The cache is `~/.cache/bbfmodels`, or `$XDG_CACHE_HOME/bbfmodels`, or
 `$BBFMODELS_CACHE` when set.
