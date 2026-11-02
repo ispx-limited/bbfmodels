@@ -1,4 +1,4 @@
-# 0013: JSON Schema is emitted from the IR and published with each release
+# 0013: JSON Schema and TypeScript are emitted from the IR and published with each release
 
 ## Context
 
@@ -39,9 +39,17 @@ lives given that TR-181's schema is three megabytes.
   write `"2.4GHz" | "5GHz" | (string & {})` and keep both completion and
   leniency, the same trade the Python models make (decision 0010).
 
+The TypeScript module follows the Python package shape: an interface per
+object named like the Python class, `Instances<T>` for a table, a template
+literal index signature admitting `X_` vendor members as `unknown` so a
+misspelt standard name stays an error, and `Commands` and `Events` maps by
+path. Descriptions become doc comments. The declarations are release
+assets like the schemas; an npm package is a later decision, taken when
+someone needs one.
+
 ## Consequences
 
-- `bbfmodels jsonschema` is the one command; the Python API is
-  `document_schema`.
+- `bbfmodels jsonschema` and `bbfmodels typescript` are the commands; the
+  Python APIs are `document_schema` and `declarations`.
 - The test suite validates a generated model's dump against the schema
   of its document, so the two outputs cannot drift apart silently.
