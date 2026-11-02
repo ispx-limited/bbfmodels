@@ -88,9 +88,8 @@ class _Emitter:
         lines = safe.split("\n")
         if len(lines) == 1:
             return f"{indent}/** {lines[0]} */\n"
-        return (
-            f"{indent}/**\n" + "".join(f"{indent} * {line}\n" for line in lines) + f"{indent} */\n"
-        )
+        body = "".join(f"{indent} * {line}".rstrip() + "\n" for line in lines)
+        return f"{indent}/**\n" + body + f"{indent} */\n"
 
     def interface(
         self,
