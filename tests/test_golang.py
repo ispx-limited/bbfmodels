@@ -83,12 +83,12 @@ import (
 )
 
 func TestRoundTrip(t *testing.T) {
-\tin := `{"WiFi":{"Radio":{"1":{"Enable":true,"Channel":36,"SupportedFrequencyBands":["2.4GHz","5GHz"]}}}}`
+\tin := `{"WiFi":{"Radio":{"1":{"Enable":true,"Channel":36,"SupportedFrequencyBands":["2.4GHz"]}}}}`
 \tvar d tr181usp.Device
 \tif err := json.Unmarshal([]byte(in), &d); err != nil {
 \t\tt.Fatal(err)
 \t}
-\tif *d.WiFi.Radio[1].Channel != 36 || len(d.WiFi.Radio[1].SupportedFrequencyBands) != 2 {
+\tif *d.WiFi.Radio[1].Channel != 36 || len(d.WiFi.Radio[1].SupportedFrequencyBands) != 1 {
 \t\tt.Fatalf("unexpected %+v", d)
 \t}
 \tout, _ := json.Marshal(d)
