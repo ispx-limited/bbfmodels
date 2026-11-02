@@ -1,0 +1,63 @@
+[project]
+name = "bbfmodels"
+version = "0.0.0"
+description = "Typed models and schema tooling for Broadband Forum data models (TR-181, TR-098, TR-104 and more), generated from the published XML"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.11"
+authors = [{ name = "ISPX LIMITED" }]
+keywords = ["tr-069", "tr-181", "tr-098", "tr-369", "usp", "cwmp", "broadband-forum", "data-model"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Telecommunications Industry",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: System :: Networking",
+  "Typing :: Typed",
+]
+dependencies = [
+  "pydantic>=2.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/ispx-limited/bbfmodels"
+Documentation = "https://docs.bbfmodels.ispx.co/"
+Changelog = "https://docs.bbfmodels.ispx.co/changelog/"
+
+[project.scripts]
+bbfmodels = "bbfmodels.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bbfmodels"]
+
+[dependency-groups]
+dev = [
+  "mypy>=1.11",
+  "pytest>=8",
+  "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["hooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+packages = ["bbfmodels"]
+mypy_path = "src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
