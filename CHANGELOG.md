@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/ispx-limited/bbfmodels/compare/v0.2.1...v0.3.0) (2026-11-02)
+
+
+### Added
+
+* **paths:** typed paths with autocomplete for every model, no pydantic model needed ([#17](https://github.com/ispx-limited/bbfmodels/issues/17)) ([ba3a7b7](https://github.com/ispx-limited/bbfmodels/commit/ba3a7b7781129477aed7ee015d51f9079521b331))
+
 ## [0.2.1](https://github.com/ispx-limited/bbfmodels/compare/v0.2.0...v0.2.1) (2026-11-02)
 
 
