@@ -40,8 +40,8 @@ Resolve a path, validate a value against the model's constraints, and convert be
 </div>
 
 <div class="ispx-card" markdown>
-### Typed models
-pydantic models for TR-181, TR-098 and every service model, and a generator for any vendor's document. Names stay as the Forum wrote them.
+### Typed models and paths
+pydantic models for TR-181, TR-098 and every service model, typed paths with autocomplete for code that only needs the string, and a generator for any vendor's document.
 </div>
 
 </div>
