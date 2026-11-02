@@ -22,8 +22,9 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from bbfmodels.describe import render
 from bbfmodels.generate import class_name
-from bbfmodels.ir import Arguments, BaseType, Document, Model, Object, Parameter, Syntax
+from bbfmodels.ir import Arguments, BaseType, DataType, Document, Model, Object, Parameter, Syntax
 from bbfmodels.paths import identifier, member_name
 
 _GO_TYPE = {
@@ -62,7 +63,7 @@ def go_package(doc: Document, package: str, *, descriptions: bool = True) -> dic
     model = doc.models[0]
     root_obj = next(iter(model.objects.values()))
     root = root_obj.name
-    em = _Emitter(model, root, descriptions)
+    em = _Emitter(model, root, descriptions, doc.data_types)
     groups: dict[str, list[Object]] = {}
     for obj in model.objects.values():
         groups.setdefault(_group_of(obj), []).append(obj)
@@ -115,10 +116,14 @@ def _field_name(name: str) -> str:
 
 
 class _Emitter:
-    def __init__(self, model: Model, root: str, descriptions: bool) -> None:
+    def __init__(
+        self, model: Model, root: str, descriptions: bool, data_types: dict[str, DataType]
+    ) -> None:
         self.model = model
         self.root = root
         self.descriptions = descriptions
+        self.data_types = data_types
+        self.owner = ""
 
     def comment(self, text: str, indent: str = "") -> str:
         if not text:
@@ -149,9 +154,10 @@ class _Emitter:
                 for c in self.model.objects.values()
                 if c.parent_path == path
             ]
+        self.owner = obj.name
         head = f"{name} is {path}"
         if self.descriptions and obj.description:
-            head += "\n\n" + obj.description
+            head += "\n\n" + render(obj.description, object=obj.name)
         lines = [self.comment(head), f"type {name} struct {{\n"]
         rows: list[tuple[str, str, str, str]] = []
         for param in obj.parameters.values():
@@ -180,7 +186,14 @@ class _Emitter:
             notes.append("mandatory")
         text = ", ".join(notes)
         if self.descriptions and param.description:
-            text = f"{text}. {param.description}" if text else param.description
+            prose = render(
+                param.description,
+                param.syntax,
+                self.data_types,
+                parameter=param.name,
+                object=self.owner,
+            )
+            text = f"{text}. {prose}" if text else prose
         typ = self.type_of(param.syntax)
         tag = f'`json:"{param.name},omitempty" bbf:"{path}{param.name}"`'
         return (self.comment(text, "\t"), _field_name(param.name), typ, tag)

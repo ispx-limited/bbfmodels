@@ -21,8 +21,9 @@ from __future__ import annotations
 
 from typing import Any
 
+from bbfmodels.describe import render
 from bbfmodels.generate import class_name
-from bbfmodels.ir import Arguments, BaseType, Document, Model, Object, Parameter, Syntax
+from bbfmodels.ir import Arguments, BaseType, DataType, Document, Model, Object, Parameter, Syntax
 from bbfmodels.paths import member_name
 
 DRAFT = "https://json-schema.org/draft/2020-12/schema"
@@ -47,7 +48,7 @@ def document_schema(
     model = doc.models[0]
     root_obj = next(iter(model.objects.values()))
     root = root_obj.name
-    emitter = _Emitter(model, root, lenient, descriptions)
+    emitter = _Emitter(model, root, lenient, descriptions, doc.data_types)
     defs: dict[str, Any] = {}
     for obj in model.objects.values():
         defs[class_name(obj, root)] = emitter.object(obj, obj.path)
@@ -61,7 +62,7 @@ def document_schema(
         "x-bbf-source": doc.file,
     }
     if descriptions and doc.description:
-        schema["description"] = doc.description
+        schema["description"] = render(doc.description)
     if root_obj.multi_instance:
         schema.update(_table_ref(root_name))
         schema["x-bbf-path"] = root_obj.path
@@ -80,16 +81,26 @@ def _table_ref(name: str) -> dict[str, Any]:
 
 
 class _Emitter:
-    def __init__(self, model: Model, root: str, lenient: bool, descriptions: bool) -> None:
+    def __init__(
+        self,
+        model: Model,
+        root: str,
+        lenient: bool,
+        descriptions: bool,
+        data_types: dict[str, DataType],
+    ) -> None:
         self.model = model
         self.root = root
         self.lenient = lenient
         self.descriptions = descriptions
+        self.data_types = data_types
+        self.owner = ""
 
     def object(
         self, obj: Object, path: str, children: list[tuple[str, str, bool]] | None = None
     ) -> dict[str, Any]:
         """One object's schema. ``children`` overrides the model lookup for argument objects."""
+        self.owner = obj.name
         props: dict[str, Any] = {}
         for param in obj.parameters.values():
             props[param.name] = self.parameter(param)
@@ -114,7 +125,7 @@ class _Emitter:
         if obj.status.value != "current":
             out["x-bbf-status"] = obj.status.value
         if self.descriptions and obj.description:
-            out["description"] = obj.description
+            out["description"] = render(obj.description, object=obj.name)
         out["properties"] = props
         out["additionalProperties"] = True
         return out
@@ -130,7 +141,13 @@ class _Emitter:
         if param.mandatory is not None:
             out["x-bbf-mandatory"] = param.mandatory
         if self.descriptions and param.description:
-            out["description"] = param.description
+            out["description"] = render(
+                param.description,
+                param.syntax,
+                self.data_types,
+                parameter=param.name,
+                object=self.owner,
+            )
         return out
 
     def syntax(self, s: Syntax) -> dict[str, Any]:
