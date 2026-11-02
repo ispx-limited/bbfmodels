@@ -34,6 +34,15 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("ir-schema", help="print the JSON Schema of the IR")
 
+    js = sub.add_parser("jsonschema", help="write the JSON Schema of a document's model")
+    js.add_argument("document", type=Path)
+    js.add_argument("-o", "--output", type=Path, help="write here instead of stdout")
+    js.add_argument("--indent", type=int, default=None, help="pretty-print with this indent")
+    js.add_argument("--lenient", action="store_true", help="types only, no facet constraints")
+    js.add_argument(
+        "--no-descriptions", action="store_true", help="leave the Forum's descriptions out"
+    )
+
     gen = sub.add_parser("generate", help="generate a package of pydantic models from a document")
     gen.add_argument(
         "document", type=Path, nargs="?", help="a document; none means every shipped package"
@@ -55,6 +64,8 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "generate":
             return _generate(args)
+        if args.command == "jsonschema":
+            return _jsonschema(args)
     except ParseError as exc:
         print(f"bbfmodels: {exc}", file=sys.stderr)
         return 1
@@ -87,6 +98,20 @@ def _generate(args: argparse.Namespace) -> int:
         return 2
     for path in generate.write_package(args.package, args.document, args.root):
         print(path)
+    return 0
+
+
+def _jsonschema(args: argparse.Namespace) -> int:
+    from bbfmodels.jsonschema import document_schema
+
+    schema = document_schema(
+        parse_file(args.document), lenient=args.lenient, descriptions=not args.no_descriptions
+    )
+    text = json.dumps(schema, indent=args.indent, ensure_ascii=False)
+    if args.output:
+        args.output.write_text(text + "\n", encoding="utf-8")
+    else:
+        print(text)
     return 0
 
 

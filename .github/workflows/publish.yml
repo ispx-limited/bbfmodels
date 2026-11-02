@@ -38,6 +38,20 @@ jobs:
           test "$version" = "${GITHUB_REF_NAME#v}" || { echo "pyproject.toml says $version, tag is $GITHUB_REF_NAME"; exit 1; }
       - name: Build
         run: uv build
+      - name: JSON Schema of every shipped package
+        run: |
+          mkdir -p schemas
+          uv run python - <<'PY'
+          from pathlib import Path
+          from bbfmodels import sources
+          from bbfmodels.generate import PACKAGES
+          from bbfmodels.jsonschema import document_schema
+          from bbfmodels.parser import parse_file
+          import json
+          for package, name in PACKAGES.items():
+              schema = document_schema(parse_file(sources.fetch(name)))
+              Path("schemas", package.rpartition(".")[2] + ".schema.json").write_text(json.dumps(schema, ensure_ascii=False))
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: dist
@@ -45,7 +59,7 @@ jobs:
       - name: Attach to the GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "$GITHUB_REF_NAME" dist/* --clobber
+        run: gh release upload "$GITHUB_REF_NAME" dist/* schemas/*.schema.json --clobber
 
   publish:
     needs: build
