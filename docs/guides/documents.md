@@ -110,8 +110,25 @@ parser repairs what it has seen and warns where it had to decide:
 | Bare `&` or literal `<OUI>` markup in prose | Escaped before parsing |
 | An attribute published as `value="""` | Read as a quote |
 | Whitespace around a name (`name="Queueing "`) | Dropped |
+| A parameter or object without `access` | `readOnly`, the schema's default; a command or event argument has no access |
 | An empty `<syntax/>` | Read as a string, with a `ParseWarning` |
 | An unknown `status`, `access` or `activeNotify` value | The conservative default (`current`, `readOnly`, `normal`), with a `ParseWarning` |
 | `<import>` or `<component>` elements | Rejected: use the flattened `-full.xml` edition |
 
 Anything else the schema does not allow is a `ParseError` naming the place.
+
+## Description markup
+
+Descriptions keep the Forum's template markup as written: `{{param|Name}}`,
+`{{enum|Up}}`, `{{units}}`, `{{list}}`, `{{bibref|RFC2863}}` and the rest.
+`bbfmodels.describe.render` turns a description into prose against its
+parameter's syntax, which is what the TypeScript and Go doc comments and
+the JSON Schema descriptions carry:
+
+```python
+from bbfmodels.describe import render
+
+param = doc.models[0].objects["Device.WiFi.SSID.{i}."].parameters["LowerLayers"]
+render(param.description, param.syntax, doc.data_types, parameter="LowerLayers", object="SSID")
+# 'Comma-separated list. A reference to an interface object that is stacked immediately below this interface object. See [TR-181i2 Section 4.2.1].'
+```

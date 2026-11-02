@@ -440,7 +440,8 @@ class _Parser:
 
     # -- objects -----------------------------------------------------------
 
-    def parameter(self, el: ET.Element, owner: str) -> Parameter:
+    def parameter(self, el: ET.Element, owner: str, argument: bool = False) -> Parameter:
+        """A parameter; ``argument`` marks a command or event argument, which has no access."""
         name = _name(el)
         syntax_el = _child(el, "syntax")
         if syntax_el is None:
@@ -449,7 +450,11 @@ class _Parser:
         mandatory = _attr(el, "mandatory")
         return Parameter(
             name=name,
-            access=_vocab(Access, access, Access.READ_ONLY, owner + name) if access else None,
+            # The schema's default for access is readOnly, so a parameter that
+            # states none is read-only; an argument has no access at all.
+            access=None
+            if argument and not access
+            else _vocab(Access, access, Access.READ_ONLY, owner + name),
             description=_text(_child(el, "description")),
             version=_attr(el, "version"),
             status=_status(el, owner + name),
@@ -461,7 +466,8 @@ class _Parser:
             syntax=self.syntax(syntax_el, owner + name),
         )
 
-    def object(self, el: ET.Element, prefix: str = "") -> Object:
+    def object(self, el: ET.Element, prefix: str = "", argument: bool = False) -> Object:
+        """An object; ``argument`` marks one inside a command's or event's arguments."""
         path = _name(el)
         full = prefix + path
         max_raw = _attr(el, "maxEntries")
@@ -469,7 +475,9 @@ class _Parser:
         access = _attr(el, "access")
         return Object(
             path=path,
-            access=_vocab(Access, access, Access.READ_ONLY, full) if access else None,
+            access=None
+            if argument and not access
+            else _vocab(Access, access, Access.READ_ONLY, full),
             min_entries=1 if min_raw is None else min_raw,
             max_entries=None if max_raw == "unbounded" else (int(max_raw) if max_raw else 1),
             num_entries_parameter=_attr(el, "numEntriesParameter"),
@@ -487,7 +495,8 @@ class _Parser:
             version=_attr(el, "version"),
             status=_status(el, full),
             parameters={
-                p.name: p for p in (self.parameter(c, full) for c in _children(el, "parameter"))
+                p.name: p
+                for p in (self.parameter(c, full, argument) for c in _children(el, "parameter"))
             },
             commands={c.name: c for c in (self.command(e, full) for e in _children(el, "command"))},
             events={e.name: e for e in (self.event(x, full) for x in _children(el, "event"))},
@@ -498,9 +507,15 @@ class _Parser:
             return Arguments()
         return Arguments(
             parameters={
-                p.name: p for p in (self.parameter(c, owner) for c in _children(el, "parameter"))
+                p.name: p
+                for p in (
+                    self.parameter(c, owner, argument=True) for c in _children(el, "parameter")
+                )
             },
-            objects={o.path: o for o in (self.object(c, owner) for c in _children(el, "object"))},
+            objects={
+                o.path: o
+                for o in (self.object(c, owner, argument=True) for c in _children(el, "object"))
+            },
         )
 
     def command(self, el: ET.Element, owner: str) -> Command:
