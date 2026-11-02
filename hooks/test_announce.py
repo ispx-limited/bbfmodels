@@ -79,6 +79,7 @@ class Post(unittest.TestCase):
             status = announce.post(url, announce.payload("0.76.0", NOTES, CHANGELOG))
         finally:
             server.shutdown()
+            server.server_close()
         self.assertEqual(status, 204)
         self.assertEqual(received["type"], "application/json")
         self.assertEqual(received["body"]["embeds"][0]["title"], "bbfmodels 0.76.0")

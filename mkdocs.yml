@@ -51,6 +51,7 @@ nav:
       - Documents and the IR: guides/documents.md
       - Schema, tree and codec: guides/runtime.md
       - Generated models: guides/models.md
+      - Typed paths: guides/paths.md
       - Vendor models: guides/vendor-models.md
       - Command line: guides/cli.md
   - Changelog: changelog.md

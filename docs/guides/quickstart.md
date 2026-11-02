@@ -31,6 +31,18 @@ device.flatten()                  # back to path and text pairs
 The [models guide](models.md) covers construction, validation, tables,
 vendor parameters and the service models.
 
+## Correct paths with autocomplete, no models
+
+```python
+from bbfmodels.tr181_cwmp.paths import Device
+
+str(Device.WiFi.SSID[1].SSID)                    # 'Device.WiFi.SSID.1.SSID'
+Device.WiFi.Radio[1].Channel.definition.access   # <Access.READ_WRITE: 'readWrite'>
+```
+
+The [typed paths guide](paths.md) covers tables, search paths and vendor
+names.
+
 ## Resolve and validate paths without generated code
 
 ```python

@@ -18,7 +18,10 @@ the same parameter paths as strings. bbfmodels does it once:
 - Generated typed bindings: pydantic models for Python, shipped for TR-181
   and TR-098 and the service models (TR-104 voice, TR-135 set-top box,
   TR-140 storage, TR-196 femtocell, TR-517 Matter), and generated on demand
-  for any other document, a vendor's included. JSON Schema and TypeScript follow from the
+  for any other document, a vendor's included.
+- Typed paths for code that only needs correct path strings:
+  `str(Device.WiFi.SSID[1].SSID)` with autocomplete over the whole model
+  and the parameter's definition one attribute away. JSON Schema and TypeScript follow from the
   same representation, Go when there is a consumer.
 
 Names stay as the Forum wrote them. `Device.WiFi.SSID.{i}.SSID` is a table of
