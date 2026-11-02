@@ -22,13 +22,22 @@ Names stay as the Forum wrote them. `Device.WiFi.SSID.{i}.SSID` is a table of
 `SSID` entries indexed by instance number, and the attribute is `SSID`, not
 `ssid`.
 
+## Install
+
+```sh
+pip install bbfmodels
+```
+
+Python 3.11 or later. The one runtime dependency is pydantic.
+
 ## Status
 
-Pre-release. The parser, the intermediate representation and the runtime
-are in place: `bbfmodels fetch` downloads the Forum's published documents,
+Early. The parser, the intermediate representation and the runtime are in
+place: `bbfmodels fetch` downloads the Forum's published documents,
 `bbfmodels ir` turns one into JSON, and the `Schema` and `Tree` classes
 resolve paths, hold a device's values and validate them. Generated Python
-models come next. Until the first release there is no package on PyPI.
+models come next. Before 1.0 a minor release may change the IR and the
+runtime API.
 
 The design decisions behind the code are in `context/decisions/`, indexed in
 `context/README.md`. Read them before changing the parser or the IR.

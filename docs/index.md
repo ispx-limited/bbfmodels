@@ -48,4 +48,4 @@ pydantic models for Python, JSON Schema and TypeScript from the same representat
 
 ## Status
 
-Pre-release. The parser, the intermediate representation and the runtime are in place and read every document the Forum publishes. Generated Python models come next. There is no package on PyPI until the first release.
+Early. `pip install bbfmodels` gives the parser, the intermediate representation and the runtime, which read every document the Forum publishes. Generated Python models come next.
