@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/ispx-limited/bbfmodels/compare/v0.4.0...v0.5.0) (2026-11-02)
+
+
+### Added
+
+* **schema:** JSON Schema of every model from the IR, attached to each release ([#23](https://github.com/ispx-limited/bbfmodels/issues/23)) ([6261c98](https://github.com/ispx-limited/bbfmodels/commit/6261c9855ef6bc21ae2c9002601d6d2ba4e0d6db))
+
 ## [0.4.0](https://github.com/ispx-limited/bbfmodels/compare/v0.3.0...v0.4.0) (2026-11-02)
 
 
