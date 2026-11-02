@@ -16,6 +16,7 @@ afterwards means the file genuinely is not a data model document.
 from __future__ import annotations
 
 import re
+import warnings
 import xml.etree.ElementTree as ET
 from collections.abc import Iterator
 from pathlib import Path
@@ -53,6 +54,10 @@ from bbfmodels.ir import (
 
 class ParseError(ValueError):
     """The document cannot be read as a data model."""
+
+
+class ParseWarning(UserWarning):
+    """The document departs from the schema in a way the parser can work around."""
 
 
 # Every element name the TR-106 schema defines. A ``<`` that does not open
@@ -377,7 +382,14 @@ class _Parser:
                     status=_status(c),
                 )
         if base_type is None:
-            raise ParseError(f"{owner!r} has a syntax without a type")
+            # Vendor documents captured from devices sometimes publish an
+            # empty <syntax/>. The schema forbids it; a string loses nothing.
+            warnings.warn(
+                f"{owner} has a syntax without a type; treated as a string",
+                ParseWarning,
+                stacklevel=2,
+            )
+            base_type = BaseType.STRING
         return Syntax(
             base_type=base_type,
             data_type=data_type,
