@@ -63,14 +63,17 @@ said. `problems()` reports every violation against the shipped schema:
 
 ```python
 device.WiFi.Radio[1].Channel = 999
-device.WiFi.Radio[1].OperatingChannelBandwidth = "zz"
+device.WiFi.Radio[1].Status = "zz"
 device.problems()
 # [('Device.WiFi.Radio.1.Channel', '999 is outside the allowed ranges'),
-#  ('Device.WiFi.Radio.1.OperatingChannelBandwidth', "'zz' is not one of the enumerated values")]
+#  ('Device.WiFi.Radio.1.Status', "'zz' is not one of the enumerated values")]
 ```
 
 An enumeration is typed `Literal[...] | str`: an editor completes the
-Forum's values, and a vendor's extra value still validates.
+Forum's values, and a vendor's extra value still validates. A parameter
+that takes its allowed values from another parameter, as
+`OperatingChannelBandwidth` does from `SupportedOperatingChannelBandwidths`,
+is not checked against a fixed list, because the list is the device's.
 
 ## Tables and construction
 
