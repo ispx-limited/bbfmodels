@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help build test lint run docs clean
+.PHONY: help build test lint run generate docs clean
 
 help: ## List available targets
 	@awk 'BEGIN {FS = ":.*## "} /^[a-zA-Z_-]+:.*## / {printf "%-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -17,6 +17,9 @@ lint: ## Format check, lint and type check, the same commands CI runs
 
 run: ## Run the command line tool
 	uv run bbfmodels
+
+generate: ## Regenerate the shipped model packages from the pinned documents
+	uv run bbfmodels generate
 
 docs: ## Build the documentation site strictly
 	uv run --with-requirements requirements.txt --no-project python -m unittest discover -s hooks

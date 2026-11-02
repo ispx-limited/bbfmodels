@@ -15,8 +15,10 @@ the same parameter paths as strings. bbfmodels does it once:
 - A Python runtime that works from that representation: resolve a path,
   validate a value against the model's constraints, convert between the flat
   path and value lists that CWMP and USP carry on the wire and a typed tree.
-- Generated typed bindings: pydantic models for Python first, JSON Schema and
-  TypeScript from the same representation, Go when there is a consumer.
+- Generated typed bindings: pydantic models for Python, shipped for TR-181
+  (CWMP and USP editions) and TR-098 and generated on demand for any other
+  document, a vendor's included. JSON Schema and TypeScript follow from the
+  same representation, Go when there is a consumer.
 
 Names stay as the Forum wrote them. `Device.WiFi.SSID.{i}.SSID` is a table of
 `SSID` entries indexed by instance number, and the attribute is `SSID`, not
@@ -32,12 +34,21 @@ Python 3.11 or later. The one runtime dependency is pydantic.
 
 ## Status
 
-Early. The parser, the intermediate representation and the runtime are in
-place: `bbfmodels fetch` downloads the Forum's published documents,
-`bbfmodels ir` turns one into JSON, and the `Schema` and `Tree` classes
-resolve paths, hold a device's values and validate them. Generated Python
-models come next. Before 1.0 a minor release may change the IR and the
-runtime API.
+Early. The parser, the intermediate representation, the runtime and the
+generated Python models are in place. Commands and events in the generated
+models, JSON Schema and TypeScript come next. Before 1.0 a minor release
+may change the IR and the runtime API.
+
+```python
+from bbfmodels.tr181_cwmp import Device
+
+device = Device.from_flat(values_from_the_device)
+radio = device.WiFi.Radio[1]
+radio.Channel  # 36, an int
+radio.Enable  # True
+device.problems()  # every value outside the model's constraints
+device.flatten()  # back to path and text pairs
+```
 
 The design decisions behind the code are in `context/decisions/`, indexed in
 `context/README.md`. Read them before changing the parser or the IR.

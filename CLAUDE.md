@@ -10,7 +10,12 @@ is for anyone, person or coding agent, working in the repository.
   architecture decision records and `context/README.md` indexes them. Read
   it before touching the parser, the IR or a generator, and add a record
   when a change makes or reverses a significant decision.
-- `src/bbfmodels/` is the package. `cli.py` is the command line entry point.
+- `src/bbfmodels/` is the package. `cli.py` is the command line entry point,
+  `parser.py` reads the XML into the IR in `ir.py`, `schema.py`, `tree.py`
+  and `codec.py` are the runtime, `generate.py` writes the model packages.
+- `src/bbfmodels/tr181_cwmp/`, `tr181_usp/` and `tr098/` are generated.
+  Never edit them; run `make generate` after changing the generator or
+  the pinned documents in `sources.py`. A test fails when they are stale.
 - `tests/` holds the pytest suite.
 - `docs/` is the documentation site (mkdocs), built strictly in CI. A page
   exists when it has content; nothing is scaffolded empty.

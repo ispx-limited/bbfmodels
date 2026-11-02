@@ -49,6 +49,12 @@
           <default type="factory" value="&quot;"/>
         </syntax>
       </parameter>
+      <parameter name="Param" access="readOnly">
+        <syntax><string/></syntax>
+      </parameter>
+      <parameter name="Model" access="readOnly">
+        <syntax><string/></syntax>
+      </parameter>
       <parameter name="Reset" access="readWrite" status="deprecated">
         <syntax command="true">
           <boolean/>
@@ -142,6 +148,12 @@
             <enumerationRef targetParam="#.ModesSupported" nullValue=""/>
           </string>
         </syntax>
+      </parameter>
+    </object>
+
+    <object name="Device.Config.{i}." access="readWrite" minEntries="0" maxEntries="unbounded">
+      <parameter name="Name" access="readWrite">
+        <syntax><string/></syntax>
       </parameter>
     </object>
 

@@ -48,7 +48,7 @@ dev = [
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-extend-exclude = ["hooks"]
+extend-exclude = ["hooks", "src/bbfmodels/tr181_cwmp", "src/bbfmodels/tr181_usp", "src/bbfmodels/tr098"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
