@@ -24,5 +24,5 @@ changes, a new record is written and the old one is marked superseded.
 | [0011](decisions/0011-typed-paths-are-a-stub-over-the-schema.md) | Typed paths are a generic runtime plus a stub, not generated classes | Accepted |
 | [0012](decisions/0012-commands-and-events-have-argument-paths.md) | Commands and events get argument paths, and classes named by owner | Accepted |
 | [0013](decisions/0013-json-schema-from-the-ir.md) | JSON Schema and TypeScript are emitted from the IR and published with each release | Accepted |
-| [0014](decisions/0014-go-types-from-the-ir.md) | Go types are emitted from the IR, generated on demand | Accepted |
+| [0014](decisions/0014-go-types-from-the-ir.md) | Go types are emitted from the IR, generated on demand | Accepted, publishing superseded by 0015 |
 | [0015](decisions/0015-go-and-typescript-are-published.md) | The Go types and the TypeScript declarations are published on every release | Accepted |

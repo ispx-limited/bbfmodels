@@ -1,5 +1,7 @@
 # 0014: Go types are emitted from the IR, generated on demand
 
+Status: the publishing part is superseded by [0015](0015-go-and-typescript-are-published.md); the shape of the types stands.
+
 ## Context
 
 Decision 0001 left Go for when a consumer existed. The consumers are

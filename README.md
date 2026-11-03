@@ -25,8 +25,7 @@ the same parameter paths as strings. bbfmodels does it once:
   every model attached to the GitHub release.
 - Typed paths for code that only needs correct path strings:
   `str(Device.WiFi.SSID[1].SSID)` with autocomplete over the whole model
-  and the parameter's definition one attribute away. JSON Schema and TypeScript follow from the
-  same representation, Go when there is a consumer.
+  and the parameter's definition one attribute away.
 
 Names stay as the Forum wrote them. `Device.WiFi.SSID.{i}.SSID` is a table of
 `SSID` entries indexed by instance number, and the attribute is `SSID`, not
