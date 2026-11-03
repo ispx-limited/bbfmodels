@@ -5,7 +5,7 @@ carry the bbfmodels version. ``go_module`` writes a Go module tree, one
 package per document, with ``go.mod``, README, licence and notice, ready
 to be committed to the ``bbfmodels-go`` repository and tagged.
 ``npm_package`` writes an npm package of TypeScript declarations, one
-module per document exposed as a subpath export (``bbfmodels/tr181_usp``),
+module per document exposed as a subpath export (``@ispx/bbfmodels/tr181_usp``),
 ready for ``npm publish``. The release workflow calls both; a person can
 call them locally through ``bbfmodels distribute``.
 """
