@@ -136,7 +136,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: npm
-      url: https://www.npmjs.com/package/bbfmodels
+      url: https://www.npmjs.com/package/@ispx/bbfmodels
     permissions:
       id-token: write
       contents: read
@@ -164,4 +164,6 @@ jobs:
           uv run bbfmodels distribute npm -o npmpkg --stamp "${GITHUB_REF_NAME#v}"
       - name: Publish to npm
         working-directory: npmpkg
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --provenance --access public

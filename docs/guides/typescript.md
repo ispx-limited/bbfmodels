@@ -1,14 +1,14 @@
 # TypeScript
 
 Every release publishes the declarations of each shipped model to npm as
-`bbfmodels`, types only, one module per document:
+`@ispx/bbfmodels`, types only, one module per document:
 
 ```sh
-npm install --save-dev bbfmodels
+npm install --save-dev @ispx/bbfmodels
 ```
 
 ```ts
-import type { Root, WiFi_Radio, Commands } from "bbfmodels/tr181_usp";
+import type { Root, WiFi_Radio, Commands } from "@ispx/bbfmodels/tr181_usp";
 
 const radio: WiFi_Radio = {
   Enable: true,

@@ -20,7 +20,7 @@ the same parameter paths as strings. bbfmodels does it once:
   TR-140 storage, TR-196 femtocell, TR-517 Matter), and generated on demand
   for any other document, a vendor's included.
 - The same models for other languages, published on every release:
-  TypeScript declarations as the npm package `bbfmodels`, Go types as the
+  TypeScript declarations as the npm package `@ispx/bbfmodels`, Go types as the
   module `github.com/ispx-limited/bbfmodels-go`, and the JSON Schema of
   every model attached to the GitHub release.
 - Typed paths for code that only needs correct path strings:
@@ -36,7 +36,7 @@ Names stay as the Forum wrote them. `Device.WiFi.SSID.{i}.SSID` is a table of
 
 ```sh
 pip install bbfmodels                                    # Python: models, paths, runtime, generator
-npm install --save-dev bbfmodels                         # TypeScript declarations
+npm install --save-dev @ispx/bbfmodels                   # TypeScript declarations
 go get github.com/ispx-limited/bbfmodels-go/tr181usp     # Go types
 ```
 

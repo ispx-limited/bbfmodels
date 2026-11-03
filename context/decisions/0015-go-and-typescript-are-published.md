@@ -19,12 +19,15 @@ fetched from a repository and npm packages from the registry.
   `go get github.com/ispx-limited/bbfmodels-go/tr181usp@v0.8.0` matches
   `pip install bbfmodels==0.8.0`. Nothing is edited in that repository by
   hand and its README says so; issues go to bbfmodels.
-- **An npm package, `bbfmodels`, of declarations only.** One module per
-  document as a subpath export (`bbfmodels/tr181_usp`), `package.json`
-  with `exports` and no runtime code. Published by the release workflow
-  through npm trusted publishing with provenance, the same arrangement
-  as PyPI. npm requires the package to exist before a trusted publisher can
-  be configured, so the first version is published by hand.
+- **An npm package, `@ispx/bbfmodels`, of declarations only.** Scoped to
+  the ispx organisation on npm, one module per document as a subpath export
+  (`@ispx/bbfmodels/tr181_usp`), `package.json` with `exports` and no
+  runtime code. Published by the release workflow with provenance,
+  authenticated by a granular access token held as a repository secret,
+  because npm requires either two-factor authentication or such a token to
+  publish and will not create a package through trusted publishing. The
+  first two versions were published from a workstation with that token;
+  every later one comes from the workflow.
 - **One builder for both.** `bbfmodels distribute go|npm` assembles either
   tree from the pinned documents with a version stamp, and the tests build
   both, so a release cannot ship a module that does not vet or a package
